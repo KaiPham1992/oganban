@@ -1,0 +1,67 @@
+/* 
+  Localizable.strings
+  DQHome
+
+  Created by Ngoc Duong on 10/19/18.
+  Copyright © 2018 Engma. All rights reserved.
+*/
+
+//MARK: - Title string
+"LoginName"                 = "Tên đăng nhập";
+"placeHolderLoginName"      = "Nhập tên đăng nhập";
+"displayName"               = "Tên hiển thị";
+"placeHolderDisplayName"    = "Nhập tên hiển thị";
+"email"                     = "Email";
+"placeHolderEmail"          = "Nhập email";
+"phone"                     = "Phone number";
+"password"                  = "Mật khẩu (tối thiểu 6 ký tự)";
+"placeHolderPassword"       = "Nhập mật khẩu";
+"comfirm"                   = "Nhập lại mật khẩu";
+"placeHolderConfirm"        = "Nhập lại mật khẩu";
+"captcha"                   = "Nhập mã capcha";
+"placeHolderCaptcha"        = "Nhập mã capcha";
+"phonePlaceHolder"          = "Nhập số điện thoại";
+"passwordLogin"             = "Mật khẩu";
+"fullNamePlaceHolder"       = "Nhập họ tên";
+"fullName"                  = "Họ và tên";
+"addressOrther"             = "Địa điểm khác";
+"addressOrtherPlaceHolder"  = "Nhập địa chỉ";
+
+"MessageInValidPassword"    = "Mật khẩu phải hơn hoặc bằng 6 ký tự";
+"MessageInvalidUserName"    = "Tên đăng không đúng ";
+"MessageInValidEmail"       = "Email không đúng";
+"emailOrPhone"              = "Nhập email hoặc số điện thoại";
+"placeHolderPhone"          = "Nhập số điện thoại";
+
+"MessageEmptyUsername" = "Vui lòng nhập tên đăng nhập";
+"MessageEmptyPassword" = "Vui lòng nhập mật khẩu";
+"MessageEmptyCurrentPassword" = "Vui lòng nhập mật khẩu hiện tại";
+"MessageEmptyNewPassword" = "Vui lòng nhập mật khẩu mới";
+"MessageEmptyConfirmPassword" = "Vui lòng nhập lại mật khẩu";
+"MessageEmptyName" = "Vui lòng nhập họ tên!";
+"MessageEmptyEmail" = "Vui lòng nhập Email!";
+"MessageEmptyPhone" = "Vui lòng nhập số điện thoại!";
+"MessageEmptyCaptcha" = "Vui lòng nhập Captcha";
+"MessageEmptyAll" = "Vui lòng nhập đầy đủ thông tin!";
+"MessageEmptyAddress" = "Vui lòng nhập địa chỉ!";
+
+"MessageInValidPassword" = "Mật khẩu phải hơn hoặc bằng 6 ký tự";
+"MessageInValidCurrentPassword" = "Mật khẩu hiện tại không đúng";
+"MessageInValidNewPassword" = "Mật khẩu mới phải hơn hoặc bằng 6 ký tự";
+"MessageInValidConfirmNewPassword" = "Nhập lại mật khẩu mới không đúng";
+"MessageInValidPhone" = "Số điện thoại không đúng";
+"MessagePasswordsNotMatch" = "Nhập lại mật khẩu không đúng";
+"MessageInvalidUsernameOrPassword" = "Tên đăng nhập hoặc mật khẩu không đúng";
+"MessageInvalidEmailFormat" = "Email sai format";
+"MessageNotHave" = "Email không có trong hệ thống";
+"MessageNotNetwork" = "Vui lòng kiểm tra kết nối mạng";
+
+//MARK: - Message string
+
+//MARK: - App String
+"ContractPurchase" = "HĐ mua bán";
+"ContractFirst" = "HĐ cọc lần 1";
+"ContractSecond" = "HĐ cọc lần 2";
+"SearchInMap" = "Tìm theo tên TVV và tên dự án";
+"SearchProjectInMap" = "Tìm theo tên dự án";
+"MarkReadAll" = "Đánh dấu đã đọc tất cả";

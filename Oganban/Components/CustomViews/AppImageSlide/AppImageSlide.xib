@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AppImageSlide" customModule="RedStar" customModuleProvider="target">
+            <connections>
+                <outlet property="imageSlideShow" destination="FzH-X0-Avz" id="fhQ-b1-jFs"/>
+                <outlet property="lbIndex" destination="x75-hU-yee" id="L5x-fP-Rw9"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="262"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="mnk-3O-iU5">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="262"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FzH-X0-Avz" customClass="ImageSlideshow" customModule="ImageSlideshow">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="262"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x75-hU-yee" customClass="AppLabel" customModule="RedStar" customModuleProvider="target">
+                    <rect key="frame" x="8" y="233" width="359" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="mnk-3O-iU5" secondAttribute="trailing" id="1ed-HW-ME3"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="FzH-X0-Avz" secondAttribute="trailing" id="2H5-v5-mwT"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="FzH-X0-Avz" secondAttribute="bottom" id="DXj-ap-O2n"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="mnk-3O-iU5" secondAttribute="bottom" id="LiU-Sw-pQ8"/>
+                <constraint firstItem="mnk-3O-iU5" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Oiu-gF-rBx"/>
+                <constraint firstItem="FzH-X0-Avz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ZaT-oC-Pef"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="x75-hU-yee" secondAttribute="trailing" constant="8" id="e9u-wC-mTz"/>
+                <constraint firstItem="FzH-X0-Avz" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="eoT-s0-bhh"/>
+                <constraint firstItem="mnk-3O-iU5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="jnQ-7Y-OuB"/>
+                <constraint firstItem="x75-hU-yee" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="lAH-do-7O1"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="x75-hU-yee" secondAttribute="bottom" constant="8" id="qjq-BM-DgC"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="69.599999999999994" y="230.28485757121442"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="placeholder" width="1280" height="960"/>
+    </resources>
+</document>

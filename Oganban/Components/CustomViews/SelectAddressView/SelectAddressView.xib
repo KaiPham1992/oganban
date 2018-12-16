@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectAddressView" customModule="RedStar" customModuleProvider="target">
+            <connections>
+                <outlet property="imgSelect" destination="mja-Dh-P0Y" id="JFo-IJ-lYf"/>
+                <outlet property="lbTitle" destination="euz-ld-hks" id="pQ2-0Q-zHv"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="413" height="83"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="radio-off-button-1" translatesAutoresizingMaskIntoConstraints="NO" id="mja-Dh-P0Y">
+                    <rect key="frame" x="0.0" y="31.5" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="enx-mJ-pxO"/>
+                        <constraint firstAttribute="width" constant="20" id="kNC-GB-J0s"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="euz-ld-hks">
+                    <rect key="frame" x="33" y="31.5" width="380" height="41"/>
+                    <string key="text">Văn phòng RedStar Land
+211 Trần Não, P.Bình An, Quận 2, TpHCM.</string>
+                    <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ixf-qZ-vzn">
+                    <rect key="frame" x="0.0" y="0.0" width="413" height="83"/>
+                    <connections>
+                        <action selector="btnSelectedTapped" destination="-1" eventType="touchUpInside" id="NUu-Lb-aZe"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Ixf-qZ-vzn" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="4A9-Xl-iGt"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Ixf-qZ-vzn" secondAttribute="bottom" id="6u2-Ih-Q3Q"/>
+                <constraint firstItem="mja-Dh-P0Y" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="D3Z-nl-TaN"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="euz-ld-hks" secondAttribute="trailing" id="HlP-sX-XpP"/>
+                <constraint firstItem="euz-ld-hks" firstAttribute="leading" secondItem="mja-Dh-P0Y" secondAttribute="trailing" constant="13" id="SDx-Wz-QTv"/>
+                <constraint firstItem="Ixf-qZ-vzn" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="a56-fN-deL"/>
+                <constraint firstItem="mja-Dh-P0Y" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="ahq-Lq-DAA"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Ixf-qZ-vzn" secondAttribute="trailing" id="car-VH-yDd"/>
+                <constraint firstItem="euz-ld-hks" firstAttribute="top" secondItem="mja-Dh-P0Y" secondAttribute="top" id="sEG-en-zz3"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="162.40000000000001" y="-132.68365817091455"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="radio-off-button-1" width="20" height="20"/>
+    </resources>
+</document>
