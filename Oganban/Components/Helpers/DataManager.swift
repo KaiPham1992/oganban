@@ -21,19 +21,19 @@ class DataManager {
         return dataManager
     }()
     
-    var loginedUser: UserEntity?
-    var listProvince = [ProvinceEntity]()
-    var listProjectType = [ProjectTypeEntity]()
+//    var loginedUser: UserEntity?
+//    var listProvince = [ProvinceEntity]()
+//    var listProjectType = [ProjectTypeEntity]()
     var isShowCompare = false
     var isSelectedFromFind = false
     var centerMap = CLLocationCoordinate2D()
     
     var isShowBannerHome = true
     
-    var projectSelected: ProjectEntity? // use to view detail
+//    var projectSelected: ProjectEntity? // use to view detail
     
     var homeMapTab = HomeMapTab.map
-    var listLevel = [LevelEntity]()
+//    var listLevel = [LevelEntity]()
     
     // Initialization
     private init() {

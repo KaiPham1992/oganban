@@ -45,102 +45,9 @@
 		CB172C2321C6A2EF0068CF92 /* UserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B6721C6A2EE0068CF92 /* UserDefaultHelper.swift */; };
 		CB172C2421C6A2EF0068CF92 /* LanguageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B6821C6A2EE0068CF92 /* LanguageHelper.swift */; };
 		CB172C2521C6A2EF0068CF92 /* PopUpHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B6921C6A2EE0068CF92 /* PopUpHelper.swift */; };
-		CB172C2621C6A2EF0068CF92 /* GoogleMapHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B6A21C6A2EE0068CF92 /* GoogleMapHelper.swift */; };
 		CB172C2721C6A2EF0068CF92 /* UserUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B6B21C6A2EE0068CF92 /* UserUtils.swift */; };
 		CB172C2821C6A2EF0068CF92 /* AnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B6C21C6A2EE0068CF92 /* AnimationHelper.swift */; };
 		CB172C2921C6A2EF0068CF92 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B6D21C6A2EE0068CF92 /* Utils.swift */; };
-		CB172C2A21C6A2EF0068CF92 /* RatingNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B7021C6A2EE0068CF92 /* RatingNewView.swift */; };
-		CB172C2B21C6A2EF0068CF92 /* AppSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B7221C6A2EE0068CF92 /* AppSwitch.swift */; };
-		CB172C2C21C6A2EF0068CF92 /* CompareProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B7421C6A2EE0068CF92 /* CompareProjectView.swift */; };
-		CB172C2D21C6A2EF0068CF92 /* CompareProjectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB172B7521C6A2EE0068CF92 /* CompareProjectView.xib */; };
-		CB172C2E21C6A2EF0068CF92 /* AppImageSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B7721C6A2EE0068CF92 /* AppImageSlide.swift */; };
-		CB172C2F21C6A2EF0068CF92 /* AppImageSlide.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB172B7821C6A2EE0068CF92 /* AppImageSlide.xib */; };
-		CB172C3021C6A2EF0068CF92 /* ConsultationStaffView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB172B7A21C6A2EE0068CF92 /* ConsultationStaffView.xib */; };
-		CB172C3121C6A2EF0068CF92 /* ConsultationStaffView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B7B21C6A2EE0068CF92 /* ConsultationStaffView.swift */; };
-		CB172C3221C6A2EF0068CF92 /* PaintedProjectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB172B7D21C6A2EE0068CF92 /* PaintedProjectView.xib */; };
-		CB172C3321C6A2EF0068CF92 /* PaintedProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B7E21C6A2EE0068CF92 /* PaintedProjectView.swift */; };
-		CB172C3421C6A2EF0068CF92 /* AppButtonPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B8021C6A2EE0068CF92 /* AppButtonPopUp.swift */; };
-		CB172C3521C6A2EF0068CF92 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B8121C6A2EE0068CF92 /* AppButton.swift */; };
-		CB172C3621C6A2EF0068CF92 /* KActivityIndicatorAnimationAudioEqualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B8421C6A2EE0068CF92 /* KActivityIndicatorAnimationAudioEqualizer.swift */; };
-		CB172C3721C6A2EF0068CF92 /* KActivityIndicatorAnimationOrbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B8521C6A2EE0068CF92 /* KActivityIndicatorAnimationOrbit.swift */; };
-		CB172C3821C6A2EF0068CF92 /* KActivityIndicatorAnimationBallGridBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B8621C6A2EE0068CF92 /* KActivityIndicatorAnimationBallGridBeat.swift */; };
-		CB172C3921C6A2EF0068CF92 /* KActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B8721C6A2EE0068CF92 /* KActivityIndicatorAnimationTriangleSkewSpin.swift */; };
-		CB172C3A21C6A2EF0068CF92 /* KActivityIndicatorAnimationBallGridPulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B8821C6A2EE0068CF92 /* KActivityIndicatorAnimationBallGridPulse.swift */; };
-		CB172C3B21C6A2EF0068CF92 /* KActivityIndicatorAnimationPacman.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B8921C6A2EE0068CF92 /* KActivityIndicatorAnimationPacman.swift */; };
-		CB172C3C21C6A2EF0068CF92 /* KActivityIndicatorAnimationBallRotateChase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B8A21C6A2EE0068CF92 /* KActivityIndicatorAnimationBallRotateChase.swift */; };
-		CB172C3D21C6A2EF0068CF92 /* KActivityIndicatorAnimationSemiCircleSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B8B21C6A2EE0068CF92 /* KActivityIndicatorAnimationSemiCircleSpin.swift */; };
-		CB172C3E21C6A2EF0068CF92 /* KActivityIndicatorAnimationBallScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B8C21C6A2EE0068CF92 /* KActivityIndicatorAnimationBallScale.swift */; };
-		CB172C3F21C6A2EF0068CF92 /* KActivityIndicatorAnimationBallScaleRipple.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B8D21C6A2EE0068CF92 /* KActivityIndicatorAnimationBallScaleRipple.swift */; };
-		CB172C4021C6A2EF0068CF92 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B8E21C6A2EE0068CF92 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift */; };
-		CB172C4121C6A2EF0068CF92 /* KActivityIndicatorAnimationLineScalePulseOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B8F21C6A2EE0068CF92 /* KActivityIndicatorAnimationLineScalePulseOut.swift */; };
-		CB172C4221C6A2EF0068CF92 /* KActivityIndicatorAnimationBallPulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B9021C6A2EE0068CF92 /* KActivityIndicatorAnimationBallPulse.swift */; };
-		CB172C4321C6A2EF0068CF92 /* KActivityIndicatorAnimationBallClipRotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B9121C6A2EE0068CF92 /* KActivityIndicatorAnimationBallClipRotate.swift */; };
-		CB172C4421C6A2EF0068CF92 /* KActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B9221C6A2EE0068CF92 /* KActivityIndicatorAnimationBallClipRotateMultiple.swift */; };
-		CB172C4521C6A2EF0068CF92 /* KActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B9321C6A2EE0068CF92 /* KActivityIndicatorAnimationBallZigZagDeflect.swift */; };
-		CB172C4621C6A2EF0068CF92 /* KActivityIndicatorAnimationBlank.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B9421C6A2EE0068CF92 /* KActivityIndicatorAnimationBlank.swift */; };
-		CB172C4721C6A2EF0068CF92 /* KActivityIndicatorAnimationBallTrianglePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B9521C6A2EE0068CF92 /* KActivityIndicatorAnimationBallTrianglePath.swift */; };
-		CB172C4821C6A2EF0068CF92 /* KActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B9621C6A2EE0068CF92 /* KActivityIndicatorAnimationBallScaleRippleMultiple.swift */; };
-		CB172C4921C6A2EF0068CF92 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B9721C6A2EE0068CF92 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift */; };
-		CB172C4A21C6A2EF0068CF92 /* KActivityIndicatorAnimationLineScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B9821C6A2EE0068CF92 /* KActivityIndicatorAnimationLineScale.swift */; };
-		CB172C4B21C6A2EF0068CF92 /* KActivityIndicatorAnimationLineScaleParty.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B9921C6A2EE0068CF92 /* KActivityIndicatorAnimationLineScaleParty.swift */; };
-		CB172C4C21C6A2EF0068CF92 /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B9A21C6A2EE0068CF92 /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift */; };
-		CB172C4D21C6A2EF0068CF92 /* KActivityIndicatorAnimationSquareSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B9B21C6A2EE0068CF92 /* KActivityIndicatorAnimationSquareSpin.swift */; };
-		CB172C4E21C6A2EF0068CF92 /* KActivityIndicatorAnimationBallBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B9C21C6A2EE0068CF92 /* KActivityIndicatorAnimationBallBeat.swift */; };
-		CB172C4F21C6A2EF0068CF92 /* KActivityIndicatorAnimationCubeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B9D21C6A2EE0068CF92 /* KActivityIndicatorAnimationCubeTransition.swift */; };
-		CB172C5021C6A2EF0068CF92 /* KActivityIndicatorAnimationBallZigZag.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B9E21C6A2EE0068CF92 /* KActivityIndicatorAnimationBallZigZag.swift */; };
-		CB172C5121C6A2EF0068CF92 /* KActivityIndicatorAnimationBallPulseSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B9F21C6A2EE0068CF92 /* KActivityIndicatorAnimationBallPulseSync.swift */; };
-		CB172C5221C6A2EF0068CF92 /* KActivityIndicatorAnimationBallScaleMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BA021C6A2EE0068CF92 /* KActivityIndicatorAnimationBallScaleMultiple.swift */; };
-		CB172C5321C6A2EF0068CF92 /* KActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BA121C6A2EE0068CF92 /* KActivityIndicatorAnimationBallClipRotatePulse.swift */; };
-		CB172C5421C6A2EF0068CF92 /* KActivityIndicatorAnimationBallPulseRise.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BA221C6A2EE0068CF92 /* KActivityIndicatorAnimationBallPulseRise.swift */; };
-		CB172C5521C6A2EF0068CF92 /* KActivityIndicatorAnimationBallRotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BA321C6A2EE0068CF92 /* KActivityIndicatorAnimationBallRotate.swift */; };
-		CB172C5621C6A2EF0068CF92 /* KActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BA421C6A2EE0068CF92 /* KActivityIndicatorAnimationCircleStrokeSpin.swift */; };
-		CB172C5721C6A2EF0068CF92 /* KActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BA621C6A2EE0068CF92 /* KActivityIndicatorView.swift */; };
-		CB172C5821C6A2EF0068CF92 /* KActivityIndicatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BA721C6A2EE0068CF92 /* KActivityIndicatorType.swift */; };
-		CB172C5921C6A2EF0068CF92 /* KActivityIndicatorShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BA821C6A2EE0068CF92 /* KActivityIndicatorShape.swift */; };
-		CB172C5A21C6A2EF0068CF92 /* FadeInOutAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BA921C6A2EE0068CF92 /* FadeInOutAnimation.swift */; };
-		CB172C5B21C6A2EF0068CF92 /* KActivityIndicatorAnimationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BAA21C6A2EE0068CF92 /* KActivityIndicatorAnimationDelegate.swift */; };
-		CB172C5C21C6A2EF0068CF92 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BAC21C6A2EE0068CF92 /* ProgressView.swift */; };
-		CB172C5D21C6A2EF0068CF92 /* ImageLabelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB172BAE21C6A2EE0068CF92 /* ImageLabelView.xib */; };
-		CB172C5E21C6A2EF0068CF92 /* ImageLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BAF21C6A2EE0068CF92 /* ImageLabelView.swift */; };
-		CB172C5F21C6A2EF0068CF92 /* AppRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BB121C6A2EE0068CF92 /* AppRadioButton.swift */; };
-		CB172C6021C6A2EF0068CF92 /* LeftAlignCollectionFlowlayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BB321C6A2EE0068CF92 /* LeftAlignCollectionFlowlayout.swift */; };
-		CB172C6121C6A2EF0068CF92 /* LeftAlignCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BB521C6A2EE0068CF92 /* LeftAlignCollectionCell.swift */; };
-		CB172C6221C6A2EF0068CF92 /* LeftAlignCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB172BB621C6A2EE0068CF92 /* LeftAlignCollectionCell.xib */; };
-		CB172C6321C6A2EF0068CF92 /* LeftAlignCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BB721C6A2EE0068CF92 /* LeftAlignCollectionView.swift */; };
-		CB172C6421C6A2EF0068CF92 /* AppSearchBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB172BB921C6A2EE0068CF92 /* AppSearchBar.xib */; };
-		CB172C6521C6A2EF0068CF92 /* AppSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BBA21C6A2EE0068CF92 /* AppSearchBar.swift */; };
-		CB172C6621C6A2EF0068CF92 /* HistoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB172BBC21C6A2EF0068CF92 /* HistoryView.xib */; };
-		CB172C6721C6A2EF0068CF92 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BBD21C6A2EF0068CF92 /* HistoryView.swift */; };
-		CB172C6821C6A2EF0068CF92 /* BasePopUpViewCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BBF21C6A2EF0068CF92 /* BasePopUpViewCenter.swift */; };
-		CB172C6921C6A2EF0068CF92 /* PopUpLogout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BC021C6A2EF0068CF92 /* PopUpLogout.swift */; };
-		CB172C6A21C6A2EF0068CF92 /* BannerPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BC221C6A2EF0068CF92 /* BannerPopUpView.swift */; };
-		CB172C6B21C6A2EF0068CF92 /* PopUpMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BC321C6A2EF0068CF92 /* PopUpMessage.swift */; };
-		CB172C6C21C6A2EF0068CF92 /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BC521C6A2EF0068CF92 /* NoDataView.swift */; };
-		CB172C6D21C6A2EF0068CF92 /* RTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BC721C6A2EF0068CF92 /* RTextField.swift */; };
-		CB172C6E21C6A2EF0068CF92 /* AppTextFiled.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BC821C6A2EF0068CF92 /* AppTextFiled.swift */; };
-		CB172C6F21C6A2EF0068CF92 /* AppTextfiledLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BC921C6A2EF0068CF92 /* AppTextfiledLogin.swift */; };
-		CB172C7021C6A2EF0068CF92 /* AppTextFieldDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BCA21C6A2EF0068CF92 /* AppTextFieldDropDown.swift */; };
-		CB172C7121C6A2EF0068CF92 /* LikeAndRankView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB172BCC21C6A2EF0068CF92 /* LikeAndRankView.xib */; };
-		CB172C7221C6A2EF0068CF92 /* LikeAndRankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BCD21C6A2EF0068CF92 /* LikeAndRankView.swift */; };
-		CB172C7321C6A2EF0068CF92 /* AchievementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BCF21C6A2EF0068CF92 /* AchievementView.swift */; };
-		CB172C7421C6A2EF0068CF92 /* LevelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB172BD121C6A2EF0068CF92 /* LevelView.xib */; };
-		CB172C7521C6A2EF0068CF92 /* LevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BD221C6A2EF0068CF92 /* LevelView.swift */; };
-		CB172C7621C6A2EF0068CF92 /* SelectAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BD421C6A2EF0068CF92 /* SelectAddressView.swift */; };
-		CB172C7721C6A2EF0068CF92 /* SelectAddressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB172BD521C6A2EF0068CF92 /* SelectAddressView.xib */; };
-		CB172C7821C6A2EF0068CF92 /* AppLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BD721C6A2EF0068CF92 /* AppLabel.swift */; };
-		CB172C7921C6A2EF0068CF92 /* StepByStepView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB172BD921C6A2EF0068CF92 /* StepByStepView.xib */; };
-		CB172C7A21C6A2EF0068CF92 /* StepByStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BDA21C6A2EF0068CF92 /* StepByStepView.swift */; };
-		CB172C7B21C6A2EF0068CF92 /* DotsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BDC21C6A2EF0068CF92 /* DotsView.swift */; };
-		CB172C7C21C6A2EF0068CF92 /* NearCompareProjectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB172BDE21C6A2EF0068CF92 /* NearCompareProjectView.xib */; };
-		CB172C7D21C6A2EF0068CF92 /* NearCompareProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BDF21C6A2EF0068CF92 /* NearCompareProjectView.swift */; };
-		CB172C7E21C6A2EF0068CF92 /* AppTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BE121C6A2EF0068CF92 /* AppTextView.swift */; };
-		CB172C7F21C6A2EF0068CF92 /* AppHeaderTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BE321C6A2EF0068CF92 /* AppHeaderTitle.swift */; };
-		CB172C8021C6A2EF0068CF92 /* TextFiledMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BE521C6A2EF0068CF92 /* TextFiledMarkerView.swift */; };
-		CB172C8121C6A2EF0068CF92 /* TextFiledMarkerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB172BE621C6A2EF0068CF92 /* TextFiledMarkerView.xib */; };
-		CB172C8221C6A2EF0068CF92 /* YoutubePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BE821C6A2EF0068CF92 /* YoutubePlayerView.swift */; };
-		CB172C8321C6A2EF0068CF92 /* MarkerProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BEA21C6A2EF0068CF92 /* MarkerProjectView.swift */; };
-		CB172C8421C6A2EF0068CF92 /* MarkerProjectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB172BEB21C6A2EF0068CF92 /* MarkerProjectView.xib */; };
-		CB172C8521C6A2EF0068CF92 /* ProjectMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BEC21C6A2EF0068CF92 /* ProjectMarker.swift */; };
 		CB172C8621C6A2EF0068CF92 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB172BEE21C6A2EF0068CF92 /* OpenSans-SemiBold.ttf */; };
 		CB172C8721C6A2EF0068CF92 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB172BEF21C6A2EF0068CF92 /* OpenSans-Light.ttf */; };
 		CB172C8821C6A2EF0068CF92 /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB172BF021C6A2EF0068CF92 /* OpenSans-Italic.ttf */; };
@@ -218,102 +125,9 @@
 		CB172B6721C6A2EE0068CF92 /* UserDefaultHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultHelper.swift; sourceTree = "<group>"; };
 		CB172B6821C6A2EE0068CF92 /* LanguageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageHelper.swift; sourceTree = "<group>"; };
 		CB172B6921C6A2EE0068CF92 /* PopUpHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpHelper.swift; sourceTree = "<group>"; };
-		CB172B6A21C6A2EE0068CF92 /* GoogleMapHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapHelper.swift; sourceTree = "<group>"; };
 		CB172B6B21C6A2EE0068CF92 /* UserUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserUtils.swift; sourceTree = "<group>"; };
 		CB172B6C21C6A2EE0068CF92 /* AnimationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationHelper.swift; sourceTree = "<group>"; };
 		CB172B6D21C6A2EE0068CF92 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		CB172B7021C6A2EE0068CF92 /* RatingNewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingNewView.swift; sourceTree = "<group>"; };
-		CB172B7221C6A2EE0068CF92 /* AppSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSwitch.swift; sourceTree = "<group>"; };
-		CB172B7421C6A2EE0068CF92 /* CompareProjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompareProjectView.swift; sourceTree = "<group>"; };
-		CB172B7521C6A2EE0068CF92 /* CompareProjectView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompareProjectView.xib; sourceTree = "<group>"; };
-		CB172B7721C6A2EE0068CF92 /* AppImageSlide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppImageSlide.swift; sourceTree = "<group>"; };
-		CB172B7821C6A2EE0068CF92 /* AppImageSlide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppImageSlide.xib; sourceTree = "<group>"; };
-		CB172B7A21C6A2EE0068CF92 /* ConsultationStaffView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConsultationStaffView.xib; sourceTree = "<group>"; };
-		CB172B7B21C6A2EE0068CF92 /* ConsultationStaffView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsultationStaffView.swift; sourceTree = "<group>"; };
-		CB172B7D21C6A2EE0068CF92 /* PaintedProjectView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaintedProjectView.xib; sourceTree = "<group>"; };
-		CB172B7E21C6A2EE0068CF92 /* PaintedProjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaintedProjectView.swift; sourceTree = "<group>"; };
-		CB172B8021C6A2EE0068CF92 /* AppButtonPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppButtonPopUp.swift; sourceTree = "<group>"; };
-		CB172B8121C6A2EE0068CF92 /* AppButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
-		CB172B8421C6A2EE0068CF92 /* KActivityIndicatorAnimationAudioEqualizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationAudioEqualizer.swift; sourceTree = "<group>"; };
-		CB172B8521C6A2EE0068CF92 /* KActivityIndicatorAnimationOrbit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationOrbit.swift; sourceTree = "<group>"; };
-		CB172B8621C6A2EE0068CF92 /* KActivityIndicatorAnimationBallGridBeat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallGridBeat.swift; sourceTree = "<group>"; };
-		CB172B8721C6A2EE0068CF92 /* KActivityIndicatorAnimationTriangleSkewSpin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationTriangleSkewSpin.swift; sourceTree = "<group>"; };
-		CB172B8821C6A2EE0068CF92 /* KActivityIndicatorAnimationBallGridPulse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallGridPulse.swift; sourceTree = "<group>"; };
-		CB172B8921C6A2EE0068CF92 /* KActivityIndicatorAnimationPacman.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationPacman.swift; sourceTree = "<group>"; };
-		CB172B8A21C6A2EE0068CF92 /* KActivityIndicatorAnimationBallRotateChase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallRotateChase.swift; sourceTree = "<group>"; };
-		CB172B8B21C6A2EE0068CF92 /* KActivityIndicatorAnimationSemiCircleSpin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationSemiCircleSpin.swift; sourceTree = "<group>"; };
-		CB172B8C21C6A2EE0068CF92 /* KActivityIndicatorAnimationBallScale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallScale.swift; sourceTree = "<group>"; };
-		CB172B8D21C6A2EE0068CF92 /* KActivityIndicatorAnimationBallScaleRipple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallScaleRipple.swift; sourceTree = "<group>"; };
-		CB172B8E21C6A2EE0068CF92 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationLineSpinFadeLoader.swift; sourceTree = "<group>"; };
-		CB172B8F21C6A2EE0068CF92 /* KActivityIndicatorAnimationLineScalePulseOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationLineScalePulseOut.swift; sourceTree = "<group>"; };
-		CB172B9021C6A2EE0068CF92 /* KActivityIndicatorAnimationBallPulse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallPulse.swift; sourceTree = "<group>"; };
-		CB172B9121C6A2EE0068CF92 /* KActivityIndicatorAnimationBallClipRotate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallClipRotate.swift; sourceTree = "<group>"; };
-		CB172B9221C6A2EE0068CF92 /* KActivityIndicatorAnimationBallClipRotateMultiple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallClipRotateMultiple.swift; sourceTree = "<group>"; };
-		CB172B9321C6A2EE0068CF92 /* KActivityIndicatorAnimationBallZigZagDeflect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallZigZagDeflect.swift; sourceTree = "<group>"; };
-		CB172B9421C6A2EE0068CF92 /* KActivityIndicatorAnimationBlank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBlank.swift; sourceTree = "<group>"; };
-		CB172B9521C6A2EE0068CF92 /* KActivityIndicatorAnimationBallTrianglePath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallTrianglePath.swift; sourceTree = "<group>"; };
-		CB172B9621C6A2EE0068CF92 /* KActivityIndicatorAnimationBallScaleRippleMultiple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallScaleRippleMultiple.swift; sourceTree = "<group>"; };
-		CB172B9721C6A2EE0068CF92 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallSpinFadeLoader.swift; sourceTree = "<group>"; };
-		CB172B9821C6A2EE0068CF92 /* KActivityIndicatorAnimationLineScale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationLineScale.swift; sourceTree = "<group>"; };
-		CB172B9921C6A2EE0068CF92 /* KActivityIndicatorAnimationLineScaleParty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationLineScaleParty.swift; sourceTree = "<group>"; };
-		CB172B9A21C6A2EE0068CF92 /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationLineScalePulseOutRapid.swift; sourceTree = "<group>"; };
-		CB172B9B21C6A2EE0068CF92 /* KActivityIndicatorAnimationSquareSpin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationSquareSpin.swift; sourceTree = "<group>"; };
-		CB172B9C21C6A2EE0068CF92 /* KActivityIndicatorAnimationBallBeat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallBeat.swift; sourceTree = "<group>"; };
-		CB172B9D21C6A2EE0068CF92 /* KActivityIndicatorAnimationCubeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationCubeTransition.swift; sourceTree = "<group>"; };
-		CB172B9E21C6A2EE0068CF92 /* KActivityIndicatorAnimationBallZigZag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallZigZag.swift; sourceTree = "<group>"; };
-		CB172B9F21C6A2EE0068CF92 /* KActivityIndicatorAnimationBallPulseSync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallPulseSync.swift; sourceTree = "<group>"; };
-		CB172BA021C6A2EE0068CF92 /* KActivityIndicatorAnimationBallScaleMultiple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallScaleMultiple.swift; sourceTree = "<group>"; };
-		CB172BA121C6A2EE0068CF92 /* KActivityIndicatorAnimationBallClipRotatePulse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallClipRotatePulse.swift; sourceTree = "<group>"; };
-		CB172BA221C6A2EE0068CF92 /* KActivityIndicatorAnimationBallPulseRise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallPulseRise.swift; sourceTree = "<group>"; };
-		CB172BA321C6A2EE0068CF92 /* KActivityIndicatorAnimationBallRotate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallRotate.swift; sourceTree = "<group>"; };
-		CB172BA421C6A2EE0068CF92 /* KActivityIndicatorAnimationCircleStrokeSpin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationCircleStrokeSpin.swift; sourceTree = "<group>"; };
-		CB172BA621C6A2EE0068CF92 /* KActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorView.swift; sourceTree = "<group>"; };
-		CB172BA721C6A2EE0068CF92 /* KActivityIndicatorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorType.swift; sourceTree = "<group>"; };
-		CB172BA821C6A2EE0068CF92 /* KActivityIndicatorShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorShape.swift; sourceTree = "<group>"; };
-		CB172BA921C6A2EE0068CF92 /* FadeInOutAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeInOutAnimation.swift; sourceTree = "<group>"; };
-		CB172BAA21C6A2EE0068CF92 /* KActivityIndicatorAnimationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationDelegate.swift; sourceTree = "<group>"; };
-		CB172BAC21C6A2EE0068CF92 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
-		CB172BAE21C6A2EE0068CF92 /* ImageLabelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageLabelView.xib; sourceTree = "<group>"; };
-		CB172BAF21C6A2EE0068CF92 /* ImageLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLabelView.swift; sourceTree = "<group>"; };
-		CB172BB121C6A2EE0068CF92 /* AppRadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRadioButton.swift; sourceTree = "<group>"; };
-		CB172BB321C6A2EE0068CF92 /* LeftAlignCollectionFlowlayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftAlignCollectionFlowlayout.swift; sourceTree = "<group>"; };
-		CB172BB521C6A2EE0068CF92 /* LeftAlignCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftAlignCollectionCell.swift; sourceTree = "<group>"; };
-		CB172BB621C6A2EE0068CF92 /* LeftAlignCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftAlignCollectionCell.xib; sourceTree = "<group>"; };
-		CB172BB721C6A2EE0068CF92 /* LeftAlignCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftAlignCollectionView.swift; sourceTree = "<group>"; };
-		CB172BB921C6A2EE0068CF92 /* AppSearchBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppSearchBar.xib; sourceTree = "<group>"; };
-		CB172BBA21C6A2EE0068CF92 /* AppSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSearchBar.swift; sourceTree = "<group>"; };
-		CB172BBC21C6A2EF0068CF92 /* HistoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryView.xib; sourceTree = "<group>"; };
-		CB172BBD21C6A2EF0068CF92 /* HistoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
-		CB172BBF21C6A2EF0068CF92 /* BasePopUpViewCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePopUpViewCenter.swift; sourceTree = "<group>"; };
-		CB172BC021C6A2EF0068CF92 /* PopUpLogout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpLogout.swift; sourceTree = "<group>"; };
-		CB172BC221C6A2EF0068CF92 /* BannerPopUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerPopUpView.swift; sourceTree = "<group>"; };
-		CB172BC321C6A2EF0068CF92 /* PopUpMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpMessage.swift; sourceTree = "<group>"; };
-		CB172BC521C6A2EF0068CF92 /* NoDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
-		CB172BC721C6A2EF0068CF92 /* RTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTextField.swift; sourceTree = "<group>"; };
-		CB172BC821C6A2EF0068CF92 /* AppTextFiled.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTextFiled.swift; sourceTree = "<group>"; };
-		CB172BC921C6A2EF0068CF92 /* AppTextfiledLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTextfiledLogin.swift; sourceTree = "<group>"; };
-		CB172BCA21C6A2EF0068CF92 /* AppTextFieldDropDown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTextFieldDropDown.swift; sourceTree = "<group>"; };
-		CB172BCC21C6A2EF0068CF92 /* LikeAndRankView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LikeAndRankView.xib; sourceTree = "<group>"; };
-		CB172BCD21C6A2EF0068CF92 /* LikeAndRankView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeAndRankView.swift; sourceTree = "<group>"; };
-		CB172BCF21C6A2EF0068CF92 /* AchievementView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementView.swift; sourceTree = "<group>"; };
-		CB172BD121C6A2EF0068CF92 /* LevelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LevelView.xib; sourceTree = "<group>"; };
-		CB172BD221C6A2EF0068CF92 /* LevelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelView.swift; sourceTree = "<group>"; };
-		CB172BD421C6A2EF0068CF92 /* SelectAddressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectAddressView.swift; sourceTree = "<group>"; };
-		CB172BD521C6A2EF0068CF92 /* SelectAddressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectAddressView.xib; sourceTree = "<group>"; };
-		CB172BD721C6A2EF0068CF92 /* AppLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLabel.swift; sourceTree = "<group>"; };
-		CB172BD921C6A2EF0068CF92 /* StepByStepView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StepByStepView.xib; sourceTree = "<group>"; };
-		CB172BDA21C6A2EF0068CF92 /* StepByStepView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepByStepView.swift; sourceTree = "<group>"; };
-		CB172BDC21C6A2EF0068CF92 /* DotsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotsView.swift; sourceTree = "<group>"; };
-		CB172BDE21C6A2EF0068CF92 /* NearCompareProjectView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NearCompareProjectView.xib; sourceTree = "<group>"; };
-		CB172BDF21C6A2EF0068CF92 /* NearCompareProjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearCompareProjectView.swift; sourceTree = "<group>"; };
-		CB172BE121C6A2EF0068CF92 /* AppTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTextView.swift; sourceTree = "<group>"; };
-		CB172BE321C6A2EF0068CF92 /* AppHeaderTitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppHeaderTitle.swift; sourceTree = "<group>"; };
-		CB172BE521C6A2EF0068CF92 /* TextFiledMarkerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFiledMarkerView.swift; sourceTree = "<group>"; };
-		CB172BE621C6A2EF0068CF92 /* TextFiledMarkerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFiledMarkerView.xib; sourceTree = "<group>"; };
-		CB172BE821C6A2EF0068CF92 /* YoutubePlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubePlayerView.swift; sourceTree = "<group>"; };
-		CB172BEA21C6A2EF0068CF92 /* MarkerProjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerProjectView.swift; sourceTree = "<group>"; };
-		CB172BEB21C6A2EF0068CF92 /* MarkerProjectView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MarkerProjectView.xib; sourceTree = "<group>"; };
-		CB172BEC21C6A2EF0068CF92 /* ProjectMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectMarker.swift; sourceTree = "<group>"; };
 		CB172BEE21C6A2EF0068CF92 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		CB172BEF21C6A2EF0068CF92 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
 		CB172BF021C6A2EF0068CF92 /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
@@ -555,7 +369,6 @@
 				CB172B6721C6A2EE0068CF92 /* UserDefaultHelper.swift */,
 				CB172B6821C6A2EE0068CF92 /* LanguageHelper.swift */,
 				CB172B6921C6A2EE0068CF92 /* PopUpHelper.swift */,
-				CB172B6A21C6A2EE0068CF92 /* GoogleMapHelper.swift */,
 				CB172B6B21C6A2EE0068CF92 /* UserUtils.swift */,
 				CB172B6C21C6A2EE0068CF92 /* AnimationHelper.swift */,
 				CB172B6D21C6A2EE0068CF92 /* Utils.swift */,
@@ -566,372 +379,8 @@
 		CB172B6E21C6A2EE0068CF92 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				CB172B6F21C6A2EE0068CF92 /* RatingView */,
-				CB172B7121C6A2EE0068CF92 /* AppSwitch */,
-				CB172B7321C6A2EE0068CF92 /* CompareProjectView */,
-				CB172B7621C6A2EE0068CF92 /* AppImageSlide */,
-				CB172B7921C6A2EE0068CF92 /* ConsultationStaffView */,
-				CB172B7C21C6A2EE0068CF92 /* PaintedProjectView */,
-				CB172B7F21C6A2EE0068CF92 /* AppButton */,
-				CB172B8221C6A2EE0068CF92 /* Indicator */,
-				CB172BAD21C6A2EE0068CF92 /* ImageLabelView */,
-				CB172BB021C6A2EE0068CF92 /* AppRadioButton */,
-				CB172BB221C6A2EE0068CF92 /* LeftAlignCollectionView */,
-				CB172BB821C6A2EE0068CF92 /* AppSearchBar */,
-				CB172BBB21C6A2EE0068CF92 /* HistoryView */,
-				CB172BBE21C6A2EF0068CF92 /* PopUpView */,
-				CB172BC421C6A2EF0068CF92 /* NoDataView */,
-				CB172BC621C6A2EF0068CF92 /* AppTextFiled */,
-				CB172BCB21C6A2EF0068CF92 /* LikeAndRankView */,
-				CB172BCE21C6A2EF0068CF92 /* AchievementView */,
-				CB172BD021C6A2EF0068CF92 /* LevelView */,
-				CB172BD321C6A2EF0068CF92 /* SelectAddressView */,
-				CB172BD621C6A2EF0068CF92 /* AppLabel */,
-				CB172BD821C6A2EF0068CF92 /* StepByStepView */,
-				CB172BDD21C6A2EF0068CF92 /* NearCompareProjectView */,
-				CB172BE021C6A2EF0068CF92 /* AppTextView */,
-				CB172BE221C6A2EF0068CF92 /* AppHeaderTitle */,
-				CB172BE421C6A2EF0068CF92 /* TextFiledMarkerView */,
-				CB172BE721C6A2EF0068CF92 /* YoutubePlayerView */,
-				CB172BE921C6A2EF0068CF92 /* MarkerProject */,
 			);
 			path = CustomViews;
-			sourceTree = "<group>";
-		};
-		CB172B6F21C6A2EE0068CF92 /* RatingView */ = {
-			isa = PBXGroup;
-			children = (
-				CB172B7021C6A2EE0068CF92 /* RatingNewView.swift */,
-			);
-			path = RatingView;
-			sourceTree = "<group>";
-		};
-		CB172B7121C6A2EE0068CF92 /* AppSwitch */ = {
-			isa = PBXGroup;
-			children = (
-				CB172B7221C6A2EE0068CF92 /* AppSwitch.swift */,
-			);
-			path = AppSwitch;
-			sourceTree = "<group>";
-		};
-		CB172B7321C6A2EE0068CF92 /* CompareProjectView */ = {
-			isa = PBXGroup;
-			children = (
-				CB172B7421C6A2EE0068CF92 /* CompareProjectView.swift */,
-				CB172B7521C6A2EE0068CF92 /* CompareProjectView.xib */,
-			);
-			path = CompareProjectView;
-			sourceTree = "<group>";
-		};
-		CB172B7621C6A2EE0068CF92 /* AppImageSlide */ = {
-			isa = PBXGroup;
-			children = (
-				CB172B7721C6A2EE0068CF92 /* AppImageSlide.swift */,
-				CB172B7821C6A2EE0068CF92 /* AppImageSlide.xib */,
-			);
-			path = AppImageSlide;
-			sourceTree = "<group>";
-		};
-		CB172B7921C6A2EE0068CF92 /* ConsultationStaffView */ = {
-			isa = PBXGroup;
-			children = (
-				CB172B7A21C6A2EE0068CF92 /* ConsultationStaffView.xib */,
-				CB172B7B21C6A2EE0068CF92 /* ConsultationStaffView.swift */,
-			);
-			path = ConsultationStaffView;
-			sourceTree = "<group>";
-		};
-		CB172B7C21C6A2EE0068CF92 /* PaintedProjectView */ = {
-			isa = PBXGroup;
-			children = (
-				CB172B7D21C6A2EE0068CF92 /* PaintedProjectView.xib */,
-				CB172B7E21C6A2EE0068CF92 /* PaintedProjectView.swift */,
-			);
-			path = PaintedProjectView;
-			sourceTree = "<group>";
-		};
-		CB172B7F21C6A2EE0068CF92 /* AppButton */ = {
-			isa = PBXGroup;
-			children = (
-				CB172B8021C6A2EE0068CF92 /* AppButtonPopUp.swift */,
-				CB172B8121C6A2EE0068CF92 /* AppButton.swift */,
-			);
-			path = AppButton;
-			sourceTree = "<group>";
-		};
-		CB172B8221C6A2EE0068CF92 /* Indicator */ = {
-			isa = PBXGroup;
-			children = (
-				CB172B8321C6A2EE0068CF92 /* Animation */,
-				CB172BA521C6A2EE0068CF92 /* KActivityIndicatorView */,
-				CB172BAB21C6A2EE0068CF92 /* ProgressView */,
-			);
-			path = Indicator;
-			sourceTree = "<group>";
-		};
-		CB172B8321C6A2EE0068CF92 /* Animation */ = {
-			isa = PBXGroup;
-			children = (
-				CB172B8421C6A2EE0068CF92 /* KActivityIndicatorAnimationAudioEqualizer.swift */,
-				CB172B8521C6A2EE0068CF92 /* KActivityIndicatorAnimationOrbit.swift */,
-				CB172B8621C6A2EE0068CF92 /* KActivityIndicatorAnimationBallGridBeat.swift */,
-				CB172B8721C6A2EE0068CF92 /* KActivityIndicatorAnimationTriangleSkewSpin.swift */,
-				CB172B8821C6A2EE0068CF92 /* KActivityIndicatorAnimationBallGridPulse.swift */,
-				CB172B8921C6A2EE0068CF92 /* KActivityIndicatorAnimationPacman.swift */,
-				CB172B8A21C6A2EE0068CF92 /* KActivityIndicatorAnimationBallRotateChase.swift */,
-				CB172B8B21C6A2EE0068CF92 /* KActivityIndicatorAnimationSemiCircleSpin.swift */,
-				CB172B8C21C6A2EE0068CF92 /* KActivityIndicatorAnimationBallScale.swift */,
-				CB172B8D21C6A2EE0068CF92 /* KActivityIndicatorAnimationBallScaleRipple.swift */,
-				CB172B8E21C6A2EE0068CF92 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift */,
-				CB172B8F21C6A2EE0068CF92 /* KActivityIndicatorAnimationLineScalePulseOut.swift */,
-				CB172B9021C6A2EE0068CF92 /* KActivityIndicatorAnimationBallPulse.swift */,
-				CB172B9121C6A2EE0068CF92 /* KActivityIndicatorAnimationBallClipRotate.swift */,
-				CB172B9221C6A2EE0068CF92 /* KActivityIndicatorAnimationBallClipRotateMultiple.swift */,
-				CB172B9321C6A2EE0068CF92 /* KActivityIndicatorAnimationBallZigZagDeflect.swift */,
-				CB172B9421C6A2EE0068CF92 /* KActivityIndicatorAnimationBlank.swift */,
-				CB172B9521C6A2EE0068CF92 /* KActivityIndicatorAnimationBallTrianglePath.swift */,
-				CB172B9621C6A2EE0068CF92 /* KActivityIndicatorAnimationBallScaleRippleMultiple.swift */,
-				CB172B9721C6A2EE0068CF92 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift */,
-				CB172B9821C6A2EE0068CF92 /* KActivityIndicatorAnimationLineScale.swift */,
-				CB172B9921C6A2EE0068CF92 /* KActivityIndicatorAnimationLineScaleParty.swift */,
-				CB172B9A21C6A2EE0068CF92 /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift */,
-				CB172B9B21C6A2EE0068CF92 /* KActivityIndicatorAnimationSquareSpin.swift */,
-				CB172B9C21C6A2EE0068CF92 /* KActivityIndicatorAnimationBallBeat.swift */,
-				CB172B9D21C6A2EE0068CF92 /* KActivityIndicatorAnimationCubeTransition.swift */,
-				CB172B9E21C6A2EE0068CF92 /* KActivityIndicatorAnimationBallZigZag.swift */,
-				CB172B9F21C6A2EE0068CF92 /* KActivityIndicatorAnimationBallPulseSync.swift */,
-				CB172BA021C6A2EE0068CF92 /* KActivityIndicatorAnimationBallScaleMultiple.swift */,
-				CB172BA121C6A2EE0068CF92 /* KActivityIndicatorAnimationBallClipRotatePulse.swift */,
-				CB172BA221C6A2EE0068CF92 /* KActivityIndicatorAnimationBallPulseRise.swift */,
-				CB172BA321C6A2EE0068CF92 /* KActivityIndicatorAnimationBallRotate.swift */,
-				CB172BA421C6A2EE0068CF92 /* KActivityIndicatorAnimationCircleStrokeSpin.swift */,
-			);
-			path = Animation;
-			sourceTree = "<group>";
-		};
-		CB172BA521C6A2EE0068CF92 /* KActivityIndicatorView */ = {
-			isa = PBXGroup;
-			children = (
-				CB172BA621C6A2EE0068CF92 /* KActivityIndicatorView.swift */,
-				CB172BA721C6A2EE0068CF92 /* KActivityIndicatorType.swift */,
-				CB172BA821C6A2EE0068CF92 /* KActivityIndicatorShape.swift */,
-				CB172BA921C6A2EE0068CF92 /* FadeInOutAnimation.swift */,
-				CB172BAA21C6A2EE0068CF92 /* KActivityIndicatorAnimationDelegate.swift */,
-			);
-			path = KActivityIndicatorView;
-			sourceTree = "<group>";
-		};
-		CB172BAB21C6A2EE0068CF92 /* ProgressView */ = {
-			isa = PBXGroup;
-			children = (
-				CB172BAC21C6A2EE0068CF92 /* ProgressView.swift */,
-			);
-			path = ProgressView;
-			sourceTree = "<group>";
-		};
-		CB172BAD21C6A2EE0068CF92 /* ImageLabelView */ = {
-			isa = PBXGroup;
-			children = (
-				CB172BAE21C6A2EE0068CF92 /* ImageLabelView.xib */,
-				CB172BAF21C6A2EE0068CF92 /* ImageLabelView.swift */,
-			);
-			path = ImageLabelView;
-			sourceTree = "<group>";
-		};
-		CB172BB021C6A2EE0068CF92 /* AppRadioButton */ = {
-			isa = PBXGroup;
-			children = (
-				CB172BB121C6A2EE0068CF92 /* AppRadioButton.swift */,
-			);
-			path = AppRadioButton;
-			sourceTree = "<group>";
-		};
-		CB172BB221C6A2EE0068CF92 /* LeftAlignCollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				CB172BB321C6A2EE0068CF92 /* LeftAlignCollectionFlowlayout.swift */,
-				CB172BB421C6A2EE0068CF92 /* Cell */,
-				CB172BB721C6A2EE0068CF92 /* LeftAlignCollectionView.swift */,
-			);
-			path = LeftAlignCollectionView;
-			sourceTree = "<group>";
-		};
-		CB172BB421C6A2EE0068CF92 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				CB172BB521C6A2EE0068CF92 /* LeftAlignCollectionCell.swift */,
-				CB172BB621C6A2EE0068CF92 /* LeftAlignCollectionCell.xib */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
-		CB172BB821C6A2EE0068CF92 /* AppSearchBar */ = {
-			isa = PBXGroup;
-			children = (
-				CB172BB921C6A2EE0068CF92 /* AppSearchBar.xib */,
-				CB172BBA21C6A2EE0068CF92 /* AppSearchBar.swift */,
-			);
-			path = AppSearchBar;
-			sourceTree = "<group>";
-		};
-		CB172BBB21C6A2EE0068CF92 /* HistoryView */ = {
-			isa = PBXGroup;
-			children = (
-				CB172BBC21C6A2EF0068CF92 /* HistoryView.xib */,
-				CB172BBD21C6A2EF0068CF92 /* HistoryView.swift */,
-			);
-			path = HistoryView;
-			sourceTree = "<group>";
-		};
-		CB172BBE21C6A2EF0068CF92 /* PopUpView */ = {
-			isa = PBXGroup;
-			children = (
-				CB172BBF21C6A2EF0068CF92 /* BasePopUpViewCenter.swift */,
-				CB172BC021C6A2EF0068CF92 /* PopUpLogout.swift */,
-				CB172BC121C6A2EF0068CF92 /* BannerPopUp */,
-				CB172BC321C6A2EF0068CF92 /* PopUpMessage.swift */,
-			);
-			path = PopUpView;
-			sourceTree = "<group>";
-		};
-		CB172BC121C6A2EF0068CF92 /* BannerPopUp */ = {
-			isa = PBXGroup;
-			children = (
-				CB172BC221C6A2EF0068CF92 /* BannerPopUpView.swift */,
-			);
-			path = BannerPopUp;
-			sourceTree = "<group>";
-		};
-		CB172BC421C6A2EF0068CF92 /* NoDataView */ = {
-			isa = PBXGroup;
-			children = (
-				CB172BC521C6A2EF0068CF92 /* NoDataView.swift */,
-			);
-			path = NoDataView;
-			sourceTree = "<group>";
-		};
-		CB172BC621C6A2EF0068CF92 /* AppTextFiled */ = {
-			isa = PBXGroup;
-			children = (
-				CB172BC721C6A2EF0068CF92 /* RTextField.swift */,
-				CB172BC821C6A2EF0068CF92 /* AppTextFiled.swift */,
-				CB172BC921C6A2EF0068CF92 /* AppTextfiledLogin.swift */,
-				CB172BCA21C6A2EF0068CF92 /* AppTextFieldDropDown.swift */,
-			);
-			path = AppTextFiled;
-			sourceTree = "<group>";
-		};
-		CB172BCB21C6A2EF0068CF92 /* LikeAndRankView */ = {
-			isa = PBXGroup;
-			children = (
-				CB172BCC21C6A2EF0068CF92 /* LikeAndRankView.xib */,
-				CB172BCD21C6A2EF0068CF92 /* LikeAndRankView.swift */,
-			);
-			path = LikeAndRankView;
-			sourceTree = "<group>";
-		};
-		CB172BCE21C6A2EF0068CF92 /* AchievementView */ = {
-			isa = PBXGroup;
-			children = (
-				CB172BCF21C6A2EF0068CF92 /* AchievementView.swift */,
-			);
-			path = AchievementView;
-			sourceTree = "<group>";
-		};
-		CB172BD021C6A2EF0068CF92 /* LevelView */ = {
-			isa = PBXGroup;
-			children = (
-				CB172BD121C6A2EF0068CF92 /* LevelView.xib */,
-				CB172BD221C6A2EF0068CF92 /* LevelView.swift */,
-			);
-			path = LevelView;
-			sourceTree = "<group>";
-		};
-		CB172BD321C6A2EF0068CF92 /* SelectAddressView */ = {
-			isa = PBXGroup;
-			children = (
-				CB172BD421C6A2EF0068CF92 /* SelectAddressView.swift */,
-				CB172BD521C6A2EF0068CF92 /* SelectAddressView.xib */,
-			);
-			path = SelectAddressView;
-			sourceTree = "<group>";
-		};
-		CB172BD621C6A2EF0068CF92 /* AppLabel */ = {
-			isa = PBXGroup;
-			children = (
-				CB172BD721C6A2EF0068CF92 /* AppLabel.swift */,
-			);
-			path = AppLabel;
-			sourceTree = "<group>";
-		};
-		CB172BD821C6A2EF0068CF92 /* StepByStepView */ = {
-			isa = PBXGroup;
-			children = (
-				CB172BD921C6A2EF0068CF92 /* StepByStepView.xib */,
-				CB172BDA21C6A2EF0068CF92 /* StepByStepView.swift */,
-				CB172BDB21C6A2EF0068CF92 /* DotsView */,
-			);
-			path = StepByStepView;
-			sourceTree = "<group>";
-		};
-		CB172BDB21C6A2EF0068CF92 /* DotsView */ = {
-			isa = PBXGroup;
-			children = (
-				CB172BDC21C6A2EF0068CF92 /* DotsView.swift */,
-			);
-			path = DotsView;
-			sourceTree = "<group>";
-		};
-		CB172BDD21C6A2EF0068CF92 /* NearCompareProjectView */ = {
-			isa = PBXGroup;
-			children = (
-				CB172BDE21C6A2EF0068CF92 /* NearCompareProjectView.xib */,
-				CB172BDF21C6A2EF0068CF92 /* NearCompareProjectView.swift */,
-			);
-			path = NearCompareProjectView;
-			sourceTree = "<group>";
-		};
-		CB172BE021C6A2EF0068CF92 /* AppTextView */ = {
-			isa = PBXGroup;
-			children = (
-				CB172BE121C6A2EF0068CF92 /* AppTextView.swift */,
-			);
-			path = AppTextView;
-			sourceTree = "<group>";
-		};
-		CB172BE221C6A2EF0068CF92 /* AppHeaderTitle */ = {
-			isa = PBXGroup;
-			children = (
-				CB172BE321C6A2EF0068CF92 /* AppHeaderTitle.swift */,
-			);
-			path = AppHeaderTitle;
-			sourceTree = "<group>";
-		};
-		CB172BE421C6A2EF0068CF92 /* TextFiledMarkerView */ = {
-			isa = PBXGroup;
-			children = (
-				CB172BE521C6A2EF0068CF92 /* TextFiledMarkerView.swift */,
-				CB172BE621C6A2EF0068CF92 /* TextFiledMarkerView.xib */,
-			);
-			path = TextFiledMarkerView;
-			sourceTree = "<group>";
-		};
-		CB172BE721C6A2EF0068CF92 /* YoutubePlayerView */ = {
-			isa = PBXGroup;
-			children = (
-				CB172BE821C6A2EF0068CF92 /* YoutubePlayerView.swift */,
-			);
-			path = YoutubePlayerView;
-			sourceTree = "<group>";
-		};
-		CB172BE921C6A2EF0068CF92 /* MarkerProject */ = {
-			isa = PBXGroup;
-			children = (
-				CB172BEA21C6A2EF0068CF92 /* MarkerProjectView.swift */,
-				CB172BEB21C6A2EF0068CF92 /* MarkerProjectView.xib */,
-				CB172BEC21C6A2EF0068CF92 /* ProjectMarker.swift */,
-			);
-			path = MarkerProject;
 			sourceTree = "<group>";
 		};
 		CB172BED21C6A2EF0068CF92 /* Fonts */ = {
@@ -1035,6 +484,8 @@
 				CB3A8F0621C64FC1008144BD /* Sources */,
 				CB3A8F0721C64FC1008144BD /* Frameworks */,
 				CB3A8F0821C64FC1008144BD /* Resources */,
+				B65C24DC9E1DDAFDD1AAA906 /* [CP] Embed Pods Frameworks */,
+				D2A72AF8FCEEE3915B94C4D1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1084,43 +535,82 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB172C2F21C6A2EF0068CF92 /* AppImageSlide.xib in Resources */,
-				CB172C7921C6A2EF0068CF92 /* StepByStepView.xib in Resources */,
-				CB172C8421C6A2EF0068CF92 /* MarkerProjectView.xib in Resources */,
-				CB172C3221C6A2EF0068CF92 /* PaintedProjectView.xib in Resources */,
-				CB172C2D21C6A2EF0068CF92 /* CompareProjectView.xib in Resources */,
-				CB172C7421C6A2EF0068CF92 /* LevelView.xib in Resources */,
 				CB172C0C21C6A2EF0068CF92 /* Localizable.strings in Resources */,
-				CB172C6221C6A2EF0068CF92 /* LeftAlignCollectionCell.xib in Resources */,
 				CB3A8F1821C64FC1008144BD /* LaunchScreen.storyboard in Resources */,
 				CB172C8C21C6A2EF0068CF92 /* OpenSans-SemiBoldItalic.ttf in Resources */,
 				CB172C8F21C6A2EF0068CF92 /* OpenSans-Regular.ttf in Resources */,
 				CB172C9021C6A2EF0068CF92 /* OpenSans-BoldItalic.ttf in Resources */,
-				CB172C7721C6A2EF0068CF92 /* SelectAddressView.xib in Resources */,
 				CB172C8B21C6A2EF0068CF92 /* OpenSans-Bold.ttf in Resources */,
 				CB172C8E21C6A2EF0068CF92 /* LICENSE.txt in Resources */,
-				CB172C3021C6A2EF0068CF92 /* ConsultationStaffView.xib in Resources */,
 				CB172C8921C6A2EF0068CF92 /* OpenSans-ExtraBold.ttf in Resources */,
 				CB172C8821C6A2EF0068CF92 /* OpenSans-Italic.ttf in Resources */,
 				CB172C8D21C6A2EF0068CF92 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
-				CB172C8121C6A2EF0068CF92 /* TextFiledMarkerView.xib in Resources */,
 				CB3A8F1521C64FC1008144BD /* Assets.xcassets in Resources */,
 				CB3A8F1321C64FC1008144BD /* Main.storyboard in Resources */,
-				CB172C7C21C6A2EF0068CF92 /* NearCompareProjectView.xib in Resources */,
-				CB172C6621C6A2EF0068CF92 /* HistoryView.xib in Resources */,
 				CB172C8621C6A2EF0068CF92 /* OpenSans-SemiBold.ttf in Resources */,
 				CB172C8A21C6A2EF0068CF92 /* OpenSans-LightItalic.ttf in Resources */,
-				CB172C6421C6A2EF0068CF92 /* AppSearchBar.xib in Resources */,
-				CB172C7121C6A2EF0068CF92 /* LikeAndRankView.xib in Resources */,
 				CB172C0921C6A2EF0068CF92 /* PopUpNotificationContent.xib in Resources */,
 				CB172C8721C6A2EF0068CF92 /* OpenSans-Light.ttf in Resources */,
-				CB172C5D21C6A2EF0068CF92 /* ImageLabelView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		B65C24DC9E1DDAFDD1AAA906 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Oganban/Pods-Oganban-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Oganban/Pods-Oganban-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		CB70D6125B59F98858A450E9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1143,6 +633,32 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D2A72AF8FCEEE3915B94C4D1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Oganban/Pods-Oganban-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Oganban/Pods-Oganban-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1150,137 +666,59 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB172C3421C6A2EF0068CF92 /* AppButtonPopUp.swift in Sources */,
-				CB172C6C21C6A2EF0068CF92 /* NoDataView.swift in Sources */,
 				CB172C9321C6A2EF0068CF92 /* AppString.swift in Sources */,
-				CB172C4B21C6A2EF0068CF92 /* KActivityIndicatorAnimationLineScaleParty.swift in Sources */,
 				CB172B3C21C6A26F0068CF92 /* MapperData.swift in Sources */,
 				CB172C2121C6A2EF0068CF92 /* DataManager.swift in Sources */,
-				CB172C7D21C6A2EF0068CF92 /* NearCompareProjectView.swift in Sources */,
-				CB172C6021C6A2EF0068CF92 /* LeftAlignCollectionFlowlayout.swift in Sources */,
 				CB172C0E21C6A2EF0068CF92 /* UIDevice+extension.swift in Sources */,
-				CB172C3121C6A2EF0068CF92 /* ConsultationStaffView.swift in Sources */,
-				CB172C2E21C6A2EF0068CF92 /* AppImageSlide.swift in Sources */,
-				CB172C6E21C6A2EF0068CF92 /* AppTextFiled.swift in Sources */,
-				CB172C4021C6A2EF0068CF92 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
-				CB172C4921C6A2EF0068CF92 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
-				CB172C4721C6A2EF0068CF92 /* KActivityIndicatorAnimationBallTrianglePath.swift in Sources */,
-				CB172C3821C6A2EF0068CF92 /* KActivityIndicatorAnimationBallGridBeat.swift in Sources */,
-				CB172C5221C6A2EF0068CF92 /* KActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
-				CB172C7221C6A2EF0068CF92 /* LikeAndRankView.swift in Sources */,
 				CB172C9521C6A2EF0068CF92 /* ConstantStoryboard.swift in Sources */,
 				CB172C9921C6A2EF0068CF92 /* BaseViewController.swift in Sources */,
 				CB172C1621C6A2EF0068CF92 /* Bundle+extension.swift in Sources */,
-				CB172C5021C6A2EF0068CF92 /* KActivityIndicatorAnimationBallZigZag.swift in Sources */,
-				CB172C4621C6A2EF0068CF92 /* KActivityIndicatorAnimationBlank.swift in Sources */,
-				CB172C5F21C6A2EF0068CF92 /* AppRadioButton.swift in Sources */,
-				CB172C2A21C6A2EF0068CF92 /* RatingNewView.swift in Sources */,
-				CB172C8321C6A2EF0068CF92 /* MarkerProjectView.swift in Sources */,
-				CB172C5821C6A2EF0068CF92 /* KActivityIndicatorType.swift in Sources */,
 				CB172C9721C6A2EF0068CF92 /* Enum.swift in Sources */,
 				CB172C1221C6A2EF0068CF92 /* Date+extension.swift in Sources */,
 				CB172B3B21C6A26F0068CF92 /* Network.swift in Sources */,
-				CB172C4821C6A2EF0068CF92 /* KActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
 				CB172C0D21C6A2EF0068CF92 /* UIApplication+extension.swift in Sources */,
 				CB172C1721C6A2EF0068CF92 /* Double+extension.swift in Sources */,
-				CB172C5B21C6A2EF0068CF92 /* KActivityIndicatorAnimationDelegate.swift in Sources */,
-				CB172C6D21C6A2EF0068CF92 /* RTextField.swift in Sources */,
 				CB172B2F21C6A22A0068CF92 /* BaseParam.swift in Sources */,
-				CB172C7321C6A2EF0068CF92 /* AchievementView.swift in Sources */,
 				CB172C1321C6A2EF0068CF92 /* UIButton+extension.swift in Sources */,
 				CB172C9121C6A2EF0068CF92 /* AppImage.swift in Sources */,
-				CB172C4221C6A2EF0068CF92 /* KActivityIndicatorAnimationBallPulse.swift in Sources */,
 				CB172B4021C6A2A20068CF92 /* Provider.swift in Sources */,
 				CB172C2821C6A2EF0068CF92 /* AnimationHelper.swift in Sources */,
 				CB172C2721C6A2EF0068CF92 /* UserUtils.swift in Sources */,
-				CB172C6521C6A2EF0068CF92 /* AppSearchBar.swift in Sources */,
 				CB172C0B21C6A2EF0068CF92 /* PopUpNotification.swift in Sources */,
-				CB172C8221C6A2EF0068CF92 /* YoutubePlayerView.swift in Sources */,
 				CB172B3D21C6A26F0068CF92 /* NetworkRequest.swift in Sources */,
-				CB172C3721C6A2EF0068CF92 /* KActivityIndicatorAnimationOrbit.swift in Sources */,
 				CB172C1521C6A2EF0068CF92 /* UIImage+extension.swift in Sources */,
 				CB3A8F1021C64FC1008144BD /* ViewController.swift in Sources */,
-				CB172C4421C6A2EF0068CF92 /* KActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
 				CB172C2521C6A2EF0068CF92 /* PopUpHelper.swift in Sources */,
-				CB172C7621C6A2EF0068CF92 /* SelectAddressView.swift in Sources */,
-				CB172C8521C6A2EF0068CF92 /* ProjectMarker.swift in Sources */,
-				CB172C3E21C6A2EF0068CF92 /* KActivityIndicatorAnimationBallScale.swift in Sources */,
-				CB172C5121C6A2EF0068CF92 /* KActivityIndicatorAnimationBallPulseSync.swift in Sources */,
-				CB172C5921C6A2EF0068CF92 /* KActivityIndicatorShape.swift in Sources */,
-				CB172C3D21C6A2EF0068CF92 /* KActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
-				CB172C7821C6A2EF0068CF92 /* AppLabel.swift in Sources */,
 				CB172C2321C6A2EF0068CF92 /* UserDefaultHelper.swift in Sources */,
 				CB172C1421C6A2EF0068CF92 /* UIView+extension.swift in Sources */,
-				CB172C5621C6A2EF0068CF92 /* KActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */,
-				CB172C2C21C6A2EF0068CF92 /* CompareProjectView.swift in Sources */,
-				CB172C5E21C6A2EF0068CF92 /* ImageLabelView.swift in Sources */,
-				CB172C6721C6A2EF0068CF92 /* HistoryView.swift in Sources */,
-				CB172C8021C6A2EF0068CF92 /* TextFiledMarkerView.swift in Sources */,
-				CB172C7F21C6A2EF0068CF92 /* AppHeaderTitle.swift in Sources */,
-				CB172C6921C6A2EF0068CF92 /* PopUpLogout.swift in Sources */,
 				CB172C9B21C6A2EF0068CF92 /* BaseViewXib.swift in Sources */,
 				CB172C1921C6A2EF0068CF92 /* String+extension.swift in Sources */,
 				CB172C1B21C6A2EF0068CF92 /* Bool+extension.swift in Sources */,
 				CB172C2921C6A2EF0068CF92 /* Utils.swift in Sources */,
-				CB172C6F21C6A2EF0068CF92 /* AppTextfiledLogin.swift in Sources */,
-				CB172C4F21C6A2EF0068CF92 /* KActivityIndicatorAnimationCubeTransition.swift in Sources */,
 				CB172C1E21C6A2EF0068CF92 /* UISearchBar+extension.swift in Sources */,
-				CB172C4A21C6A2EF0068CF92 /* KActivityIndicatorAnimationLineScale.swift in Sources */,
 				CB172C9221C6A2EF0068CF92 /* NotificationConstant.swift in Sources */,
 				CB172C1A21C6A2EF0068CF92 /* NSMutableAttributedString+Extension.swift in Sources */,
 				CB172B3A21C6A26F0068CF92 /* BaseResponse.swift in Sources */,
 				CB172C1C21C6A2EF0068CF92 /* UICollectionView+extension.swift in Sources */,
 				CB172C9821C6A2EF0068CF92 /* AppFont.swift in Sources */,
 				CB172C9C21C6A2EF0068CF92 /* BaseTableCell.swift in Sources */,
-				CB172C4521C6A2EF0068CF92 /* KActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
-				CB172C7521C6A2EF0068CF92 /* LevelView.swift in Sources */,
-				CB172C3921C6A2EF0068CF92 /* KActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */,
 				CB172C9E21C6A2EF0068CF92 /* BaseView.swift in Sources */,
 				CB172C9421C6A2EF0068CF92 /* APIConstant.swift in Sources */,
 				CB172C2421C6A2EF0068CF92 /* LanguageHelper.swift in Sources */,
 				CB172B2E21C6A22A0068CF92 /* DeviceGenericParam.swift in Sources */,
 				CB172C2021C6A2EF0068CF92 /* FileManagerHelper.swift in Sources */,
 				CB172C9D21C6A2EF0068CF92 /* BasePopUpView.swift in Sources */,
-				CB172C7A21C6A2EF0068CF92 /* StepByStepView.swift in Sources */,
-				CB172C6A21C6A2EF0068CF92 /* BannerPopUpView.swift in Sources */,
-				CB172C3B21C6A2EF0068CF92 /* KActivityIndicatorAnimationPacman.swift in Sources */,
-				CB172C5721C6A2EF0068CF92 /* KActivityIndicatorView.swift in Sources */,
-				CB172C3C21C6A2EF0068CF92 /* KActivityIndicatorAnimationBallRotateChase.swift in Sources */,
-				CB172C6821C6A2EF0068CF92 /* BasePopUpViewCenter.swift in Sources */,
 				CB172C1821C6A2EF0068CF92 /* UIViewController+extension.swift in Sources */,
-				CB172C3F21C6A2EF0068CF92 /* KActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
-				CB172C2621C6A2EF0068CF92 /* GoogleMapHelper.swift in Sources */,
-				CB172C5521C6A2EF0068CF92 /* KActivityIndicatorAnimationBallRotate.swift in Sources */,
-				CB172C3A21C6A2EF0068CF92 /* KActivityIndicatorAnimationBallGridPulse.swift in Sources */,
 				CB172C9A21C6A2EF0068CF92 /* BaseCollectionCell.swift in Sources */,
-				CB172C6B21C6A2EF0068CF92 /* PopUpMessage.swift in Sources */,
-				CB172C7B21C6A2EF0068CF92 /* DotsView.swift in Sources */,
-				CB172C7021C6A2EF0068CF92 /* AppTextFieldDropDown.swift in Sources */,
-				CB172C4321C6A2EF0068CF92 /* KActivityIndicatorAnimationBallClipRotate.swift in Sources */,
-				CB172C6321C6A2EF0068CF92 /* LeftAlignCollectionView.swift in Sources */,
 				CB172C1D21C6A2EF0068CF92 /* UITextField+extension.swift in Sources */,
 				CB172C2221C6A2EF0068CF92 /* PopUpNotificationHelper.swift in Sources */,
 				CB172C1F21C6A2EF0068CF92 /* UITableView+extension.swift in Sources */,
-				CB172C5421C6A2EF0068CF92 /* KActivityIndicatorAnimationBallPulseRise.swift in Sources */,
 				CB3A8F0E21C64FC1008144BD /* AppDelegate.swift in Sources */,
 				CB172C1021C6A2EF0068CF92 /* Int+extension.swift in Sources */,
-				CB172C4E21C6A2EF0068CF92 /* KActivityIndicatorAnimationBallBeat.swift in Sources */,
 				CB172C1121C6A2EF0068CF92 /* UIWindow+extension.swift in Sources */,
-				CB172C3521C6A2EF0068CF92 /* AppButton.swift in Sources */,
-				CB172C4C21C6A2EF0068CF92 /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
 				CB172C9621C6A2EF0068CF92 /* AppColor.swift in Sources */,
-				CB172C3321C6A2EF0068CF92 /* PaintedProjectView.swift in Sources */,
-				CB172C4D21C6A2EF0068CF92 /* KActivityIndicatorAnimationSquareSpin.swift in Sources */,
-				CB172C2B21C6A2EF0068CF92 /* AppSwitch.swift in Sources */,
-				CB172C5321C6A2EF0068CF92 /* KActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */,
 				CB172B4321C6A2AA0068CF92 /* EndPointType.swift in Sources */,
-				CB172C7E21C6A2EF0068CF92 /* AppTextView.swift in Sources */,
-				CB172C3621C6A2EF0068CF92 /* KActivityIndicatorAnimationAudioEqualizer.swift in Sources */,
-				CB172C5A21C6A2EF0068CF92 /* FadeInOutAnimation.swift in Sources */,
-				CB172C4121C6A2EF0068CF92 /* KActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
 				CB172C0F21C6A2EF0068CF92 /* UIColor+extension.swift in Sources */,
-				CB172C6121C6A2EF0068CF92 /* LeftAlignCollectionCell.swift in Sources */,
-				CB172C5C21C6A2EF0068CF92 /* ProgressView.swift in Sources */,
 				CB172B3921C6A26F0068CF92 /* APIError.swift in Sources */,
 				CB172C0A21C6A2EF0068CF92 /* PopUpNotificationContent.swift in Sources */,
 			);
