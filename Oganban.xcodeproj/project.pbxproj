@@ -13,6 +13,12 @@
 		B355EF5221C8EB3F00379F57 /* HomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B355EF4C21C8EB3F00379F57 /* HomeProtocols.swift */; };
 		B355EF5321C8EB3F00379F57 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B355EF4D21C8EB3F00379F57 /* HomeInteractor.swift */; };
 		B355EF5421C8EB3F00379F57 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B355EF4E21C8EB3F00379F57 /* HomeViewController.xib */; };
+		B355EF5C21C8FB1400379F57 /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B355EF5621C8FB1400379F57 /* SignUpPresenter.swift */; };
+		B355EF5D21C8FB1400379F57 /* SignUpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B355EF5721C8FB1400379F57 /* SignUpRouter.swift */; };
+		B355EF5E21C8FB1400379F57 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B355EF5821C8FB1400379F57 /* SignUpViewController.swift */; };
+		B355EF5F21C8FB1400379F57 /* SignUpProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B355EF5921C8FB1400379F57 /* SignUpProtocols.swift */; };
+		B355EF6021C8FB1400379F57 /* SignUpInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B355EF5A21C8FB1400379F57 /* SignUpInteractor.swift */; };
+		B355EF6121C8FB1400379F57 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B355EF5B21C8FB1400379F57 /* SignUpViewController.xib */; };
 		CB172B2E21C6A22A0068CF92 /* DeviceGenericParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B2621C6A22A0068CF92 /* DeviceGenericParam.swift */; };
 		CB172B2F21C6A22A0068CF92 /* BaseParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B2721C6A22A0068CF92 /* BaseParam.swift */; };
 		CB172B3921C6A26F0068CF92 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B3321C6A26F0068CF92 /* APIError.swift */; };
@@ -97,6 +103,12 @@
 		B355EF4C21C8EB3F00379F57 /* HomeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocols.swift; sourceTree = "<group>"; };
 		B355EF4D21C8EB3F00379F57 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		B355EF4E21C8EB3F00379F57 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		B355EF5621C8FB1400379F57 /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
+		B355EF5721C8FB1400379F57 /* SignUpRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRouter.swift; sourceTree = "<group>"; };
+		B355EF5821C8FB1400379F57 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		B355EF5921C8FB1400379F57 /* SignUpProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpProtocols.swift; sourceTree = "<group>"; };
+		B355EF5A21C8FB1400379F57 /* SignUpInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInteractor.swift; sourceTree = "<group>"; };
+		B355EF5B21C8FB1400379F57 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		CB172B2621C6A22A0068CF92 /* DeviceGenericParam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceGenericParam.swift; sourceTree = "<group>"; };
 		CB172B2721C6A22A0068CF92 /* BaseParam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseParam.swift; sourceTree = "<group>"; };
 		CB172B3321C6A26F0068CF92 /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
@@ -207,9 +219,23 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		B355EF5521C8FB0300379F57 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				B355EF5621C8FB1400379F57 /* SignUpPresenter.swift */,
+				B355EF5721C8FB1400379F57 /* SignUpRouter.swift */,
+				B355EF5821C8FB1400379F57 /* SignUpViewController.swift */,
+				B355EF5921C8FB1400379F57 /* SignUpProtocols.swift */,
+				B355EF5A21C8FB1400379F57 /* SignUpInteractor.swift */,
+				B355EF5B21C8FB1400379F57 /* SignUpViewController.xib */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
 		CB172B1821C6A1480068CF92 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				B355EF5521C8FB0300379F57 /* SignUp */,
 				B355EF4821C8EB2E00379F57 /* Home */,
 			);
 			path = Modules;
@@ -565,6 +591,7 @@
 				CB3A8F1821C64FC1008144BD /* LaunchScreen.storyboard in Resources */,
 				CB172C8C21C6A2EF0068CF92 /* OpenSans-SemiBoldItalic.ttf in Resources */,
 				CB172C8F21C6A2EF0068CF92 /* OpenSans-Regular.ttf in Resources */,
+				B355EF6121C8FB1400379F57 /* SignUpViewController.xib in Resources */,
 				CB172C9021C6A2EF0068CF92 /* OpenSans-BoldItalic.ttf in Resources */,
 				CB172C8B21C6A2EF0068CF92 /* OpenSans-Bold.ttf in Resources */,
 				CB172C8E21C6A2EF0068CF92 /* LICENSE.txt in Resources */,
@@ -704,10 +731,13 @@
 				CB172C1621C6A2EF0068CF92 /* Bundle+extension.swift in Sources */,
 				B355EF4F21C8EB3F00379F57 /* HomePresenter.swift in Sources */,
 				CB172C9721C6A2EF0068CF92 /* Enum.swift in Sources */,
+				B355EF5F21C8FB1400379F57 /* SignUpProtocols.swift in Sources */,
 				CB172C1221C6A2EF0068CF92 /* Date+extension.swift in Sources */,
+				B355EF6021C8FB1400379F57 /* SignUpInteractor.swift in Sources */,
 				CB172B3B21C6A26F0068CF92 /* Network.swift in Sources */,
 				CB172C0D21C6A2EF0068CF92 /* UIApplication+extension.swift in Sources */,
 				CB172C1721C6A2EF0068CF92 /* Double+extension.swift in Sources */,
+				B355EF5E21C8FB1400379F57 /* SignUpViewController.swift in Sources */,
 				CB172B2F21C6A22A0068CF92 /* BaseParam.swift in Sources */,
 				CB172C1321C6A2EF0068CF92 /* UIButton+extension.swift in Sources */,
 				CB172C9121C6A2EF0068CF92 /* AppImage.swift in Sources */,
@@ -721,9 +751,11 @@
 				CB3A8F1021C64FC1008144BD /* ViewController.swift in Sources */,
 				B355EF5221C8EB3F00379F57 /* HomeProtocols.swift in Sources */,
 				CB172C2521C6A2EF0068CF92 /* PopUpHelper.swift in Sources */,
+				B355EF5D21C8FB1400379F57 /* SignUpRouter.swift in Sources */,
 				CB172C2321C6A2EF0068CF92 /* UserDefaultHelper.swift in Sources */,
 				CB172C1421C6A2EF0068CF92 /* UIView+extension.swift in Sources */,
 				CB172C9B21C6A2EF0068CF92 /* BaseViewXib.swift in Sources */,
+				B355EF5C21C8FB1400379F57 /* SignUpPresenter.swift in Sources */,
 				CB172C1921C6A2EF0068CF92 /* String+extension.swift in Sources */,
 				CB172C1B21C6A2EF0068CF92 /* Bool+extension.swift in Sources */,
 				CB172C2921C6A2EF0068CF92 /* Utils.swift in Sources */,

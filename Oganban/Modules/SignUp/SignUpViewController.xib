@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xZ2-Im-pmf">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1MD-B1-JB2">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aHR-1q-wux">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="220"/>
+                                    <color key="backgroundColor" red="0.43137254899999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="220" id="EKn-HH-Sfp"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XR9-Dm-m1s">
+                                    <rect key="frame" x="15" y="130" width="345" height="870"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1000" id="Q1S-UC-i4c"/>
+                                <constraint firstItem="XR9-Dm-m1s" firstAttribute="trailing" secondItem="aHR-1q-wux" secondAttribute="trailing" constant="-15" id="SHg-7b-uuw"/>
+                                <constraint firstItem="aHR-1q-wux" firstAttribute="top" secondItem="1MD-B1-JB2" secondAttribute="top" id="WbL-qi-erg"/>
+                                <constraint firstItem="XR9-Dm-m1s" firstAttribute="leading" secondItem="aHR-1q-wux" secondAttribute="leading" constant="15" id="XmH-Fm-m29"/>
+                                <constraint firstItem="XR9-Dm-m1s" firstAttribute="top" secondItem="aHR-1q-wux" secondAttribute="bottom" constant="-90" id="aL0-0e-LOE"/>
+                                <constraint firstAttribute="bottom" secondItem="XR9-Dm-m1s" secondAttribute="bottom" id="fOu-Ju-sIT"/>
+                                <constraint firstItem="aHR-1q-wux" firstAttribute="leading" secondItem="1MD-B1-JB2" secondAttribute="leading" id="mFl-bB-pNE"/>
+                                <constraint firstAttribute="trailing" secondItem="aHR-1q-wux" secondAttribute="trailing" id="zNK-Nr-dRx"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="1MD-B1-JB2" firstAttribute="width" secondItem="xZ2-Im-pmf" secondAttribute="width" id="2cu-sV-T1u"/>
+                        <constraint firstItem="1MD-B1-JB2" firstAttribute="top" secondItem="xZ2-Im-pmf" secondAttribute="top" id="C7d-Mq-nTk"/>
+                        <constraint firstAttribute="trailing" secondItem="1MD-B1-JB2" secondAttribute="trailing" id="NGB-0b-vYp"/>
+                        <constraint firstAttribute="bottom" secondItem="1MD-B1-JB2" secondAttribute="bottom" id="adU-hN-Evq"/>
+                        <constraint firstItem="1MD-B1-JB2" firstAttribute="leading" secondItem="xZ2-Im-pmf" secondAttribute="leading" id="gsb-Hw-91J"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="xZ2-Im-pmf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0ky-B9-sKR"/>
+                <constraint firstItem="xZ2-Im-pmf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="1eP-eK-uSI"/>
+                <constraint firstAttribute="trailing" secondItem="xZ2-Im-pmf" secondAttribute="trailing" id="Bca-5x-ec9"/>
+                <constraint firstAttribute="bottom" secondItem="xZ2-Im-pmf" secondAttribute="bottom" id="pUR-M9-QLe"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
