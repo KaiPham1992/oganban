@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B355EF4F21C8EB3F00379F57 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B355EF4921C8EB3F00379F57 /* HomePresenter.swift */; };
+		B355EF5021C8EB3F00379F57 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B355EF4A21C8EB3F00379F57 /* HomeRouter.swift */; };
+		B355EF5121C8EB3F00379F57 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B355EF4B21C8EB3F00379F57 /* HomeViewController.swift */; };
+		B355EF5221C8EB3F00379F57 /* HomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B355EF4C21C8EB3F00379F57 /* HomeProtocols.swift */; };
+		B355EF5321C8EB3F00379F57 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B355EF4D21C8EB3F00379F57 /* HomeInteractor.swift */; };
+		B355EF5421C8EB3F00379F57 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B355EF4E21C8EB3F00379F57 /* HomeViewController.xib */; };
 		CB172B2E21C6A22A0068CF92 /* DeviceGenericParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B2621C6A22A0068CF92 /* DeviceGenericParam.swift */; };
 		CB172B2F21C6A22A0068CF92 /* BaseParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B2721C6A22A0068CF92 /* BaseParam.swift */; };
 		CB172B3921C6A26F0068CF92 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B3321C6A26F0068CF92 /* APIError.swift */; };
@@ -85,6 +91,12 @@
 		44208549B4287C06B154C85E /* Pods-Oganban.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Oganban.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Oganban/Pods-Oganban.debug.xcconfig"; sourceTree = "<group>"; };
 		667005DBAD7815A5AA16289A /* Pods_Oganban.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Oganban.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D0CCCBE1CA6E502A84355A0 /* Pods-Oganban.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Oganban.release.xcconfig"; path = "Pods/Target Support Files/Pods-Oganban/Pods-Oganban.release.xcconfig"; sourceTree = "<group>"; };
+		B355EF4921C8EB3F00379F57 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		B355EF4A21C8EB3F00379F57 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		B355EF4B21C8EB3F00379F57 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B355EF4C21C8EB3F00379F57 /* HomeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocols.swift; sourceTree = "<group>"; };
+		B355EF4D21C8EB3F00379F57 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		B355EF4E21C8EB3F00379F57 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		CB172B2621C6A22A0068CF92 /* DeviceGenericParam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceGenericParam.swift; sourceTree = "<group>"; };
 		CB172B2721C6A22A0068CF92 /* BaseParam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseParam.swift; sourceTree = "<group>"; };
 		CB172B3321C6A26F0068CF92 /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
@@ -182,9 +194,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B355EF4821C8EB2E00379F57 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B355EF4921C8EB3F00379F57 /* HomePresenter.swift */,
+				B355EF4A21C8EB3F00379F57 /* HomeRouter.swift */,
+				B355EF4B21C8EB3F00379F57 /* HomeViewController.swift */,
+				B355EF4C21C8EB3F00379F57 /* HomeProtocols.swift */,
+				B355EF4D21C8EB3F00379F57 /* HomeInteractor.swift */,
+				B355EF4E21C8EB3F00379F57 /* HomeViewController.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		CB172B1821C6A1480068CF92 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				B355EF4821C8EB2E00379F57 /* Home */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -548,6 +574,7 @@
 				CB3A8F1521C64FC1008144BD /* Assets.xcassets in Resources */,
 				CB3A8F1321C64FC1008144BD /* Main.storyboard in Resources */,
 				CB172C8621C6A2EF0068CF92 /* OpenSans-SemiBold.ttf in Resources */,
+				B355EF5421C8EB3F00379F57 /* HomeViewController.xib in Resources */,
 				CB172C8A21C6A2EF0068CF92 /* OpenSans-LightItalic.ttf in Resources */,
 				CB172C0921C6A2EF0068CF92 /* PopUpNotificationContent.xib in Resources */,
 				CB172C8721C6A2EF0068CF92 /* OpenSans-Light.ttf in Resources */,
@@ -669,10 +696,13 @@
 				CB172C9321C6A2EF0068CF92 /* AppString.swift in Sources */,
 				CB172B3C21C6A26F0068CF92 /* MapperData.swift in Sources */,
 				CB172C2121C6A2EF0068CF92 /* DataManager.swift in Sources */,
+				B355EF5321C8EB3F00379F57 /* HomeInteractor.swift in Sources */,
 				CB172C0E21C6A2EF0068CF92 /* UIDevice+extension.swift in Sources */,
+				B355EF5021C8EB3F00379F57 /* HomeRouter.swift in Sources */,
 				CB172C9521C6A2EF0068CF92 /* ConstantStoryboard.swift in Sources */,
 				CB172C9921C6A2EF0068CF92 /* BaseViewController.swift in Sources */,
 				CB172C1621C6A2EF0068CF92 /* Bundle+extension.swift in Sources */,
+				B355EF4F21C8EB3F00379F57 /* HomePresenter.swift in Sources */,
 				CB172C9721C6A2EF0068CF92 /* Enum.swift in Sources */,
 				CB172C1221C6A2EF0068CF92 /* Date+extension.swift in Sources */,
 				CB172B3B21C6A26F0068CF92 /* Network.swift in Sources */,
@@ -683,11 +713,13 @@
 				CB172C9121C6A2EF0068CF92 /* AppImage.swift in Sources */,
 				CB172B4021C6A2A20068CF92 /* Provider.swift in Sources */,
 				CB172C2821C6A2EF0068CF92 /* AnimationHelper.swift in Sources */,
+				B355EF5121C8EB3F00379F57 /* HomeViewController.swift in Sources */,
 				CB172C2721C6A2EF0068CF92 /* UserUtils.swift in Sources */,
 				CB172C0B21C6A2EF0068CF92 /* PopUpNotification.swift in Sources */,
 				CB172B3D21C6A26F0068CF92 /* NetworkRequest.swift in Sources */,
 				CB172C1521C6A2EF0068CF92 /* UIImage+extension.swift in Sources */,
 				CB3A8F1021C64FC1008144BD /* ViewController.swift in Sources */,
+				B355EF5221C8EB3F00379F57 /* HomeProtocols.swift in Sources */,
 				CB172C2521C6A2EF0068CF92 /* PopUpHelper.swift in Sources */,
 				CB172C2321C6A2EF0068CF92 /* UserDefaultHelper.swift in Sources */,
 				CB172C1421C6A2EF0068CF92 /* UIView+extension.swift in Sources */,
