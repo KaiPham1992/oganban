@@ -52,6 +52,7 @@ import UIKit
         return view
     }()
     
+    var textFieldDidBeginEditing : (() -> Void)?
     var completeTapRightIcon : ((Bool) -> Void)?
     var istapRightIcon: Bool = false
     
@@ -67,6 +68,9 @@ import UIKit
     }
     
     private func setConstraint(){
+        
+        self.tfContent.delegate = self
+        
         self.addSubview(tfContent)
         self.addSubview(lbTitle)
         self.addSubview(vLine)
@@ -135,6 +139,13 @@ import UIKit
         istapRightIcon = !istapRightIcon
         if let complete = self.completeTapRightIcon {
             complete(istapRightIcon)
+        }
+    }
+}
+extension OganbanCustomTextfield: UITextFieldDelegate{
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if let complete = self.textFieldDidBeginEditing {
+            complete()
         }
     }
 }

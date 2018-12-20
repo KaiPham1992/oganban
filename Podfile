@@ -20,7 +20,6 @@ target 'Oganban' do
   pod 'Firebase/Messaging'
   pod 'ImageSlideshow'
   pod 'ImageSlideshow/SDWebImage'
-  pod 'Popover'
   # Pods for Oganban
 
 end
