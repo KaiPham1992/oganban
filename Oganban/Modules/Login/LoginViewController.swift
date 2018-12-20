@@ -12,6 +12,7 @@ import UIKit
 
 class LoginViewController: BaseViewController, LoginViewProtocol {
     
+    @IBOutlet weak var lbError: UILabel!
     @IBOutlet weak var lbTutorial: UILabel!
     @IBOutlet weak var lbForgetPassword: UILabel!
     @IBOutlet weak var btnSignUp: OganbanCustomButton!
@@ -30,11 +31,12 @@ class LoginViewController: BaseViewController, LoginViewProtocol {
         
         self.setupView()
         self.tapButtons()
+        self.textFieldDidBeginEditing()
     }
     
     func setupView() {
         hideNavigation()
-        
+        hideError()
         vContent.backgroundColor = .white
         vContent.layer.cornerRadius = 10
         vContent.layer.masksToBounds = true
@@ -78,18 +80,32 @@ class LoginViewController: BaseViewController, LoginViewProtocol {
             return false
         }
         if email.isValidEmail() == false {
-           self.showPopOver(message: "Invalid email", fromView: self.tfEmail.tfContent)
+            hideError(isHidden: false, message: "Vui lòng kiểm tra lại email hoặc mật khẩu")
             return false
         }
         if password.count < 6 {
-            self.showPopOver(message: "Password is less than 6 character", fromView: self.tfPassword.tfContent)
+            hideError(isHidden: false, message: "Vui lòng kiểm tra lại email hoặc mật khẩu")
             return false
         }
         return true
     }
+    
+    func hideError(isHidden: Bool = true, message: String? = nil){
+        lbError.isHidden = isHidden
+        lbError.text = message ?? ""
+    }
 }
 
 extension LoginViewController {
+    func textFieldDidBeginEditing() {
+        tfEmail.textFieldDidBeginEditing = {
+            self.hideError()
+        }
+        tfPassword.textFieldDidBeginEditing = {
+            self.hideError()
+        }
+    }
+    
     func tapButtons(){
         self.btnLogin.tapButton = {
             self.view.endEditing(true)

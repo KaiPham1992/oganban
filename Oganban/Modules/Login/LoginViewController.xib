@@ -8,6 +8,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="Oganban" customModuleProvider="target">
             <connections>
@@ -15,6 +20,7 @@
                 <outlet property="btnGoogle" destination="Eog-mq-Ky7" id="KE6-us-iYl"/>
                 <outlet property="btnLogin" destination="w5t-Ix-qtT" id="hCS-P3-vmA"/>
                 <outlet property="btnSignUp" destination="Hci-B4-wqI" id="fci-4e-edQ"/>
+                <outlet property="lbError" destination="Y2s-i6-toN" id="H7L-vE-W9S"/>
                 <outlet property="lbForgetPassword" destination="9Ee-6X-oDB" id="eWb-7a-K5B"/>
                 <outlet property="lbTutorial" destination="WMv-UT-mt4" id="ofx-1M-3eN"/>
                 <outlet property="scrollView" destination="N6C-0X-HeA" id="fG2-DG-E4B"/>
@@ -76,52 +82,58 @@
                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quên mật khẩu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ee-6X-oDB">
-                                            <rect key="frame" x="15" y="218" width="104" height="18"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <rect key="frame" x="15" y="231" width="103.5" height="17.5"/>
+                                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                             <color key="textColor" red="0.25490196078431371" green="0.25490196078431371" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hướng dẫn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WMv-UT-mt4">
-                                            <rect key="frame" x="254" y="218" width="76" height="18"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <rect key="frame" x="251.5" y="231" width="78.5" height="17.5"/>
+                                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                             <color key="textColor" red="0.25490196078431371" green="0.25490196078431371" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hoặc" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXo-nu-38w">
-                                            <rect key="frame" x="154.5" y="266" width="36" height="18"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <rect key="frame" x="154.5" y="278.5" width="36" height="17.5"/>
+                                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                             <color key="textColor" red="0.61960784313725492" green="0.61960784313725492" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F4s-GZ-5Jq" userLabel="vLeftLine">
-                                            <rect key="frame" x="15" y="274.5" width="131.5" height="0.5"/>
+                                            <rect key="frame" x="15" y="287" width="131.5" height="0.5"/>
                                             <color key="backgroundColor" red="0.78431372549019607" green="0.78431372549019607" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="0.5" id="1Wb-Q9-3H9"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jJM-Z1-lr6" userLabel="vRightLine">
-                                            <rect key="frame" x="198.5" y="274.5" width="131.5" height="0.5"/>
+                                            <rect key="frame" x="198.5" y="287" width="131.5" height="0.5"/>
                                             <color key="backgroundColor" red="0.78431372549019607" green="0.78431372549019607" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="0.5" id="ACw-T6-dou"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w5t-Ix-qtT" customClass="OganbanCustomButton" customModule="Oganban" customModuleProvider="target">
-                                            <rect key="frame" x="15" y="162" width="315" height="40"/>
+                                            <rect key="frame" x="15" y="175" width="315" height="40"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="E8k-eR-rNJ"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0GK-VI-Hhz" customClass="OganbanCustomButton" customModule="Oganban" customModuleProvider="target">
-                                            <rect key="frame" x="15" y="308" width="147.5" height="40"/>
+                                            <rect key="frame" x="15" y="320" width="147.5" height="40"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eog-mq-Ky7" customClass="OganbanCustomButton" customModule="Oganban" customModuleProvider="target">
-                                            <rect key="frame" x="182.5" y="308" width="147.5" height="40"/>
+                                            <rect key="frame" x="182.5" y="320" width="147.5" height="40"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vui lòng kiểm tra lại email hoặc mật khẩu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2s-i6-toN">
+                                            <rect key="frame" x="15" y="157" width="315" height="14"/>
+                                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                                            <color key="textColor" red="0.83529411764705885" green="0.12156862745098039" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
@@ -138,8 +150,10 @@
                                         <constraint firstAttribute="trailing" secondItem="n8G-qc-rfv" secondAttribute="trailing" constant="15" id="FcD-Pn-gxy"/>
                                         <constraint firstItem="C9u-Jm-pdb" firstAttribute="height" secondItem="n8G-qc-rfv" secondAttribute="height" id="IJM-TP-8i6"/>
                                         <constraint firstItem="jJM-Z1-lr6" firstAttribute="trailing" secondItem="WMv-UT-mt4" secondAttribute="trailing" id="JFM-RR-EVq"/>
+                                        <constraint firstItem="w5t-Ix-qtT" firstAttribute="top" secondItem="Y2s-i6-toN" secondAttribute="bottom" constant="4" id="JIb-6g-Kn7"/>
+                                        <constraint firstItem="Y2s-i6-toN" firstAttribute="trailing" secondItem="C9u-Jm-pdb" secondAttribute="trailing" id="MgL-uA-LPv"/>
                                         <constraint firstItem="eXo-nu-38w" firstAttribute="centerX" secondItem="MV5-oq-Vzb" secondAttribute="centerX" id="PhR-J4-t6V"/>
-                                        <constraint firstItem="w5t-Ix-qtT" firstAttribute="top" secondItem="C9u-Jm-pdb" secondAttribute="bottom" constant="17" id="SW6-4C-IC4"/>
+                                        <constraint firstItem="Y2s-i6-toN" firstAttribute="top" secondItem="C9u-Jm-pdb" secondAttribute="bottom" constant="12" id="TbR-v8-Ync"/>
                                         <constraint firstItem="0GK-VI-Hhz" firstAttribute="leading" secondItem="w5t-Ix-qtT" secondAttribute="leading" id="V5b-80-672"/>
                                         <constraint firstItem="F4s-GZ-5Jq" firstAttribute="leading" secondItem="9Ee-6X-oDB" secondAttribute="leading" id="Vuq-4r-p5z"/>
                                         <constraint firstItem="n8G-qc-rfv" firstAttribute="leading" secondItem="MV5-oq-Vzb" secondAttribute="leading" constant="15" id="WTT-hX-fXL"/>
@@ -156,10 +170,11 @@
                                         <constraint firstItem="C9u-Jm-pdb" firstAttribute="leading" secondItem="n8G-qc-rfv" secondAttribute="leading" id="qen-YD-JHZ"/>
                                         <constraint firstItem="0GK-VI-Hhz" firstAttribute="height" secondItem="w5t-Ix-qtT" secondAttribute="height" id="qwf-Oh-meG"/>
                                         <constraint firstItem="0GK-VI-Hhz" firstAttribute="width" secondItem="MV5-oq-Vzb" secondAttribute="width" multiplier="1:2" constant="-25" id="rDW-dB-kyv"/>
+                                        <constraint firstItem="Y2s-i6-toN" firstAttribute="leading" secondItem="C9u-Jm-pdb" secondAttribute="leading" id="x2w-Kh-dvQ"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hci-B4-wqI" customClass="OganbanCustomButton" customModule="Oganban" customModuleProvider="target">
-                                    <rect key="frame" x="30" y="570.5" width="315" height="40"/>
+                                    <rect key="frame" x="30" y="582.5" width="315" height="40"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                             </subviews>

@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import Popover
 
 enum StyleNavigation {
     case left
@@ -20,16 +19,6 @@ class BaseViewController: UIViewController {
     let mainBackgroundColor = UIColor.white
     let mainNavigationBarColor = AppColor.red
     
-    var popover: Popover = Popover()
-    let options = [.type(.down),
-                   .color(AppColor.red),
-                   .cornerRadius(10),
-                   .animationIn(0.3),
-                   .showBlackOverlay(false)
-        ] as [PopoverOption]
-    
-    var hidePopOver: (() -> ())?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpNavigation()
@@ -37,7 +26,6 @@ class BaseViewController: UIViewController {
     }
     
     func setUpViews(){
-        popover = Popover(options: options, showHandler: nil, dismissHandler: nil)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -210,23 +198,5 @@ extension BaseViewController {
     
     func addMainLogo() {
         setTitleImageNavigation(image: AppImage.imgLogo)
-    }
-}
-
-extension BaseViewController {
-    
-    func showPopOver(frame: CGRect = CGRect(x: 0, y: 0, width: 250, height: 40), message: String, fromView: UIView) {
-        let tvContent = UITextView(frame: frame)
-        tvContent.text = message
-        tvContent.contentInset = UIEdgeInsets(top: 12, left: 5, bottom: 2, right: 5)
-        tvContent.isUserInteractionEnabled = false
-        tvContent.backgroundColor = .clear
-        tvContent.font = AppFont.fontRegularRoboto15
-        tvContent.textColor = AppColor.white
-        popover.show(tvContent, fromView: fromView)
-        
-        popover.willDismissHandler = {
-            self.hidePopOver?()
-        }
     }
 }
