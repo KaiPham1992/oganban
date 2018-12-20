@@ -88,11 +88,13 @@ extension UIView {
         }
     }
     
-    func setBorder(borderWidth: CGFloat = 0, borderColor: UIColor = UIColor.clear, cornerRadius: CGFloat) {
+    func setBorder(borderWidth: CGFloat = 0, borderColor: UIColor = UIColor.clear, cornerRadius: CGFloat? = nil) {
         self.layer.masksToBounds        = true
         self.layer.borderWidth          = borderWidth
         self.layer.borderColor          = borderColor.cgColor
-        self.layer.cornerRadius         = cornerRadius
+        if let corner = cornerRadius {
+            self.layer.cornerRadius     = corner
+        }
     }
     
     func roundCorners(corners: UIRectCorner, radius: CGFloat) {

@@ -25,4 +25,8 @@ struct AppFont {
     static let fontRegular13 = UIFont(name: "OpenSans-Regular", size: 13)!
     
     static let fontRegular11 = UIFont(name: "OpenSans-Regular", size: 11)!
+    
+    static let fontRegularRoboto12 = UIFont.systemFont(ofSize: 12.5, weight: .regular)
+    static let fontRegularRoboto15 = UIFont.systemFont(ofSize: 15, weight: .regular)
+    static let fontBoldRoboto15 = UIFont.systemFont(ofSize: 15, weight: .bold)
 }
