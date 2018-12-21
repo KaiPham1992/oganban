@@ -25,7 +25,8 @@ class BaseViewController: UIViewController {
         setUpViews()
     }
     
-    func setUpViews(){}
+    func setUpViews(){
+    }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return UIStatusBarStyle.lightContent

@@ -31,8 +31,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
@@ -40,6 +38,21 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UIAppFonts</key>
+	<array>
+            <string>Roboto-Bold.ttf</string>
+            <string>Roboto-BoldItalic.ttf</string>
+            <string>Roboto-Heavy.ttf</string>
+            <string>Roboto-HeavyItalic.ttf</string>
+            <string>Roboto-Italic.ttf</string>
+            <string>Roboto-Light.ttf</string>
+            <string>Roboto-LightItalic.ttf</string>
+            <string>Roboto-Medium.ttf</string>
+            <string>Roboto-MediumItalic.ttf</string>
+            <string>Roboto-Regular.ttf</string>
+            <string>Roboto-SemiBold.ttf</string>
+            <string>Roboto-SemiBoldItalic.ttf</string>
 	</array>
 </dict>
 </plist>
