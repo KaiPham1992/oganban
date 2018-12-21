@@ -11,6 +11,18 @@
 import UIKit
 
 class SignUpViewController: UIViewController, SignUpViewProtocol {
+    
+    @IBOutlet weak var vLoginName       : FTextField!
+    @IBOutlet weak var vLoginEmail      : FTextField!
+    @IBOutlet weak var vLoginDisplay    : FTextField!
+    @IBOutlet weak var vBirthday        : FTextField!
+    @IBOutlet weak var vGender          : FTextField!
+    @IBOutlet weak var vHouseAddress    : FTextField!
+    @IBOutlet weak var vCompanyAddress  : FTextField!
+    @IBOutlet weak var vIntroduce       : FTextField!
+    @IBOutlet weak var vPassword        : FTextField!
+    @IBOutlet weak var vPasswordReType  : FTextField!
+    @IBOutlet weak var vCaptcha        : FTextField!
 
 	var presenter: SignUpPresenterProtocol?
 

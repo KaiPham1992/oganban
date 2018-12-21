@@ -175,6 +175,8 @@
 		DE21828521CD473100FDD9F1 /* FadeInOutAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21825D21CD473100FDD9F1 /* FadeInOutAnimation.swift */; };
 		DE21828621CD473100FDD9F1 /* KActivityIndicatorAnimationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21825E21CD473100FDD9F1 /* KActivityIndicatorAnimationDelegate.swift */; };
 		DE21828721CD473100FDD9F1 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21826021CD473100FDD9F1 /* ProgressView.swift */; };
+		DE21829121CD4E7F00FDD9F1 /* AppTextFiled.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21828F21CD4E7F00FDD9F1 /* AppTextFiled.swift */; };
+		DE21829421CD4EB600FDD9F1 /* FTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21829321CD4EB600FDD9F1 /* FTextField.swift */; };
 		ECFA8430691B731FD6198935 /* Pods_Oganban.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667005DBAD7815A5AA16289A /* Pods_Oganban.framework */; };
 /* End PBXBuildFile section */
 
@@ -224,6 +226,8 @@
 		B355EF5921C8FB1400379F57 /* SignUpProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpProtocols.swift; sourceTree = "<group>"; };
 		B355EF5A21C8FB1400379F57 /* SignUpInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInteractor.swift; sourceTree = "<group>"; };
 		B355EF5B21C8FB1400379F57 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		B355EF6321C8FBE300379F57 /* FTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTextField.swift; sourceTree = "<group>"; };
+		B355EF6421C8FBE300379F57 /* AppTextFiled.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTextFiled.swift; sourceTree = "<group>"; };
 		CB172B2721C6A22A0068CF92 /* BaseParam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseParam.swift; sourceTree = "<group>"; };
 		CB172B3321C6A26F0068CF92 /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		CB172B3521C6A26F0068CF92 /* BaseResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
@@ -355,6 +359,8 @@
 		DE21825D21CD473100FDD9F1 /* FadeInOutAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeInOutAnimation.swift; sourceTree = "<group>"; };
 		DE21825E21CD473100FDD9F1 /* KActivityIndicatorAnimationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationDelegate.swift; sourceTree = "<group>"; };
 		DE21826021CD473100FDD9F1 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		DE21828F21CD4E7F00FDD9F1 /* AppTextFiled.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTextFiled.swift; sourceTree = "<group>"; };
+		DE21829321CD4EB600FDD9F1 /* FTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -406,6 +412,7 @@
 		84A92BE921CA50F000148191 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				DE21828E21CD4E7F00FDD9F1 /* AppTextFiled */,
 				84A92BEC21CA518200148191 /* OganbanCustomButton.swift */,
 				84A92BEB21CA518100148191 /* OganbanCustomTextfield.swift */,
 			);
@@ -696,6 +703,7 @@
 				CB3A8F0B21C64FC1008144BD /* Products */,
 				E2AA633E107A6A39005CFD05 /* Pods */,
 				2D4ADFC1DB1592F9F3095C4D /* Frameworks */,
+				DE21828821CD4CE800FDD9F1 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -860,6 +868,24 @@
 				DE21826021CD473100FDD9F1 /* ProgressView.swift */,
 			);
 			path = ProgressView;
+			sourceTree = "<group>";
+		};
+		DE21828821CD4CE800FDD9F1 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				B355EF6321C8FBE300379F57 /* FTextField.swift */,
+				B355EF6421C8FBE300379F57 /* AppTextFiled.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		DE21828E21CD4E7F00FDD9F1 /* AppTextFiled */ = {
+			isa = PBXGroup;
+			children = (
+				DE21829321CD4EB600FDD9F1 /* FTextField.swift */,
+				DE21828F21CD4E7F00FDD9F1 /* AppTextFiled.swift */,
+			);
+			path = AppTextFiled;
 			sourceTree = "<group>";
 		};
 		E2AA633E107A6A39005CFD05 /* Pods */ = {
@@ -1136,6 +1162,7 @@
 				CB172B3D21C6A26F0068CF92 /* NetworkRequest.swift in Sources */,
 				84A92BF821CA555900148191 /* LoginViewController.swift in Sources */,
 				DE21826821CD473100FDD9F1 /* KActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
+				DE21829121CD4E7F00FDD9F1 /* AppTextFiled.swift in Sources */,
 				DE21827A21CD473100FDD9F1 /* KActivityIndicatorAnimationCubeTransition.swift in Sources */,
 				DE21822C21CD44B700FDD9F1 /* FaceBookEntity.swift in Sources */,
 				DE21827B21CD473100FDD9F1 /* KActivityIndicatorAnimationBallZigZag.swift in Sources */,
@@ -1164,6 +1191,7 @@
 				CB172C1E21C6A2EF0068CF92 /* UISearchBar+extension.swift in Sources */,
 				84A92BFA21CA555900148191 /* LoginInteractor.swift in Sources */,
 				CB172C9221C6A2EF0068CF92 /* NotificationConstant.swift in Sources */,
+				DE21829421CD4EB600FDD9F1 /* FTextField.swift in Sources */,
 				84421BF121CBEECF00F468F5 /* MoreInteractor.swift in Sources */,
 				DE21822121CD419B00FDD9F1 /* PhoneEntity.swift in Sources */,
 				84421BED21CBEECF00F468F5 /* MorePresenter.swift in Sources */,
