@@ -19,6 +19,8 @@
 		B355EF5F21C8FB1400379F57 /* SignUpProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B355EF5921C8FB1400379F57 /* SignUpProtocols.swift */; };
 		B355EF6021C8FB1400379F57 /* SignUpInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B355EF5A21C8FB1400379F57 /* SignUpInteractor.swift */; };
 		B355EF6121C8FB1400379F57 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B355EF5B21C8FB1400379F57 /* SignUpViewController.xib */; };
+		B355EF6721C8FBE300379F57 /* FTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B355EF6321C8FBE300379F57 /* FTextField.swift */; };
+		B355EF6821C8FBE300379F57 /* AppTextFiled.swift in Sources */ = {isa = PBXBuildFile; fileRef = B355EF6421C8FBE300379F57 /* AppTextFiled.swift */; };
 		CB172B2E21C6A22A0068CF92 /* DeviceGenericParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B2621C6A22A0068CF92 /* DeviceGenericParam.swift */; };
 		CB172B2F21C6A22A0068CF92 /* BaseParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B2721C6A22A0068CF92 /* BaseParam.swift */; };
 		CB172B3921C6A26F0068CF92 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B3321C6A26F0068CF92 /* APIError.swift */; };
@@ -109,6 +111,8 @@
 		B355EF5921C8FB1400379F57 /* SignUpProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpProtocols.swift; sourceTree = "<group>"; };
 		B355EF5A21C8FB1400379F57 /* SignUpInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInteractor.swift; sourceTree = "<group>"; };
 		B355EF5B21C8FB1400379F57 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		B355EF6321C8FBE300379F57 /* FTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTextField.swift; sourceTree = "<group>"; };
+		B355EF6421C8FBE300379F57 /* AppTextFiled.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTextFiled.swift; sourceTree = "<group>"; };
 		CB172B2621C6A22A0068CF92 /* DeviceGenericParam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceGenericParam.swift; sourceTree = "<group>"; };
 		CB172B2721C6A22A0068CF92 /* BaseParam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseParam.swift; sourceTree = "<group>"; };
 		CB172B3321C6A26F0068CF92 /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
@@ -230,6 +234,15 @@
 				B355EF5B21C8FB1400379F57 /* SignUpViewController.xib */,
 			);
 			path = SignUp;
+			sourceTree = "<group>";
+		};
+		B355EF6221C8FBE300379F57 /* AppTextFiled */ = {
+			isa = PBXGroup;
+			children = (
+				B355EF6321C8FBE300379F57 /* FTextField.swift */,
+				B355EF6421C8FBE300379F57 /* AppTextFiled.swift */,
+			);
+			path = AppTextFiled;
 			sourceTree = "<group>";
 		};
 		CB172B1821C6A1480068CF92 /* Modules */ = {
@@ -431,6 +444,7 @@
 		CB172B6E21C6A2EE0068CF92 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				B355EF6221C8FBE300379F57 /* AppTextFiled */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -752,6 +766,7 @@
 				B355EF5221C8EB3F00379F57 /* HomeProtocols.swift in Sources */,
 				CB172C2521C6A2EF0068CF92 /* PopUpHelper.swift in Sources */,
 				B355EF5D21C8FB1400379F57 /* SignUpRouter.swift in Sources */,
+				B355EF6721C8FBE300379F57 /* FTextField.swift in Sources */,
 				CB172C2321C6A2EF0068CF92 /* UserDefaultHelper.swift in Sources */,
 				CB172C1421C6A2EF0068CF92 /* UIView+extension.swift in Sources */,
 				CB172C9B21C6A2EF0068CF92 /* BaseViewXib.swift in Sources */,
@@ -780,6 +795,7 @@
 				CB3A8F0E21C64FC1008144BD /* AppDelegate.swift in Sources */,
 				CB172C1021C6A2EF0068CF92 /* Int+extension.swift in Sources */,
 				CB172C1121C6A2EF0068CF92 /* UIWindow+extension.swift in Sources */,
+				B355EF6821C8FBE300379F57 /* AppTextFiled.swift in Sources */,
 				CB172C9621C6A2EF0068CF92 /* AppColor.swift in Sources */,
 				CB172B4321C6A2AA0068CF92 /* EndPointType.swift in Sources */,
 				CB172C0F21C6A2EF0068CF92 /* UIColor+extension.swift in Sources */,
