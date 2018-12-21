@@ -11,20 +11,36 @@
 import UIKit
 
 class LoginRouter: LoginWireframeProtocol {
-
+    
     weak var viewController: UIViewController?
-
+    
     static func createModule() -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = LoginViewController(nibName: nil, bundle: nil)
         let interactor = LoginInteractor()
         let router = LoginRouter()
+        
         let presenter = LoginPresenter(interface: view, interactor: interactor, router: router)
-
+        
         view.presenter = presenter
         interactor.presenter = presenter
         router.viewController = view
-
+        
         return view
+    }
+    
+    func gotoSignUp() {
+        let signUpVC = SignUpRouter.createModule()
+        viewController?.navigationController?.pushViewController(signUpVC, animated: true)
+    }
+    
+    func gotoHome() {
+        let HomeVC = HomeRouter.createModule()
+        viewController?.navigationController?.pushViewController(HomeVC, animated: true)
+    }
+    
+    func gotoForgotPassword() {
+//        let forgotPasswordVC = ForgotPasswordRouter.createModule()
+//        viewController?.navigationController?.pushViewController(forgotPasswordVC, animated: true)
     }
 }

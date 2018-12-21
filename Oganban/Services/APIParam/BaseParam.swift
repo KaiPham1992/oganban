@@ -32,7 +32,7 @@ class BaseParam: NSObject, Mappable {
             params[Params.appName] =  appId
         }
         
-        if let fcmToken = UserDefaultHelper.shared.get(key: UserDefaultHelperKey.fcmToken) as? String {
+        if let fcmToken = UserDefaultHelper.shared.fcmToken {
              params[Params.firebaseToken]  = fcmToken
         }
         

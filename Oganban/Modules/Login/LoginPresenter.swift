@@ -9,17 +9,61 @@
 //
 
 import UIKit
+import GoogleSignIn
 
-class LoginPresenter: LoginPresenterProtocol, LoginInteractorOutputProtocol {
-
+class LoginPresenter: LoginPresenterProtocol {
     weak private var view: LoginViewProtocol?
     var interactor: LoginInteractorInputProtocol?
     private let router: LoginWireframeProtocol
-
+    
     init(interface: LoginViewProtocol, interactor: LoginInteractorInputProtocol?, router: LoginWireframeProtocol) {
         self.view = interface
         self.interactor = interactor
         self.router = router
     }
+    
+    func gotoSignUp() {
+        router.gotoSignUp()
+    }
+    
+    func gotoHome() {
+        router.gotoHome()
+    }
+    
+    func gotoForgotPassword() {
+        router.gotoForgotPassword()
+    }
+    
+    func login(email: String, password: String) {
+        interactor?.login(email: email, password: password)
+    }
+    
+    func loginGmail(user: GIDGoogleUser, phone: String) {
+        interactor?.loginGmail(user: user, phone: phone)
+    }
+    
+    func loginFacebook(fbEntity: FacebookEntity, phone: String) {
+        interactor?.loginFacebook(fbEntity: fbEntity, phone: phone)
+    }
+    
+    func updateProfile(codeVerify: String, phoneCode: String, phoneNumber: String) {
+        interactor?.updateProfile(codeVerify: codeVerify, phoneCode: phoneCode, phoneNumber: phoneNumber)
+    }
+}
 
+extension LoginPresenter: LoginInteractorOutputProtocol {
+    func didLogin(user: UserEntity?) {
+        view?.didLogin(user: user)
+    }
+    
+    func didLogin(error: APIError?) {
+        view?.didError(error: error)
+    }
+    
+    func didUpdateProfile(error: APIError?) {
+        view?.didUpdateProfile(error: error)
+    }
+    func didUpdateProfile(response: BaseResponse?) {
+        view?.didUpdateProfile(response: response)
+    }
 }

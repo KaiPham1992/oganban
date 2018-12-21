@@ -9,8 +9,19 @@
 //
 
 import UIKit
+import CryptoSwift
+import GoogleSignIn
+import FBSDKLoginKit
+import FBSDKCoreKit
+import SystemConfiguration
 
-class LoginViewController: BaseViewController, LoginViewProtocol {
+enum LoginType {
+    case gmail
+    case facebook
+    case normal
+}
+
+class LoginViewController: BaseViewController {
     
     @IBOutlet weak var lbError: UILabel!
     @IBOutlet weak var lbTutorial: UILabel!
@@ -26,15 +37,25 @@ class LoginViewController: BaseViewController, LoginViewProtocol {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var vContent: UIView!
     
+    var loginType = LoginType.normal
+    var fbAccountKit: FBAccountKit!
+    var paramLogin: Any?
+    
+    var verifyCode: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setupView()
         self.tapButtons()
         self.textFieldDidBeginEditing()
+        
+        fbAccountKit = FBAccountKit(_controller: self)
     }
     
     func setupView() {
+        GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().uiDelegate = self
         hideNavigation()
         hideError()
         vContent.backgroundColor = .white
@@ -118,12 +139,13 @@ extension LoginViewController {
         
         self.btnGoogle.tapButton = {
             self.view.endEditing(true)
-            print("TAP GOOGLE")
+            GIDSignIn.sharedInstance().signOut()
+            GIDSignIn.sharedInstance().signIn()
         }
         
         self.btnFacebook.tapButton = {
             self.view.endEditing(true)
-            print("TAP FACEBOOK")
+            self.FBlogin()
         }
         
         self.btnSignUp.tapButton = {
@@ -153,4 +175,25 @@ extension LoginViewController {
             self.tfPassword.showRightIcon(isHidden: false, icon: AppImage.imgHideEye)
         }
     }
+}
+
+
+extension LoginViewController: LoginViewProtocol {
+    func didLogin(user: UserEntity?) {
+        
+    }
+    
+    func didError(error: APIError?) {
+        
+    }
+    
+    func didUpdateProfile(response: BaseResponse?) {
+        
+    }
+    
+    func didUpdateProfile(error: APIError?) {
+        
+    }
+    
+    
 }

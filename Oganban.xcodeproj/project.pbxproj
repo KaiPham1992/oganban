@@ -49,7 +49,6 @@
 		B355EF5F21C8FB1400379F57 /* SignUpProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B355EF5921C8FB1400379F57 /* SignUpProtocols.swift */; };
 		B355EF6021C8FB1400379F57 /* SignUpInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B355EF5A21C8FB1400379F57 /* SignUpInteractor.swift */; };
 		B355EF6121C8FB1400379F57 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B355EF5B21C8FB1400379F57 /* SignUpViewController.xib */; };
-		CB172B2E21C6A22A0068CF92 /* DeviceGenericParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B2621C6A22A0068CF92 /* DeviceGenericParam.swift */; };
 		CB172B2F21C6A22A0068CF92 /* BaseParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B2721C6A22A0068CF92 /* BaseParam.swift */; };
 		CB172B3921C6A26F0068CF92 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B3321C6A26F0068CF92 /* APIError.swift */; };
 		CB172B3A21C6A26F0068CF92 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B3521C6A26F0068CF92 /* BaseResponse.swift */; };
@@ -120,6 +119,62 @@
 		CB3A8F1321C64FC1008144BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB3A8F1121C64FC1008144BD /* Main.storyboard */; };
 		CB3A8F1521C64FC1008144BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB3A8F1421C64FC1008144BD /* Assets.xcassets */; };
 		CB3A8F1821C64FC1008144BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB3A8F1621C64FC1008144BD /* LaunchScreen.storyboard */; };
+		DE2181FA21CD3AD300FDD9F1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE2181F921CD3AD300FDD9F1 /* GoogleService-Info.plist */; };
+		DE2181FC21CD3C1400FDD9F1 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2181FB21CD3C1400FDD9F1 /* AppRouter.swift */; };
+		DE2181FE21CD3DC300FDD9F1 /* AppDelegate+Push.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2181FD21CD3DC300FDD9F1 /* AppDelegate+Push.swift */; };
+		DE21820021CD3DE800FDD9F1 /* AppDelegate+GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2181FF21CD3DE800FDD9F1 /* AppDelegate+GoogleSignIn.swift */; };
+		DE21821221CD403100FDD9F1 /* AccountKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE21821021CD403100FDD9F1 /* AccountKit.framework */; };
+		DE21821321CD403100FDD9F1 /* AccountKitStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE21821121CD403100FDD9F1 /* AccountKitStrings.bundle */; };
+		DE21821B21CD40FA00FDD9F1 /* FBAccountKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21821A21CD40FA00FDD9F1 /* FBAccountKit.swift */; };
+		DE21822121CD419B00FDD9F1 /* PhoneEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21822021CD419B00FDD9F1 /* PhoneEntity.swift */; };
+		DE21822321CD432300FDD9F1 /* Login+VerifyOTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21822221CD432300FDD9F1 /* Login+VerifyOTP.swift */; };
+		DE21822621CD43E200FDD9F1 /* Login+Facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21822521CD43E200FDD9F1 /* Login+Facebook.swift */; };
+		DE21822821CD440B00FDD9F1 /* Login+GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21822721CD440B00FDD9F1 /* Login+GoogleSignIn.swift */; };
+		DE21822A21CD449800FDD9F1 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21822921CD449800FDD9F1 /* UserEntity.swift */; };
+		DE21822C21CD44B700FDD9F1 /* FaceBookEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21822B21CD44B700FDD9F1 /* FaceBookEntity.swift */; };
+		DE21822E21CD44D600FDD9F1 /* BaseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21822D21CD44D600FDD9F1 /* BaseEntity.swift */; };
+		DE21823021CD458E00FDD9F1 /* UserAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21822F21CD458E00FDD9F1 /* UserAPIService.swift */; };
+		DE21823321CD45F300FDD9F1 /* LoginSocialParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21823221CD45F300FDD9F1 /* LoginSocialParam.swift */; };
+		DE21823521CD465700FDD9F1 /* UserEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21823421CD465700FDD9F1 /* UserEndPoint.swift */; };
+		DE21826121CD473100FDD9F1 /* KActivityIndicatorAnimationAudioEqualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21823821CD473100FDD9F1 /* KActivityIndicatorAnimationAudioEqualizer.swift */; };
+		DE21826221CD473100FDD9F1 /* KActivityIndicatorAnimationOrbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21823921CD473100FDD9F1 /* KActivityIndicatorAnimationOrbit.swift */; };
+		DE21826321CD473100FDD9F1 /* KActivityIndicatorAnimationBallGridBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21823A21CD473100FDD9F1 /* KActivityIndicatorAnimationBallGridBeat.swift */; };
+		DE21826421CD473100FDD9F1 /* KActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21823B21CD473100FDD9F1 /* KActivityIndicatorAnimationTriangleSkewSpin.swift */; };
+		DE21826521CD473100FDD9F1 /* KActivityIndicatorAnimationBallGridPulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21823C21CD473100FDD9F1 /* KActivityIndicatorAnimationBallGridPulse.swift */; };
+		DE21826621CD473100FDD9F1 /* KActivityIndicatorAnimationPacman.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21823D21CD473100FDD9F1 /* KActivityIndicatorAnimationPacman.swift */; };
+		DE21826721CD473100FDD9F1 /* KActivityIndicatorAnimationBallRotateChase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21823E21CD473100FDD9F1 /* KActivityIndicatorAnimationBallRotateChase.swift */; };
+		DE21826821CD473100FDD9F1 /* KActivityIndicatorAnimationSemiCircleSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21823F21CD473100FDD9F1 /* KActivityIndicatorAnimationSemiCircleSpin.swift */; };
+		DE21826921CD473100FDD9F1 /* KActivityIndicatorAnimationBallScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21824021CD473100FDD9F1 /* KActivityIndicatorAnimationBallScale.swift */; };
+		DE21826A21CD473100FDD9F1 /* KActivityIndicatorAnimationBallScaleRipple.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21824121CD473100FDD9F1 /* KActivityIndicatorAnimationBallScaleRipple.swift */; };
+		DE21826B21CD473100FDD9F1 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21824221CD473100FDD9F1 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift */; };
+		DE21826C21CD473100FDD9F1 /* KActivityIndicatorAnimationLineScalePulseOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21824321CD473100FDD9F1 /* KActivityIndicatorAnimationLineScalePulseOut.swift */; };
+		DE21826D21CD473100FDD9F1 /* KActivityIndicatorAnimationBallPulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21824421CD473100FDD9F1 /* KActivityIndicatorAnimationBallPulse.swift */; };
+		DE21826E21CD473100FDD9F1 /* KActivityIndicatorAnimationBallClipRotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21824521CD473100FDD9F1 /* KActivityIndicatorAnimationBallClipRotate.swift */; };
+		DE21826F21CD473100FDD9F1 /* KActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21824621CD473100FDD9F1 /* KActivityIndicatorAnimationBallClipRotateMultiple.swift */; };
+		DE21827021CD473100FDD9F1 /* KActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21824721CD473100FDD9F1 /* KActivityIndicatorAnimationBallZigZagDeflect.swift */; };
+		DE21827121CD473100FDD9F1 /* KActivityIndicatorAnimationBlank.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21824821CD473100FDD9F1 /* KActivityIndicatorAnimationBlank.swift */; };
+		DE21827221CD473100FDD9F1 /* KActivityIndicatorAnimationBallTrianglePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21824921CD473100FDD9F1 /* KActivityIndicatorAnimationBallTrianglePath.swift */; };
+		DE21827321CD473100FDD9F1 /* KActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21824A21CD473100FDD9F1 /* KActivityIndicatorAnimationBallScaleRippleMultiple.swift */; };
+		DE21827421CD473100FDD9F1 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21824B21CD473100FDD9F1 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift */; };
+		DE21827521CD473100FDD9F1 /* KActivityIndicatorAnimationLineScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21824C21CD473100FDD9F1 /* KActivityIndicatorAnimationLineScale.swift */; };
+		DE21827621CD473100FDD9F1 /* KActivityIndicatorAnimationLineScaleParty.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21824D21CD473100FDD9F1 /* KActivityIndicatorAnimationLineScaleParty.swift */; };
+		DE21827721CD473100FDD9F1 /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21824E21CD473100FDD9F1 /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift */; };
+		DE21827821CD473100FDD9F1 /* KActivityIndicatorAnimationSquareSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21824F21CD473100FDD9F1 /* KActivityIndicatorAnimationSquareSpin.swift */; };
+		DE21827921CD473100FDD9F1 /* KActivityIndicatorAnimationBallBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21825021CD473100FDD9F1 /* KActivityIndicatorAnimationBallBeat.swift */; };
+		DE21827A21CD473100FDD9F1 /* KActivityIndicatorAnimationCubeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21825121CD473100FDD9F1 /* KActivityIndicatorAnimationCubeTransition.swift */; };
+		DE21827B21CD473100FDD9F1 /* KActivityIndicatorAnimationBallZigZag.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21825221CD473100FDD9F1 /* KActivityIndicatorAnimationBallZigZag.swift */; };
+		DE21827C21CD473100FDD9F1 /* KActivityIndicatorAnimationBallPulseSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21825321CD473100FDD9F1 /* KActivityIndicatorAnimationBallPulseSync.swift */; };
+		DE21827D21CD473100FDD9F1 /* KActivityIndicatorAnimationBallScaleMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21825421CD473100FDD9F1 /* KActivityIndicatorAnimationBallScaleMultiple.swift */; };
+		DE21827E21CD473100FDD9F1 /* KActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21825521CD473100FDD9F1 /* KActivityIndicatorAnimationBallClipRotatePulse.swift */; };
+		DE21827F21CD473100FDD9F1 /* KActivityIndicatorAnimationBallPulseRise.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21825621CD473100FDD9F1 /* KActivityIndicatorAnimationBallPulseRise.swift */; };
+		DE21828021CD473100FDD9F1 /* KActivityIndicatorAnimationBallRotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21825721CD473100FDD9F1 /* KActivityIndicatorAnimationBallRotate.swift */; };
+		DE21828121CD473100FDD9F1 /* KActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21825821CD473100FDD9F1 /* KActivityIndicatorAnimationCircleStrokeSpin.swift */; };
+		DE21828221CD473100FDD9F1 /* KActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21825A21CD473100FDD9F1 /* KActivityIndicatorView.swift */; };
+		DE21828321CD473100FDD9F1 /* KActivityIndicatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21825B21CD473100FDD9F1 /* KActivityIndicatorType.swift */; };
+		DE21828421CD473100FDD9F1 /* KActivityIndicatorShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21825C21CD473100FDD9F1 /* KActivityIndicatorShape.swift */; };
+		DE21828521CD473100FDD9F1 /* FadeInOutAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21825D21CD473100FDD9F1 /* FadeInOutAnimation.swift */; };
+		DE21828621CD473100FDD9F1 /* KActivityIndicatorAnimationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21825E21CD473100FDD9F1 /* KActivityIndicatorAnimationDelegate.swift */; };
+		DE21828721CD473100FDD9F1 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21826021CD473100FDD9F1 /* ProgressView.swift */; };
 		ECFA8430691B731FD6198935 /* Pods_Oganban.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667005DBAD7815A5AA16289A /* Pods_Oganban.framework */; };
 /* End PBXBuildFile section */
 
@@ -169,7 +224,6 @@
 		B355EF5921C8FB1400379F57 /* SignUpProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpProtocols.swift; sourceTree = "<group>"; };
 		B355EF5A21C8FB1400379F57 /* SignUpInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInteractor.swift; sourceTree = "<group>"; };
 		B355EF5B21C8FB1400379F57 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
-		CB172B2621C6A22A0068CF92 /* DeviceGenericParam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceGenericParam.swift; sourceTree = "<group>"; };
 		CB172B2721C6A22A0068CF92 /* BaseParam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseParam.swift; sourceTree = "<group>"; };
 		CB172B3321C6A26F0068CF92 /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		CB172B3521C6A26F0068CF92 /* BaseResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
@@ -244,6 +298,63 @@
 		CB3A8F1421C64FC1008144BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB3A8F1721C64FC1008144BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB3A8F1921C64FC1008144BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE2181F921CD3AD300FDD9F1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DE2181FB21CD3C1400FDD9F1 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		DE2181FD21CD3DC300FDD9F1 /* AppDelegate+Push.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Push.swift"; sourceTree = "<group>"; };
+		DE2181FF21CD3DE800FDD9F1 /* AppDelegate+GoogleSignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+GoogleSignIn.swift"; sourceTree = "<group>"; };
+		DE21820F21CD401500FDD9F1 /* Oganban-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Oganban-Bridging-Header.h"; sourceTree = "<group>"; };
+		DE21821021CD403100FDD9F1 /* AccountKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AccountKit.framework; sourceTree = "<group>"; };
+		DE21821121CD403100FDD9F1 /* AccountKitStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AccountKitStrings.bundle; sourceTree = "<group>"; };
+		DE21821A21CD40FA00FDD9F1 /* FBAccountKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBAccountKit.swift; sourceTree = "<group>"; };
+		DE21822021CD419B00FDD9F1 /* PhoneEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneEntity.swift; sourceTree = "<group>"; };
+		DE21822221CD432300FDD9F1 /* Login+VerifyOTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Login+VerifyOTP.swift"; sourceTree = "<group>"; };
+		DE21822521CD43E200FDD9F1 /* Login+Facebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Login+Facebook.swift"; sourceTree = "<group>"; };
+		DE21822721CD440B00FDD9F1 /* Login+GoogleSignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Login+GoogleSignIn.swift"; sourceTree = "<group>"; };
+		DE21822921CD449800FDD9F1 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
+		DE21822B21CD44B700FDD9F1 /* FaceBookEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceBookEntity.swift; sourceTree = "<group>"; };
+		DE21822D21CD44D600FDD9F1 /* BaseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseEntity.swift; sourceTree = "<group>"; };
+		DE21822F21CD458E00FDD9F1 /* UserAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAPIService.swift; sourceTree = "<group>"; };
+		DE21823221CD45F300FDD9F1 /* LoginSocialParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSocialParam.swift; sourceTree = "<group>"; };
+		DE21823421CD465700FDD9F1 /* UserEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEndPoint.swift; sourceTree = "<group>"; };
+		DE21823821CD473100FDD9F1 /* KActivityIndicatorAnimationAudioEqualizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationAudioEqualizer.swift; sourceTree = "<group>"; };
+		DE21823921CD473100FDD9F1 /* KActivityIndicatorAnimationOrbit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationOrbit.swift; sourceTree = "<group>"; };
+		DE21823A21CD473100FDD9F1 /* KActivityIndicatorAnimationBallGridBeat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallGridBeat.swift; sourceTree = "<group>"; };
+		DE21823B21CD473100FDD9F1 /* KActivityIndicatorAnimationTriangleSkewSpin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationTriangleSkewSpin.swift; sourceTree = "<group>"; };
+		DE21823C21CD473100FDD9F1 /* KActivityIndicatorAnimationBallGridPulse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallGridPulse.swift; sourceTree = "<group>"; };
+		DE21823D21CD473100FDD9F1 /* KActivityIndicatorAnimationPacman.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationPacman.swift; sourceTree = "<group>"; };
+		DE21823E21CD473100FDD9F1 /* KActivityIndicatorAnimationBallRotateChase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallRotateChase.swift; sourceTree = "<group>"; };
+		DE21823F21CD473100FDD9F1 /* KActivityIndicatorAnimationSemiCircleSpin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationSemiCircleSpin.swift; sourceTree = "<group>"; };
+		DE21824021CD473100FDD9F1 /* KActivityIndicatorAnimationBallScale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallScale.swift; sourceTree = "<group>"; };
+		DE21824121CD473100FDD9F1 /* KActivityIndicatorAnimationBallScaleRipple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallScaleRipple.swift; sourceTree = "<group>"; };
+		DE21824221CD473100FDD9F1 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationLineSpinFadeLoader.swift; sourceTree = "<group>"; };
+		DE21824321CD473100FDD9F1 /* KActivityIndicatorAnimationLineScalePulseOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationLineScalePulseOut.swift; sourceTree = "<group>"; };
+		DE21824421CD473100FDD9F1 /* KActivityIndicatorAnimationBallPulse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallPulse.swift; sourceTree = "<group>"; };
+		DE21824521CD473100FDD9F1 /* KActivityIndicatorAnimationBallClipRotate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallClipRotate.swift; sourceTree = "<group>"; };
+		DE21824621CD473100FDD9F1 /* KActivityIndicatorAnimationBallClipRotateMultiple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallClipRotateMultiple.swift; sourceTree = "<group>"; };
+		DE21824721CD473100FDD9F1 /* KActivityIndicatorAnimationBallZigZagDeflect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallZigZagDeflect.swift; sourceTree = "<group>"; };
+		DE21824821CD473100FDD9F1 /* KActivityIndicatorAnimationBlank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBlank.swift; sourceTree = "<group>"; };
+		DE21824921CD473100FDD9F1 /* KActivityIndicatorAnimationBallTrianglePath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallTrianglePath.swift; sourceTree = "<group>"; };
+		DE21824A21CD473100FDD9F1 /* KActivityIndicatorAnimationBallScaleRippleMultiple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallScaleRippleMultiple.swift; sourceTree = "<group>"; };
+		DE21824B21CD473100FDD9F1 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallSpinFadeLoader.swift; sourceTree = "<group>"; };
+		DE21824C21CD473100FDD9F1 /* KActivityIndicatorAnimationLineScale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationLineScale.swift; sourceTree = "<group>"; };
+		DE21824D21CD473100FDD9F1 /* KActivityIndicatorAnimationLineScaleParty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationLineScaleParty.swift; sourceTree = "<group>"; };
+		DE21824E21CD473100FDD9F1 /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationLineScalePulseOutRapid.swift; sourceTree = "<group>"; };
+		DE21824F21CD473100FDD9F1 /* KActivityIndicatorAnimationSquareSpin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationSquareSpin.swift; sourceTree = "<group>"; };
+		DE21825021CD473100FDD9F1 /* KActivityIndicatorAnimationBallBeat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallBeat.swift; sourceTree = "<group>"; };
+		DE21825121CD473100FDD9F1 /* KActivityIndicatorAnimationCubeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationCubeTransition.swift; sourceTree = "<group>"; };
+		DE21825221CD473100FDD9F1 /* KActivityIndicatorAnimationBallZigZag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallZigZag.swift; sourceTree = "<group>"; };
+		DE21825321CD473100FDD9F1 /* KActivityIndicatorAnimationBallPulseSync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallPulseSync.swift; sourceTree = "<group>"; };
+		DE21825421CD473100FDD9F1 /* KActivityIndicatorAnimationBallScaleMultiple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallScaleMultiple.swift; sourceTree = "<group>"; };
+		DE21825521CD473100FDD9F1 /* KActivityIndicatorAnimationBallClipRotatePulse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallClipRotatePulse.swift; sourceTree = "<group>"; };
+		DE21825621CD473100FDD9F1 /* KActivityIndicatorAnimationBallPulseRise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallPulseRise.swift; sourceTree = "<group>"; };
+		DE21825721CD473100FDD9F1 /* KActivityIndicatorAnimationBallRotate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallRotate.swift; sourceTree = "<group>"; };
+		DE21825821CD473100FDD9F1 /* KActivityIndicatorAnimationCircleStrokeSpin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationCircleStrokeSpin.swift; sourceTree = "<group>"; };
+		DE21825A21CD473100FDD9F1 /* KActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorView.swift; sourceTree = "<group>"; };
+		DE21825B21CD473100FDD9F1 /* KActivityIndicatorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorType.swift; sourceTree = "<group>"; };
+		DE21825C21CD473100FDD9F1 /* KActivityIndicatorShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorShape.swift; sourceTree = "<group>"; };
+		DE21825D21CD473100FDD9F1 /* FadeInOutAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeInOutAnimation.swift; sourceTree = "<group>"; };
+		DE21825E21CD473100FDD9F1 /* KActivityIndicatorAnimationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationDelegate.swift; sourceTree = "<group>"; };
+		DE21826021CD473100FDD9F1 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +363,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECFA8430691B731FD6198935 /* Pods_Oganban.framework in Frameworks */,
+				DE21821221CD403100FDD9F1 /* AccountKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,16 +412,10 @@
 			path = CustomViews;
 			sourceTree = "<group>";
 		};
-		84A92BEA21CA511D00148191 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entities;
-			sourceTree = "<group>";
-		};
 		84A92BEF21CA554100148191 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				DE21822421CD43C900FDD9F1 /* LoginExtension */,
 				84A92BF021CA555900148191 /* LoginPresenter.swift */,
 				84A92BF121CA555900148191 /* LoginRouter.swift */,
 				84A92BF221CA555900148191 /* LoginViewController.swift */,
@@ -349,6 +455,7 @@
 		CB172B1821C6A1480068CF92 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				DE21821421CD40AE00FDD9F1 /* UserManager */,
 				84421BE621CBEEA600F468F5 /* More */,
 				84A92BEF21CA554100148191 /* Login */,
 				B355EF5521C8FB0300379F57 /* SignUp */,
@@ -387,6 +494,7 @@
 		CB172B1C21C6A2130068CF92 /* APIService */ = {
 			isa = PBXGroup;
 			children = (
+				DE21822F21CD458E00FDD9F1 /* UserAPIService.swift */,
 				CB172B3E21C6A2A20068CF92 /* APIServiceProvider */,
 			);
 			path = APIService;
@@ -395,32 +503,17 @@
 		CB172B1D21C6A22A0068CF92 /* APIParam */ = {
 			isa = PBXGroup;
 			children = (
-				CB172B1E21C6A22A0068CF92 /* UserParam */,
-				CB172B2521C6A22A0068CF92 /* DeviceParam */,
+				DE21823121CD45DB00FDD9F1 /* UserParam */,
 				CB172B2721C6A22A0068CF92 /* BaseParam.swift */,
 			);
 			path = APIParam;
-			sourceTree = "<group>";
-		};
-		CB172B1E21C6A22A0068CF92 /* UserParam */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UserParam;
-			sourceTree = "<group>";
-		};
-		CB172B2521C6A22A0068CF92 /* DeviceParam */ = {
-			isa = PBXGroup;
-			children = (
-				CB172B2621C6A22A0068CF92 /* DeviceGenericParam.swift */,
-			);
-			path = DeviceParam;
 			sourceTree = "<group>";
 		};
 		CB172B3021C6A23F0068CF92 /* EndPoint */ = {
 			isa = PBXGroup;
 			children = (
 				CB172B4121C6A2AA0068CF92 /* Base */,
+				DE21823421CD465700FDD9F1 /* UserEndPoint.swift */,
 			);
 			path = EndPoint;
 			sourceTree = "<group>";
@@ -428,8 +521,8 @@
 		CB172B3221C6A26F0068CF92 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				CB172B3321C6A26F0068CF92 /* APIError.swift */,
 				CB172B3421C6A26F0068CF92 /* Response */,
+				CB172B3321C6A26F0068CF92 /* APIError.swift */,
 				CB172B3621C6A26F0068CF92 /* Network.swift */,
 				CB172B3721C6A26F0068CF92 /* MapperData.swift */,
 				CB172B3821C6A26F0068CF92 /* NetworkRequest.swift */,
@@ -585,6 +678,7 @@
 		CB172C0221C6A2EF0068CF92 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				DE21823621CD473100FDD9F1 /* Indicator */,
 				CB172C0321C6A2EF0068CF92 /* BaseViewController.swift */,
 				CB172C0421C6A2EF0068CF92 /* BaseCollectionCell.swift */,
 				CB172C0521C6A2EF0068CF92 /* BaseViewXib.swift */,
@@ -616,18 +710,156 @@
 		CB3A8F0C21C64FC1008144BD /* Oganban */ = {
 			isa = PBXGroup;
 			children = (
+				DE21821F21CD418E00FDD9F1 /* Entity */,
+				DE2181F821CD3AC500FDD9F1 /* SupportFile */,
 				CB172B1B21C6A1520068CF92 /* Components */,
-				84A92BEA21CA511D00148191 /* Entities */,
 				CB172B1921C6A14B0068CF92 /* Services */,
 				CB172B1821C6A1480068CF92 /* Modules */,
 				CB3A8F0D21C64FC1008144BD /* AppDelegate.swift */,
 				CB3A8F0F21C64FC1008144BD /* ViewController.swift */,
+				DE2181FB21CD3C1400FDD9F1 /* AppRouter.swift */,
 				CB3A8F1121C64FC1008144BD /* Main.storyboard */,
 				CB3A8F1421C64FC1008144BD /* Assets.xcassets */,
 				CB3A8F1621C64FC1008144BD /* LaunchScreen.storyboard */,
 				CB3A8F1921C64FC1008144BD /* Info.plist */,
 			);
 			path = Oganban;
+			sourceTree = "<group>";
+		};
+		DE2181F821CD3AC500FDD9F1 /* SupportFile */ = {
+			isa = PBXGroup;
+			children = (
+				DE21820921CD3F0700FDD9F1 /* AcountKit */,
+				DE2181F921CD3AD300FDD9F1 /* GoogleService-Info.plist */,
+				DE2181FD21CD3DC300FDD9F1 /* AppDelegate+Push.swift */,
+				DE2181FF21CD3DE800FDD9F1 /* AppDelegate+GoogleSignIn.swift */,
+				DE21820F21CD401500FDD9F1 /* Oganban-Bridging-Header.h */,
+			);
+			path = SupportFile;
+			sourceTree = "<group>";
+		};
+		DE21820921CD3F0700FDD9F1 /* AcountKit */ = {
+			isa = PBXGroup;
+			children = (
+				DE21821021CD403100FDD9F1 /* AccountKit.framework */,
+				DE21821121CD403100FDD9F1 /* AccountKitStrings.bundle */,
+			);
+			path = AcountKit;
+			sourceTree = "<group>";
+		};
+		DE21821421CD40AE00FDD9F1 /* UserManager */ = {
+			isa = PBXGroup;
+			children = (
+				DE21821921CD40FA00FDD9F1 /* FBAccountKit */,
+			);
+			path = UserManager;
+			sourceTree = "<group>";
+		};
+		DE21821921CD40FA00FDD9F1 /* FBAccountKit */ = {
+			isa = PBXGroup;
+			children = (
+				DE21821A21CD40FA00FDD9F1 /* FBAccountKit.swift */,
+			);
+			path = FBAccountKit;
+			sourceTree = "<group>";
+		};
+		DE21821F21CD418E00FDD9F1 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				DE21822021CD419B00FDD9F1 /* PhoneEntity.swift */,
+				DE21822921CD449800FDD9F1 /* UserEntity.swift */,
+				DE21822B21CD44B700FDD9F1 /* FaceBookEntity.swift */,
+				DE21822D21CD44D600FDD9F1 /* BaseEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		DE21822421CD43C900FDD9F1 /* LoginExtension */ = {
+			isa = PBXGroup;
+			children = (
+				DE21822221CD432300FDD9F1 /* Login+VerifyOTP.swift */,
+				DE21822521CD43E200FDD9F1 /* Login+Facebook.swift */,
+				DE21822721CD440B00FDD9F1 /* Login+GoogleSignIn.swift */,
+			);
+			path = LoginExtension;
+			sourceTree = "<group>";
+		};
+		DE21823121CD45DB00FDD9F1 /* UserParam */ = {
+			isa = PBXGroup;
+			children = (
+				DE21823221CD45F300FDD9F1 /* LoginSocialParam.swift */,
+			);
+			path = UserParam;
+			sourceTree = "<group>";
+		};
+		DE21823621CD473100FDD9F1 /* Indicator */ = {
+			isa = PBXGroup;
+			children = (
+				DE21823721CD473100FDD9F1 /* Animation */,
+				DE21825921CD473100FDD9F1 /* KActivityIndicatorView */,
+				DE21825F21CD473100FDD9F1 /* ProgressView */,
+			);
+			path = Indicator;
+			sourceTree = "<group>";
+		};
+		DE21823721CD473100FDD9F1 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				DE21823821CD473100FDD9F1 /* KActivityIndicatorAnimationAudioEqualizer.swift */,
+				DE21823921CD473100FDD9F1 /* KActivityIndicatorAnimationOrbit.swift */,
+				DE21823A21CD473100FDD9F1 /* KActivityIndicatorAnimationBallGridBeat.swift */,
+				DE21823B21CD473100FDD9F1 /* KActivityIndicatorAnimationTriangleSkewSpin.swift */,
+				DE21823C21CD473100FDD9F1 /* KActivityIndicatorAnimationBallGridPulse.swift */,
+				DE21823D21CD473100FDD9F1 /* KActivityIndicatorAnimationPacman.swift */,
+				DE21823E21CD473100FDD9F1 /* KActivityIndicatorAnimationBallRotateChase.swift */,
+				DE21823F21CD473100FDD9F1 /* KActivityIndicatorAnimationSemiCircleSpin.swift */,
+				DE21824021CD473100FDD9F1 /* KActivityIndicatorAnimationBallScale.swift */,
+				DE21824121CD473100FDD9F1 /* KActivityIndicatorAnimationBallScaleRipple.swift */,
+				DE21824221CD473100FDD9F1 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift */,
+				DE21824321CD473100FDD9F1 /* KActivityIndicatorAnimationLineScalePulseOut.swift */,
+				DE21824421CD473100FDD9F1 /* KActivityIndicatorAnimationBallPulse.swift */,
+				DE21824521CD473100FDD9F1 /* KActivityIndicatorAnimationBallClipRotate.swift */,
+				DE21824621CD473100FDD9F1 /* KActivityIndicatorAnimationBallClipRotateMultiple.swift */,
+				DE21824721CD473100FDD9F1 /* KActivityIndicatorAnimationBallZigZagDeflect.swift */,
+				DE21824821CD473100FDD9F1 /* KActivityIndicatorAnimationBlank.swift */,
+				DE21824921CD473100FDD9F1 /* KActivityIndicatorAnimationBallTrianglePath.swift */,
+				DE21824A21CD473100FDD9F1 /* KActivityIndicatorAnimationBallScaleRippleMultiple.swift */,
+				DE21824B21CD473100FDD9F1 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift */,
+				DE21824C21CD473100FDD9F1 /* KActivityIndicatorAnimationLineScale.swift */,
+				DE21824D21CD473100FDD9F1 /* KActivityIndicatorAnimationLineScaleParty.swift */,
+				DE21824E21CD473100FDD9F1 /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift */,
+				DE21824F21CD473100FDD9F1 /* KActivityIndicatorAnimationSquareSpin.swift */,
+				DE21825021CD473100FDD9F1 /* KActivityIndicatorAnimationBallBeat.swift */,
+				DE21825121CD473100FDD9F1 /* KActivityIndicatorAnimationCubeTransition.swift */,
+				DE21825221CD473100FDD9F1 /* KActivityIndicatorAnimationBallZigZag.swift */,
+				DE21825321CD473100FDD9F1 /* KActivityIndicatorAnimationBallPulseSync.swift */,
+				DE21825421CD473100FDD9F1 /* KActivityIndicatorAnimationBallScaleMultiple.swift */,
+				DE21825521CD473100FDD9F1 /* KActivityIndicatorAnimationBallClipRotatePulse.swift */,
+				DE21825621CD473100FDD9F1 /* KActivityIndicatorAnimationBallPulseRise.swift */,
+				DE21825721CD473100FDD9F1 /* KActivityIndicatorAnimationBallRotate.swift */,
+				DE21825821CD473100FDD9F1 /* KActivityIndicatorAnimationCircleStrokeSpin.swift */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		DE21825921CD473100FDD9F1 /* KActivityIndicatorView */ = {
+			isa = PBXGroup;
+			children = (
+				DE21825A21CD473100FDD9F1 /* KActivityIndicatorView.swift */,
+				DE21825B21CD473100FDD9F1 /* KActivityIndicatorType.swift */,
+				DE21825C21CD473100FDD9F1 /* KActivityIndicatorShape.swift */,
+				DE21825D21CD473100FDD9F1 /* FadeInOutAnimation.swift */,
+				DE21825E21CD473100FDD9F1 /* KActivityIndicatorAnimationDelegate.swift */,
+			);
+			path = KActivityIndicatorView;
+			sourceTree = "<group>";
+		};
+		DE21825F21CD473100FDD9F1 /* ProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				DE21826021CD473100FDD9F1 /* ProgressView.swift */,
+			);
+			path = ProgressView;
 			sourceTree = "<group>";
 		};
 		E2AA633E107A6A39005CFD05 /* Pods */ = {
@@ -674,6 +906,7 @@
 				TargetAttributes = {
 					CB3A8F0921C64FC1008144BD = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -728,6 +961,8 @@
 				CB3A8F1521C64FC1008144BD /* Assets.xcassets in Resources */,
 				84421BFA21CBEF1E00F468F5 /* MoreHeaderCell.xib in Resources */,
 				84487C8921CB7EA4008B25B2 /* Roboto-BoldItalic.ttf in Resources */,
+				DE21821321CD403100FDD9F1 /* AccountKitStrings.bundle in Resources */,
+				DE2181FA21CD3AD300FDD9F1 /* GoogleService-Info.plist in Resources */,
 				CB3A8F1321C64FC1008144BD /* Main.storyboard in Resources */,
 				CB172C8621C6A2EF0068CF92 /* OpenSans-SemiBold.ttf in Resources */,
 				B355EF5421C8EB3F00379F57 /* HomeViewController.xib in Resources */,
@@ -851,8 +1086,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB172C9321C6A2EF0068CF92 /* AppString.swift in Sources */,
+				DE21828021CD473100FDD9F1 /* KActivityIndicatorAnimationBallRotate.swift in Sources */,
+				DE21822E21CD44D600FDD9F1 /* BaseEntity.swift in Sources */,
+				DE21827821CD473100FDD9F1 /* KActivityIndicatorAnimationSquareSpin.swift in Sources */,
 				CB172B3C21C6A26F0068CF92 /* MapperData.swift in Sources */,
 				CB172C2121C6A2EF0068CF92 /* DataManager.swift in Sources */,
+				DE21827021CD473100FDD9F1 /* KActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
 				84A92BEE21CA518200148191 /* OganbanCustomButton.swift in Sources */,
 				B355EF5321C8EB3F00379F57 /* HomeInteractor.swift in Sources */,
 				CB172C0E21C6A2EF0068CF92 /* UIDevice+extension.swift in Sources */,
@@ -860,74 +1099,122 @@
 				CB172C9521C6A2EF0068CF92 /* ConstantStoryboard.swift in Sources */,
 				CB172C9921C6A2EF0068CF92 /* BaseViewController.swift in Sources */,
 				CB172C1621C6A2EF0068CF92 /* Bundle+extension.swift in Sources */,
+				DE21826C21CD473100FDD9F1 /* KActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
+				DE21826421CD473100FDD9F1 /* KActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */,
 				B355EF4F21C8EB3F00379F57 /* HomePresenter.swift in Sources */,
 				84A92BF921CA555900148191 /* LoginProtocols.swift in Sources */,
+				DE21826721CD473100FDD9F1 /* KActivityIndicatorAnimationBallRotateChase.swift in Sources */,
 				CB172C9721C6A2EF0068CF92 /* Enum.swift in Sources */,
 				B355EF5F21C8FB1400379F57 /* SignUpProtocols.swift in Sources */,
 				CB172C1221C6A2EF0068CF92 /* Date+extension.swift in Sources */,
+				DE21827321CD473100FDD9F1 /* KActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
 				B355EF6021C8FB1400379F57 /* SignUpInteractor.swift in Sources */,
 				CB172B3B21C6A26F0068CF92 /* Network.swift in Sources */,
+				DE21827121CD473100FDD9F1 /* KActivityIndicatorAnimationBlank.swift in Sources */,
+				DE21826B21CD473100FDD9F1 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				CB172C0D21C6A2EF0068CF92 /* UIApplication+extension.swift in Sources */,
+				DE21823321CD45F300FDD9F1 /* LoginSocialParam.swift in Sources */,
 				CB172C1721C6A2EF0068CF92 /* Double+extension.swift in Sources */,
+				DE21828421CD473100FDD9F1 /* KActivityIndicatorShape.swift in Sources */,
 				B355EF5E21C8FB1400379F57 /* SignUpViewController.swift in Sources */,
 				84421BF821CBEF1E00F468F5 /* MoreCell.swift in Sources */,
 				CB172B2F21C6A22A0068CF92 /* BaseParam.swift in Sources */,
 				CB172C1321C6A2EF0068CF92 /* UIButton+extension.swift in Sources */,
+				DE21826D21CD473100FDD9F1 /* KActivityIndicatorAnimationBallPulse.swift in Sources */,
+				DE21828521CD473100FDD9F1 /* FadeInOutAnimation.swift in Sources */,
+				DE21826A21CD473100FDD9F1 /* KActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
 				CB172C9121C6A2EF0068CF92 /* AppImage.swift in Sources */,
 				CB172B4021C6A2A20068CF92 /* Provider.swift in Sources */,
 				CB172C2821C6A2EF0068CF92 /* AnimationHelper.swift in Sources */,
+				DE21827F21CD473100FDD9F1 /* KActivityIndicatorAnimationBallPulseRise.swift in Sources */,
 				B355EF5121C8EB3F00379F57 /* HomeViewController.swift in Sources */,
 				CB172C2721C6A2EF0068CF92 /* UserUtils.swift in Sources */,
+				DE21822821CD440B00FDD9F1 /* Login+GoogleSignIn.swift in Sources */,
+				DE2181FC21CD3C1400FDD9F1 /* AppRouter.swift in Sources */,
 				CB172C0B21C6A2EF0068CF92 /* PopUpNotification.swift in Sources */,
+				DE21827221CD473100FDD9F1 /* KActivityIndicatorAnimationBallTrianglePath.swift in Sources */,
 				CB172B3D21C6A26F0068CF92 /* NetworkRequest.swift in Sources */,
 				84A92BF821CA555900148191 /* LoginViewController.swift in Sources */,
+				DE21826821CD473100FDD9F1 /* KActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
+				DE21827A21CD473100FDD9F1 /* KActivityIndicatorAnimationCubeTransition.swift in Sources */,
+				DE21822C21CD44B700FDD9F1 /* FaceBookEntity.swift in Sources */,
+				DE21827B21CD473100FDD9F1 /* KActivityIndicatorAnimationBallZigZag.swift in Sources */,
 				CB172C1521C6A2EF0068CF92 /* UIImage+extension.swift in Sources */,
 				CB3A8F1021C64FC1008144BD /* ViewController.swift in Sources */,
 				B355EF5221C8EB3F00379F57 /* HomeProtocols.swift in Sources */,
 				CB172C2521C6A2EF0068CF92 /* PopUpHelper.swift in Sources */,
+				DE21828121CD473100FDD9F1 /* KActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */,
 				84421BF921CBEF1E00F468F5 /* MoreHeaderCell.swift in Sources */,
+				DE21823021CD458E00FDD9F1 /* UserAPIService.swift in Sources */,
 				84A92BF721CA555900148191 /* LoginRouter.swift in Sources */,
 				84421BEE21CBEECF00F468F5 /* MoreRouter.swift in Sources */,
 				B355EF5D21C8FB1400379F57 /* SignUpRouter.swift in Sources */,
 				CB172C2321C6A2EF0068CF92 /* UserDefaultHelper.swift in Sources */,
+				DE21826E21CD473100FDD9F1 /* KActivityIndicatorAnimationBallClipRotate.swift in Sources */,
 				CB172C1421C6A2EF0068CF92 /* UIView+extension.swift in Sources */,
+				DE21826921CD473100FDD9F1 /* KActivityIndicatorAnimationBallScale.swift in Sources */,
+				DE21826F21CD473100FDD9F1 /* KActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
 				CB172C9B21C6A2EF0068CF92 /* BaseViewXib.swift in Sources */,
 				B355EF5C21C8FB1400379F57 /* SignUpPresenter.swift in Sources */,
+				DE21827421CD473100FDD9F1 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
 				CB172C1921C6A2EF0068CF92 /* String+extension.swift in Sources */,
+				DE21827921CD473100FDD9F1 /* KActivityIndicatorAnimationBallBeat.swift in Sources */,
 				CB172C1B21C6A2EF0068CF92 /* Bool+extension.swift in Sources */,
 				CB172C2921C6A2EF0068CF92 /* Utils.swift in Sources */,
 				CB172C1E21C6A2EF0068CF92 /* UISearchBar+extension.swift in Sources */,
 				84A92BFA21CA555900148191 /* LoginInteractor.swift in Sources */,
 				CB172C9221C6A2EF0068CF92 /* NotificationConstant.swift in Sources */,
 				84421BF121CBEECF00F468F5 /* MoreInteractor.swift in Sources */,
+				DE21822121CD419B00FDD9F1 /* PhoneEntity.swift in Sources */,
 				84421BED21CBEECF00F468F5 /* MorePresenter.swift in Sources */,
 				CB172C1A21C6A2EF0068CF92 /* NSMutableAttributedString+Extension.swift in Sources */,
+				DE21822A21CD449800FDD9F1 /* UserEntity.swift in Sources */,
 				CB172B3A21C6A26F0068CF92 /* BaseResponse.swift in Sources */,
+				DE21826521CD473100FDD9F1 /* KActivityIndicatorAnimationBallGridPulse.swift in Sources */,
+				DE2181FE21CD3DC300FDD9F1 /* AppDelegate+Push.swift in Sources */,
 				CB172C1C21C6A2EF0068CF92 /* UICollectionView+extension.swift in Sources */,
 				CB172C9821C6A2EF0068CF92 /* AppFont.swift in Sources */,
+				DE21820021CD3DE800FDD9F1 /* AppDelegate+GoogleSignIn.swift in Sources */,
+				DE21827E21CD473100FDD9F1 /* KActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */,
+				DE21822621CD43E200FDD9F1 /* Login+Facebook.swift in Sources */,
 				CB172C9C21C6A2EF0068CF92 /* BaseTableCell.swift in Sources */,
 				CB172C9E21C6A2EF0068CF92 /* BaseView.swift in Sources */,
 				CB172C9421C6A2EF0068CF92 /* APIConstant.swift in Sources */,
 				CB172C2421C6A2EF0068CF92 /* LanguageHelper.swift in Sources */,
-				CB172B2E21C6A22A0068CF92 /* DeviceGenericParam.swift in Sources */,
+				DE21826321CD473100FDD9F1 /* KActivityIndicatorAnimationBallGridBeat.swift in Sources */,
+				DE21826621CD473100FDD9F1 /* KActivityIndicatorAnimationPacman.swift in Sources */,
+				DE21828621CD473100FDD9F1 /* KActivityIndicatorAnimationDelegate.swift in Sources */,
+				DE21822321CD432300FDD9F1 /* Login+VerifyOTP.swift in Sources */,
+				DE21828321CD473100FDD9F1 /* KActivityIndicatorType.swift in Sources */,
 				84421BF021CBEECF00F468F5 /* MoreProtocols.swift in Sources */,
 				CB172C2021C6A2EF0068CF92 /* FileManagerHelper.swift in Sources */,
+				DE21827C21CD473100FDD9F1 /* KActivityIndicatorAnimationBallPulseSync.swift in Sources */,
+				DE21827521CD473100FDD9F1 /* KActivityIndicatorAnimationLineScale.swift in Sources */,
 				84A92BED21CA518200148191 /* OganbanCustomTextfield.swift in Sources */,
+				DE21826221CD473100FDD9F1 /* KActivityIndicatorAnimationOrbit.swift in Sources */,
 				CB172C9D21C6A2EF0068CF92 /* BasePopUpView.swift in Sources */,
 				CB172C1821C6A2EF0068CF92 /* UIViewController+extension.swift in Sources */,
 				CB172C9A21C6A2EF0068CF92 /* BaseCollectionCell.swift in Sources */,
 				CB172C1D21C6A2EF0068CF92 /* UITextField+extension.swift in Sources */,
 				CB172C2221C6A2EF0068CF92 /* PopUpNotificationHelper.swift in Sources */,
 				CB172C1F21C6A2EF0068CF92 /* UITableView+extension.swift in Sources */,
+				DE21827721CD473100FDD9F1 /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
 				84421BFF21CBEF7600F468F5 /* MoreViewController.swift in Sources */,
+				DE21828721CD473100FDD9F1 /* ProgressView.swift in Sources */,
+				DE21828221CD473100FDD9F1 /* KActivityIndicatorView.swift in Sources */,
+				DE21823521CD465700FDD9F1 /* UserEndPoint.swift in Sources */,
 				CB3A8F0E21C64FC1008144BD /* AppDelegate.swift in Sources */,
+				DE21827621CD473100FDD9F1 /* KActivityIndicatorAnimationLineScaleParty.swift in Sources */,
 				84A92BF621CA555900148191 /* LoginPresenter.swift in Sources */,
 				CB172C1021C6A2EF0068CF92 /* Int+extension.swift in Sources */,
 				CB172C1121C6A2EF0068CF92 /* UIWindow+extension.swift in Sources */,
 				CB172C9621C6A2EF0068CF92 /* AppColor.swift in Sources */,
 				CB172B4321C6A2AA0068CF92 /* EndPointType.swift in Sources */,
+				DE21826121CD473100FDD9F1 /* KActivityIndicatorAnimationAudioEqualizer.swift in Sources */,
 				CB172C0F21C6A2EF0068CF92 /* UIColor+extension.swift in Sources */,
 				CB172B3921C6A26F0068CF92 /* APIError.swift in Sources */,
+				DE21821B21CD40FA00FDD9F1 /* FBAccountKit.swift in Sources */,
+				DE21827D21CD473100FDD9F1 /* KActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
 				CB172C0A21C6A2EF0068CF92 /* PopUpNotificationContent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1084,14 +1371,24 @@
 			baseConfigurationReference = 44208549B4287C06B154C85E /* Pods-Oganban.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Oganban/SupportFile",
+					"$(PROJECT_DIR)/Oganban/SupportFile/AcountKit",
+				);
 				INFOPLIST_FILE = Oganban/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.coby.Oganban;
+				PRODUCT_BUNDLE_IDENTIFIER = com.engma.oganban;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Oganban/SupportFile/Oganban-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1102,14 +1399,23 @@
 			baseConfigurationReference = 7D0CCCBE1CA6E502A84355A0 /* Pods-Oganban.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Oganban/SupportFile",
+					"$(PROJECT_DIR)/Oganban/SupportFile/AcountKit",
+				);
 				INFOPLIST_FILE = Oganban/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.coby.Oganban;
+				PRODUCT_BUNDLE_IDENTIFIER = com.engma.oganban;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Oganban/SupportFile/Oganban-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

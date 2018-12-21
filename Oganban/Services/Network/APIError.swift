@@ -40,8 +40,6 @@ class APIError: Error {
         self.code = baseResponse.status
         self.message = baseResponse.message
         self.data = baseResponse.data
-        
-        print(data)
     }
     
     init(error: Error?) {
