@@ -177,6 +177,12 @@
 		DE21828721CD473100FDD9F1 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21826021CD473100FDD9F1 /* ProgressView.swift */; };
 		DE21829121CD4E7F00FDD9F1 /* AppTextFiled.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21828F21CD4E7F00FDD9F1 /* AppTextFiled.swift */; };
 		DE21829421CD4EB600FDD9F1 /* FTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21829321CD4EB600FDD9F1 /* FTextField.swift */; };
+		DEE1DA4F21CDE1CE0036FEB7 /* PopUpNotificationHaveAdmob.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1DA4E21CDE1CE0036FEB7 /* PopUpNotificationHaveAdmob.swift */; };
+		DEE1DA5121CDE2B60036FEB7 /* PopUpNotificationHaveAdmobContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1DA5021CDE2B60036FEB7 /* PopUpNotificationHaveAdmobContent.swift */; };
+		DEE1DA5321CDE3080036FEB7 /* PopUpNotificationHaveAdmobContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE1DA5221CDE3080036FEB7 /* PopUpNotificationHaveAdmobContent.xib */; };
+		DEE1DA5621CDE6550036FEB7 /* PopUpSelectDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1DA5521CDE6550036FEB7 /* PopUpSelectDate.swift */; };
+		DEE1DA5821CDE6610036FEB7 /* PopUpSelectDateContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1DA5721CDE6610036FEB7 /* PopUpSelectDateContent.swift */; };
+		DEE1DA5A21CDE6740036FEB7 /* PopUpSelectDateContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE1DA5921CDE6740036FEB7 /* PopUpSelectDateContent.xib */; };
 		ECFA8430691B731FD6198935 /* Pods_Oganban.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667005DBAD7815A5AA16289A /* Pods_Oganban.framework */; };
 /* End PBXBuildFile section */
 
@@ -361,6 +367,12 @@
 		DE21826021CD473100FDD9F1 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		DE21828F21CD4E7F00FDD9F1 /* AppTextFiled.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTextFiled.swift; sourceTree = "<group>"; };
 		DE21829321CD4EB600FDD9F1 /* FTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTextField.swift; sourceTree = "<group>"; };
+		DEE1DA4E21CDE1CE0036FEB7 /* PopUpNotificationHaveAdmob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpNotificationHaveAdmob.swift; sourceTree = "<group>"; };
+		DEE1DA5021CDE2B60036FEB7 /* PopUpNotificationHaveAdmobContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpNotificationHaveAdmobContent.swift; sourceTree = "<group>"; };
+		DEE1DA5221CDE3080036FEB7 /* PopUpNotificationHaveAdmobContent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpNotificationHaveAdmobContent.xib; sourceTree = "<group>"; };
+		DEE1DA5521CDE6550036FEB7 /* PopUpSelectDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpSelectDate.swift; sourceTree = "<group>"; };
+		DEE1DA5721CDE6610036FEB7 /* PopUpSelectDateContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpSelectDateContent.swift; sourceTree = "<group>"; };
+		DEE1DA5921CDE6740036FEB7 /* PopUpSelectDateContent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpSelectDateContent.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -564,6 +576,8 @@
 		CB172B4421C6A2EE0068CF92 /* CustomPopUp */ = {
 			isa = PBXGroup;
 			children = (
+				DEE1DA5421CDE6380036FEB7 /* PopUpSelectDate */,
+				DEE1DA4D21CDE1800036FEB7 /* PopUpNotificationHaveAdmob */,
 				CB172B4521C6A2EE0068CF92 /* PopUpNotification */,
 			);
 			path = CustomPopUp;
@@ -888,6 +902,26 @@
 			path = AppTextFiled;
 			sourceTree = "<group>";
 		};
+		DEE1DA4D21CDE1800036FEB7 /* PopUpNotificationHaveAdmob */ = {
+			isa = PBXGroup;
+			children = (
+				DEE1DA4E21CDE1CE0036FEB7 /* PopUpNotificationHaveAdmob.swift */,
+				DEE1DA5021CDE2B60036FEB7 /* PopUpNotificationHaveAdmobContent.swift */,
+				DEE1DA5221CDE3080036FEB7 /* PopUpNotificationHaveAdmobContent.xib */,
+			);
+			path = PopUpNotificationHaveAdmob;
+			sourceTree = "<group>";
+		};
+		DEE1DA5421CDE6380036FEB7 /* PopUpSelectDate */ = {
+			isa = PBXGroup;
+			children = (
+				DEE1DA5521CDE6550036FEB7 /* PopUpSelectDate.swift */,
+				DEE1DA5721CDE6610036FEB7 /* PopUpSelectDateContent.swift */,
+				DEE1DA5921CDE6740036FEB7 /* PopUpSelectDateContent.xib */,
+			);
+			path = PopUpSelectDate;
+			sourceTree = "<group>";
+		};
 		E2AA633E107A6A39005CFD05 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -964,6 +998,7 @@
 				84487C9121CB80F5008B25B2 /* Roboto-ThinItalic.ttf in Resources */,
 				CB3A8F1821C64FC1008144BD /* LaunchScreen.storyboard in Resources */,
 				CB172C8C21C6A2EF0068CF92 /* OpenSans-SemiBoldItalic.ttf in Resources */,
+				DEE1DA5A21CDE6740036FEB7 /* PopUpSelectDateContent.xib in Resources */,
 				84A92BFB21CA555900148191 /* LoginViewController.xib in Resources */,
 				84487C8E21CB80DE008B25B2 /* Roboto-MediumItalic.ttf in Resources */,
 				84487C8F21CB80E1008B25B2 /* Roboto-Regular.ttf in Resources */,
@@ -983,6 +1018,7 @@
 				CB172C8921C6A2EF0068CF92 /* OpenSans-ExtraBold.ttf in Resources */,
 				84487C8A21CB80D2008B25B2 /* Roboto-Italic.ttf in Resources */,
 				CB172C8821C6A2EF0068CF92 /* OpenSans-Italic.ttf in Resources */,
+				DEE1DA5321CDE3080036FEB7 /* PopUpNotificationHaveAdmobContent.xib in Resources */,
 				CB172C8D21C6A2EF0068CF92 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				CB3A8F1521C64FC1008144BD /* Assets.xcassets in Resources */,
 				84421BFA21CBEF1E00F468F5 /* MoreHeaderCell.xib in Resources */,
@@ -1117,6 +1153,7 @@
 				DE21827821CD473100FDD9F1 /* KActivityIndicatorAnimationSquareSpin.swift in Sources */,
 				CB172B3C21C6A26F0068CF92 /* MapperData.swift in Sources */,
 				CB172C2121C6A2EF0068CF92 /* DataManager.swift in Sources */,
+				DEE1DA4F21CDE1CE0036FEB7 /* PopUpNotificationHaveAdmob.swift in Sources */,
 				DE21827021CD473100FDD9F1 /* KActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
 				84A92BEE21CA518200148191 /* OganbanCustomButton.swift in Sources */,
 				B355EF5321C8EB3F00379F57 /* HomeInteractor.swift in Sources */,
@@ -1136,6 +1173,7 @@
 				DE21827321CD473100FDD9F1 /* KActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
 				B355EF6021C8FB1400379F57 /* SignUpInteractor.swift in Sources */,
 				CB172B3B21C6A26F0068CF92 /* Network.swift in Sources */,
+				DEE1DA5621CDE6550036FEB7 /* PopUpSelectDate.swift in Sources */,
 				DE21827121CD473100FDD9F1 /* KActivityIndicatorAnimationBlank.swift in Sources */,
 				DE21826B21CD473100FDD9F1 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				CB172C0D21C6A2EF0068CF92 /* UIApplication+extension.swift in Sources */,
@@ -1143,6 +1181,7 @@
 				CB172C1721C6A2EF0068CF92 /* Double+extension.swift in Sources */,
 				DE21828421CD473100FDD9F1 /* KActivityIndicatorShape.swift in Sources */,
 				B355EF5E21C8FB1400379F57 /* SignUpViewController.swift in Sources */,
+				DEE1DA5121CDE2B60036FEB7 /* PopUpNotificationHaveAdmobContent.swift in Sources */,
 				84421BF821CBEF1E00F468F5 /* MoreCell.swift in Sources */,
 				CB172B2F21C6A22A0068CF92 /* BaseParam.swift in Sources */,
 				CB172C1321C6A2EF0068CF92 /* UIButton+extension.swift in Sources */,
@@ -1233,6 +1272,7 @@
 				DE21823521CD465700FDD9F1 /* UserEndPoint.swift in Sources */,
 				CB3A8F0E21C64FC1008144BD /* AppDelegate.swift in Sources */,
 				DE21827621CD473100FDD9F1 /* KActivityIndicatorAnimationLineScaleParty.swift in Sources */,
+				DEE1DA5821CDE6610036FEB7 /* PopUpSelectDateContent.swift in Sources */,
 				84A92BF621CA555900148191 /* LoginPresenter.swift in Sources */,
 				CB172C1021C6A2EF0068CF92 /* Int+extension.swift in Sources */,
 				CB172C1121C6A2EF0068CF92 /* UIWindow+extension.swift in Sources */,

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopUpNotificationHaveAdmobContent" customModule="Oganban" customModuleProvider="target">
+            <connections>
+                <outlet property="btnClose" destination="cOr-Jr-t7F" id="MoP-Jn-yCw"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="287"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cOr-Jr-t7F">
+                    <rect key="frame" x="335" y="0.0" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="3Rj-uS-QoU"/>
+                        <constraint firstAttribute="height" constant="40" id="H76-N6-DCf"/>
+                    </constraints>
+                    <state key="normal" image="ic_close"/>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iwr-CM-eWB">
+                    <rect key="frame" x="20" y="45" width="335" height="140"/>
+                    <color key="backgroundColor" red="0.90196078430000004" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="140" id="v98-at-SSg"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iVT-E5-KHb">
+                    <rect key="frame" x="20" y="201" width="335" height="36"/>
+                    <string key="text">Số Ơcoin tích lũy của bạn không đủ để đổi sản phẩm. Vui lòng kiểm tra lại !</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.25490196078431371" green="0.25490196078431371" blue="0.25490196078431371" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Iwr-CM-eWB" firstAttribute="top" secondItem="cOr-Jr-t7F" secondAttribute="bottom" constant="5" id="9Ef-Vi-vuz"/>
+                <constraint firstAttribute="trailing" secondItem="Iwr-CM-eWB" secondAttribute="trailing" constant="20" id="9vF-gR-1Dr"/>
+                <constraint firstItem="cOr-Jr-t7F" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Dpd-w9-8mM"/>
+                <constraint firstItem="Iwr-CM-eWB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="Iog-9S-WVJ"/>
+                <constraint firstItem="iVT-E5-KHb" firstAttribute="top" secondItem="Iwr-CM-eWB" secondAttribute="bottom" constant="16" id="UdP-eA-8Va"/>
+                <constraint firstItem="iVT-E5-KHb" firstAttribute="trailing" secondItem="Iwr-CM-eWB" secondAttribute="trailing" id="Uyf-1h-bbX"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="cOr-Jr-t7F" secondAttribute="trailing" id="bXa-3U-hY6"/>
+                <constraint firstItem="iVT-E5-KHb" firstAttribute="leading" secondItem="Iwr-CM-eWB" secondAttribute="leading" id="sQL-5i-Jb4"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="138.40000000000001" y="316.19190404797604"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_close" width="20" height="20"/>
+    </resources>
+</document>

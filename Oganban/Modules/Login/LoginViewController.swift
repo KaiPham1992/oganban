@@ -151,6 +151,11 @@ extension LoginViewController {
         self.btnSignUp.tapButton = {
             self.view.endEditing(true)
             print("TAP SIGN UP")
+            
+            let popUp = PopUpSelectDate()
+            popUp.showPopUp(completionDate: { date in
+                print(date)
+            })
         }
         
         self.tfPassword.completeTapRightIcon = { (success) in
