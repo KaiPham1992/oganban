@@ -17,4 +17,8 @@ class Provider {
         return APINetwork(request: request)
     }
     
+    var userAPIService: UserAPIServiceProtocol {
+        return UserAPIService(network: networkManager)
+    }
+    
 }

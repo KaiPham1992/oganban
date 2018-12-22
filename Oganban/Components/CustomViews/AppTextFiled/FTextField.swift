@@ -77,7 +77,7 @@ class FTextField: BaseView {
     }
 }
 
-extension RTextField: UITextFieldDelegate {
+extension FTextField: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         vLine.backgroundColor = UIColor.red
     }
