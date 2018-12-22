@@ -38,7 +38,7 @@ class FTextFieldChoose: BaseView {
     
     let imgDown: UIImageView = {
         let img = UIImageView()
-        img.backgroundColor = AppColor.red
+        img.image = AppImage.imgDown
         return img
     }()
     

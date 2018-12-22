@@ -23,10 +23,13 @@ class SignUpViewController: BaseViewController, SignUpViewProtocol {
     @IBOutlet weak var vPassword        : FTextField!
     @IBOutlet weak var vPasswordReType  : FTextField!
     @IBOutlet weak var vCaptcha         : FTextField!
+    @IBOutlet weak var btnTermOfPolicy         : UIButton!
+    @IBOutlet weak var lbStatus         : UILabel!
 
 	var presenter: SignUpPresenterProtocol?
     let popUpDate = PopUpSelectDate()
     let popUpGender = PopUpSelectGender()
+    var termPolicy = false
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +55,94 @@ class SignUpViewController: BaseViewController, SignUpViewProtocol {
         vCaptcha.setTextField(title: TitleString.captcha, placeHolder: TitleString.placeHolderCaptcha)
         vBirthday.delegate = self
         vGender.delegate = self
+        btnTermOfPolicy.setTitle(text: "Đồng ý ", font: AppFont.fontRegular15, color: AppColor.textTextField, textUnderline: "Điều khoản sử dụng", fontLine: AppFont.fontRegular15, colorLine: AppColor.textTextField)
+    }
+    
+    @IBAction func btnTermOfPolicyTapped() {
+        termPolicy = !termPolicy
+        btnTermOfPolicy.setImage(termPolicy ? AppImage.imgCheckedTerm : AppImage.imgCheckTerm, for: .normal )
+    }
+    
+    @IBAction func btnSignUpTapped() {
+        if validate() {
+            
+        }
+    }
+    
+    private func validate() -> Bool {
+        
+        if vLoginName.textField.text&.isEmpty && vLoginEmail.textField.text&.isEmpty
+            && vPassword.textField.text&.isEmpty && vPasswordReType.textField.text&.isEmpty
+            && vCaptcha.textField.text&.isEmpty && vLoginDisplay.textField.text&.isEmpty {
+            lbStatus.text = "Vui lòng nhập thông tin đầy đủ"
+            return false
+        }
+        
+        if vLoginName.textField.text&.isEmpty {
+            lbStatus.text = "Nhập tên đăng nhập"
+            return false
+        }
+        
+        if vLoginName.textField.text&.hasSpecialCharacters() {
+            lbStatus.text = "Tên đăng nhập không chứa ký tự đặc biệt"
+            return false
+        }
+        
+        if vLoginName.textField.text&.count > 45 || vLoginName.textField.text&.count < 3 {
+            lbStatus.text = "Vui lòng nhập tên đăng nhập từ 3 -45 ký tự"
+            return false
+        }
+        
+        if vLoginName.textField.text&.contains(" ") {
+            lbStatus.text = "Tên đăng nhập không có dấu cách"
+            return false
+        }
+        
+        if vLoginEmail.textField.text&.isEmpty {
+            lbStatus.text = "Nhập email"
+            return false
+        }
+        
+        if vLoginDisplay.textField.text&.isEmpty {
+            lbStatus.text = "Vui lòng nhập tên hiển thị"
+            return false
+        }
+        
+        if vLoginEmail.textField.text&.isValidEmail() == false || vLoginName.textField.text&.isValidEmail() == false {
+            lbStatus.text = "Định dạng không đúng"
+            return false
+        }
+        
+        if vPassword.textField.text&.isEmpty {
+            lbStatus.text = "Nhập pass"
+            return false
+        }
+        
+        if vPassword.textField.text&.count < 6 {
+            lbStatus.text = "Pass hơn 6"
+            return false
+        }
+        
+        if vPasswordReType.textField.text&.isEmpty {
+            lbStatus.text = "Nhập lại pass"
+            return false
+        }
+        
+        if vCaptcha.textField.text&.isEmpty {
+            lbStatus.text = "Nhập captcha"
+            return false
+        }
+        
+        guard let _ = Int(vCaptcha.textField.text&) else {
+            lbStatus.text = "Vui lòng nhập mã captcha"
+            return false
+        }
+        
+        if vPassword.textField.text != vPasswordReType.textField.text {
+            lbStatus.text = "Sai pass nhập lại"
+            return false
+        }
+        return true
     }
 
 }
@@ -71,6 +162,4 @@ extension SignUpViewController: FTextFieldChooseDelegate {
             break
         }
     }
-    
-    
 }
