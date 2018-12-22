@@ -115,7 +115,8 @@ class HomeViewController: BaseViewController, HomeViewProtocol {
     }
     
     @IBAction func btnGotoFavoriteTapped() {
-        
+        let vc = SignUpRouter.createModule()
+        self.push(controller: vc)
     }
 }
 

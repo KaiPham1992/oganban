@@ -1,14 +1,18 @@
 //
-//  LTextField.swift
-//  led-controller-ios
+//  FTextFieldChooseDate.swift
+//  Oganban
 //
-//  Created by Tien Dinh on 10/2/18.
-//  Copyright © 2018 Mai Nhan. All rights reserved.
+//  Created by DINH VAN TIEN on 12/22/18.
+//  Copyright © 2018 Coby. All rights reserved.
 //
 
 import UIKit
 
-class FTextField: BaseView {
+protocol FTextFieldChooseDelegate: class {
+    func btnChooseTapped(sender: FTextFieldChoose)
+}
+
+class FTextFieldChoose: BaseView {
     let vContent: UIView = {
         let view = UIView()
         view.backgroundColor = .white
@@ -32,17 +36,33 @@ class FTextField: BaseView {
         return lb
     }()
     
+    let imgDown: UIImageView = {
+        let img = UIImageView()
+        img.backgroundColor = AppColor.red
+        return img
+    }()
+    
+    let btnChoose: UIButton = {
+        let btn = UIButton()
+        btn.addTarget(self, action: #selector(btnChooseTapped), for: .touchUpInside)
+        return btn
+    }()
+    
     let vLine: UIView = {
         let view = UIView()
         view.backgroundColor = AppColor.textLabel
         return view
     }()
     
+    weak var delegate: FTextFieldChooseDelegate?
+    
     override func setUpViews() {
         self.addSubview(vContent)
         vContent.addSubview(lbTitle)
         vContent.addSubview(vLine)
         vContent.addSubview(textField)
+        vContent.addSubview(imgDown)
+        vContent.addSubview(btnChoose)
         
         vContent.fillSuperview()
         lbTitle.anchor(vContent.topAnchor,
@@ -52,6 +72,8 @@ class FTextField: BaseView {
                        leftConstant : 0,
                        rightConstant: 0)
         textField.fillSuperview()
+        
+        imgDown.anchor(bottom: vContent.bottomAnchor, right: vContent.rightAnchor, bottomConstant: 5, rightConstant: 5, widthConstant: 15, heightConstant: 15)
         vLine.anchor(left           : vContent.leftAnchor,
                      bottom         : vContent.bottomAnchor,
                      right          : vContent.rightAnchor,
@@ -59,6 +81,7 @@ class FTextField: BaseView {
                      bottomConstant : 0,
                      rightConstant  : 0,
                      heightConstant : 1)
+        btnChoose.fillSuperview()
         textField.delegate = self
     }
     
@@ -76,9 +99,13 @@ class FTextField: BaseView {
         textField.attributedPlaceholder = NSAttributedString(string: placeHolder,
                                                              attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
     }
+    
+    @objc func btnChooseTapped() {
+        delegate?.btnChooseTapped(sender: self)
+    }
 }
 
-extension FTextField: UITextFieldDelegate {
+extension FTextFieldChoose: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         vLine.backgroundColor = UIColor.red
     }
@@ -87,23 +114,4 @@ extension FTextField: UITextFieldDelegate {
         vLine.backgroundColor = AppColor.textLabel
     }
 }
-
-class MyUITextField: UITextField {
-    // Whatever you like
-    let padding = UIEdgeInsets(top: 15, left: 0, bottom: 0, right: 0);
-    // Paddging for place holder
-    override func placeholderRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.inset(by: padding)
-    }
-    // Padding for text
-    override func textRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.inset(by: padding)
-    }
-    // Padding for text in editting mode
-    override func editingRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.inset(by: padding)
-    }
-    
-}
-
 
