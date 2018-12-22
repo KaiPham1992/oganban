@@ -10,4 +10,5 @@ import Foundation
 
 struct AppConstant {
     static let admobNativeAds = "ca-app-pub-3940256099942544/3986624511"
+    static let admobBanner = "ca-app-pub-3940256099942544/2934735716"
 }

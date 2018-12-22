@@ -224,6 +224,7 @@
 		DEE1DA7021CE1FFC0036FEB7 /* PopUpYesNoHaveAdmob.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1DA6F21CE1FFC0036FEB7 /* PopUpYesNoHaveAdmob.swift */; };
 		DEE1DA7221CE20130036FEB7 /* PopUpYesNoHaveAdmobContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1DA7121CE20130036FEB7 /* PopUpYesNoHaveAdmobContent.swift */; };
 		DEE1DA7421CE20260036FEB7 /* PopUpYesNoHaveAdmobContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE1DA7321CE20260036FEB7 /* PopUpYesNoHaveAdmobContent.xib */; };
+		DEE1DA7721CE299A0036FEB7 /* AdmobBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1DA7621CE299A0036FEB7 /* AdmobBannerView.swift */; };
 		ECFA8430691B731FD6198935 /* Pods_Oganban.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667005DBAD7815A5AA16289A /* Pods_Oganban.framework */; };
 /* End PBXBuildFile section */
 
@@ -455,6 +456,7 @@
 		DEE1DA6F21CE1FFC0036FEB7 /* PopUpYesNoHaveAdmob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpYesNoHaveAdmob.swift; sourceTree = "<group>"; };
 		DEE1DA7121CE20130036FEB7 /* PopUpYesNoHaveAdmobContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpYesNoHaveAdmobContent.swift; sourceTree = "<group>"; };
 		DEE1DA7321CE20260036FEB7 /* PopUpYesNoHaveAdmobContent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpYesNoHaveAdmobContent.xib; sourceTree = "<group>"; };
+		DEE1DA7621CE299A0036FEB7 /* AdmobBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobBannerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -519,6 +521,7 @@
 		84A92BE921CA50F000148191 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				DEE1DA7521CE297F0036FEB7 /* AdmobBannerView */,
 				DEE1DA5D21CDF2950036FEB7 /* AdmobNativeView */,
 				DE21828E21CD4E7F00FDD9F1 /* AppTextFiled */,
 				84A92BEC21CA518200148191 /* OganbanCustomButton.swift */,
@@ -1141,6 +1144,14 @@
 			path = PopUpYesNoHaveAdmob;
 			sourceTree = "<group>";
 		};
+		DEE1DA7521CE297F0036FEB7 /* AdmobBannerView */ = {
+			isa = PBXGroup;
+			children = (
+				DEE1DA7621CE299A0036FEB7 /* AdmobBannerView.swift */,
+			);
+			path = AdmobBannerView;
+			sourceTree = "<group>";
+		};
 		E2AA633E107A6A39005CFD05 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1391,6 +1402,7 @@
 				84A92BEE21CA518200148191 /* OganbanCustomButton.swift in Sources */,
 				B355EF5321C8EB3F00379F57 /* HomeInteractor.swift in Sources */,
 				CB172C0E21C6A2EF0068CF92 /* UIDevice+extension.swift in Sources */,
+				DEE1DA7721CE299A0036FEB7 /* AdmobBannerView.swift in Sources */,
 				B355EF5021C8EB3F00379F57 /* HomeRouter.swift in Sources */,
 				CB172C9521C6A2EF0068CF92 /* ConstantStoryboard.swift in Sources */,
 				CB172C9921C6A2EF0068CF92 /* BaseViewController.swift in Sources */,
