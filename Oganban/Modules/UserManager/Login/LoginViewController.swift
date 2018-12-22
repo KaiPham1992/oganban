@@ -162,13 +162,7 @@ extension LoginViewController {
             self.view.endEditing(true)
             print("TAP SIGN UP")
             
-            PopUpHelper.shared.showYesNoQuestionHaveAds(question: MessageString.notEnoughCoin, completionYes: {
-                print("yes")
-            }, completionNo: {
-                print("No")
-            })
-            
-//            PopUpHelper.shared.showMessageHaveAds(message: MessageString.notEnoughCoin)
+            PopUpHelper.shared.showUpdateQuantityBuy()
         }
         
         self.tfPassword.completeTapRightIcon = { (success) in
