@@ -80,7 +80,7 @@ class SupplementaryInfoViewController: BaseViewController, SupplementaryInfoView
         self.tfSex.addGestureRecognizer(tapSexGesture)
         
         tfAddress1.setupLayoutTextfield(placeholderText: "Bạn có thể nhập địa chỉ nhà", titleText: "Địa chỉ 1", placeholderColor: AppColor.black414141)
-        tfAddress2.setupLayoutTextfield(placeholderText: "180 Cao Lỗ, Phường 4, Quận 8, Hồ Chí Minh, Việt Nam", titleText: "Địa chỉ 2", placeholderColor: AppColor.black414141)
+        tfAddress2.setupLayoutTextfield(placeholderText: "Bạn có thể nhập địa chỉ công ty", titleText: "Địa chỉ 2", placeholderColor: AppColor.black414141)
         
         btnSend.setupLayoutButton(backgroundColor: AppColor.green005800, titleColor: AppColor.white, text: "Gửi")
         
@@ -198,11 +198,10 @@ extension SupplementaryInfoViewController {
             
             let attributed = NSMutableAttributedString(attributedString: NSAttributedString(string: textContent, attributes: [NSAttributedString.Key.font: AppFont.fontRegularRoboto15, NSAttributedString.Key.foregroundColor: AppColor.black414141]))
             
-            let conditionsAttributes = NSDictionary.init(dictionary: [NSAttributedString.Key.font: AppFont.fontRegularRoboto15, NSAttributedString.Key.foregroundColor: AppColor.black414141, termsConditionsTag: (true) ])
+            let conditionsAttributes = NSDictionary.init(dictionary: [NSAttributedString.Key.font: AppFont.fontRegularRoboto15, NSAttributedString.Key.foregroundColor: AppColor.black414141,NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue, termsConditionsTag: (true) ])
             
             
             attributed.addAttributes(conditionsAttributes as! [NSAttributedString.Key : Any] , range: textContent.nsRange(from: conditionsRange))
-            
             
             self.tvPolicy.attributedText = attributed
             self.tvPolicy.textAlignment = .left
