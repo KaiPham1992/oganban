@@ -26,6 +26,7 @@ class PopUpSelectGenderContent: BaseViewXib  {
     var genderSelected: Gender?
     
     let listGenders = [
+        Gender(title: "Chọn giới tính", keyParam: nil),
         Gender(title: "Nam", keyParam: "male"),
         Gender(title: "Nữ", keyParam: "female"),
         Gender(title: "Khác", keyParam: "other"),
