@@ -65,6 +65,8 @@ extension MoreViewController: UITableViewDelegate, UITableViewDataSource
                 print("Chọn Lịch sử ƠCoin")
                 break
             case MoreRowName.historyBuy.index():
+                let vc = UpdateProfileRouter.createModule()
+                self.navigationController?.pushViewController(vc, animated: true)
                 print("Chọn Lịch sử mua tin")
                 break
             case MoreRowName.policy.index():
