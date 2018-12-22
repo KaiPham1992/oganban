@@ -18,6 +18,7 @@ class FTextField: BaseView {
     let textField: UITextField = {
         let tf = MyUITextField()
         tf.font = AppFont.fontRegular15
+        tf.textColor = AppColor.textTextField
         tf.backgroundColor = .clear
         tf.textColor = .black
         return tf
@@ -26,7 +27,7 @@ class FTextField: BaseView {
     let lbTitle: UILabel = {
         let lb = UILabel()
         lb.textColor = AppColor.textLabel
-        lb.font = AppFont.fontRegular13
+        lb.font = AppFont.fontRegularRoboto12
         lb.backgroundColor = .white
         return lb
     }()

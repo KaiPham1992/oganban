@@ -24,7 +24,7 @@ extension UICollectionViewCell {
 extension UICollectionView {
     
     // Cell
-    func registerCollectionCell<T: UICollectionViewCell>(_: T.Type, fromNib: Bool) {
+    func registerCollectionCell<T: UICollectionViewCell>(_: T.Type, fromNib: Bool = true) {
         if fromNib {
             self.register(T.nib, forCellWithReuseIdentifier: T.identifier)
         } else {

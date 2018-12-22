@@ -21,8 +21,9 @@ class PopUpNotificationHaveAdmob: BasePopUpView {
         vHaveAdmob.fillSuperview()
     }
     
-    func showPopUp() {
+    func showPopUp(message: String) {
         let width = UIScreen.main.bounds.width - 30
+        vHaveAdmob.lbMessage.text = message
         super.showPopUp(width: width, height: 256, type: .zoomOut)
     }
 }

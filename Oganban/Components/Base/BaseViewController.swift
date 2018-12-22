@@ -17,7 +17,7 @@ enum StyleNavigation {
 class BaseViewController: UIViewController {
     
     let mainBackgroundColor = UIColor.white
-    let mainNavigationBarColor = AppColor.red
+    let mainNavigationBarColor = AppColor.main
     
     override func viewDidLoad() {
         super.viewDidLoad()

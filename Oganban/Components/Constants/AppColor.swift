@@ -9,7 +9,8 @@
 import UIKit
 
 struct AppColor {
-    static let red = UIColor(red: 179/255, green: 19/255, blue: 14/255, alpha: 1)
+    static let main = UIColor(red: 110/255, green: 0/255, blue: 0/255, alpha: 1)
+    static let red = UIColor(red: 110/255, green: 0/255, blue: 0/255, alpha: 1)
     
     static let redHot = UIColor(red: 237/255.0, green: 27/255.0, blue: 35/255.0, alpha: 1.0)
     
@@ -26,7 +27,8 @@ struct AppColor {
     static let pinkBackground = UIColor(red: 254/255, green: 243/255, blue: 243/255, alpha: 1)
     
     static let baseColors: [UIColor] = [.red, .green, .blue, .yellow, UIColor(hexString: "00ffff"), UIColor(hexString: "ff00ff") , UIColor.white]
-    static let textLabel                = UIColor(red: 180/255, green: 180/255, blue: 180/255, alpha: 1)
+    static let textLabel                = UIColor(red: 158/255, green: 158/255, blue: 158/255, alpha: 1)
+    static let textTextField                = UIColor(red: 65/255, green: 65/255, blue: 65/255, alpha: 1)
     static let textColor = UIColor(red: 180/255, green: 180/255, blue: 180/255, alpha: 1)
     static let orange = UIColor(red: 241/255, green: 121/255, blue: 28/255, alpha: 1)
     static let borderDarkGray = UIColor(red: 169/255, green: 169/255, blue: 169/255, alpha: 1)

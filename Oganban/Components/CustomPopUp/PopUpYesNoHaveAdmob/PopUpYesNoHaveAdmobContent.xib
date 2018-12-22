@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopUpYesNoHaveAdmobContent" customModule="Oganban" customModuleProvider="target">
+            <connections>
+                <outlet property="btnNo" destination="ceF-ZU-cmV" id="rwh-ih-3yC"/>
+                <outlet property="btnYes" destination="QPi-S9-m6W" id="dbY-zS-0uM"/>
+                <outlet property="lbQuestion" destination="ien-gY-nhI" id="6DA-FG-9Ie"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NPQ-Lz-eOF" customClass="AdmobNativeView" customModule="Oganban" customModuleProvider="target">
+                    <rect key="frame" x="20" y="65" width="335" height="140"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="140" id="ax6-9B-1Ej"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bạn có chắc chắn từ chối bán cho khách hàng này ?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ien-gY-nhI">
+                    <rect key="frame" x="20" y="225" width="335" height="36"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.25490196078431371" green="0.25490196078431371" blue="0.25490196078431371" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QPi-S9-m6W">
+                    <rect key="frame" x="59" y="607" width="120" height="40"/>
+                    <color key="backgroundColor" red="0.0" green="0.34509803921568627" blue="0.0" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="120" id="1a3-G5-g8B"/>
+                        <constraint firstAttribute="height" constant="40" id="QSi-sf-mAF"/>
+                    </constraints>
+                    <state key="normal" title="Có">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VgP-K0-Hzv">
+                    <rect key="frame" x="187" y="666" width="1" height="1"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="1" id="V9f-1c-o6d"/>
+                        <constraint firstAttribute="height" constant="1" id="Vi7-fI-8Dq"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ceF-ZU-cmV">
+                    <rect key="frame" x="196" y="607" width="120" height="40"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="X5u-2f-7Ff"/>
+                        <constraint firstAttribute="width" constant="120" id="YqA-TT-Tk6"/>
+                    </constraints>
+                    <state key="normal" title="Không">
+                        <color key="titleColor" red="0.0" green="0.34509803919999998" blue="0.0" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="0.5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" red="0.0" green="0.34509803919999998" blue="0.0" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ien-gY-nhI" firstAttribute="trailing" secondItem="NPQ-Lz-eOF" secondAttribute="trailing" id="6Sb-pF-Vi5"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="VgP-K0-Hzv" secondAttribute="bottom" id="AN2-yV-PWk"/>
+                <constraint firstItem="NPQ-Lz-eOF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="HuQ-xj-8g6"/>
+                <constraint firstItem="VgP-K0-Hzv" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Irr-PV-fEA"/>
+                <constraint firstItem="ceF-ZU-cmV" firstAttribute="leading" secondItem="VgP-K0-Hzv" secondAttribute="trailing" constant="8" id="KeW-eR-0Tw"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="NPQ-Lz-eOF" secondAttribute="trailing" constant="20" id="LQB-gR-45Y"/>
+                <constraint firstItem="VgP-K0-Hzv" firstAttribute="leading" secondItem="QPi-S9-m6W" secondAttribute="trailing" constant="8" id="O2E-23-2lW"/>
+                <constraint firstItem="ien-gY-nhI" firstAttribute="top" secondItem="NPQ-Lz-eOF" secondAttribute="bottom" constant="20" id="Tcm-Yr-Rhc"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="QPi-S9-m6W" secondAttribute="bottom" constant="20" id="Wu6-jU-MbU"/>
+                <constraint firstItem="ceF-ZU-cmV" firstAttribute="centerY" secondItem="QPi-S9-m6W" secondAttribute="centerY" id="kPA-6p-Reg"/>
+                <constraint firstItem="ien-gY-nhI" firstAttribute="leading" secondItem="NPQ-Lz-eOF" secondAttribute="leading" id="n2S-vT-gqL"/>
+                <constraint firstItem="NPQ-Lz-eOF" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="45" id="nLE-GS-HDi"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="52" y="-45"/>
+        </view>
+    </objects>
+</document>

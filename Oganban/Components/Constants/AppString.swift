@@ -8,20 +8,30 @@
 import Foundation
 
 struct TitleString {
-    static let loginName             = "LoginName"
-    static let placeHolderLoginName  = "placeHolderLoginName"
-    static let displayName             = "displayName"
-    static let placeHolderDisplayName  = "placeHolderDisplayName"
-    static let email                = "email"
-    static let placeHolderEmail     = "placeHolderEmail"
-    static let phone                = "phone"
-    static let placeHolderPhone     = "placeHolderPhone"
-    static let password             = "password"
-    static let placeHolderPassword  = "placeHolderPassword"
-    static let comfirm              = "comfirm"
-    static let placeHolderConfirm   = "placeHolderConfirm"
-    static let captcha              = "captcha"
-    static let placeHolderCaptcha   = "placeHolderCaptcha"
+    //-- sign up
+    static let loginName             = "Tên đăng nhập*"
+    static let placeHolderLoginName  = "Nhập địa chỉ email"
+    static let email                = "Nhập lại email*"
+    static let placeHolderEmail     = "Nhập lại địa chỉ email"
+    static let displayName             = "Tên hiển thị*"
+    static let placeHolderDisplayName  = "Nhập tên hiển thị"
+    static let birthday                = "Ngày tháng năm sinh*"
+    static let placeHolderBirthday     = "Chọn ngày"
+    static let gender                = "Giới tính"
+    static let placeHolderGender     = "Chọn giới tính"
+    static let houseAddress             = "Địa chỉ 1"
+    static let placeHolderHouseAddress  = "Bạn có thể nhập địa chỉ nhà"
+    static let companyAddress                = "Địa chỉ 2"
+    static let placeHolderCompanyAddress     = "Bạn có thể nhập địa chỉ công ty"
+    static let introduce             = "Mã người giới thiệu"
+    static let placeHolderIntroduce = "Nhập mã người giới thiệu nếu có"
+    static let password             = "Mật khẩu*"
+    static let placeHolderPassword  = "Nhập mật khẩu"
+    static let confirm              = "Nhập lại mật khẩu*"
+    static let placeHolderConfirm   = "Nhập lại mật khẩu"
+    static let captcha              = "Mã captcha*"
+    static let placeHolderCaptcha   = "Nhập mã captcha"
+    
     static let phonePlaceHolder     = "phonePlaceHolder"
     static let passwordLogin        = "passwordLogin"
     static let emailOrPhone         = "emailOrPhone"
@@ -36,32 +46,7 @@ struct TitleString {
 }
 
 struct MessageString {
-
-    static let loginName                    = "LoginName"
-    static let MessageEmptyUsername         = "MessageEmptyUsername"
-    static let MessageEmptyPassword         = "MessageEmptyPassword"
-    static let MessageEmptyCurrentPassword  = "MessageEmptyCurrentPassword"
-    static let MessageEmptyNewPassword      = "MessageEmptyNewPassword"
-    static let MessageEmptyConfirmPassword  = "MessageEmptyConfirmPassword"
-    static let MessageEmptyName             = "MessageEmptyName"
-    static let MessageEmptyEmail            = "MessageEmptyEmail"
-    static let MessageEmptyPhone            = "MessageEmptyPhone"
-    static let MessageEmptyCaptcha          = "MessageEmptyCaptcha"
-    
-    static let MessageInValidPassword = "MessageInValidPassword"
-    static let MessageInValidCurrentPassword = "MessageInValidCurrentPassword"
-    static let MessageInValidNewPassword = "MessageInValidNewPassword"
-    static let MessageInValidConfirmNewPassword = "MessageInValidConfirmNewPassword"
-    static let MessageInValidEmail = "MessageInValidEmail"
-    static let MessageInValidPhone = "MessageInValidPhone"
-    static let MessageInvalidUserName = "MessageInvalidUserName"
-    static let MessagePasswordsNotMatch = "MessagePasswordsNotMatch"
-    static let MessageInvalidUsernameOrPassword = "MessageInvalidUsernameOrPassword"
-    static let MessageInvalidEmailFormat = "MessageInvalidEmailFormat"
-    static let MessageNotHave  =  "MessageNotHave"
-    static let MessageNotNetwork = "MessageNotNetwork"
-    static let MessageEmptyAll = "MessageEmptyAll"
-    static let MessageEmptyAddress = "MessageEmptyAddress"
+    static let notEnoughCoin = "Số Ơcoin tích lũy của bạn không đủ để đổi sản phẩm. Vui lòng kiểm tra lại !"
 }
 
 struct Params {

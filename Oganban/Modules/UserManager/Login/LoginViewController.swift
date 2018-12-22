@@ -162,11 +162,13 @@ extension LoginViewController {
             self.view.endEditing(true)
             print("TAP SIGN UP")
             
-            let popUp = PopUpSelectGender()
-            popUp.showPopUp(currentGender: nil, completionGender: { gender in
-                guard let _gender = gender as? Gender else { return }
-                print(_gender)
+            PopUpHelper.shared.showYesNoQuestionHaveAds(question: MessageString.notEnoughCoin, completionYes: {
+                print("yes")
+            }, completionNo: {
+                print("No")
             })
+            
+//            PopUpHelper.shared.showMessageHaveAds(message: MessageString.notEnoughCoin)
         }
         
         self.tfPassword.completeTapRightIcon = { (success) in
