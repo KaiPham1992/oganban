@@ -11,6 +11,10 @@ import UIKit
 struct AppImage {
 
     //Tabbar
+    
+    static let imgCheckMenu               = UIImage(named: "ic_check")!
+    static let imgChecked               = UIImage(named: "ic_checked")!
+    
     static let imgHomeSelected = UIImage(named: "ic_home_selected")!
     static let imgHome = UIImage(named: "ic_home")!
     static let imgMyBuySelected = UIImage(named: "ic_bag")!
@@ -34,4 +38,5 @@ struct AppImage {
     static let imgArrowDown = UIImage(named: "arrowDown")!
     static let imgUnCheck = UIImage(named: "uncheck")!
     static let imgCheck = UIImage(named: "check")!
+
 }
