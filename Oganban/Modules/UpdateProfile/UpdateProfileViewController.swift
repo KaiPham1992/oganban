@@ -57,10 +57,9 @@ class UpdateProfileViewController: BaseViewController, UpdateProfileViewProtocol
         let tapSexGesture = UITapGestureRecognizer(target: self, action: #selector(self.selectSex(_:)))
         self.tfGender.addGestureRecognizer(tapSexGesture)
         
-        tfPhoneCode.setupLayoutTextfield(placeholderText: "+84", titleText: "Số điện thoại *", placeholderColor: AppColor.black414141)
-        tfPhoneCode.showRightIcon(sỉze: CGSize(width: 11, height: 11), icon: AppImage.imgArrowDown)
+        tfPhoneCode.setupLayoutTextfield(placeholderText: "+84", titleText: "", placeholderColor: AppColor.black414141)
+        tfPhoneCode.showRightIcon(sỉze: CGSize(width: 11, height: 11), icon: AppImage.imgArrowDown, paddingRight: -12)
         tfPhoneCode.tfContent.isEnabled = false
-        tfPhone.tfContent.textAlignment = .center
         tfPhone.setupLayoutTextfield(placeholderText: "Nhập số điện thoại của bạn", titleText: "", placeholderColor: AppColor.black414141)
         
         tfAddress1.setupLayoutTextfield(placeholderText: "Bạn có thể nhập địa chỉ nhà", titleText: "Địa chỉ 1", placeholderColor: AppColor.black414141)

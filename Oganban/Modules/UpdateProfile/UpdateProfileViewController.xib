@@ -115,14 +115,14 @@
                                     <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZIs-55-eI9" customClass="OganbanCustomTextfield" customModule="Oganban" customModuleProvider="target">
-                                    <rect key="frame" x="15" y="482" width="345" height="50"/>
+                                    <rect key="frame" x="80" y="482" width="280" height="50"/>
                                     <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KZj-ci-Z5k" customClass="OganbanCustomTextfield" customModule="Oganban" customModuleProvider="target">
-                                    <rect key="frame" x="15" y="482" width="50" height="50"/>
+                                    <rect key="frame" x="15" y="482" width="65" height="50"/>
                                     <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="50" id="7Lk-uL-6D2"/>
+                                        <constraint firstAttribute="width" constant="65" id="7Lk-uL-6D2"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dFh-wI-5nZ" customClass="OganbanCustomTextfield" customModule="Oganban" customModuleProvider="target">
@@ -147,6 +147,12 @@
                                         <constraint firstAttribute="width" constant="23.5" id="vvn-kB-KL2"/>
                                     </constraints>
                                 </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Số điện thoại *" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2r-s4-kgC">
+                                    <rect key="frame" x="15" y="482" width="82.5" height="16.5"/>
+                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12.5"/>
+                                    <color key="textColor" red="0.61960784313725492" green="0.61960784313725492" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
@@ -155,7 +161,6 @@
                                 <constraint firstItem="dFh-wI-5nZ" firstAttribute="height" secondItem="HYQ-b6-cUi" secondAttribute="height" id="3FB-ti-wVt"/>
                                 <constraint firstItem="kF8-76-oxN" firstAttribute="leading" secondItem="bWY-Kw-W06" secondAttribute="trailing" constant="5" id="5Mv-jh-SPL"/>
                                 <constraint firstItem="Cqq-Ly-Pja" firstAttribute="top" secondItem="Apa-51-Mt2" secondAttribute="bottom" constant="15" id="5Vi-pz-kKG"/>
-                                <constraint firstItem="ZIs-55-eI9" firstAttribute="top" secondItem="HYQ-b6-cUi" secondAttribute="bottom" constant="15" id="5an-z2-6fK"/>
                                 <constraint firstAttribute="trailing" secondItem="qaW-Pg-lnD" secondAttribute="trailing" constant="112.5" id="6B2-hi-m4e"/>
                                 <constraint firstItem="HYQ-b6-cUi" firstAttribute="top" secondItem="Cqq-Ly-Pja" secondAttribute="bottom" constant="15" id="7mz-9A-Y6M"/>
                                 <constraint firstItem="BjH-Bd-0zE" firstAttribute="trailing" secondItem="dFh-wI-5nZ" secondAttribute="trailing" id="7wp-qy-fV6"/>
@@ -165,6 +170,7 @@
                                 <constraint firstItem="lAb-Sb-9UD" firstAttribute="trailing" secondItem="t62-tj-AIM" secondAttribute="trailing" id="G9B-ve-Cj5"/>
                                 <constraint firstItem="bWY-Kw-W06" firstAttribute="leading" secondItem="WyW-Jd-GCd" secondAttribute="leading" id="GJw-EZ-nAQ"/>
                                 <constraint firstItem="Apa-51-Mt2" firstAttribute="leading" secondItem="ebE-Mb-1by" secondAttribute="leading" id="Gk5-yP-jQn"/>
+                                <constraint firstItem="C2r-s4-kgC" firstAttribute="leading" secondItem="HYQ-b6-cUi" secondAttribute="leading" id="Jfn-Q9-TuL"/>
                                 <constraint firstItem="BjH-Bd-0zE" firstAttribute="height" secondItem="dFh-wI-5nZ" secondAttribute="height" id="KaK-BW-eIr"/>
                                 <constraint firstItem="HYQ-b6-cUi" firstAttribute="leading" secondItem="Cqq-Ly-Pja" secondAttribute="leading" id="Nxu-q3-McM"/>
                                 <constraint firstItem="kF8-76-oxN" firstAttribute="top" secondItem="bWY-Kw-W06" secondAttribute="top" id="OrX-2Y-K4K"/>
@@ -183,8 +189,7 @@
                                 <constraint firstItem="t62-tj-AIM" firstAttribute="top" secondItem="w8m-eg-OJ7" secondAttribute="bottom" constant="11.75" id="Y9N-Mz-2yI"/>
                                 <constraint firstItem="t62-tj-AIM" firstAttribute="leading" secondItem="wEs-mh-9f4" secondAttribute="trailing" constant="10.5" id="YNU-ty-3Dr"/>
                                 <constraint firstItem="t62-tj-AIM" firstAttribute="centerY" secondItem="WyW-Jd-GCd" secondAttribute="centerY" id="Yhq-8J-gvA"/>
-                                <constraint firstItem="KZj-ci-Z5k" firstAttribute="top" secondItem="HYQ-b6-cUi" secondAttribute="bottom" constant="15" id="ZMu-2P-tLX"/>
-                                <constraint firstItem="ZIs-55-eI9" firstAttribute="leading" secondItem="HYQ-b6-cUi" secondAttribute="leading" id="awT-dt-7EI"/>
+                                <constraint firstItem="ZIs-55-eI9" firstAttribute="top" secondItem="C2r-s4-kgC" secondAttribute="bottom" constant="-16.5" id="Zrc-iR-PQM"/>
                                 <constraint firstAttribute="trailing" secondItem="ebE-Mb-1by" secondAttribute="trailing" constant="15" id="bhg-VB-Nqt"/>
                                 <constraint firstItem="ebE-Mb-1by" firstAttribute="leading" secondItem="gwz-Mi-dgC" secondAttribute="leading" constant="15" id="cnt-Sb-PBZ"/>
                                 <constraint firstItem="dFh-wI-5nZ" firstAttribute="top" secondItem="ZIs-55-eI9" secondAttribute="bottom" constant="15" id="dA4-9N-6j5"/>
@@ -195,13 +200,16 @@
                                 <constraint firstItem="KZj-ci-Z5k" firstAttribute="leading" secondItem="HYQ-b6-cUi" secondAttribute="leading" id="ofb-L4-9wp"/>
                                 <constraint firstItem="ebE-Mb-1by" firstAttribute="top" secondItem="jDd-eY-Ped" secondAttribute="bottom" constant="15" id="pgg-LZ-Z6i"/>
                                 <constraint firstItem="Apa-51-Mt2" firstAttribute="trailing" secondItem="ebE-Mb-1by" secondAttribute="trailing" id="pm9-02-7EA"/>
+                                <constraint firstItem="ZIs-55-eI9" firstAttribute="leading" secondItem="KZj-ci-Z5k" secondAttribute="trailing" id="rNB-3j-f7n"/>
                                 <constraint firstItem="i7O-as-6WI" firstAttribute="top" secondItem="kF8-76-oxN" secondAttribute="top" constant="10" id="uaZ-GY-tK9"/>
+                                <constraint firstItem="KZj-ci-Z5k" firstAttribute="top" secondItem="C2r-s4-kgC" secondAttribute="bottom" constant="-16.5" id="ub9-cP-AC9"/>
                                 <constraint firstItem="Cqq-Ly-Pja" firstAttribute="leading" secondItem="Apa-51-Mt2" secondAttribute="leading" id="vAX-JG-CTh"/>
                                 <constraint firstItem="lAb-Sb-9UD" firstAttribute="top" secondItem="t62-tj-AIM" secondAttribute="bottom" constant="8" id="vDz-P2-VP7"/>
                                 <constraint firstItem="qaW-Pg-lnD" firstAttribute="top" secondItem="BjH-Bd-0zE" secondAttribute="bottom" constant="20" id="wmi-vK-Fkt"/>
                                 <constraint firstItem="ZIs-55-eI9" firstAttribute="height" secondItem="HYQ-b6-cUi" secondAttribute="height" id="xL2-uA-LY7"/>
                                 <constraint firstItem="qaW-Pg-lnD" firstAttribute="leading" secondItem="gwz-Mi-dgC" secondAttribute="leading" constant="112.5" id="xPG-Vp-aOl"/>
                                 <constraint firstItem="Cqq-Ly-Pja" firstAttribute="height" secondItem="Apa-51-Mt2" secondAttribute="height" id="xPr-Jv-Vv3"/>
+                                <constraint firstItem="C2r-s4-kgC" firstAttribute="top" secondItem="HYQ-b6-cUi" secondAttribute="bottom" constant="15" id="yDA-6T-Y9U"/>
                             </constraints>
                         </view>
                     </subviews>
