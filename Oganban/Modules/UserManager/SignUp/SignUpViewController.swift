@@ -10,24 +10,67 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController, SignUpViewProtocol {
+class SignUpViewController: BaseViewController, SignUpViewProtocol {
     
     @IBOutlet weak var vLoginName       : FTextField!
     @IBOutlet weak var vLoginEmail      : FTextField!
     @IBOutlet weak var vLoginDisplay    : FTextField!
-    @IBOutlet weak var vBirthday        : FTextField!
-    @IBOutlet weak var vGender          : FTextField!
+    @IBOutlet weak var vBirthday        : FTextFieldChoose!
+    @IBOutlet weak var vGender          : FTextFieldChoose!
     @IBOutlet weak var vHouseAddress    : FTextField!
     @IBOutlet weak var vCompanyAddress  : FTextField!
     @IBOutlet weak var vIntroduce       : FTextField!
     @IBOutlet weak var vPassword        : FTextField!
     @IBOutlet weak var vPasswordReType  : FTextField!
-    @IBOutlet weak var vCaptcha        : FTextField!
+    @IBOutlet weak var vCaptcha         : FTextField!
 
 	var presenter: SignUpPresenterProtocol?
+    let popUpDate = PopUpSelectDate()
+    let popUpGender = PopUpSelectGender()
 
 	override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func setUpNavigation() {
+        super.setUpNavigation()
+        addBackToNavigation()
+        setRedStatusBar()
+    }
+    
+    override func setUpViews() {
+        vLoginName.setTextField(title: TitleString.loginName, placeHolder: TitleString.placeHolderLoginName)
+        vLoginEmail.setTextField(title: TitleString.email, placeHolder: TitleString.placeHolderEmail)
+        vLoginDisplay.setTextField(title: TitleString.displayName, placeHolder: TitleString.placeHolderDisplayName)
+        vBirthday.setTextField(title: TitleString.birthday, placeHolder: TitleString.placeHolderBirthday)
+        vGender.setTextField(title: TitleString.gender, placeHolder: TitleString.placeHolderGender)
+        vHouseAddress.setTextField(title: TitleString.houseAddress, placeHolder: TitleString.placeHolderHouseAddress)
+        vCompanyAddress.setTextField(title: TitleString.companyAddress, placeHolder: TitleString.placeHolderCompanyAddress)
+        vIntroduce.setTextField(title: TitleString.introduce, placeHolder: TitleString.placeHolderIntroduce)
+        vPassword.setTextField(title: TitleString.password, placeHolder: TitleString.placeHolderPassword)
+        vPasswordReType.setTextField(title: TitleString.confirm, placeHolder: TitleString.placeHolderConfirm)
+        vCaptcha.setTextField(title: TitleString.captcha, placeHolder: TitleString.placeHolderCaptcha)
+        vBirthday.delegate = self
+        vGender.delegate = self
+    }
 
+}
+
+extension SignUpViewController: FTextFieldChooseDelegate {
+    func btnChooseTapped(sender: FTextFieldChoose) {
+        switch sender {
+        case vBirthday:
+            popUpDate.showPopUp(currentDate: nil) { (date) in
+                print(date)
+            }
+        case vGender:
+            popUpGender.showPopUp(currentGender: nil) { (gender) in
+                print(gender)
+            }
+        default:
+            break
+        }
+    }
+    
+    
 }

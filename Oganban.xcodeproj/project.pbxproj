@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		842F09C421CE0F1400FBA5F3 /* UpdateProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F09BE21CE0F1400FBA5F3 /* UpdateProfilePresenter.swift */; };
+		842F09C521CE0F1400FBA5F3 /* UpdateProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F09BF21CE0F1400FBA5F3 /* UpdateProfileRouter.swift */; };
+		842F09C621CE0F1400FBA5F3 /* UpdateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F09C021CE0F1400FBA5F3 /* UpdateProfileViewController.swift */; };
+		842F09C721CE0F1400FBA5F3 /* UpdateProfileProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F09C121CE0F1400FBA5F3 /* UpdateProfileProtocols.swift */; };
+		842F09C821CE0F1400FBA5F3 /* UpdateProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F09C221CE0F1400FBA5F3 /* UpdateProfileInteractor.swift */; };
+		842F09C921CE0F1400FBA5F3 /* UpdateProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842F09C321CE0F1400FBA5F3 /* UpdateProfileViewController.xib */; };
 		84421BED21CBEECF00F468F5 /* MorePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84421BE721CBEECF00F468F5 /* MorePresenter.swift */; };
 		84421BEE21CBEECF00F468F5 /* MoreRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84421BE821CBEECF00F468F5 /* MoreRouter.swift */; };
 		84421BF021CBEECF00F468F5 /* MoreProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84421BEA21CBEECF00F468F5 /* MoreProtocols.swift */; };
@@ -45,6 +51,7 @@
 		84A92BFB21CA555900148191 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A92BF521CA555900148191 /* LoginViewController.xib */; };
 		B325C2EF21CE05B20048A148 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B325C2ED21CE05B20048A148 /* MenuCell.swift */; };
 		B325C2F021CE05B20048A148 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B325C2EE21CE05B20048A148 /* MenuCell.xib */; };
+		B325C2F221CE26900048A148 /* FTextFieldChoose.swift in Sources */ = {isa = PBXBuildFile; fileRef = B325C2F121CE26900048A148 /* FTextFieldChoose.swift */; };
 		B355EF4F21C8EB3F00379F57 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B355EF4921C8EB3F00379F57 /* HomePresenter.swift */; };
 		B355EF5021C8EB3F00379F57 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B355EF4A21C8EB3F00379F57 /* HomeRouter.swift */; };
 		B355EF5121C8EB3F00379F57 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B355EF4B21C8EB3F00379F57 /* HomeViewController.swift */; };
@@ -235,6 +242,12 @@
 		44208549B4287C06B154C85E /* Pods-Oganban.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Oganban.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Oganban/Pods-Oganban.debug.xcconfig"; sourceTree = "<group>"; };
 		667005DBAD7815A5AA16289A /* Pods_Oganban.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Oganban.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D0CCCBE1CA6E502A84355A0 /* Pods-Oganban.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Oganban.release.xcconfig"; path = "Pods/Target Support Files/Pods-Oganban/Pods-Oganban.release.xcconfig"; sourceTree = "<group>"; };
+		842F09BE21CE0F1400FBA5F3 /* UpdateProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfilePresenter.swift; sourceTree = "<group>"; };
+		842F09BF21CE0F1400FBA5F3 /* UpdateProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileRouter.swift; sourceTree = "<group>"; };
+		842F09C021CE0F1400FBA5F3 /* UpdateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileViewController.swift; sourceTree = "<group>"; };
+		842F09C121CE0F1400FBA5F3 /* UpdateProfileProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileProtocols.swift; sourceTree = "<group>"; };
+		842F09C221CE0F1400FBA5F3 /* UpdateProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileInteractor.swift; sourceTree = "<group>"; };
+		842F09C321CE0F1400FBA5F3 /* UpdateProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateProfileViewController.xib; sourceTree = "<group>"; };
 		84421BE721CBEECF00F468F5 /* MorePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorePresenter.swift; sourceTree = "<group>"; };
 		84421BE821CBEECF00F468F5 /* MoreRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreRouter.swift; sourceTree = "<group>"; };
 		84421BEA21CBEECF00F468F5 /* MoreProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreProtocols.swift; sourceTree = "<group>"; };
@@ -273,6 +286,7 @@
 		84A92BF521CA555900148191 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		B325C2ED21CE05B20048A148 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		B325C2EE21CE05B20048A148 /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
+		B325C2F121CE26900048A148 /* FTextFieldChoose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTextFieldChoose.swift; sourceTree = "<group>"; };
 		B355EF4921C8EB3F00379F57 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		B355EF4A21C8EB3F00379F57 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		B355EF4B21C8EB3F00379F57 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -486,6 +500,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		842F09BD21CE0EEA00FBA5F3 /* UpdateProfile */ = {
+			isa = PBXGroup;
+			children = (
+				842F09BE21CE0F1400FBA5F3 /* UpdateProfilePresenter.swift */,
+				842F09BF21CE0F1400FBA5F3 /* UpdateProfileRouter.swift */,
+				842F09C021CE0F1400FBA5F3 /* UpdateProfileViewController.swift */,
+				842F09C121CE0F1400FBA5F3 /* UpdateProfileProtocols.swift */,
+				842F09C221CE0F1400FBA5F3 /* UpdateProfileInteractor.swift */,
+				842F09C321CE0F1400FBA5F3 /* UpdateProfileViewController.xib */,
+			);
+			path = UpdateProfile;
+			sourceTree = "<group>";
+		};
 		84421BE621CBEEA600F468F5 /* More */ = {
 			isa = PBXGroup;
 			children = (
@@ -530,8 +557,6 @@
 				DEE1DA7521CE297F0036FEB7 /* AdmobBannerView */,
 				DEE1DA5D21CDF2950036FEB7 /* AdmobNativeView */,
 				DE21828E21CD4E7F00FDD9F1 /* AppTextFiled */,
-				84A92BEC21CA518200148191 /* OganbanCustomButton.swift */,
-				84A92BEB21CA518100148191 /* OganbanCustomTextfield.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -664,6 +689,9 @@
 		CB172B1821C6A1480068CF92 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+
+				842F09BD21CE0EEA00FBA5F3 /* UpdateProfile */,
+
 				B36AEEB721CDDB8800BED43C /* Notification */,
 				B36AEEAA21CDDB7000BED43C /* MySell */,
 				B36AEE9D21CDDB3F00BED43C /* MyBuy */,
@@ -1096,8 +1124,11 @@
 		DE21828E21CD4E7F00FDD9F1 /* AppTextFiled */ = {
 			isa = PBXGroup;
 			children = (
+				84A92BEC21CA518200148191 /* OganbanCustomButton.swift */,
+				84A92BEB21CA518100148191 /* OganbanCustomTextfield.swift */,
 				DE21829321CD4EB600FDD9F1 /* FTextField.swift */,
 				DE21828F21CD4E7F00FDD9F1 /* AppTextFiled.swift */,
+				B325C2F121CE26900048A148 /* FTextFieldChoose.swift */,
 			);
 			path = AppTextFiled;
 			sourceTree = "<group>";
@@ -1261,6 +1292,7 @@
 				CB172C8F21C6A2EF0068CF92 /* OpenSans-Regular.ttf in Resources */,
 				B355EF6121C8FB1400379F57 /* SignUpViewController.xib in Resources */,
 				CB172C9021C6A2EF0068CF92 /* OpenSans-BoldItalic.ttf in Resources */,
+				842F09C921CE0F1400FBA5F3 /* UpdateProfileViewController.xib in Resources */,
 				84487C8621CB7E96008B25B2 /* Roboto-Black.ttf in Resources */,
 				DEE1DA6121CDF3E60036FEB7 /* AdmobNativeView.xib in Resources */,
 				CB172C8B21C6A2EF0068CF92 /* OpenSans-Bold.ttf in Resources */,
@@ -1407,6 +1439,7 @@
 			files = (
 				84421C0721CBF52900F468F5 /* SupplementaryInfoPresenter.swift in Sources */,
 				CB172C9321C6A2EF0068CF92 /* AppString.swift in Sources */,
+				842F09C721CE0F1400FBA5F3 /* UpdateProfileProtocols.swift in Sources */,
 				DE21828021CD473100FDD9F1 /* KActivityIndicatorAnimationBallRotate.swift in Sources */,
 				B36AEECE21CDF52B00BED43C /* HomeCell.swift in Sources */,
 				B36AEEB221CDDB8000BED43C /* MySellRouter.swift in Sources */,
@@ -1441,11 +1474,13 @@
 				CB172B3B21C6A26F0068CF92 /* Network.swift in Sources */,
 				DEE1DA5621CDE6550036FEB7 /* PopUpSelectDate.swift in Sources */,
 				DE21827121CD473100FDD9F1 /* KActivityIndicatorAnimationBlank.swift in Sources */,
+				842F09C621CE0F1400FBA5F3 /* UpdateProfileViewController.swift in Sources */,
 				DE21826B21CD473100FDD9F1 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				84421C0B21CBF52900F468F5 /* SupplementaryInfoInteractor.swift in Sources */,
 				CB172C0D21C6A2EF0068CF92 /* UIApplication+extension.swift in Sources */,
 				DE21823321CD45F300FDD9F1 /* LoginSocialParam.swift in Sources */,
 				CB172C1721C6A2EF0068CF92 /* Double+extension.swift in Sources */,
+				842F09C521CE0F1400FBA5F3 /* UpdateProfileRouter.swift in Sources */,
 				B36AEEC221CDDBA600BED43C /* NotificationProtocols.swift in Sources */,
 				DE21828421CD473100FDD9F1 /* KActivityIndicatorShape.swift in Sources */,
 				B355EF5E21C8FB1400379F57 /* SignUpViewController.swift in Sources */,
@@ -1474,6 +1509,7 @@
 				DE2181FC21CD3C1400FDD9F1 /* AppRouter.swift in Sources */,
 				CB172C0B21C6A2EF0068CF92 /* PopUpNotification.swift in Sources */,
 				DE21827221CD473100FDD9F1 /* KActivityIndicatorAnimationBallTrianglePath.swift in Sources */,
+				B325C2F221CE26900048A148 /* FTextFieldChoose.swift in Sources */,
 				CB172B3D21C6A26F0068CF92 /* NetworkRequest.swift in Sources */,
 				84A92BF821CA555900148191 /* LoginViewController.swift in Sources */,
 				DEE1DA5C21CDF22C0036FEB7 /* AppConstant.swift in Sources */,
@@ -1524,6 +1560,7 @@
 				DE21822A21CD449800FDD9F1 /* UserEntity.swift in Sources */,
 				CB172B3A21C6A26F0068CF92 /* BaseResponse.swift in Sources */,
 				DEE1DA6921CDF5A90036FEB7 /* PopUpSelectGender.swift in Sources */,
+				842F09C421CE0F1400FBA5F3 /* UpdateProfilePresenter.swift in Sources */,
 				DE21826521CD473100FDD9F1 /* KActivityIndicatorAnimationBallGridPulse.swift in Sources */,
 				DE2181FE21CD3DC300FDD9F1 /* AppDelegate+Push.swift in Sources */,
 				CB172C1C21C6A2EF0068CF92 /* UICollectionView+extension.swift in Sources */,
@@ -1576,6 +1613,7 @@
 				DE21821B21CD40FA00FDD9F1 /* FBAccountKit.swift in Sources */,
 				DE21827D21CD473100FDD9F1 /* KActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
 				CB172C0A21C6A2EF0068CF92 /* PopUpNotificationContent.swift in Sources */,
+				842F09C821CE0F1400FBA5F3 /* UpdateProfileInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

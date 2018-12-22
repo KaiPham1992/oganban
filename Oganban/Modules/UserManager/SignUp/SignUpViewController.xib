@@ -10,6 +10,17 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpViewController">
             <connections>
+                <outlet property="vBirthday" destination="6gE-Aq-Q7k" id="yWx-U1-GOQ"/>
+                <outlet property="vCaptcha" destination="g4v-AT-BYZ" id="7yr-3c-zSl"/>
+                <outlet property="vCompanyAddress" destination="Er5-8R-PYv" id="9oc-Q5-CSJ"/>
+                <outlet property="vGender" destination="lIY-v7-PWa" id="3VZ-Ns-Ug2"/>
+                <outlet property="vHouseAddress" destination="UvT-A3-mKL" id="YKm-6L-C1p"/>
+                <outlet property="vIntroduce" destination="hfd-Ia-WFH" id="Aoh-TU-DPN"/>
+                <outlet property="vLoginDisplay" destination="AxV-Uu-5Gu" id="hWK-At-WPy"/>
+                <outlet property="vLoginEmail" destination="VqA-o7-Hhz" id="qZY-22-1oQ"/>
+                <outlet property="vLoginName" destination="6dJ-bp-wT5" id="NbD-Z0-thM"/>
+                <outlet property="vPassword" destination="Kl4-vO-biv" id="dXZ-Va-H9t"/>
+                <outlet property="vPasswordReType" destination="dDJ-dt-QHx" id="APq-Xc-6d2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -26,9 +37,20 @@
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aHR-1q-wux">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="220"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="B88-r9-eH1">
+                                            <rect key="frame" x="86" y="10" width="203" height="106"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="203" id="385-XY-1hH"/>
+                                                <constraint firstAttribute="height" constant="106" id="z2b-Z6-9Wv"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
                                     <color key="backgroundColor" red="0.43137254899999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="220" id="EKn-HH-Sfp"/>
+                                        <constraint firstItem="B88-r9-eH1" firstAttribute="top" secondItem="aHR-1q-wux" secondAttribute="top" constant="10" id="Kyb-ud-TAW"/>
+                                        <constraint firstItem="B88-r9-eH1" firstAttribute="centerX" secondItem="aHR-1q-wux" secondAttribute="centerX" id="nnz-AW-zvu"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XR9-Dm-m1s">
@@ -49,11 +71,11 @@
                                             <rect key="frame" x="15" y="150" width="315" height="50"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6gE-Aq-Q7k" customClass="FTextField" customModule="Oganban" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6gE-Aq-Q7k" customClass="FTextFieldChoose" customModule="Oganban" customModuleProvider="target">
                                             <rect key="frame" x="15" y="215" width="315" height="50"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lIY-v7-PWa" customClass="FTextField" customModule="Oganban" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lIY-v7-PWa" customClass="FTextFieldChoose" customModule="Oganban" customModuleProvider="target">
                                             <rect key="frame" x="15" y="280" width="315" height="50"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
@@ -225,9 +247,11 @@
                 <constraint firstAttribute="bottom" secondItem="xZ2-Im-pmf" secondAttribute="bottom" id="pUR-M9-QLe"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="55.200000000000003" y="48.575712143928037"/>
         </view>
     </objects>
     <resources>
+        <image name="logo" width="203" height="106"/>
         <image name="rectangle_11" width="85" height="36"/>
         <image name="rectangle_12" width="33" height="36"/>
         <image name="rectangle_13" width="25" height="25"/>
