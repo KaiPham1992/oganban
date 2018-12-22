@@ -37,6 +37,8 @@ class SupplementaryInfoViewController: BaseViewController, SupplementaryInfoView
         }
     }
     
+    var birthDay: Date? = nil
+    
     let textContent = "Đồng ý Điều khoản sử dụng"
     let termsConditionsString = "Điều khoản sử dụng"
     let termsConditionsTag = "TermsConditionsTag"
@@ -67,6 +69,8 @@ class SupplementaryInfoViewController: BaseViewController, SupplementaryInfoView
         tfBirthday.setupLayoutTextfield(placeholderText: "Chọn ngày", titleText: "Ngày tháng năm sinh *", placeholderColor: AppColor.black414141)
         tfBirthday.showRightIcon(sỉze: CGSize(width: 11, height: 11), icon: AppImage.imgArrowDown)
         tfBirthday.tfContent.isEnabled = false
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.selectBirthday(_:)))
+        self.tfBirthday.addGestureRecognizer(tapGesture)
         
         tfSex.setupLayoutTextfield(placeholderText: "Chọn giới tính", titleText: "Giới tính", placeholderColor: AppColor.black414141)
         tfSex.showRightIcon(sỉze: CGSize(width: 11, height: 11), icon: AppImage.imgArrowDown)
@@ -94,6 +98,18 @@ class SupplementaryInfoViewController: BaseViewController, SupplementaryInfoView
             hideError(isHidden: false, message: "Vui lòng nhập tên hiển thị")
             return false
         }
+       
+        guard let birthDay =  self.birthDay else {
+            hideError(isHidden: false, message: "Vui lòng chọn ngày tháng năm sinh")
+            return false
+        }
+    
+        let age = calculateAge(birthday: birthDay)
+        if age < 15  {
+            hideError(isHidden: false, message: "Vui lòng kiểm tra lại tuổi phải trên 15")
+            return false
+        }
+        
         if !self.isCheck {
             hideError(isHidden: false, message: "Vui lòng chọn điều khoản sử dụng")
             return false
@@ -122,6 +138,25 @@ class SupplementaryInfoViewController: BaseViewController, SupplementaryInfoView
     @IBAction func tapCheckButton(_ sender: UIButton) {
         self.isCheck = !self.isCheck
     }
+    
+    @objc func selectBirthday(_ sender: UITapGestureRecognizer) {
+        hideError()
+        let popUp = PopUpSelectDate()
+        popUp.vDateContent.vPickerDate.maximumDate = Date()
+        popUp.showPopUp(currentDate: birthDay) { (date) in
+            if let date = date {
+                self.birthDay = date
+                self.tfBirthday.tfContent.text =  date.toString(dateFormat: AppDateFormat.ddMMYYYY_VN)
+            }
+        }
+    }
+    
+    func calculateAge(birthday: Date) -> Int {
+        let now = Date()
+        let calendar = Calendar.current
+        let ageComponents = calendar.dateComponents([.year], from: birthday, to: now)
+        return ageComponents.year!
+    }
 }
 
 extension SupplementaryInfoViewController {
@@ -136,10 +171,11 @@ extension SupplementaryInfoViewController {
     
     func setupPolicy(){
         self.setPolicyContent()
+        
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapPolicyText(_:)))
+        self.tvPolicy.addGestureRecognizer(tapGesture)
         
         self.tvPolicy.textContainerInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        self.tvPolicy.addGestureRecognizer(tapGesture)
         self.tvPolicy.isEditable = false
     }
     

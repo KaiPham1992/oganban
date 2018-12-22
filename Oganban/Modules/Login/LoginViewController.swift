@@ -84,6 +84,7 @@ class LoginViewController: BaseViewController {
         
         let tapTutorialGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapTutorial(sender:)))
         lbTutorial.addGestureRecognizer(tapTutorialGesture)
+        
     }
     
     func setTitleForSignupButton(){
@@ -116,6 +117,11 @@ class LoginViewController: BaseViewController {
         lbError.isHidden = isHidden
         lbError.text = message ?? ""
     }
+    
+    @IBAction func close(_ sender: UIButton) {
+        self.dismiss(animated: true)
+    }
+    
 }
 
 extension LoginViewController {
@@ -175,6 +181,8 @@ extension LoginViewController {
     @objc func tapTutorial(sender: UITapGestureRecognizer){
         print("Tap Tutorial")
     }
+    
+    
     
     func hidePassword(isHidden: Bool){
         self.tfPassword.tfContent.isSecureTextEntry = isHidden
