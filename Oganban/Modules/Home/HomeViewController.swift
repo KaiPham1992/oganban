@@ -10,13 +10,216 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, HomeViewProtocol {
-
+class HomeViewController: BaseViewController, HomeViewProtocol {
+    
+    @IBOutlet weak var cvHome: UICollectionView!
+    @IBOutlet weak var lbPosition: UILabel!
+    @IBOutlet weak var vScale: UIView!
+    @IBOutlet weak var vCategory: UIView!
+    
+    @IBOutlet weak var tbLeft: UITableView!
+    @IBOutlet weak var tbRight: UITableView!
+    @IBOutlet weak var heightLeft: NSLayoutConstraint!
+    @IBOutlet weak var heightRight: NSLayoutConstraint!
+    @IBOutlet weak var btnHideDropdown: UIButton!
+    
 	var presenter: HomePresenterProtocol?
+    
+    let menu = [Menu(title: "title1", listContent: ["a", "b", "c", "d"]),
+                Menu(title: "title2", listContent: ["a", "b"]),
+                Menu(title: "title3", listContent: ["a", "b", "c"]),
+                Menu(title: "title4", listContent: ["a", "b", "c"]),
+                Menu(title: "title5", listContent: ["a"]),
+                Menu(title: "title6", listContent: ["a", "b", "c"]),
+                Menu(title: "title7", listContent: ["a", "b", "c", "e", "f", "g", "h"]),
+                Menu(title: "title8", listContent: ["a", "b", "c"]),
+                Menu(title: "title9", listContent: ["a", "b"]),
+                Menu(title: "title1", listContent: ["a", "b", "c", "d"]),
+                Menu(title: "title2", listContent: ["a", "b"]),
+                Menu(title: "title3", listContent: ["a", "b", "c"]),
+                Menu(title: "title4", listContent: ["a", "b", "c"]),
+                Menu(title: "title5", listContent: ["a"]),
+                Menu(title: "title6", listContent: ["a", "b", "c"]),
+                Menu(title: "title7", listContent: ["a", "b", "c", "e", "f", "g", "h"]),
+                Menu(title: "title8", listContent: ["a", "b", "c"]),
+                Menu(title: "title9", listContent: ["a", "b"]),
+                Menu(title: "title10", listContent: ["a", "b", "c"])]
+    var index = 0
 
 	override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
+        configureCollectionView()
+        configureTableView()
     }
+    
+    override func setUpNavigation() {
+        super.setUpNavigation()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBar.isHidden = false
+    }
+    
+    private func configureCollectionView() {
+        cvHome.registerCollectionCell(AdmobCell.self)
+        cvHome.registerCollectionCell(HomeCell.self)
+        cvHome.delegate = self
+        cvHome.dataSource = self
+    }
+    
+    func configureTableView() {
+        tbLeft.registerTableCell(MenuCell.self)
+        tbRight.registerTableCell(MenuCell.self)
+        tbRight.delegate = self
+        tbRight.dataSource = self
+        tbLeft.delegate = self
+        tbLeft.dataSource = self
+        tbRight.rowHeight = UITableView.automaticDimension
+        tbLeft.rowHeight = UITableView.automaticDimension
+        hideDropdown()
+        tbLeft.layer.cornerRadius = 10
+        tbRight.layer.cornerRadius = 10
+        tbRight.allowsMultipleSelection = true
+    }
+    
+    @IBAction func hideDropdownTapped() {
+        hideDropdown()
+    }
+    
+    func hideDropdown() {
+        tbRight.isHidden = true
+        tbLeft.isHidden = true
+        btnHideDropdown.isHidden = true
+    }
+    
+    @IBAction func btnShowDropdownCategoryTapped() {
+        tbLeft.isHidden = false
+        tbLeft.reloadData()
+        btnHideDropdown.isHidden = false
+    }
+    
+    @IBAction func btnShowDropdownScaleTapped() {
+        
+    }
+    
+    @IBAction func btnGotoPositionTapped() {
+        
+    }
+    
+    @IBAction func btnGotoFavoriteTapped() {
+        
+    }
+}
 
+extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 10
+    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 11
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if indexPath.row == 0 {
+            let cell = collectionView.dequeueCollectionCell(AdmobCell.self, indexPath: indexPath)
+            return cell
+        } else {
+            let cell = collectionView.dequeueCollectionCell(HomeCell.self, indexPath: indexPath)
+            return cell
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if indexPath.row == 0 {
+            return CGSize(width: collectionView.frame.width, height: 125)
+        } else {
+            return CGSize(width: collectionView.frame.width/2, height: 247)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+}
+
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch tableView {
+        case tbLeft:
+            return menu.count
+        case tbRight:
+            return menu[index].listContent.count
+        default:
+            return 0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let heightContent = tableView.contentSize.height
+        let heightMax = UIScreen.main.bounds.height - 250
+        switch tableView {
+        case tbLeft:
+            let cell = tableView.dequeueTableCell(MenuCell.self)
+            self.heightLeft.constant = heightContent < heightMax ? tableView.contentSize.height : (heightMax)
+            return cell
+            
+        case tbRight:
+            
+            let cell = tableView.dequeueTableCell(MenuCell.self)
+            self.heightRight.constant = heightContent < heightMax ? tableView.contentSize.height : (heightMax)
+            cell.imgCheck.image = AppImage.imgCheck
+            return cell
+        default:
+            self.heightLeft.constant = tableView.contentSize.height
+            self.heightRight.constant = tableView.contentSize.height
+            return UITableViewCell()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch tableView {
+        case tbLeft:
+            index = indexPath.row
+            tbRight.reloadData()
+            tbRight.isHidden = false
+        default:
+            break
+        }
+    }
+    
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        cell.transform = CGAffineTransform(translationX: -tableView.bounds.width, y: 0)
+
+        UIView.animate(
+            withDuration: 0.2,
+            delay: 0.1 * Double(indexPath.row),
+            options: [.curveEaseInOut],
+            animations: {
+                cell.transform = CGAffineTransform(translationX: 0, y: 0)
+        })
+    }
+}
+
+
+class Menu {
+    var title: String
+    var listContent: [String]
+    init(title: String, listContent: [String]) {
+        self.title = title
+        self.listContent = listContent
+    }
 }
