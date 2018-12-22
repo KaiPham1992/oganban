@@ -7,12 +7,11 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class AdmobCell: UICollectionViewCell {
-
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
 }

@@ -222,6 +222,10 @@
 		DEE1DA6921CDF5A90036FEB7 /* PopUpSelectGender.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1DA6621CDF5A90036FEB7 /* PopUpSelectGender.swift */; };
 		DEE1DA6B21CDF5D60036FEB7 /* PopUpSelectGenderContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE1DA6A21CDF5D60036FEB7 /* PopUpSelectGenderContent.xib */; };
 		DEE1DA6D21CDF5E70036FEB7 /* PopUpSelectGenderContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1DA6C21CDF5E70036FEB7 /* PopUpSelectGenderContent.swift */; };
+		DEE1DA7021CE1FFC0036FEB7 /* PopUpYesNoHaveAdmob.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1DA6F21CE1FFC0036FEB7 /* PopUpYesNoHaveAdmob.swift */; };
+		DEE1DA7221CE20130036FEB7 /* PopUpYesNoHaveAdmobContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1DA7121CE20130036FEB7 /* PopUpYesNoHaveAdmobContent.swift */; };
+		DEE1DA7421CE20260036FEB7 /* PopUpYesNoHaveAdmobContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE1DA7321CE20260036FEB7 /* PopUpYesNoHaveAdmobContent.xib */; };
+		DEE1DA7721CE299A0036FEB7 /* AdmobBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1DA7621CE299A0036FEB7 /* AdmobBannerView.swift */; };
 		ECFA8430691B731FD6198935 /* Pods_Oganban.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667005DBAD7815A5AA16289A /* Pods_Oganban.framework */; };
 /* End PBXBuildFile section */
 
@@ -451,6 +455,10 @@
 		DEE1DA6621CDF5A90036FEB7 /* PopUpSelectGender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpSelectGender.swift; sourceTree = "<group>"; };
 		DEE1DA6A21CDF5D60036FEB7 /* PopUpSelectGenderContent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpSelectGenderContent.xib; sourceTree = "<group>"; };
 		DEE1DA6C21CDF5E70036FEB7 /* PopUpSelectGenderContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpSelectGenderContent.swift; sourceTree = "<group>"; };
+		DEE1DA6F21CE1FFC0036FEB7 /* PopUpYesNoHaveAdmob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpYesNoHaveAdmob.swift; sourceTree = "<group>"; };
+		DEE1DA7121CE20130036FEB7 /* PopUpYesNoHaveAdmobContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpYesNoHaveAdmobContent.swift; sourceTree = "<group>"; };
+		DEE1DA7321CE20260036FEB7 /* PopUpYesNoHaveAdmobContent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpYesNoHaveAdmobContent.xib; sourceTree = "<group>"; };
+		DEE1DA7621CE299A0036FEB7 /* AdmobBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobBannerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -515,6 +523,7 @@
 		84A92BE921CA50F000148191 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				DEE1DA7521CE297F0036FEB7 /* AdmobBannerView */,
 				DEE1DA5D21CDF2950036FEB7 /* AdmobNativeView */,
 				DE21828E21CD4E7F00FDD9F1 /* AppTextFiled */,
 				84A92BEC21CA518200148191 /* OganbanCustomButton.swift */,
@@ -756,6 +765,7 @@
 		CB172B4421C6A2EE0068CF92 /* CustomPopUp */ = {
 			isa = PBXGroup;
 			children = (
+				DEE1DA6E21CE1FE90036FEB7 /* PopUpYesNoHaveAdmob */,
 				DEE1DA6321CDF5A90036FEB7 /* PopUpSelectGender */,
 				DEE1DA5421CDE6380036FEB7 /* PopUpSelectDate */,
 				DEE1DA4D21CDE1800036FEB7 /* PopUpNotificationHaveAdmob */,
@@ -1127,6 +1137,24 @@
 			path = PopUpSelectGender;
 			sourceTree = "<group>";
 		};
+		DEE1DA6E21CE1FE90036FEB7 /* PopUpYesNoHaveAdmob */ = {
+			isa = PBXGroup;
+			children = (
+				DEE1DA6F21CE1FFC0036FEB7 /* PopUpYesNoHaveAdmob.swift */,
+				DEE1DA7121CE20130036FEB7 /* PopUpYesNoHaveAdmobContent.swift */,
+				DEE1DA7321CE20260036FEB7 /* PopUpYesNoHaveAdmobContent.xib */,
+			);
+			path = PopUpYesNoHaveAdmob;
+			sourceTree = "<group>";
+		};
+		DEE1DA7521CE297F0036FEB7 /* AdmobBannerView */ = {
+			isa = PBXGroup;
+			children = (
+				DEE1DA7621CE299A0036FEB7 /* AdmobBannerView.swift */,
+			);
+			path = AdmobBannerView;
+			sourceTree = "<group>";
+		};
 		E2AA633E107A6A39005CFD05 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1240,6 +1268,7 @@
 				CB3A8F1321C64FC1008144BD /* Main.storyboard in Resources */,
 				DEE1DA6B21CDF5D60036FEB7 /* PopUpSelectGenderContent.xib in Resources */,
 				CB172C8621C6A2EF0068CF92 /* OpenSans-SemiBold.ttf in Resources */,
+				DEE1DA7421CE20260036FEB7 /* PopUpYesNoHaveAdmobContent.xib in Resources */,
 				B355EF5421C8EB3F00379F57 /* HomeViewController.xib in Resources */,
 				CB172C8A21C6A2EF0068CF92 /* OpenSans-LightItalic.ttf in Resources */,
 				CB172C0921C6A2EF0068CF92 /* PopUpNotificationContent.xib in Resources */,
@@ -1376,12 +1405,14 @@
 				84A92BEE21CA518200148191 /* OganbanCustomButton.swift in Sources */,
 				B355EF5321C8EB3F00379F57 /* HomeInteractor.swift in Sources */,
 				CB172C0E21C6A2EF0068CF92 /* UIDevice+extension.swift in Sources */,
+				DEE1DA7721CE299A0036FEB7 /* AdmobBannerView.swift in Sources */,
 				B355EF5021C8EB3F00379F57 /* HomeRouter.swift in Sources */,
 				CB172C9521C6A2EF0068CF92 /* ConstantStoryboard.swift in Sources */,
 				CB172C9921C6A2EF0068CF92 /* BaseViewController.swift in Sources */,
 				84421C0821CBF52900F468F5 /* SupplementaryInfoRouter.swift in Sources */,
 				CB172C1621C6A2EF0068CF92 /* Bundle+extension.swift in Sources */,
 				DE21826C21CD473100FDD9F1 /* KActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
+				DEE1DA7221CE20130036FEB7 /* PopUpYesNoHaveAdmobContent.swift in Sources */,
 				DE21826421CD473100FDD9F1 /* KActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */,
 				B355EF4F21C8EB3F00379F57 /* HomePresenter.swift in Sources */,
 				84A92BF921CA555900148191 /* LoginProtocols.swift in Sources */,
@@ -1412,6 +1443,7 @@
 				CB172C1321C6A2EF0068CF92 /* UIButton+extension.swift in Sources */,
 				DE21826D21CD473100FDD9F1 /* KActivityIndicatorAnimationBallPulse.swift in Sources */,
 				DE21828521CD473100FDD9F1 /* FadeInOutAnimation.swift in Sources */,
+				DEE1DA7021CE1FFC0036FEB7 /* PopUpYesNoHaveAdmob.swift in Sources */,
 				DE21826A21CD473100FDD9F1 /* KActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
 				CB172C9121C6A2EF0068CF92 /* AppImage.swift in Sources */,
 				CB172B4021C6A2A20068CF92 /* Provider.swift in Sources */,
