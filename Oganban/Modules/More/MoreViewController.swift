@@ -60,6 +60,8 @@ extension MoreViewController: UITableViewDelegate, UITableViewDataSource
         if indexPath.row != 0 { // row 0 for header
             switch indexPath.row {
             case MoreRowName.historyCoin.index():
+                let vc = LoginRouter.createModule()
+                self.present(controller: vc, animated: true)
                 print("Chọn Lịch sử ƠCoin")
                 break
             case MoreRowName.historyBuy.index():

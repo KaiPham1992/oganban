@@ -11,6 +11,7 @@ import UIKit
 typealias CompletionClosure = (() -> Void)
 typealias CompletionMessage = ((_ message: String?) -> Void)
 typealias CompletionAny = ((_ item: Any?) -> Void)
+typealias CompletionDate = ((_ item: Date?) -> Void)
 
 enum BasePopUpViewType {
     case fromLeftToCenter
@@ -18,6 +19,7 @@ enum BasePopUpViewType {
     case fromBottomToCenter
     case fromTopToCenter
     case zoomOut
+    case showFromBottom
 }
 
 class BasePopUpView: UIView {
@@ -29,7 +31,7 @@ class BasePopUpView: UIView {
     
     let vContent: UIView = {
         let view                = UIView()
-        view.backgroundColor    = UIColor.black.withAlphaComponent(0.9)
+        view.backgroundColor    = UIColor.white
         view.setBorder(borderWidth: 1, borderColor: AppColor.white.withAlphaComponent(0.7), cornerRadius: 5)
         return view
     }()
@@ -71,6 +73,9 @@ class BasePopUpView: UIView {
         vBackGround.addSubview(vContent)
     }
     
+    @objc func btnCloseTapped() {
+        hidePopUp()
+    }
     @objc func btnOverTapped() {
         hidePopUp()
     }
@@ -87,10 +92,20 @@ class BasePopUpView: UIView {
             }
             
             //---
-            minXContent = (widthWindow - width) / 2
-            minYContent = (heightWindow - height) / 2
             widthContent = width
             heightContent = height
+            
+            //--
+            if type != .showFromBottom {
+                minXContent = (widthWindow - width) / 2
+                minYContent = (heightWindow - height) / 2
+            } else {
+                widthContent = widthWindow
+                heightContent = height
+                minXContent = 0
+                minYContent = (heightWindow - height)
+            }
+            
             self.type = type
             
             //---
@@ -110,9 +125,9 @@ class BasePopUpView: UIView {
         //-- FIX ME
         if type == .zoomOut {
             
-//            AnimationHelper.shared.animationScaleOpacity(view: self.vContent, fromScale: 1, toScale: 0, fromOpacity: 1, toOpacity: 0, duration: 0.1) {
-//                
-//            }
+            //            AnimationHelper.shared.animationScaleOpacity(view: self.vContent, fromScale: 1, toScale: 0, fromOpacity: 1, toOpacity: 0, duration: 0.1) {
+            //
+            //            }
             
             self.vContent.frame = CGRect.zero
             self.vContent.alpha = 0
@@ -148,11 +163,12 @@ class BasePopUpView: UIView {
             self.vContent.frame = CGRect(x: -widthContent, y: minYContent, width: widthContent, height: heightContent)
             break
         case .fromTopToCenter:
-            
-            
             self.vContent.frame = CGRect(x: minXContent, y: heightWindow + heightContent, width: widthContent, height: heightContent)
             break
         case .zoomOut:
+            break
+        case .showFromBottom:
+            self.vContent.frame = CGRect(x: minXContent, y: 0 - heightContent, width: widthContent, height: heightContent)
             break
         }
     }
@@ -175,6 +191,8 @@ class BasePopUpView: UIView {
         case .zoomOut:
             self.vBackGround.alpha = 1
             self.vContent.frame = CGRect(x: minXContent, y: minYContent, width: widthContent, height: heightContent)
+        case .showFromBottom:
+            self.vContent.frame = CGRect(x: minXContent, y: 1000, width: widthContent, height: heightContent)
         }
     }
     
@@ -190,6 +208,12 @@ class BasePopUpView: UIView {
             
         case .zoomOut:
             AnimationHelper.shared.animationScale(view: self.vContent, fromScale: 0.1, toScale: 1)
+            
+        case .showFromBottom:
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 1, options: UIView.AnimationOptions.curveEaseOut, animations: { [unowned self] in
+                self.vBackGround.alpha = 1
+                self.vContent.frame = CGRect(x: self.minXContent, y: self.minYContent, width: self.widthContent, height: self.heightContent)
+                }, completion: nil)
             
         }
     }

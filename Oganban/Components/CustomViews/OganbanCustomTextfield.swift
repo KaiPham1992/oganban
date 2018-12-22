@@ -121,7 +121,9 @@ import UIKit
        
     }
     
-    func showRightIcon(isHidden: Bool = false, icon: UIImage? = nil) {
+    func showRightIcon(isHidden: Bool = false, sỉze: CGSize = CGSize(width: 15, height: 11.5), icon: UIImage? = nil) {
+        ivRightIcon.heightAnchor.constraint(equalToConstant: sỉze.height).isActive = true
+        ivRightIcon.widthAnchor.constraint(equalToConstant: sỉze.width).isActive = true
         ivRightIcon.isHidden = isHidden
         if let icon = icon {
             ivRightIcon.image = icon

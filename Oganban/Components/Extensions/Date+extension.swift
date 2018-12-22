@@ -20,6 +20,7 @@ enum AppDateFormat: String {
     case hhmma                      =  "hh:mm a"
     case weekdayddMMMyyy            = "EE, dd MMM yyyy"
     case dd_MM_YYYY                 = "dd-MM-YYYY"
+    case ddMMYYYY_VN                 = "dd/MM/YYYY"
     
     case MMMyyyy = "MMM yyyy"
     case ddMMYYYY = "dd.MM.YYYY"
@@ -227,22 +228,9 @@ extension Date {
         return calendar.component(component, from: self)
     }
     
-    func toString(formatString: String) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = formatString
-        return dateFormatter.string(from: self)
-    }
-    
     func toString(dateFormat: AppDateFormat) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = dateFormat.formatString
-        return dateFormatter.string(from: self)
-    }
-    
-    func toStringUTC(formatString: String) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = formatString
-        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
         return dateFormatter.string(from: self)
     }
 }

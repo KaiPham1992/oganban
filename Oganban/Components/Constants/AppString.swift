@@ -7,8 +7,6 @@
 //
 import Foundation
 
-
-
 struct TitleString {
     static let loginName             = "LoginName"
     static let placeHolderLoginName  = "placeHolderLoginName"

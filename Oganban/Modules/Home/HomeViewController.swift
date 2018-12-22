@@ -179,7 +179,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             
             let cell = tableView.dequeueTableCell(MenuCell.self)
             self.heightRight.constant = heightContent < heightMax ? tableView.contentSize.height : (heightMax)
-            cell.imgCheck.image = AppImage.imgCheck
+            cell.imgCheck.image = AppImage.imgCheckMenu
             return cell
         default:
             self.heightLeft.constant = tableView.contentSize.height

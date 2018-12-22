@@ -84,6 +84,7 @@ class LoginViewController: BaseViewController {
         
         let tapTutorialGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapTutorial(sender:)))
         lbTutorial.addGestureRecognizer(tapTutorialGesture)
+        
     }
     
     func setTitleForSignupButton(){
@@ -108,6 +109,7 @@ class LoginViewController: BaseViewController {
             hideError(isHidden: false, message: "Vui lòng kiểm tra lại email hoặc mật khẩu")
             return false
         }
+        hideError()
         return true
     }
     
@@ -115,6 +117,11 @@ class LoginViewController: BaseViewController {
         lbError.isHidden = isHidden
         lbError.text = message ?? ""
     }
+    
+    @IBAction func close(_ sender: UIButton) {
+        self.dismiss(animated: true)
+    }
+    
 }
 
 extension LoginViewController {
@@ -131,9 +138,12 @@ extension LoginViewController {
         self.btnLogin.tapButton = {
             self.view.endEditing(true)
             if self.validateInputData() {
+                let vc = SupplementaryInfoRouter.createModule()
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(controller: vc, animated: true)
                 print("Success")
             } else {
-                print("Error")
+                print("Login Error")
             }
         }
         
@@ -151,6 +161,12 @@ extension LoginViewController {
         self.btnSignUp.tapButton = {
             self.view.endEditing(true)
             print("TAP SIGN UP")
+            
+            let popUp = PopUpSelectGender()
+            popUp.showPopUp(currentGender: nil, completionGender: { gender in
+                guard let _gender = gender as? Gender else { return }
+                print(_gender)
+            })
         }
         
         self.tfPassword.completeTapRightIcon = { (success) in
@@ -166,6 +182,8 @@ extension LoginViewController {
     @objc func tapTutorial(sender: UITapGestureRecognizer){
         print("Tap Tutorial")
     }
+    
+    
     
     func hidePassword(isHidden: Bool){
         self.tfPassword.tfContent.isSecureTextEntry = isHidden
