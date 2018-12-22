@@ -108,6 +108,7 @@ class LoginViewController: BaseViewController {
             hideError(isHidden: false, message: "Vui lòng kiểm tra lại email hoặc mật khẩu")
             return false
         }
+        hideError()
         return true
     }
     
@@ -131,9 +132,12 @@ extension LoginViewController {
         self.btnLogin.tapButton = {
             self.view.endEditing(true)
             if self.validateInputData() {
+                let vc = SupplementaryInfoRouter.createModule()
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(controller: vc, animated: true)
                 print("Success")
             } else {
-                print("Error")
+                print("Login Error")
             }
         }
         
