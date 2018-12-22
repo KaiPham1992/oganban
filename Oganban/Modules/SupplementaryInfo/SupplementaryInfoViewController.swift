@@ -38,6 +38,7 @@ class SupplementaryInfoViewController: BaseViewController, SupplementaryInfoView
     }
     
     var birthDay: Date? = nil
+    var gender: Gender? = nil
     
     let textContent = "Đồng ý Điều khoản sử dụng"
     let termsConditionsString = "Điều khoản sử dụng"
@@ -69,12 +70,14 @@ class SupplementaryInfoViewController: BaseViewController, SupplementaryInfoView
         tfBirthday.setupLayoutTextfield(placeholderText: "Chọn ngày", titleText: "Ngày tháng năm sinh *", placeholderColor: AppColor.black414141)
         tfBirthday.showRightIcon(sỉze: CGSize(width: 11, height: 11), icon: AppImage.imgArrowDown)
         tfBirthday.tfContent.isEnabled = false
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.selectBirthday(_:)))
-        self.tfBirthday.addGestureRecognizer(tapGesture)
+        let tapBirthdayGesture = UITapGestureRecognizer(target: self, action: #selector(self.selectBirthday(_:)))
+        self.tfBirthday.addGestureRecognizer(tapBirthdayGesture)
         
         tfSex.setupLayoutTextfield(placeholderText: "Chọn giới tính", titleText: "Giới tính", placeholderColor: AppColor.black414141)
         tfSex.showRightIcon(sỉze: CGSize(width: 11, height: 11), icon: AppImage.imgArrowDown)
         tfSex.tfContent.isEnabled = false
+        let tapSexGesture = UITapGestureRecognizer(target: self, action: #selector(self.selectSex(_:)))
+        self.tfSex.addGestureRecognizer(tapSexGesture)
         
         tfAddress1.setupLayoutTextfield(placeholderText: "Bạn có thể nhập địa chỉ nhà", titleText: "Địa chỉ 1", placeholderColor: AppColor.black414141)
         tfAddress2.setupLayoutTextfield(placeholderText: "180 Cao Lỗ, Phường 4, Quận 8, Hồ Chí Minh, Việt Nam", titleText: "Địa chỉ 2", placeholderColor: AppColor.black414141)
@@ -147,6 +150,17 @@ class SupplementaryInfoViewController: BaseViewController, SupplementaryInfoView
             if let date = date {
                 self.birthDay = date
                 self.tfBirthday.tfContent.text =  date.toString(dateFormat: AppDateFormat.ddMMYYYY_VN)
+            }
+        }
+    }
+    
+    @objc func selectSex(_ sender: UITapGestureRecognizer) {
+        hideError()
+        let popUp = PopUpSelectGender()
+        popUp.showPopUp(currentGender: self.gender ) { (gender) in
+            if let sex: Gender = gender as? Gender {
+                self.gender = sex
+                self.tfSex.tfContent.text = sex.title
             }
         }
     }
