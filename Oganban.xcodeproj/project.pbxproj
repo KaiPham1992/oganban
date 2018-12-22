@@ -225,6 +225,9 @@
 		DEE1DA7221CE20130036FEB7 /* PopUpYesNoHaveAdmobContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1DA7121CE20130036FEB7 /* PopUpYesNoHaveAdmobContent.swift */; };
 		DEE1DA7421CE20260036FEB7 /* PopUpYesNoHaveAdmobContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE1DA7321CE20260036FEB7 /* PopUpYesNoHaveAdmobContent.xib */; };
 		DEE1DA7721CE299A0036FEB7 /* AdmobBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1DA7621CE299A0036FEB7 /* AdmobBannerView.swift */; };
+		DEE1DA7A21CE2E130036FEB7 /* PopUpUpdateQuantityBuy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1DA7921CE2E130036FEB7 /* PopUpUpdateQuantityBuy.swift */; };
+		DEE1DA7C21CE2E410036FEB7 /* PopUpUpdateQuantityBuyContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1DA7B21CE2E410036FEB7 /* PopUpUpdateQuantityBuyContent.swift */; };
+		DEE1DA7E21CE2E6A0036FEB7 /* PopUpUpdateQuantityBuyContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE1DA7D21CE2E6A0036FEB7 /* PopUpUpdateQuantityBuyContent.xib */; };
 		ECFA8430691B731FD6198935 /* Pods_Oganban.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667005DBAD7815A5AA16289A /* Pods_Oganban.framework */; };
 /* End PBXBuildFile section */
 
@@ -457,6 +460,9 @@
 		DEE1DA7121CE20130036FEB7 /* PopUpYesNoHaveAdmobContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpYesNoHaveAdmobContent.swift; sourceTree = "<group>"; };
 		DEE1DA7321CE20260036FEB7 /* PopUpYesNoHaveAdmobContent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpYesNoHaveAdmobContent.xib; sourceTree = "<group>"; };
 		DEE1DA7621CE299A0036FEB7 /* AdmobBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobBannerView.swift; sourceTree = "<group>"; };
+		DEE1DA7921CE2E130036FEB7 /* PopUpUpdateQuantityBuy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpUpdateQuantityBuy.swift; sourceTree = "<group>"; };
+		DEE1DA7B21CE2E410036FEB7 /* PopUpUpdateQuantityBuyContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpUpdateQuantityBuyContent.swift; sourceTree = "<group>"; };
+		DEE1DA7D21CE2E6A0036FEB7 /* PopUpUpdateQuantityBuyContent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpUpdateQuantityBuyContent.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -763,6 +769,7 @@
 		CB172B4421C6A2EE0068CF92 /* CustomPopUp */ = {
 			isa = PBXGroup;
 			children = (
+				DEE1DA7821CE2DD30036FEB7 /* PopUpUpdateQuantityBuy */,
 				DEE1DA6E21CE1FE90036FEB7 /* PopUpYesNoHaveAdmob */,
 				DEE1DA6321CDF5A90036FEB7 /* PopUpSelectGender */,
 				DEE1DA5421CDE6380036FEB7 /* PopUpSelectDate */,
@@ -1152,6 +1159,16 @@
 			path = AdmobBannerView;
 			sourceTree = "<group>";
 		};
+		DEE1DA7821CE2DD30036FEB7 /* PopUpUpdateQuantityBuy */ = {
+			isa = PBXGroup;
+			children = (
+				DEE1DA7921CE2E130036FEB7 /* PopUpUpdateQuantityBuy.swift */,
+				DEE1DA7B21CE2E410036FEB7 /* PopUpUpdateQuantityBuyContent.swift */,
+				DEE1DA7D21CE2E6A0036FEB7 /* PopUpUpdateQuantityBuyContent.xib */,
+			);
+			path = PopUpUpdateQuantityBuy;
+			sourceTree = "<group>";
+		};
 		E2AA633E107A6A39005CFD05 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1266,6 +1283,7 @@
 				DEE1DA6B21CDF5D60036FEB7 /* PopUpSelectGenderContent.xib in Resources */,
 				CB172C8621C6A2EF0068CF92 /* OpenSans-SemiBold.ttf in Resources */,
 				DEE1DA7421CE20260036FEB7 /* PopUpYesNoHaveAdmobContent.xib in Resources */,
+				DEE1DA7E21CE2E6A0036FEB7 /* PopUpUpdateQuantityBuyContent.xib in Resources */,
 				B355EF5421C8EB3F00379F57 /* HomeViewController.xib in Resources */,
 				CB172C8A21C6A2EF0068CF92 /* OpenSans-LightItalic.ttf in Resources */,
 				CB172C0921C6A2EF0068CF92 /* PopUpNotificationContent.xib in Resources */,
@@ -1490,10 +1508,12 @@
 				CB172C1921C6A2EF0068CF92 /* String+extension.swift in Sources */,
 				DE21827921CD473100FDD9F1 /* KActivityIndicatorAnimationBallBeat.swift in Sources */,
 				CB172C1B21C6A2EF0068CF92 /* Bool+extension.swift in Sources */,
+				DEE1DA7C21CE2E410036FEB7 /* PopUpUpdateQuantityBuyContent.swift in Sources */,
 				CB172C2921C6A2EF0068CF92 /* Utils.swift in Sources */,
 				CB172C1E21C6A2EF0068CF92 /* UISearchBar+extension.swift in Sources */,
 				84A92BFA21CA555900148191 /* LoginInteractor.swift in Sources */,
 				CB172C9221C6A2EF0068CF92 /* NotificationConstant.swift in Sources */,
+				DEE1DA7A21CE2E130036FEB7 /* PopUpUpdateQuantityBuy.swift in Sources */,
 				DE21829421CD4EB600FDD9F1 /* FTextField.swift in Sources */,
 				84421BF121CBEECF00F468F5 /* MoreInteractor.swift in Sources */,
 				DE21822121CD419B00FDD9F1 /* PhoneEntity.swift in Sources */,

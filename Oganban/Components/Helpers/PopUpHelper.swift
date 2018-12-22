@@ -21,4 +21,12 @@ class PopUpHelper {
         popUp.showPopUp(question: question, completionYes: completionYes, completionNo: completionNo)
     }
     
+    func showUpdateQuantityBuy() {
+        let popUp = PopUpUpdateQuantityBuy()
+        popUp.showPopUp {
+            
+        }
+        
+    }
+    
 }

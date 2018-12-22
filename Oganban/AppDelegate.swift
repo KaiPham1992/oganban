@@ -13,7 +13,7 @@ import FBSDKLoginKit
 import FBSDKCoreKit
 import GoogleSignIn
 
-@UIApplicationMain
+@UIApplicationMain/Users/kaipham/Documents/Freelancer/oganban/Oganban
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
