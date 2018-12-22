@@ -21,5 +21,6 @@ target 'Oganban' do
   pod 'ImageSlideshow'
   pod 'ImageSlideshow/SDWebImage'
   # Pods for Oganban
+  pod 'Google-Mobile-Ads-SDK'
 
 end

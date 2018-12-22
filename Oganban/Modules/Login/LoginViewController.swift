@@ -152,9 +152,10 @@ extension LoginViewController {
             self.view.endEditing(true)
             print("TAP SIGN UP")
             
-            let popUp = PopUpSelectDate()
-            popUp.showPopUp(currentDate: nil, completionDate: { date in
-                print(date)
+            let popUp = PopUpSelectGender()
+            popUp.showPopUp(currentGender: nil, completionGender: { gender in
+                guard let _gender = gender as? Gender else { return }
+                print(_gender)
             })
         }
         
