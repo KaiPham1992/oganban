@@ -20,7 +20,6 @@ class PopUpSelectDateContent: BaseViewXib {
     
     @IBAction func btnOkTapped() {
         delegate?.dateSelected(date: vPickerDate.date)
-        
     }
     
     override func setUpViews() {

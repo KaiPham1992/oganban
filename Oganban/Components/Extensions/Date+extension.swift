@@ -228,22 +228,9 @@ extension Date {
         return calendar.component(component, from: self)
     }
     
-    func toString(formatString: String) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = formatString
-        return dateFormatter.string(from: self)
-    }
-    
     func toString(dateFormat: AppDateFormat) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = dateFormat.formatString
-        return dateFormatter.string(from: self)
-    }
-    
-    func toStringUTC(formatString: String) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = formatString
-        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
         return dateFormatter.string(from: self)
     }
 }

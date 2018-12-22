@@ -209,6 +209,12 @@
 		DEE1DA5621CDE6550036FEB7 /* PopUpSelectDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1DA5521CDE6550036FEB7 /* PopUpSelectDate.swift */; };
 		DEE1DA5821CDE6610036FEB7 /* PopUpSelectDateContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1DA5721CDE6610036FEB7 /* PopUpSelectDateContent.swift */; };
 		DEE1DA5A21CDE6740036FEB7 /* PopUpSelectDateContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE1DA5921CDE6740036FEB7 /* PopUpSelectDateContent.xib */; };
+		DEE1DA5C21CDF22C0036FEB7 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1DA5B21CDF22C0036FEB7 /* AppConstant.swift */; };
+		DEE1DA5F21CDF3050036FEB7 /* AdmobNativeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1DA5E21CDF3040036FEB7 /* AdmobNativeView.swift */; };
+		DEE1DA6121CDF3E60036FEB7 /* AdmobNativeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE1DA6021CDF3E60036FEB7 /* AdmobNativeView.xib */; };
+		DEE1DA6921CDF5A90036FEB7 /* PopUpSelectGender.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1DA6621CDF5A90036FEB7 /* PopUpSelectGender.swift */; };
+		DEE1DA6B21CDF5D60036FEB7 /* PopUpSelectGenderContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE1DA6A21CDF5D60036FEB7 /* PopUpSelectGenderContent.xib */; };
+		DEE1DA6D21CDF5E70036FEB7 /* PopUpSelectGenderContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1DA6C21CDF5E70036FEB7 /* PopUpSelectGenderContent.swift */; };
 		ECFA8430691B731FD6198935 /* Pods_Oganban.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667005DBAD7815A5AA16289A /* Pods_Oganban.framework */; };
 /* End PBXBuildFile section */
 
@@ -425,6 +431,12 @@
 		DEE1DA5521CDE6550036FEB7 /* PopUpSelectDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpSelectDate.swift; sourceTree = "<group>"; };
 		DEE1DA5721CDE6610036FEB7 /* PopUpSelectDateContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpSelectDateContent.swift; sourceTree = "<group>"; };
 		DEE1DA5921CDE6740036FEB7 /* PopUpSelectDateContent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpSelectDateContent.xib; sourceTree = "<group>"; };
+		DEE1DA5B21CDF22C0036FEB7 /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
+		DEE1DA5E21CDF3040036FEB7 /* AdmobNativeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobNativeView.swift; sourceTree = "<group>"; };
+		DEE1DA6021CDF3E60036FEB7 /* AdmobNativeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdmobNativeView.xib; sourceTree = "<group>"; };
+		DEE1DA6621CDF5A90036FEB7 /* PopUpSelectGender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpSelectGender.swift; sourceTree = "<group>"; };
+		DEE1DA6A21CDF5D60036FEB7 /* PopUpSelectGenderContent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpSelectGenderContent.xib; sourceTree = "<group>"; };
+		DEE1DA6C21CDF5E70036FEB7 /* PopUpSelectGenderContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpSelectGenderContent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -489,6 +501,7 @@
 		84A92BE921CA50F000148191 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				DEE1DA5D21CDF2950036FEB7 /* AdmobNativeView */,
 				DE21828E21CD4E7F00FDD9F1 /* AppTextFiled */,
 				84A92BEC21CA518200148191 /* OganbanCustomButton.swift */,
 				84A92BEB21CA518100148191 /* OganbanCustomTextfield.swift */,
@@ -697,6 +710,7 @@
 		CB172B4421C6A2EE0068CF92 /* CustomPopUp */ = {
 			isa = PBXGroup;
 			children = (
+				DEE1DA6321CDF5A90036FEB7 /* PopUpSelectGender */,
 				DEE1DA5421CDE6380036FEB7 /* PopUpSelectDate */,
 				DEE1DA4D21CDE1800036FEB7 /* PopUpNotificationHaveAdmob */,
 				CB172B4521C6A2EE0068CF92 /* PopUpNotification */,
@@ -813,6 +827,7 @@
 				CB172BFF21C6A2EF0068CF92 /* AppColor.swift */,
 				CB172C0021C6A2EF0068CF92 /* Enum.swift */,
 				CB172C0121C6A2EF0068CF92 /* AppFont.swift */,
+				DEE1DA5B21CDF22C0036FEB7 /* AppConstant.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -1043,6 +1058,25 @@
 			path = PopUpSelectDate;
 			sourceTree = "<group>";
 		};
+		DEE1DA5D21CDF2950036FEB7 /* AdmobNativeView */ = {
+			isa = PBXGroup;
+			children = (
+				DEE1DA5E21CDF3040036FEB7 /* AdmobNativeView.swift */,
+				DEE1DA6021CDF3E60036FEB7 /* AdmobNativeView.xib */,
+			);
+			path = AdmobNativeView;
+			sourceTree = "<group>";
+		};
+		DEE1DA6321CDF5A90036FEB7 /* PopUpSelectGender */ = {
+			isa = PBXGroup;
+			children = (
+				DEE1DA6621CDF5A90036FEB7 /* PopUpSelectGender.swift */,
+				DEE1DA6A21CDF5D60036FEB7 /* PopUpSelectGenderContent.xib */,
+				DEE1DA6C21CDF5E70036FEB7 /* PopUpSelectGenderContent.swift */,
+			);
+			path = PopUpSelectGender;
+			sourceTree = "<group>";
+		};
 		E2AA633E107A6A39005CFD05 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1135,6 +1169,7 @@
 				B355EF6121C8FB1400379F57 /* SignUpViewController.xib in Resources */,
 				CB172C9021C6A2EF0068CF92 /* OpenSans-BoldItalic.ttf in Resources */,
 				84487C8621CB7E96008B25B2 /* Roboto-Black.ttf in Resources */,
+				DEE1DA6121CDF3E60036FEB7 /* AdmobNativeView.xib in Resources */,
 				CB172C8B21C6A2EF0068CF92 /* OpenSans-Bold.ttf in Resources */,
 				CB172C8E21C6A2EF0068CF92 /* LICENSE.txt in Resources */,
 				84421BFE21CBEF7600F468F5 /* MoreViewController.xib in Resources */,
@@ -1151,6 +1186,7 @@
 				DE21821321CD403100FDD9F1 /* AccountKitStrings.bundle in Resources */,
 				DE2181FA21CD3AD300FDD9F1 /* GoogleService-Info.plist in Resources */,
 				CB3A8F1321C64FC1008144BD /* Main.storyboard in Resources */,
+				DEE1DA6B21CDF5D60036FEB7 /* PopUpSelectGenderContent.xib in Resources */,
 				CB172C8621C6A2EF0068CF92 /* OpenSans-SemiBold.ttf in Resources */,
 				B355EF5421C8EB3F00379F57 /* HomeViewController.xib in Resources */,
 				CB172C8A21C6A2EF0068CF92 /* OpenSans-LightItalic.ttf in Resources */,
@@ -1323,6 +1359,7 @@
 				B36AEEBF21CDDBA600BED43C /* NotificationPresenter.swift in Sources */,
 				84421BF821CBEF1E00F468F5 /* MoreCell.swift in Sources */,
 				CB172B2F21C6A22A0068CF92 /* BaseParam.swift in Sources */,
+				DEE1DA6D21CDF5E70036FEB7 /* PopUpSelectGenderContent.swift in Sources */,
 				CB172C1321C6A2EF0068CF92 /* UIButton+extension.swift in Sources */,
 				DE21826D21CD473100FDD9F1 /* KActivityIndicatorAnimationBallPulse.swift in Sources */,
 				DE21828521CD473100FDD9F1 /* FadeInOutAnimation.swift in Sources */,
@@ -1343,6 +1380,7 @@
 				DE21827221CD473100FDD9F1 /* KActivityIndicatorAnimationBallTrianglePath.swift in Sources */,
 				CB172B3D21C6A26F0068CF92 /* NetworkRequest.swift in Sources */,
 				84A92BF821CA555900148191 /* LoginViewController.swift in Sources */,
+				DEE1DA5C21CDF22C0036FEB7 /* AppConstant.swift in Sources */,
 				B36AEEB521CDDB8000BED43C /* MySellInteractor.swift in Sources */,
 				DE21826821CD473100FDD9F1 /* KActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
 				B36AEEC121CDDBA600BED43C /* NotificationViewController.swift in Sources */,
@@ -1386,6 +1424,7 @@
 				CB172C1A21C6A2EF0068CF92 /* NSMutableAttributedString+Extension.swift in Sources */,
 				DE21822A21CD449800FDD9F1 /* UserEntity.swift in Sources */,
 				CB172B3A21C6A26F0068CF92 /* BaseResponse.swift in Sources */,
+				DEE1DA6921CDF5A90036FEB7 /* PopUpSelectGender.swift in Sources */,
 				DE21826521CD473100FDD9F1 /* KActivityIndicatorAnimationBallGridPulse.swift in Sources */,
 				DE2181FE21CD3DC300FDD9F1 /* AppDelegate+Push.swift in Sources */,
 				CB172C1C21C6A2EF0068CF92 /* UICollectionView+extension.swift in Sources */,
@@ -1395,6 +1434,7 @@
 				DE21822621CD43E200FDD9F1 /* Login+Facebook.swift in Sources */,
 				CB172C9C21C6A2EF0068CF92 /* BaseTableCell.swift in Sources */,
 				CB172C9E21C6A2EF0068CF92 /* BaseView.swift in Sources */,
+				DEE1DA5F21CDF3050036FEB7 /* AdmobNativeView.swift in Sources */,
 				CB172C9421C6A2EF0068CF92 /* APIConstant.swift in Sources */,
 				CB172C2421C6A2EF0068CF92 /* LanguageHelper.swift in Sources */,
 				DE21826321CD473100FDD9F1 /* KActivityIndicatorAnimationBallGridBeat.swift in Sources */,
