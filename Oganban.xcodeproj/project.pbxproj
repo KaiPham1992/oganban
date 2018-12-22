@@ -216,11 +216,13 @@
 		DE21828721CD473100FDD9F1 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21826021CD473100FDD9F1 /* ProgressView.swift */; };
 		DE21829121CD4E7F00FDD9F1 /* AppTextFiled.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21828F21CD4E7F00FDD9F1 /* AppTextFiled.swift */; };
 		DE21829421CD4EB600FDD9F1 /* FTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21829321CD4EB600FDD9F1 /* FTextField.swift */; };
-		DEB65B4A21CE3B6F0043D7F2 /* AdmobBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB65B4921CE3B6F0043D7F2 /* AdmobBannerView.swift */; };
-		DEB65B4C21CE3B7B0043D7F2 /* AdmobBannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEB65B4B21CE3B7B0043D7F2 /* AdmobBannerView.xib */; };
 		DEC5166221CE8DB600A17CBF /* PopUpSettingGPS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC5166121CE8DB600A17CBF /* PopUpSettingGPS.swift */; };
 		DEC5166421CE8DCD00A17CBF /* PopUpSettingGPSContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC5166321CE8DCD00A17CBF /* PopUpSettingGPSContent.swift */; };
 		DEC5166621CE8DDF00A17CBF /* PopUpSettingGPSContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEC5166521CE8DDF00A17CBF /* PopUpSettingGPSContent.xib */; };
+		DEC5166B21CE986400A17CBF /* AdmobBannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEC5166921CE986300A17CBF /* AdmobBannerView.xib */; };
+		DEC5166C21CE986400A17CBF /* AdmobBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC5166A21CE986300A17CBF /* AdmobBannerView.swift */; };
+		DEC5167021CE98F200A17CBF /* AppPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC5166F21CE98F200A17CBF /* AppPhoto.swift */; };
+		DEC5167221CE995F00A17CBF /* AppCollectionPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC5167121CE995F00A17CBF /* AppCollectionPhotoCell.swift */; };
 		DEE1DA4F21CDE1CE0036FEB7 /* PopUpNotificationHaveAdmob.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1DA4E21CDE1CE0036FEB7 /* PopUpNotificationHaveAdmob.swift */; };
 		DEE1DA5121CDE2B60036FEB7 /* PopUpNotificationHaveAdmobContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1DA5021CDE2B60036FEB7 /* PopUpNotificationHaveAdmobContent.swift */; };
 		DEE1DA5321CDE3080036FEB7 /* PopUpNotificationHaveAdmobContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE1DA5221CDE3080036FEB7 /* PopUpNotificationHaveAdmobContent.xib */; };
@@ -463,11 +465,13 @@
 		DE21826021CD473100FDD9F1 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		DE21828F21CD4E7F00FDD9F1 /* AppTextFiled.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTextFiled.swift; sourceTree = "<group>"; };
 		DE21829321CD4EB600FDD9F1 /* FTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTextField.swift; sourceTree = "<group>"; };
-		DEB65B4921CE3B6F0043D7F2 /* AdmobBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobBannerView.swift; sourceTree = "<group>"; };
-		DEB65B4B21CE3B7B0043D7F2 /* AdmobBannerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdmobBannerView.xib; sourceTree = "<group>"; };
 		DEC5166121CE8DB600A17CBF /* PopUpSettingGPS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpSettingGPS.swift; sourceTree = "<group>"; };
 		DEC5166321CE8DCD00A17CBF /* PopUpSettingGPSContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpSettingGPSContent.swift; sourceTree = "<group>"; };
 		DEC5166521CE8DDF00A17CBF /* PopUpSettingGPSContent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpSettingGPSContent.xib; sourceTree = "<group>"; };
+		DEC5166921CE986300A17CBF /* AdmobBannerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdmobBannerView.xib; sourceTree = "<group>"; };
+		DEC5166A21CE986300A17CBF /* AdmobBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdmobBannerView.swift; sourceTree = "<group>"; };
+		DEC5166F21CE98F200A17CBF /* AppPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPhoto.swift; sourceTree = "<group>"; };
+		DEC5167121CE995F00A17CBF /* AppCollectionPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCollectionPhotoCell.swift; sourceTree = "<group>"; };
 		DEE1DA4E21CDE1CE0036FEB7 /* PopUpNotificationHaveAdmob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpNotificationHaveAdmob.swift; sourceTree = "<group>"; };
 		DEE1DA5021CDE2B60036FEB7 /* PopUpNotificationHaveAdmobContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpNotificationHaveAdmobContent.swift; sourceTree = "<group>"; };
 		DEE1DA5221CDE3080036FEB7 /* PopUpNotificationHaveAdmobContent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpNotificationHaveAdmobContent.xib; sourceTree = "<group>"; };
@@ -564,7 +568,8 @@
 		84A92BE921CA50F000148191 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				DEE1DA8121CE39F20036FEB7 /* AdmobBannerView */,
+				DEC5166721CE980E00A17CBF /* AppCollectionPhoto */,
+				DEC5166821CE986300A17CBF /* AdmobBannerView */,
 				DEE1DA5D21CDF2950036FEB7 /* AdmobNativeView */,
 				DE21828E21CD4E7F00FDD9F1 /* AppTextFiled */,
 			);
@@ -1153,6 +1158,40 @@
 			path = PopUpSettingGPS;
 			sourceTree = "<group>";
 		};
+		DEC5166721CE980E00A17CBF /* AppCollectionPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				DEC5166E21CE98D500A17CBF /* Model */,
+				DEC5166D21CE98BB00A17CBF /* Cell */,
+			);
+			path = AppCollectionPhoto;
+			sourceTree = "<group>";
+		};
+		DEC5166821CE986300A17CBF /* AdmobBannerView */ = {
+			isa = PBXGroup;
+			children = (
+				DEC5166921CE986300A17CBF /* AdmobBannerView.xib */,
+				DEC5166A21CE986300A17CBF /* AdmobBannerView.swift */,
+			);
+			path = AdmobBannerView;
+			sourceTree = "<group>";
+		};
+		DEC5166D21CE98BB00A17CBF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DEC5167121CE995F00A17CBF /* AppCollectionPhotoCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		DEC5166E21CE98D500A17CBF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DEC5166F21CE98F200A17CBF /* AppPhoto.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		DEE1DA4D21CDE1800036FEB7 /* PopUpNotificationHaveAdmob */ = {
 			isa = PBXGroup;
 			children = (
@@ -1212,16 +1251,6 @@
 			path = PopUpUpdateQuantityBuy;
 			sourceTree = "<group>";
 		};
-		DEE1DA8121CE39F20036FEB7 /* AdmobBannerView */ = {
-			isa = PBXGroup;
-			children = (
-				DEB65B4921CE3B6F0043D7F2 /* AdmobBannerView.swift */,
-				DEB65B4B21CE3B7B0043D7F2 /* AdmobBannerView.xib */,
-			);
-			name = AdmobBannerView;
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		E2AA633E107A6A39005CFD05 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1242,8 +1271,8 @@
 				CB3A8F0621C64FC1008144BD /* Sources */,
 				CB3A8F0721C64FC1008144BD /* Frameworks */,
 				CB3A8F0821C64FC1008144BD /* Resources */,
-				B65C24DC9E1DDAFDD1AAA906 /* [CP] Embed Pods Frameworks */,
-				D2A72AF8FCEEE3915B94C4D1 /* [CP] Copy Pods Resources */,
+				B6EC9D722D0D1330FF69EF3E /* [CP] Embed Pods Frameworks */,
+				31A1370CAB4F2FEC20F2C9BA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1297,7 +1326,6 @@
 				CB172C0C21C6A2EF0068CF92 /* Localizable.strings in Resources */,
 				84487C9121CB80F5008B25B2 /* Roboto-ThinItalic.ttf in Resources */,
 				B36AEEB621CDDB8000BED43C /* MySellViewController.xib in Resources */,
-				DEB65B4C21CE3B7B0043D7F2 /* AdmobBannerView.xib in Resources */,
 				CB3A8F1821C64FC1008144BD /* LaunchScreen.storyboard in Resources */,
 				CB172C8C21C6A2EF0068CF92 /* OpenSans-SemiBoldItalic.ttf in Resources */,
 				DEE1DA5A21CDE6740036FEB7 /* PopUpSelectDateContent.xib in Resources */,
@@ -1311,6 +1339,7 @@
 				84487C8821CB7EA0008B25B2 /* Roboto-Bold.ttf in Resources */,
 				B36AEEC421CDDBA600BED43C /* NotificationViewController.xib in Resources */,
 				84487C9021CB80F2008B25B2 /* Roboto-Thin.ttf in Resources */,
+				DEC5166B21CE986400A17CBF /* AdmobBannerView.xib in Resources */,
 				84421C0C21CBF52900F468F5 /* SupplementaryInfoViewController.xib in Resources */,
 				CB172C8F21C6A2EF0068CF92 /* OpenSans-Regular.ttf in Resources */,
 				B355EF6121C8FB1400379F57 /* SignUpViewController.xib in Resources */,
@@ -1352,7 +1381,33 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		B65C24DC9E1DDAFDD1AAA906 /* [CP] Embed Pods Frameworks */ = {
+		31A1370CAB4F2FEC20F2C9BA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Oganban/Pods-Oganban-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Oganban/Pods-Oganban-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6EC9D722D0D1330FF69EF3E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1372,6 +1427,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/ImagePicker/ImagePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
@@ -1394,6 +1450,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImagePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
@@ -1426,32 +1483,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D2A72AF8FCEEE3915B94C4D1 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Oganban/Pods-Oganban-resources.sh",
-				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
-				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
-				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Oganban/Pods-Oganban-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1493,6 +1524,7 @@
 				DE21826721CD473100FDD9F1 /* KActivityIndicatorAnimationBallRotateChase.swift in Sources */,
 				84421C0921CBF52900F468F5 /* SupplementaryInfoViewController.swift in Sources */,
 				CB172C9721C6A2EF0068CF92 /* Enum.swift in Sources */,
+				DEC5167221CE995F00A17CBF /* AppCollectionPhotoCell.swift in Sources */,
 				B355EF5F21C8FB1400379F57 /* SignUpProtocols.swift in Sources */,
 				CB172C1221C6A2EF0068CF92 /* Date+extension.swift in Sources */,
 				DE21827321CD473100FDD9F1 /* KActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
@@ -1526,6 +1558,7 @@
 				B36AEEA721CDDB6600BED43C /* MybuyProtocols.swift in Sources */,
 				CB172C2821C6A2EF0068CF92 /* AnimationHelper.swift in Sources */,
 				B36AEEB421CDDB8000BED43C /* MySellProtocols.swift in Sources */,
+				DEC5167021CE98F200A17CBF /* AppPhoto.swift in Sources */,
 				DE21827F21CD473100FDD9F1 /* KActivityIndicatorAnimationBallPulseRise.swift in Sources */,
 				B355EF5121C8EB3F00379F57 /* HomeViewController.swift in Sources */,
 				B36AEEA521CDDB6600BED43C /* MybuyRouter.swift in Sources */,
@@ -1553,7 +1586,6 @@
 				CB172C2521C6A2EF0068CF92 /* PopUpHelper.swift in Sources */,
 				DE21828121CD473100FDD9F1 /* KActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */,
 				84421BF921CBEF1E00F468F5 /* MoreHeaderCell.swift in Sources */,
-				DEB65B4A21CE3B6F0043D7F2 /* AdmobBannerView.swift in Sources */,
 				DE21823021CD458E00FDD9F1 /* UserAPIService.swift in Sources */,
 				B36AEEA821CDDB6600BED43C /* MybuyInteractor.swift in Sources */,
 				84A92BF721CA555900148191 /* LoginRouter.swift in Sources */,
@@ -1602,6 +1634,7 @@
 				CB172C2421C6A2EF0068CF92 /* LanguageHelper.swift in Sources */,
 				DE21826321CD473100FDD9F1 /* KActivityIndicatorAnimationBallGridBeat.swift in Sources */,
 				DE21826621CD473100FDD9F1 /* KActivityIndicatorAnimationPacman.swift in Sources */,
+				DEC5166C21CE986400A17CBF /* AdmobBannerView.swift in Sources */,
 				DE21828621CD473100FDD9F1 /* KActivityIndicatorAnimationDelegate.swift in Sources */,
 				DE21822321CD432300FDD9F1 /* Login+VerifyOTP.swift in Sources */,
 				DE21828321CD473100FDD9F1 /* KActivityIndicatorType.swift in Sources */,
