@@ -86,6 +86,7 @@ import UIKit
         
         if icon == nil {
             self.ivIcon.isHidden = true
+            lbTitle.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         } else {
             self.ivIcon.image = icon
             self.ivIcon.isHidden = false
