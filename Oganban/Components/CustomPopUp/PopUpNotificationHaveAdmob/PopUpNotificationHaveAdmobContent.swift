@@ -10,5 +10,6 @@ import Foundation
 
 class PopUpNotificationHaveAdmobContent: BaseViewXib {
     @IBOutlet weak var btnClose: UIButton!
+    @IBOutlet weak var lbMessage: UILabel!
     
 }

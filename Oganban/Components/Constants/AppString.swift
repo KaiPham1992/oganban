@@ -36,32 +36,7 @@ struct TitleString {
 }
 
 struct MessageString {
-
-    static let loginName                    = "LoginName"
-    static let MessageEmptyUsername         = "MessageEmptyUsername"
-    static let MessageEmptyPassword         = "MessageEmptyPassword"
-    static let MessageEmptyCurrentPassword  = "MessageEmptyCurrentPassword"
-    static let MessageEmptyNewPassword      = "MessageEmptyNewPassword"
-    static let MessageEmptyConfirmPassword  = "MessageEmptyConfirmPassword"
-    static let MessageEmptyName             = "MessageEmptyName"
-    static let MessageEmptyEmail            = "MessageEmptyEmail"
-    static let MessageEmptyPhone            = "MessageEmptyPhone"
-    static let MessageEmptyCaptcha          = "MessageEmptyCaptcha"
-    
-    static let MessageInValidPassword = "MessageInValidPassword"
-    static let MessageInValidCurrentPassword = "MessageInValidCurrentPassword"
-    static let MessageInValidNewPassword = "MessageInValidNewPassword"
-    static let MessageInValidConfirmNewPassword = "MessageInValidConfirmNewPassword"
-    static let MessageInValidEmail = "MessageInValidEmail"
-    static let MessageInValidPhone = "MessageInValidPhone"
-    static let MessageInvalidUserName = "MessageInvalidUserName"
-    static let MessagePasswordsNotMatch = "MessagePasswordsNotMatch"
-    static let MessageInvalidUsernameOrPassword = "MessageInvalidUsernameOrPassword"
-    static let MessageInvalidEmailFormat = "MessageInvalidEmailFormat"
-    static let MessageNotHave  =  "MessageNotHave"
-    static let MessageNotNetwork = "MessageNotNetwork"
-    static let MessageEmptyAll = "MessageEmptyAll"
-    static let MessageEmptyAddress = "MessageEmptyAddress"
+    static let notEnoughCoin = "Số Ơcoin tích lũy của bạn không đủ để đổi sản phẩm. Vui lòng kiểm tra lại !"
 }
 
 struct Params {
