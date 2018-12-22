@@ -23,7 +23,7 @@ class AppRouter {
     func setLanding() {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate, let windowApp = appDelegate.window else { return }
         //---
-        let vcLogin = LoginRouter.createModule()
+        let vcLogin = SignUpRouter.createModule()
         let nc = UINavigationController(rootViewController: vcLogin)
         windowApp.rootViewController = nc
     }
@@ -31,8 +31,8 @@ class AppRouter {
     func openTabbar() {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate, let windowApp = appDelegate.window else { return }
         //---
-//        let tabBar = TabbarViewController()
-//        windowApp.rootViewController = tabBar
+        let tabBar = TabbarViewController()
+        windowApp.rootViewController = tabBar
     }
     
     func openTest() {

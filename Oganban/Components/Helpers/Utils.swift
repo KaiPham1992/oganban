@@ -27,6 +27,14 @@ class Utils {
     static func isConnectedToInternet() ->Bool {
         return NetworkReachabilityManager()!.isReachable
     }
+    
+    class func isIphoneXOrLater() -> Bool {
+        if UIDevice.current.isIphone4Inch() || UIDevice.current.isIphone4_7Inch() || UIDevice.current.isIphone5_5Inch() {
+            return false
+        }
+        
+        return true
+    }
 }
 
 extension Utils {

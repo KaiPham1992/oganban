@@ -153,7 +153,7 @@ extension LoginViewController {
             print("TAP SIGN UP")
             
             let popUp = PopUpSelectDate()
-            popUp.showPopUp(completionDate: { date in
+            popUp.showPopUp(currentDate: nil, completionDate: { date in
                 print(date)
             })
         }
