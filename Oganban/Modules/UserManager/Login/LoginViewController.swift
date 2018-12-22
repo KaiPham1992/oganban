@@ -162,7 +162,7 @@ extension LoginViewController {
             self.view.endEditing(true)
             print("TAP SIGN UP")
             
-            PopUpHelper.shared.showUpdateQuantityBuy()
+            PopUpHelper.shared.showNoGPS()
         }
         
         self.tfPassword.completeTapRightIcon = { (success) in

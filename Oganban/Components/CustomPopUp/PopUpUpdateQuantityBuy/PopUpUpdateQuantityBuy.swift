@@ -9,26 +9,36 @@
 import Foundation
 
 class PopUpUpdateQuantityBuy: BasePopUpView {
-    lazy var vHaveAdmob: PopUpUpdateQuantityBuyContent = {
+    lazy var vQuantity: PopUpUpdateQuantityBuyContent = {
         let v = PopUpUpdateQuantityBuyContent()
         v.btnClose.addTarget(self, action: #selector(btnCloseTapped), for: .touchUpInside)
+        v.btnCompleted.addTarget(self, action: #selector(btnCompletedTapped), for: .touchUpInside)
         return v
     }()
     
+    var completionQuantity: CompletionMessage?
+    
     override func setupView() {
         super.setupView()
-        vContent.addSubview(vHaveAdmob)
-        vHaveAdmob.fillSuperview()
+        vContent.addSubview(vQuantity)
+        vQuantity.fillSuperview()
     }
     
-    func showPopUp(completionYes: @escaping CompletionClosure) {
+    func showPopUp(completionQuantity: @escaping CompletionMessage) {
         let width = UIScreen.main.bounds.width - 30
-        self.completionYes = completionYes
-        super.showPopUp(width: width, height: 320, type: .zoomOut)
+        self.completionQuantity = completionQuantity
+        super.showPopUp(width: width, height: 205, type: .zoomOut)
     }
     
     @objc func btnYesTapped() {
         hidePopUp()
         self.completionYes?()
+    }
+    
+    @objc func btnCompletedTapped() {
+        if !vQuantity.tfQuantity.text&.isEmpty {
+            hidePopUp()
+            completionQuantity?(vQuantity.tfQuantity.text&)
+        }
     }
 }

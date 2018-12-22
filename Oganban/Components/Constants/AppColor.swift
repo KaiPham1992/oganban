@@ -45,4 +45,7 @@ struct AppColor {
     static let black414141 = #colorLiteral(red: 0.2549019608, green: 0.2549019608, blue: 0.2549019608, alpha: 1)
     static let greyC8C8C8 = #colorLiteral(red: 0.7843137255, green: 0.7843137255, blue: 0.7843137255, alpha: 1)
     static let tabbarSelected = UIColor(red: 0/255.0, green: 88.0/255.0, blue: 0/255.0, alpha: 1.0)
+    
+    static let gray_65_65_65 = UIColor(red: 65/255.0, green: 65/255.0, blue: 65/255.0, alpha: 1.0)
+    static let gray_200_200_200 = UIColor(red: 200/255.0, green: 200/255.0, blue: 200/255.0, alpha: 1.0)
 }

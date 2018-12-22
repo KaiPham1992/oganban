@@ -218,6 +218,9 @@
 		DE21829421CD4EB600FDD9F1 /* FTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21829321CD4EB600FDD9F1 /* FTextField.swift */; };
 		DEB65B4A21CE3B6F0043D7F2 /* AdmobBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB65B4921CE3B6F0043D7F2 /* AdmobBannerView.swift */; };
 		DEB65B4C21CE3B7B0043D7F2 /* AdmobBannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEB65B4B21CE3B7B0043D7F2 /* AdmobBannerView.xib */; };
+		DEC5166221CE8DB600A17CBF /* PopUpSettingGPS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC5166121CE8DB600A17CBF /* PopUpSettingGPS.swift */; };
+		DEC5166421CE8DCD00A17CBF /* PopUpSettingGPSContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC5166321CE8DCD00A17CBF /* PopUpSettingGPSContent.swift */; };
+		DEC5166621CE8DDF00A17CBF /* PopUpSettingGPSContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEC5166521CE8DDF00A17CBF /* PopUpSettingGPSContent.xib */; };
 		DEE1DA4F21CDE1CE0036FEB7 /* PopUpNotificationHaveAdmob.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1DA4E21CDE1CE0036FEB7 /* PopUpNotificationHaveAdmob.swift */; };
 		DEE1DA5121CDE2B60036FEB7 /* PopUpNotificationHaveAdmobContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1DA5021CDE2B60036FEB7 /* PopUpNotificationHaveAdmobContent.swift */; };
 		DEE1DA5321CDE3080036FEB7 /* PopUpNotificationHaveAdmobContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE1DA5221CDE3080036FEB7 /* PopUpNotificationHaveAdmobContent.xib */; };
@@ -462,6 +465,9 @@
 		DE21829321CD4EB600FDD9F1 /* FTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTextField.swift; sourceTree = "<group>"; };
 		DEB65B4921CE3B6F0043D7F2 /* AdmobBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobBannerView.swift; sourceTree = "<group>"; };
 		DEB65B4B21CE3B7B0043D7F2 /* AdmobBannerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdmobBannerView.xib; sourceTree = "<group>"; };
+		DEC5166121CE8DB600A17CBF /* PopUpSettingGPS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpSettingGPS.swift; sourceTree = "<group>"; };
+		DEC5166321CE8DCD00A17CBF /* PopUpSettingGPSContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpSettingGPSContent.swift; sourceTree = "<group>"; };
+		DEC5166521CE8DDF00A17CBF /* PopUpSettingGPSContent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpSettingGPSContent.xib; sourceTree = "<group>"; };
 		DEE1DA4E21CDE1CE0036FEB7 /* PopUpNotificationHaveAdmob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpNotificationHaveAdmob.swift; sourceTree = "<group>"; };
 		DEE1DA5021CDE2B60036FEB7 /* PopUpNotificationHaveAdmobContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpNotificationHaveAdmobContent.swift; sourceTree = "<group>"; };
 		DEE1DA5221CDE3080036FEB7 /* PopUpNotificationHaveAdmobContent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpNotificationHaveAdmobContent.xib; sourceTree = "<group>"; };
@@ -799,6 +805,7 @@
 		CB172B4421C6A2EE0068CF92 /* CustomPopUp */ = {
 			isa = PBXGroup;
 			children = (
+				DEC5166021CE8DA300A17CBF /* PopUpSettingGPS */,
 				DEE1DA7821CE2DD30036FEB7 /* PopUpUpdateQuantityBuy */,
 				DEE1DA6E21CE1FE90036FEB7 /* PopUpYesNoHaveAdmob */,
 				DEE1DA6321CDF5A90036FEB7 /* PopUpSelectGender */,
@@ -1136,6 +1143,16 @@
 			path = AppTextFiled;
 			sourceTree = "<group>";
 		};
+		DEC5166021CE8DA300A17CBF /* PopUpSettingGPS */ = {
+			isa = PBXGroup;
+			children = (
+				DEC5166121CE8DB600A17CBF /* PopUpSettingGPS.swift */,
+				DEC5166321CE8DCD00A17CBF /* PopUpSettingGPSContent.swift */,
+				DEC5166521CE8DDF00A17CBF /* PopUpSettingGPSContent.xib */,
+			);
+			path = PopUpSettingGPS;
+			sourceTree = "<group>";
+		};
 		DEE1DA4D21CDE1800036FEB7 /* PopUpNotificationHaveAdmob */ = {
 			isa = PBXGroup;
 			children = (
@@ -1303,6 +1320,7 @@
 				DEE1DA6121CDF3E60036FEB7 /* AdmobNativeView.xib in Resources */,
 				CB172C8B21C6A2EF0068CF92 /* OpenSans-Bold.ttf in Resources */,
 				CB172C8E21C6A2EF0068CF92 /* LICENSE.txt in Resources */,
+				DEC5166621CE8DDF00A17CBF /* PopUpSettingGPSContent.xib in Resources */,
 				84421BFE21CBEF7600F468F5 /* MoreViewController.xib in Resources */,
 				84487C8721CB7E99008B25B2 /* Roboto-BlackItalic.ttf in Resources */,
 				84487C8B21CB80D5008B25B2 /* Roboto-Light.ttf in Resources */,
@@ -1461,12 +1479,14 @@
 				B355EF5321C8EB3F00379F57 /* HomeInteractor.swift in Sources */,
 				CB172C0E21C6A2EF0068CF92 /* UIDevice+extension.swift in Sources */,
 				B355EF5021C8EB3F00379F57 /* HomeRouter.swift in Sources */,
+				DEC5166421CE8DCD00A17CBF /* PopUpSettingGPSContent.swift in Sources */,
 				CB172C9521C6A2EF0068CF92 /* ConstantStoryboard.swift in Sources */,
 				CB172C9921C6A2EF0068CF92 /* BaseViewController.swift in Sources */,
 				84421C0821CBF52900F468F5 /* SupplementaryInfoRouter.swift in Sources */,
 				CB172C1621C6A2EF0068CF92 /* Bundle+extension.swift in Sources */,
 				DE21826C21CD473100FDD9F1 /* KActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
 				DEE1DA7221CE20130036FEB7 /* PopUpYesNoHaveAdmobContent.swift in Sources */,
+				DEC5166221CE8DB600A17CBF /* PopUpSettingGPS.swift in Sources */,
 				DE21826421CD473100FDD9F1 /* KActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */,
 				B355EF4F21C8EB3F00379F57 /* HomePresenter.swift in Sources */,
 				84A92BF921CA555900148191 /* LoginProtocols.swift in Sources */,
