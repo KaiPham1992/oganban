@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.shared.statusBarStyle = .lightContent
         configureGoogle()
         
-        AppRouter.shared.setLanding()
+        AppRouter.shared.openTabbar()
         return true
     }
     
