@@ -11,8 +11,6 @@ import UIKit
 struct AppImage {
     static let imgCompareProject1 = UIImage(named: "markerss_1")!
     static let imgCompareProject2 = UIImage(named: "markerss_2")!
-    static let imgCheck = UIImage(named: "check")!
-    static let imgUnCheck = UIImage(named: "uncheck")!
     static let imgInfo = UIImage(named: "information icon")!
     static let imgSupport = UIImage(named: "help icon")!
     //    static let imgBackground = UIImage(named: "1-1")!
@@ -27,7 +25,6 @@ struct AppImage {
     static let imgLogoHome = UIImage(named: "home_icon")!
     
     static let imgCheckBox = UIImage(named: "checked_DQ")!
-    static let imgUnCheckBox = UIImage(named: "check_DQ")!
     
     static let imgRank = UIImage(named: "rank")!.withRenderingMode(.alwaysTemplate)
     
@@ -68,7 +65,6 @@ struct AppImage {
     
     static let imgFilter = UIImage(named: "filter")!
     static let imgDropDown  = UIImage(named: "down-arrow copy")!
-    static let imgClose  = UIImage(named: "clear")!
     static let imgDemoProject = UIImage(named: "demo")!
     static let imgLikeOn = UIImage(named: "favorite_on")
     static let imgLikeOff = UIImage(named: "favorite_on")!.withRenderingMode(.alwaysTemplate)
@@ -124,11 +120,15 @@ struct AppImage {
     static let imgNotificationUnRead = UIImage(named: "email_open")!
     static let imgNotificationRead = UIImage(named: "email_close")!
     
+    // Oganban
     static let imgExit = UIImage(named: "exit")!
     static let imgFb = UIImage(named: "fb")!
     static let imgGoogle = UIImage(named: "google")!
     static let imgLogo = UIImage(named: "logo")!
     static let imgHideEye = UIImage(named: "hideEye")!
     static let imgOpenEye = UIImage(named: "openEye")!
-    
+    static let imgClose = UIImage(named: "close")!
+    static let imgArrowDown = UIImage(named: "arrowDown")!
+    static let imgUnCheck = UIImage(named: "uncheck")!
+    static let imgCheck = UIImage(named: "check")!
 }

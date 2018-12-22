@@ -328,4 +328,8 @@ extension String {
         return UIImage(data: data)
     }
 }
-
+extension StringProtocol where Index == String.Index {
+    func nsRange(from range: Range<Index>) -> NSRange {
+        return NSRange(range, in: self)
+    }
+}
