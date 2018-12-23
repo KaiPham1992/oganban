@@ -491,6 +491,7 @@
 		DE442C2F21CF93750051C0B8 /* CommonAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonAPIService.swift; sourceTree = "<group>"; };
 		DE442C3121CF93C60051C0B8 /* PhotoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEntity.swift; sourceTree = "<group>"; };
 		DE442C3321CF94600051C0B8 /* CommonEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonEndPoint.swift; sourceTree = "<group>"; };
+		DE442C3521CF9EFD0051C0B8 /* Oganban.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Oganban.entitlements; sourceTree = "<group>"; };
 		DEC5166121CE8DB600A17CBF /* PopUpSettingGPS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpSettingGPS.swift; sourceTree = "<group>"; };
 		DEC5166321CE8DCD00A17CBF /* PopUpSettingGPSContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpSettingGPSContent.swift; sourceTree = "<group>"; };
 		DEC5166521CE8DDF00A17CBF /* PopUpSettingGPSContent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpSettingGPSContent.xib; sourceTree = "<group>"; };
@@ -1040,6 +1041,7 @@
 		CB3A8F0C21C64FC1008144BD /* Oganban */ = {
 			isa = PBXGroup;
 			children = (
+				DE442C3521CF9EFD0051C0B8 /* Oganban.entitlements */,
 				DE21821F21CD418E00FDD9F1 /* Entity */,
 				DE2181F821CD3AC500FDD9F1 /* SupportFile */,
 				CB172B1B21C6A1520068CF92 /* Components */,
@@ -1367,6 +1369,11 @@
 					CB3A8F0921C64FC1008144BD = {
 						CreatedOnToolsVersion = 10.0;
 						LastSwiftMigration = 1010;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -1914,6 +1921,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Oganban/Oganban.entitlements;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = Q3TBY53XUC;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1942,6 +1950,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Oganban/Oganban.entitlements;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
