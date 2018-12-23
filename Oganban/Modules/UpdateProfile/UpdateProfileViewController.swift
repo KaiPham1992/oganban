@@ -16,12 +16,11 @@ class UpdateProfileViewController: BaseViewController, UpdateProfileViewProtocol
     
     @IBOutlet weak var lbError: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var tfPhoneCode: OganbanCustomTextfield!
     @IBOutlet weak var imgAvatar: UIImageView!
     @IBOutlet weak var btnSave: OganbanCustomButton!
     @IBOutlet weak var tfAddress2: OganbanCustomTextfield!
     @IBOutlet weak var tfAddress1: OganbanCustomTextfield!
-    @IBOutlet weak var tfPhone: OganbanCustomTextfield!
+    @IBOutlet weak var tvPhone: PhoneNumber!
     @IBOutlet weak var tfGender: OganbanCustomTextfield!
     @IBOutlet weak var tfBirthday: OganbanCustomTextfield!
     @IBOutlet weak var tfDisplayName: OganbanCustomTextfield!
@@ -29,6 +28,7 @@ class UpdateProfileViewController: BaseViewController, UpdateProfileViewProtocol
     
     var birthDay: Date? = nil
     var gender: Gender? = nil
+    var countryPhoneCode: CountryCodeEntity?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,12 +61,8 @@ class UpdateProfileViewController: BaseViewController, UpdateProfileViewProtocol
         tfGender.tfContent.isEnabled = false
         let tapSexGesture = UITapGestureRecognizer(target: self, action: #selector(self.selectSex(_:)))
         self.tfGender.addGestureRecognizer(tapSexGesture)
-        
-        tfPhoneCode.setupLayoutTextfield(placeholderText: "+84", titleText: "", placeholderColor: AppColor.black414141)
-        tfPhoneCode.showRightIcon(sỉze: CGSize(width: 11, height: 11), icon: AppImage.imgArrowDown, paddingRight: -12)
-        tfPhoneCode.tfContent.isEnabled = false
-        tfPhone.setupLayoutTextfield(placeholderText: "Nhập số điện thoại của bạn", titleText: "", placeholderColor: AppColor.black414141)
-        tfPhone.tfContent.keyboardType = .numberPad
+    
+        tvPhone.tfPhone.keyboardType = .numberPad
         
         tfAddress1.setupLayoutTextfield(placeholderText: "Bạn có thể nhập địa chỉ nhà", titleText: "Địa chỉ 1", placeholderColor: AppColor.black414141)
         tfAddress2.setupLayoutTextfield(placeholderText: "Bạn có thể nhập địa chỉ công ty", titleText: "Địa chỉ 2", placeholderColor: AppColor.black414141)
@@ -114,7 +110,7 @@ class UpdateProfileViewController: BaseViewController, UpdateProfileViewProtocol
             return false
         }
         
-        guard let phone =  self.tfPhone.tfContent.text else {
+        guard let phone =  self.tvPhone.tfPhone.text else {
             hideError(isHidden: false, message: "Vui lòng nhập số điện thoại")
             return false
         }
@@ -152,7 +148,7 @@ extension UpdateProfileViewController {
         tfDisplayName.textFieldDidBeginEditing = {
             self.hideError()
         }
-        tfPhone.textFieldDidBeginEditing = {
+        tvPhone.textFieldDidBeginEditing = {
             self.hideError()
         }
         tfAddress1.textFieldDidBeginEditing = {
@@ -202,5 +198,10 @@ extension UpdateProfileViewController {
         let calendar = Calendar.current
         let ageComponents = calendar.dateComponents([.year], from: birthday, to: now)
         return ageComponents.year!
+    }
+}
+extension UpdateProfileViewController: PhoneNumberDelegate {
+    func phoneCodeChoose(info: CountryCodeEntity) {
+        self.countryPhoneCode = info
     }
 }

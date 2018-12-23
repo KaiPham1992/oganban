@@ -77,6 +77,9 @@ extension MoreViewController: UITableViewDelegate, UITableViewDataSource
                 print("Chọn Lịch sử mua tin")
                 break
             case MoreRowName.policy.index():
+                PopUpHelper.shared.showUpdateQuantityBuy { (_) in
+                    //
+                }
                 print("Chọn Điều khoản sử dụng")
                 break
             case MoreRowName.tutorial.index():
@@ -97,8 +100,8 @@ extension MoreViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0 {
-            return 150
+        if indexPath.row == MoreRowName.header.index() {
+            return 160
         }
         return 52
     }

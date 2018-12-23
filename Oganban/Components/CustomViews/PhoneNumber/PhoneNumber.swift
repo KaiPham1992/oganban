@@ -20,6 +20,7 @@ class PhoneNumber: BaseViewXib {
     @IBOutlet weak var lbCountryCode    : UILabel!
     @IBOutlet weak var vDropdown        : UIView!
     
+    var textFieldDidBeginEditing : (() -> Void)?
     let phoneDropDown = DropDown()
     var listCode: [CountryCodeEntity] = []
     var phoneCode = ""
@@ -50,6 +51,9 @@ class PhoneNumber: BaseViewXib {
             self.delegate?.phoneCodeChoose(info: self.listCode[index])
         }
         phoneDropDown.dataSource = ["a", "b", "c"]
+        
+        tfPhone.delegate = self
+        tfPhone.attributedPlaceholder = NSAttributedString(string: "Nhập số điện thoại",attributes: [NSAttributedString.Key.foregroundColor: AppColor.black414141])
     }
     
     func readCountryCode() {
@@ -63,6 +67,13 @@ class PhoneNumber: BaseViewXib {
             } catch {
                 // handle error
             }
+        }
+    }
+}
+extension PhoneNumber: UITextFieldDelegate{
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if let complete = self.textFieldDidBeginEditing {
+            complete()
         }
     }
 }
