@@ -24,7 +24,6 @@ class SupplementaryInfoViewController: BaseViewController, SupplementaryInfoView
     @IBOutlet weak var tfSex: OganbanCustomTextfield!
     @IBOutlet weak var tfBirthday: OganbanCustomTextfield!
     @IBOutlet weak var tfName: OganbanCustomTextfield!
-    @IBOutlet weak var btnClose: UIImageView!
     @IBOutlet weak var vContent: UIView!
     
     var isCheck: Bool = false {
@@ -83,25 +82,20 @@ class SupplementaryInfoViewController: BaseViewController, SupplementaryInfoView
         tfAddress2.setupLayoutTextfield(placeholderText: "Bạn có thể nhập địa chỉ công ty", titleText: "Địa chỉ 2", placeholderColor: AppColor.black414141)
         
         btnSend.setupLayoutButton(backgroundColor: AppColor.green005800, titleColor: AppColor.white, text: "Gửi")
-        
-        let tapCloseGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapCloseButton(sender:)))
-        btnClose.addGestureRecognizer(tapCloseGesture)
-    }
-    
-    @objc func tapCloseButton(sender: UITapGestureRecognizer){
-        self.dismiss()
     }
     
     func validateInputData() -> Bool {
         
         guard let name = self.tfName.tfContent.text else {
-            return false
-        }
-        if name == "" {
             hideError(isHidden: false, message: "Vui lòng nhập tên hiển thị")
             return false
         }
        
+        if name == ""  {
+            hideError(isHidden: false, message: "Vui lòng nhập tên hiển thị")
+            return false
+        }
+        
         guard let birthDay =  self.birthDay else {
             hideError(isHidden: false, message: "Vui lòng chọn ngày tháng năm sinh")
             return false
@@ -140,6 +134,10 @@ class SupplementaryInfoViewController: BaseViewController, SupplementaryInfoView
     
     @IBAction func tapCheckButton(_ sender: UIButton) {
         self.isCheck = !self.isCheck
+    }
+    
+    @IBAction func tapCloseButton(_ sender: UIButton) {
+        self.dismiss()
     }
     
     @objc func selectBirthday(_ sender: UITapGestureRecognizer) {

@@ -29,10 +29,10 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="next" translatesAutoresizingMaskIntoConstraints="NO" id="jgx-fH-ddg">
-                        <rect key="frame" x="285" y="26" width="20" height="20"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NextArrow" translatesAutoresizingMaskIntoConstraints="NO" id="jgx-fH-ddg">
+                        <rect key="frame" x="295" y="31" width="10" height="10"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="20" id="Iei-iw-lzR"/>
+                            <constraint firstAttribute="width" constant="10" id="Iei-iw-lzR"/>
                             <constraint firstAttribute="width" secondItem="jgx-fH-ddg" secondAttribute="height" multiplier="1:1" id="XsS-Fy-HU7"/>
                         </constraints>
                     </imageView>
@@ -72,6 +72,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="next" width="6" height="10"/>
+        <image name="NextArrow" width="11" height="20"/>
     </resources>
 </document>

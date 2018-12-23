@@ -20,7 +20,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SupplementaryInfoViewController">
             <connections>
                 <outlet property="btnCheck" destination="rpo-xd-emh" id="jhh-tl-l7G"/>
-                <outlet property="btnClose" destination="grd-0P-4RU" id="AuM-Rb-UZA"/>
                 <outlet property="btnSend" destination="VJf-f1-aV7" id="34I-eC-zyt"/>
                 <outlet property="lbError" destination="x85-1S-1rb" id="dRa-2x-5sm"/>
                 <outlet property="tfAddress1" destination="uRy-Dj-Eai" id="lPE-db-te8"/>
@@ -48,13 +47,6 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DvS-eZ-6fi">
                                     <rect key="frame" x="0.0" y="0.0" width="348" height="632"/>
                                     <subviews>
-                                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="close" translatesAutoresizingMaskIntoConstraints="NO" id="grd-0P-4RU">
-                                            <rect key="frame" x="313" y="10" width="25" height="25"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="25" id="cp8-x6-Kqq"/>
-                                                <constraint firstAttribute="width" secondItem="grd-0P-4RU" secondAttribute="height" multiplier="1:1" id="u2Z-57-QPl"/>
-                                            </constraints>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vui lòng bổ sung thông tin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38i-bn-2Xy">
                                             <rect key="frame" x="85.5" y="44.5" width="177" height="18"/>
                                             <constraints>
@@ -127,17 +119,26 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
+                                        <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3l5-Hw-HVs">
+                                            <rect key="frame" x="313" y="10" width="25" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="25" id="0fR-5k-gjd"/>
+                                                <constraint firstAttribute="width" secondItem="3l5-Hw-HVs" secondAttribute="height" multiplier="1:1" id="qu5-de-NSv"/>
+                                            </constraints>
+                                            <state key="normal" image="close"/>
+                                            <connections>
+                                                <action selector="tapCloseButton:" destination="-1" eventType="touchUpInside" id="vwn-Nv-K9w"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="rpo-xd-emh" firstAttribute="leading" secondItem="c4C-dD-Cf5" secondAttribute="leading" id="1ir-60-vor"/>
                                         <constraint firstAttribute="trailing" secondItem="7Ue-0Q-gZ4" secondAttribute="trailing" constant="15" id="30D-Ok-r3L"/>
                                         <constraint firstItem="uRy-Dj-Eai" firstAttribute="height" secondItem="lwv-UX-5Hr" secondAttribute="height" id="3Fa-8t-LFW"/>
-                                        <constraint firstItem="grd-0P-4RU" firstAttribute="top" secondItem="DvS-eZ-6fi" secondAttribute="top" constant="10" id="61i-69-D22"/>
                                         <constraint firstItem="bQM-T8-wJx" firstAttribute="trailing" secondItem="c4C-dD-Cf5" secondAttribute="trailing" id="7tq-bg-8pg"/>
                                         <constraint firstAttribute="trailing" secondItem="VJf-f1-aV7" secondAttribute="trailing" constant="97.5" id="8gA-Xs-RKX"/>
                                         <constraint firstItem="c4C-dD-Cf5" firstAttribute="trailing" secondItem="0gT-og-ZgC" secondAttribute="trailing" id="93U-ar-UXd"/>
-                                        <constraint firstAttribute="trailing" secondItem="grd-0P-4RU" secondAttribute="trailing" constant="10" id="CdP-uI-wey"/>
                                         <constraint firstItem="lwv-UX-5Hr" firstAttribute="trailing" secondItem="fgu-TV-g7B" secondAttribute="trailing" id="Cjn-mY-aau"/>
                                         <constraint firstItem="38i-bn-2Xy" firstAttribute="centerX" secondItem="DvS-eZ-6fi" secondAttribute="centerX" id="E08-Jz-jgp"/>
                                         <constraint firstItem="x85-1S-1rb" firstAttribute="centerX" secondItem="DvS-eZ-6fi" secondAttribute="centerX" id="Fhf-7s-BGG"/>
@@ -148,6 +149,7 @@
                                         <constraint firstItem="fgu-TV-g7B" firstAttribute="top" secondItem="7Ue-0Q-gZ4" secondAttribute="bottom" constant="15" id="Ka2-Se-HQE"/>
                                         <constraint firstItem="rpo-xd-emh" firstAttribute="top" secondItem="c4C-dD-Cf5" secondAttribute="bottom" constant="30" id="NAL-Mn-f0k"/>
                                         <constraint firstItem="x85-1S-1rb" firstAttribute="top" secondItem="bQM-T8-wJx" secondAttribute="bottom" constant="12" id="QGK-HC-rCD"/>
+                                        <constraint firstAttribute="trailing" secondItem="3l5-Hw-HVs" secondAttribute="trailing" constant="10" id="STn-YK-eTq"/>
                                         <constraint firstItem="c4C-dD-Cf5" firstAttribute="leading" secondItem="0gT-og-ZgC" secondAttribute="leading" id="U8L-SM-hWI"/>
                                         <constraint firstItem="c4C-dD-Cf5" firstAttribute="height" secondItem="0gT-og-ZgC" secondAttribute="height" id="VBY-Bt-QGq"/>
                                         <constraint firstItem="38i-bn-2Xy" firstAttribute="top" secondItem="DvS-eZ-6fi" secondAttribute="top" constant="44.5" id="Xbj-cB-ZAa"/>
@@ -160,6 +162,7 @@
                                         <constraint firstItem="fgu-TV-g7B" firstAttribute="leading" secondItem="7Ue-0Q-gZ4" secondAttribute="leading" id="h5o-qR-eeb"/>
                                         <constraint firstItem="bQM-T8-wJx" firstAttribute="leading" secondItem="rpo-xd-emh" secondAttribute="trailing" constant="15" id="hbc-RD-FAq"/>
                                         <constraint firstItem="bQM-T8-wJx" firstAttribute="centerY" secondItem="rpo-xd-emh" secondAttribute="centerY" id="hvI-Dj-Cnx"/>
+                                        <constraint firstItem="3l5-Hw-HVs" firstAttribute="top" secondItem="DvS-eZ-6fi" secondAttribute="top" constant="10" id="jpZ-ai-Px0"/>
                                         <constraint firstItem="0gT-og-ZgC" firstAttribute="top" secondItem="uRy-Dj-Eai" secondAttribute="bottom" constant="15" id="mtI-28-Fny"/>
                                         <constraint firstItem="0gT-og-ZgC" firstAttribute="trailing" secondItem="uRy-Dj-Eai" secondAttribute="trailing" id="oTw-W7-pUX"/>
                                         <constraint firstItem="lwv-UX-5Hr" firstAttribute="height" secondItem="fgu-TV-g7B" secondAttribute="height" id="oyn-4y-fp2"/>

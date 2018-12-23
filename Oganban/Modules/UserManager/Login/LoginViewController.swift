@@ -99,6 +99,7 @@ class LoginViewController: BaseViewController {
     func validateInputData() -> Bool {
        
         guard let email = self.tfEmail.tfContent.text,  let password = self.tfPassword.tfContent.text else {
+            hideError(isHidden: false, message: "Vui lòng kiểm tra lại email hoặc mật khẩu")
             return false
         }
         if email.isValidEmail() == false {
