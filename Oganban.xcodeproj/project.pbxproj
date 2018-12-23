@@ -92,6 +92,11 @@
 		B36AEEC921CDF47A00BED43C /* AdmobCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B36AEEC721CDF47A00BED43C /* AdmobCell.xib */; };
 		B36AEECE21CDF52B00BED43C /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36AEECC21CDF52B00BED43C /* HomeCell.swift */; };
 		B36AEECF21CDF52B00BED43C /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B36AEECD21CDF52B00BED43C /* HomeCell.xib */; };
+		B3E67E9C21CF41260012546F /* DropdownPhoneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E67E9A21CF41260012546F /* DropdownPhoneCell.swift */; };
+		B3E67E9D21CF41260012546F /* DropdownPhoneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3E67E9B21CF41260012546F /* DropdownPhoneCell.xib */; };
+		B3E67EAC21CF756E0012546F /* PhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E67EAB21CF756E0012546F /* PhoneNumber.swift */; };
+		B3E67EAE21CF75A90012546F /* PhoneNumber.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3E67EAD21CF75A90012546F /* PhoneNumber.xib */; };
+		B3E67EB121CF77AB0012546F /* countryCodes.json in Resources */ = {isa = PBXBuildFile; fileRef = B3E67EB021CF77AB0012546F /* countryCodes.json */; };
 		CB172B2F21C6A22A0068CF92 /* BaseParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B2721C6A22A0068CF92 /* BaseParam.swift */; };
 		CB172B3921C6A26F0068CF92 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B3321C6A26F0068CF92 /* APIError.swift */; };
 		CB172B3A21C6A26F0068CF92 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B3521C6A26F0068CF92 /* BaseResponse.swift */; };
@@ -341,6 +346,11 @@
 		B36AEEC721CDF47A00BED43C /* AdmobCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdmobCell.xib; sourceTree = "<group>"; };
 		B36AEECC21CDF52B00BED43C /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		B36AEECD21CDF52B00BED43C /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
+		B3E67E9A21CF41260012546F /* DropdownPhoneCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownPhoneCell.swift; sourceTree = "<group>"; };
+		B3E67E9B21CF41260012546F /* DropdownPhoneCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DropdownPhoneCell.xib; sourceTree = "<group>"; };
+		B3E67EAB21CF756E0012546F /* PhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumber.swift; sourceTree = "<group>"; };
+		B3E67EAD21CF75A90012546F /* PhoneNumber.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneNumber.xib; sourceTree = "<group>"; };
+		B3E67EB021CF77AB0012546F /* countryCodes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countryCodes.json; sourceTree = "<group>"; };
 		CB172B2721C6A22A0068CF92 /* BaseParam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseParam.swift; sourceTree = "<group>"; };
 		CB172B3321C6A26F0068CF92 /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		CB172B3521C6A26F0068CF92 /* BaseResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
@@ -589,6 +599,7 @@
 		84A92BE921CA50F000148191 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				B3E67E9421CF3EE20012546F /* PhoneNumber */,
 				8432074921CF529D00A4F11E /* PopupDateFollowWeek */,
 				DEC5166721CE980E00A17CBF /* AppCollectionPhoto */,
 				DEC5166821CE986300A17CBF /* AdmobBannerView */,
@@ -698,6 +709,7 @@
 		B36AEEC521CDF41C00BED43C /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				B3E67E9921CF41260012546F /* DropDown */,
 				B36AEECA21CDF50100BED43C /* Home */,
 			);
 			path = Cell;
@@ -721,6 +733,32 @@
 				B36AEEC721CDF47A00BED43C /* AdmobCell.xib */,
 			);
 			path = Admob;
+			sourceTree = "<group>";
+		};
+		B3E67E9421CF3EE20012546F /* PhoneNumber */ = {
+			isa = PBXGroup;
+			children = (
+				B3E67EAB21CF756E0012546F /* PhoneNumber.swift */,
+				B3E67EAD21CF75A90012546F /* PhoneNumber.xib */,
+			);
+			path = PhoneNumber;
+			sourceTree = "<group>";
+		};
+		B3E67E9921CF41260012546F /* DropDown */ = {
+			isa = PBXGroup;
+			children = (
+				B3E67E9A21CF41260012546F /* DropdownPhoneCell.swift */,
+				B3E67E9B21CF41260012546F /* DropdownPhoneCell.xib */,
+			);
+			path = DropDown;
+			sourceTree = "<group>";
+		};
+		B3E67EAF21CF77AB0012546F /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				B3E67EB021CF77AB0012546F /* countryCodes.json */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 		CB172B1821C6A1480068CF92 /* Modules */ = {
@@ -1014,6 +1052,7 @@
 		DE2181F821CD3AC500FDD9F1 /* SupportFile */ = {
 			isa = PBXGroup;
 			children = (
+				B3E67EAF21CF77AB0012546F /* JSON */,
 				DE21820921CD3F0700FDD9F1 /* AcountKit */,
 				DE2181F921CD3AD300FDD9F1 /* GoogleService-Info.plist */,
 				DE2181FD21CD3DC300FDD9F1 /* AppDelegate+Push.swift */,
@@ -1356,6 +1395,7 @@
 				84487C8E21CB80DE008B25B2 /* Roboto-MediumItalic.ttf in Resources */,
 				84487C8F21CB80E1008B25B2 /* Roboto-Regular.ttf in Resources */,
 				84487C8C21CB80D7008B25B2 /* Roboto-LightItalic.ttf in Resources */,
+				B3E67E9D21CF41260012546F /* DropdownPhoneCell.xib in Resources */,
 				B36AEEC921CDF47A00BED43C /* AdmobCell.xib in Resources */,
 				B36AEEA921CDDB6600BED43C /* MybuyViewController.xib in Resources */,
 				84421BFB21CBEF1E00F468F5 /* MoreCell.xib in Resources */,
@@ -1377,6 +1417,7 @@
 				84421BFE21CBEF7600F468F5 /* MoreViewController.xib in Resources */,
 				84487C8721CB7E99008B25B2 /* Roboto-BlackItalic.ttf in Resources */,
 				84487C8B21CB80D5008B25B2 /* Roboto-Light.ttf in Resources */,
+				B3E67EB121CF77AB0012546F /* countryCodes.json in Resources */,
 				CB172C8921C6A2EF0068CF92 /* OpenSans-ExtraBold.ttf in Resources */,
 				84487C8A21CB80D2008B25B2 /* Roboto-Italic.ttf in Resources */,
 				CB172C8821C6A2EF0068CF92 /* OpenSans-Italic.ttf in Resources */,
@@ -1390,6 +1431,7 @@
 				DE21821321CD403100FDD9F1 /* AccountKitStrings.bundle in Resources */,
 				DE2181FA21CD3AD300FDD9F1 /* GoogleService-Info.plist in Resources */,
 				CB3A8F1321C64FC1008144BD /* Main.storyboard in Resources */,
+				B3E67EAE21CF75A90012546F /* PhoneNumber.xib in Resources */,
 				DEE1DA6B21CDF5D60036FEB7 /* PopUpSelectGenderContent.xib in Resources */,
 				CB172C8621C6A2EF0068CF92 /* OpenSans-SemiBold.ttf in Resources */,
 				DEE1DA7421CE20260036FEB7 /* PopUpYesNoHaveAdmobContent.xib in Resources */,
@@ -1602,6 +1644,7 @@
 				B36AEEC121CDDBA600BED43C /* NotificationViewController.swift in Sources */,
 				DE21829121CD4E7F00FDD9F1 /* AppTextFiled.swift in Sources */,
 				DE21827A21CD473100FDD9F1 /* KActivityIndicatorAnimationCubeTransition.swift in Sources */,
+				B3E67EAC21CF756E0012546F /* PhoneNumber.swift in Sources */,
 				DE21822C21CD44B700FDD9F1 /* FaceBookEntity.swift in Sources */,
 				DE21827B21CD473100FDD9F1 /* KActivityIndicatorAnimationBallZigZag.swift in Sources */,
 				CB172C1521C6A2EF0068CF92 /* UIImage+extension.swift in Sources */,
@@ -1692,6 +1735,7 @@
 				84A92BF621CA555900148191 /* LoginPresenter.swift in Sources */,
 				CB172C1021C6A2EF0068CF92 /* Int+extension.swift in Sources */,
 				CB172C1121C6A2EF0068CF92 /* UIWindow+extension.swift in Sources */,
+				B3E67E9C21CF41260012546F /* DropdownPhoneCell.swift in Sources */,
 				CB172C9621C6A2EF0068CF92 /* AppColor.swift in Sources */,
 				B36AEE9C21CDD90500BED43C /* TabbarProtocol.swift in Sources */,
 				CB172B4321C6A2AA0068CF92 /* EndPointType.swift in Sources */,
