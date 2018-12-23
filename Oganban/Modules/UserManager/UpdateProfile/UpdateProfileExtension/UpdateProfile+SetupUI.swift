@@ -2,7 +2,7 @@
 //  UpdateProfile+SetupUI.swift
 //  Oganban
 //
-//  Created by Admin on 12/23/18.
+//  Created by Kent on 12/23/18.
 //  Copyright © 2018 Coby. All rights reserved.
 //
 

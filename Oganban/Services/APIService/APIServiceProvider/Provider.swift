@@ -21,4 +21,8 @@ class Provider {
         return UserAPIService(network: networkManager)
     }
     
+    var commonAPIService: CommonAPIServiceProtocol {
+        return CommonAPIService(network: networkManager)
+    }
+    
 }

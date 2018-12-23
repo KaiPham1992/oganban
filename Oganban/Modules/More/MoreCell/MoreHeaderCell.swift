@@ -2,7 +2,7 @@
 //  MoreHeaderCell.swift
 //  free
 //
-//  Created by Admin on 12/17/18.
+//  Created by Kent on 12/17/18.
 //  Copyright © 2018 Vinova. All rights reserved.
 //
 

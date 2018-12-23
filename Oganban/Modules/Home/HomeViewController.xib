@@ -20,6 +20,7 @@
                 <outlet property="tbRight" destination="j06-9j-smc" id="t57-de-NeI"/>
                 <outlet property="vCategory" destination="mSp-cb-O6q" id="zzq-nO-ReI"/>
                 <outlet property="vScale" destination="hAx-5I-iJz" id="bUv-yl-t6Z"/>
+                <outlet property="vScaleDropdown" destination="de8-mz-OC3" id="taA-mB-RMV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -200,6 +201,13 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="de8-mz-OC3">
+                                    <rect key="frame" x="220" y="31" width="125" height="1"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="Zqf-Kt-MDA"/>
+                                    </constraints>
+                                </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tXT-m5-F21">
                                     <rect key="frame" x="220" y="0.0" width="125" height="30"/>
                                     <connections>
@@ -262,11 +270,14 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
+                                <constraint firstItem="de8-mz-OC3" firstAttribute="leading" secondItem="hAx-5I-iJz" secondAttribute="leading" id="0z8-FG-slz"/>
                                 <constraint firstItem="tXT-m5-F21" firstAttribute="height" secondItem="hAx-5I-iJz" secondAttribute="height" id="43o-NY-izd"/>
                                 <constraint firstItem="hAx-5I-iJz" firstAttribute="leading" secondItem="mSp-cb-O6q" secondAttribute="trailing" constant="7" id="Bdi-ew-c7C"/>
                                 <constraint firstItem="Orl-o5-TGj" firstAttribute="centerY" secondItem="mSp-cb-O6q" secondAttribute="centerY" id="Dnb-8G-oee"/>
                                 <constraint firstItem="hAx-5I-iJz" firstAttribute="top" secondItem="d9e-Hh-d4D" secondAttribute="top" id="Edh-m5-0Km"/>
                                 <constraint firstAttribute="bottom" secondItem="mSp-cb-O6q" secondAttribute="bottom" id="Gka-4Q-hWx"/>
+                                <constraint firstItem="de8-mz-OC3" firstAttribute="bottom" secondItem="hAx-5I-iJz" secondAttribute="bottom" constant="2" id="Gri-fi-65C"/>
+                                <constraint firstItem="de8-mz-OC3" firstAttribute="trailing" secondItem="hAx-5I-iJz" secondAttribute="trailing" id="Qay-UC-OTC"/>
                                 <constraint firstItem="tXT-m5-F21" firstAttribute="width" secondItem="hAx-5I-iJz" secondAttribute="width" id="an1-E7-Apd"/>
                                 <constraint firstAttribute="trailing" secondItem="hAx-5I-iJz" secondAttribute="trailing" id="gfv-ql-i82"/>
                                 <constraint firstAttribute="bottom" secondItem="hAx-5I-iJz" secondAttribute="bottom" id="hXt-d3-kXm"/>
@@ -318,14 +329,14 @@
                 </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bbl-Wi-fSH">
                     <rect key="frame" x="15" y="134" width="172.5" height="250"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" red="0.43137254899999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="250" id="EzM-op-E78"/>
                     </constraints>
                 </tableView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="j06-9j-smc">
                     <rect key="frame" x="188.5" y="134" width="172.5" height="150"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" red="0.43137254899999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="150" id="IYq-A9-Yvg"/>
                     </constraints>
