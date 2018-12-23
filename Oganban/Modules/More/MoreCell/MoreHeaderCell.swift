@@ -11,7 +11,6 @@ import UIKit
 class MoreHeaderCell: UITableViewCell {
     
     @IBOutlet weak var ivAvatar: UIImageView!
-    @IBOutlet weak var lbStyle: UILabel!
     @IBOutlet weak var lbPhone: UILabel!
     @IBOutlet weak var lbCoinTotal: UILabel!
     @IBOutlet weak var lbName: UILabel!
@@ -27,7 +26,6 @@ class MoreHeaderCell: UITableViewCell {
     }
     
     func showData() {
-        lbStyle.text = "Gold"
         lbName.text = "Ly Nguyễn"
         lbPhone.text = "0946258000"
         

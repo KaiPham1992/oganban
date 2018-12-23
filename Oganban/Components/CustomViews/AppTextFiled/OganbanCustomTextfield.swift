@@ -81,17 +81,17 @@ import UIKit
         lbTitle.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0).isActive = true
         lbTitle.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0).isActive = true
         lbTitle.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
-        lbTitle.heightAnchor.constraint(equalToConstant: 12).isActive = true
+        lbTitle.heightAnchor.constraint(equalToConstant: 15).isActive = true
         
         lbRightText.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0).isActive = true
         lbRightText.topAnchor.constraint(equalTo: lbTitle.topAnchor, constant: 0).isActive = true
-        lbRightText.heightAnchor.constraint(equalToConstant: 12).isActive = true
+        lbRightText.heightAnchor.constraint(equalToConstant: 15).isActive = true
         lbRightText.widthAnchor.constraint(equalToConstant: 100).isActive = true
         
         tfContent.leftAnchor.constraint(equalTo: lbTitle.leftAnchor, constant: 0).isActive = true
         tfContent.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0).isActive = true
-        tfContent.topAnchor.constraint(equalTo: lbTitle.bottomAnchor, constant: 12).isActive = true
-        tfContent.heightAnchor.constraint(equalToConstant: 14.5).isActive = true
+        tfContent.topAnchor.constraint(equalTo: lbTitle.bottomAnchor, constant: 8).isActive = true
+        tfContent.heightAnchor.constraint(equalToConstant: 18).isActive = true
         
         ivRightIcon.centerYAnchor.constraint(equalTo: tfContent.centerYAnchor).isActive = true
         ivRightIcon.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0).isActive = true

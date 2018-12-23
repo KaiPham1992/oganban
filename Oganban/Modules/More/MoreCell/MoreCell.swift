@@ -8,7 +8,8 @@
 
 import UIKit
 
-enum MoreRowName: String {
+enum MoreRowName: String, CaseIterable {
+    case header
     case historyCoin
     case historyBuy
     case policy
@@ -19,6 +20,8 @@ enum MoreRowName: String {
     
     func index() -> Int {
         switch self {
+        case .header:
+            return 0
         case .historyCoin:
             return 1
         case .historyBuy:
@@ -35,7 +38,6 @@ enum MoreRowName: String {
             return 7
         }
     }
-    
 }
 
 class MoreCell: UITableViewCell {
