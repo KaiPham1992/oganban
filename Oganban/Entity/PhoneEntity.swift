@@ -6,6 +6,7 @@
 //  Copyright © 2018 Coby. All rights reserved.
 //
 import Foundation
+import ObjectMapper
 
 class PhoneEntity {
     var phoneNumber: String?
@@ -17,5 +18,33 @@ class PhoneEntity {
         self.phoneNumber = phoneNumber
         
         self.phoneFullCodeAndNumber = "\(self.phoneCode&)\(self.phoneNumber&)"
+    }
+}
+
+struct BaseCodeEntity: Mappable {
+    
+    var data        : [CountryCodeEntity] = []
+    
+    init?(map: Map) {
+        
+    }
+    mutating func mapping(map: Map) {
+        self.data       <- map["data"]
+    }
+}
+
+struct CountryCodeEntity: Mappable {
+    
+    var name        : String?
+    var dialCode    : String?
+    var code        : String?
+    
+    init?(map: Map) {
+        
+    }
+    mutating func mapping(map: Map) {
+        self.name       <- map["name"]
+        self.dialCode   <- map["dial_code"]
+        self.code       <- map["code"]
     }
 }

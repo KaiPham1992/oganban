@@ -88,6 +88,11 @@ class UpdateProfileViewController: BaseViewController, UpdateProfileViewProtocol
             return false
         }
         
+        if username.isValidEmail() == false  {
+            hideError(isHidden: false, message: "Vui lòng kiểm tra lại tên đăng nhập")
+            return false
+        }
+        
         guard let displayName = self.tfDisplayName.tfContent.text else {
             hideError(isHidden: false, message: "Vui lòng nhập tên hiển thị")
             return false
@@ -162,9 +167,9 @@ extension UpdateProfileViewController {
         btnSave.tapButton = {
             self.view.endEditing(true)
             if self.validateInputData() {
-                print("Success")
+                print("Update Success")
             } else {
-                print("Login Error")
+                print("Update Error")
             }
         }
     }

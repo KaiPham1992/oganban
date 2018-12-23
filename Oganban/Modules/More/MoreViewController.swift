@@ -69,6 +69,11 @@ extension MoreViewController: UITableViewDelegate, UITableViewDataSource
                 print("Chọn Lịch sử ƠCoin")
                 break
             case MoreRowName.historyBuy.index():
+                PopUpHelper.shared.showDateFollowWeekPopup(completionDate: { (date) in
+                    if let date = date {
+                        print("SELECTED DATE: " + date.toString(dateFormat: AppDateFormat.ddMMYYYY_VN))
+                    }
+                })
                 print("Chọn Lịch sử mua tin")
                 break
             case MoreRowName.policy.index():
