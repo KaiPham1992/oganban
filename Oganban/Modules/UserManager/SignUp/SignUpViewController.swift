@@ -23,7 +23,7 @@ class SignUpViewController: BaseViewController, SignUpViewProtocol {
     @IBOutlet weak var vPassword        : FTextField!
     @IBOutlet weak var vPasswordReType  : FTextField!
     @IBOutlet weak var vCaptcha         : FTextField!
-    @IBOutlet weak var btnTermOfPolicy         : UIButton!
+    @IBOutlet weak var btnTermOfPolicy  : UIButton!
     @IBOutlet weak var lbStatus         : UILabel!
 
 	var presenter: SignUpPresenterProtocol?
