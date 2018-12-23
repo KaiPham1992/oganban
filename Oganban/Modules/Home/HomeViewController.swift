@@ -9,6 +9,7 @@
 //
 
 import UIKit
+import DropDown
 
 class HomeViewController: BaseViewController, HomeViewProtocol {
     
@@ -22,6 +23,7 @@ class HomeViewController: BaseViewController, HomeViewProtocol {
     @IBOutlet weak var heightLeft: NSLayoutConstraint!
     @IBOutlet weak var heightRight: NSLayoutConstraint!
     @IBOutlet weak var btnHideDropdown: UIButton!
+    @IBOutlet weak var vScaleDropdown: UIView!
     
 	var presenter: HomePresenterProtocol?
     
@@ -45,6 +47,8 @@ class HomeViewController: BaseViewController, HomeViewProtocol {
                 Menu(title: "title9", listContent: ["a", "b"]),
                 Menu(title: "title10", listContent: ["a", "b", "c"])]
     var index = 0
+    
+    let scaleDropdown = DropDown()
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,6 +95,19 @@ class HomeViewController: BaseViewController, HomeViewProtocol {
         tbLeft.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: tbLeft.bounds.size.width - 10)
     }
     
+    override func setUpViews() {
+        setUpScaleDropdown()
+    }
+    
+    private func setUpScaleDropdown() {
+        scaleDropdown.anchorView = vScaleDropdown
+        scaleDropdown.dataSource = ["1km", "2km", "3km"]
+        scaleDropdown.backgroundColor = AppColor.main
+        scaleDropdown.setupCornerRadius(10)
+        scaleDropdown.textColor = .white
+        scaleDropdown.downScaleTransform = CGAffineTransform(rotationAngle: (-.pi))
+    }
+    
     @IBAction func hideDropdownTapped() {
         hideDropdown()
     }
@@ -108,7 +125,7 @@ class HomeViewController: BaseViewController, HomeViewProtocol {
     }
     
     @IBAction func btnShowDropdownScaleTapped() {
-        
+        scaleDropdown.show()
     }
     
     @IBAction func btnGotoPositionTapped() {
