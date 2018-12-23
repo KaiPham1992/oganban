@@ -42,15 +42,13 @@ class AppCollectionPhoto: UIView {
     var listImage = [AppPhoto]() {
         didSet {
             cvPhoto.reloadData()
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2, execute: {
-                self.calculateHeight()
-            })
+            calculateHeight()
         }
     }
     //Layout Setting Variables
-    var numberOfItemsPerRow: Int = 5
+    var numberOfItemsPerRow: Int = 4
     var canEdit: Bool = true
-    var deleteIcon: UIImage = AppImage.imgClose
+    var deleteIcon: UIImage = AppImage.imgDeletePhoto
     var addIcon: UIImage = AppImage.imgUploadPhoto
     var cellBorderColor: UIColor = AppColor.line
     var borderAll: Bool = true
@@ -64,6 +62,11 @@ class AppCollectionPhoto: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupView()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        calculateHeight()
     }
     
     func setupView(){
@@ -80,17 +83,9 @@ class AppCollectionPhoto: UIView {
     }
     
     private func calculateHeight() {
-        let countCell = listImage.count + 1
-        var line = countCell / numberOfItemsPerRow
-        let mod = countCell % numberOfItemsPerRow
-        
-        if mod > 0 {
-            line += 1
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
+            self.delegate?.appCollectionPhoto(self, changedHeight: self.cvPhoto.contentSize.height)
         }
-        
-        let heightLine = (self.cvPhoto.frame.width - 20 ) / CGFloat(numberOfItemsPerRow) * ratioCell
-        let totalHeight = heightLine * CGFloat(line) + CGFloat((line - 1) * numberOfItemsPerRow)
-        delegate?.appCollectionPhoto(self, changedHeight: totalHeight)
     }
 }
 
@@ -108,7 +103,6 @@ extension AppCollectionPhoto: UICollectionViewDataSource, UICollectionViewDelega
         cell.imgClose.isHidden = !canEdit || ( indexPath.item == 0 || isSingleSelected)
         cell.imgClose.image = deleteIcon
         if canEdit && indexPath.item == 0 {
-            cell.imgPhoto.backgroundColor = .yellow
             cell.imgPhoto.image = addIcon
             cell.borderColor = cellBorderColor
         } else {
@@ -144,7 +138,6 @@ extension AppCollectionPhoto: UICollectionViewDataSource, UICollectionViewDelega
     }
 }
 
-
 extension AppCollectionPhoto: ImagePickerDelegate {
     func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
         imagePicker.dismiss(animated: true, completion: nil)
@@ -174,6 +167,15 @@ extension AppCollectionPhoto: ImagePickerDelegate {
         }
         
         delegate?.appCollectionPhoto(self, selectedImages: imagesItems)
+        
+        images.forEach { _image in
+            Provider.shared.commonAPIService.uploadImage(image: _image, success: { photo in
+                
+            }) { error in
+                print(error.debugDescription)
+            }
+        }
+        
     }
     
     func showImagePicker() {

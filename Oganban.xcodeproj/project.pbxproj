@@ -226,6 +226,9 @@
 		DE21828721CD473100FDD9F1 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21826021CD473100FDD9F1 /* ProgressView.swift */; };
 		DE21829121CD4E7F00FDD9F1 /* AppTextFiled.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21828F21CD4E7F00FDD9F1 /* AppTextFiled.swift */; };
 		DE21829421CD4EB600FDD9F1 /* FTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21829321CD4EB600FDD9F1 /* FTextField.swift */; };
+		DE442C3021CF93750051C0B8 /* CommonAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE442C2F21CF93750051C0B8 /* CommonAPIService.swift */; };
+		DE442C3221CF93C60051C0B8 /* PhotoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE442C3121CF93C60051C0B8 /* PhotoEntity.swift */; };
+		DE442C3421CF94600051C0B8 /* CommonEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE442C3321CF94600051C0B8 /* CommonEndPoint.swift */; };
 		DEC5166221CE8DB600A17CBF /* PopUpSettingGPS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC5166121CE8DB600A17CBF /* PopUpSettingGPS.swift */; };
 		DEC5166421CE8DCD00A17CBF /* PopUpSettingGPSContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC5166321CE8DCD00A17CBF /* PopUpSettingGPSContent.swift */; };
 		DEC5166621CE8DDF00A17CBF /* PopUpSettingGPSContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEC5166521CE8DDF00A17CBF /* PopUpSettingGPSContent.xib */; };
@@ -485,6 +488,9 @@
 		DE21826021CD473100FDD9F1 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		DE21828F21CD4E7F00FDD9F1 /* AppTextFiled.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTextFiled.swift; sourceTree = "<group>"; };
 		DE21829321CD4EB600FDD9F1 /* FTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTextField.swift; sourceTree = "<group>"; };
+		DE442C2F21CF93750051C0B8 /* CommonAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonAPIService.swift; sourceTree = "<group>"; };
+		DE442C3121CF93C60051C0B8 /* PhotoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEntity.swift; sourceTree = "<group>"; };
+		DE442C3321CF94600051C0B8 /* CommonEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonEndPoint.swift; sourceTree = "<group>"; };
 		DEC5166121CE8DB600A17CBF /* PopUpSettingGPS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpSettingGPS.swift; sourceTree = "<group>"; };
 		DEC5166321CE8DCD00A17CBF /* PopUpSettingGPSContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpSettingGPSContent.swift; sourceTree = "<group>"; };
 		DEC5166521CE8DDF00A17CBF /* PopUpSettingGPSContent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpSettingGPSContent.xib; sourceTree = "<group>"; };
@@ -807,8 +813,9 @@
 		CB172B1C21C6A2130068CF92 /* APIService */ = {
 			isa = PBXGroup;
 			children = (
-				DE21822F21CD458E00FDD9F1 /* UserAPIService.swift */,
 				CB172B3E21C6A2A20068CF92 /* APIServiceProvider */,
+				DE21822F21CD458E00FDD9F1 /* UserAPIService.swift */,
+				DE442C2F21CF93750051C0B8 /* CommonAPIService.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -827,6 +834,7 @@
 			children = (
 				CB172B4121C6A2AA0068CF92 /* Base */,
 				DE21823421CD465700FDD9F1 /* UserEndPoint.swift */,
+				DE442C3321CF94600051C0B8 /* CommonEndPoint.swift */,
 			);
 			path = EndPoint;
 			sourceTree = "<group>";
@@ -1096,6 +1104,7 @@
 				DE21822921CD449800FDD9F1 /* UserEntity.swift */,
 				DE21822B21CD44B700FDD9F1 /* FaceBookEntity.swift */,
 				DE21822D21CD44D600FDD9F1 /* BaseEntity.swift */,
+				DE442C3121CF93C60051C0B8 /* PhotoEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1580,6 +1589,7 @@
 				DEC5166421CE8DCD00A17CBF /* PopUpSettingGPSContent.swift in Sources */,
 				CB172C9521C6A2EF0068CF92 /* ConstantStoryboard.swift in Sources */,
 				CB172C9921C6A2EF0068CF92 /* BaseViewController.swift in Sources */,
+				DE442C3021CF93750051C0B8 /* CommonAPIService.swift in Sources */,
 				84421C0821CBF52900F468F5 /* SupplementaryInfoRouter.swift in Sources */,
 				CB172C1621C6A2EF0068CF92 /* Bundle+extension.swift in Sources */,
 				DE21826C21CD473100FDD9F1 /* KActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
@@ -1617,6 +1627,7 @@
 				DEE1DA6D21CDF5E70036FEB7 /* PopUpSelectGenderContent.swift in Sources */,
 				CB172C1321C6A2EF0068CF92 /* UIButton+extension.swift in Sources */,
 				DE21826D21CD473100FDD9F1 /* KActivityIndicatorAnimationBallPulse.swift in Sources */,
+				DE442C3421CF94600051C0B8 /* CommonEndPoint.swift in Sources */,
 				DE21828521CD473100FDD9F1 /* FadeInOutAnimation.swift in Sources */,
 				DEE1DA7021CE1FFC0036FEB7 /* PopUpYesNoHaveAdmob.swift in Sources */,
 				DE21826A21CD473100FDD9F1 /* KActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
@@ -1683,6 +1694,7 @@
 				84421BF121CBEECF00F468F5 /* MoreInteractor.swift in Sources */,
 				DE21822121CD419B00FDD9F1 /* PhoneEntity.swift in Sources */,
 				B36AEEB121CDDB8000BED43C /* MySellPresenter.swift in Sources */,
+				DE442C3221CF93C60051C0B8 /* PhotoEntity.swift in Sources */,
 				B36AEEB321CDDB8000BED43C /* MySellViewController.swift in Sources */,
 				84421BED21CBEECF00F468F5 /* MorePresenter.swift in Sources */,
 				CB172C1A21C6A2EF0068CF92 /* NSMutableAttributedString+Extension.swift in Sources */,

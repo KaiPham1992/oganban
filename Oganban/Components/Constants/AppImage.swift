@@ -44,6 +44,8 @@ struct AppImage {
     
     // Photo
     static let imgErrorUpLoadPhoto = UIImage(named: "ic_warning")!
-    static let imgUploadPhoto = UIImage(named: "logo_purple")!
+    static let imgUploadPhoto = UIImage(named: "add_blue")!
+    static let imgDeletePhoto = UIImage(named: "ic_close")!
+    static let imgPlaceHolderImage = UIImage(named: "placeHolderImage")!
 
 }
