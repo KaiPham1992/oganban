@@ -229,6 +229,26 @@
 		DE442C3021CF93750051C0B8 /* CommonAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE442C2F21CF93750051C0B8 /* CommonAPIService.swift */; };
 		DE442C3221CF93C60051C0B8 /* PhotoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE442C3121CF93C60051C0B8 /* PhotoEntity.swift */; };
 		DE442C3421CF94600051C0B8 /* CommonEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE442C3321CF94600051C0B8 /* CommonEndPoint.swift */; };
+		DE442C3D21CFA2130051C0B8 /* OrderDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE442C3721CFA2130051C0B8 /* OrderDetailPresenter.swift */; };
+		DE442C3E21CFA2130051C0B8 /* OrderDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE442C3821CFA2130051C0B8 /* OrderDetailRouter.swift */; };
+		DE442C3F21CFA2130051C0B8 /* OrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE442C3921CFA2130051C0B8 /* OrderDetailViewController.swift */; };
+		DE442C4021CFA2130051C0B8 /* OrderDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE442C3A21CFA2130051C0B8 /* OrderDetailProtocols.swift */; };
+		DE442C4121CFA2130051C0B8 /* OrderDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE442C3B21CFA2130051C0B8 /* OrderDetailInteractor.swift */; };
+		DE442C4221CFA2130051C0B8 /* OrderDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE442C3C21CFA2130051C0B8 /* OrderDetailViewController.xib */; };
+		DE442C4621CFA33D0051C0B8 /* PostCommentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE442C4421CFA33D0051C0B8 /* PostCommentView.xib */; };
+		DE442C4721CFA33D0051C0B8 /* PostCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE442C4521CFA33D0051C0B8 /* PostCommentView.swift */; };
+		DE442C4C21CFAAD70051C0B8 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE442C4A21CFAAD70051C0B8 /* CommentCell.swift */; };
+		DE442C4D21CFAAD70051C0B8 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE442C4B21CFAAD70051C0B8 /* CommentCell.xib */; };
+		DE442C5621CFB7570051C0B8 /* SubCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE442C5421CFB7560051C0B8 /* SubCommentCell.xib */; };
+		DE442C5721CFB7570051C0B8 /* SubCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE442C5521CFB7560051C0B8 /* SubCommentCell.swift */; };
+		DE442C5921CFB7870051C0B8 /* BaseCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE442C5821CFB7870051C0B8 /* BaseCommentCell.swift */; };
+		DE442C5D21CFB9140051C0B8 /* AddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE442C5B21CFB9140051C0B8 /* AddressCell.swift */; };
+		DE442C5E21CFB9140051C0B8 /* AddressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE442C5C21CFB9140051C0B8 /* AddressCell.xib */; };
+		DE442C6021CFB9790051C0B8 /* CommentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE442C5F21CFB9790051C0B8 /* CommentEntity.swift */; };
+		DE442C6321CFBD930051C0B8 /* HeaderOrderDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE442C6221CFBD930051C0B8 /* HeaderOrderDetail.swift */; };
+		DE442C6521CFBDA40051C0B8 /* HeaderOrderDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE442C6421CFBDA40051C0B8 /* HeaderOrderDetail.xib */; };
+		DE442C6B21CFC1BD0051C0B8 /* ReplyCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE442C6921CFC1BD0051C0B8 /* ReplyCommentCell.swift */; };
+		DE442C6C21CFC1BD0051C0B8 /* ReplyCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE442C6A21CFC1BD0051C0B8 /* ReplyCommentCell.xib */; };
 		DEC5166221CE8DB600A17CBF /* PopUpSettingGPS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC5166121CE8DB600A17CBF /* PopUpSettingGPS.swift */; };
 		DEC5166421CE8DCD00A17CBF /* PopUpSettingGPSContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC5166321CE8DCD00A17CBF /* PopUpSettingGPSContent.swift */; };
 		DEC5166621CE8DDF00A17CBF /* PopUpSettingGPSContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEC5166521CE8DDF00A17CBF /* PopUpSettingGPSContent.xib */; };
@@ -492,6 +512,26 @@
 		DE442C3121CF93C60051C0B8 /* PhotoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEntity.swift; sourceTree = "<group>"; };
 		DE442C3321CF94600051C0B8 /* CommonEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonEndPoint.swift; sourceTree = "<group>"; };
 		DE442C3521CF9EFD0051C0B8 /* Oganban.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Oganban.entitlements; sourceTree = "<group>"; };
+		DE442C3721CFA2130051C0B8 /* OrderDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailPresenter.swift; sourceTree = "<group>"; };
+		DE442C3821CFA2130051C0B8 /* OrderDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailRouter.swift; sourceTree = "<group>"; };
+		DE442C3921CFA2130051C0B8 /* OrderDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailViewController.swift; sourceTree = "<group>"; };
+		DE442C3A21CFA2130051C0B8 /* OrderDetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailProtocols.swift; sourceTree = "<group>"; };
+		DE442C3B21CFA2130051C0B8 /* OrderDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailInteractor.swift; sourceTree = "<group>"; };
+		DE442C3C21CFA2130051C0B8 /* OrderDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderDetailViewController.xib; sourceTree = "<group>"; };
+		DE442C4421CFA33D0051C0B8 /* PostCommentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostCommentView.xib; sourceTree = "<group>"; };
+		DE442C4521CFA33D0051C0B8 /* PostCommentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCommentView.swift; sourceTree = "<group>"; };
+		DE442C4A21CFAAD70051C0B8 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		DE442C4B21CFAAD70051C0B8 /* CommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
+		DE442C5421CFB7560051C0B8 /* SubCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubCommentCell.xib; sourceTree = "<group>"; };
+		DE442C5521CFB7560051C0B8 /* SubCommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubCommentCell.swift; sourceTree = "<group>"; };
+		DE442C5821CFB7870051C0B8 /* BaseCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCommentCell.swift; sourceTree = "<group>"; };
+		DE442C5B21CFB9140051C0B8 /* AddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressCell.swift; sourceTree = "<group>"; };
+		DE442C5C21CFB9140051C0B8 /* AddressCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressCell.xib; sourceTree = "<group>"; };
+		DE442C5F21CFB9790051C0B8 /* CommentEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentEntity.swift; sourceTree = "<group>"; };
+		DE442C6221CFBD930051C0B8 /* HeaderOrderDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderOrderDetail.swift; sourceTree = "<group>"; };
+		DE442C6421CFBDA40051C0B8 /* HeaderOrderDetail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderOrderDetail.xib; sourceTree = "<group>"; };
+		DE442C6921CFC1BD0051C0B8 /* ReplyCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyCommentCell.swift; sourceTree = "<group>"; };
+		DE442C6A21CFC1BD0051C0B8 /* ReplyCommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReplyCommentCell.xib; sourceTree = "<group>"; };
 		DEC5166121CE8DB600A17CBF /* PopUpSettingGPS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpSettingGPS.swift; sourceTree = "<group>"; };
 		DEC5166321CE8DCD00A17CBF /* PopUpSettingGPSContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpSettingGPSContent.swift; sourceTree = "<group>"; };
 		DEC5166521CE8DDF00A17CBF /* PopUpSettingGPSContent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpSettingGPSContent.xib; sourceTree = "<group>"; };
@@ -606,6 +646,7 @@
 		84A92BE921CA50F000148191 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				DE442C4321CFA33D0051C0B8 /* PostCommentView */,
 				B3E67E9421CF3EE20012546F /* PhoneNumber */,
 				8432074921CF529D00A4F11E /* PopupDateFollowWeek */,
 				DEC5166721CE980E00A17CBF /* AppCollectionPhoto */,
@@ -771,6 +812,7 @@
 		CB172B1821C6A1480068CF92 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				DE442C3621CFA1FE0051C0B8 /* OrderDetail */,
 				842F09BD21CE0EEA00FBA5F3 /* UpdateProfile */,
 				B36AEEB721CDDB8800BED43C /* Notification */,
 				B36AEEAA21CDDB7000BED43C /* MySell */,
@@ -1107,6 +1149,7 @@
 				DE21822B21CD44B700FDD9F1 /* FaceBookEntity.swift */,
 				DE21822D21CD44D600FDD9F1 /* BaseEntity.swift */,
 				DE442C3121CF93C60051C0B8 /* PhotoEntity.swift */,
+				DE442C5F21CFB9790051C0B8 /* CommentEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1218,6 +1261,87 @@
 				B325C2F121CE26900048A148 /* FTextFieldChoose.swift */,
 			);
 			path = AppTextFiled;
+			sourceTree = "<group>";
+		};
+		DE442C3621CFA1FE0051C0B8 /* OrderDetail */ = {
+			isa = PBXGroup;
+			children = (
+				DE442C4821CFAAA90051C0B8 /* Cell */,
+				DE442C3721CFA2130051C0B8 /* OrderDetailPresenter.swift */,
+				DE442C3821CFA2130051C0B8 /* OrderDetailRouter.swift */,
+				DE442C3921CFA2130051C0B8 /* OrderDetailViewController.swift */,
+				DE442C3A21CFA2130051C0B8 /* OrderDetailProtocols.swift */,
+				DE442C3B21CFA2130051C0B8 /* OrderDetailInteractor.swift */,
+				DE442C3C21CFA2130051C0B8 /* OrderDetailViewController.xib */,
+			);
+			path = OrderDetail;
+			sourceTree = "<group>";
+		};
+		DE442C4321CFA33D0051C0B8 /* PostCommentView */ = {
+			isa = PBXGroup;
+			children = (
+				DE442C4421CFA33D0051C0B8 /* PostCommentView.xib */,
+				DE442C4521CFA33D0051C0B8 /* PostCommentView.swift */,
+			);
+			path = PostCommentView;
+			sourceTree = "<group>";
+		};
+		DE442C4821CFAAA90051C0B8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DE442C6621CFC18B0051C0B8 /* ReplyComentCell */,
+				DE442C6121CFBD7C0051C0B8 /* HeaderOrderDetail */,
+				DE442C5A21CFB9000051C0B8 /* AddressCell */,
+				DE442C5321CFB7560051C0B8 /* SubCommentCell */,
+				DE442C4921CFAAAF0051C0B8 /* CommentCell */,
+				DE442C5821CFB7870051C0B8 /* BaseCommentCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		DE442C4921CFAAAF0051C0B8 /* CommentCell */ = {
+			isa = PBXGroup;
+			children = (
+				DE442C4A21CFAAD70051C0B8 /* CommentCell.swift */,
+				DE442C4B21CFAAD70051C0B8 /* CommentCell.xib */,
+			);
+			path = CommentCell;
+			sourceTree = "<group>";
+		};
+		DE442C5321CFB7560051C0B8 /* SubCommentCell */ = {
+			isa = PBXGroup;
+			children = (
+				DE442C5421CFB7560051C0B8 /* SubCommentCell.xib */,
+				DE442C5521CFB7560051C0B8 /* SubCommentCell.swift */,
+			);
+			path = SubCommentCell;
+			sourceTree = "<group>";
+		};
+		DE442C5A21CFB9000051C0B8 /* AddressCell */ = {
+			isa = PBXGroup;
+			children = (
+				DE442C5B21CFB9140051C0B8 /* AddressCell.swift */,
+				DE442C5C21CFB9140051C0B8 /* AddressCell.xib */,
+			);
+			path = AddressCell;
+			sourceTree = "<group>";
+		};
+		DE442C6121CFBD7C0051C0B8 /* HeaderOrderDetail */ = {
+			isa = PBXGroup;
+			children = (
+				DE442C6221CFBD930051C0B8 /* HeaderOrderDetail.swift */,
+				DE442C6421CFBDA40051C0B8 /* HeaderOrderDetail.xib */,
+			);
+			path = HeaderOrderDetail;
+			sourceTree = "<group>";
+		};
+		DE442C6621CFC18B0051C0B8 /* ReplyComentCell */ = {
+			isa = PBXGroup;
+			children = (
+				DE442C6921CFC1BD0051C0B8 /* ReplyCommentCell.swift */,
+				DE442C6A21CFC1BD0051C0B8 /* ReplyCommentCell.xib */,
+			);
+			path = ReplyComentCell;
 			sourceTree = "<group>";
 		};
 		DEC5166021CE8DA300A17CBF /* PopUpSettingGPS */ = {
@@ -1403,6 +1527,7 @@
 			files = (
 				CB172C0C21C6A2EF0068CF92 /* Localizable.strings in Resources */,
 				84487C9121CB80F5008B25B2 /* Roboto-ThinItalic.ttf in Resources */,
+				DE442C5E21CFB9140051C0B8 /* AddressCell.xib in Resources */,
 				B36AEEB621CDDB8000BED43C /* MySellViewController.xib in Resources */,
 				CB3A8F1821C64FC1008144BD /* LaunchScreen.storyboard in Resources */,
 				CB172C8C21C6A2EF0068CF92 /* OpenSans-SemiBoldItalic.ttf in Resources */,
@@ -1416,6 +1541,8 @@
 				B36AEEA921CDDB6600BED43C /* MybuyViewController.xib in Resources */,
 				84421BFB21CBEF1E00F468F5 /* MoreCell.xib in Resources */,
 				84487C8821CB7EA0008B25B2 /* Roboto-Bold.ttf in Resources */,
+				DE442C5621CFB7570051C0B8 /* SubCommentCell.xib in Resources */,
+				DE442C4D21CFAAD70051C0B8 /* CommentCell.xib in Resources */,
 				B36AEEC421CDDBA600BED43C /* NotificationViewController.xib in Resources */,
 				84487C9021CB80F2008B25B2 /* Roboto-Thin.ttf in Resources */,
 				DEC5166B21CE986400A17CBF /* AdmobBannerView.xib in Resources */,
@@ -1423,8 +1550,10 @@
 				CB172C8F21C6A2EF0068CF92 /* OpenSans-Regular.ttf in Resources */,
 				B355EF6121C8FB1400379F57 /* SignUpViewController.xib in Resources */,
 				8432075121CF529D00A4F11E /* DateFollowWeekCell.xib in Resources */,
+				DE442C4621CFA33D0051C0B8 /* PostCommentView.xib in Resources */,
 				CB172C9021C6A2EF0068CF92 /* OpenSans-BoldItalic.ttf in Resources */,
 				842F09C921CE0F1400FBA5F3 /* UpdateProfileViewController.xib in Resources */,
+				DE442C6521CFBDA40051C0B8 /* HeaderOrderDetail.xib in Resources */,
 				84487C8621CB7E96008B25B2 /* Roboto-Black.ttf in Resources */,
 				DEE1DA6121CDF3E60036FEB7 /* AdmobNativeView.xib in Resources */,
 				CB172C8B21C6A2EF0068CF92 /* OpenSans-Bold.ttf in Resources */,
@@ -1432,6 +1561,7 @@
 				DEC5166621CE8DDF00A17CBF /* PopUpSettingGPSContent.xib in Resources */,
 				84421BFE21CBEF7600F468F5 /* MoreViewController.xib in Resources */,
 				84487C8721CB7E99008B25B2 /* Roboto-BlackItalic.ttf in Resources */,
+				DE442C6C21CFC1BD0051C0B8 /* ReplyCommentCell.xib in Resources */,
 				84487C8B21CB80D5008B25B2 /* Roboto-Light.ttf in Resources */,
 				B3E67EB121CF77AB0012546F /* countryCodes.json in Resources */,
 				CB172C8921C6A2EF0068CF92 /* OpenSans-ExtraBold.ttf in Resources */,
@@ -1453,6 +1583,7 @@
 				DEE1DA7421CE20260036FEB7 /* PopUpYesNoHaveAdmobContent.xib in Resources */,
 				DEE1DA7E21CE2E6A0036FEB7 /* PopUpUpdateQuantityBuyContent.xib in Resources */,
 				B355EF5421C8EB3F00379F57 /* HomeViewController.xib in Resources */,
+				DE442C4221CFA2130051C0B8 /* OrderDetailViewController.xib in Resources */,
 				CB172C8A21C6A2EF0068CF92 /* OpenSans-LightItalic.ttf in Resources */,
 				CB172C0921C6A2EF0068CF92 /* PopUpNotificationContent.xib in Resources */,
 				CB172C8721C6A2EF0068CF92 /* OpenSans-Light.ttf in Resources */,
@@ -1586,6 +1717,7 @@
 				CB172B3C21C6A26F0068CF92 /* MapperData.swift in Sources */,
 				DEE1DA8021CE39180036FEB7 /* GADBannerView+extension.swift in Sources */,
 				CB172C2121C6A2EF0068CF92 /* DataManager.swift in Sources */,
+				DE442C3D21CFA2130051C0B8 /* OrderDetailPresenter.swift in Sources */,
 				DEE1DA4F21CDE1CE0036FEB7 /* PopUpNotificationHaveAdmob.swift in Sources */,
 				B36AEEC321CDDBA600BED43C /* NotificationInteractor.swift in Sources */,
 				DE21827021CD473100FDD9F1 /* KActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
@@ -1601,6 +1733,7 @@
 				CB172C1621C6A2EF0068CF92 /* Bundle+extension.swift in Sources */,
 				DE21826C21CD473100FDD9F1 /* KActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
 				DEE1DA7221CE20130036FEB7 /* PopUpYesNoHaveAdmobContent.swift in Sources */,
+				DE442C6021CFB9790051C0B8 /* CommentEntity.swift in Sources */,
 				DEC5166221CE8DB600A17CBF /* PopUpSettingGPS.swift in Sources */,
 				DE21826421CD473100FDD9F1 /* KActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */,
 				B355EF4F21C8EB3F00379F57 /* HomePresenter.swift in Sources */,
@@ -1614,6 +1747,7 @@
 				DE21827321CD473100FDD9F1 /* KActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
 				B355EF6021C8FB1400379F57 /* SignUpInteractor.swift in Sources */,
 				CB172B3B21C6A26F0068CF92 /* Network.swift in Sources */,
+				DE442C5921CFB7870051C0B8 /* BaseCommentCell.swift in Sources */,
 				DEE1DA5621CDE6550036FEB7 /* PopUpSelectDate.swift in Sources */,
 				DE21827121CD473100FDD9F1 /* KActivityIndicatorAnimationBlank.swift in Sources */,
 				842F09C621CE0F1400FBA5F3 /* UpdateProfileViewController.swift in Sources */,
@@ -1635,6 +1769,7 @@
 				CB172C1321C6A2EF0068CF92 /* UIButton+extension.swift in Sources */,
 				DE21826D21CD473100FDD9F1 /* KActivityIndicatorAnimationBallPulse.swift in Sources */,
 				DE442C3421CF94600051C0B8 /* CommonEndPoint.swift in Sources */,
+				DE442C4021CFA2130051C0B8 /* OrderDetailProtocols.swift in Sources */,
 				DE21828521CD473100FDD9F1 /* FadeInOutAnimation.swift in Sources */,
 				DEE1DA7021CE1FFC0036FEB7 /* PopUpYesNoHaveAdmob.swift in Sources */,
 				DE21826A21CD473100FDD9F1 /* KActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
@@ -1659,6 +1794,7 @@
 				DEE1DA5C21CDF22C0036FEB7 /* AppConstant.swift in Sources */,
 				B36AEEB521CDDB8000BED43C /* MySellInteractor.swift in Sources */,
 				DE21826821CD473100FDD9F1 /* KActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
+				DE442C6B21CFC1BD0051C0B8 /* ReplyCommentCell.swift in Sources */,
 				B36AEEC121CDDBA600BED43C /* NotificationViewController.swift in Sources */,
 				DE21829121CD4E7F00FDD9F1 /* AppTextFiled.swift in Sources */,
 				DE21827A21CD473100FDD9F1 /* KActivityIndicatorAnimationCubeTransition.swift in Sources */,
@@ -1669,6 +1805,7 @@
 				84421C0A21CBF52900F468F5 /* SupplementaryInfoProtocols.swift in Sources */,
 				CB3A8F1021C64FC1008144BD /* ViewController.swift in Sources */,
 				B355EF5221C8EB3F00379F57 /* HomeProtocols.swift in Sources */,
+				DE442C3F21CFA2130051C0B8 /* OrderDetailViewController.swift in Sources */,
 				CB172C2521C6A2EF0068CF92 /* PopUpHelper.swift in Sources */,
 				DE21828121CD473100FDD9F1 /* KActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */,
 				84421BF921CBEF1E00F468F5 /* MoreHeaderCell.swift in Sources */,
@@ -1677,6 +1814,7 @@
 				84A92BF721CA555900148191 /* LoginRouter.swift in Sources */,
 				84421BEE21CBEECF00F468F5 /* MoreRouter.swift in Sources */,
 				B355EF5D21C8FB1400379F57 /* SignUpRouter.swift in Sources */,
+				DE442C5D21CFB9140051C0B8 /* AddressCell.swift in Sources */,
 				CB172C2321C6A2EF0068CF92 /* UserDefaultHelper.swift in Sources */,
 				DE21826E21CD473100FDD9F1 /* KActivityIndicatorAnimationBallClipRotate.swift in Sources */,
 				CB172C1421C6A2EF0068CF92 /* UIView+extension.swift in Sources */,
@@ -1685,6 +1823,7 @@
 				B325C2EF21CE05B20048A148 /* MenuCell.swift in Sources */,
 				CB172C9B21C6A2EF0068CF92 /* BaseViewXib.swift in Sources */,
 				B355EF5C21C8FB1400379F57 /* SignUpPresenter.swift in Sources */,
+				DE442C5721CFB7570051C0B8 /* SubCommentCell.swift in Sources */,
 				DE21827421CD473100FDD9F1 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
 				CB172C1921C6A2EF0068CF92 /* String+extension.swift in Sources */,
 				DE21827921CD473100FDD9F1 /* KActivityIndicatorAnimationBallBeat.swift in Sources */,
@@ -1704,6 +1843,7 @@
 				DE442C3221CF93C60051C0B8 /* PhotoEntity.swift in Sources */,
 				B36AEEB321CDDB8000BED43C /* MySellViewController.swift in Sources */,
 				84421BED21CBEECF00F468F5 /* MorePresenter.swift in Sources */,
+				DE442C3E21CFA2130051C0B8 /* OrderDetailRouter.swift in Sources */,
 				CB172C1A21C6A2EF0068CF92 /* NSMutableAttributedString+Extension.swift in Sources */,
 				DE21822A21CD449800FDD9F1 /* UserEntity.swift in Sources */,
 				CB172B3A21C6A26F0068CF92 /* BaseResponse.swift in Sources */,
@@ -1720,6 +1860,8 @@
 				CB172C9E21C6A2EF0068CF92 /* BaseView.swift in Sources */,
 				DEE1DA5F21CDF3050036FEB7 /* AdmobNativeView.swift in Sources */,
 				CB172C9421C6A2EF0068CF92 /* APIConstant.swift in Sources */,
+				DE442C4121CFA2130051C0B8 /* OrderDetailInteractor.swift in Sources */,
+				DE442C4C21CFAAD70051C0B8 /* CommentCell.swift in Sources */,
 				CB172C2421C6A2EF0068CF92 /* LanguageHelper.swift in Sources */,
 				DE21826321CD473100FDD9F1 /* KActivityIndicatorAnimationBallGridBeat.swift in Sources */,
 				DE21826621CD473100FDD9F1 /* KActivityIndicatorAnimationPacman.swift in Sources */,
@@ -1734,6 +1876,7 @@
 				84A92BED21CA518200148191 /* OganbanCustomTextfield.swift in Sources */,
 				DE21826221CD473100FDD9F1 /* KActivityIndicatorAnimationOrbit.swift in Sources */,
 				CB172C9D21C6A2EF0068CF92 /* BasePopUpView.swift in Sources */,
+				DE442C4721CFA33D0051C0B8 /* PostCommentView.swift in Sources */,
 				B36AEEC021CDDBA600BED43C /* NotificationRouter.swift in Sources */,
 				CB172C1821C6A2EF0068CF92 /* UIViewController+extension.swift in Sources */,
 				DE07F56921CF539D00DE2032 /* AppCollectionPhoto.swift in Sources */,
@@ -1758,6 +1901,7 @@
 				CB172C9621C6A2EF0068CF92 /* AppColor.swift in Sources */,
 				B36AEE9C21CDD90500BED43C /* TabbarProtocol.swift in Sources */,
 				CB172B4321C6A2AA0068CF92 /* EndPointType.swift in Sources */,
+				DE442C6321CFBD930051C0B8 /* HeaderOrderDetail.swift in Sources */,
 				DE21826121CD473100FDD9F1 /* KActivityIndicatorAnimationAudioEqualizer.swift in Sources */,
 				CB172C0F21C6A2EF0068CF92 /* UIColor+extension.swift in Sources */,
 				CB172B3921C6A26F0068CF92 /* APIError.swift in Sources */,
