@@ -88,6 +88,7 @@ class HomeViewController: BaseViewController, HomeViewProtocol {
         tbLeft.layer.cornerRadius = 10
         tbRight.layer.cornerRadius = 10
         tbRight.allowsMultipleSelection = true
+        tbLeft.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: tbLeft.bounds.size.width - 10)
     }
     
     @IBAction func hideDropdownTapped() {
