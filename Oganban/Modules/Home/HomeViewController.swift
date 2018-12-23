@@ -88,6 +88,7 @@ class HomeViewController: BaseViewController, HomeViewProtocol {
         tbLeft.layer.cornerRadius = 10
         tbRight.layer.cornerRadius = 10
         tbRight.allowsMultipleSelection = true
+        tbLeft.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: tbLeft.bounds.size.width - 10)
     }
     
     @IBAction func hideDropdownTapped() {
@@ -203,11 +204,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        cell.transform = CGAffineTransform(translationX: -tableView.bounds.width, y: 0)
+        cell.transform = CGAffineTransform(rotationAngle: (-.pi))//CGAffineTransform(translationX: -tableView.bounds.width, y: 0)
 
         UIView.animate(
-            withDuration: 0.2,
-            delay: 0.1 * Double(indexPath.row),
+            withDuration: 0.3,
+            delay: 0,
             options: [.curveEaseInOut],
             animations: {
                 cell.transform = CGAffineTransform(translationX: 0, y: 0)

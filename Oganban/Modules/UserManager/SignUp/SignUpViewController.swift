@@ -23,7 +23,7 @@ class SignUpViewController: BaseViewController, SignUpViewProtocol {
     @IBOutlet weak var vPassword        : FTextField!
     @IBOutlet weak var vPasswordReType  : FTextField!
     @IBOutlet weak var vCaptcha         : FTextField!
-    @IBOutlet weak var btnTermOfPolicy         : UIButton!
+    @IBOutlet weak var btnTermOfPolicy  : UIButton!
     @IBOutlet weak var lbStatus         : UILabel!
 
 	var presenter: SignUpPresenterProtocol?
@@ -74,32 +74,23 @@ class SignUpViewController: BaseViewController, SignUpViewProtocol {
         if vLoginName.textField.text&.isEmpty && vLoginEmail.textField.text&.isEmpty
             && vPassword.textField.text&.isEmpty && vPasswordReType.textField.text&.isEmpty
             && vCaptcha.textField.text&.isEmpty && vLoginDisplay.textField.text&.isEmpty {
-            lbStatus.text = "Vui lòng nhập thông tin đầy đủ"
+            lbStatus.text = "Vui lòng nhập thông tin đăng ký"
             return false
         }
         
         if vLoginName.textField.text&.isEmpty {
-            lbStatus.text = "Nhập tên đăng nhập"
-            return false
-        }
-        
-        if vLoginName.textField.text&.hasSpecialCharacters() {
-            lbStatus.text = "Tên đăng nhập không chứa ký tự đặc biệt"
-            return false
-        }
-        
-        if vLoginName.textField.text&.count > 45 || vLoginName.textField.text&.count < 3 {
-            lbStatus.text = "Vui lòng nhập tên đăng nhập từ 3 -45 ký tự"
-            return false
-        }
-        
-        if vLoginName.textField.text&.contains(" ") {
-            lbStatus.text = "Tên đăng nhập không có dấu cách"
+            lbStatus.text = "Vui lòng nhập email"
             return false
         }
         
         if vLoginEmail.textField.text&.isEmpty {
-            lbStatus.text = "Nhập email"
+            lbStatus.text = "Vui lòng nhập lại email"
+            return false
+        }
+        
+        
+        if vLoginEmail.textField.text&.isValidEmail() == false || vLoginName.textField.text&.isValidEmail() == false {
+            lbStatus.text = "Vui lòng nhập lại email"
             return false
         }
         
@@ -108,40 +99,51 @@ class SignUpViewController: BaseViewController, SignUpViewProtocol {
             return false
         }
         
-        if vLoginEmail.textField.text&.isValidEmail() == false || vLoginName.textField.text&.isValidEmail() == false {
-            lbStatus.text = "Định dạng không đúng"
+        if vLoginDisplay.textField.text&.hasSpecialCharacters() {
+            lbStatus.text = "Vui lòng nhập lại tên"
+            return false
+        }
+        
+        if vLoginDisplay.textField.text&.count > 18 {
+            lbStatus.text = "Người dùng không thể nhập hơn 18 ký tự"
             return false
         }
         
         if vPassword.textField.text&.isEmpty {
-            lbStatus.text = "Nhập pass"
+            lbStatus.text = "Vui lòng nhập mật khẩu"
             return false
         }
         
         if vPassword.textField.text&.count < 6 {
-            lbStatus.text = "Pass hơn 6"
+            lbStatus.text = "Mật khẩu phải từ 6 kí tự trở lên"
             return false
         }
         
         if vPasswordReType.textField.text&.isEmpty {
-            lbStatus.text = "Nhập lại pass"
-            return false
-        }
-        
-        if vCaptcha.textField.text&.isEmpty {
-            lbStatus.text = "Nhập captcha"
-            return false
-        }
-        
-        guard let _ = Int(vCaptcha.textField.text&) else {
-            lbStatus.text = "Vui lòng nhập mã captcha"
+            lbStatus.text = "Mật khẩu không chính xác"
             return false
         }
         
         if vPassword.textField.text != vPasswordReType.textField.text {
-            lbStatus.text = "Sai pass nhập lại"
+            lbStatus.text = "Vui lòng nhập lại mật khẩu"
             return false
         }
+        
+        if vCaptcha.textField.text&.isEmpty {
+            lbStatus.text = "Vui lòng nhập mã captcha"
+            return false
+        }
+        
+        guard let _ = Int(vCaptcha.textField.text&) else {
+            lbStatus.text = "Vui lòng nhập lại mã captcha"
+            return false
+        }
+        
+        if termPolicy == false {
+            lbStatus.text = "Vui lòng đồng ý điều khoản sử dụng"
+            return false
+        }
+       
         return true
     }
 
