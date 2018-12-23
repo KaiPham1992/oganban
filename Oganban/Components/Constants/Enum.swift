@@ -24,3 +24,34 @@ enum HomeMapTab: Int {
     case listTVV = 3
 }
 
+enum MoreRowName: String, CaseIterable {
+    case header
+    case historyCoin
+    case historyBuy
+    case policy
+    case tutorial
+    case setting
+    case changePassword
+    case logout
+    
+    func index() -> Int {
+        switch self {
+        case .header:
+            return 0
+        case .historyCoin:
+            return 1
+        case .historyBuy:
+            return 2
+        case .policy:
+            return 3
+        case .tutorial:
+            return 4
+        case .setting:
+            return 5
+        case .changePassword:
+            return 6
+        case .logout:
+            return 7
+        }
+    }
+}

@@ -9,13 +9,13 @@ import Foundation
 
 struct TitleString {
     //-- sign up
-    static let loginName             = "Tên đăng nhập*"
+    static let loginName             = "Tên đăng nhập *"
     static let placeHolderLoginName  = "Nhập địa chỉ email"
-    static let email                = "Nhập lại email*"
+    static let email                = "Nhập lại email *"
     static let placeHolderEmail     = "Nhập lại địa chỉ email"
-    static let displayName             = "Tên hiển thị*"
+    static let displayName             = "Tên hiển thị *"
     static let placeHolderDisplayName  = "Nhập tên hiển thị"
-    static let birthday                = "Ngày tháng năm sinh*"
+    static let birthday                = "Ngày tháng năm sinh *"
     static let placeHolderBirthday     = "Chọn ngày"
     static let gender                = "Giới tính"
     static let placeHolderGender     = "Chọn giới tính"
@@ -25,11 +25,11 @@ struct TitleString {
     static let placeHolderCompanyAddress     = "Bạn có thể nhập địa chỉ công ty"
     static let introduce             = "Mã người giới thiệu"
     static let placeHolderIntroduce = "Nhập mã người giới thiệu nếu có"
-    static let password             = "Mật khẩu*"
+    static let password             = "Mật khẩu *"
     static let placeHolderPassword  = "Nhập mật khẩu"
-    static let confirm              = "Nhập lại mật khẩu*"
+    static let confirm              = "Nhập lại mật khẩu *"
     static let placeHolderConfirm   = "Nhập lại mật khẩu"
-    static let captcha              = "Mã captcha*"
+    static let captcha              = "Mã captcha *"
     static let placeHolderCaptcha   = "Nhập mã captcha"
     
     static let phonePlaceHolder     = "phonePlaceHolder"
@@ -45,8 +45,42 @@ struct TitleString {
     
 }
 
+struct ButtonName {
+    static let login = "Đăng nhập"
+    static let facebook = "Facebook"
+    static let google = "Google"
+    static let signup = "Đăng ký"
+    static let saveProfile = "Lưu thay đổi"
+    static let sendSupplementaryInfo = "Gửi"
+}
+
+struct MoreTitle {
+    static let historyCoin            = "Lịch sử ƠCoin"
+    static let historyBuy             =  "Lịch sử mua tin"
+    static let policy                 =  "Điều khoản sử dụng"
+    static let tutorial               = "Hướng dẫn"
+    static let setting                = "Cài đặt"
+    static let changePassword         = "Đổi mật khẩu"
+    static let logout                 = "Đăng xuất"
+    
+}
+
 struct MessageString {
     static let notEnoughCoin = "Số Ơcoin tích lũy của bạn không đủ để đổi sản phẩm. Vui lòng kiểm tra lại !"
+    static let invalidLoginEmailPassword  = "Vui lòng kiểm tra lại email hoặc mật khẩu"
+    static let emptyUsername = "Vui lòng nhập tên đăng nhập"
+    static let checkedUsername =  "Vui lòng kiểm tra lại tên đăng nhập"
+    static let emptyDisplayName = "Vui lòng nhập tên hiển thị"
+    static let emptyBirthday = "Vui lòng chọn ngày tháng năm sinh"
+    static let checkedAge = "Vui lòng kiểm tra lại tuổi phải trên 15"
+    static let emptyPhone = "Vui lòng nhập số điện thoại"
+    static let checkedPhone =  "Vui lòng kiểm tra lại số điện thoại"
+    static let notTickPolicy = "Vui lòng chọn điều khoản sử dụng"
+}
+
+struct NavigationTitle {
+    static let profileInfo = "Thông tin tài khoản"
+    static let more = "Xem thêm"
 }
 
 struct Params {

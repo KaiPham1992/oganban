@@ -53,6 +53,11 @@
 		84A92BF921CA555900148191 /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A92BF321CA555900148191 /* LoginProtocols.swift */; };
 		84A92BFA21CA555900148191 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A92BF421CA555900148191 /* LoginInteractor.swift */; };
 		84A92BFB21CA555900148191 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A92BF521CA555900148191 /* LoginViewController.xib */; };
+		84C8542C21CFD72900BDABE5 /* Login+SetupUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8542B21CFD72900BDABE5 /* Login+SetupUI.swift */; };
+		84C8542E21CFDB6600BDABE5 /* Login+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8542D21CFDB6600BDABE5 /* Login+Delegate.swift */; };
+		84C8543121CFE8A000BDABE5 /* UpdateProfile+SetupUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8543021CFE8A000BDABE5 /* UpdateProfile+SetupUI.swift */; };
+		84C8543421CFEC8D00BDABE5 /* SupplementaryInfo+SetupUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8543321CFEC8D00BDABE5 /* SupplementaryInfo+SetupUI.swift */; };
+		84C8543621CFEE7300BDABE5 /* SupplementaryInfo+Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8543521CFEE7300BDABE5 /* SupplementaryInfo+Event.swift */; };
 		B325C2EF21CE05B20048A148 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B325C2ED21CE05B20048A148 /* MenuCell.swift */; };
 		B325C2F021CE05B20048A148 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B325C2EE21CE05B20048A148 /* MenuCell.xib */; };
 		B325C2F221CE26900048A148 /* FTextFieldChoose.swift in Sources */ = {isa = PBXBuildFile; fileRef = B325C2F121CE26900048A148 /* FTextFieldChoose.swift */; };
@@ -305,6 +310,11 @@
 		84A92BF321CA555900148191 /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
 		84A92BF421CA555900148191 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		84A92BF521CA555900148191 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		84C8542B21CFD72900BDABE5 /* Login+SetupUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Login+SetupUI.swift"; sourceTree = "<group>"; };
+		84C8542D21CFDB6600BDABE5 /* Login+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Login+Delegate.swift"; sourceTree = "<group>"; };
+		84C8543021CFE8A000BDABE5 /* UpdateProfile+SetupUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UpdateProfile+SetupUI.swift"; sourceTree = "<group>"; };
+		84C8543321CFEC8D00BDABE5 /* SupplementaryInfo+SetupUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SupplementaryInfo+SetupUI.swift"; sourceTree = "<group>"; };
+		84C8543521CFEE7300BDABE5 /* SupplementaryInfo+Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SupplementaryInfo+Event.swift"; sourceTree = "<group>"; };
 		B325C2ED21CE05B20048A148 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		B325C2EE21CE05B20048A148 /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		B325C2F121CE26900048A148 /* FTextFieldChoose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTextFieldChoose.swift; sourceTree = "<group>"; };
@@ -537,6 +547,7 @@
 		842F09BD21CE0EEA00FBA5F3 /* UpdateProfile */ = {
 			isa = PBXGroup;
 			children = (
+				84C8542F21CFE87600BDABE5 /* UpdateProfileExtension */,
 				842F09BE21CE0F1400FBA5F3 /* UpdateProfilePresenter.swift */,
 				842F09BF21CE0F1400FBA5F3 /* UpdateProfileRouter.swift */,
 				842F09C021CE0F1400FBA5F3 /* UpdateProfileViewController.swift */,
@@ -586,6 +597,7 @@
 		84421C0021CBF47000F468F5 /* SupplementaryInfo */ = {
 			isa = PBXGroup;
 			children = (
+				84C8543221CFEC7500BDABE5 /* SupplementaryInfoExtension */,
 				84421C0121CBF52900F468F5 /* SupplementaryInfoPresenter.swift */,
 				84421C0221CBF52900F468F5 /* SupplementaryInfoRouter.swift */,
 				84421C0321CBF52900F468F5 /* SupplementaryInfoViewController.swift */,
@@ -600,7 +612,6 @@
 			isa = PBXGroup;
 			children = (
 				B3E67E9421CF3EE20012546F /* PhoneNumber */,
-				8432074921CF529D00A4F11E /* PopupDateFollowWeek */,
 				DEC5166721CE980E00A17CBF /* AppCollectionPhoto */,
 				DEC5166821CE986300A17CBF /* AdmobBannerView */,
 				DEE1DA5D21CDF2950036FEB7 /* AdmobNativeView */,
@@ -621,6 +632,23 @@
 				84A92BF521CA555900148191 /* LoginViewController.xib */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		84C8542F21CFE87600BDABE5 /* UpdateProfileExtension */ = {
+			isa = PBXGroup;
+			children = (
+				84C8543021CFE8A000BDABE5 /* UpdateProfile+SetupUI.swift */,
+			);
+			path = UpdateProfileExtension;
+			sourceTree = "<group>";
+		};
+		84C8543221CFEC7500BDABE5 /* SupplementaryInfoExtension */ = {
+			isa = PBXGroup;
+			children = (
+				84C8543321CFEC8D00BDABE5 /* SupplementaryInfo+SetupUI.swift */,
+				84C8543521CFEE7300BDABE5 /* SupplementaryInfo+Event.swift */,
+			);
+			path = SupplementaryInfoExtension;
 			sourceTree = "<group>";
 		};
 		B325C2EC21CE059E0048A148 /* Menu */ = {
@@ -764,13 +792,11 @@
 		CB172B1821C6A1480068CF92 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				842F09BD21CE0EEA00FBA5F3 /* UpdateProfile */,
 				B36AEEB721CDDB8800BED43C /* Notification */,
 				B36AEEAA21CDDB7000BED43C /* MySell */,
 				B36AEE9D21CDDB3F00BED43C /* MyBuy */,
 				B36AEE9721CDD8CD00BED43C /* Tabbar */,
 				DE21821421CD40AE00FDD9F1 /* UserManager */,
-				84421C0021CBF47000F468F5 /* SupplementaryInfo */,
 				84421BE621CBEEA600F468F5 /* More */,
 				B355EF4821C8EB2E00379F57 /* Home */,
 			);
@@ -870,6 +896,7 @@
 		CB172B4421C6A2EE0068CF92 /* CustomPopUp */ = {
 			isa = PBXGroup;
 			children = (
+				8432074921CF529D00A4F11E /* PopupDateFollowWeek */,
 				DEC5166021CE8DA300A17CBF /* PopUpSettingGPS */,
 				DEE1DA7821CE2DD30036FEB7 /* PopUpUpdateQuantityBuy */,
 				DEE1DA6E21CE1FE90036FEB7 /* PopUpYesNoHaveAdmob */,
@@ -1074,6 +1101,8 @@
 		DE21821421CD40AE00FDD9F1 /* UserManager */ = {
 			isa = PBXGroup;
 			children = (
+				842F09BD21CE0EEA00FBA5F3 /* UpdateProfile */,
+				84421C0021CBF47000F468F5 /* SupplementaryInfo */,
 				84A92BEF21CA554100148191 /* Login */,
 				B355EF5521C8FB0300379F57 /* SignUp */,
 				DE21821921CD40FA00FDD9F1 /* FBAccountKit */,
@@ -1106,6 +1135,8 @@
 				DE21822221CD432300FDD9F1 /* Login+VerifyOTP.swift */,
 				DE21822521CD43E200FDD9F1 /* Login+Facebook.swift */,
 				DE21822721CD440B00FDD9F1 /* Login+GoogleSignIn.swift */,
+				84C8542B21CFD72900BDABE5 /* Login+SetupUI.swift */,
+				84C8542D21CFDB6600BDABE5 /* Login+Delegate.swift */,
 			);
 			path = LoginExtension;
 			sourceTree = "<group>";
@@ -1560,6 +1591,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84421C0721CBF52900F468F5 /* SupplementaryInfoPresenter.swift in Sources */,
+				84C8542C21CFD72900BDABE5 /* Login+SetupUI.swift in Sources */,
 				CB172C9321C6A2EF0068CF92 /* AppString.swift in Sources */,
 				842F09C721CE0F1400FBA5F3 /* UpdateProfileProtocols.swift in Sources */,
 				DE21828021CD473100FDD9F1 /* KActivityIndicatorAnimationBallRotate.swift in Sources */,
@@ -1600,6 +1632,7 @@
 				DEE1DA5621CDE6550036FEB7 /* PopUpSelectDate.swift in Sources */,
 				DE21827121CD473100FDD9F1 /* KActivityIndicatorAnimationBlank.swift in Sources */,
 				842F09C621CE0F1400FBA5F3 /* UpdateProfileViewController.swift in Sources */,
+				84C8543621CFEE7300BDABE5 /* SupplementaryInfo+Event.swift in Sources */,
 				DE21826B21CD473100FDD9F1 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				84421C0B21CBF52900F468F5 /* SupplementaryInfoInteractor.swift in Sources */,
 				CB172C0D21C6A2EF0068CF92 /* UIApplication+extension.swift in Sources */,
@@ -1665,6 +1698,7 @@
 				DE21826921CD473100FDD9F1 /* KActivityIndicatorAnimationBallScale.swift in Sources */,
 				DE21826F21CD473100FDD9F1 /* KActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
 				B325C2EF21CE05B20048A148 /* MenuCell.swift in Sources */,
+				84C8543421CFEC8D00BDABE5 /* SupplementaryInfo+SetupUI.swift in Sources */,
 				CB172C9B21C6A2EF0068CF92 /* BaseViewXib.swift in Sources */,
 				B355EF5C21C8FB1400379F57 /* SignUpPresenter.swift in Sources */,
 				DE21827421CD473100FDD9F1 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
@@ -1690,6 +1724,7 @@
 				CB172B3A21C6A26F0068CF92 /* BaseResponse.swift in Sources */,
 				DEE1DA6921CDF5A90036FEB7 /* PopUpSelectGender.swift in Sources */,
 				842F09C421CE0F1400FBA5F3 /* UpdateProfilePresenter.swift in Sources */,
+				84C8542E21CFDB6600BDABE5 /* Login+Delegate.swift in Sources */,
 				DE21826521CD473100FDD9F1 /* KActivityIndicatorAnimationBallGridPulse.swift in Sources */,
 				DE2181FE21CD3DC300FDD9F1 /* AppDelegate+Push.swift in Sources */,
 				CB172C1C21C6A2EF0068CF92 /* UICollectionView+extension.swift in Sources */,
@@ -1705,6 +1740,7 @@
 				DE21826321CD473100FDD9F1 /* KActivityIndicatorAnimationBallGridBeat.swift in Sources */,
 				DE21826621CD473100FDD9F1 /* KActivityIndicatorAnimationPacman.swift in Sources */,
 				DEC5166C21CE986400A17CBF /* AdmobBannerView.swift in Sources */,
+				84C8543121CFE8A000BDABE5 /* UpdateProfile+SetupUI.swift in Sources */,
 				DE21828621CD473100FDD9F1 /* KActivityIndicatorAnimationDelegate.swift in Sources */,
 				DE21822321CD432300FDD9F1 /* Login+VerifyOTP.swift in Sources */,
 				DE21828321CD473100FDD9F1 /* KActivityIndicatorType.swift in Sources */,

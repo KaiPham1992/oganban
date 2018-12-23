@@ -88,7 +88,7 @@ extension UIView {
         }
     }
     
-    func setBorder(borderWidth: CGFloat = 0, borderColor: UIColor = UIColor.clear, cornerRadius: CGFloat? = nil) {
+    func setBorderWithCornerRadius(borderWidth: CGFloat = 0, borderColor: UIColor = UIColor.clear, cornerRadius: CGFloat? = nil) {
         self.layer.masksToBounds        = true
         self.layer.borderWidth          = borderWidth
         self.layer.borderColor          = borderColor.cgColor

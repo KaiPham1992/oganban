@@ -35,93 +35,62 @@ class UpdateProfileViewController: BaseViewController, UpdateProfileViewProtocol
         setupView()
         tapSaveButton()
         textFieldDidBeginEditing()
-    }
-
-    func setupView(){
-        self.setTitleNavigation(title: "Thông tin tài khoản")
-        self.addBackToNavigation()
-        
         hideError()
-        
-        imgAvatar.layer.cornerRadius = imgAvatar.frame.width / 2.0
-        imgAvatar.layer.masksToBounds = true
-        
-        tfUsername.setupLayoutTextfield(placeholderText: "example@gmail.com", titleText: "Tên đăng nhập *", placeholderColor: AppColor.black414141)
-        
-        tfDisplayName.setupLayoutTextfield(placeholderText: "Nhập tên hiển thị", titleText: "Tên hiển thị *", placeholderColor: AppColor.black414141)
-        
-        tfBirthday.setupLayoutTextfield(placeholderText: "Chọn ngày", titleText: "Ngày tháng năm sinh *", placeholderColor: AppColor.black414141)
-        tfBirthday.showRightIcon(sỉze: CGSize(width: 11, height: 11), icon: AppImage.imgArrowDown)
-        tfBirthday.tfContent.isEnabled = false
-        let tapBirthdayGesture = UITapGestureRecognizer(target: self, action: #selector(self.selectBirthday(_:)))
-        self.tfBirthday.addGestureRecognizer(tapBirthdayGesture)
-        
-        tfGender.setupLayoutTextfield(placeholderText: "Chọn giới tính", titleText: "Giới tính", placeholderColor: AppColor.black414141)
-        tfGender.showRightIcon(sỉze: CGSize(width: 11, height: 11), icon: AppImage.imgArrowDown)
-        tfGender.tfContent.isEnabled = false
-        let tapSexGesture = UITapGestureRecognizer(target: self, action: #selector(self.selectSex(_:)))
-        self.tfGender.addGestureRecognizer(tapSexGesture)
-    
-        tvPhone.tfPhone.keyboardType = .numberPad
-        
-        tfAddress1.setupLayoutTextfield(placeholderText: "Bạn có thể nhập địa chỉ nhà", titleText: "Địa chỉ 1", placeholderColor: AppColor.black414141)
-        tfAddress2.setupLayoutTextfield(placeholderText: "Bạn có thể nhập địa chỉ công ty", titleText: "Địa chỉ 2", placeholderColor: AppColor.black414141)
-        
-        btnSave.setupLayoutButton(backgroundColor: AppColor.green005800, titleColor: AppColor.white, text: "Lưu thay đổi")
-        scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        
+        addGesture()
     }
-    
+}
+
+extension UpdateProfileViewController {
     func validateInputData() -> Bool {
         
         guard let username = self.tfUsername.tfContent.text else {
-            hideError(isHidden: false, message: "Vui lòng nhập tên đăng nhập")
+            hideError(isHidden: false, message: MessageString.emptyUsername)
             return false
         }
         
         if username == ""  {
-            hideError(isHidden: false, message: "Vui lòng nhập tên đăng nhập")
+            hideError(isHidden: false, message: MessageString.emptyUsername)
             return false
         }
         
         if username.isValidEmail() == false  {
-            hideError(isHidden: false, message: "Vui lòng kiểm tra lại tên đăng nhập")
+            hideError(isHidden: false, message: MessageString.checkedUsername)
             return false
         }
         
         guard let displayName = self.tfDisplayName.tfContent.text else {
-            hideError(isHidden: false, message: "Vui lòng nhập tên hiển thị")
+            hideError(isHidden: false, message: MessageString.emptyDisplayName)
             return false
         }
         
         if displayName == "" {
-            hideError(isHidden: false, message: "Vui lòng nhập tên hiển thị")
+            hideError(isHidden: false, message: MessageString.emptyDisplayName)
             return false
         }
         
         guard let birthDay =  self.birthDay else {
-            hideError(isHidden: false, message: "Vui lòng chọn ngày tháng năm sinh")
+            hideError(isHidden: false, message: MessageString.emptyBirthday)
             return false
         }
         
         let age = calculateAge(birthday: birthDay)
         if age < 15  {
-            hideError(isHidden: false, message: "Vui lòng kiểm tra lại tuổi phải trên 15")
+            hideError(isHidden: false, message: MessageString.checkedAge)
             return false
         }
         
         guard let phone =  self.tvPhone.tfPhone.text else {
-            hideError(isHidden: false, message: "Vui lòng nhập số điện thoại")
+            hideError(isHidden: false, message: MessageString.emptyPhone)
             return false
         }
         
         if phone == "" {
-            hideError(isHidden: false, message: "Vui lòng nhập số điện thoại")
+            hideError(isHidden: false, message: MessageString.emptyPhone)
             return false
         }
         
         if phone.isValidPhone2() == false {
-            hideError(isHidden: false, message: "Vui lòng kiểm tra lại số điện thoại")
+            hideError(isHidden: false, message: MessageString.checkedPhone)
             return false
         }
         
@@ -129,10 +98,12 @@ class UpdateProfileViewController: BaseViewController, UpdateProfileViewProtocol
         return true
     }
     
-    @IBAction func tapShareButton(_ sender: UIButton) {
-        print("TAP SHARE BUTTON")
+    func calculateAge(birthday: Date) -> Int {
+        let now = Date()
+        let calendar = Calendar.current
+        let ageComponents = calendar.dateComponents([.year], from: birthday, to: now)
+        return ageComponents.year!
     }
-    
 }
 
 extension UpdateProfileViewController {
@@ -157,6 +128,14 @@ extension UpdateProfileViewController {
         tfAddress2.textFieldDidBeginEditing = {
             self.hideError()
         }
+    }
+
+}
+
+extension UpdateProfileViewController {
+    
+    @IBAction func tapShareButton(_ sender: UIButton) {
+        print("TAP SHARE BUTTON")
     }
     
     func tapSaveButton(){
@@ -192,14 +171,8 @@ extension UpdateProfileViewController {
             }
         }
     }
-    
-    func calculateAge(birthday: Date) -> Int {
-        let now = Date()
-        let calendar = Calendar.current
-        let ageComponents = calendar.dateComponents([.year], from: birthday, to: now)
-        return ageComponents.year!
-    }
 }
+
 extension UpdateProfileViewController: PhoneNumberDelegate {
     func phoneCodeChoose(info: CountryCodeEntity) {
         self.countryPhoneCode = info

@@ -37,28 +37,3 @@ class MoreHeaderCell: UITableViewCell {
         }
     }
 }
-
-extension String {
-    func addComma() -> String? {
-        if self.isEmpty == false{
-            let formater = NumberFormatter()
-            formater.groupingSeparator = ","
-            formater.numberStyle = .decimal
-            if let num = formater.number(from: self){
-                return formater.string(from: num)
-            }
-            else{
-                return nil
-            }
-        }
-        return nil
-    }
-    
-    func getSubString(fromCharacter: String) -> String?{
-        if let range = self.range(of: fromCharacter) {
-            let subText = self[range.upperBound...]
-            return String(subText)
-        }
-        return nil
-    }
-}

@@ -15,7 +15,7 @@ class PopUpNotificationContent: BaseViewXib {
     
     override func setUpViews() {
         super.setUpViews()
-        btnAccept.setBorder(borderWidth: 1, borderColor: AppColor.white, cornerRadius: btnAccept.frame.height/2)
+        btnAccept.setBorderWithCornerRadius(borderWidth: 1, borderColor: AppColor.white, cornerRadius: btnAccept.frame.height/2)
         
         lbMessage.font = AppFont.fontRegular17
         lbMessage.textColor = AppColor.white.withAlphaComponent(0.9)

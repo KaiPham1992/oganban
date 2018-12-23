@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MoreViewController: UIViewController,MoreViewProtocol {
+class MoreViewController: BaseViewController, MoreViewProtocol {
     
     var presenter: MorePresenterProtocol?
 
@@ -16,15 +16,16 @@ class MoreViewController: UIViewController,MoreViewProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.setTitleNavigation(title: NavigationTitle.more)
         self.registerTableView()
     }
 
     func registerTableView(){
         tvMore.delegate = self
         tvMore.dataSource = self
-        tvMore.register(UINib(nibName: "MoreHeaderCell", bundle: nil), forCellReuseIdentifier: "MoreHeaderCell")
-        tvMore.register(UINib(nibName: "MoreCell", bundle: nil), forCellReuseIdentifier: "MoreCell")
+        tvMore.registerXibFile(MoreHeaderCell.self)
+        tvMore.registerXibFile(MoreCell.self)
         tvMore.tableFooterView = UIView()
         tvMore.separatorStyle = .none
     }
@@ -39,25 +40,20 @@ extension MoreViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if indexPath.row == 0 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "MoreHeaderCell", for: indexPath) as? MoreHeaderCell else {
-                return UITableViewCell()
-            }
+        if indexPath.row == MoreRowName.header.index() {
+            let cell = tableView.dequeue(MoreHeaderCell.self, for: indexPath)
             cell.selectionStyle = .none
             return cell
         } else {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "MoreCell", for: indexPath) as? MoreCell else {
-                return UITableViewCell()
-            }
-            cell.selectionStyle = .none
+            let cell = tableView.dequeue(MoreCell.self, for: indexPath)
             cell.showData(index: indexPath.row)
+            cell.selectionStyle = .none
             return cell
         }
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-       
             switch indexPath.row {
             case MoreRowName.header.index():
                 let vc = UpdateProfileRouter.createModule()
