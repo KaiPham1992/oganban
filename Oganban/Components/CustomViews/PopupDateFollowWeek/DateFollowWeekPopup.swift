@@ -129,7 +129,14 @@ extension DateFollowWeekPopup: UICollectionViewDelegate, UICollectionViewDataSou
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DateFollowWeekCell", for: indexPath) as? DateFollowWeekCell else {
             return UICollectionViewCell()
         }
-        cell.showData(date: self.dateList[indexPath.item])
+        
+        let date = self.dateList[indexPath.item]
+        cell.showData(date: date)
+        
+        if let selectedDate = selectedDate, Calendar.current.isDate(date, inSameDayAs: selectedDate) {
+            cell.setColorSelectedDate(isSelected: true, date: date)
+        }
+
         return cell
     }
     
@@ -168,7 +175,7 @@ extension DateFollowWeekPopup {
                 let bottomPadding = window?.safeAreaInsets.bottom
                 print("\(String(describing: topPadding)) - \(bottomPadding ?? 0)")
             }
-            
+        
             window.addSubview(self)
             print(window.frame)
             self.fillSuperview()

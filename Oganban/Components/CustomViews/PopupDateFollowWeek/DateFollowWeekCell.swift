@@ -64,7 +64,9 @@ class DateFollowWeekCell: UICollectionViewCell {
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat  = "yyyy/mm/dd"
-        if dateFormatter.string(from: date) == dateFormatter.string(from: Date()){
+        
+       // if dateFormatter.string(from: date) == dateFormatter.string(from: Date()){
+        if Calendar.current.isDate(date, inSameDayAs: Date()) {
             lbDate.textColor = AppColor.grey9E9E9E
             lbMonth.textColor = AppColor.grey9E9E9E
             lbYear.textColor = AppColor.grey9E9E9E
