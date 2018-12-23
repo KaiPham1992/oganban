@@ -52,8 +52,10 @@ class AppCollectionPhotoCell: BaseCollectionCell {
         
         //--
         imgPhoto.fillSuperview()
-        imgClose.anchor(topAnchor, right: rightAnchor, topConstant: 0, rightConstant: 0, widthConstant: 40, heightConstant: 40)
+        imgClose.anchor(topAnchor, right: rightAnchor, topConstant: 5, rightConstant: 5, widthConstant: 20, heightConstant: 20)
         btnRemove.fillToView(view: imgClose)
+        
+        self.setBorder(borderWidth: 0.5, borderColor: .clear, cornerRadius: 0)
     }
     
     func loadImage(photo: AppPhoto?) {
@@ -61,12 +63,12 @@ class AppCollectionPhotoCell: BaseCollectionCell {
         
         switch _photo.status {
         case .new:
-            imgPhoto.image = AppImage.imgUploadPhoto
+            imgPhoto.image = AppImage.imgPlaceHolderImage
         case .uploaded:
             if let image = _photo.image {
                 imgPhoto.image = image
             } else if let url = URL(string: _photo.url&) {
-                imgPhoto.sd_setImage(with: url, placeholderImage: AppImage.imgUploadPhoto)
+                imgPhoto.sd_setImage(with: url, placeholderImage: AppImage.imgPlaceHolderImage)
             } else {
                  imgPhoto.image = AppImage.imgErrorUpLoadPhoto
             }

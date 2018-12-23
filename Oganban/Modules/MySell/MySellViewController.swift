@@ -18,9 +18,8 @@ class MySellViewController: UIViewController, MySellViewProtocol {
 
 	override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .blue
         vPhoto.configCollectionImageView(delegate: self, controller: self, isSingleSelected: false)
-        vPhoto.listImage = [AppPhoto(status: AppPhotoStatus.new, image: AppImage.imgCheck, url: nil)]
+//        vPhoto.listImage = [AppPhoto(status: AppPhotoStatus.new, image: AppImage.imgCheck, url: nil)]
     }
 
 }

@@ -19,6 +19,7 @@ import SwiftyJSON
 
 protocol APINetworkProtocol {
     func requestData(endPoint: EndPointType, success: @escaping NetworkSuccess, failure: @escaping RequestFailure)
+    func uploadImages(image: UIImage, endPoint: EndPointType, success: @escaping NetworkSuccess, failure: @escaping RequestFailure)
 }
 
 struct APINetwork: APINetworkProtocol {
@@ -35,8 +36,6 @@ struct APINetwork: APINetworkProtocol {
             print(json)
             
             guard let result = Mapper<BaseResponse>().map(JSONObject: json.dictionaryObject) else {
-                // handle error parser data
-                //                print(String(data: data, encoding: String.Encoding.utf8)!)
                 failure(APPError.canNotParseData)
                 return
             }
@@ -44,7 +43,26 @@ struct APINetwork: APINetworkProtocol {
             self.handleResponse(response: result, success: success, failure: failure)
             
         }) { error in
-            print("APINetwork - requestData: \(error?.code?.description)")
+            print("APINetwork - requestData: \(String(describing: error?.code?.description&))")
+            failure(APIError(error: error))
+        }
+    }
+    
+    func uploadImages(image: UIImage, endPoint: EndPointType, success: @escaping NetworkSuccess, failure: @escaping RequestFailure) {
+        print(endPoint.parameters)
+        
+        request.uploadImages(image: image, endPoint: endPoint, success: { data in
+            let json = JSON(data)
+            print(json)
+            
+            guard let result = Mapper<BaseResponse>().map(JSONObject: json.dictionaryObject) else {
+                failure(APPError.canNotParseData)
+                return
+            }
+            
+            self.handleResponse(response: result, success: success, failure: failure)
+        }) { error in
+            print("APINetwork - uploadImages: \(String(describing: error?.code?.description&))")
             failure(APIError(error: error))
         }
     }
