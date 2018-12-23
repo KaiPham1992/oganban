@@ -34,7 +34,7 @@ class MoreViewController: UIViewController,MoreViewProtocol {
 extension MoreViewController: UITableViewDelegate, UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8
+        return MoreRowName.allCases.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -57,16 +57,23 @@ extension MoreViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if indexPath.row != 0 { // row 0 for header
+       
             switch indexPath.row {
+            case MoreRowName.header.index():
+                let vc = UpdateProfileRouter.createModule()
+                self.navigationController?.pushViewController(vc, animated: true)
+                break
             case MoreRowName.historyCoin.index():
                 let vc = LoginRouter.createModule()
                 self.present(controller: vc, animated: true)
                 print("Chọn Lịch sử ƠCoin")
                 break
             case MoreRowName.historyBuy.index():
-                let vc = UpdateProfileRouter.createModule()
-                self.navigationController?.pushViewController(vc, animated: true)
+                PopUpHelper.shared.showDateFollowWeekPopup(completionDate: { (date) in
+                    if let date = date {
+                        print("SELECTED DATE: " + date.toString(dateFormat: AppDateFormat.ddMMYYYY_VN))
+                    }
+                })
                 print("Chọn Lịch sử mua tin")
                 break
             case MoreRowName.policy.index():
@@ -86,7 +93,6 @@ extension MoreViewController: UITableViewDelegate, UITableViewDataSource
                 break
             default:
                 break
-            }
         }
     }
     

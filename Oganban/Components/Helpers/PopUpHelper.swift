@@ -21,12 +21,18 @@ class PopUpHelper {
         popUp.showPopUp(question: question, completionYes: completionYes, completionNo: completionNo)
     }
     
-    func showUpdateQuantityBuy() {
+    func showUpdateQuantityBuy(completionQuantity: @escaping CompletionMessage) {
         let popUp = PopUpUpdateQuantityBuy()
-        popUp.showPopUp {
-            
-        }
-        
+        popUp.showPopUp(completionQuantity: completionQuantity)
     }
     
+    func showNoGPS() {
+        let popUp = PopUpSettingGPS()
+        popUp.showPopUp()
+    }
+    
+    func showDateFollowWeekPopup(completionDate: @escaping CompletionDate){
+        let popupView = DateFollowWeekPopup()
+        popupView.showPopUp(completionDate: completionDate)
+    }
 }

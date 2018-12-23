@@ -14,6 +14,7 @@ class UpdateProfileViewController: BaseViewController, UpdateProfileViewProtocol
 
 	var presenter: UpdateProfilePresenterProtocol?
     
+    @IBOutlet weak var lbError: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var tfPhoneCode: OganbanCustomTextfield!
     @IBOutlet weak var imgAvatar: UIImageView!
@@ -32,11 +33,15 @@ class UpdateProfileViewController: BaseViewController, UpdateProfileViewProtocol
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        tapSaveButton()
+        textFieldDidBeginEditing()
     }
 
     func setupView(){
         self.setTitleNavigation(title: "Thông tin tài khoản")
         self.addBackToNavigation()
+        
+        hideError()
         
         imgAvatar.layer.cornerRadius = imgAvatar.frame.width / 2.0
         imgAvatar.layer.masksToBounds = true
@@ -61,31 +66,111 @@ class UpdateProfileViewController: BaseViewController, UpdateProfileViewProtocol
         tfPhoneCode.showRightIcon(sỉze: CGSize(width: 11, height: 11), icon: AppImage.imgArrowDown, paddingRight: -12)
         tfPhoneCode.tfContent.isEnabled = false
         tfPhone.setupLayoutTextfield(placeholderText: "Nhập số điện thoại của bạn", titleText: "", placeholderColor: AppColor.black414141)
+        tfPhone.tfContent.keyboardType = .numberPad
         
         tfAddress1.setupLayoutTextfield(placeholderText: "Bạn có thể nhập địa chỉ nhà", titleText: "Địa chỉ 1", placeholderColor: AppColor.black414141)
         tfAddress2.setupLayoutTextfield(placeholderText: "Bạn có thể nhập địa chỉ công ty", titleText: "Địa chỉ 2", placeholderColor: AppColor.black414141)
         
         btnSave.setupLayoutButton(backgroundColor: AppColor.green005800, titleColor: AppColor.white, text: "Lưu thay đổi")
-        
-        scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 80, right: 0)
+        scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
     }
+    
+    func validateInputData() -> Bool {
+        
+        guard let username = self.tfUsername.tfContent.text else {
+            hideError(isHidden: false, message: "Vui lòng nhập tên đăng nhập")
+            return false
+        }
+        
+        if username == ""  {
+            hideError(isHidden: false, message: "Vui lòng nhập tên đăng nhập")
+            return false
+        }
+        
+        if username.isValidEmail() == false  {
+            hideError(isHidden: false, message: "Vui lòng kiểm tra lại tên đăng nhập")
+            return false
+        }
+        
+        guard let displayName = self.tfDisplayName.tfContent.text else {
+            hideError(isHidden: false, message: "Vui lòng nhập tên hiển thị")
+            return false
+        }
+        
+        if displayName == "" {
+            hideError(isHidden: false, message: "Vui lòng nhập tên hiển thị")
+            return false
+        }
+        
+        guard let birthDay =  self.birthDay else {
+            hideError(isHidden: false, message: "Vui lòng chọn ngày tháng năm sinh")
+            return false
+        }
+        
+        let age = calculateAge(birthday: birthDay)
+        if age < 15  {
+            hideError(isHidden: false, message: "Vui lòng kiểm tra lại tuổi phải trên 15")
+            return false
+        }
+        
+        guard let phone =  self.tfPhone.tfContent.text else {
+            hideError(isHidden: false, message: "Vui lòng nhập số điện thoại")
+            return false
+        }
+        
+        if phone == "" {
+            hideError(isHidden: false, message: "Vui lòng nhập số điện thoại")
+            return false
+        }
+        
+        if phone.isValidPhone2() == false {
+            hideError(isHidden: false, message: "Vui lòng kiểm tra lại số điện thoại")
+            return false
+        }
+        
+        hideError()
+        return true
+    }
+    
+    @IBAction func tapShareButton(_ sender: UIButton) {
+        print("TAP SHARE BUTTON")
+    }
+    
 }
 
 extension UpdateProfileViewController {
     func hideError(isHidden: Bool = true, message: String? = nil){
-        //lbError.isHidden = isHidden
-       // lbError.text = message ?? ""
+        lbError.isHidden = isHidden
+        lbError.text = message ?? ""
     }
     
-    func tapSendButton(){
+    func textFieldDidBeginEditing() {
+        tfUsername.textFieldDidBeginEditing = {
+            self.hideError()
+        }
+        tfDisplayName.textFieldDidBeginEditing = {
+            self.hideError()
+        }
+        tfPhone.textFieldDidBeginEditing = {
+            self.hideError()
+        }
+        tfAddress1.textFieldDidBeginEditing = {
+            self.hideError()
+        }
+        tfAddress2.textFieldDidBeginEditing = {
+            self.hideError()
+        }
+    }
+    
+    func tapSaveButton(){
         btnSave.tapButton = {
             self.view.endEditing(true)
-//            if self.validateInputData() {
-//                print("Success")
-//            } else {
-//                print("Login Error")
-//            }
+            if self.validateInputData() {
+                print("Update Success")
+            } else {
+                print("Update Error")
+            }
         }
     }
     
