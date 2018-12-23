@@ -24,11 +24,16 @@ class CommentLabel: UILabel {
 
 class CommentCell: BaseCommentCell {
     
-    @IBOutlet weak var lbComment: CommentLabel!
-    @IBOutlet weak var lbTime: UILabel!
+    var comment: CommentEntity? {
+        didSet {
+            guard let _comment = comment else { return }
+            lbComment.text = _comment.comment
+        }
+    }
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         lbComment.setBorder(borderWidth: 0, borderColor: .clear, cornerRadius: 10)
     }
 }

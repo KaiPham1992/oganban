@@ -34,6 +34,9 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="vPostCommentView" destination="3hM-gq-ehc" id="b7P-6M-X07"/>
+            </connections>
             <point key="canvasLocation" x="137.59999999999999" y="126.83658170914543"/>
         </tableViewCell>
     </objects>

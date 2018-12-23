@@ -10,11 +10,14 @@ import UIKit
 
 class SubCommentCell: BaseCommentCell {
     
-    @IBOutlet weak var lbComment: CommentLabel!
-    @IBOutlet weak var lbTime: UILabel!
+    var subComment: SubCommentEntity? {
+        didSet {
+            guard let _comment = subComment else { return }
+            lbComment.text = _comment.comment
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         lbComment.setBorder(borderWidth: 0, borderColor: .clear, cornerRadius: 10)
     }
 }
