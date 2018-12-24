@@ -23,11 +23,14 @@ extension LoginViewController {
 
 extension LoginViewController: LoginViewProtocol {
     func didLogin(user: UserEntity?) {
-        
+        self.dismiss(animated: true)
+        presenter?.showSupplementaryInfoPage()
     }
     
     func didError(error: APIError?) {
-        
+        if let message = error?.message {
+            PopUpHelper.shared.showMessageHaveAds(message: message)
+        }
     }
     
     func didUpdateProfile(response: BaseResponse?) {

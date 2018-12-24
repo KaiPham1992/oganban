@@ -17,6 +17,7 @@ protocol LoginWireframeProtocol: class {
     func gotoSignUp()
     func gotoHome()
     func gotoForgotPassword()
+    func showSupplementaryInfoPage()
 }
 //MARK: Presenter -
 protocol LoginPresenterProtocol: class {
@@ -25,6 +26,7 @@ protocol LoginPresenterProtocol: class {
     func gotoSignUp()
     func gotoHome()
     func gotoForgotPassword()
+    func showSupplementaryInfoPage()
     //---
     func login(email: String, password: String)
     func loginGmail(user: GIDGoogleUser, phone: String)

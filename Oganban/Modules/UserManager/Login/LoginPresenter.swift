@@ -30,6 +30,10 @@ class LoginPresenter: LoginPresenterProtocol {
         router.gotoHome()
     }
     
+    func showSupplementaryInfoPage() {
+        router.showSupplementaryInfoPage()
+    }
+    
     func gotoForgotPassword() {
         router.gotoForgotPassword()
     }
