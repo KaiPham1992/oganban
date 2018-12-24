@@ -54,9 +54,11 @@ class LoginViewController: BaseViewController {
         self.hideError()
         self.fbAccountKit = FBAccountKit(_controller: self)
     }
-    
+}
+
+extension LoginViewController {
     func validateInputData() -> Bool {
-       
+        
         guard let email = self.tfEmail.tfContent.text,  let password = self.tfPassword.tfContent.text else {
             hideError(isHidden: false, message: MessageString.invalidLoginEmailPassword)
             return false
@@ -72,86 +74,13 @@ class LoginViewController: BaseViewController {
         hideError()
         return true
     }
-}
-
-extension LoginViewController {
-    
-    @IBAction func close(_ sender: UIButton) {
-        self.dismiss(animated: true)
-    }
-    
-    @objc func tapForgetPassword(sender: UITapGestureRecognizer){
-        print("Tap Forget Password")
-    }
-    
-    @objc func tapTutorial(sender: UITapGestureRecognizer){
-        print("Tap Tutorial")
-    }
-    
-    func tapButtons(){
-        self.btnLogin.tapButton = {
-            self.view.endEditing(true)
-            if self.validateInputData() {
-                let vc = SupplementaryInfoRouter.createModule()
-                vc.modalPresentationStyle = .overFullScreen
-                self.present(controller: vc, animated: true)
-                print("Success")
-            } else {
-                print("Login Error")
-            }
-        }
-        
-        self.btnGoogle.tapButton = {
-            self.view.endEditing(true)
-            GIDSignIn.sharedInstance().signOut()
-            GIDSignIn.sharedInstance().signIn()
-        }
-        
-        self.btnFacebook.tapButton = {
-            self.view.endEditing(true)
-            self.FBlogin()
-        }
-        
-        self.btnSignUp.tapButton = {
-            self.view.endEditing(true)
-            print("TAP SIGN UP")
-            
-            PopUpHelper.shared.showNoGPS()
-        }
-        
-        self.tfPassword.completeTapRightIcon = { (success) in
-            self.view.endEditing(true)
-            self.hidePassword(isHidden: success)
-        }
-    }
-    
-    func hidePassword(isHidden: Bool){
-        self.tfPassword.tfContent.isSecureTextEntry = isHidden
-        if isHidden {
-            self.tfPassword.showRightIcon(isHidden: false, icon: AppImage.imgOpenEye)
-        } else{
-            self.tfPassword.showRightIcon(isHidden: false, icon: AppImage.imgHideEye)
-        }
-    }
-    
-}
-
-extension LoginViewController {
-    func textFieldDidBeginEditing() {
-        tfEmail.textFieldDidBeginEditing = {
-            self.hideError()
-        }
-        tfPassword.textFieldDidBeginEditing = {
-            self.hideError()
-        }
-    }
     
     func hideError(isHidden: Bool = true, message: String? = nil){
         lbError.isHidden = isHidden
         lbError.text = message ?? ""
     }
-    
 }
+
 
 
 
