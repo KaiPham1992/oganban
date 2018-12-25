@@ -19,7 +19,7 @@ enum UserEndPoint {
     case loginFacebook(fbEntity: FacebookEntity, phone: String)
     case signUp(param: SignUpParam)
     case changePassword(current: String, new: String)
-//    case updateProfile(param: UpdateProfileParam)
+    case updateProfile(param: UserEntity)
     case verifyPhone(code: String, phone: String, phoneCode: String)
     case getListFavorite(type: String, offset: Int, limit: Int)
     
@@ -48,8 +48,8 @@ extension UserEndPoint: EndPointType {
             return "_api/user/register"
         case .changePassword:
             return "user/change_password"
-//        case .updateProfile:
-//            return "user/update_profile"
+        case .updateProfile:
+            return "user/update_profile"
         case .verifyPhone:
             return "user/verify_phone"
         case .getListFavorite:
@@ -70,7 +70,7 @@ extension UserEndPoint: EndPointType {
             return .post
         case .getCaptcha, .getIntroduceList:
             return .get
-        case .changePassword:
+        case .changePassword, .updateProfile:
             return .put
         }
     }
@@ -109,8 +109,15 @@ extension UserEndPoint: EndPointType {
             let param = ["current_password": current,
                          "new_password": new] as [String: Any]
             return param
-//        case .updateProfile(let param):
-//            return param.toJSON()
+        case .updateProfile(let param):
+            let param = ["fullname": param.fullName ?? "",
+                         "phone_number": param.phone ?? "",
+                         "phone_code": param.phoneCode ?? "",
+                         "birthday": param.birthday ?? "",
+                         "gender": param.gender ?? "",
+                         "address_1": param.houseAddress ?? "",
+                         "address_2": param.companyAddress ?? ""] as [String: Any]
+            return param
         case .verifyPhone(let code, let phone, let phoneCode):
             let param = ["code_verify": code,
                          "phone_number": phone,

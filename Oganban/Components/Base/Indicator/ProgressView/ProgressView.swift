@@ -32,7 +32,7 @@ open class ProgressView {
         view.addSubview(vcontainer)
         vcontainer.centerSuperview()
         vcontainer.anchor(widthConstant: 80, heightConstant: 80)
-        vcontainer.setBorder(cornerRadius: 10)
+        vcontainer.setBorderWithCornerRadius(cornerRadius: 10)
         //---
         vcontainer.addSubview(vIndicator)
         vIndicator.anchor(widthConstant: 60, heightConstant: 60)

@@ -75,3 +75,72 @@ extension UITableViewCell {
         return self.className
     }
 }
+
+extension UITableView {
+    
+    func scrollToBottom() {
+        DispatchQueue.main.async {
+            let row = self.numberOfRows(inSection:  self.numberOfSections - 1) - 1
+            let section = self.numberOfSections - 1
+            if row >= 0 && section >= 0 {
+                let indexPath = IndexPath(row: row, section: section)
+                self.scrollToRow(at: indexPath, at: .bottom, animated: true)
+            }
+        }
+    }
+    
+    func scrollToBottom(section: Int) {
+        DispatchQueue.main.async {
+            let row = self.numberOfRows(inSection: section) - 1
+            if row >= 0 && section >= 0 {
+                let indexPath = IndexPath(row: row, section: section)
+                self.scrollToRow(at: indexPath, at: .bottom, animated: true)
+            }
+        }
+    }
+    
+    func scrollToTop() {
+        DispatchQueue.main.async {
+            let indexPath = IndexPath(row: 0, section: 0)
+            self.scrollToRow(at: indexPath, at: .top, animated: false)
+        }
+    }
+    
+    func reloadRowsInSection(section: Int, oldCount:Int, newCount: Int){
+        
+        let maxCount = max(oldCount, newCount)
+        let minCount = min(oldCount, newCount)
+        
+        var changed = [IndexPath]()
+        
+        for i in minCount..<maxCount {
+            let indexPath = IndexPath(row: i, section: section)
+            changed.append(indexPath)
+        }
+        
+        var reload = [NSIndexPath]()
+        for i in 0..<minCount{
+            let indexPath = NSIndexPath(row: i, section: section)
+            reload.append(indexPath)
+        }
+        
+        beginUpdates()
+        if(newCount > oldCount){
+            insertRows(at: changed as [IndexPath], with: .fade)
+        }else if(oldCount > newCount){
+            deleteRows(at: changed as [IndexPath], with: .fade)
+        }
+        if(newCount > oldCount || newCount == oldCount){
+            reloadRows(at: reload as [IndexPath], with: .none)
+        }
+        endUpdates()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            if let indexPaths  = self.indexPathsForVisibleRows {
+                self.reloadRows(at: indexPaths, with: .none)
+            }
+        }
+        
+    }
+    
+    
+}

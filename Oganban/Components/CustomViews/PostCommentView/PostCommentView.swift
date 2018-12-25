@@ -9,9 +9,11 @@
 import UIKit
 
 protocol PostCommentViewDelegate: class {
-    func postCommentView(heightKeyboard: CGFloat)
-    func postCommentView(changeHeight: CGFloat)
-    func postCommentView(buttonPostTapped text: String)
+//    func postCommentView(heightKeyboard: CGFloat)
+    func postCommentView(_ postCommentView: PostCommentView, changeHeight height: CGFloat)
+//    func postCommentView(buttonPostTapped text: String)
+    
+    func postCommentView(_ postCommentView: PostCommentView, sendComment comment: String)
 }
 
 class PostCommentView: BaseViewXib {
@@ -25,13 +27,8 @@ class PostCommentView: BaseViewXib {
         tvInput.delegate = self
         
         //---
-        NotificationCenter.default.removeObserver(self)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
-        //---
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
-            self.delegate?.postCommentView(changeHeight: self.frame.height)
+            self.delegate?.postCommentView(self, changeHeight: self.frame.height)
         }
     }
     
@@ -40,34 +37,23 @@ class PostCommentView: BaseViewXib {
         calculateHeight()
     }
     
+    func setPlaceHolder(placeHolder: String) {
+        self.lbPlaceHolder.text = placeHolder
+    }
+    
     
 }
 
 extension PostCommentView {
     @IBAction func btnPostTapped() {
-        self.delegate?.postCommentView(buttonPostTapped: tvInput.text&)
+        self.delegate?.postCommentView(self, sendComment: tvInput.text&)
+        tvInput.text = ""
+        calculateHeight()
     }
 }
 
 // Handle height
 extension PostCommentView: UITextViewDelegate {
-    @objc func keyboardWillShow(_ notification: Notification) {
-        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-            let keyboardRectangle = keyboardFrame.cgRectValue
-            let keyboardHeight = keyboardRectangle.height
-            
-            if Utils.isIphoneXOrLater() {
-                delegate?.postCommentView(heightKeyboard: keyboardHeight - 36)
-            } else {
-                delegate?.postCommentView(heightKeyboard: keyboardHeight)
-            }
-        }
-    }
-    
-    @objc func keyboardWillHide() {
-        delegate?.postCommentView(heightKeyboard: 0)
-    }
-    
     func textViewDidChange(_ textView: UITextView) {
         calculateHeight()
     }
@@ -88,6 +74,6 @@ extension PostCommentView: UITextViewDelegate {
         let maxHeight: CGFloat = 40 + 16 + 16 + 100
         resultHeight = resultHeight < maxHeight ? resultHeight: maxHeight
         
-        delegate?.postCommentView(changeHeight: resultHeight)
+        delegate?.postCommentView(self, changeHeight: resultHeight)
     }
 }

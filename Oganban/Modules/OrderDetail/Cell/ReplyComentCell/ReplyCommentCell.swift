@@ -8,9 +8,12 @@
 
 import UIKit
 
-class ReplyCommentCell: UITableViewCell {
+class ReplyCommentCell: BaseTableCell {
+    
+    @IBOutlet weak var vPostCommentView: PostCommentView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        vPostCommentView.setPlaceHolder(placeHolder: "Viết trả lời")
     }
 }

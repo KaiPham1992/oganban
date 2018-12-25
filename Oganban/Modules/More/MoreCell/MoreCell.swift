@@ -2,43 +2,11 @@
 //  MoreCell.swift
 //  free
 //
-//  Created by Admin on 12/17/18.
+//  Created by Kent on 12/17/18.
 //  Copyright © 2018 Vinova. All rights reserved.
 //
 
 import UIKit
-
-enum MoreRowName: String, CaseIterable {
-    case header
-    case historyCoin
-    case historyBuy
-    case policy
-    case tutorial
-    case setting
-    case changePassword
-    case logout
-    
-    func index() -> Int {
-        switch self {
-        case .header:
-            return 0
-        case .historyCoin:
-            return 1
-        case .historyBuy:
-            return 2
-        case .policy:
-            return 3
-        case .tutorial:
-            return 4
-        case .setting:
-            return 5
-        case .changePassword:
-            return 6
-        case .logout:
-            return 7
-        }
-    }
-}
 
 class MoreCell: UITableViewCell {
 
@@ -57,25 +25,25 @@ class MoreCell: UITableViewCell {
     func showData(index: Int){
         switch index {
         case MoreRowName.historyCoin.index():
-            lbTitle.text = "Lịch sử ƠCoin"
+            lbTitle.text = MoreTitle.historyCoin
             break
         case MoreRowName.historyBuy.index():
-            lbTitle.text = "Lịch sử mua tin"
+            lbTitle.text = MoreTitle.historyBuy
             break
         case MoreRowName.policy.index():
-            lbTitle.text = "Điều khoản sử dụng"
+            lbTitle.text = MoreTitle.policy
             break
         case MoreRowName.tutorial.index():
-            lbTitle.text = "Hướng dẫn"
+            lbTitle.text = MoreTitle.tutorial
             break
         case MoreRowName.setting.index():
-            lbTitle.text = "Cài đặt"
+            lbTitle.text = MoreTitle.setting
             break
         case MoreRowName.changePassword.index():
-            lbTitle.text = "Đổi mật khẩu"
+            lbTitle.text = MoreTitle.changePassword
             break
         case MoreRowName.logout.index():
-            lbTitle.text = "Đăng xuất"
+            lbTitle.text = MoreTitle.logout
             break
         default:
             break

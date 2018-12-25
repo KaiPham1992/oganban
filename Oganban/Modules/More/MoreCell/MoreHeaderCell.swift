@@ -2,7 +2,7 @@
 //  MoreHeaderCell.swift
 //  free
 //
-//  Created by Admin on 12/17/18.
+//  Created by Kent on 12/17/18.
 //  Copyright © 2018 Vinova. All rights reserved.
 //
 
@@ -35,30 +35,5 @@ class MoreHeaderCell: UITableViewCell {
         if let coin = numString.addComma() {
             lbCoinTotal.text = "Tổng ƠCoin tích luỹ: " + coin  + " ơ"
         }
-    }
-}
-
-extension String {
-    func addComma() -> String? {
-        if self.isEmpty == false{
-            let formater = NumberFormatter()
-            formater.groupingSeparator = ","
-            formater.numberStyle = .decimal
-            if let num = formater.number(from: self){
-                return formater.string(from: num)
-            }
-            else{
-                return nil
-            }
-        }
-        return nil
-    }
-    
-    func getSubString(fromCharacter: String) -> String?{
-        if let range = self.range(of: fromCharacter) {
-            let subText = self[range.upperBound...]
-            return String(subText)
-        }
-        return nil
     }
 }

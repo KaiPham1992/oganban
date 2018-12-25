@@ -55,7 +55,7 @@ class AppCollectionPhotoCell: BaseCollectionCell {
         imgClose.anchor(topAnchor, right: rightAnchor, topConstant: 5, rightConstant: 5, widthConstant: 20, heightConstant: 20)
         btnRemove.fillToView(view: imgClose)
         
-        self.setBorder(borderWidth: 0.5, borderColor: .clear, cornerRadius: 0)
+        self.setBorderWithCornerRadius(borderWidth: 0.5, borderColor: .clear, cornerRadius: 0)
     }
     
     func loadImage(photo: AppPhoto?) {
