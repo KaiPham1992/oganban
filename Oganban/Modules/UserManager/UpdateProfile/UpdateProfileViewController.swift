@@ -10,7 +10,7 @@
 
 import UIKit
 
-class UpdateProfileViewController: BaseViewController, UpdateProfileViewProtocol {
+class UpdateProfileViewController: BaseViewController {
 
 	var presenter: UpdateProfilePresenterProtocol?
     
@@ -28,7 +28,9 @@ class UpdateProfileViewController: BaseViewController, UpdateProfileViewProtocol
     
     var birthDay: Date? = nil
     var gender: Gender? = nil
-    var countryPhoneCode: CountryCodeEntity?
+    var countryPhoneCode: CountryCodeEntity = {
+        return CountryCodeEntity(name: "Vietnam", dialCode: "+84", code: "VN")
+    } ()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +39,11 @@ class UpdateProfileViewController: BaseViewController, UpdateProfileViewProtocol
         textFieldDidBeginEditing()
         hideError()
         addGesture()
+    }
+    
+    func hideError(isHidden: Bool = true, message: String? = nil){
+        lbError.isHidden = isHidden
+        lbError.text = message ?? ""
     }
 }
 
@@ -103,73 +110,6 @@ extension UpdateProfileViewController {
         let calendar = Calendar.current
         let ageComponents = calendar.dateComponents([.year], from: birthday, to: now)
         return ageComponents.year!
-    }
-}
-
-extension UpdateProfileViewController {
-    func hideError(isHidden: Bool = true, message: String? = nil){
-        lbError.isHidden = isHidden
-        lbError.text = message ?? ""
-    }
-    
-    func textFieldDidBeginEditing() {
-        tfUsername.textFieldDidBeginEditing = {
-            self.hideError()
-        }
-        tfDisplayName.textFieldDidBeginEditing = {
-            self.hideError()
-        }
-        tvPhone.textFieldDidBeginEditing = {
-            self.hideError()
-        }
-        tfAddress1.textFieldDidBeginEditing = {
-            self.hideError()
-        }
-        tfAddress2.textFieldDidBeginEditing = {
-            self.hideError()
-        }
-    }
-
-}
-
-extension UpdateProfileViewController {
-    
-    @IBAction func tapShareButton(_ sender: UIButton) {
-        print("TAP SHARE BUTTON")
-    }
-    
-    func tapSaveButton(){
-        btnSave.tapButton = {
-            self.view.endEditing(true)
-            if self.validateInputData() {
-                print("Update Success")
-            } else {
-                print("Update Error")
-            }
-        }
-    }
-    
-    @objc func selectBirthday(_ sender: UITapGestureRecognizer) {
-        hideError()
-        let popUp = PopUpSelectDate()
-        popUp.vDateContent.vPickerDate.maximumDate = Date()
-        popUp.showPopUp(currentDate: birthDay) { (date) in
-            if let date = date {
-                self.birthDay = date
-                self.tfBirthday.tfContent.text =  date.toString(dateFormat: AppDateFormat.ddMMYYYY_VN)
-            }
-        }
-    }
-    
-    @objc func selectSex(_ sender: UITapGestureRecognizer) {
-        hideError()
-        let popUp = PopUpSelectGender()
-        popUp.showPopUp(currentGender: self.gender ) { (gender) in
-            if let sex: Gender = gender as? Gender {
-                self.gender = sex
-                self.tfGender.tfContent.text = sex.title
-            }
-        }
     }
 }
 

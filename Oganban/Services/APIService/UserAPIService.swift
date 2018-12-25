@@ -22,6 +22,8 @@ protocol UserAPIServiceProtocol {
     func changePassword(current: String, new: String, success: @escaping SuccessHandler<BaseResponseString>.object, failure: @escaping RequestFailure)
 
     func updateProfile(code: String, phone: String, phonCode: String, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
+    
+     func updateProfile(param: UserEntity, success: @escaping SuccessHandler<UserEntity>.object, failure: @escaping RequestFailure)
 }
 
 class UserAPIService: UserAPIServiceProtocol {
@@ -75,10 +77,10 @@ class UserAPIService: UserAPIServiceProtocol {
         network.requestData(endPoint: endPoint, success: MapperData.mapNoData(success), failure: failure)
     }
     
-//    func updateProfile(param: UpdateProfileParam, success: @escaping SuccessHandler<UserEntity>.object, failure: @escaping RequestFailure) {
-//        let endPoint = UserEndPoint.updateProfile(param: param)
-//        network.requestData(endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
-//    }
+    func updateProfile(param: UserEntity, success: @escaping SuccessHandler<UserEntity>.object, failure: @escaping RequestFailure) {
+        let endPoint = UserEndPoint.updateProfile(param: param)
+        network.requestData(endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
+    }
     
     func updateProfile(code: String, phone: String, phonCode: String, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure) {
         let endPoint = UserEndPoint.verifyPhone(code: code, phone: phone, phoneCode: phonCode)

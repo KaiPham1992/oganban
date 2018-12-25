@@ -47,4 +47,10 @@ struct CountryCodeEntity: Mappable {
         self.dialCode   <- map["dial_code"]
         self.code       <- map["code"]
     }
+    
+    init( name: String, dialCode: String, code: String ){
+        self.name = name
+        self.dialCode = dialCode
+        self.code = code
+    }
 }

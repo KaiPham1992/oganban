@@ -10,7 +10,7 @@
 
 import UIKit
 
-class UpdateProfilePresenter: UpdateProfilePresenterProtocol, UpdateProfileInteractorOutputProtocol {
+class UpdateProfilePresenter: UpdateProfilePresenterProtocol {
 
     weak private var view: UpdateProfileViewProtocol?
     var interactor: UpdateProfileInteractorInputProtocol?
@@ -21,5 +21,18 @@ class UpdateProfilePresenter: UpdateProfilePresenterProtocol, UpdateProfileInter
         self.interactor = interactor
         self.router = router
     }
+    
+    func updateProfile(userInfo: UserEntity) {
+        interactor?.updateProfile(userInfo: userInfo)
+    }
 
+}
+extension UpdateProfilePresenter: UpdateProfileInteractorOutputProtocol{
+    func didSuccessUpdateProfile(user: UserEntity?) {
+         view?.didSuccessUpdateProfile(user: user)
+    }
+    
+    func didErrorUpdateProfile(error: APIError?) {
+         view?.didErrorUpdateProfile(error: error)
+    }
 }

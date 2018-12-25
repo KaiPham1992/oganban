@@ -18,12 +18,15 @@ protocol UpdateProfileWireframeProtocol: class {
 protocol UpdateProfilePresenterProtocol: class {
 
     var interactor: UpdateProfileInteractorInputProtocol? { get set }
+    func updateProfile(userInfo: UserEntity)
 }
 
 //MARK: Interactor -
 protocol UpdateProfileInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    func didSuccessUpdateProfile(user: UserEntity?)
+    func didErrorUpdateProfile(error: APIError?)
 }
 
 protocol UpdateProfileInteractorInputProtocol: class {
@@ -31,6 +34,8 @@ protocol UpdateProfileInteractorInputProtocol: class {
     var presenter: UpdateProfileInteractorOutputProtocol?  { get set }
 
     /* Presenter -> Interactor */
+    
+    func updateProfile(userInfo: UserEntity)
 }
 
 //MARK: View -
@@ -39,4 +44,6 @@ protocol UpdateProfileViewProtocol: class {
     var presenter: UpdateProfilePresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
+    func didSuccessUpdateProfile(user: UserEntity?)
+    func didErrorUpdateProfile(error: APIError?)
 }
