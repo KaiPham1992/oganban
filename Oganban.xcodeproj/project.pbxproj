@@ -78,6 +78,16 @@
 		CB3A8F1321C64FC1008144BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB3A8F1121C64FC1008144BD /* Main.storyboard */; };
 		CB3A8F1521C64FC1008144BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB3A8F1421C64FC1008144BD /* Assets.xcassets */; };
 		CB3A8F1821C64FC1008144BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB3A8F1621C64FC1008144BD /* LaunchScreen.storyboard */; };
+		CBA98CCA21C8CCAA00BF0EE1 /* MyBuyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA98CC421C8CCAA00BF0EE1 /* MyBuyPresenter.swift */; };
+		CBA98CCB21C8CCAA00BF0EE1 /* MyBuyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA98CC521C8CCAA00BF0EE1 /* MyBuyRouter.swift */; };
+		CBA98CCC21C8CCAA00BF0EE1 /* MyBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA98CC621C8CCAA00BF0EE1 /* MyBuyViewController.swift */; };
+		CBA98CCD21C8CCAA00BF0EE1 /* MyBuyProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA98CC721C8CCAA00BF0EE1 /* MyBuyProtocols.swift */; };
+		CBA98CCE21C8CCAA00BF0EE1 /* MyBuyInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA98CC821C8CCAA00BF0EE1 /* MyBuyInteractor.swift */; };
+		CBA98CCF21C8CCAA00BF0EE1 /* MyBuyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBA98CC921C8CCAA00BF0EE1 /* MyBuyViewController.xib */; };
+		CBA98CD121C8CCFE00BF0EE1 /* ProductMyBuyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA98CD021C8CCFE00BF0EE1 /* ProductMyBuyView.swift */; };
+		CBA98CD421C8CD1600BF0EE1 /* ProductMyBuyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBA98CD321C8CD1600BF0EE1 /* ProductMyBuyView.xib */; };
+		CBA98CD821C8D86200BF0EE1 /* MyBuyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA98CD621C8D86200BF0EE1 /* MyBuyCell.swift */; };
+		CBA98CD921C8D86200BF0EE1 /* MyBuyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBA98CD721C8D86200BF0EE1 /* MyBuyCell.xib */; };
 		ECFA8430691B731FD6198935 /* Pods_Oganban.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667005DBAD7815A5AA16289A /* Pods_Oganban.framework */; };
 /* End PBXBuildFile section */
 
@@ -160,6 +170,16 @@
 		CB3A8F1421C64FC1008144BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB3A8F1721C64FC1008144BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB3A8F1921C64FC1008144BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBA98CC421C8CCAA00BF0EE1 /* MyBuyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBuyPresenter.swift; sourceTree = "<group>"; };
+		CBA98CC521C8CCAA00BF0EE1 /* MyBuyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBuyRouter.swift; sourceTree = "<group>"; };
+		CBA98CC621C8CCAA00BF0EE1 /* MyBuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBuyViewController.swift; sourceTree = "<group>"; };
+		CBA98CC721C8CCAA00BF0EE1 /* MyBuyProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBuyProtocols.swift; sourceTree = "<group>"; };
+		CBA98CC821C8CCAA00BF0EE1 /* MyBuyInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBuyInteractor.swift; sourceTree = "<group>"; };
+		CBA98CC921C8CCAA00BF0EE1 /* MyBuyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyBuyViewController.xib; sourceTree = "<group>"; };
+		CBA98CD021C8CCFE00BF0EE1 /* ProductMyBuyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductMyBuyView.swift; sourceTree = "<group>"; };
+		CBA98CD321C8CD1600BF0EE1 /* ProductMyBuyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductMyBuyView.xib; sourceTree = "<group>"; };
+		CBA98CD621C8D86200BF0EE1 /* MyBuyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBuyCell.swift; sourceTree = "<group>"; };
+		CBA98CD721C8D86200BF0EE1 /* MyBuyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyBuyCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +205,7 @@
 		CB172B1821C6A1480068CF92 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				CBA98CC221C8CC8300BF0EE1 /* MyBuy */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -379,6 +400,7 @@
 		CB172B6E21C6A2EE0068CF92 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				CBA98CD221C8CD0400BF0EE1 /* ProductMyBuyView */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -464,6 +486,38 @@
 			path = Oganban;
 			sourceTree = "<group>";
 		};
+		CBA98CC221C8CC8300BF0EE1 /* MyBuy */ = {
+			isa = PBXGroup;
+			children = (
+				CBA98CD521C8D84900BF0EE1 /* MyBuyCell */,
+				CBA98CC421C8CCAA00BF0EE1 /* MyBuyPresenter.swift */,
+				CBA98CC521C8CCAA00BF0EE1 /* MyBuyRouter.swift */,
+				CBA98CC621C8CCAA00BF0EE1 /* MyBuyViewController.swift */,
+				CBA98CC721C8CCAA00BF0EE1 /* MyBuyProtocols.swift */,
+				CBA98CC821C8CCAA00BF0EE1 /* MyBuyInteractor.swift */,
+				CBA98CC921C8CCAA00BF0EE1 /* MyBuyViewController.xib */,
+			);
+			path = MyBuy;
+			sourceTree = "<group>";
+		};
+		CBA98CD221C8CD0400BF0EE1 /* ProductMyBuyView */ = {
+			isa = PBXGroup;
+			children = (
+				CBA98CD021C8CCFE00BF0EE1 /* ProductMyBuyView.swift */,
+				CBA98CD321C8CD1600BF0EE1 /* ProductMyBuyView.xib */,
+			);
+			path = ProductMyBuyView;
+			sourceTree = "<group>";
+		};
+		CBA98CD521C8D84900BF0EE1 /* MyBuyCell */ = {
+			isa = PBXGroup;
+			children = (
+				CBA98CD621C8D86200BF0EE1 /* MyBuyCell.swift */,
+				CBA98CD721C8D86200BF0EE1 /* MyBuyCell.xib */,
+			);
+			path = MyBuyCell;
+			sourceTree = "<group>";
+		};
 		E2AA633E107A6A39005CFD05 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -544,10 +598,13 @@
 				CB172C8E21C6A2EF0068CF92 /* LICENSE.txt in Resources */,
 				CB172C8921C6A2EF0068CF92 /* OpenSans-ExtraBold.ttf in Resources */,
 				CB172C8821C6A2EF0068CF92 /* OpenSans-Italic.ttf in Resources */,
+				CBA98CCF21C8CCAA00BF0EE1 /* MyBuyViewController.xib in Resources */,
+				CBA98CD421C8CD1600BF0EE1 /* ProductMyBuyView.xib in Resources */,
 				CB172C8D21C6A2EF0068CF92 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				CB3A8F1521C64FC1008144BD /* Assets.xcassets in Resources */,
 				CB3A8F1321C64FC1008144BD /* Main.storyboard in Resources */,
 				CB172C8621C6A2EF0068CF92 /* OpenSans-SemiBold.ttf in Resources */,
+				CBA98CD921C8D86200BF0EE1 /* MyBuyCell.xib in Resources */,
 				CB172C8A21C6A2EF0068CF92 /* OpenSans-LightItalic.ttf in Resources */,
 				CB172C0921C6A2EF0068CF92 /* PopUpNotificationContent.xib in Resources */,
 				CB172C8721C6A2EF0068CF92 /* OpenSans-Light.ttf in Resources */,
@@ -679,6 +736,7 @@
 				CB172C0D21C6A2EF0068CF92 /* UIApplication+extension.swift in Sources */,
 				CB172C1721C6A2EF0068CF92 /* Double+extension.swift in Sources */,
 				CB172B2F21C6A22A0068CF92 /* BaseParam.swift in Sources */,
+				CBA98CCE21C8CCAA00BF0EE1 /* MyBuyInteractor.swift in Sources */,
 				CB172C1321C6A2EF0068CF92 /* UIButton+extension.swift in Sources */,
 				CB172C9121C6A2EF0068CF92 /* AppImage.swift in Sources */,
 				CB172B4021C6A2A20068CF92 /* Provider.swift in Sources */,
@@ -687,13 +745,17 @@
 				CB172C0B21C6A2EF0068CF92 /* PopUpNotification.swift in Sources */,
 				CB172B3D21C6A26F0068CF92 /* NetworkRequest.swift in Sources */,
 				CB172C1521C6A2EF0068CF92 /* UIImage+extension.swift in Sources */,
+				CBA98CCC21C8CCAA00BF0EE1 /* MyBuyViewController.swift in Sources */,
+				CBA98CCA21C8CCAA00BF0EE1 /* MyBuyPresenter.swift in Sources */,
 				CB3A8F1021C64FC1008144BD /* ViewController.swift in Sources */,
+				CBA98CD121C8CCFE00BF0EE1 /* ProductMyBuyView.swift in Sources */,
 				CB172C2521C6A2EF0068CF92 /* PopUpHelper.swift in Sources */,
 				CB172C2321C6A2EF0068CF92 /* UserDefaultHelper.swift in Sources */,
 				CB172C1421C6A2EF0068CF92 /* UIView+extension.swift in Sources */,
 				CB172C9B21C6A2EF0068CF92 /* BaseViewXib.swift in Sources */,
 				CB172C1921C6A2EF0068CF92 /* String+extension.swift in Sources */,
 				CB172C1B21C6A2EF0068CF92 /* Bool+extension.swift in Sources */,
+				CBA98CCD21C8CCAA00BF0EE1 /* MyBuyProtocols.swift in Sources */,
 				CB172C2921C6A2EF0068CF92 /* Utils.swift in Sources */,
 				CB172C1E21C6A2EF0068CF92 /* UISearchBar+extension.swift in Sources */,
 				CB172C9221C6A2EF0068CF92 /* NotificationConstant.swift in Sources */,
@@ -715,7 +777,9 @@
 				CB172C1F21C6A2EF0068CF92 /* UITableView+extension.swift in Sources */,
 				CB3A8F0E21C64FC1008144BD /* AppDelegate.swift in Sources */,
 				CB172C1021C6A2EF0068CF92 /* Int+extension.swift in Sources */,
+				CBA98CCB21C8CCAA00BF0EE1 /* MyBuyRouter.swift in Sources */,
 				CB172C1121C6A2EF0068CF92 /* UIWindow+extension.swift in Sources */,
+				CBA98CD821C8D86200BF0EE1 /* MyBuyCell.swift in Sources */,
 				CB172C9621C6A2EF0068CF92 /* AppColor.swift in Sources */,
 				CB172B4321C6A2AA0068CF92 /* EndPointType.swift in Sources */,
 				CB172C0F21C6A2EF0068CF92 /* UIColor+extension.swift in Sources */,
