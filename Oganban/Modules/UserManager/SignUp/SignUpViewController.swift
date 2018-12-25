@@ -79,6 +79,11 @@ class SignUpViewController: BaseViewController {
         vBirthday.delegate = self
         vGender.delegate = self
         btnTermOfPolicy.setTitle(text: "Đồng ý ", font: AppFont.fontRegular15, color: AppColor.textTextField, textUnderline: "Điều khoản sử dụng", fontLine: AppFont.fontRegular15, colorLine: AppColor.textTextField)
+        vPassword.textField.isSecureTextEntry = true
+        vPasswordReType.textField.isSecureTextEntry = true
+        vCaptcha.textField.keyboardType = .phonePad
+        vLoginName.textField.keyboardType = .emailAddress
+        vLoginEmail.textField.keyboardType = .emailAddress
     }
     
     @IBAction func btnTermOfPolicyTapped() {
@@ -90,15 +95,17 @@ class SignUpViewController: BaseViewController {
         view.endEditing(true)
         if Utils.isConnectedToInternet() {
             if validate() {
-//                let name = vLoginName.textField.text
-//                let email = vEmail.textField.text
-//                let password = vPassword.textField.text&.sha256()
-//                let captcha = vCapcha.textField.text
-//                let fullName = vDisplayName.textField.text
-//                let codeReference = vCodeReference.textField.text
-//                let param = SignUpParam(email: email, password: password, name: name, captcha: captcha, fullName: fullName, codeReference: codeReference)
-//                
-//                presenter?.signUp(param: param)
+                let email = vLoginName.textField.text
+                let birthday = vBirthday.textField.text
+                let password = vPassword.textField.text&.sha256()
+                let captcha = vCaptcha.textField.text
+                let fullName = vLoginDisplay.textField.text
+                let codeIntroduce = vIntroduce.textField.text
+                let gender = vGender.textField.text
+                let address1 = vHouseAddress.textField.text
+                let address2 = vCompanyAddress.textField.text
+                let param = SignUpParam(email: email, password: password, birthday: birthday, captcha: captcha, fullName: fullName, gender: gender, address1: address1, address2: address2, codeIntroduce: codeIntroduce)
+                presenter?.signUp(param: param)
             }
         } else {
             lbStatus.text = "Vui lòng kiểm tra kết nối mạng"
@@ -194,11 +201,13 @@ extension SignUpViewController: FTextFieldChooseDelegate {
         switch sender {
         case vBirthday:
             popUpDate.showPopUp(currentDate: nil) { (date) in
-                print(date)
+                self.vBirthday.textField.text = date?.toString(dateFormat: AppDateFormat.ddMMYYYY)
             }
         case vGender:
             popUpGender.showPopUp(currentGender: nil) { (gender) in
-                print(gender)
+                guard let genderString = gender as? Gender else { return }
+                self.vGender.textField.text = genderString.title
+                
             }
         default:
             break
@@ -213,7 +222,8 @@ extension SignUpViewController: SignUpViewProtocol {
     }
     
     func signUpSuccess(user: UserEntity?) {
-        
+        self.user = user
+        fbAccountKit.verifyPhone()
     }
     
     func signUpError(error: APIError) {
@@ -227,6 +237,8 @@ extension SignUpViewController: SignUpViewProtocol {
             lbStatus.text = "Email đã tồn tại"
         case "CODE_INTRODUCTION_IS_NOT_EXISTED":
             lbStatus.text = "Mã giới thiệu không tồn tại"
+        case "NOT_OLD_ENOUGH":
+            lbStatus.text = "Bạn không đủ tuổi để đăng ký"
         default:
             break
         }

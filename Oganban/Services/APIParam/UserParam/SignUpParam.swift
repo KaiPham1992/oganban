@@ -37,7 +37,7 @@ class SignUpParam: BaseParam {
          password   : String?,
          birthday   : String?,
          captcha    : String?,
-         fullName   : String? = nil,
+         fullName   : String?,
          gender     : String? = nil,
          address1   : String? = nil,
          address2   : String? = nil,
