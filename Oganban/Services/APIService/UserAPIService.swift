@@ -22,6 +22,7 @@ protocol UserAPIServiceProtocol {
     func changePassword(current: String, new: String, success: @escaping SuccessHandler<BaseResponseString>.object, failure: @escaping RequestFailure)
 
     func updateProfile(code: String, phone: String, phonCode: String, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
+    func signUp(param: SignUpParam, success: @escaping SuccessHandler<UserEntity>.object, failure: @escaping RequestFailure)
 }
 
 class UserAPIService: UserAPIServiceProtocol {
@@ -46,7 +47,7 @@ class UserAPIService: UserAPIServiceProtocol {
     }
     
     func getCaptcha(success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure) {
-        let endPoint = UserEndPoint.getCapcha()
+        let endPoint = UserEndPoint.getCaptcha()
         network.requestData(endPoint: endPoint, success: MapperData.mapNoData(success), failure: failure)
     }
     
@@ -65,10 +66,10 @@ class UserAPIService: UserAPIServiceProtocol {
         network.requestData(endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
     }
     
-//    func signUp(param: SignUpParam, success: @escaping SuccessHandler<UserEntity>.object, failure: @escaping RequestFailure) {
-//        let endPoint = UserEndPoint.signUp(param: param)
-//        network.requestData(endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
-//    }
+    func signUp(param: SignUpParam, success: @escaping SuccessHandler<UserEntity>.object, failure: @escaping RequestFailure) {
+        let endPoint = UserEndPoint.signUp(param: param)
+        network.requestData(endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
+    }
     
     func changePassword(current: String, new: String, success: @escaping SuccessHandler<BaseResponseString>.object, failure: @escaping RequestFailure) {
         let endPoint = UserEndPoint.changePassword(current: current, new: new)

@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpViewController">
             <connections>
                 <outlet property="btnTermOfPolicy" destination="dns-qf-4d1" id="EjM-oh-nTV"/>
+                <outlet property="imgCaptcha" destination="UuW-fp-tpS" id="kuQ-t5-Jhr"/>
                 <outlet property="lbStatus" destination="3wi-Ba-YmN" id="9Gf-pc-tGB"/>
                 <outlet property="vBirthday" destination="6gE-Aq-Q7k" id="yWx-U1-GOQ"/>
                 <outlet property="vCaptcha" destination="g4v-AT-BYZ" id="7yr-3c-zSl"/>
@@ -118,6 +119,9 @@
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bbK-gg-Tdz">
                                                     <rect key="frame" x="92" y="0.0" width="37" height="42"/>
+                                                    <connections>
+                                                        <action selector="btnRefreshTapped" destination="-1" eventType="touchUpInside" id="zx1-Of-N5e"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

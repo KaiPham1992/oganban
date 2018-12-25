@@ -18,18 +18,24 @@ protocol SignUpWireframeProtocol: class {
 protocol SignUpPresenterProtocol: class {
 
     var interactor: SignUpInteractorInputProtocol? { get set }
+    func getCaptcha()
+    func signUp(param: SignUpParam)
 }
 
 //MARK: Interactor -
 protocol SignUpInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    func successCaptcha(image: UIImage)
+    func signUpSuccess(user: UserEntity?)
+    func signUpError(error: APIError)
 }
 
 protocol SignUpInteractorInputProtocol: class {
 
     var presenter: SignUpInteractorOutputProtocol?  { get set }
-
+    func getCaptcha()
+    func signUp(param: SignUpParam)
     /* Presenter -> Interactor */
 }
 
@@ -39,4 +45,7 @@ protocol SignUpViewProtocol: class {
     var presenter: SignUpPresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
+    func successCaptcha(image: UIImage)
+    func signUpSuccess(user: UserEntity?)
+    func signUpError(error: APIError)
 }

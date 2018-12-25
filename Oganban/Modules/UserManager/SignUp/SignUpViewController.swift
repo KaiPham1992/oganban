@@ -10,7 +10,7 @@
 
 import UIKit
 
-class SignUpViewController: BaseViewController, SignUpViewProtocol {
+class SignUpViewController: BaseViewController {
     
     @IBOutlet weak var vLoginName       : FTextField!
     @IBOutlet weak var vLoginEmail      : FTextField!
@@ -25,14 +25,37 @@ class SignUpViewController: BaseViewController, SignUpViewProtocol {
     @IBOutlet weak var vCaptcha         : FTextField!
     @IBOutlet weak var btnTermOfPolicy  : UIButton!
     @IBOutlet weak var lbStatus         : UILabel!
+    @IBOutlet weak var imgCaptcha       : UIImageView!
 
 	var presenter: SignUpPresenterProtocol?
     let popUpDate = PopUpSelectDate()
     let popUpGender = PopUpSelectGender()
     var termPolicy = false
+    
+    var user: UserEntity?
+    var fbAccountKit: FBAccountKit!
+    let limitPhone = 15
+    let limitName = 45
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+        presenter?.getCaptcha()
+        fbAccountKit = FBAccountKit(_controller: self)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if fbAccountKit.isLogged {
+            DispatchQueue.main.async(execute: {
+                self.fbAccountKit.getCountryCodeAndPhoneNumber(completion: { phone in
+                    guard let _phone = phone as? PhoneEntity, let verifyCode = self.user?.codeVerify else { return }
+                    //                    print(_phone.phoneCode&)
+                    //                    print(_phone.phoneNumber&)
+                    //                    print(_phone.phoneFullCodeAndNumber&)
+//                    self.presenter?.updateProfileVerify(verifyCode: verifyCode, phoneCode: _phone.phoneCode&, phoneNum: _phone.phoneNumber&)
+                })
+            })
+        }
     }
     
     override func setUpNavigation() {
@@ -64,9 +87,26 @@ class SignUpViewController: BaseViewController, SignUpViewProtocol {
     }
     
     @IBAction func btnSignUpTapped() {
-        if validate() {
-            
+        view.endEditing(true)
+        if Utils.isConnectedToInternet() {
+            if validate() {
+//                let name = vLoginName.textField.text
+//                let email = vEmail.textField.text
+//                let password = vPassword.textField.text&.sha256()
+//                let captcha = vCapcha.textField.text
+//                let fullName = vDisplayName.textField.text
+//                let codeReference = vCodeReference.textField.text
+//                let param = SignUpParam(email: email, password: password, name: name, captcha: captcha, fullName: fullName, codeReference: codeReference)
+//                
+//                presenter?.signUp(param: param)
+            }
+        } else {
+            lbStatus.text = "Vui lòng kiểm tra kết nối mạng"
         }
+    }
+    
+    @IBAction func btnRefreshTapped() {
+        presenter?.getCaptcha()
     }
     
     private func validate() -> Bool {
@@ -164,4 +204,33 @@ extension SignUpViewController: FTextFieldChooseDelegate {
             break
         }
     }
+}
+
+extension SignUpViewController: SignUpViewProtocol {
+
+    func successCaptcha(image: UIImage) {
+        imgCaptcha.image = image
+    }
+    
+    func signUpSuccess(user: UserEntity?) {
+        
+    }
+    
+    func signUpError(error: APIError) {
+        presenter?.getCaptcha()
+        switch error.message {
+        case "USER_IS_EXISTED":
+            lbStatus.text = "Tên đăng nhập đã tồn tại"
+        case "WRONG_CAPTCHA":
+            lbStatus.text = "Sai mã captcha"
+        case "EMAIL_IS_EXISTED":
+            lbStatus.text = "Email đã tồn tại"
+        case "CODE_INTRODUCTION_IS_NOT_EXISTED":
+            lbStatus.text = "Mã giới thiệu không tồn tại"
+        default:
+            break
+        }
+    }
+    
+    
 }

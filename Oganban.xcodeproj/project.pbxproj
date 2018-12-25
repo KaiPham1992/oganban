@@ -68,6 +68,7 @@
 		B355EF5F21C8FB1400379F57 /* SignUpProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B355EF5921C8FB1400379F57 /* SignUpProtocols.swift */; };
 		B355EF6021C8FB1400379F57 /* SignUpInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B355EF5A21C8FB1400379F57 /* SignUpInteractor.swift */; };
 		B355EF6121C8FB1400379F57 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B355EF5B21C8FB1400379F57 /* SignUpViewController.xib */; };
+		B35F529821D276A000D3FA30 /* SignUpParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35F529721D276A000D3FA30 /* SignUpParam.swift */; };
 		B36AEE9B21CDD90500BED43C /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36AEE9921CDD90500BED43C /* TabbarViewController.swift */; };
 		B36AEE9C21CDD90500BED43C /* TabbarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36AEE9A21CDD90500BED43C /* TabbarProtocol.swift */; };
 		B36AEEA421CDDB6600BED43C /* MybuyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36AEE9E21CDDB6600BED43C /* MybuyPresenter.swift */; };
@@ -345,6 +346,7 @@
 		B355EF5B21C8FB1400379F57 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		B355EF6321C8FBE300379F57 /* FTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTextField.swift; sourceTree = "<group>"; };
 		B355EF6421C8FBE300379F57 /* AppTextFiled.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTextFiled.swift; sourceTree = "<group>"; };
+		B35F529721D276A000D3FA30 /* SignUpParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpParam.swift; sourceTree = "<group>"; };
 		B36AEE9921CDD90500BED43C /* TabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		B36AEE9A21CDD90500BED43C /* TabbarProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarProtocol.swift; sourceTree = "<group>"; };
 		B36AEE9E21CDDB6600BED43C /* MybuyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MybuyPresenter.swift; sourceTree = "<group>"; };
@@ -1168,6 +1170,7 @@
 			isa = PBXGroup;
 			children = (
 				DE21823221CD45F300FDD9F1 /* LoginSocialParam.swift */,
+				B35F529721D276A000D3FA30 /* SignUpParam.swift */,
 			);
 			path = UserParam;
 			sourceTree = "<group>";
@@ -1797,6 +1800,7 @@
 				DE442C6B21CFC1BD0051C0B8 /* ReplyCommentCell.swift in Sources */,
 				B36AEEC121CDDBA600BED43C /* NotificationViewController.swift in Sources */,
 				DE21829121CD4E7F00FDD9F1 /* AppTextFiled.swift in Sources */,
+				B35F529821D276A000D3FA30 /* SignUpParam.swift in Sources */,
 				DE21827A21CD473100FDD9F1 /* KActivityIndicatorAnimationCubeTransition.swift in Sources */,
 				B3E67EAC21CF756E0012546F /* PhoneNumber.swift in Sources */,
 				DE21822C21CD44B700FDD9F1 /* FaceBookEntity.swift in Sources */,
