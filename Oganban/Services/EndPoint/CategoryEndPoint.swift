@@ -10,6 +10,7 @@ import Alamofire
 
 enum CategoryEndPoint {
     case getCategory()
+    case getCategoryChild(categoryId: String)
 }
 
 extension CategoryEndPoint: EndPointType {
@@ -17,12 +18,14 @@ extension CategoryEndPoint: EndPointType {
         switch self {
         case .getCategory:
             return "_api/category/get_category"
+        case .getCategoryChild:
+            return "_api/category/get_category_child"
         }
     }
     
     var httpMethod: HTTPMethod {
         switch self {
-        case .getCategory:
+        case .getCategory, .getCategoryChild:
             return .post
         }
     }
@@ -31,6 +34,8 @@ extension CategoryEndPoint: EndPointType {
         switch self {
         case .getCategory:
             return [:]
+        case .getCategoryChild(let categoryId):
+            return ["category_id": categoryId]
         }
     }
     

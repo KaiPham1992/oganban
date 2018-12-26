@@ -11,43 +11,30 @@
 import UIKit
 import DropDown
 
-class HomeViewController: BaseViewController, HomeViewProtocol {
+class HomeViewController: BaseViewController {
     
-    @IBOutlet weak var cvHome: UICollectionView!
-    @IBOutlet weak var lbPosition: UILabel!
-    @IBOutlet weak var vScale: UIView!
-    @IBOutlet weak var vCategory: UIView!
-    
-    @IBOutlet weak var tbLeft: UITableView!
-    @IBOutlet weak var tbRight: UITableView!
-    @IBOutlet weak var heightLeft: NSLayoutConstraint!
-    @IBOutlet weak var heightRight: NSLayoutConstraint!
-    @IBOutlet weak var btnHideDropdown: UIButton!
-    @IBOutlet weak var vScaleDropdown: UIView!
-    @IBOutlet weak var btnFavorite: UIButton!
+    @IBOutlet weak var cvHome           : UICollectionView!
+    @IBOutlet weak var lbPosition       : UILabel!
+    @IBOutlet weak var vScale           : UIView!
+    @IBOutlet weak var vCategory        : UIView!
+    @IBOutlet weak var tbLeft           : UITableView!
+    @IBOutlet weak var tbRight          : UITableView!
+    @IBOutlet weak var heightLeft       : NSLayoutConstraint!
+    @IBOutlet weak var heightRight      : NSLayoutConstraint!
+    @IBOutlet weak var btnHideDropdown  : UIButton!
+    @IBOutlet weak var vScaleDropdown   : UIView!
+    @IBOutlet weak var btnFavorite      : UIButton!
     
 	var presenter: HomePresenterProtocol?
     
-    let menu = [Menu(title: "title1", listContent: ["a", "b", "c", "d"]),
-                Menu(title: "title2", listContent: ["a", "b"]),
-                Menu(title: "title3", listContent: ["a", "b", "c"]),
-                Menu(title: "title4", listContent: ["a", "b", "c"]),
-                Menu(title: "title5", listContent: ["a"]),
-                Menu(title: "title6", listContent: ["a", "b", "c"]),
-                Menu(title: "title7", listContent: ["a", "b", "c", "e", "f", "g", "h"]),
-                Menu(title: "title8", listContent: ["a", "b", "c"]),
-                Menu(title: "title9", listContent: ["a", "b"]),
-                Menu(title: "title1", listContent: ["a", "b", "c", "d"]),
-                Menu(title: "title2", listContent: ["a", "b"]),
-                Menu(title: "title3", listContent: ["a", "b", "c"]),
-                Menu(title: "title4", listContent: ["a", "b", "c"]),
-                Menu(title: "title5", listContent: ["a"]),
-                Menu(title: "title6", listContent: ["a", "b", "c"]),
-                Menu(title: "title7", listContent: ["a", "b", "c", "e", "f", "g", "h"]),
-                Menu(title: "title8", listContent: ["a", "b", "c"]),
-                Menu(title: "title9", listContent: ["a", "b"]),
-                Menu(title: "title10", listContent: ["a", "b", "c"])]
+    var menu: [Menu] = [] {
+        didSet {
+            self.tbLeft.reloadData()
+        }
+    }
     var index = 0
+    var indexCategory = 0
+    var listCategory: [CategoryEntity] = []
     
     let scaleDropdown = DropDown()
 
@@ -56,6 +43,7 @@ class HomeViewController: BaseViewController, HomeViewProtocol {
         view.backgroundColor = .red
         configureCollectionView()
         configureTableView()
+        presenter?.getCategory()
     }
     
     override func setUpNavigation() {
@@ -139,6 +127,30 @@ class HomeViewController: BaseViewController, HomeViewProtocol {
     }
 }
 
+extension HomeViewController: HomeViewProtocol {
+    func getCategoryChildSuccess(list: [CategoryEntity]) {
+        menu[indexCategory].listChild = list
+        indexCategory += 1
+        self.getChild()
+    }
+    
+    func getCategorySuccess(list: [CategoryEntity]) {
+        listCategory = list
+        menu = list.map({ (item) -> Menu in
+            return Menu(parent: item)
+        })
+        getChild()
+    }
+    
+    func getChild() {
+        for (index, item) in listCategory.enumerated() {
+            if index == indexCategory {
+                self.presenter?.getCategoryChild(id: item.id&)
+            }
+        }
+    }
+}
+
 extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 10
@@ -180,7 +192,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         case tbLeft:
             return menu.count
         case tbRight:
-            return menu[index].listContent.count
+            if menu.count > 0 {
+                return menu[index].listChild.count
+            } else {
+                return 0
+            }
+            
         default:
             return 0
         }
@@ -188,18 +205,20 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let heightContent = tableView.contentSize.height
-        let heightMax = UIScreen.main.bounds.height - 250
+        let heightMax = UIScreen.main.bounds.height - 300
         switch tableView {
         case tbLeft:
             let cell = tableView.dequeueTableCell(MenuCell.self)
+            cell.lbTitle.text = menu[indexPath.row].parentCategory.name
             self.heightLeft.constant = heightContent < heightMax ? tableView.contentSize.height : (heightMax)
             return cell
             
         case tbRight:
             
             let cell = tableView.dequeueTableCell(MenuCell.self)
+            cell.lbTitle.text = menu[index].listChild[indexPath.row].name
             self.heightRight.constant = heightContent < heightMax ? tableView.contentSize.height : (heightMax)
-            cell.imgCheck.image = AppImage.imgCheckMenu
+            cell.imgCheck.image = menu[index].listChild[indexPath.row].isSelected ? AppImage.imgChecked : AppImage.imgCheckMenu
             return cell
         default:
             self.heightLeft.constant = tableView.contentSize.height
@@ -214,6 +233,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             index = indexPath.row
             tbRight.reloadData()
             tbRight.isHidden = false
+            menu[index].parentCategory.isSelected = !menu[index].parentCategory.isSelected
+        case tbRight:
+            menu[index].listChild[indexPath.row].isSelected = !menu[index].listChild[indexPath.row].isSelected
+            tbRight.reloadRows(at: [indexPath], with: .none)
         default:
             break
         }
@@ -222,7 +245,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        cell.transform = CGAffineTransform(rotationAngle: (-.pi))//CGAffineTransform(translationX: -tableView.bounds.width, y: 0)
+        cell.transform = CGAffineTransform(rotationAngle: (-.pi))
 
         UIView.animate(
             withDuration: 0.3,
@@ -236,10 +259,15 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
 
 class Menu {
-    var title: String
-    var listContent: [String]
-    init(title: String, listContent: [String]) {
-        self.title = title
-        self.listContent = listContent
+    var parentCategory: CategoryEntity
+    var listChild: [CategoryEntity]
+    init(parent: CategoryEntity, listChild: [CategoryEntity]) {
+        self.parentCategory = parent
+        self.listChild = listChild
+    }
+    
+    init(parent: CategoryEntity) {
+        self.parentCategory = parent
+        self.listChild = []
     }
 }

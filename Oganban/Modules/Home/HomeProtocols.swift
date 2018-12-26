@@ -18,12 +18,16 @@ protocol HomeWireframeProtocol: class {
 protocol HomePresenterProtocol: class {
 
     var interactor: HomeInteractorInputProtocol? { get set }
+    func getCategory()
+    func getCategoryChild(id: String)
 }
 
 //MARK: Interactor -
 protocol HomeInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    func getCategorySuccess(list: [CategoryEntity])
+    func getCategoryChildSuccess(list: [CategoryEntity])
 }
 
 protocol HomeInteractorInputProtocol: class {
@@ -31,6 +35,8 @@ protocol HomeInteractorInputProtocol: class {
     var presenter: HomeInteractorOutputProtocol?  { get set }
 
     /* Presenter -> Interactor */
+    func getCategory()
+    func getCategoryChild(id: String)
 }
 
 //MARK: View -
@@ -39,4 +45,6 @@ protocol HomeViewProtocol: class {
     var presenter: HomePresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
+    func getCategorySuccess(list: [CategoryEntity])
+    func getCategoryChildSuccess(list: [CategoryEntity])
 }

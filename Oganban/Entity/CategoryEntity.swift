@@ -14,6 +14,7 @@ struct CategoryEntity: Mappable {
     var id: String?
     var name: String?
     var key: String?
+    var isSelected = false
     
     init?(map: Map) {
         

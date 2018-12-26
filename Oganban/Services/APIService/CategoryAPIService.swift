@@ -10,6 +10,7 @@ import Foundation
 
 protocol CategoryAPIServiceProtocol {
     func getCategory(success: @escaping SuccessHandler<CategoryEntity>.array, failure: @escaping RequestFailure)
+    func getCategoryChild(categoryId: String, success: @escaping SuccessHandler<CategoryEntity>.array, failure: @escaping RequestFailure)
     
 }
 
@@ -23,6 +24,11 @@ class CategoryAPIService: CategoryAPIServiceProtocol {
     
     func getCategory(success: @escaping SuccessHandler<CategoryEntity>.array, failure: @escaping RequestFailure) {
         let endPoint = CategoryEndPoint.getCategory()
+        network.requestData(endPoint: endPoint, success: MapperData.mapArray(success), failure: failure)
+    }
+    
+    func getCategoryChild(categoryId: String, success: @escaping SuccessHandler<CategoryEntity>.array, failure: @escaping RequestFailure) {
+        let endPoint = CategoryEndPoint.getCategoryChild(categoryId: categoryId)
         network.requestData(endPoint: endPoint, success: MapperData.mapArray(success), failure: failure)
     }
 }
