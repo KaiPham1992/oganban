@@ -25,4 +25,8 @@ class Provider {
         return CommonAPIService(network: networkManager)
     }
     
+    var notificationAPIService: NotificationAPIServiceProtocol {
+        return NotificationAPIService(network: networkManager)
+    }
+    
 }
