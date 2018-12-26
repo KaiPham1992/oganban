@@ -98,6 +98,8 @@
 		B392FB3921D3B13E0076A7B5 /* CategoryAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B392FB3821D3B13E0076A7B5 /* CategoryAPIService.swift */; };
 		B392FB3D21D3D6AE0076A7B5 /* AcceptCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B392FB3B21D3D6AE0076A7B5 /* AcceptCell.swift */; };
 		B392FB3E21D3D6AE0076A7B5 /* AcceptCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B392FB3C21D3D6AE0076A7B5 /* AcceptCell.xib */; };
+		B392FB4121D3E37C0076A7B5 /* RecordParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = B392FB4021D3E37C0076A7B5 /* RecordParam.swift */; };
+		B392FB4321D3E93E0076A7B5 /* RecordEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B392FB4221D3E93E0076A7B5 /* RecordEntity.swift */; };
 		B3E67E9C21CF41260012546F /* DropdownPhoneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E67E9A21CF41260012546F /* DropdownPhoneCell.swift */; };
 		B3E67E9D21CF41260012546F /* DropdownPhoneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3E67E9B21CF41260012546F /* DropdownPhoneCell.xib */; };
 		B3E67EAC21CF756E0012546F /* PhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E67EAB21CF756E0012546F /* PhoneNumber.swift */; };
@@ -396,6 +398,8 @@
 		B392FB3821D3B13E0076A7B5 /* CategoryAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryAPIService.swift; sourceTree = "<group>"; };
 		B392FB3B21D3D6AE0076A7B5 /* AcceptCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptCell.swift; sourceTree = "<group>"; };
 		B392FB3C21D3D6AE0076A7B5 /* AcceptCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AcceptCell.xib; sourceTree = "<group>"; };
+		B392FB4021D3E37C0076A7B5 /* RecordParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordParam.swift; sourceTree = "<group>"; };
+		B392FB4221D3E93E0076A7B5 /* RecordEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordEntity.swift; sourceTree = "<group>"; };
 		B3E67E9A21CF41260012546F /* DropdownPhoneCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownPhoneCell.swift; sourceTree = "<group>"; };
 		B3E67E9B21CF41260012546F /* DropdownPhoneCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DropdownPhoneCell.xib; sourceTree = "<group>"; };
 		B3E67EAB21CF756E0012546F /* PhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumber.swift; sourceTree = "<group>"; };
@@ -841,6 +845,14 @@
 			path = Accept;
 			sourceTree = "<group>";
 		};
+		B392FB3F21D3E3470076A7B5 /* RecordParam */ = {
+			isa = PBXGroup;
+			children = (
+				B392FB4021D3E37C0076A7B5 /* RecordParam.swift */,
+			);
+			path = RecordParam;
+			sourceTree = "<group>";
+		};
 		B3E67E9421CF3EE20012546F /* PhoneNumber */ = {
 			isa = PBXGroup;
 			children = (
@@ -924,6 +936,7 @@
 		CB172B1D21C6A22A0068CF92 /* APIParam */ = {
 			isa = PBXGroup;
 			children = (
+				B392FB3F21D3E3470076A7B5 /* RecordParam */,
 				DE21823121CD45DB00FDD9F1 /* UserParam */,
 				CB172B2721C6A22A0068CF92 /* BaseParam.swift */,
 			);
@@ -1240,6 +1253,7 @@
 				DE442C5F21CFB9790051C0B8 /* CommentEntity.swift */,
 				B392FB3421D3AE970076A7B5 /* CategoryEntity.swift */,
 				DE0DBAEC21D3B7380097E38F /* NotificationEntity.swift */,
+				B392FB4221D3E93E0076A7B5 /* RecordEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1823,6 +1837,7 @@
 				CB172B3C21C6A26F0068CF92 /* MapperData.swift in Sources */,
 				DEE1DA8021CE39180036FEB7 /* GADBannerView+extension.swift in Sources */,
 				CB172C2121C6A2EF0068CF92 /* DataManager.swift in Sources */,
+				B392FB4121D3E37C0076A7B5 /* RecordParam.swift in Sources */,
 				DE442C3D21CFA2130051C0B8 /* OrderDetailPresenter.swift in Sources */,
 				DEE1DA4F21CDE1CE0036FEB7 /* PopUpNotificationHaveAdmob.swift in Sources */,
 				DE21827021CD473100FDD9F1 /* KActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
@@ -1947,6 +1962,7 @@
 				CB172C2921C6A2EF0068CF92 /* Utils.swift in Sources */,
 				CB172C1E21C6A2EF0068CF92 /* UISearchBar+extension.swift in Sources */,
 				84A92BFA21CA555900148191 /* LoginInteractor.swift in Sources */,
+				B392FB4321D3E93E0076A7B5 /* RecordEntity.swift in Sources */,
 				CB172C9221C6A2EF0068CF92 /* NotificationConstant.swift in Sources */,
 				8432075021CF529D00A4F11E /* DateFollowWeekPopup.swift in Sources */,
 				DEE1DA7A21CE2E130036FEB7 /* PopUpUpdateQuantityBuy.swift in Sources */,

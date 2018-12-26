@@ -11,6 +11,14 @@
 import UIKit
 
 class HomePresenter: HomePresenterProtocol {
+    func filterRecord(param: RecordParam) {
+        interactor?.filterRecord(param: param)
+    }
+    
+    func getCategoryMerge() {
+        interactor?.getCategoryMerge()
+    }
+    
     func getCategoryChild(id: String) {
         interactor?.getCategoryChild(id: id)
     }
@@ -33,6 +41,14 @@ class HomePresenter: HomePresenterProtocol {
 }
 
 extension HomePresenter: HomeInteractorOutputProtocol  {
+    func didFilterRecord(list: [RecordEntity]) {
+        view?.didFilterRecord(list: list)
+    }
+    
+    func didGetCategoryMerge(list: [CategoryMergeEntity]) {
+        view?.didGetCategoryMerge(list: list)
+    }
+    
     func getCategoryChildSuccess(list: [CategoryEntity]) {
         view?.getCategoryChildSuccess(list: list)
     }

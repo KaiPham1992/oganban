@@ -28,11 +28,18 @@ class HomeViewController: BaseViewController {
     
 	var presenter: HomePresenterProtocol?
     
-    var menu: [Menu] = [] {
+    var menu: [CategoryMergeEntity] = [] {
         didSet {
-            self.tbLeft.reloadData()
+//            self.tbLeft.reloadData()
         }
     }
+    
+    var listRecord: [RecordEntity] = [] {
+        didSet {
+            
+        }
+    }
+    
     var index = 0
     var indexCategory = 0
     var listCategory: [CategoryEntity] = []
@@ -44,7 +51,8 @@ class HomeViewController: BaseViewController {
         view.backgroundColor = .red
         configureCollectionView()
         configureTableView()
-        presenter?.getCategory()
+        presenter?.getCategoryMerge()
+        
     }
     
     override func setUpNavigation() {
@@ -130,18 +138,27 @@ class HomeViewController: BaseViewController {
 }
 
 extension HomeViewController: HomeViewProtocol {
+    func didFilterRecord(list: [RecordEntity]) {
+        listRecord = list
+    }
+    
+    func didGetCategoryMerge(list: [CategoryMergeEntity]) {
+        menu = list
+        tbLeft.reloadData()
+    }
+    
     func getCategoryChildSuccess(list: [CategoryEntity]) {
-        menu[indexCategory].listChild = list
-        indexCategory += 1
-        self.getChild()
+//        menu[indexCategory].listChild = list
+//        indexCategory += 1
+//        self.getChild()
     }
     
     func getCategorySuccess(list: [CategoryEntity]) {
-        listCategory = list
-        menu = list.map({ (item) -> Menu in
-            return Menu(parent: item)
-        })
-        getChild()
+//        listCategory = list
+//        menu = list.map({ (item) -> Menu in
+//            return Menu(parent: item)
+//        })
+//        getChild()
     }
     
     func getChild() {
@@ -195,7 +212,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return menu.count
         case tbRight:
             if menu.count > 0 {
-                return menu[index].listChild.count + 1
+                return menu[index].cateChild.count + 1
             } else {
                 return 0
             }
@@ -211,20 +228,20 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         switch tableView {
         case tbLeft:
             let cell = tableView.dequeueTableCell(MenuCell.self)
-            cell.lbTitle.text = menu[indexPath.row].parentCategory.name
+            cell.lbTitle.text = menu[indexPath.row].name
             self.heightLeft.constant = heightContent < heightMax ? tableView.contentSize.height : (heightMax)
             return cell
             
         case tbRight:
-            if indexPath.row == menu[index].listChild.count {
+            if indexPath.row == menu[index].cateChild.count {
                 let cell = tableView.dequeueTableCell(AcceptCell.self)
                 cell.delegate = self
                 return cell
             } else {
                 let cell = tableView.dequeueTableCell(MenuCell.self)
-                cell.lbTitle.text = menu[index].listChild[indexPath.row].name
+                cell.lbTitle.text = menu[index].cateChild[indexPath.row].name
                 self.heightRight.constant = heightContent < heightMax ? tableView.contentSize.height : (heightMax)
-                cell.imgCheck.image = menu[index].listChild[indexPath.row].isSelected ? AppImage.imgChecked : AppImage.imgCheckMenu
+                cell.imgCheck.image = menu[index].cateChild[indexPath.row].isSelected ? AppImage.imgChecked : AppImage.imgCheckMenu
                 return cell
             }
             
@@ -241,12 +258,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             index = indexPath.row
             tbRight.reloadData()
             tbRight.isHidden = false
-            menu[index].parentCategory.isSelected = !menu[index].parentCategory.isSelected
+            menu[index].isSelected = !menu[index].isSelected
         case tbRight:
-            if indexPath.row == menu[index].listChild.count {
+            if indexPath.row == menu[index].cateChild.count {
                 
             } else {
-                menu[index].listChild[indexPath.row].isSelected = !menu[index].listChild[indexPath.row].isSelected
+                menu[index].cateChild[indexPath.row].isSelected = !menu[index].cateChild[indexPath.row].isSelected
                 tbRight.reloadRows(at: [indexPath], with: .none)
             }
            
@@ -273,7 +290,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 extension HomeViewController: AcceptCellDelegate {
     func acceptTapped() {
         hideDropdown()
-        let listChoose = menu[index].listChild.filter { (item) -> Bool in
+        let listChoose = menu[index].cateChild.filter { (item) -> Bool in
             return item.isSelected
         }
         var category = ""

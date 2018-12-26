@@ -20,6 +20,8 @@ protocol HomePresenterProtocol: class {
     var interactor: HomeInteractorInputProtocol? { get set }
     func getCategory()
     func getCategoryChild(id: String)
+    func getCategoryMerge()
+    func filterRecord(param: RecordParam)
 }
 
 //MARK: Interactor -
@@ -28,6 +30,8 @@ protocol HomeInteractorOutputProtocol: class {
     /* Interactor -> Presenter */
     func getCategorySuccess(list: [CategoryEntity])
     func getCategoryChildSuccess(list: [CategoryEntity])
+    func didGetCategoryMerge(list: [CategoryMergeEntity])
+    func didFilterRecord(list: [RecordEntity])
 }
 
 protocol HomeInteractorInputProtocol: class {
@@ -37,6 +41,8 @@ protocol HomeInteractorInputProtocol: class {
     /* Presenter -> Interactor */
     func getCategory()
     func getCategoryChild(id: String)
+    func getCategoryMerge()
+    func filterRecord(param: RecordParam)
 }
 
 //MARK: View -
@@ -47,4 +53,6 @@ protocol HomeViewProtocol: class {
     /* Presenter -> ViewController */
     func getCategorySuccess(list: [CategoryEntity])
     func getCategoryChildSuccess(list: [CategoryEntity])
+    func didGetCategoryMerge(list: [CategoryMergeEntity])
+    func didFilterRecord(list: [RecordEntity])
 }

@@ -11,6 +11,8 @@ import Foundation
 protocol CategoryAPIServiceProtocol {
     func getCategory(success: @escaping SuccessHandler<CategoryEntity>.array, failure: @escaping RequestFailure)
     func getCategoryChild(categoryId: String, success: @escaping SuccessHandler<CategoryEntity>.array, failure: @escaping RequestFailure)
+    func getCategoryMerge(success: @escaping SuccessHandler<CategoryMergeEntity>.array, failure: @escaping RequestFailure)
+    func filterRecord(param: RecordParam, success: @escaping SuccessHandler<RecordEntity>.array, failure: @escaping RequestFailure)
     
 }
 
@@ -29,6 +31,16 @@ class CategoryAPIService: CategoryAPIServiceProtocol {
     
     func getCategoryChild(categoryId: String, success: @escaping SuccessHandler<CategoryEntity>.array, failure: @escaping RequestFailure) {
         let endPoint = CategoryEndPoint.getCategoryChild(categoryId: categoryId)
+        network.requestData(endPoint: endPoint, success: MapperData.mapArray(success), failure: failure)
+    }
+    
+    func getCategoryMerge(success: @escaping SuccessHandler<CategoryMergeEntity>.array, failure: @escaping RequestFailure) {
+        let endPoint = CategoryEndPoint.getCategoryMerge()
+        network.requestData(endPoint: endPoint, success: MapperData.mapArray(success), failure: failure)
+    }
+    
+    func filterRecord(param: RecordParam, success: @escaping SuccessHandler<RecordEntity>.array, failure: @escaping RequestFailure) {
+        let endPoint = CategoryEndPoint.filterRecord(param: param)
         network.requestData(endPoint: endPoint, success: MapperData.mapArray(success), failure: failure)
     }
 }
