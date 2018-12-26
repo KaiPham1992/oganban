@@ -37,8 +37,8 @@ class UserDefaultHelper {
             let value = get(key: .email) as? String
             return value
         }
-        set(newToken) {
-            save(value: newToken, key: .userToken)
+        set(email) {
+            save(value: email, key: .email)
         }
     }
     
