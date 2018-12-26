@@ -11,6 +11,10 @@
 import UIKit
 
 class SignUpPresenter: SignUpPresenterProtocol {
+    func verifyPhone(verifyCode: String, phoneCode: String, phoneNum: String) {
+        interactor?.verifyPhone(verifyCode: verifyCode, phoneCode: phoneCode, phoneNum: phoneNum)
+    }
+    
 
     weak private var view: SignUpViewProtocol?
     var interactor: SignUpInteractorInputProtocol?
@@ -32,6 +36,14 @@ class SignUpPresenter: SignUpPresenterProtocol {
 }
 
 extension SignUpPresenter: SignUpInteractorOutputProtocol {
+    func didVerifyPhone(response: BaseResponse?) {
+        view?.didVerifyPhone(response: response)
+    }
+    
+    func didVerifyPhone(error: APIError?) {
+        view?.didVerifyPhone(error: error)
+    }
+    
     func successCaptcha(image: UIImage) {
         view?.successCaptcha(image: image)
     }

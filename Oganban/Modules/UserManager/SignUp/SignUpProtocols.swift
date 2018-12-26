@@ -20,6 +20,7 @@ protocol SignUpPresenterProtocol: class {
     var interactor: SignUpInteractorInputProtocol? { get set }
     func getCaptcha()
     func signUp(param: SignUpParam)
+    func verifyPhone(verifyCode: String, phoneCode: String, phoneNum: String)
 }
 
 //MARK: Interactor -
@@ -29,6 +30,8 @@ protocol SignUpInteractorOutputProtocol: class {
     func successCaptcha(image: UIImage)
     func signUpSuccess(user: UserEntity?)
     func signUpError(error: APIError)
+    func didVerifyPhone(response: BaseResponse?)
+    func didVerifyPhone(error: APIError?)
 }
 
 protocol SignUpInteractorInputProtocol: class {
@@ -36,6 +39,7 @@ protocol SignUpInteractorInputProtocol: class {
     var presenter: SignUpInteractorOutputProtocol?  { get set }
     func getCaptcha()
     func signUp(param: SignUpParam)
+    func verifyPhone(verifyCode: String, phoneCode: String, phoneNum: String)
     /* Presenter -> Interactor */
 }
 
@@ -48,4 +52,6 @@ protocol SignUpViewProtocol: class {
     func successCaptcha(image: UIImage)
     func signUpSuccess(user: UserEntity?)
     func signUpError(error: APIError)
+    func didVerifyPhone(response: BaseResponse?)
+    func didVerifyPhone(error: APIError?)
 }

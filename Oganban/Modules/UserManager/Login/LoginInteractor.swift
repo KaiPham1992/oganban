@@ -72,7 +72,7 @@ class LoginInteractor: LoginInteractorInputProtocol {
     }
     
     func updateProfile(codeVerify: String, phoneCode: String, phoneNumber: String) {
-        Provider.shared.userAPIService.updateProfile(code: codeVerify, phone: phoneNumber, phonCode: phoneCode, success: { (response) in
+        Provider.shared.userAPIService.verifyPhone(code: codeVerify, phone: phoneNumber, phonCode: phoneCode, success: { (response) in
             self.presenter?.didUpdateProfile(response: response)
         }) { (error) in
             self.presenter?.didUpdateProfile(error: error)

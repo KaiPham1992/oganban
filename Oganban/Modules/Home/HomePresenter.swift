@@ -10,7 +10,16 @@
 
 import UIKit
 
-class HomePresenter: HomePresenterProtocol, HomeInteractorOutputProtocol {
+class HomePresenter: HomePresenterProtocol {
+    func getCategoryChild(id: String) {
+        interactor?.getCategoryChild(id: id)
+    }
+    
+    func getCategory() {
+        interactor?.getCategory()
+    }
+    
+   
 
     weak private var view: HomeViewProtocol?
     var interactor: HomeInteractorInputProtocol?
@@ -21,5 +30,15 @@ class HomePresenter: HomePresenterProtocol, HomeInteractorOutputProtocol {
         self.interactor = interactor
         self.router = router
     }
+}
 
+extension HomePresenter: HomeInteractorOutputProtocol  {
+    func getCategoryChildSuccess(list: [CategoryEntity]) {
+        view?.getCategoryChildSuccess(list: list)
+    }
+    
+    func getCategorySuccess(list: [CategoryEntity]) {
+        view?.getCategorySuccess(list: list)
+    }
+    
 }

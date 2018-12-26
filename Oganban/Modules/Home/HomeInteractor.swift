@@ -11,6 +11,22 @@
 import UIKit
 
 class HomeInteractor: HomeInteractorInputProtocol {
+    func getCategoryChild(id: String) {
+        Provider.shared.categoryAPIService.getCategoryChild(categoryId: id, success: { (result) in
+            self.presenter?.getCategoryChildSuccess(list: result)
+        }) { (error) in
+            
+        }
+    }
+    
+    func getCategory() {
+        Provider.shared.categoryAPIService.getCategory(success: { (result) in
+            self.presenter?.getCategorySuccess(list: result)
+        }) { (error) in
+            
+        }
+    }
+    
 
     weak var presenter: HomeInteractorOutputProtocol?
 }

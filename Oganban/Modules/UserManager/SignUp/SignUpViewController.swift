@@ -52,7 +52,8 @@ class SignUpViewController: BaseViewController {
                     //                    print(_phone.phoneCode&)
                     //                    print(_phone.phoneNumber&)
                     //                    print(_phone.phoneFullCodeAndNumber&)
-//                    self.presenter?.updateProfileVerify(verifyCode: verifyCode, phoneCode: _phone.phoneCode&, phoneNum: _phone.phoneNumber&)
+                    self.presenter?.verifyPhone(verifyCode: verifyCode, phoneCode: _phone.phoneCode&, phoneNum: _phone.phoneNumber&)
+                    
                 })
             })
         }
@@ -216,6 +217,14 @@ extension SignUpViewController: FTextFieldChooseDelegate {
 }
 
 extension SignUpViewController: SignUpViewProtocol {
+    func didVerifyPhone(response: BaseResponse?) {
+        self.pop()
+    }
+    
+    func didVerifyPhone(error: APIError?) {
+        
+    }
+    
 
     func successCaptcha(image: UIImage) {
         imgCaptcha.image = image
