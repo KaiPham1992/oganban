@@ -51,7 +51,7 @@ extension UserEndPoint: EndPointType {
         case .updateProfile:
             return "_api/user/update_profile"
         case .verifyPhone:
-            return "user/verify_phone"
+            return "_api/user/verify_phone"
         case .getListFavorite:
             return "user/favorite_list"
         case .getIntroduceList:

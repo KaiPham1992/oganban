@@ -84,7 +84,3 @@ extension LoginViewController {
         lbError.text = message ?? ""
     }
 }
-
-
-
-

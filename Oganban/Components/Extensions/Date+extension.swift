@@ -21,6 +21,7 @@ enum AppDateFormat: String {
     case weekdayddMMMyyy            = "EE, dd MMM yyyy"
     case dd_MM_YYYY                 = "dd-MM-YYYY"
     case ddMMYYYY_VN                 = "dd/MM/YYYY"
+    case ddMMYYYY_VNHHmm                 = "dd/MM/YYYY HH:mm"
     
     case MMMyyyy = "MMM yyyy"
     case ddMMYYYY = "dd.MM.YYYY"
@@ -65,6 +66,19 @@ extension Date {
         dateFormatter.timeZone = TimeZone.current
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         if let date = dateFormatter.date(from: iso8601String) {
+            self = date
+        } else {
+            return nil
+        }
+    }
+    
+    public init?(yyyyMMddHHmmss: String) {
+        // https://github.com/justinmakaila/NSDate-ISO-8601/blob/master/NSDateISO8601.swift
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale.current
+        dateFormatter.timeZone = TimeZone.current
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        if let date = dateFormatter.date(from: yyyyMMddHHmmss) {
             self = date
         } else {
             return nil
