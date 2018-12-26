@@ -43,7 +43,7 @@ extension UserEndPoint: EndPointType {
         case .logout:
             return "user/logout"
         case .loginGmail, .loginFacebook:
-            return "user/login_social"
+            return "_api/user/login_social"
         case .signUp:
             return "_api/user/register"
         case .changePassword:

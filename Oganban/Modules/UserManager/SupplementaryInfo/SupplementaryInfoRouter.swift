@@ -14,9 +14,9 @@ class SupplementaryInfoRouter: SupplementaryInfoWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule() -> UIViewController {
+    static func createModule() -> SupplementaryInfoViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = SupplementaryInfoViewController(nibName: nil, bundle: nil)
+        let view = SupplementaryInfoViewController.initFromNib()
         let interactor = SupplementaryInfoInteractor()
         let router = SupplementaryInfoRouter()
         let presenter = SupplementaryInfoPresenter(interface: view, interactor: interactor, router: router)
@@ -25,6 +25,22 @@ class SupplementaryInfoRouter: SupplementaryInfoWireframeProtocol {
         interactor.presenter = presenter
         router.viewController = view
 
+        return view
+    }
+    
+    static func createModule(loginSocialParam: LoginSocialParam) -> SupplementaryInfoViewController {
+        // Change to get view from storyboard if not using progammatic UI
+        let view = SupplementaryInfoViewController.initFromNib()
+        let interactor = SupplementaryInfoInteractor()
+        let router = SupplementaryInfoRouter()
+        let presenter = SupplementaryInfoPresenter(interface: view, interactor: interactor, router: router)
+        
+        view.presenter = presenter
+        interactor.presenter = presenter
+        router.viewController = view
+        
+        view.loginSocialParam = loginSocialParam
+        
         return view
     }
 }

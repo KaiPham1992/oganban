@@ -79,9 +79,8 @@ extension LoginViewController {
         
         self.btnGoogle.tapButton = {
             self.view.endEditing(true)
-//            GIDSignIn.sharedInstance().signOut()
-//            GIDSignIn.sharedInstance().signIn()
-            self.presenter?.showSupplementaryInfoPage()
+            GIDSignIn.sharedInstance().signOut()
+            GIDSignIn.sharedInstance().signIn()
             
         }
         
