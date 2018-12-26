@@ -49,7 +49,7 @@ extension UserEndPoint: EndPointType {
         case .changePassword:
             return "user/change_password"
         case .updateProfile:
-            return "user/update_profile"
+            return "_api/user/update_profile"
         case .verifyPhone:
             return "user/verify_phone"
         case .getListFavorite:
@@ -78,7 +78,7 @@ extension UserEndPoint: EndPointType {
     var parameters: JSONDictionary {
         switch self {
         case .login(let email, let password):
-            var param = ["username": email,
+            var param = ["email": email,
                          "password": password] as [String: Any]
             param = BaseParam.addDeviceParams(inputParams: param)
             return param

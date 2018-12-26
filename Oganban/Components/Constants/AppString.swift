@@ -68,6 +68,7 @@ struct MoreTitle {
 struct MessageString {
     static let notEnoughCoin = "Số Ơcoin tích lũy của bạn không đủ để đổi sản phẩm. Vui lòng kiểm tra lại !"
     static let invalidLoginEmailPassword  = "Vui lòng kiểm tra lại email hoặc mật khẩu"
+    static let notVerifyUser  = "Tài khoản chưa được kích hoạt"
     static let emptyUsername = "Vui lòng nhập tên đăng nhập"
     static let checkedUsername =  "Vui lòng kiểm tra lại tên đăng nhập"
     static let emptyDisplayName = "Vui lòng nhập tên hiển thị"

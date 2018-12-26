@@ -23,13 +23,22 @@ extension LoginViewController {
 
 extension LoginViewController: LoginViewProtocol {
     func didLogin(user: UserEntity?) {
+        print("SUCCESS LOGIN")
         self.dismiss(animated: true)
-        presenter?.showSupplementaryInfoPage()
     }
     
     func didError(error: APIError?) {
         if let message = error?.message {
-            PopUpHelper.shared.showMessageHaveAds(message: message)
+            switch message {
+            case "INVALID_USERNAME_OR_PASSWORD":
+                hideError(isHidden: false, message:  MessageString.invalidLoginEmailPassword)
+                break
+            case "USER_IS_NOT_VERIFY":
+                hideError(isHidden: false, message:  MessageString.notVerifyUser)
+                break
+            default:
+                break
+            }
         }
     }
     
@@ -60,8 +69,8 @@ extension LoginViewController {
         self.btnLogin.tapButton = {
             self.view.endEditing(true)
             if self.validateInputData() {
-                guard let email = self.tfEmail.tfContent.text, let password = self.tfPassword.tfContent.text else {
-                    return }
+                let email = self.tfEmail.tfContent.text ?? ""
+                let password = self.tfPassword.tfContent.text&.sha256()
                 self.presenter?.login(email: email, password: password)
             } else {
                 print("Login: Something is wrong")
