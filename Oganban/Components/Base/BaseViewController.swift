@@ -25,6 +25,23 @@ class BaseViewController: UIViewController {
         setUpViews()
     }
     
+    let lbNoData: UILabel = {
+        let lb = UILabel()
+        lb.text = "Không có dữ liệu"
+        lb.textColor = AppColor.black414141
+        return lb
+    }()
+    
+    func showNoData() {
+        lbNoData.removeFromSuperview()
+        self.view.addSubview(lbNoData)
+        lbNoData.centerSuperview()
+    }
+    
+    func hideNoData() {
+        lbNoData.removeFromSuperview()
+    }
+    
     func setUpViews(){
     }
     

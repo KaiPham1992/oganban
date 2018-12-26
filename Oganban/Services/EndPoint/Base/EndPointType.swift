@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 
+let limitLoad = 20
 typealias JSONDictionary = [String: Any]
 
 protocol EndPointType {

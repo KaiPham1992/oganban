@@ -21,7 +21,7 @@ class LoginInteractor: LoginInteractorInputProtocol {
             //save user
             ProgressView.shared.hide()
             guard let user = user else { return }
-//            UserUtils.saveLogin(user: user)
+            UserUtils.saveUser(user: user)
             // --
             self.presenter?.didLogin(user: user)
         }) { (error) in

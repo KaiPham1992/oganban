@@ -11,6 +11,12 @@ import UIKit
 
 class UserUtils: NSObject {
     
+    static func saveUser(user: UserEntity) {
+        if !user.jwt&.isEmpty {
+            UserDefaultHelper.shared.userToken = user.jwt&
+        }
+    }
+    
 //    static  func  hashPassword(password: String) -> String {
 //        return password.sha256();
 //    }

@@ -42,6 +42,7 @@ struct TitleString {
     static let searchTVVInMap = "SearchInMap"
     static let searchProjectInMap = "SearchProjectInMap"
     static let markReadAll = "MarkReadAll"
+    static let notification = "Thông báo"
     
 }
 
