@@ -41,7 +41,7 @@ class LoginInteractor: LoginInteractorInputProtocol {
         
         let phoneNumber = phone
         
-        let param = LoginSocialParam(socialId: id, email: email, phoneNumber: phoneNumber, fullName: fullName, socialImage: image, socialType: SocialType.gmail.rawValue)
+        let param = LoginSocialParam(socialId: id, email: email, fullName: fullName, socialImage: image, socialType: SocialType.gmail.rawValue)
         
         ProgressView.shared.showProgressOnWindow()
         

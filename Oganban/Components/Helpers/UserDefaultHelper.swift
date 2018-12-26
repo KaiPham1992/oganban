@@ -14,6 +14,7 @@ enum UserDefaultHelperKey: String {
     case lat = "LatUser"
     case long = "LongUser"
     case userToken = "UserToken"
+     case email = "email"
 }
 
 class UserDefaultHelper {
@@ -28,6 +29,16 @@ class UserDefaultHelper {
         }
         set(newToken) {
             save(value: newToken, key: .userToken)
+        }
+    }
+    
+    var emailUser: String? {
+        get {
+            let value = get(key: .email) as? String
+            return value
+        }
+        set(email) {
+            save(value: email, key: .email)
         }
     }
     
