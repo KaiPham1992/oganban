@@ -34,9 +34,8 @@ extension LoginViewController: GIDSignInDelegate {
         if let error = error {
             print("Error login gmail: \(error.localizedDescription)")
         } else {
-            self.loginType = .gmail
-            paramLogin = user
-            fbAccountKit.verifyPhone()
+            let newLoginSocialParam = LoginSocialParam(user: user)
+            self.presenter?.showSupplementaryInfoPage(loginSocialParam: newLoginSocialParam)
         }
     }
     

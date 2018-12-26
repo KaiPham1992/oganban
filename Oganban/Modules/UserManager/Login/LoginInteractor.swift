@@ -30,47 +30,6 @@ class LoginInteractor: LoginInteractorInputProtocol {
         }
     }
     
-    func loginGmail(user: GIDGoogleUser, phone: String) {
-        let id = user.userID
-        let fullName = user.profile.name
-        let email = user.profile.email
-        var image: String?
-        if user.profile.hasImage {
-            image = user.profile.imageURL(withDimension: 480).absoluteString
-        }
-        
-        let phoneNumber = phone
-        
-        let param = LoginSocialParam(socialId: id, email: email, fullName: fullName, socialImage: image, socialType: SocialType.gmail.rawValue)
-        
-        ProgressView.shared.showProgressOnWindow()
-        
-        Provider.shared.userAPIService.loginGmail(param: param, success: { _user in
-            self.presenter?.didLogin(user: _user)
-            guard let user = _user else { return }
-//            UserUtils.saveLogin(user: user)
-            ProgressView.shared.hide()
-        }) { error  in
-            self.presenter?.didLogin(error: error)
-            print("error loginGmail: \(error!.localizedDescription)")
-            ProgressView.shared.hide()
-        }
-    }
-    
-    func loginFacebook(fbEntity: FacebookEntity, phone: String) {
-        ProgressView.shared.show()
-        Provider.shared.userAPIService.loginFacebook(fbEntity: fbEntity, phone: phone, success: {  _user in
-            guard let user = _user else { return }
-//            UserUtils.saveLogin(user: user)
-            ProgressView.shared.hide()
-            self.presenter?.didLogin(user: _user)
-        }) { error in
-            ProgressView.shared.hide()
-            self.presenter?.didLogin(error: error)
-            print("loginFacebook: \(error!.localizedDescription)")
-        }
-    }
-    
     func updateProfile(codeVerify: String, phoneCode: String, phoneNumber: String) {
         Provider.shared.userAPIService.verifyPhone(code: codeVerify, phone: phoneNumber, phonCode: phoneCode, success: { (response) in
             self.presenter?.didUpdateProfile(response: response)

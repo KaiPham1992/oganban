@@ -39,14 +39,14 @@ class LoginRouter: LoginWireframeProtocol {
         viewController?.navigationController?.pushViewController(HomeVC, animated: true)
     }
     
-    func showSupplementaryInfoPage() {
-        let vc = SupplementaryInfoRouter.createModule()
+    func showSupplementaryInfoPage(loginSocialParam: LoginSocialParam) {
+        let vc = SupplementaryInfoRouter.createModule(loginSocialParam: loginSocialParam)
         vc.modalPresentationStyle = .overFullScreen
         viewController?.present(controller: vc, animated: true)
     }
     
     func gotoForgotPassword() {
-//        let forgotPasswordVC = ForgotPasswordRouter.createModule()
-//        viewController?.navigationController?.pushViewController(forgotPasswordVC, animated: true)
+        let forgotPasswordVC = ForgotPasswordRouter.createModule()
+        viewController?.navigationController?.pushViewController(forgotPasswordVC, animated: true)
     }
 }

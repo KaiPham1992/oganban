@@ -30,16 +30,17 @@ struct APINetwork: APINetworkProtocol {
     }
     
     func requestData(endPoint: EndPointType, success: @escaping NetworkSuccess, failure: @escaping RequestFailure) {
+        print("\(BASE_URL)\(endPoint.path)")
         print(endPoint.parameters)
         request.requestData(endPoint: endPoint, success: { data in
             let json = JSON(data)
             
             
             if json.description == "null" {
-                print("**************ERROR*****************")
+                print("\n**************ERROR*****************")
                 print(String(data: data, encoding: .utf8))
             } else {
-                print("**************SUCCESS*****************")
+                print("\n**************SUCCESS*****************")
                 print(json)
             }
             
