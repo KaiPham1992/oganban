@@ -10,7 +10,7 @@
 
 import UIKit
 
-class SupplementaryInfoPresenter: SupplementaryInfoPresenterProtocol, SupplementaryInfoInteractorOutputProtocol {
+class SupplementaryInfoPresenter: SupplementaryInfoPresenterProtocol  {
 
     weak private var view: SupplementaryInfoViewProtocol?
     var interactor: SupplementaryInfoInteractorInputProtocol?
@@ -21,5 +21,19 @@ class SupplementaryInfoPresenter: SupplementaryInfoPresenterProtocol, Supplement
         self.interactor = interactor
         self.router = router
     }
+    
+    func loginSocial(socialParam: LoginSocialParam) {
+        interactor?.loginSocial(socialParam: socialParam)
+    }
 
+}
+
+extension SupplementaryInfoPresenter: SupplementaryInfoInteractorOutputProtocol {
+    func didLogin(user: UserEntity?) {
+        view?.didLogin(user: user)
+    }
+    
+    func didLogin(error: APIError?) {
+        view?.didLogin(error: error)
+    }
 }

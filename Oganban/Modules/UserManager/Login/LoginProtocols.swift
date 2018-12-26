@@ -17,7 +17,7 @@ protocol LoginWireframeProtocol: class {
     func gotoSignUp()
     func gotoHome()
     func gotoForgotPassword()
-    func showSupplementaryInfoPage()
+    func showSupplementaryInfoPage(loginSocialParam: LoginSocialParam)
 }
 //MARK: Presenter -
 protocol LoginPresenterProtocol: class {
@@ -26,11 +26,11 @@ protocol LoginPresenterProtocol: class {
     func gotoSignUp()
     func gotoHome()
     func gotoForgotPassword()
-    func showSupplementaryInfoPage()
+    func showSupplementaryInfoPage(loginSocialParam: LoginSocialParam)
     //---
     func login(email: String, password: String)
-    func loginGmail(user: GIDGoogleUser, phone: String)
-    func loginFacebook(fbEntity: FacebookEntity, phone: String)
+//    func loginGmail(user: GIDGoogleUser, phone: String)
+//    func loginFacebook(fbEntity: FacebookEntity, phone: String)
     func updateProfile(codeVerify: String, phoneCode: String, phoneNumber: String)
 }
 
@@ -51,8 +51,8 @@ protocol LoginInteractorInputProtocol: class {
     
     /* Presenter -> Interactor */
     func login(email: String, password: String)
-    func loginGmail(user: GIDGoogleUser, phone: String)
-    func loginFacebook(fbEntity: FacebookEntity, phone: String)
+//    func loginGmail(user: GIDGoogleUser, phone: String)
+//    func loginFacebook(fbEntity: FacebookEntity, phone: String)
     func updateProfile(codeVerify: String, phoneCode: String, phoneNumber: String)
 }
 

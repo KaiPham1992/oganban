@@ -18,8 +18,10 @@ extension UpdateProfileViewController {
         imgAvatar.layer.cornerRadius = imgAvatar.frame.width / 2.0
         imgAvatar.layer.masksToBounds = true
         
-        tfUsername.setupLayoutTextfield(placeholderText: TitleString.placeHolderLoginName, titleText: TitleString.loginName, placeholderColor: AppColor.black414141)
-        
+        tfUsername.setupLayoutTextfield(placeholderText: TitleString.placeHolderLoginName, titleText: TitleString.loginName, placeholderColor: AppColor.black414141, contentColor: AppColor.grey9E9E9E)
+        tfUsername.tfContent.text = UserDefaultHelper.shared.emailUser
+        tfUsername.tfContent.isEnabled = false
+            
         tfDisplayName.setupLayoutTextfield(placeholderText: TitleString.placeHolderDisplayName, titleText: TitleString.displayName, placeholderColor: AppColor.black414141)
         
         tfBirthday.setupLayoutTextfield(placeholderText: TitleString.placeHolderBirthday, titleText: TitleString.birthday, placeholderColor: AppColor.black414141)

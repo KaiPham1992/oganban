@@ -12,31 +12,37 @@ import Foundation
 
 //MARK: Wireframe -
 protocol SupplementaryInfoWireframeProtocol: class {
-
+    
 }
 //MARK: Presenter -
 protocol SupplementaryInfoPresenterProtocol: class {
-
+    
     var interactor: SupplementaryInfoInteractorInputProtocol? { get set }
+    func loginSocial(socialParam: LoginSocialParam)
 }
 
 //MARK: Interactor -
 protocol SupplementaryInfoInteractorOutputProtocol: class {
-
+    
     /* Interactor -> Presenter */
+    func didLogin(user: UserEntity?)
+    func didLogin(error: APIError?)
 }
 
 protocol SupplementaryInfoInteractorInputProtocol: class {
-
+    
     var presenter: SupplementaryInfoInteractorOutputProtocol?  { get set }
-
+    
     /* Presenter -> Interactor */
+    func loginSocial(socialParam: LoginSocialParam)
 }
 
 //MARK: View -
 protocol SupplementaryInfoViewProtocol: class {
-
+    
     var presenter: SupplementaryInfoPresenterProtocol?  { get set }
-
+    
     /* Presenter -> ViewController */
+    func didLogin(user: UserEntity?)
+    func didLogin(error: APIError?)
 }

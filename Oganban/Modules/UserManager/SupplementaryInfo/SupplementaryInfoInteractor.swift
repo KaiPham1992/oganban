@@ -13,4 +13,16 @@ import UIKit
 class SupplementaryInfoInteractor: SupplementaryInfoInteractorInputProtocol {
 
     weak var presenter: SupplementaryInfoInteractorOutputProtocol?
+    
+    func loginSocial(socialParam: LoginSocialParam) {
+        ProgressView.shared.show()
+        Provider.shared.userAPIService.loginGmail(param: socialParam, success: { _user in
+            ProgressView.shared.hide()
+            self.presenter?.didLogin(user: _user)
+        }) { error in
+            ProgressView.shared.hide()
+            self.presenter?.didLogin(error: error)
+        }
+    }
+
 }

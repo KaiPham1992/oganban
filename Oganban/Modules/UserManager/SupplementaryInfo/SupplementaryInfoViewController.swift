@@ -10,7 +10,7 @@
 
 import UIKit
 
-class SupplementaryInfoViewController: BaseViewController, SupplementaryInfoViewProtocol {
+class SupplementaryInfoViewController: BaseViewController {
 
 	var presenter: SupplementaryInfoPresenterProtocol?
 
@@ -25,6 +25,8 @@ class SupplementaryInfoViewController: BaseViewController, SupplementaryInfoView
     @IBOutlet weak var tfBirthday: OganbanCustomTextfield!
     @IBOutlet weak var tfName: OganbanCustomTextfield!
     @IBOutlet weak var vContent: UIView!
+    
+    var loginSocialParam: LoginSocialParam?
     
     var isCheck: Bool = false {
         didSet{
@@ -52,11 +54,23 @@ class SupplementaryInfoViewController: BaseViewController, SupplementaryInfoView
         addGesture()
         tapSendButton()
         textFieldDidBeginEditing()
+        
+        tfName.tfContent.text = self.loginSocialParam?.fullName
     }
     
     func hideError(isHidden: Bool = true, message: String? = nil){
         lbError.isHidden = isHidden
         lbError.text = message ?? ""
+    }
+}
+
+extension SupplementaryInfoViewController: SupplementaryInfoViewProtocol {
+    func didLogin(user: UserEntity?) {
+        
+    }
+    
+    func didLogin(error: APIError?) {
+        
     }
 }
 

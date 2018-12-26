@@ -35,7 +35,7 @@ extension UserEndPoint: EndPointType {
         case .login(_, _):
             return "_api/user/login"
         case .fogotPassword(_):
-            return "user/forgot_password"
+            return "_api/user/forgot_password"
         case .checkLogin():
             return "user/check_login"
         case .getCaptcha:
@@ -43,7 +43,7 @@ extension UserEndPoint: EndPointType {
         case .logout:
             return "user/logout"
         case .loginGmail, .loginFacebook:
-            return "user/login_social"
+            return "_api/user/login_social"
         case .signUp:
             return "_api/user/register"
         case .changePassword:
