@@ -33,7 +33,7 @@ extension UserEndPoint: EndPointType {
     var path: String {
         switch self {
         case .login(_, _):
-            return "user/login"
+            return "_api/user/login"
         case .fogotPassword(_):
             return "user/forgot_password"
         case .checkLogin():

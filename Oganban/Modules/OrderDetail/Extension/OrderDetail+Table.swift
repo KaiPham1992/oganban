@@ -116,7 +116,7 @@ extension OrderDetailViewController {
         
         tbDetail.beginUpdates()
         let indexPath = IndexPath(item: self.listComment[indexComment].subComment.count - 1, section: section)
-        tbDetail.insertRows(at: [indexPath], with: .automatic)
+        tbDetail.insertRows(at: [indexPath], with: .none)
         tbDetail.endUpdates()
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
