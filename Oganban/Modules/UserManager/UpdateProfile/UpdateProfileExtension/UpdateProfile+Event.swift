@@ -42,11 +42,23 @@ extension UpdateProfileViewController {
                 guard let _ = self.tfUsername.tfContent.text,
                     let displayName = self.tfDisplayName.tfContent.text,
                     let phone =  self.tvPhone.tfPhone.text,
-                    let phoneCode = self.countryPhoneCode.code,
+                    let phoneCode = self.countryPhoneCode.code?.lowercased(),
                     let birthDay =  self.birthDay?.toString(dateFormat: AppDateFormat.yyyyMMdd) else {
                     return
                 }
-                let userInfo = UserEntity(displayName: displayName, phoneNumber: phone, phoneCode: phoneCode, birthday: birthDay, gender: self.tfGender.tfContent.text, houseAddress: self.tfAddress1.tfContent.text, companyAddress: self.tfAddress2.tfContent.text)
+                
+                var gender = ""
+                if self.tfGender.tfContent.text == "Nữ" {
+                    gender = "female"
+                }
+                else if self.tfGender.tfContent.text == "Nam" {
+                    gender = "male"
+                }
+                else if self.tfGender.tfContent.text == "Khác" {
+                    gender = "other"
+                }
+                
+                let userInfo = UserEntity(displayName: displayName, phoneNumber: phone, phoneCode: phoneCode, birthday: birthDay, gender: gender, houseAddress: self.tfAddress1.tfContent.text, companyAddress: self.tfAddress2.tfContent.text)
                 self.presenter?.updateProfile(userInfo: userInfo)
                 
             } else {
@@ -82,13 +94,14 @@ extension UpdateProfileViewController {
 extension UpdateProfileViewController: UpdateProfileViewProtocol{
     func didSuccessUpdateProfile(user: UserEntity?) {
         if let _ = user {
-            self.pop()
+            print ("HIỂN THỊ MÀN HÌNH XÁC THỰC SỐ ĐIỆN THOẠI")
         }
     }
     
     func didErrorUpdateProfile(error: APIError?) {
-        if let message = error?.message {
-            PopUpHelper.shared.showMessageHaveAds(message: message)
+        if let _ = error?.message {
+           //hideError(isHidden: false, message:  MessageString.invalidLoginEmailPassword)
+            print ("Update profile: Something wrong")
         }
     }
 }
