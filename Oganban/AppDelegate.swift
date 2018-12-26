@@ -32,7 +32,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         configureGoogle()
 
         
-        AppRouter.shared.openTabbar()
+//        AppRouter.shared.openTabbar()
+        let vcLogin = LoginRouter.createModule()
+        let nc = UINavigationController(rootViewController: vcLogin)
+        window?.rootViewController = nc
         return true
     }
     

@@ -54,6 +54,10 @@ class LoginViewController: BaseViewController {
         self.hideError()
         self.fbAccountKit = FBAccountKit(_controller: self)
     }
+    
+    @IBAction func btnForgotPasswordTapped() {
+        presenter?.gotoForgotPassword()
+    }
 }
 
 extension LoginViewController {

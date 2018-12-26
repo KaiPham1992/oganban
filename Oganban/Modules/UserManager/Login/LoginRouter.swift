@@ -46,7 +46,7 @@ class LoginRouter: LoginWireframeProtocol {
     }
     
     func gotoForgotPassword() {
-//        let forgotPasswordVC = ForgotPasswordRouter.createModule()
-//        viewController?.navigationController?.pushViewController(forgotPasswordVC, animated: true)
+        let forgotPasswordVC = ForgotPasswordRouter.createModule()
+        viewController?.navigationController?.pushViewController(forgotPasswordVC, animated: true)
     }
 }
