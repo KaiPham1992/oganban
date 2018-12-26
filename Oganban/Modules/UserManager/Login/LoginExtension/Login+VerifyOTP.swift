@@ -26,6 +26,8 @@ extension LoginViewController {
                     case .gmail:
                         guard let _pram = self.paramLogin as? GIDGoogleUser else { return }
                         self.presenter?.showSupplementaryInfoPage()
+                        
+                        
 //                        self.presenter?.loginGmail(user: _pram, phone: _phone.phoneFullCodeAndNumber&)
                     case .facebook:
                         guard let _pram = self.paramLogin as? FacebookEntity else { return }
