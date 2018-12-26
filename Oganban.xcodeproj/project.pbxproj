@@ -99,6 +99,9 @@
 		B36AEEC921CDF47A00BED43C /* AdmobCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B36AEEC721CDF47A00BED43C /* AdmobCell.xib */; };
 		B36AEECE21CDF52B00BED43C /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36AEECC21CDF52B00BED43C /* HomeCell.swift */; };
 		B36AEECF21CDF52B00BED43C /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B36AEECD21CDF52B00BED43C /* HomeCell.xib */; };
+		B392FB3521D3AE970076A7B5 /* CategoryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B392FB3421D3AE970076A7B5 /* CategoryEntity.swift */; };
+		B392FB3721D3B0170076A7B5 /* CategoryEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B392FB3621D3B0170076A7B5 /* CategoryEndPoint.swift */; };
+		B392FB3921D3B13E0076A7B5 /* CategoryAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B392FB3821D3B13E0076A7B5 /* CategoryAPIService.swift */; };
 		B3E67E9C21CF41260012546F /* DropdownPhoneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E67E9A21CF41260012546F /* DropdownPhoneCell.swift */; };
 		B3E67E9D21CF41260012546F /* DropdownPhoneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3E67E9B21CF41260012546F /* DropdownPhoneCell.xib */; };
 		B3E67EAC21CF756E0012546F /* PhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E67EAB21CF756E0012546F /* PhoneNumber.swift */; };
@@ -385,6 +388,9 @@
 		B36AEEC721CDF47A00BED43C /* AdmobCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdmobCell.xib; sourceTree = "<group>"; };
 		B36AEECC21CDF52B00BED43C /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		B36AEECD21CDF52B00BED43C /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
+		B392FB3421D3AE970076A7B5 /* CategoryEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEntity.swift; sourceTree = "<group>"; };
+		B392FB3621D3B0170076A7B5 /* CategoryEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEndPoint.swift; sourceTree = "<group>"; };
+		B392FB3821D3B13E0076A7B5 /* CategoryAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryAPIService.swift; sourceTree = "<group>"; };
 		B3E67E9A21CF41260012546F /* DropdownPhoneCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownPhoneCell.swift; sourceTree = "<group>"; };
 		B3E67E9B21CF41260012546F /* DropdownPhoneCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DropdownPhoneCell.xib; sourceTree = "<group>"; };
 		B3E67EAB21CF756E0012546F /* PhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumber.swift; sourceTree = "<group>"; };
@@ -894,6 +900,7 @@
 				CB172B3E21C6A2A20068CF92 /* APIServiceProvider */,
 				DE21822F21CD458E00FDD9F1 /* UserAPIService.swift */,
 				DE442C2F21CF93750051C0B8 /* CommonAPIService.swift */,
+				B392FB3821D3B13E0076A7B5 /* CategoryAPIService.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -913,6 +920,7 @@
 				CB172B4121C6A2AA0068CF92 /* Base */,
 				DE21823421CD465700FDD9F1 /* UserEndPoint.swift */,
 				DE442C3321CF94600051C0B8 /* CommonEndPoint.swift */,
+				B392FB3621D3B0170076A7B5 /* CategoryEndPoint.swift */,
 			);
 			path = EndPoint;
 			sourceTree = "<group>";
@@ -1188,6 +1196,7 @@
 				DE21822D21CD44D600FDD9F1 /* BaseEntity.swift */,
 				DE442C3121CF93C60051C0B8 /* PhotoEntity.swift */,
 				DE442C5F21CFB9790051C0B8 /* CommentEntity.swift */,
+				B392FB3421D3AE970076A7B5 /* CategoryEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1759,6 +1768,7 @@
 			files = (
 				84421C0721CBF52900F468F5 /* SupplementaryInfoPresenter.swift in Sources */,
 				84C8542C21CFD72900BDABE5 /* Login+SetupUI.swift in Sources */,
+				B392FB3921D3B13E0076A7B5 /* CategoryAPIService.swift in Sources */,
 				CB172C9321C6A2EF0068CF92 /* AppString.swift in Sources */,
 				DE21828021CD473100FDD9F1 /* KActivityIndicatorAnimationBallRotate.swift in Sources */,
 				B36AEECE21CDF52B00BED43C /* HomeCell.swift in Sources */,
@@ -1815,6 +1825,7 @@
 				B355EF5E21C8FB1400379F57 /* SignUpViewController.swift in Sources */,
 				DEE1DA5121CDE2B60036FEB7 /* PopUpNotificationHaveAdmobContent.swift in Sources */,
 				B36AEEBF21CDDBA600BED43C /* NotificationPresenter.swift in Sources */,
+				B392FB3521D3AE970076A7B5 /* CategoryEntity.swift in Sources */,
 				B36AEEC821CDF47A00BED43C /* AdmobCell.swift in Sources */,
 				84421BF821CBEF1E00F468F5 /* MoreCell.swift in Sources */,
 				CB172B2F21C6A22A0068CF92 /* BaseParam.swift in Sources */,
@@ -1918,6 +1929,7 @@
 				CB172C9C21C6A2EF0068CF92 /* BaseTableCell.swift in Sources */,
 				84ABC68D21CFF06700E0D202 /* UpdateProfileInteractor.swift in Sources */,
 				CB172C9E21C6A2EF0068CF92 /* BaseView.swift in Sources */,
+				B392FB3721D3B0170076A7B5 /* CategoryEndPoint.swift in Sources */,
 				DEE1DA5F21CDF3050036FEB7 /* AdmobNativeView.swift in Sources */,
 				CB172C9421C6A2EF0068CF92 /* APIConstant.swift in Sources */,
 				DE442C4121CFA2130051C0B8 /* OrderDetailInteractor.swift in Sources */,

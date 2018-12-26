@@ -129,18 +129,19 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_heart" translatesAutoresizingMaskIntoConstraints="NO" id="Uuz-Qm-Jc0">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uuz-Qm-Jc0">
                                     <rect key="frame" x="315" y="0.0" width="30" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="Uuz-Qm-Jc0" secondAttribute="height" multiplier="1:1" id="92f-09-1x0"/>
                                     </constraints>
                                 </imageView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTR-Wj-9Mf">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTR-Wj-9Mf">
                                     <rect key="frame" x="310" y="-5" width="40" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="40" id="fhg-tf-qYX"/>
                                         <constraint firstAttribute="height" constant="40" id="yXa-uS-0zD"/>
                                     </constraints>
+                                    <state key="normal" image="ic_heart"/>
                                     <connections>
                                         <action selector="btnGotoFavoriteTapped" destination="-1" eventType="touchUpInside" id="Yhz-vf-u5t"/>
                                     </connections>

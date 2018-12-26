@@ -24,6 +24,7 @@ class HomeViewController: BaseViewController, HomeViewProtocol {
     @IBOutlet weak var heightRight: NSLayoutConstraint!
     @IBOutlet weak var btnHideDropdown: UIButton!
     @IBOutlet weak var vScaleDropdown: UIView!
+    @IBOutlet weak var btnFavorite: UIButton!
     
 	var presenter: HomePresenterProtocol?
     

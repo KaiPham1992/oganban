@@ -25,4 +25,8 @@ class Provider {
         return CommonAPIService(network: networkManager)
     }
     
+    var categoryAPIService: CategoryAPIServiceProtocol {
+        return CategoryAPIService(network: networkManager)
+    }
+    
 }
