@@ -96,6 +96,8 @@
 		B392FB3521D3AE970076A7B5 /* CategoryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B392FB3421D3AE970076A7B5 /* CategoryEntity.swift */; };
 		B392FB3721D3B0170076A7B5 /* CategoryEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B392FB3621D3B0170076A7B5 /* CategoryEndPoint.swift */; };
 		B392FB3921D3B13E0076A7B5 /* CategoryAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B392FB3821D3B13E0076A7B5 /* CategoryAPIService.swift */; };
+		B392FB3D21D3D6AE0076A7B5 /* AcceptCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B392FB3B21D3D6AE0076A7B5 /* AcceptCell.swift */; };
+		B392FB3E21D3D6AE0076A7B5 /* AcceptCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B392FB3C21D3D6AE0076A7B5 /* AcceptCell.xib */; };
 		B3E67E9C21CF41260012546F /* DropdownPhoneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E67E9A21CF41260012546F /* DropdownPhoneCell.swift */; };
 		B3E67E9D21CF41260012546F /* DropdownPhoneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3E67E9B21CF41260012546F /* DropdownPhoneCell.xib */; };
 		B3E67EAC21CF756E0012546F /* PhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E67EAB21CF756E0012546F /* PhoneNumber.swift */; };
@@ -392,6 +394,8 @@
 		B392FB3421D3AE970076A7B5 /* CategoryEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEntity.swift; sourceTree = "<group>"; };
 		B392FB3621D3B0170076A7B5 /* CategoryEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEndPoint.swift; sourceTree = "<group>"; };
 		B392FB3821D3B13E0076A7B5 /* CategoryAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryAPIService.swift; sourceTree = "<group>"; };
+		B392FB3B21D3D6AE0076A7B5 /* AcceptCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptCell.swift; sourceTree = "<group>"; };
+		B392FB3C21D3D6AE0076A7B5 /* AcceptCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AcceptCell.xib; sourceTree = "<group>"; };
 		B3E67E9A21CF41260012546F /* DropdownPhoneCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownPhoneCell.swift; sourceTree = "<group>"; };
 		B3E67E9B21CF41260012546F /* DropdownPhoneCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DropdownPhoneCell.xib; sourceTree = "<group>"; };
 		B3E67EAB21CF756E0012546F /* PhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumber.swift; sourceTree = "<group>"; };
@@ -810,6 +814,7 @@
 		B36AEECA21CDF50100BED43C /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				B392FB3A21D3D6820076A7B5 /* Accept */,
 				B325C2EC21CE059E0048A148 /* Menu */,
 				B36AEECB21CDF50D00BED43C /* Admob */,
 				B36AEECC21CDF52B00BED43C /* HomeCell.swift */,
@@ -825,6 +830,15 @@
 				B36AEEC721CDF47A00BED43C /* AdmobCell.xib */,
 			);
 			path = Admob;
+			sourceTree = "<group>";
+		};
+		B392FB3A21D3D6820076A7B5 /* Accept */ = {
+			isa = PBXGroup;
+			children = (
+				B392FB3B21D3D6AE0076A7B5 /* AcceptCell.swift */,
+				B392FB3C21D3D6AE0076A7B5 /* AcceptCell.xib */,
+			);
+			path = Accept;
 			sourceTree = "<group>";
 		};
 		B3E67E9421CF3EE20012546F /* PhoneNumber */ = {
@@ -1661,6 +1675,7 @@
 				CB172C8D21C6A2EF0068CF92 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				DE0DBAE721D3B6DA0097E38F /* NotificationCell.xib in Resources */,
 				CB3A8F1521C64FC1008144BD /* Assets.xcassets in Resources */,
+				B392FB3E21D3D6AE0076A7B5 /* AcceptCell.xib in Resources */,
 				84421BFA21CBEF1E00F468F5 /* MoreHeaderCell.xib in Resources */,
 				B325C2F021CE05B20048A148 /* MenuCell.xib in Resources */,
 				84487C8921CB7EA4008B25B2 /* Roboto-BoldItalic.ttf in Resources */,
@@ -1854,7 +1869,6 @@
 				DE21828421CD473100FDD9F1 /* KActivityIndicatorShape.swift in Sources */,
 				B355EF5E21C8FB1400379F57 /* SignUpViewController.swift in Sources */,
 				DEE1DA5121CDE2B60036FEB7 /* PopUpNotificationHaveAdmobContent.swift in Sources */,
-				B36AEEBF21CDDBA600BED43C /* NotificationPresenter.swift in Sources */,
 				B392FB3521D3AE970076A7B5 /* CategoryEntity.swift in Sources */,
 				B36AEEC821CDF47A00BED43C /* AdmobCell.swift in Sources */,
 				84421BF821CBEF1E00F468F5 /* MoreCell.swift in Sources */,
@@ -1942,6 +1956,7 @@
 				B36AEEB121CDDB8000BED43C /* MySellPresenter.swift in Sources */,
 				DE442C3221CF93C60051C0B8 /* PhotoEntity.swift in Sources */,
 				B36AEEB321CDDB8000BED43C /* MySellViewController.swift in Sources */,
+				B392FB3D21D3D6AE0076A7B5 /* AcceptCell.swift in Sources */,
 				84421BED21CBEECF00F468F5 /* MorePresenter.swift in Sources */,
 				DE442C3E21CFA2130051C0B8 /* OrderDetailRouter.swift in Sources */,
 				CB172C1A21C6A2EF0068CF92 /* NSMutableAttributedString+Extension.swift in Sources */,

@@ -25,3 +25,18 @@ struct CategoryEntity: Mappable {
         self.key <- map["key"]
     }
 }
+
+
+class Menu {
+    var parentCategory: CategoryEntity
+    var listChild: [CategoryEntity]
+    init(parent: CategoryEntity, listChild: [CategoryEntity]) {
+        self.parentCategory = parent
+        self.listChild = listChild
+    }
+    
+    init(parent: CategoryEntity) {
+        self.parentCategory = parent
+        self.listChild = []
+    }
+}
