@@ -78,6 +78,9 @@ struct MessageString {
     static let emptyPhone = "Vui lòng nhập số điện thoại"
     static let checkedPhone =  "Vui lòng kiểm tra lại số điện thoại"
     static let notTickPolicy = "Vui lòng chọn điều khoản sử dụng"
+    static let messageEmptyEmail = "Vui lòng nhập email"
+    static let messageInvalidEmailFormat = "Email không đúng format"
+    static let messageEmailNoHave = "Email này không tồn tại trong hệ thống"
 }
 
 struct NavigationTitle {
