@@ -33,7 +33,16 @@ struct APINetwork: APINetworkProtocol {
         print(endPoint.parameters)
         request.requestData(endPoint: endPoint, success: { data in
             let json = JSON(data)
-            print(json)
+            
+            
+            if json.description == "null" {
+                print("**************ERROR*****************")
+                print(String(data: data, encoding: .utf8))
+            } else {
+                print("**************SUCCESS*****************")
+                print(json)
+            }
+            
             
             guard let result = Mapper<BaseResponse>().map(JSONObject: json.dictionaryObject) else {
                 failure(APPError.canNotParseData)
@@ -54,6 +63,8 @@ struct APINetwork: APINetworkProtocol {
         request.uploadImages(image: image, endPoint: endPoint, success: { data in
             let json = JSON(data)
             print(json)
+            
+           
             
             guard let result = Mapper<BaseResponse>().map(JSONObject: json.dictionaryObject) else {
                 failure(APPError.canNotParseData)
