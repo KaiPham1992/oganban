@@ -25,6 +25,9 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var vScaleDropdown   : UIView!
     @IBOutlet weak var btnFavorite      : UIButton!
     @IBOutlet weak var lbCategory       : UILabel!
+    @IBOutlet weak var lbDistance       : UILabel!
+    @IBOutlet weak var tfSearch         : UITextField!
+    
     
 	var presenter: HomePresenterProtocol?
     
@@ -45,6 +48,7 @@ class HomeViewController: BaseViewController {
     var listCategory: [CategoryEntity] = []
     
     let scaleDropdown = DropDown()
+    
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,7 +82,7 @@ class HomeViewController: BaseViewController {
         cvHome.dataSource = self
     }
     
-    func configureTableView() {
+    private func configureTableView() {
         tbLeft.registerTableCell(MenuCell.self)
         tbRight.registerTableCell(MenuCell.self)
         tbRight.registerTableCell(AcceptCell.self)
@@ -97,15 +101,30 @@ class HomeViewController: BaseViewController {
     
     override func setUpViews() {
         setUpScaleDropdown()
+        tfSearch.delegate = self
     }
     
     private func setUpScaleDropdown() {
         scaleDropdown.anchorView = vScaleDropdown
-        scaleDropdown.dataSource = ["1km", "2km", "3km"]
+        let data = [Scale(title: "100m", distance: "100"),
+                    Scale(title: "200m", distance: "200"),
+                    Scale(title: "500m", distance: "500"),
+                    Scale(title: "1km", distance: "1000"),
+                    Scale(title: "2km", distance: "2000"),
+                    Scale(title: "5km", distance: "5000"),
+                    Scale(title: "10km", distance: "10000"),
+                    Scale(title: "50km", distance: "50000"),
+                    Scale(title: "Không giới hạn", distance: nil)]
+        scaleDropdown.dataSource = data.map({$0.title&})
         scaleDropdown.backgroundColor = AppColor.main
-        scaleDropdown.setupCornerRadius(10)
+        DropDown.appearance().setupCornerRadius(10)
         scaleDropdown.textColor = .white
         scaleDropdown.downScaleTransform = CGAffineTransform(rotationAngle: (-.pi))
+        scaleDropdown.selectionAction = { [weak self](index, item) in
+            guard let `self` = self else { return }
+            self.lbDistance.text = item
+            self.presenter?.filterRecord(param: RecordParam(radius: data[index].distance&))
+        }
     }
     
     @IBAction func hideDropdownTapped() {
@@ -308,7 +327,12 @@ extension HomeViewController: AcceptCellDelegate {
         for choose in listChoose {
             category += "\(choose.name&), "
         }
-        lbCategory.text = category
+        if category != "" {
+            lbCategory.text = category
+        } else {
+            lbCategory.text = "Tất cả danh mục"
+        }
+        
         
         let listCate = listChoose.map { (item) -> String in
             return item.id&
@@ -316,5 +340,13 @@ extension HomeViewController: AcceptCellDelegate {
         
         let param = RecordParam(id: listCate)
         presenter?.filterRecord(param: param)
+    }
+}
+
+extension HomeViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let param = RecordParam(keyword: textField.text&)
+        presenter?.filterRecord(param: param)
+        return true
     }
 }
