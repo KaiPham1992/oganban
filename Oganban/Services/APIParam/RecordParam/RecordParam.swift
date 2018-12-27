@@ -9,7 +9,7 @@
 import ObjectMapper
 
 class RecordParam: BaseParam {
-    var categoryId  : [String] = []
+    var categoryId  : [String]?
     var long        : String?
     var lat         : String?
     var isSave      : String?
@@ -31,14 +31,14 @@ class RecordParam: BaseParam {
         self.limit          <- map["limit"]
     }
     
-    init(id         : [String],
-         long       : String?,
-         lat        : String?,
-         isSave     : String?,
-         keyword    : String?,
-         radius     : String?,
-         offset     : Int?,
-         limit      : Int?) {
+    init(id         : [String]? = nil,
+         long       : String? = nil,
+         lat        : String? = nil,
+         isSave     : String? = nil,
+         keyword    : String? = nil,
+         radius     : String? = nil,
+         offset     : Int? = 0,
+         limit      : Int? = 20) {
         super.init()
         self.categoryId         = id
         self.long               = long

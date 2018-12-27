@@ -36,7 +36,7 @@ class HomeViewController: BaseViewController {
     
     var listRecord: [RecordEntity] = [] {
         didSet {
-            
+            print(listRecord)
         }
     }
     
@@ -241,7 +241,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 let cell = tableView.dequeueTableCell(MenuCell.self)
                 cell.lbTitle.text = menu[index].cateChild[indexPath.row].name
                 self.heightRight.constant = heightContent < heightMax ? tableView.contentSize.height : (heightMax)
-                cell.imgCheck.image = menu[index].cateChild[indexPath.row].isSelected ? AppImage.imgChecked : AppImage.imgCheckMenu
+                cell.isSelect = menu[index].cateChild[indexPath.row].isSelected
                 return cell
             }
             
@@ -298,5 +298,12 @@ extension HomeViewController: AcceptCellDelegate {
             category += "\(choose.name&), "
         }
         lbCategory.text = category
+        
+        var listCate = listChoose.map { (item) -> String in
+            return item.id&
+        }
+        listCate.append("13")
+        let param = RecordParam(id: listCate)
+        presenter?.filterRecord(param: param)
     }
 }
