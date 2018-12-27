@@ -30,6 +30,10 @@ extension LoginViewController: LoginViewProtocol {
             if user?.isLoggedSocial == nil {
                 self.presenter?.showSupplementaryInfoPage()
             }
+            
+            if user?.isLoggedSocial == "1" && user?.isVerified == "1" {
+                self.dismiss()
+            }
         } else {
              self.dismiss(animated: true)
         }

@@ -17,30 +17,30 @@ class MyBuyViewController: BaseViewController, MyBuyViewProtocol {
 
 	override func viewDidLoad() {
         super.viewDidLoad()
-        configTableView()
+//        configTableView()
     }
 
     func configTableView() {
-        tbMyBuy.dataSource = self
-        tbMyBuy.delegate = self
+//        tbMyBuy.dataSource = self
+//        tbMyBuy.delegate = self
         
-        tbMyBuy.registerXibFile(MyBuyCell.self)
+//        tbMyBuy.registerXibFile(MyBuyCell.self)
     }
     
 }
 
-extension MyBuyViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueTableCell(MyBuyCell.self)
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 140
-    }
-}
+//extension MyBuyViewController: UITableViewDataSource, UITableViewDelegate {
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return 1
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueTableCell(MyBuyCell.self)
+//
+//        return cell
+//    }
+//
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 140
+//    }
+//}
