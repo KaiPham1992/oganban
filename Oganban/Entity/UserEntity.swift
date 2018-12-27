@@ -27,6 +27,7 @@ struct UserEntity: Mappable {
     var rankKey: String?
     var houseAddress: String?
     var companyAddress: String?
+    var isLoggedSocial: String?
     
     init?(map: Map) {
         
@@ -48,6 +49,7 @@ struct UserEntity: Mappable {
         self.houseAddress <- map["address_1"]
         self.companyAddress <- map["address_2"]
         self.phoneCode <- map["phone_code"]
+        self.isLoggedSocial <- map["is_logged_social"]
     }
     
     init (displayName: String, phoneNumber: String,phoneCode: String, birthday: String,gender: String?, houseAddress: String?, companyAddress: String?) {

@@ -23,7 +23,11 @@ extension LoginViewController {
 
 extension LoginViewController: LoginViewProtocol {
     func didLogin(user: UserEntity?) {
-        print("SUCCESS LOGIN")
+        
+        if user?.isLoggedSocial != "1" && loginType != .normal {
+            self.presenter?.showSupplementaryInfoPage()
+        }
+        
         self.dismiss(animated: true)
     }
     

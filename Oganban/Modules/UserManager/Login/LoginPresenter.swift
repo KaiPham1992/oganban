@@ -30,8 +30,8 @@ class LoginPresenter: LoginPresenterProtocol {
         router.gotoHome()
     }
     
-    func showSupplementaryInfoPage(loginSocialParam: LoginSocialParam) {
-        router.showSupplementaryInfoPage(loginSocialParam: loginSocialParam)
+    func showSupplementaryInfoPage() {
+        router.showSupplementaryInfoPage()
     }
     
     func gotoForgotPassword() {
@@ -40,6 +40,10 @@ class LoginPresenter: LoginPresenterProtocol {
     
     func login(email: String, password: String) {
         interactor?.login(email: email, password: password)
+    }
+    
+    func loginSocial(param: LoginSocialParam) {
+        interactor?.loginSocial(param: param)
     }
     
     func updateProfile(codeVerify: String, phoneCode: String, phoneNumber: String) {
