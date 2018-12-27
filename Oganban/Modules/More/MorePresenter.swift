@@ -10,8 +10,8 @@
 
 import UIKit
 
-class MorePresenter: MorePresenterProtocol, MoreInteractorOutputProtocol {
-
+class MorePresenter: MorePresenterProtocol {
+   
     weak private var view: MoreViewProtocol?
     var interactor: MoreInteractorInputProtocol?
     private let router: MoreWireframeProtocol
@@ -21,5 +21,13 @@ class MorePresenter: MorePresenterProtocol, MoreInteractorOutputProtocol {
         self.interactor = interactor
         self.router = router
     }
+    
+    func goToPage(name: MoreRowName) {
+        router.goToPage(name: name)
+    }
 
+}
+
+extension MorePresenter: MoreInteractorOutputProtocol {
+    
 }

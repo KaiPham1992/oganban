@@ -11,6 +11,8 @@ import Alamofire
 enum CategoryEndPoint {
     case getCategory()
     case getCategoryChild(categoryId: String)
+    case getCategoryMerge()
+    case filterRecord(param: RecordParam)
 }
 
 extension CategoryEndPoint: EndPointType {
@@ -20,22 +22,28 @@ extension CategoryEndPoint: EndPointType {
             return "_api/category/get_category"
         case .getCategoryChild:
             return "_api/category/get_category_child"
+        case .getCategoryMerge:
+            return "_api/category/get_category_merge"
+        case .filterRecord:
+            return "_api/record/get_all_records_by_category"
         }
     }
     
     var httpMethod: HTTPMethod {
         switch self {
-        case .getCategory, .getCategoryChild:
+        case .getCategory, .getCategoryChild, .getCategoryMerge, .filterRecord:
             return .post
         }
     }
     
     var parameters: JSONDictionary {
         switch self {
-        case .getCategory:
+        case .getCategory, .getCategoryMerge:
             return [:]
         case .getCategoryChild(let categoryId):
             return ["category_id": categoryId]
+        case .filterRecord(let param):
+            return param.toJSON()
         }
     }
     

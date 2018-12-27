@@ -25,3 +25,36 @@ struct CategoryEntity: Mappable {
         self.key <- map["key"]
     }
 }
+
+struct CategoryMergeEntity: Mappable {
+    
+    var id: String?
+    var name: String?
+    var key: String?
+    var isSelected = false
+    var cateChild: [CategoryEntity] = []
+    
+    init?(map: Map) {
+        
+    }
+    mutating func mapping(map: Map) {
+        self.id <- map["_id"]
+        self.name <- map["name"]
+        self.key <- map["key"]
+        self.cateChild <- map["cate_child"]
+    }
+}
+
+class Menu {
+    var parentCategory: CategoryEntity
+    var listChild: [CategoryEntity]
+    init(parent: CategoryEntity, listChild: [CategoryEntity]) {
+        self.parentCategory = parent
+        self.listChild = listChild
+    }
+    
+    init(parent: CategoryEntity) {
+        self.parentCategory = parent
+        self.listChild = []
+    }
+}

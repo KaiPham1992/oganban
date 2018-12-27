@@ -21,7 +21,6 @@ extension LoginViewController {
             DispatchQueue.main.async(execute: {
                 self.fbAccountKit.getCountryCodeAndPhoneNumber(completion: { phone in
                     guard let _phone = phone as? PhoneEntity else { return }
-                    
                     switch self.loginType {
                     case .gmail:
                         break
@@ -29,6 +28,8 @@ extension LoginViewController {
                         break 
                     case .normal:
                         guard let _codeVerify = self.verifyCode, let phoneCode =  _phone.phoneCode, let phoneNum = _phone.phoneNumber else { return }
+                        
+                        
                         self.presenter?.updateProfile(codeVerify: _codeVerify, phoneCode: phoneCode , phoneNumber: phoneNum)
                         break
                     }

@@ -24,14 +24,22 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var btnHideDropdown  : UIButton!
     @IBOutlet weak var vScaleDropdown   : UIView!
     @IBOutlet weak var btnFavorite      : UIButton!
+    @IBOutlet weak var lbCategory       : UILabel!
     
 	var presenter: HomePresenterProtocol?
     
-    var menu: [Menu] = [] {
+    var menu: [CategoryMergeEntity] = [] {
         didSet {
-            self.tbLeft.reloadData()
+//            self.tbLeft.reloadData()
         }
     }
+    
+    var listRecord: [RecordEntity] = [] {
+        didSet {
+            print(listRecord)
+        }
+    }
+    
     var index = 0
     var indexCategory = 0
     var listCategory: [CategoryEntity] = []
@@ -43,7 +51,8 @@ class HomeViewController: BaseViewController {
         view.backgroundColor = .red
         configureCollectionView()
         configureTableView()
-        presenter?.getCategory()
+        presenter?.getCategoryMerge()
+        
     }
     
     override func setUpNavigation() {
@@ -71,6 +80,7 @@ class HomeViewController: BaseViewController {
     func configureTableView() {
         tbLeft.registerTableCell(MenuCell.self)
         tbRight.registerTableCell(MenuCell.self)
+        tbRight.registerTableCell(AcceptCell.self)
         tbRight.delegate = self
         tbRight.dataSource = self
         tbLeft.delegate = self
@@ -128,18 +138,27 @@ class HomeViewController: BaseViewController {
 }
 
 extension HomeViewController: HomeViewProtocol {
+    func didFilterRecord(list: [RecordEntity]) {
+        listRecord = list
+    }
+    
+    func didGetCategoryMerge(list: [CategoryMergeEntity]) {
+        menu = list
+        tbLeft.reloadData()
+    }
+    
     func getCategoryChildSuccess(list: [CategoryEntity]) {
-        menu[indexCategory].listChild = list
-        indexCategory += 1
-        self.getChild()
+//        menu[indexCategory].listChild = list
+//        indexCategory += 1
+//        self.getChild()
     }
     
     func getCategorySuccess(list: [CategoryEntity]) {
-        listCategory = list
-        menu = list.map({ (item) -> Menu in
-            return Menu(parent: item)
-        })
-        getChild()
+//        listCategory = list
+//        menu = list.map({ (item) -> Menu in
+//            return Menu(parent: item)
+//        })
+//        getChild()
     }
     
     func getChild() {
@@ -193,7 +212,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return menu.count
         case tbRight:
             if menu.count > 0 {
-                return menu[index].listChild.count
+                return menu[index].cateChild.count + 1
             } else {
                 return 0
             }
@@ -209,17 +228,23 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         switch tableView {
         case tbLeft:
             let cell = tableView.dequeueTableCell(MenuCell.self)
-            cell.lbTitle.text = menu[indexPath.row].parentCategory.name
+            cell.lbTitle.text = menu[indexPath.row].name
             self.heightLeft.constant = heightContent < heightMax ? tableView.contentSize.height : (heightMax)
             return cell
             
         case tbRight:
+            if indexPath.row == menu[index].cateChild.count {
+                let cell = tableView.dequeueTableCell(AcceptCell.self)
+                cell.delegate = self
+                return cell
+            } else {
+                let cell = tableView.dequeueTableCell(MenuCell.self)
+                cell.lbTitle.text = menu[index].cateChild[indexPath.row].name
+                self.heightRight.constant = heightContent < heightMax ? tableView.contentSize.height : (heightMax)
+                cell.isSelect = menu[index].cateChild[indexPath.row].isSelected
+                return cell
+            }
             
-            let cell = tableView.dequeueTableCell(MenuCell.self)
-            cell.lbTitle.text = menu[index].listChild[indexPath.row].name
-            self.heightRight.constant = heightContent < heightMax ? tableView.contentSize.height : (heightMax)
-            cell.imgCheck.image = menu[index].listChild[indexPath.row].isSelected ? AppImage.imgChecked : AppImage.imgCheckMenu
-            return cell
         default:
             self.heightLeft.constant = tableView.contentSize.height
             self.heightRight.constant = tableView.contentSize.height
@@ -233,10 +258,15 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             index = indexPath.row
             tbRight.reloadData()
             tbRight.isHidden = false
-            menu[index].parentCategory.isSelected = !menu[index].parentCategory.isSelected
+            menu[index].isSelected = !menu[index].isSelected
         case tbRight:
-            menu[index].listChild[indexPath.row].isSelected = !menu[index].listChild[indexPath.row].isSelected
-            tbRight.reloadRows(at: [indexPath], with: .none)
+            if indexPath.row == menu[index].cateChild.count {
+                
+            } else {
+                menu[index].cateChild[indexPath.row].isSelected = !menu[index].cateChild[indexPath.row].isSelected
+                tbRight.reloadRows(at: [indexPath], with: .none)
+            }
+           
         default:
             break
         }
@@ -257,17 +287,23 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-
-class Menu {
-    var parentCategory: CategoryEntity
-    var listChild: [CategoryEntity]
-    init(parent: CategoryEntity, listChild: [CategoryEntity]) {
-        self.parentCategory = parent
-        self.listChild = listChild
-    }
-    
-    init(parent: CategoryEntity) {
-        self.parentCategory = parent
-        self.listChild = []
+extension HomeViewController: AcceptCellDelegate {
+    func acceptTapped() {
+        hideDropdown()
+        let listChoose = menu[index].cateChild.filter { (item) -> Bool in
+            return item.isSelected
+        }
+        var category = ""
+        for choose in listChoose {
+            category += "\(choose.name&), "
+        }
+        lbCategory.text = category
+        
+        var listCate = listChoose.map { (item) -> String in
+            return item.id&
+        }
+        listCate.append("13")
+        let param = RecordParam(id: listCate)
+        presenter?.filterRecord(param: param)
     }
 }

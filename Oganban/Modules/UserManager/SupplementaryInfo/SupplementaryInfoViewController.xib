@@ -82,13 +82,13 @@
                                                 <constraint firstAttribute="width" secondItem="rpo-xd-emh" secondAttribute="height" multiplier="1:1" id="HdS-p7-9sr"/>
                                                 <constraint firstAttribute="width" constant="25" id="Yyu-0s-5jb"/>
                                             </constraints>
-                                            <state key="normal" image="check"/>
+                                            <state key="normal" image="ic_checked_term"/>
                                             <connections>
                                                 <action selector="tapCheckButton:" destination="-1" eventType="touchUpInside" id="uWF-gF-9g0"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vui lòng kiểm tra lại email hoặc mật khẩu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x85-1S-1rb">
-                                            <rect key="frame" x="63" y="537.5" width="222" height="16"/>
+                                            <rect key="frame" x="63" y="539.5" width="222" height="16"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="16" id="7b4-jM-knS"/>
                                             </constraints>
@@ -97,7 +97,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VJf-f1-aV7" customClass="OganbanCustomButton" customModule="Oganban" customModuleProvider="target">
-                                            <rect key="frame" x="97.5" y="557.5" width="153" height="40"/>
+                                            <rect key="frame" x="97.5" y="559.5" width="153" height="40"/>
                                             <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="NQ7-4O-ieU"/>
@@ -111,7 +111,7 @@
                                             </constraints>
                                         </view>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Đồng ý điều khoản sử dụng" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQM-T8-wJx">
-                                            <rect key="frame" x="55" y="498.5" width="278" height="27"/>
+                                            <rect key="frame" x="55" y="500.5" width="278" height="27"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="27" id="Qzi-nm-z4X"/>
@@ -161,7 +161,7 @@
                                         <constraint firstAttribute="height" constant="632" id="dsT-eJ-RuC"/>
                                         <constraint firstItem="fgu-TV-g7B" firstAttribute="leading" secondItem="7Ue-0Q-gZ4" secondAttribute="leading" id="h5o-qR-eeb"/>
                                         <constraint firstItem="bQM-T8-wJx" firstAttribute="leading" secondItem="rpo-xd-emh" secondAttribute="trailing" constant="15" id="hbc-RD-FAq"/>
-                                        <constraint firstItem="bQM-T8-wJx" firstAttribute="centerY" secondItem="rpo-xd-emh" secondAttribute="centerY" id="hvI-Dj-Cnx"/>
+                                        <constraint firstItem="bQM-T8-wJx" firstAttribute="centerY" secondItem="rpo-xd-emh" secondAttribute="centerY" constant="2" id="hvI-Dj-Cnx"/>
                                         <constraint firstItem="3l5-Hw-HVs" firstAttribute="top" secondItem="DvS-eZ-6fi" secondAttribute="top" constant="10" id="jpZ-ai-Px0"/>
                                         <constraint firstItem="0gT-og-ZgC" firstAttribute="top" secondItem="uRy-Dj-Eai" secondAttribute="bottom" constant="15" id="mtI-28-Fny"/>
                                         <constraint firstItem="0gT-og-ZgC" firstAttribute="trailing" secondItem="uRy-Dj-Eai" secondAttribute="trailing" id="oTw-W7-pUX"/>
@@ -205,7 +205,7 @@
         </view>
     </objects>
     <resources>
-        <image name="check" width="32" height="32"/>
         <image name="close" width="25" height="25"/>
+        <image name="ic_checked_term" width="25" height="25"/>
     </resources>
 </document>

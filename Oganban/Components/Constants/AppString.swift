@@ -63,6 +63,8 @@ struct MoreTitle {
     static let setting                = "Cài đặt"
     static let changePassword         = "Đổi mật khẩu"
     static let logout                 = "Đăng xuất"
+    static let loginSignup            = "Đăng nhập / Đăng ký"
+    static let version                = "Version"
     
 }
 
