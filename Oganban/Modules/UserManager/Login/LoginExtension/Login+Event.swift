@@ -36,6 +36,7 @@ extension LoginViewController: LoginViewProtocol {
             case "USER_IS_NOT_VERIFY":
                 print(message)
                 //hideError(isHidden: false, message:  MessageString.notVerifyUser)
+                fbAccountKit.verifyPhone()
                 break
             default:
                 break
