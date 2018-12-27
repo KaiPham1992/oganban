@@ -31,9 +31,9 @@ class SupplementaryInfoViewController: BaseViewController {
     var isCheck: Bool = false {
         didSet{
             if isCheck {
-                self.btnCheck.setImage(AppImage.imgCheck, for: .normal)
+                self.btnCheck.setImage(AppImage.imgCheckedTerm, for: .normal)
             }else {
-                self.btnCheck.setImage(AppImage.imgUnCheck, for: .normal)
+                self.btnCheck.setImage(AppImage.imgCheckTerm, for: .normal)
             }
         }
     }

@@ -12,12 +12,14 @@ import Foundation
 
 //MARK: Wireframe -
 protocol MoreWireframeProtocol: class {
+    func goToPage(name: MoreRowName)
 
 }
 //MARK: Presenter -
 protocol MorePresenterProtocol: class {
 
     var interactor: MoreInteractorInputProtocol? { get set }
+    func goToPage(name: MoreRowName)
 }
 
 //MARK: Interactor -

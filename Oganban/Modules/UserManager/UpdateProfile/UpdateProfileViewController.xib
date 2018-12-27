@@ -21,7 +21,11 @@
             <connections>
                 <outlet property="btnSave" destination="qaW-Pg-lnD" id="ecf-O6-RJ8"/>
                 <outlet property="imgAvatar" destination="WyW-Jd-GCd" id="bLZ-uT-6Eg"/>
+                <outlet property="lbCodeIntro" destination="kF8-76-oxN" id="bNO-eP-BgU"/>
                 <outlet property="lbError" destination="PFo-Od-SwZ" id="Bqp-Un-GsJ"/>
+                <outlet property="lbLevel" destination="ADg-6z-jnj" id="nZc-eb-wcl"/>
+                <outlet property="lbRateCount" destination="lAb-Sb-9UD" id="30p-Db-PHg"/>
+                <outlet property="lbRating" destination="wEs-mh-9f4" id="Oea-wA-h72"/>
                 <outlet property="scrollView" destination="t3C-Iw-SAX" id="eTM-E9-fXJ"/>
                 <outlet property="tfAddress1" destination="dFh-wI-5nZ" id="y5d-j5-gAo"/>
                 <outlet property="tfAddress2" destination="BjH-Bd-0zE" id="CY5-8e-Zpf"/>
@@ -56,13 +60,6 @@
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="t62-tj-AIM" secondAttribute="height" multiplier="1:1" id="h9X-yc-ZyO"/>
                                         <constraint firstAttribute="width" constant="25" id="y9D-dv-igD"/>
-                                    </constraints>
-                                </imageView>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gold_pro" translatesAutoresizingMaskIntoConstraints="NO" id="w8m-eg-OJ7">
-                                    <rect key="frame" x="308.5" y="34" width="49" height="12"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="11.75" id="NjO-yT-8DJ"/>
-                                        <constraint firstAttribute="width" constant="49" id="O79-Yc-OA8"/>
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="41" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEs-mh-9f4">
@@ -150,6 +147,12 @@
                                     <rect key="frame" x="15" y="487" width="345" height="50"/>
                                     <color key="backgroundColor" red="0.57647058819999997" green="0.23921568630000001" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                                 </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADg-6z-jnj">
+                                    <rect key="frame" x="320.5" y="28" width="37" height="18"/>
+                                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="15"/>
+                                    <color key="textColor" red="0.0" green="0.53333333333333333" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
@@ -165,6 +168,7 @@
                                 <constraint firstItem="Cqq-Ly-Pja" firstAttribute="trailing" secondItem="Apa-51-Mt2" secondAttribute="trailing" id="Bl6-yU-382"/>
                                 <constraint firstItem="8u3-D6-J0l" firstAttribute="height" secondItem="HYQ-b6-cUi" secondAttribute="height" id="DHy-pa-eVV"/>
                                 <constraint firstItem="8u3-D6-J0l" firstAttribute="trailing" secondItem="HYQ-b6-cUi" secondAttribute="trailing" id="FUF-oM-KvP"/>
+                                <constraint firstItem="t62-tj-AIM" firstAttribute="top" secondItem="ADg-6z-jnj" secondAttribute="bottom" constant="11.75" id="Fn9-Lh-QMx"/>
                                 <constraint firstItem="Apa-51-Mt2" firstAttribute="top" secondItem="ebE-Mb-1by" secondAttribute="bottom" constant="15" id="Fsb-eU-EUu"/>
                                 <constraint firstItem="lAb-Sb-9UD" firstAttribute="trailing" secondItem="t62-tj-AIM" secondAttribute="trailing" id="G9B-ve-Cj5"/>
                                 <constraint firstItem="bWY-Kw-W06" firstAttribute="leading" secondItem="WyW-Jd-GCd" secondAttribute="leading" id="GJw-EZ-nAQ"/>
@@ -176,14 +180,13 @@
                                 <constraint firstItem="HYQ-b6-cUi" firstAttribute="trailing" secondItem="Cqq-Ly-Pja" secondAttribute="trailing" id="PMe-lz-1Aj"/>
                                 <constraint firstItem="BjH-Bd-0zE" firstAttribute="top" secondItem="dFh-wI-5nZ" secondAttribute="bottom" constant="15" id="Pmo-eZ-svB"/>
                                 <constraint firstItem="BjH-Bd-0zE" firstAttribute="leading" secondItem="dFh-wI-5nZ" secondAttribute="leading" id="QJS-aM-icl"/>
-                                <constraint firstItem="w8m-eg-OJ7" firstAttribute="trailing" secondItem="t62-tj-AIM" secondAttribute="trailing" id="Tnd-Cc-kJM"/>
                                 <constraint firstItem="WyW-Jd-GCd" firstAttribute="top" secondItem="gwz-Mi-dgC" secondAttribute="top" constant="20" id="To0-xs-WNd"/>
                                 <constraint firstItem="Apa-51-Mt2" firstAttribute="height" secondItem="ebE-Mb-1by" secondAttribute="height" id="ToG-1a-097"/>
+                                <constraint firstItem="ADg-6z-jnj" firstAttribute="trailing" secondItem="t62-tj-AIM" secondAttribute="trailing" id="UNd-PO-8PB"/>
                                 <constraint firstItem="bWY-Kw-W06" firstAttribute="top" secondItem="WyW-Jd-GCd" secondAttribute="bottom" constant="17" id="Usc-8w-EZE"/>
                                 <constraint firstItem="dFh-wI-5nZ" firstAttribute="top" secondItem="8u3-D6-J0l" secondAttribute="bottom" constant="15" id="Vjb-MB-vYy"/>
                                 <constraint firstItem="dFh-wI-5nZ" firstAttribute="trailing" secondItem="HYQ-b6-cUi" secondAttribute="trailing" id="W2w-V0-vNP"/>
                                 <constraint firstAttribute="height" constant="780" id="Wqc-5A-D33"/>
-                                <constraint firstItem="t62-tj-AIM" firstAttribute="top" secondItem="w8m-eg-OJ7" secondAttribute="bottom" constant="11.75" id="Y9N-Mz-2yI"/>
                                 <constraint firstItem="t62-tj-AIM" firstAttribute="leading" secondItem="wEs-mh-9f4" secondAttribute="trailing" constant="10.5" id="YNU-ty-3Dr"/>
                                 <constraint firstItem="t62-tj-AIM" firstAttribute="centerY" secondItem="WyW-Jd-GCd" secondAttribute="centerY" id="Yhq-8J-gvA"/>
                                 <constraint firstAttribute="trailing" secondItem="ebE-Mb-1by" secondAttribute="trailing" constant="15" id="bhg-VB-Nqt"/>
@@ -230,7 +233,6 @@
     </objects>
     <resources>
         <image name="1024" width="1024" height="1024"/>
-        <image name="gold_pro" width="48" height="11.5"/>
         <image name="ic_star" width="12" height="12"/>
         <image name="share" width="23.5" height="25"/>
     </resources>

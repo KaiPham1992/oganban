@@ -27,4 +27,70 @@ class MoreRouter: MoreWireframeProtocol {
 
         return view
     }
+    
+    func goToPage (name: MoreRowName){
+        switch name {
+        case MoreRowName.header:
+            tapHeader()
+            print("Tap header")
+            break
+        case MoreRowName.historyCoin:
+            tapHistoryCoin()
+            print("Chọn Lịch sử ƠCoin")
+            break
+        case MoreRowName.historyBuy:
+            tapHistoryBuy()
+            print("Chọn Lịch sử mua tin")
+            break
+        case MoreRowName.policy:
+            tapMore()
+            print("Chọn Điều khoản sử dụng")
+            break
+        case MoreRowName.tutorial:
+            print("Chọn Hướng dẫn")
+            break
+        case MoreRowName.setting:
+            print("Chọn Cài đặt")
+            break
+        case MoreRowName.changePassword:
+            print("Chọn Đổi mật khẩu")
+            break
+        case MoreRowName.logout:
+            print("Chọn Đăng xuất")
+            break
+        default:
+            break
+        }
+        
+    }
+    
+    private func tapHeader(){
+        if UserDefaultHelper.shared.loginUserInfo != nil {
+            let vc = UpdateProfileRouter.createModule()
+            viewController?.navigationController?.pushViewController(vc, animated: true)
+        } else {
+            let vc = LoginRouter.createModule()
+            viewController?.present(controller: vc, animated: true)
+        }
+    }
+    
+    private func tapHistoryCoin(){
+        let vc = LoginRouter.createModule()
+        viewController?.present(controller: vc, animated: true)
+    }
+    
+    private func tapHistoryBuy(){
+        PopUpHelper.shared.showDateFollowWeekPopup(completionDate: { (date) in
+            if let date = date {
+                print("SELECTED DATE: " + date.toString(dateFormat: AppDateFormat.ddMMYYYY_VN))
+            }
+        })
+    }
+    
+    private func tapMore(){
+        let vc = SupplementaryInfoRouter.createModule()
+        vc.modalPresentationStyle = .overFullScreen
+        viewController?.present(controller: vc, animated: true)
+    }
+    
 }

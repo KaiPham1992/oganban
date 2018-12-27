@@ -23,7 +23,11 @@ extension LoginViewController {
 
 extension LoginViewController: LoginViewProtocol {
     func didLogin(user: UserEntity?) {
-        print("SUCCESS LOGIN")
+        
+        if user?.isLoggedSocial != "1" && loginType != .normal {
+            self.presenter?.showSupplementaryInfoPage()
+        }
+        
         self.dismiss(animated: true)
     }
     
@@ -36,6 +40,7 @@ extension LoginViewController: LoginViewProtocol {
             case "USER_IS_NOT_VERIFY":
                 print(message)
                 //hideError(isHidden: false, message:  MessageString.notVerifyUser)
+                fbAccountKit.verifyPhone()
                 break
             default:
                 break

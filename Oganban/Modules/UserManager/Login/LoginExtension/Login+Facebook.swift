@@ -47,7 +47,7 @@ extension LoginViewController {
                     let fbModel = FacebookEntity(json: _result)
                     
                     let newLoginSocialParam = LoginSocialParam(user: fbModel)
-                    self.presenter?.showSupplementaryInfoPage(loginSocialParam: newLoginSocialParam)
+                    self.presenter?.loginSocial(param: newLoginSocialParam)
                 }
             })
         }

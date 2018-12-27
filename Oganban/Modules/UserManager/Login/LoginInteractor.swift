@@ -30,6 +30,18 @@ class LoginInteractor: LoginInteractorInputProtocol {
         }
     }
     
+    func loginSocial(param: LoginSocialParam) {
+        ProgressView.shared.show()
+        Provider.shared.userAPIService.loginGmail(param: param, success: { user in
+            ProgressView.shared.hide()
+            guard let user = user else { return }
+            UserUtils.saveUser(user: user)
+        }) { error in
+            ProgressView.shared.hide()
+            self.presenter?.didLogin(error: error)
+        }
+    }
+    
     func updateProfile(codeVerify: String, phoneCode: String, phoneNumber: String) {
         Provider.shared.userAPIService.verifyPhone(code: codeVerify, phone: phoneNumber, phonCode: phoneCode, success: { (response) in
             self.presenter?.didUpdateProfile(response: response)

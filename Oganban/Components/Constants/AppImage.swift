@@ -47,5 +47,5 @@ struct AppImage {
     static let imgUploadPhoto = UIImage(named: "add_blue")!
     static let imgDeletePhoto = UIImage(named: "ic_close")!
     static let imgPlaceHolderImage = UIImage(named: "placeHolderImage")!
-
+    static let imgDefaultUser = UIImage(named: "defaultUser")!
 }

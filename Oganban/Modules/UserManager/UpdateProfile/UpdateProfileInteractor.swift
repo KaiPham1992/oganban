@@ -11,14 +11,17 @@
 import UIKit
 
 class UpdateProfileInteractor: UpdateProfileInteractorInputProtocol {
-
+    
     weak var presenter: UpdateProfileInteractorOutputProtocol?
     
     func updateProfile(userInfo: UserEntity) {
         ProgressView.shared.show()
         Provider.shared.userAPIService.updateProfile(param: userInfo, success: { (user) in
             ProgressView.shared.hide()
-            self.presenter?.didSuccessUpdateProfile(user: userInfo)
+            if let user = user{
+                self.presenter?.didSuccessUpdateProfile(user: user)
+                UserUtils.saveUser(user: user)
+            }
         }) { (error) in
             ProgressView.shared.hide()
             self.presenter?.didErrorUpdateProfile(error: error)
