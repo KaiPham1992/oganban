@@ -11,6 +11,22 @@
 import UIKit
 
 class HomeInteractor: HomeInteractorInputProtocol {
+    func filterRecord(param: RecordParam) {
+        Provider.shared.categoryAPIService.filterRecord(param: param, success: { (result) in
+            self.presenter?.didFilterRecord(list: result)
+        }) { (error) in
+            
+        }
+    }
+    
+    func getCategoryMerge() {
+        Provider.shared.categoryAPIService.getCategoryMerge(success: { (result) in
+            self.presenter?.didGetCategoryMerge(list: result)
+        }) { (error) in
+            
+        }
+    }
+    
     func getCategoryChild(id: String) {
         Provider.shared.categoryAPIService.getCategoryChild(categoryId: id, success: { (result) in
             self.presenter?.getCategoryChildSuccess(list: result)

@@ -13,6 +13,11 @@ class MenuCell: UITableViewCell {
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var imgCheck: UIImageView!
     
+    var isSelect = false {
+        didSet {
+            setData()
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,7 +28,17 @@ class MenuCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         selectionStyle = .none
-        lbTitle.textColor =  selected ? .yellow : .white
+//        lbTitle.textColor =  selected ? .yellow : .white
+    }
+    
+    func setData() {
+        if isSelect {
+            lbTitle.textColor = UIColor.yellow
+            imgCheck.image = AppImage.imgChecked
+        } else {
+            lbTitle.textColor = .white
+            imgCheck.image = AppImage.imgCheckMenu
+        }
     }
     
 }
