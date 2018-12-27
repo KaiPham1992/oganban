@@ -13,6 +13,7 @@ class UserUtils: NSObject {
     
     static func saveUser(user: UserEntity) {
         if !user.jwt&.isEmpty {
+            UserDefaultHelper.shared.loginUserInfo = user
             UserDefaultHelper.shared.userToken = user.jwt&
             UserDefaultHelper.shared.emailUser = user.email
         }

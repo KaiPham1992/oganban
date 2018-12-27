@@ -11,7 +11,7 @@ import UIKit
 class MoreViewController: BaseViewController, MoreViewProtocol {
     
     var presenter: MorePresenterProtocol?
-
+    
     @IBOutlet weak var tvMore: UITableView!
     
     override func viewDidLoad() {
@@ -20,7 +20,12 @@ class MoreViewController: BaseViewController, MoreViewProtocol {
         self.setTitleNavigation(title: NavigationTitle.more)
         self.registerTableView()
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tvMore.reloadData()
+    }
+    
     func registerTableView(){
         tvMore.delegate = self
         tvMore.dataSource = self
@@ -29,7 +34,6 @@ class MoreViewController: BaseViewController, MoreViewProtocol {
         tvMore.tableFooterView = UIView()
         tvMore.separatorStyle = .none
     }
-
 }
 
 extension MoreViewController: UITableViewDelegate, UITableViewDataSource
@@ -42,6 +46,7 @@ extension MoreViewController: UITableViewDelegate, UITableViewDataSource
         
         if indexPath.row == MoreRowName.header.index() {
             let cell = tableView.dequeue(MoreHeaderCell.self, for: indexPath)
+            cell.setupView()
             cell.selectionStyle = .none
             return cell
         } else {
@@ -54,44 +59,35 @@ extension MoreViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            switch indexPath.row {
-            case MoreRowName.header.index():
-                let vc = UpdateProfileRouter.createModule()
-                self.navigationController?.pushViewController(vc, animated: true)
-                break
-            case MoreRowName.historyCoin.index():
-                let vc = LoginRouter.createModule()
-                self.present(controller: vc, animated: true)
-                print("Chọn Lịch sử ƠCoin")
-                break
-            case MoreRowName.historyBuy.index():
-                PopUpHelper.shared.showDateFollowWeekPopup(completionDate: { (date) in
-                    if let date = date {
-                        print("SELECTED DATE: " + date.toString(dateFormat: AppDateFormat.ddMMYYYY_VN))
-                    }
-                })
-                print("Chọn Lịch sử mua tin")
-                break
-            case MoreRowName.policy.index():
-                PopUpHelper.shared.showUpdateQuantityBuy { (_) in
-                    //
-                }
-                print("Chọn Điều khoản sử dụng")
-                break
-            case MoreRowName.tutorial.index():
-                print("Chọn Hướng dẫn")
-                break
-            case MoreRowName.setting.index():
-                print("Chọn Cài đặt")
-                break
-            case MoreRowName.changePassword.index():
-                print("Chọn Đổi mật khẩu")
-                break
-            case MoreRowName.logout.index():
-                print("Chọn Đăng xuất")
-                break
-            default:
-                break
+        switch indexPath.row {
+        case MoreRowName.header.index():
+            presenter?.goToPage(name: .header)
+            break
+        case MoreRowName.historyCoin.index():
+            presenter?.goToPage(name: .historyCoin)
+            break
+        case MoreRowName.historyBuy.index():
+            presenter?.goToPage(name: .historyBuy)
+            break
+        case MoreRowName.policy.index():
+            presenter?.goToPage(name: .policy)
+            break
+        case MoreRowName.tutorial.index():
+            presenter?.goToPage(name: .tutorial)
+            break
+        case MoreRowName.setting.index():
+            presenter?.goToPage(name: .setting)
+            break
+        case MoreRowName.changePassword.index():
+            presenter?.goToPage(name: .changePassword)
+            break
+        case MoreRowName.logout.index():
+            if UserDefaultHelper.shared.loginUserInfo != nil {
+                presenter?.goToPage(name: .logout)
+            } 
+            break
+        default:
+            break
         }
     }
     
@@ -101,8 +97,13 @@ extension MoreViewController: UITableViewDelegate, UITableViewDataSource
         }
         return 52
     }
-
+    
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        
+       if UserDefaultHelper.shared.loginUserInfo == nil {
+
+        return 0
+        }
         return 4
     }
 }

@@ -10,19 +10,38 @@ import UIKit
 
 class MoreCell: UITableViewCell {
 
+    @IBOutlet weak var imgIcon: UIImageView!
+    @IBOutlet weak var vTopLine: UIView!
+    @IBOutlet weak var vBottomLine: UIView!
     @IBOutlet weak var lbTitle: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        lbTitle.textColor = AppColor.gray_65_65_65
+        vBottomLine.isHidden = false
+        imgIcon.isHidden = false
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    }
+    
+    func showLogout(){
+        if UserDefaultHelper.shared.loginUserInfo != nil {
+            lbTitle.textColor = AppColor.gray_65_65_65
+            lbTitle.text = MoreTitle.logout
+            vBottomLine.isHidden = false
+            imgIcon.isHidden = false
+        } else {
+            lbTitle.textColor = AppColor.gray_200_200_200
+            lbTitle.text = MoreTitle.version + " 1.0"
+            vBottomLine.isHidden = true
+            imgIcon.isHidden = true
+        }
     }
     
     func showData(index: Int){
+        
         switch index {
         case MoreRowName.historyCoin.index():
             lbTitle.text = MoreTitle.historyCoin
@@ -43,7 +62,7 @@ class MoreCell: UITableViewCell {
             lbTitle.text = MoreTitle.changePassword
             break
         case MoreRowName.logout.index():
-            lbTitle.text = MoreTitle.logout
+            self.showLogout()
             break
         default:
             break

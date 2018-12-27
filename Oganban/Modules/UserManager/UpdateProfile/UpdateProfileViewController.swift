@@ -14,6 +14,11 @@ class UpdateProfileViewController: BaseViewController {
 
 	var presenter: UpdateProfilePresenterProtocol?
     
+    
+    @IBOutlet weak var lbCodeIntro: UILabel!
+    @IBOutlet weak var lbRateCount: UILabel!
+    @IBOutlet weak var lbRating: UILabel!
+    @IBOutlet weak var lbLevel: UILabel!
     @IBOutlet weak var lbError: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imgAvatar: UIImageView!
@@ -39,11 +44,29 @@ class UpdateProfileViewController: BaseViewController {
         textFieldDidBeginEditing()
         hideError()
         addGesture()
+        setDefaultData()
     }
     
     func hideError(isHidden: Bool = true, message: String? = nil){
         lbError.isHidden = isHidden
         lbError.text = message ?? ""
+    }
+    
+    func setDefaultData(){
+        if let user = UserDefaultHelper.shared.loginUserInfo {
+            if let countRating = user.countRating{
+                lbRateCount.text = countRating + " đánh giá"
+            }
+            if let pointRatingAvg = user.pointRatingAvg, let pointRating = Float(pointRatingAvg) {
+                lbRating.text =  String(format: "%.1f", pointRating)
+            }
+            if let urlString = user.imgCropSrc, let url = URL(string: BASE_URL_IMAGE + urlString) {
+                imgAvatar.sd_setImage(with: url , placeholderImage: AppImage.imgDefaultUser)
+            }
+            tfUsername.tfContent.text = user.email
+            lbCodeIntro.text = user.codeIntro
+            lbLevel.text = user.level
+        }
     }
 }
 

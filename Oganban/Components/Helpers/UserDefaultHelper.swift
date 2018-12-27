@@ -9,6 +9,7 @@ import UIKit
 import GoogleMaps
 
 enum UserDefaultHelperKey: String {
+    case loginUserInfo = "LoginUserInfo"
     case deviceToken = "DeviceToken"
     case fcmToken = "FcmToken"
     case lat = "LatUser"
@@ -21,6 +22,23 @@ class UserDefaultHelper {
     static let shared = UserDefaultHelper()
     private let userDefaultManager = UserDefaults.standard
     
+    var loginUserInfo: UserEntity? {
+        get {
+            if let savedUser = UserDefaults.standard.object(forKey: UserDefaultHelperKey.loginUserInfo.rawValue) as? Data {
+                let decoder = JSONDecoder()
+                if let user = try? decoder.decode(UserEntity.self, from: savedUser) {
+                    return user
+                }
+            }
+            return nil
+        }
+        set(loginUserInfo) {
+            let encoder = JSONEncoder()
+            if let encoded = try? encoder.encode(loginUserInfo) {
+                UserDefaults.standard.set(encoded, forKey: UserDefaultHelperKey.loginUserInfo.rawValue)
+            }
+        }
+    }
     
     var userToken: String? {
         get {

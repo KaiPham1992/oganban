@@ -40,6 +40,7 @@ struct AppColor {
     static let black = UIColor.black
     static let green005800 = #colorLiteral(red: 0, green: 0.3450980392, blue: 0, alpha: 1)
     static let blue3A559F = #colorLiteral(red: 0.2274509804, green: 0.3333333333, blue: 0.6235294118, alpha: 1)
+    static let blue_0_136_241 = UIColor(red: 0/255.0, green: 136/255.0, blue: 241/255.0, alpha: 1.0)
     static let redD51F1F = #colorLiteral(red: 0.8352941176, green: 0.1215686275, blue: 0.1215686275, alpha: 1)
     static let grey9E9E9E = #colorLiteral(red: 0.6196078431, green: 0.6196078431, blue: 0.6196078431, alpha: 1)
     static let black414141 = #colorLiteral(red: 0.2549019608, green: 0.2549019608, blue: 0.2549019608, alpha: 1)
