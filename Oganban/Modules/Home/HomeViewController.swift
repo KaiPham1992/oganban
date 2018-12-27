@@ -36,7 +36,7 @@ class HomeViewController: BaseViewController {
     
     var listRecord: [RecordEntity] = [] {
         didSet {
-            print(listRecord)
+            self.cvHome.reloadData()
         }
     }
     
@@ -52,6 +52,7 @@ class HomeViewController: BaseViewController {
         configureCollectionView()
         configureTableView()
         presenter?.getCategoryMerge()
+        presenter?.filterRecord(param: RecordParam())
         
     }
     
@@ -172,10 +173,10 @@ extension HomeViewController: HomeViewProtocol {
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 10
+        return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 11
+        return listRecord.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -184,6 +185,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
             return cell
         } else {
             let cell = collectionView.dequeueCollectionCell(HomeCell.self, indexPath: indexPath)
+            cell.setData(record: listRecord[indexPath.row - 1])
             return cell
         }
     }
@@ -290,8 +292,17 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 extension HomeViewController: AcceptCellDelegate {
     func acceptTapped() {
         hideDropdown()
+       
         let listChoose = menu[index].cateChild.filter { (item) -> Bool in
             return item.isSelected
+        }
+        
+        for temp in 0...menu.count - 1 {
+            if temp != index {
+                for indexCate in 0...menu[temp].cateChild.count - 1 {
+                    menu[temp].cateChild[indexCate].isSelected = false
+                }
+            }
         }
         var category = ""
         for choose in listChoose {
@@ -299,10 +310,10 @@ extension HomeViewController: AcceptCellDelegate {
         }
         lbCategory.text = category
         
-        var listCate = listChoose.map { (item) -> String in
+        let listCate = listChoose.map { (item) -> String in
             return item.id&
         }
-        listCate.append("13")
+        
         let param = RecordParam(id: listCate)
         presenter?.filterRecord(param: param)
     }
