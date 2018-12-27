@@ -18,7 +18,7 @@ protocol SupplementaryInfoWireframeProtocol: class {
 protocol SupplementaryInfoPresenterProtocol: class {
     
     var interactor: SupplementaryInfoInteractorInputProtocol? { get set }
-    func loginSocial(socialParam: LoginSocialParam)
+    func updateLoginSocial(socialParam: UpdateProfileSocial)
 }
 
 //MARK: Interactor -
@@ -34,7 +34,7 @@ protocol SupplementaryInfoInteractorInputProtocol: class {
     var presenter: SupplementaryInfoInteractorOutputProtocol?  { get set }
     
     /* Presenter -> Interactor */
-    func loginSocial(socialParam: LoginSocialParam)
+    func updateLoginSocial(socialParam: UpdateProfileSocial)
 }
 
 //MARK: View -

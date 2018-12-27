@@ -304,6 +304,7 @@
 		DEE1DA8021CE39180036FEB7 /* GADBannerView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1DA7F21CE39180036FEB7 /* GADBannerView+extension.swift */; };
 		DEE7306D21CFDA1700F20D68 /* OrderDetail+PostComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE7306C21CFDA1700F20D68 /* OrderDetail+PostComment.swift */; };
 		DEE7306F21CFDAA300F20D68 /* OrderDetail+Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE7306E21CFDAA300F20D68 /* OrderDetail+Table.swift */; };
+		DEF9AA3821D501CE001334EB /* UpdateProfileSocial.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF9AA3721D501CE001334EB /* UpdateProfileSocial.swift */; };
 		ECFA8430691B731FD6198935 /* Pods_Oganban.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667005DBAD7815A5AA16289A /* Pods_Oganban.framework */; };
 /* End PBXBuildFile section */
 
@@ -616,6 +617,7 @@
 		DEE1DA7F21CE39180036FEB7 /* GADBannerView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GADBannerView+extension.swift"; sourceTree = "<group>"; };
 		DEE7306C21CFDA1700F20D68 /* OrderDetail+PostComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrderDetail+PostComment.swift"; sourceTree = "<group>"; };
 		DEE7306E21CFDAA300F20D68 /* OrderDetail+Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrderDetail+Table.swift"; sourceTree = "<group>"; };
+		DEF9AA3721D501CE001334EB /* UpdateProfileSocial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileSocial.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1301,6 +1303,7 @@
 			children = (
 				DE21823221CD45F300FDD9F1 /* LoginSocialParam.swift */,
 				B35F529721D276A000D3FA30 /* SignUpParam.swift */,
+				DEF9AA3721D501CE001334EB /* UpdateProfileSocial.swift */,
 			);
 			path = UserParam;
 			sourceTree = "<group>";
@@ -1637,6 +1640,9 @@
 						CreatedOnToolsVersion = 10.0;
 						LastSwiftMigration = 1010;
 						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -1877,6 +1883,7 @@
 				CB172C9521C6A2EF0068CF92 /* ConstantStoryboard.swift in Sources */,
 				CB172C9921C6A2EF0068CF92 /* BaseViewController.swift in Sources */,
 				DE442C3021CF93750051C0B8 /* CommonAPIService.swift in Sources */,
+				DEF9AA3821D501CE001334EB /* UpdateProfileSocial.swift in Sources */,
 				84421C0821CBF52900F468F5 /* SupplementaryInfoRouter.swift in Sources */,
 				CB172C1621C6A2EF0068CF92 /* Bundle+extension.swift in Sources */,
 				DE21826C21CD473100FDD9F1 /* KActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
@@ -1991,7 +1998,6 @@
 				8432074E21CF529D00A4F11E /* DateFollowWeekCell.swift in Sources */,
 				CB172C1B21C6A2EF0068CF92 /* Bool+extension.swift in Sources */,
 				DEE1DA7C21CE2E410036FEB7 /* PopUpUpdateQuantityBuyContent.swift in Sources */,
-				CBA98CCD21C8CCAA00BF0EE1 /* MyBuyProtocols.swift in Sources */,
 				CB172C2921C6A2EF0068CF92 /* Utils.swift in Sources */,
 				CB172C1E21C6A2EF0068CF92 /* UISearchBar+extension.swift in Sources */,
 				84A92BFA21CA555900148191 /* LoginInteractor.swift in Sources */,
@@ -2067,7 +2073,6 @@
 				DEE1DA5821CDE6610036FEB7 /* PopUpSelectDateContent.swift in Sources */,
 				84A92BF621CA555900148191 /* LoginPresenter.swift in Sources */,
 				CB172C1021C6A2EF0068CF92 /* Int+extension.swift in Sources */,
-				CBA98CCB21C8CCAA00BF0EE1 /* MyBuyRouter.swift in Sources */,
 				CB172C1121C6A2EF0068CF92 /* UIWindow+extension.swift in Sources */,
 				B3E67E9C21CF41260012546F /* DropdownPhoneCell.swift in Sources */,
 				CB172C9621C6A2EF0068CF92 /* AppColor.swift in Sources */,

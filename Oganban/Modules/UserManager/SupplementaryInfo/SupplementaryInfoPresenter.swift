@@ -22,8 +22,8 @@ class SupplementaryInfoPresenter: SupplementaryInfoPresenterProtocol  {
         self.router = router
     }
     
-    func loginSocial(socialParam: LoginSocialParam) {
-        interactor?.loginSocial(socialParam: socialParam)
+    func updateLoginSocial(socialParam: UpdateProfileSocial) {
+        interactor?.updateLoginSocial(socialParam: socialParam)
     }
 
 }

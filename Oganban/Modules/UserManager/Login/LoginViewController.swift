@@ -56,8 +56,7 @@ class LoginViewController: BaseViewController {
     }
     
     @IBAction func btnForgotPasswordTapped() {
-//        presenter?.gotoForgotPassword()
-        fbAccountKit.verifyPhone()
+        presenter?.gotoForgotPassword()
     }
 }
 

@@ -25,6 +25,8 @@ protocol UserAPIServiceProtocol {
     func signUp(param: SignUpParam, success: @escaping SuccessHandler<UserEntity>.object, failure: @escaping RequestFailure)
     
      func updateProfile(param: UserEntity, success: @escaping SuccessHandler<UserEntity>.object, failure: @escaping RequestFailure)
+    
+    func updateProfileSocial(param: UpdateProfileSocial, success: @escaping SuccessHandler<UserEntity>.object, failure: @escaping RequestFailure)
 }
 
 class UserAPIService: UserAPIServiceProtocol {
@@ -86,6 +88,11 @@ class UserAPIService: UserAPIServiceProtocol {
     func verifyPhone(code: String, phone: String, phonCode: String, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure) {
         let endPoint = UserEndPoint.verifyPhone(code: code, phone: phone, phoneCode: phonCode)
         network.requestData(endPoint: endPoint, success: MapperData.mapNoData(success), failure: failure)
+    }
+    
+    func updateProfileSocial(param: UpdateProfileSocial, success: @escaping SuccessHandler<UserEntity>.object, failure: @escaping RequestFailure) {
+        let endPoint = UserEndPoint.updateProfileSocial(param: param)
+        network.requestData(endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
     }
     
     
