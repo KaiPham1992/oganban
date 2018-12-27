@@ -12,7 +12,7 @@ import UIKit
 
 class MyBuyViewController: BaseViewController, MyBuyViewProtocol {
 
-//    @IBOutlet weak var tbMyBuy: UITableView!
+    @IBOutlet weak var tbMyBuy: UITableView!
 	var presenter: MyBuyPresenterProtocol?
 
 	override func viewDidLoad() {
@@ -21,26 +21,26 @@ class MyBuyViewController: BaseViewController, MyBuyViewProtocol {
     }
 
     func configTableView() {
-//        tbMyBuy.dataSource = self
-//        tbMyBuy.delegate = self
+        tbMyBuy.dataSource = self
+        tbMyBuy.delegate = self
         
-//        tbMyBuy.registerXibFile(MyBuyCell.self)
+        tbMyBuy.registerXibFile(MyBuyCell.self)
     }
     
 }
 
-//extension MyBuyViewController: UITableViewDataSource, UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 1
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-////        let cell = tableView.dequeueTableCell(MyBuyCell.self)
-//
-//        return cell
-//    }
-//
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 140
-//    }
-//}
+extension MyBuyViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueTableCell(MyBuyCell.self)
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 140
+    }
+}

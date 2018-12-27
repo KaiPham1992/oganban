@@ -58,3 +58,13 @@ class Menu {
         self.listChild = []
     }
 }
+
+class Scale {
+    var title: String?
+    var distance: String?
+    
+    init(title: String, distance: String?) {
+        self.title = title
+        self.distance = distance
+    }
+}

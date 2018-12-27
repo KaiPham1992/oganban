@@ -38,7 +38,7 @@ class RecordParam: BaseParam {
          keyword    : String? = nil,
          radius     : String? = nil,
          offset     : Int? = 0,
-         limit      : Int? = 20) {
+         limit      : Int? = 50) {
         super.init()
         self.categoryId         = id
         self.long               = long
