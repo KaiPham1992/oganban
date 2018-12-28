@@ -27,6 +27,7 @@ struct UserEntity: Mappable, Codable {
     var rankKey: String?
     var houseAddress: String?
     var companyAddress: String?
+    var isLoggedSocial: String?
     var imgCropSrc: String?
     var codeIntro: String?
     var pointRatingAvg: String?
@@ -34,6 +35,7 @@ struct UserEntity: Mappable, Codable {
     var level: String?
     var languageCode: String?
     var isVerified: String?
+    var socialImage: String?
     
     init?(map: Map) {
         
@@ -62,7 +64,9 @@ struct UserEntity: Mappable, Codable {
         self.rankKey <- map["rank_key"]
         self.houseAddress <- map["address_1"]
         self.companyAddress <- map["address_2"]
-        
+        self.phoneCode <- map["phone_code"]
+        self.isLoggedSocial <- map["is_logged_social"]
+        self.socialImage <- map["social_img_src"]
     }
     
     init (displayName: String, phoneNumber: String,phoneCode: String, birthday: String,gender: String?, houseAddress: String?, companyAddress: String?) {

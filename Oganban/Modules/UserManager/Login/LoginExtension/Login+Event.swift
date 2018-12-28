@@ -23,8 +23,20 @@ extension LoginViewController {
 
 extension LoginViewController: LoginViewProtocol {
     func didLogin(user: UserEntity?) {
-        print("SUCCESS LOGIN")
-        self.dismiss(animated: true)
+        guard let _user = user else { return }
+        UserUtils.saveUser(user: _user)
+        
+        if loginType != .normal {
+            if user?.isLoggedSocial == nil {
+                self.presenter?.showSupplementaryInfoPage()
+            }
+            
+            if user?.isLoggedSocial == "1" && user?.isVerified == "1" {
+                self.dismiss()
+            }
+        } else {
+             self.dismiss(animated: true)
+        }
     }
     
     func didError(error: APIError?) {
@@ -34,8 +46,7 @@ extension LoginViewController: LoginViewProtocol {
                 hideError(isHidden: false, message:  MessageString.invalidLoginEmailPassword)
                 break
             case "USER_IS_NOT_VERIFY":
-                print(message)
-                //hideError(isHidden: false, message:  MessageString.notVerifyUser)
+                self.verifyCode = error?.codeVerify
                 fbAccountKit.verifyPhone()
                 break
             default:

@@ -38,8 +38,8 @@ class FBAccountKit: NSObject {
         accountKit.requestAccount {
             (account, error) -> Void in
             
-            guard let phoneNumber = account?.phoneNumber?.phoneNumber, let phoneCode = account?.phoneNumber?.countryCode else { return }
             
+            guard let phoneNumber = account?.phoneNumber?.phoneNumber, let phoneCode = account?.phoneNumber?.countryCode else { return }
             let phone = PhoneEntity(phoneNumber: phoneNumber, phoneCode: phoneCode)
             
             completion(phone)

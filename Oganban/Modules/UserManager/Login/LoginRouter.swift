@@ -39,8 +39,8 @@ class LoginRouter: LoginWireframeProtocol {
         viewController?.navigationController?.pushViewController(HomeVC, animated: true)
     }
     
-    func showSupplementaryInfoPage(loginSocialParam: LoginSocialParam) {
-        let vc = SupplementaryInfoRouter.createModule(loginSocialParam: loginSocialParam)
+    func showSupplementaryInfoPage() {
+        let vc = SupplementaryInfoRouter.createModule()
         vc.modalPresentationStyle = .overFullScreen
         viewController?.present(controller: vc, animated: true)
     }

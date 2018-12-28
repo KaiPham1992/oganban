@@ -12,12 +12,12 @@ import UIKit
 
 class MyBuyViewController: BaseViewController, MyBuyViewProtocol {
 
-//    @IBOutlet weak var tbMyBuy: UITableView!
+    @IBOutlet weak var tbMyBuy: UITableView!
 	var presenter: MyBuyPresenterProtocol?
 
 	override func viewDidLoad() {
         super.viewDidLoad()
-        configTableView()
+//        configTableView()
     }
 
     func configTableView() {
@@ -35,7 +35,7 @@ class MyBuyViewController: BaseViewController, MyBuyViewProtocol {
 //    }
 //
 //    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-////        let cell = tableView.dequeueTableCell(MyBuyCell.self)
+//        let cell = tableView.dequeueTableCell(MyBuyCell.self)
 //
 //        return cell
 //    }

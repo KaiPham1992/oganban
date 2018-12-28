@@ -27,20 +27,4 @@ class SupplementaryInfoRouter: SupplementaryInfoWireframeProtocol {
 
         return view
     }
-    
-    static func createModule(loginSocialParam: LoginSocialParam) -> SupplementaryInfoViewController {
-        // Change to get view from storyboard if not using progammatic UI
-        let view = SupplementaryInfoViewController.initFromNib()
-        let interactor = SupplementaryInfoInteractor()
-        let router = SupplementaryInfoRouter()
-        let presenter = SupplementaryInfoPresenter(interface: view, interactor: interactor, router: router)
-        
-        view.presenter = presenter
-        interactor.presenter = presenter
-        router.viewController = view
-        
-        view.loginSocialParam = loginSocialParam
-        
-        return view
-    }
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class MoreHeaderCell: UITableViewCell {
     
@@ -53,6 +54,10 @@ class MoreHeaderCell: UITableViewCell {
         lbLevel.text = user.level
         
         if let urlString = user.imgCropSrc, let url = URL(string: BASE_URL_IMAGE + urlString) {
+            ivAvatar.sd_setImage(with: url , placeholderImage: AppImage.imgDefaultUser)
+        }
+        
+        if let urlString = user.socialImage, let url = URL(string: urlString) {
             ivAvatar.sd_setImage(with: url , placeholderImage: AppImage.imgDefaultUser)
         }
         

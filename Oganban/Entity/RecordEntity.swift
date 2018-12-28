@@ -22,6 +22,10 @@ class RecordEntity: BaseEntity {
     var totalRating: String?
     var avgRating: String?
     var imgSrcAccount: String?
+    var createTime: String?
+    var distance: String?
+    var imgSrc: String?
+    var level: String?
     
     required init?(map: Map) {
         super.init()
@@ -40,5 +44,10 @@ class RecordEntity: BaseEntity {
         self.totalRating <- map["total_rating"]
         self.avgRating <- map["avg_rating"]
         self.imgSrcAccount <- map["img_src_account"]
+        self.createTime <- map["create_time_mi"]
+        self.distance <- map["distance"]
+        self.imgSrc <- map["img_src"]
+        self.level <- map["level"]
+        
     }
 }

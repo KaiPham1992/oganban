@@ -27,6 +27,8 @@ enum UserEndPoint {
     case getPointHistory()
     case addFavorite(type: String, projectId: String)
     case addFavoriteStaff(type: String, staffID: String)
+    
+    case updateProfileSocial(param: UpdateProfileSocial)
 }
 
 extension UserEndPoint: EndPointType {
@@ -60,7 +62,8 @@ extension UserEndPoint: EndPointType {
             return "point/point_list_log"
         case .addFavorite, .addFavoriteStaff:
             return "user/add_favorite"
-            
+        case .updateProfileSocial:
+            return "_api/user/update_profile_social"
         }
     }
     
@@ -70,7 +73,7 @@ extension UserEndPoint: EndPointType {
             return .post
         case .getCaptcha, .getIntroduceList:
             return .get
-        case .changePassword, .updateProfile:
+        case .changePassword, .updateProfile, .updateProfileSocial:
             return .put
         }
     }
@@ -140,6 +143,9 @@ extension UserEndPoint: EndPointType {
             let param = ["type": type,
                          "sale_id": staffID] as [String: Any]
             return param
+            
+        case .updateProfileSocial(let param):
+            return param.toJSON()
         }
     }
     

@@ -22,14 +22,12 @@ extension LoginViewController {
                 self.fbAccountKit.getCountryCodeAndPhoneNumber(completion: { phone in
                     guard let _phone = phone as? PhoneEntity else { return }
                     switch self.loginType {
-                    case .gmail:
-                        break
-                    case .facebook:
-                        break 
+                    case .gmail, .facebook:
+                        guard let _codeVerify = self.verifyCode, let phoneCode =  _phone.phoneCode, let phoneNum = _phone.phoneNumber else { return }
+                        self.presenter?.updateProfile(codeVerify: _codeVerify, phoneCode: phoneCode , phoneNumber: phoneNum)
+                        self.dismiss()
                     case .normal:
                         guard let _codeVerify = self.verifyCode, let phoneCode =  _phone.phoneCode, let phoneNum = _phone.phoneNumber else { return }
-                        
-                        
                         self.presenter?.updateProfile(codeVerify: _codeVerify, phoneCode: phoneCode , phoneNumber: phoneNum)
                         break
                     }
