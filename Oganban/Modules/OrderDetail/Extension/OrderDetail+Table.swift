@@ -17,6 +17,7 @@ extension OrderDetailViewController: UITableViewDelegate, UITableViewDataSource 
         tbDetail.registerXibFile(AddressCell.self)
         tbDetail.registerXibFile(SubCommentCell.self)
         tbDetail.registerXibFile(ReplyCommentCell.self)
+        tbDetail.registerXibFile(OrderDetailImageCell.self)
         tbDetail.separatorStyle = .none
         
         tbDetail.rowHeight = UITableView.automaticDimension
@@ -30,7 +31,11 @@ extension OrderDetailViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         switch indexPath.section {
-        case OrderDetailInfoType.infoProduct.rawValue, OrderDetailInfoType.intro.rawValue, OrderDetailInfoType.infoSaler.rawValue, OrderDetailInfoType.address.rawValue:
+        case OrderDetailInfoType.infoProduct.rawValue:
+            let cell = tbDetail.dequeue(OrderDetailImageCell.self, for: indexPath)
+            
+            return cell
+        case OrderDetailInfoType.intro.rawValue, OrderDetailInfoType.infoSaler.rawValue, OrderDetailInfoType.address.rawValue:
             let cell = tbDetail.dequeue(AddressCell.self, for: indexPath)
             
             return cell

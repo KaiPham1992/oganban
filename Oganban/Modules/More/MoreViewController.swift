@@ -113,7 +113,8 @@ extension MoreViewController: UITableViewDelegate, UITableViewDataSource
                 return
             }
             if indexPath.row == MoreRowName.logout.index(){
-                presenter?.goToPage(name: .logout)
+//                presenter?.goToPage(name: .logout)
+                presenter?.logout()
                 return
             }
         }

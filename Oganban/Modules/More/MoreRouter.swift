@@ -58,6 +58,7 @@ class MoreRouter: MoreWireframeProtocol {
             break
         case MoreRowName.logout:
             print("Chọn Đăng xuất")
+            
             break
         default:
             break
@@ -76,7 +77,12 @@ class MoreRouter: MoreWireframeProtocol {
     }
     
     private func tapHistoryCoin(){
-      
+        if UserDefaultHelper.shared.loginUserInfo != nil {
+            //Goto histotyCoin
+        } else {
+            let vc = LoginRouter.createModule()
+            viewController?.present(controller: vc, animated: true)
+        }
     }
     
     private func tapHistoryBuy(){
