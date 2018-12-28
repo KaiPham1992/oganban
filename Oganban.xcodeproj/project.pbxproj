@@ -278,6 +278,14 @@
 		DE442C6521CFBDA40051C0B8 /* HeaderOrderDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE442C6421CFBDA40051C0B8 /* HeaderOrderDetail.xib */; };
 		DE442C6B21CFC1BD0051C0B8 /* ReplyCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE442C6921CFC1BD0051C0B8 /* ReplyCommentCell.swift */; };
 		DE442C6C21CFC1BD0051C0B8 /* ReplyCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE442C6A21CFC1BD0051C0B8 /* ReplyCommentCell.xib */; };
+		DEA3A08821D6738200643296 /* AppImageSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3A08621D6738100643296 /* AppImageSlide.swift */; };
+		DEA3A08921D6738200643296 /* AppImageSlide.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEA3A08721D6738100643296 /* AppImageSlide.xib */; };
+		DEA3A08D21D674A200643296 /* PreviewPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3A08B21D674A200643296 /* PreviewPhotoViewController.swift */; };
+		DEA3A08E21D674A200643296 /* PreviewPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEA3A08C21D674A200643296 /* PreviewPhotoViewController.xib */; };
+		DEA3A09221D679A000643296 /* OrderDetailImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3A09021D679A000643296 /* OrderDetailImageCell.swift */; };
+		DEA3A09321D679A000643296 /* OrderDetailImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEA3A09121D679A000643296 /* OrderDetailImageCell.xib */; };
+		DEA3A09521D67B1300643296 /* BannerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3A09421D67B1300643296 /* BannerEntity.swift */; };
+		DEA3A09821D67ECE00643296 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3A09721D67ECE00643296 /* PaddingLabel.swift */; };
 		DEC5166221CE8DB600A17CBF /* PopUpSettingGPS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC5166121CE8DB600A17CBF /* PopUpSettingGPS.swift */; };
 		DEC5166421CE8DCD00A17CBF /* PopUpSettingGPSContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC5166321CE8DCD00A17CBF /* PopUpSettingGPSContent.swift */; };
 		DEC5166621CE8DDF00A17CBF /* PopUpSettingGPSContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEC5166521CE8DDF00A17CBF /* PopUpSettingGPSContent.xib */; };
@@ -593,6 +601,14 @@
 		DE442C6421CFBDA40051C0B8 /* HeaderOrderDetail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderOrderDetail.xib; sourceTree = "<group>"; };
 		DE442C6921CFC1BD0051C0B8 /* ReplyCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyCommentCell.swift; sourceTree = "<group>"; };
 		DE442C6A21CFC1BD0051C0B8 /* ReplyCommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReplyCommentCell.xib; sourceTree = "<group>"; };
+		DEA3A08621D6738100643296 /* AppImageSlide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppImageSlide.swift; sourceTree = "<group>"; };
+		DEA3A08721D6738100643296 /* AppImageSlide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppImageSlide.xib; sourceTree = "<group>"; };
+		DEA3A08B21D674A200643296 /* PreviewPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewPhotoViewController.swift; sourceTree = "<group>"; };
+		DEA3A08C21D674A200643296 /* PreviewPhotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreviewPhotoViewController.xib; sourceTree = "<group>"; };
+		DEA3A09021D679A000643296 /* OrderDetailImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailImageCell.swift; sourceTree = "<group>"; };
+		DEA3A09121D679A000643296 /* OrderDetailImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderDetailImageCell.xib; sourceTree = "<group>"; };
+		DEA3A09421D67B1300643296 /* BannerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerEntity.swift; sourceTree = "<group>"; };
+		DEA3A09721D67ECE00643296 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		DEC5166121CE8DB600A17CBF /* PopUpSettingGPS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpSettingGPS.swift; sourceTree = "<group>"; };
 		DEC5166321CE8DCD00A17CBF /* PopUpSettingGPSContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpSettingGPSContent.swift; sourceTree = "<group>"; };
 		DEC5166521CE8DDF00A17CBF /* PopUpSettingGPSContent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpSettingGPSContent.xib; sourceTree = "<group>"; };
@@ -698,6 +714,8 @@
 		84A92BE921CA50F000148191 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				DEA3A09621D67EBB00643296 /* PaddingLabel */,
+				DEA3A08521D6738100643296 /* AppImageSlide */,
 				DE442C4321CFA33D0051C0B8 /* PostCommentView */,
 				B3E67E9421CF3EE20012546F /* PhoneNumber */,
 				DEC5166721CE980E00A17CBF /* AppCollectionPhoto */,
@@ -1288,6 +1306,7 @@
 				B392FB3421D3AE970076A7B5 /* CategoryEntity.swift */,
 				DE0DBAEC21D3B7380097E38F /* NotificationEntity.swift */,
 				B392FB4221D3E93E0076A7B5 /* RecordEntity.swift */,
+				DEA3A09421D67B1300643296 /* BannerEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1432,6 +1451,7 @@
 		DE442C4821CFAAA90051C0B8 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				DEA3A08F21D6797D00643296 /* OrderDetailImageCell */,
 				DE442C6621CFC18B0051C0B8 /* ReplyComentCell */,
 				DE442C6121CFBD7C0051C0B8 /* HeaderOrderDetail */,
 				DE442C5A21CFB9000051C0B8 /* AddressCell */,
@@ -1485,6 +1505,42 @@
 				DE442C6A21CFC1BD0051C0B8 /* ReplyCommentCell.xib */,
 			);
 			path = ReplyComentCell;
+			sourceTree = "<group>";
+		};
+		DEA3A08521D6738100643296 /* AppImageSlide */ = {
+			isa = PBXGroup;
+			children = (
+				DEA3A08A21D674A200643296 /* PreviewPhoto */,
+				DEA3A08621D6738100643296 /* AppImageSlide.swift */,
+				DEA3A08721D6738100643296 /* AppImageSlide.xib */,
+			);
+			path = AppImageSlide;
+			sourceTree = "<group>";
+		};
+		DEA3A08A21D674A200643296 /* PreviewPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				DEA3A08B21D674A200643296 /* PreviewPhotoViewController.swift */,
+				DEA3A08C21D674A200643296 /* PreviewPhotoViewController.xib */,
+			);
+			path = PreviewPhoto;
+			sourceTree = "<group>";
+		};
+		DEA3A08F21D6797D00643296 /* OrderDetailImageCell */ = {
+			isa = PBXGroup;
+			children = (
+				DEA3A09021D679A000643296 /* OrderDetailImageCell.swift */,
+				DEA3A09121D679A000643296 /* OrderDetailImageCell.xib */,
+			);
+			path = OrderDetailImageCell;
+			sourceTree = "<group>";
+		};
+		DEA3A09621D67EBB00643296 /* PaddingLabel */ = {
+			isa = PBXGroup;
+			children = (
+				DEA3A09721D67ECE00643296 /* PaddingLabel.swift */,
+			);
+			path = PaddingLabel;
 			sourceTree = "<group>";
 		};
 		DEC5166021CE8DA300A17CBF /* PopUpSettingGPS */ = {
@@ -1717,6 +1773,7 @@
 				84421BFE21CBEF7600F468F5 /* MoreViewController.xib in Resources */,
 				84487C8721CB7E99008B25B2 /* Roboto-BlackItalic.ttf in Resources */,
 				DE442C6C21CFC1BD0051C0B8 /* ReplyCommentCell.xib in Resources */,
+				DEA3A08E21D674A200643296 /* PreviewPhotoViewController.xib in Resources */,
 				84487C8B21CB80D5008B25B2 /* Roboto-Light.ttf in Resources */,
 				B3E67EB121CF77AB0012546F /* countryCodes.json in Resources */,
 				CB0C3A2821D3BECD0052DD91 /* ForgotPasswordViewController.xib in Resources */,
@@ -1731,6 +1788,8 @@
 				B392FB3E21D3D6AE0076A7B5 /* AcceptCell.xib in Resources */,
 				84421BFA21CBEF1E00F468F5 /* MoreHeaderCell.xib in Resources */,
 				B325C2F021CE05B20048A148 /* MenuCell.xib in Resources */,
+				DEA3A08921D6738200643296 /* AppImageSlide.xib in Resources */,
+				DEA3A09321D679A000643296 /* OrderDetailImageCell.xib in Resources */,
 				84487C8921CB7EA4008B25B2 /* Roboto-BoldItalic.ttf in Resources */,
 				DE21821321CD403100FDD9F1 /* AccountKitStrings.bundle in Resources */,
 				DE2181FA21CD3AD300FDD9F1 /* GoogleService-Info.plist in Resources */,
@@ -1873,6 +1932,7 @@
 				B36AEECE21CDF52B00BED43C /* HomeCell.swift in Sources */,
 				B36AEEB221CDDB8000BED43C /* MySellRouter.swift in Sources */,
 				DE21822E21CD44D600FDD9F1 /* BaseEntity.swift in Sources */,
+				DEA3A09821D67ECE00643296 /* PaddingLabel.swift in Sources */,
 				DE21827821CD473100FDD9F1 /* KActivityIndicatorAnimationSquareSpin.swift in Sources */,
 				CB172B3C21C6A26F0068CF92 /* MapperData.swift in Sources */,
 				DEE1DA8021CE39180036FEB7 /* GADBannerView+extension.swift in Sources */,
@@ -1950,6 +2010,7 @@
 				DE21827F21CD473100FDD9F1 /* KActivityIndicatorAnimationBallPulseRise.swift in Sources */,
 				B355EF5121C8EB3F00379F57 /* HomeViewController.swift in Sources */,
 				CB172C2721C6A2EF0068CF92 /* UserUtils.swift in Sources */,
+				DEA3A08D21D674A200643296 /* PreviewPhotoViewController.swift in Sources */,
 				DE0DBAF521D3BC590097E38F /* ParentNotificationEntity.swift in Sources */,
 				DE21822821CD440B00FDD9F1 /* Login+GoogleSignIn.swift in Sources */,
 				DE2181FC21CD3C1400FDD9F1 /* AppRouter.swift in Sources */,
@@ -1979,6 +2040,7 @@
 				DEE7306F21CFDAA300F20D68 /* OrderDetail+Table.swift in Sources */,
 				DE21828121CD473100FDD9F1 /* KActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */,
 				84396D3E21D1389B00818FAB /* UpdateProfile+Event.swift in Sources */,
+				DEA3A09521D67B1300643296 /* BannerEntity.swift in Sources */,
 				84421BF921CBEF1E00F468F5 /* MoreHeaderCell.swift in Sources */,
 				DE21823021CD458E00FDD9F1 /* UserAPIService.swift in Sources */,
 				84A92BF721CA555900148191 /* LoginRouter.swift in Sources */,
@@ -2065,6 +2127,7 @@
 				DE442C4721CFA33D0051C0B8 /* PostCommentView.swift in Sources */,
 				CB172C1821C6A2EF0068CF92 /* UIViewController+extension.swift in Sources */,
 				DE07F56921CF539D00DE2032 /* AppCollectionPhoto.swift in Sources */,
+				DEA3A08821D6738200643296 /* AppImageSlide.swift in Sources */,
 				CB172C9A21C6A2EF0068CF92 /* BaseCollectionCell.swift in Sources */,
 				CB172C1D21C6A2EF0068CF92 /* UITextField+extension.swift in Sources */,
 				CB172C2221C6A2EF0068CF92 /* PopUpNotificationHelper.swift in Sources */,
@@ -2074,6 +2137,7 @@
 				DE21828721CD473100FDD9F1 /* ProgressView.swift in Sources */,
 				DE21828221CD473100FDD9F1 /* KActivityIndicatorView.swift in Sources */,
 				DE0DBAE621D3B6DA0097E38F /* NotificationInteractor.swift in Sources */,
+				DEA3A09221D679A000643296 /* OrderDetailImageCell.swift in Sources */,
 				DE21823521CD465700FDD9F1 /* UserEndPoint.swift in Sources */,
 				B36AEE9B21CDD90500BED43C /* TabbarViewController.swift in Sources */,
 				CB3A8F0E21C64FC1008144BD /* AppDelegate.swift in Sources */,
