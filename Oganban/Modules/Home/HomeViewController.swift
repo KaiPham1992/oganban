@@ -203,7 +203,11 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
         if listRecord.count%10 == 0 {
             return 11
         } else {
-            return listRecord.count%10 + 1
+            if section == listRecord.count/10 {
+                return listRecord.count%10 + 1
+            } else {
+                return 11
+            }
         }
     }
     
