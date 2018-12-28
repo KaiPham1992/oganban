@@ -15,6 +15,7 @@ class RecordEntity: BaseEntity {
     var price: String?
     var coin: String?
     var isNew: String?
+    var isPro: String?
     var long: String?
     var lat: String?
     var accountId: String?
@@ -37,6 +38,7 @@ class RecordEntity: BaseEntity {
         self.price <- map["price"]
         self.coin <- map["coin"]
         self.isNew <- map["is_new"]
+        self.isPro <- map["is_pro"]
         self.long <- map["longitude"]
         self.lat <- map["latitude"]
         self.accountId <- map["account_id"]

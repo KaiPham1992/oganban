@@ -18,6 +18,7 @@ class HomeCell: UICollectionViewCell {
     @IBOutlet weak var lbName               : UILabel!
     @IBOutlet weak var lbStar               : UILabel!
     @IBOutlet weak var lbLevel              : UILabel!
+    @IBOutlet weak var lbPro                : UILabel!
     @IBOutlet weak var imgRecord            : UIImageView!
     @IBOutlet weak var imgNew               : UIImageView!
     @IBOutlet weak var imgAvatar            : UIImageView!
@@ -29,9 +30,14 @@ class HomeCell: UICollectionViewCell {
     
     func setData(record: RecordEntity) {
         lbRecordName.text = record.name
+//        if let date = _notification.createTime {
+//            lbDate.text = date.toString(dateFormat: AppDateFormat.ddMMYYYY_VNHHmm)
+//        }
         lbDistanceAndTime.text = "\(record.distance&) | \(record.createTime&)"
-        lbPrice.text = record.price
-        lbCoin.text = record.coin
+        lbPrice.text = "\(record.price&) đ"
+        lbPrice.underlineLastCharacter()
+        lbCoin.text = "\(record.coin&) ơ"
+        lbCoin.underlineLastCharacter()
         lbName.text = record.fullName
         lbStar.text = record.avgRating
         lbLevel.text = record.level
@@ -40,6 +46,12 @@ class HomeCell: UICollectionViewCell {
             imgNew.isHidden = false
         } else {
             imgNew.isHidden = true
+        }
+        
+        if record.isPro != nil {
+            lbPro.isHidden = false
+        } else {
+            lbPro.isHidden = true
         }
         
         if let url = URL(string: "\(BASE_URL)\(record.imgSrc&)") {

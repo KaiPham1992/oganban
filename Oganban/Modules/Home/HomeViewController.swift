@@ -29,7 +29,7 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var tfSearch         : UITextField!
     @IBOutlet weak var vAccept         : UIView!
     
-    
+    private let refreshControl = UIRefreshControl()
 	var presenter: HomePresenterProtocol?
     
     var menu: [CategoryMergeEntity] = [] {
@@ -83,6 +83,9 @@ class HomeViewController: BaseViewController {
         cvHome.registerCollectionCell(HomeCell.self)
         cvHome.delegate = self
         cvHome.dataSource = self
+        cvHome.contentInset.bottom = 20
+        cvHome.addSubview(refreshControl)
+        refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
     }
     
     private func configureTableView() {
@@ -113,6 +116,10 @@ class HomeViewController: BaseViewController {
         scaleDropdown.backgroundColor = AppColor.main
         DropDown.appearance().setupCornerRadius(10)
         scaleDropdown.textColor = .white
+        scaleDropdown.textFont = AppFont.fontRegular11
+        scaleDropdown.separatorColor = .gray
+        scaleDropdown.selectionBackgroundColor = AppColor.main
+        scaleDropdown.selectedTextColor = .yellow
         scaleDropdown.downScaleTransform = CGAffineTransform(rotationAngle: (-.pi))
         scaleDropdown.selectionAction = { [weak self](index, item) in
             guard let `self` = self else { return }
@@ -120,6 +127,13 @@ class HomeViewController: BaseViewController {
             self.paramFilter.radius = self.dataSource[index].title&
             self.presenter?.filterRecord(param: self.paramFilter)
         }
+    }
+    
+    @objc private func refreshData(_ sender: Any) {
+        // Fetch Weather Data
+        self.refreshControl.endRefreshing()
+        paramFilter = RecordParam()
+        presenter?.filterRecord(param: paramFilter)
     }
     
     @IBAction func hideDropdownTapped() {
@@ -260,7 +274,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
         if indexPath.row == 0 {
             return CGSize(width: collectionView.frame.width, height: 125)
         } else {
-            return CGSize(width: collectionView.frame.width/2, height: 247)
+            return CGSize(width: collectionView.frame.width/2, height: 250)
         }
     }
     
@@ -297,6 +311,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         case tbLeft:
             let cell = tableView.dequeueTableCell(MenuCell.self)
             cell.lbTitle.text = menu[indexPath.row].name
+            cell.lbTitle.textColor = menu[indexPath.row].isSelected ? .yellow : .white
             self.heightLeft.constant = heightContent < heightMax ? tableView.contentSize.height : (heightMax)
             return cell
             
@@ -318,10 +333,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         switch tableView {
         case tbLeft:
             index = indexPath.row
+            menu[index].isSelected = !menu[index].isSelected
             tbRight.reloadData()
             tbRight.isHidden = false
             vAccept.isHidden = false
-            menu[index].isSelected = !menu[index].isSelected
+            
         case tbRight:
             if indexPath.row == menu[index].cateChild.count {
                 
