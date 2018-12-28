@@ -20,7 +20,7 @@ class DateFollowWeekCell: UICollectionViewCell {
         // Initialization code
     }
 
-    func showData(date: Date){
+    func showData(date: Date) {
         
         self.setColorDate(date: date)
         let calendar = Calendar.current
@@ -29,34 +29,10 @@ class DateFollowWeekCell: UICollectionViewCell {
         let month = calendar.component(.month, from: date)
         let day = calendar.component(.day, from: date)
         
-        lbDay.text = getNameOfDay(date: date)
+        lbDay.text = date.getNameOfDay()
         lbDate.text = "\(day)"
         lbMonth.text = "THÁNG " + "\(month)"
         lbYear.text = "\(year)"
-    }
-    
-    func getNameOfDay(date: Date) -> String {
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat  = "EEEE"
-        let dayInWeek = dateFormatter.string(from: date as Date)
-        
-        switch dayInWeek {
-        case "Monday":
-            return "Thứ 2"
-        case "Tuesday":
-            return "Thứ 3"
-        case "Wednesday":
-            return "Thứ 4"
-        case "Thursday":
-            return "Thứ 5"
-        case "Friday":
-            return "Thứ 6"
-        case "Saturday":
-            return "Thứ 7"
-        default:
-            return "CN"
-        }
     }
     
     private func setColorDate(date: Date){

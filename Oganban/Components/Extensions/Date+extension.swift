@@ -248,3 +248,50 @@ extension Date {
         return dateFormatter.string(from: self)
     }
 }
+extension Date {
+    func getNameOfDay() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat  = "EEEE"
+        let dayInWeek = dateFormatter.string(from: self)
+        
+        switch dayInWeek {
+        case "Monday":
+            return "Thứ 2"
+        case "Tuesday":
+            return "Thứ 3"
+        case "Wednesday":
+            return "Thứ 4"
+        case "Thursday":
+            return "Thứ 5"
+        case "Friday":
+            return "Thứ 6"
+        case "Saturday":
+            return "Thứ 7"
+        default:
+            return "CN"
+        }
+    }
+    
+    func getIndexOfDay() -> Int {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat  = "EEEE"
+        let dayInWeek = dateFormatter.string(from: self)
+        
+        switch dayInWeek {
+        case "Monday":
+            return 0
+        case "Tuesday":
+            return 1
+        case "Wednesday":
+            return 2
+        case "Thursday":
+            return 3
+        case "Friday":
+            return 4
+        case "Saturday":
+            return 5
+        default:
+            return 6
+        }
+    }
+}
