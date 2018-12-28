@@ -21,7 +21,6 @@ class LoginInteractor: LoginInteractorInputProtocol {
             //save user
             ProgressView.shared.hide()
             guard let user = user else { return }
-            UserUtils.saveUser(user: user)
             // --
             self.presenter?.didLogin(user: user)
         }) { (error) in
@@ -35,7 +34,7 @@ class LoginInteractor: LoginInteractorInputProtocol {
         Provider.shared.userAPIService.loginGmail(param: param, success: { user in
             ProgressView.shared.hide()
             guard let user = user else { return }
-            UserUtils.saveUser(user: user)
+            self.presenter?.didLogin(user: user)
         }) { error in
             ProgressView.shared.hide()
             self.presenter?.didLogin(error: error)

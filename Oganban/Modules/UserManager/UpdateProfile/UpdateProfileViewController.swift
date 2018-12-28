@@ -14,7 +14,6 @@ class UpdateProfileViewController: BaseViewController {
 
 	var presenter: UpdateProfilePresenterProtocol?
     
-    
     @IBOutlet weak var lbCodeIntro: UILabel!
     @IBOutlet weak var lbRateCount: UILabel!
     @IBOutlet weak var lbRating: UILabel!

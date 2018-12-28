@@ -11,18 +11,18 @@
 import UIKit
 
 class SupplementaryInfoInteractor: SupplementaryInfoInteractorInputProtocol {
-
-    weak var presenter: SupplementaryInfoInteractorOutputProtocol?
-    
-    func loginSocial(socialParam: LoginSocialParam) {
+    func updateLoginSocial(socialParam: UpdateProfileSocial) {
         ProgressView.shared.show()
-        Provider.shared.userAPIService.loginGmail(param: socialParam, success: { _user in
+        
+        Provider.shared.userAPIService.updateProfileSocial(param: socialParam, success: { user in
             ProgressView.shared.hide()
-            self.presenter?.didLogin(user: _user)
+            self.presenter?.didLogin(user: user)
         }) { error in
             ProgressView.shared.hide()
             self.presenter?.didLogin(error: error)
         }
+        
     }
-
+    
+    weak var presenter: SupplementaryInfoInteractorOutputProtocol?
 }
