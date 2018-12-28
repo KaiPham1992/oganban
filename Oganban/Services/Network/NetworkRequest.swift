@@ -28,6 +28,8 @@ typealias RequestFailure = (_ error: APIError?) -> Void
 //---
 typealias NetworkSuccess = (_ data: BaseResponse ) -> Void
 
+let noInternet = APIError(code: 2000, message: "No Internet")
+
 //---
 struct SuccessHandler<T> {
     typealias object = (_ object: T?) -> Void
@@ -47,6 +49,7 @@ protocol NetworkRequestProtocol {
 //---
 struct NetworkRequest: NetworkRequestProtocol {
     func requestData(endPoint: EndPointType, success: @escaping RequestSuccess, failure: @escaping RequestFailure) {
+        
         let url = makeUrl(path: endPoint.path)
         let encoding = getAlamofireEncoding(httpMethod: endPoint.httpMethod)
         //let manager = Alamofire.SessionManager.default
@@ -61,9 +64,11 @@ struct NetworkRequest: NetworkRequestProtocol {
                 failure(apiError)
             }
         }
+        
     }
     
     func uploadAvatar(image: UIImage, endPoint: EndPointType, success: @escaping RequestSuccess, failure: @escaping RequestFailure) {
+      
         let url = makeUrl(path: endPoint.path)
         
         let manager = Alamofire.SessionManager.default
@@ -74,7 +79,7 @@ struct NetworkRequest: NetworkRequestProtocol {
             if let dataJPG = image.jpegData(compressionQuality: 1) {
                 multipartFormData.append(dataJPG, withName: "file", fileName: "\(Date().timeIntervalSince1970).jpg", mimeType: "image/jpg")
                 
-                 multipartFormData.append(dataJPG, withName: "crop_file", fileName: "\(Date().timeIntervalSince1970).jpg", mimeType: "image/jpg")
+                multipartFormData.append(dataJPG, withName: "crop_file", fileName: "\(Date().timeIntervalSince1970).jpg", mimeType: "image/jpg")
             }
             
             // param
@@ -117,6 +122,7 @@ struct NetworkRequest: NetworkRequestProtocol {
     }
     
     func uploadImages(image: UIImage, endPoint: EndPointType, success: @escaping RequestSuccess, failure: @escaping RequestFailure) {
+        
         let url = makeUrl(path: endPoint.path)
         
         let manager = Alamofire.SessionManager.default

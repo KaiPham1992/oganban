@@ -45,6 +45,11 @@ class BaseViewController: UIViewController {
     func setUpViews(){
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        Connectivity.isConnectedToInternet()
+    }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return UIStatusBarStyle.lightContent
     }

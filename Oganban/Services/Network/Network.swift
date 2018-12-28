@@ -36,7 +36,6 @@ struct APINetwork: APINetworkProtocol {
         request.requestData(endPoint: endPoint, success: { data in
             let json = JSON(data)
             
-            
             if json.description == "null" {
                 print("\n**************ERROR*****************")
                 print(String(data: data, encoding: .utf8))
