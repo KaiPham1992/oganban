@@ -43,7 +43,7 @@ class MoreRouter: MoreWireframeProtocol {
             print("Chọn Lịch sử mua tin")
             break
         case MoreRowName.policy:
-            tapMore()
+            tapPolicy()
             print("Chọn Điều khoản sử dụng")
             break
         case MoreRowName.tutorial:
@@ -76,27 +76,14 @@ class MoreRouter: MoreWireframeProtocol {
     }
     
     private func tapHistoryCoin(){
-        if UserDefaultHelper.shared.loginUserInfo != nil {
-            // Goto historyCoin
-            print("Go to history Coin")
-        } else {
-            let vc = LoginRouter.createModule()
-            viewController?.present(controller: vc, animated: true)
-        }
+      
     }
     
     private func tapHistoryBuy(){
-        PopUpHelper.shared.showDateFollowWeekPopup(completionDate: { (date) in
-            if let date = date {
-                print("SELECTED DATE: " + date.toString(dateFormat: AppDateFormat.ddMMYYYY_VN))
-            }
-        })
+
     }
     
-    private func tapMore(){
-        let vc = SupplementaryInfoRouter.createModule()
-        vc.modalPresentationStyle = .overFullScreen
-        viewController?.present(controller: vc, animated: true)
+    private func tapPolicy(){
     }
     
     private func tapChangePassword() {

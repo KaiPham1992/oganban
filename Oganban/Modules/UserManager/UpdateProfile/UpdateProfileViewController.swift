@@ -62,10 +62,76 @@ class UpdateProfileViewController: BaseViewController {
             if let urlString = user.imgCropSrc, let url = URL(string: BASE_URL_IMAGE + urlString) {
                 imgAvatar.sd_setImage(with: url , placeholderImage: AppImage.imgDefaultUser)
             }
-            tfUsername.tfContent.text = user.email
-            lbCodeIntro.text = user.codeIntro
-            lbLevel.text = user.level
+            
+            if let email = user.email {
+                tfUsername.tfContent.text = email
+            }
+            
+            if user.codeIntro != nil {
+                lbCodeIntro.text = user.codeIntro
+            }
+            if user.level != nil {
+                 lbLevel.text = user.level
+            }
+            
+            if let fullName = user.fullName {
+                tfDisplayName.tfContent.text = fullName
+            }
+           
+            if let houseAddress = user.houseAddress {
+                 tfAddress1.tfContent.text = houseAddress
+            }
+            if let companyAddress = user.companyAddress {
+                tfAddress2.tfContent.text = companyAddress
+            }
+         
+            if let phone = user.phone {
+                tvPhone.tfPhone.text = phone
+            }
+           
+            if let phoneCode = user.phoneCode {
+                tvPhone.lbCountryCode.text = phoneCode
+            }
+            
+            if let birthday = user.birthday {
+                tfBirthday.tfContent.text = getBirthday(birthDay: birthday)
+            }
+            
+            if let gender = user.gender {
+                tfGender.tfContent.text = convertGender(gender: gender)
+            }
+           
         }
+    }
+    
+    func convertGender(gender: String) -> String {
+        if gender == "male" {
+            self.gender = Gender(title: "Nam", keyParam: "male")
+            return "Nam"
+        } else if gender == "female" {
+            self.gender = Gender(title: "Nữ", keyParam: "female")
+            return "Nữ"
+        } else {
+            self.gender = Gender(title: "Khác", keyParam: "other")
+            return "Khác"
+        }
+    }
+    
+    func getDialCodeFromCodePhone(code: String) -> String{
+        for item in tvPhone.listCode {
+            if item.code == code {
+                return item.dialCode ?? ""
+            }
+        }
+        return ""
+    }
+    
+    func getBirthday(birthDay: String) -> String? {
+        let date = DateFormatter()
+        date.dateFormat = AppDateFormat.yyyyMMdd.formatString
+        let sDate = date.date(from: birthDay)
+        self.birthDay = sDate
+        return sDate?.toString(dateFormat: AppDateFormat.ddMMYYYY_VN)
     }
 }
 
