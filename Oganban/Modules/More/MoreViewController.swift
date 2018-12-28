@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MoreViewController: BaseViewController, MoreViewProtocol {
+class MoreViewController: BaseViewController {
     
     var presenter: MorePresenterProtocol?
     
@@ -83,8 +83,7 @@ extension MoreViewController: UITableViewDelegate, UITableViewDataSource
             break
         case MoreRowName.logout.index():
             if UserDefaultHelper.shared.loginUserInfo != nil {
-//                presenter?.goToPage(name: .logout)
-                print("logout")
+                presenter?.logout()
             }
             break
         default:
@@ -106,5 +105,11 @@ extension MoreViewController: UITableViewDelegate, UITableViewDataSource
         return 0
         }
         return 4
+    }
+}
+
+extension MoreViewController: MoreViewProtocol {
+    func logoutSuccess() {
+        tvMore.reloadData()
     }
 }

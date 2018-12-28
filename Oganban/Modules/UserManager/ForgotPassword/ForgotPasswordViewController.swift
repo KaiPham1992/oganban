@@ -51,10 +51,10 @@ extension ForgotPasswordViewController: ForgotPasswordViewProtocol {
     }
     
     func didForgotPassword(error: APIError?) {
-        guard let error = error?.code else { return }
-        if error == 400 {
-            PopUpHelper.shared.showMessageHaveAds(message: MessageString.messageEmailNoHave)
-        }
-        
+//        guard let error = error?.code else { return }
+//        if error == 400 {
+//            PopUpHelper.shared.showMessageHaveAds(message: MessageString.messageEmailNoHave)
+//        }
+        lbNotice.text = MessageString.messageEmailNoHave
     }
 }

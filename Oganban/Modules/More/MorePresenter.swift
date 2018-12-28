@@ -26,8 +26,13 @@ class MorePresenter: MorePresenterProtocol {
         router.goToPage(name: name)
     }
 
+    func logout() {
+        interactor?.logout()
+    }
 }
 
 extension MorePresenter: MoreInteractorOutputProtocol {
-    
+    func logoutSuccess() {
+        view?.logoutSuccess()
+    }
 }

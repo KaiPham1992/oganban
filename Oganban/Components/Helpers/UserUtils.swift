@@ -49,11 +49,13 @@ class UserUtils: NSObject {
 //    }
 //
 //
-//    static func clearLogin(){
-//        DataManager.shared().loginedUser = nil
-//
-//        let userPreference : UserDefaults = UserDefaults.standard
-//        userPreference.removeObject(forKey: App.key.userId)
+    static func clearLogin(){
+        UserDefaultHelper.shared.loginUserInfo = nil
+        UserDefaultHelper.shared.userToken = ""
+        
+        let userPreference : UserDefaults = UserDefaults.standard
+        userPreference.removeObject(forKey: UserDefaultHelperKey.userToken.rawValue)
+        userPreference.removeObject(forKey: UserDefaultHelperKey.loginUserInfo.rawValue)
 //        userPreference.removeObject(forKey: App.key.userName)
 //        userPreference.removeObject(forKey: App.key.userFullName)
 //        userPreference.removeObject(forKey: App.key.appToken)
@@ -61,8 +63,8 @@ class UserUtils: NSObject {
 //        userPreference.removeObject(forKey: App.key.rankName)
 //        userPreference.removeObject(forKey: App.key.point)
 //        userPreference.synchronize()
-////        KeychainManager.shared.deleteToken()
-//    }
+//        KeychainManager.shared.deleteToken()
+    }
 //
 //    static func get(key: String) -> String? {
 //        let userPreference : UserDefaults = UserDefaults.standard

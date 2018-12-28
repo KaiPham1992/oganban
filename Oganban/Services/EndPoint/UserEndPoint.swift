@@ -94,7 +94,9 @@ extension UserEndPoint: EndPointType {
         case .getCaptcha:
             return [:]
         case .logout:
-            return [:]
+            var param = [:] as [String: Any]
+            param = BaseParam.addDeviceParams(inputParams: param)
+            return param
         case .loginGmail(let param):
             let newParam = BaseParam.addDeviceParams(inputParams: param.toJSON())
             return newParam
