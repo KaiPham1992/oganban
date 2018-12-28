@@ -5,7 +5,7 @@
 //  Created by Kai Pham on 12/21/18.
 //  Copyright © 2018 Coby. All rights reserved.
 //
-
+import UIKit
 import Alamofire
 import ObjectMapper
 
@@ -29,6 +29,7 @@ enum UserEndPoint {
     case addFavoriteStaff(type: String, staffID: String)
     
     case updateProfileSocial(param: UpdateProfileSocial)
+    case uploadAvatar()
 }
 
 extension UserEndPoint: EndPointType {
@@ -64,12 +65,14 @@ extension UserEndPoint: EndPointType {
             return "_api/user/add_favorite"
         case .updateProfileSocial:
             return "_api/user/update_profile_social"
+        case .uploadAvatar:
+            return "_api/user/upload_avatar"
         }
     }
     
     var httpMethod: HTTPMethod {
         switch self {
-        case .login, .fogotPassword, .checkLogin, .logout, .loginGmail, .loginFacebook, .verifyPhone, .getPointHistory, .getListFavorite, .addFavorite, .addFavoriteStaff, .signUp:
+        case .login, .fogotPassword, .checkLogin, .logout, .loginGmail, .loginFacebook, .verifyPhone, .getPointHistory, .getListFavorite, .addFavorite, .addFavoriteStaff, .signUp, .uploadAvatar:
             return .post
         case .getCaptcha, .getIntroduceList:
             return .get
@@ -104,8 +107,6 @@ extension UserEndPoint: EndPointType {
             var newParm = fbEntity.toJSON()
             newParm = BaseParam.addDeviceParams(inputParams: newParm)
             newParm["phone_number"] = phone
-            
-            
             return newParm
         case .signUp(let param):
             let params = BaseParam.addDeviceParams(inputParams: param.toJSON())
@@ -149,6 +150,8 @@ extension UserEndPoint: EndPointType {
             
         case .updateProfileSocial(let param):
             return param.toJSON()
+        case .uploadAvatar:
+            return [:]
         }
     }
     

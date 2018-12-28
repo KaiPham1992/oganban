@@ -36,6 +36,9 @@ class UpdateProfileViewController: BaseViewController {
         return CountryCodeEntity(name: "Vietnam", dialCode: "+84", code: "VN")
     } ()
     
+    var user: UserEntity?
+    var fbAccountKit: FBAccountKit!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -44,6 +47,28 @@ class UpdateProfileViewController: BaseViewController {
         hideError()
         addGesture()
         setDefaultData()
+        self.fbAccountKit = FBAccountKit(_controller: self)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if fbAccountKit.isLogged {
+            DispatchQueue.main.async(execute: {
+                self.fbAccountKit.getCountryCodeAndPhoneNumber(completion: { phone in
+                    guard let _user = self.user else { return }
+                    self.presenter?.updateProfile(userInfo: _user)
+                })
+            })
+        }
+    }
+    
+    @IBAction func btnAvatarTapped() {
+        SelectImageFromMobileHelper.shared.showSelectImage(limit: 1) { images in
+            if !images.isEmpty {
+                self.imgAvatar.image = images[0]
+                self.presenter?.updateAvatar(image: images[0])
+            }
+        }
     }
     
     func hideError(isHidden: Bool = true, message: String? = nil){

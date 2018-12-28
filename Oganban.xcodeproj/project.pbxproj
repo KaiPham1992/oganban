@@ -195,6 +195,7 @@
 		DE0DBAF121D3BA460097E38F /* NotificationEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0DBAF021D3BA460097E38F /* NotificationEndPoint.swift */; };
 		DE0DBAF321D3BBAC0097E38F /* NotificationAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0DBAF221D3BBAC0097E38F /* NotificationAPIService.swift */; };
 		DE0DBAF521D3BC590097E38F /* ParentNotificationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0DBAF421D3BC590097E38F /* ParentNotificationEntity.swift */; };
+		DE0E79D721D658080053786D /* SelectImageFromMobileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0E79D621D658080053786D /* SelectImageFromMobileHelper.swift */; };
 		DE2181FA21CD3AD300FDD9F1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE2181F921CD3AD300FDD9F1 /* GoogleService-Info.plist */; };
 		DE2181FC21CD3C1400FDD9F1 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2181FB21CD3C1400FDD9F1 /* AppRouter.swift */; };
 		DE2181FE21CD3DC300FDD9F1 /* AppDelegate+Push.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2181FD21CD3DC300FDD9F1 /* AppDelegate+Push.swift */; };
@@ -506,6 +507,7 @@
 		DE0DBAF021D3BA460097E38F /* NotificationEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationEndPoint.swift; sourceTree = "<group>"; };
 		DE0DBAF221D3BBAC0097E38F /* NotificationAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAPIService.swift; sourceTree = "<group>"; };
 		DE0DBAF421D3BC590097E38F /* ParentNotificationEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentNotificationEntity.swift; sourceTree = "<group>"; };
+		DE0E79D621D658080053786D /* SelectImageFromMobileHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectImageFromMobileHelper.swift; sourceTree = "<group>"; };
 		DE2181F921CD3AD300FDD9F1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DE2181FB21CD3C1400FDD9F1 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		DE2181FD21CD3DC300FDD9F1 /* AppDelegate+Push.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Push.swift"; sourceTree = "<group>"; };
@@ -1085,6 +1087,7 @@
 				CB172B6B21C6A2EE0068CF92 /* UserUtils.swift */,
 				CB172B6C21C6A2EE0068CF92 /* AnimationHelper.swift */,
 				CB172B6D21C6A2EE0068CF92 /* Utils.swift */,
+				DE0E79D621D658080053786D /* SelectImageFromMobileHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -2002,6 +2005,7 @@
 				CB172C9221C6A2EF0068CF92 /* NotificationConstant.swift in Sources */,
 				8432075021CF529D00A4F11E /* DateFollowWeekPopup.swift in Sources */,
 				DEE1DA7A21CE2E130036FEB7 /* PopUpUpdateQuantityBuy.swift in Sources */,
+				DE0E79D721D658080053786D /* SelectImageFromMobileHelper.swift in Sources */,
 				CBBB3DF621D5C74400281ABB /* ChangePasswordViewController.swift in Sources */,
 				DE21829421CD4EB600FDD9F1 /* FTextField.swift in Sources */,
 				84421BF121CBEECF00F468F5 /* MoreInteractor.swift in Sources */,

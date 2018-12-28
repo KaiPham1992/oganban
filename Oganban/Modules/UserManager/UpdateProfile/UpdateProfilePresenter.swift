@@ -25,6 +25,10 @@ class UpdateProfilePresenter: UpdateProfilePresenterProtocol {
     func updateProfile(userInfo: UserEntity) {
         interactor?.updateProfile(userInfo: userInfo)
     }
+    
+    func updateAvatar(image: UIImage) {
+        interactor?.updateAvatar(image: image)
+    }
 
 }
 extension UpdateProfilePresenter: UpdateProfileInteractorOutputProtocol{

@@ -55,6 +55,12 @@
                                         <constraint firstAttribute="width" constant="100" id="foU-aA-KA5"/>
                                     </constraints>
                                 </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9TT-kN-jk8">
+                                    <rect key="frame" x="15" y="20" width="100" height="100"/>
+                                    <connections>
+                                        <action selector="btnAvatarTapped" destination="-1" eventType="touchUpInside" id="aNw-q5-5W1"/>
+                                    </connections>
+                                </button>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_star" translatesAutoresizingMaskIntoConstraints="NO" id="t62-tj-AIM">
                                     <rect key="frame" x="332.5" y="57.5" width="25" height="25"/>
                                     <constraints>
@@ -87,7 +93,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="77084" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kF8-76-oxN">
-                                    <rect key="frame" x="169" y="137" width="44" height="18"/>
+                                    <rect key="frame" x="169" y="137" width="44" height="20"/>
                                     <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="15"/>
                                     <color key="textColor" red="0.43137254901960786" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -148,7 +154,7 @@
                                     <color key="backgroundColor" red="0.57647058819999997" green="0.23921568630000001" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADg-6z-jnj">
-                                    <rect key="frame" x="320.5" y="28" width="37" height="18"/>
+                                    <rect key="frame" x="320.5" y="26" width="37" height="20"/>
                                     <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="15"/>
                                     <color key="textColor" red="0.0" green="0.53333333333333333" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -161,7 +167,9 @@
                                 <constraint firstItem="dFh-wI-5nZ" firstAttribute="height" secondItem="HYQ-b6-cUi" secondAttribute="height" id="3FB-ti-wVt"/>
                                 <constraint firstItem="kF8-76-oxN" firstAttribute="leading" secondItem="bWY-Kw-W06" secondAttribute="trailing" constant="5" id="5Mv-jh-SPL"/>
                                 <constraint firstItem="Cqq-Ly-Pja" firstAttribute="top" secondItem="Apa-51-Mt2" secondAttribute="bottom" constant="15" id="5Vi-pz-kKG"/>
+                                <constraint firstItem="9TT-kN-jk8" firstAttribute="leading" secondItem="WyW-Jd-GCd" secondAttribute="leading" id="5xp-rr-G2c"/>
                                 <constraint firstAttribute="trailing" secondItem="qaW-Pg-lnD" secondAttribute="trailing" constant="110" id="6B2-hi-m4e"/>
+                                <constraint firstItem="9TT-kN-jk8" firstAttribute="bottom" secondItem="WyW-Jd-GCd" secondAttribute="bottom" id="6is-9b-tzQ"/>
                                 <constraint firstItem="HYQ-b6-cUi" firstAttribute="top" secondItem="Cqq-Ly-Pja" secondAttribute="bottom" constant="15" id="7mz-9A-Y6M"/>
                                 <constraint firstItem="BjH-Bd-0zE" firstAttribute="trailing" secondItem="dFh-wI-5nZ" secondAttribute="trailing" id="7wp-qy-fV6"/>
                                 <constraint firstItem="jDd-eY-Ped" firstAttribute="top" secondItem="bWY-Kw-W06" secondAttribute="bottom" constant="10" id="9XG-pb-bo3"/>
@@ -202,11 +210,13 @@
                                 <constraint firstItem="Apa-51-Mt2" firstAttribute="trailing" secondItem="ebE-Mb-1by" secondAttribute="trailing" id="pm9-02-7EA"/>
                                 <constraint firstItem="PFo-Od-SwZ" firstAttribute="top" secondItem="BjH-Bd-0zE" secondAttribute="bottom" constant="16" id="pvH-Ls-EaH"/>
                                 <constraint firstItem="qaW-Pg-lnD" firstAttribute="top" secondItem="PFo-Od-SwZ" secondAttribute="bottom" constant="4" id="qwa-kR-pUq"/>
+                                <constraint firstItem="9TT-kN-jk8" firstAttribute="top" secondItem="WyW-Jd-GCd" secondAttribute="top" id="uPt-tY-Pdh"/>
                                 <constraint firstItem="Cqq-Ly-Pja" firstAttribute="leading" secondItem="Apa-51-Mt2" secondAttribute="leading" id="vAX-JG-CTh"/>
                                 <constraint firstItem="lAb-Sb-9UD" firstAttribute="top" secondItem="t62-tj-AIM" secondAttribute="bottom" constant="8" id="vDz-P2-VP7"/>
                                 <constraint firstItem="7Tx-uT-gT7" firstAttribute="trailing" secondItem="lAb-Sb-9UD" secondAttribute="trailing" id="vwX-ca-Xma"/>
                                 <constraint firstItem="qaW-Pg-lnD" firstAttribute="leading" secondItem="gwz-Mi-dgC" secondAttribute="leading" constant="110" id="xPG-Vp-aOl"/>
                                 <constraint firstItem="Cqq-Ly-Pja" firstAttribute="height" secondItem="Apa-51-Mt2" secondAttribute="height" id="xPr-Jv-Vv3"/>
+                                <constraint firstItem="9TT-kN-jk8" firstAttribute="trailing" secondItem="WyW-Jd-GCd" secondAttribute="trailing" id="yA0-oI-xzP"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -232,8 +242,8 @@
         </view>
     </objects>
     <resources>
-        <image name="1024" width="1024" height="1024"/>
+        <image name="1024" width="512" height="512"/>
         <image name="ic_star" width="12" height="12"/>
-        <image name="share" width="23.5" height="25"/>
+        <image name="share" width="23" height="25"/>
     </resources>
 </document>
