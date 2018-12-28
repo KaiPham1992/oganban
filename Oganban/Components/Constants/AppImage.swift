@@ -17,11 +17,11 @@ struct AppImage {
     
     static let imgHomeSelected = UIImage(named: "ic_home_selected")!
     static let imgHome = UIImage(named: "ic_home")!
-    static let imgMyBuySelected = UIImage(named: "ic_bag")!
+    static let imgMyBuySelected = UIImage(named: "ic_bag_selected")!
     static let imgMyBuy = UIImage(named: "ic_bag")!
-    static let imgMySellSelected = UIImage(named: "ic_i_sell")!
+    static let imgMySellSelected = UIImage(named: "ic_isell_active")!
     static let imgMySell = UIImage(named: "ic_i_sell")!
-    static let imgNotificationSelected = UIImage(named: "ic_bell")!
+    static let imgNotificationSelected = UIImage(named: "ic_bell_active")!
     static let imgNotification = UIImage(named: "ic_bell")!
     static let imgMoreSelected = UIImage(named: "ic_seemore_selected")!
     static let imgMore = UIImage(named: "ic_seemore")!
