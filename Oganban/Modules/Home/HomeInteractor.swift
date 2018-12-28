@@ -11,6 +11,14 @@
 import UIKit
 
 class HomeInteractor: HomeInteractorInputProtocol {
+    func getPositionRange() {
+        Provider.shared.categoryAPIService.getPositionRange(success: { (result) in
+            self.presenter?.didGetPositionRange(list: result)
+        }) { (error) in
+            
+        }
+    }
+    
     func filterRecord(param: RecordParam) {
         ProgressView.shared.show()
         Provider.shared.categoryAPIService.filterRecord(param: param, success: { (result) in
