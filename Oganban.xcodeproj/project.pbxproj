@@ -181,6 +181,12 @@
 		CB3A8F1321C64FC1008144BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB3A8F1121C64FC1008144BD /* Main.storyboard */; };
 		CB3A8F1521C64FC1008144BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB3A8F1421C64FC1008144BD /* Assets.xcassets */; };
 		CB3A8F1821C64FC1008144BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB3A8F1621C64FC1008144BD /* LaunchScreen.storyboard */; };
+		CBBB3DF421D5C74400281ABB /* ChangePasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBB3DEE21D5C74400281ABB /* ChangePasswordPresenter.swift */; };
+		CBBB3DF521D5C74400281ABB /* ChangePasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBB3DEF21D5C74400281ABB /* ChangePasswordRouter.swift */; };
+		CBBB3DF621D5C74400281ABB /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBB3DF021D5C74400281ABB /* ChangePasswordViewController.swift */; };
+		CBBB3DF721D5C74400281ABB /* ChangePasswordProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBB3DF121D5C74400281ABB /* ChangePasswordProtocols.swift */; };
+		CBBB3DF821D5C74400281ABB /* ChangePasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBB3DF221D5C74400281ABB /* ChangePasswordInteractor.swift */; };
+		CBBB3DF921D5C74400281ABB /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBBB3DF321D5C74400281ABB /* ChangePasswordViewController.xib */; };
 		DE07F56921CF539D00DE2032 /* AppCollectionPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE07F56821CF539D00DE2032 /* AppCollectionPhoto.swift */; };
 		DE0DBAE421D3B6DA0097E38F /* NotificationProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0DBADB21D3B6DA0097E38F /* NotificationProtocols.swift */; };
 		DE0DBAE521D3B6DA0097E38F /* NotificationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0DBADC21D3B6DA0097E38F /* NotificationPresenter.swift */; };
@@ -492,6 +498,12 @@
 		CB3A8F1421C64FC1008144BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB3A8F1721C64FC1008144BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB3A8F1921C64FC1008144BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBBB3DEE21D5C74400281ABB /* ChangePasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordPresenter.swift; sourceTree = "<group>"; };
+		CBBB3DEF21D5C74400281ABB /* ChangePasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordRouter.swift; sourceTree = "<group>"; };
+		CBBB3DF021D5C74400281ABB /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		CBBB3DF121D5C74400281ABB /* ChangePasswordProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordProtocols.swift; sourceTree = "<group>"; };
+		CBBB3DF221D5C74400281ABB /* ChangePasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordInteractor.swift; sourceTree = "<group>"; };
+		CBBB3DF321D5C74400281ABB /* ChangePasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangePasswordViewController.xib; sourceTree = "<group>"; };
 		DE07F56821CF539D00DE2032 /* AppCollectionPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCollectionPhoto.swift; sourceTree = "<group>"; };
 		DE0DBADB21D3B6DA0097E38F /* NotificationProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationProtocols.swift; sourceTree = "<group>"; };
 		DE0DBADC21D3B6DA0097E38F /* NotificationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationPresenter.swift; sourceTree = "<group>"; };
@@ -1204,6 +1216,19 @@
 			path = Oganban;
 			sourceTree = "<group>";
 		};
+		CBBB3DED21D5C72200281ABB /* ChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				CBBB3DEE21D5C74400281ABB /* ChangePasswordPresenter.swift */,
+				CBBB3DEF21D5C74400281ABB /* ChangePasswordRouter.swift */,
+				CBBB3DF021D5C74400281ABB /* ChangePasswordViewController.swift */,
+				CBBB3DF121D5C74400281ABB /* ChangePasswordProtocols.swift */,
+				CBBB3DF221D5C74400281ABB /* ChangePasswordInteractor.swift */,
+				CBBB3DF321D5C74400281ABB /* ChangePasswordViewController.xib */,
+			);
+			path = ChangePassword;
+			sourceTree = "<group>";
+		};
 		DE0DBADA21D3B6DA0097E38F /* Notification */ = {
 			isa = PBXGroup;
 			children = (
@@ -1252,6 +1277,7 @@
 		DE21821421CD40AE00FDD9F1 /* UserManager */ = {
 			isa = PBXGroup;
 			children = (
+				CBBB3DED21D5C72200281ABB /* ChangePassword */,
 				CB0C3A1C21D3BE990052DD91 /* ForgotPassword */,
 				84ABC68021CFF06700E0D202 /* UpdateProfile */,
 				84421C0021CBF47000F468F5 /* SupplementaryInfo */,
@@ -1692,6 +1718,7 @@
 				84421BFB21CBEF1E00F468F5 /* MoreCell.xib in Resources */,
 				84487C8821CB7EA0008B25B2 /* Roboto-Bold.ttf in Resources */,
 				DE442C5621CFB7570051C0B8 /* SubCommentCell.xib in Resources */,
+				CBBB3DF921D5C74400281ABB /* ChangePasswordViewController.xib in Resources */,
 				DE442C4D21CFAAD70051C0B8 /* CommentCell.xib in Resources */,
 				84487C9021CB80F2008B25B2 /* Roboto-Thin.ttf in Resources */,
 				DEC5166B21CE986400A17CBF /* AdmobBannerView.xib in Resources */,
@@ -1876,6 +1903,7 @@
 				DE21827021CD473100FDD9F1 /* KActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
 				84A92BEE21CA518200148191 /* OganbanCustomButton.swift in Sources */,
 				84ABC68A21CFF06700E0D202 /* UpdateProfileViewController.swift in Sources */,
+				CBBB3DF821D5C74400281ABB /* ChangePasswordInteractor.swift in Sources */,
 				B355EF5321C8EB3F00379F57 /* HomeInteractor.swift in Sources */,
 				CB172C0E21C6A2EF0068CF92 /* UIDevice+extension.swift in Sources */,
 				B355EF5021C8EB3F00379F57 /* HomeRouter.swift in Sources */,
@@ -2005,6 +2033,7 @@
 				CB172C9221C6A2EF0068CF92 /* NotificationConstant.swift in Sources */,
 				8432075021CF529D00A4F11E /* DateFollowWeekPopup.swift in Sources */,
 				DEE1DA7A21CE2E130036FEB7 /* PopUpUpdateQuantityBuy.swift in Sources */,
+				CBBB3DF621D5C74400281ABB /* ChangePasswordViewController.swift in Sources */,
 				DE21829421CD4EB600FDD9F1 /* FTextField.swift in Sources */,
 				84421BF121CBEECF00F468F5 /* MoreInteractor.swift in Sources */,
 				DE21822121CD419B00FDD9F1 /* PhoneEntity.swift in Sources */,
@@ -2025,6 +2054,7 @@
 				CB172C9821C6A2EF0068CF92 /* AppFont.swift in Sources */,
 				84ABC68E21CFF06700E0D202 /* UpdateProfilePresenter.swift in Sources */,
 				DE21820021CD3DE800FDD9F1 /* AppDelegate+GoogleSignIn.swift in Sources */,
+				CBBB3DF521D5C74400281ABB /* ChangePasswordRouter.swift in Sources */,
 				DE21827E21CD473100FDD9F1 /* KActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */,
 				DE21822621CD43E200FDD9F1 /* Login+Facebook.swift in Sources */,
 				DE0DBAF121D3BA460097E38F /* NotificationEndPoint.swift in Sources */,
@@ -2032,6 +2062,8 @@
 				84ABC68D21CFF06700E0D202 /* UpdateProfileInteractor.swift in Sources */,
 				CB172C9E21C6A2EF0068CF92 /* BaseView.swift in Sources */,
 				B392FB3721D3B0170076A7B5 /* CategoryEndPoint.swift in Sources */,
+				CBBB3DF721D5C74400281ABB /* ChangePasswordProtocols.swift in Sources */,
+				CBBB3DF421D5C74400281ABB /* ChangePasswordPresenter.swift in Sources */,
 				DEE1DA5F21CDF3050036FEB7 /* AdmobNativeView.swift in Sources */,
 				CB172C9421C6A2EF0068CF92 /* APIConstant.swift in Sources */,
 				DE442C4121CFA2130051C0B8 /* OrderDetailInteractor.swift in Sources */,

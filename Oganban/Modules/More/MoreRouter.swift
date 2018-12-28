@@ -11,20 +11,20 @@
 import UIKit
 
 class MoreRouter: MoreWireframeProtocol {
-
+    
     weak var viewController: UIViewController?
-
+    
     static func createModule() -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = MoreViewController(nibName: nil, bundle: nil)
         let interactor = MoreInteractor()
         let router = MoreRouter()
         let presenter = MorePresenter(interface: view, interactor: interactor, router: router)
-
+        
         view.presenter = presenter
         interactor.presenter = presenter
         router.viewController = view
-
+        
         return view
     }
     
@@ -53,6 +53,7 @@ class MoreRouter: MoreWireframeProtocol {
             print("Chọn Cài đặt")
             break
         case MoreRowName.changePassword:
+            tapChangePassword()
             print("Chọn Đổi mật khẩu")
             break
         case MoreRowName.logout:
@@ -75,8 +76,13 @@ class MoreRouter: MoreWireframeProtocol {
     }
     
     private func tapHistoryCoin(){
-        let vc = LoginRouter.createModule()
-        viewController?.present(controller: vc, animated: true)
+        if UserDefaultHelper.shared.loginUserInfo != nil {
+            // Goto historyCoin
+            print("Go to history Coin")
+        } else {
+            let vc = LoginRouter.createModule()
+            viewController?.present(controller: vc, animated: true)
+        }
     }
     
     private func tapHistoryBuy(){
@@ -93,4 +99,8 @@ class MoreRouter: MoreWireframeProtocol {
         viewController?.present(controller: vc, animated: true)
     }
     
+    private func tapChangePassword() {
+        let vc = ChangePasswordRouter.createModule()
+        viewController?.navigationController?.pushViewController(vc, animated: true)
+    }
 }

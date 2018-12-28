@@ -83,6 +83,10 @@ struct MessageString {
     static let messageEmptyEmail = "Vui lòng nhập email"
     static let messageInvalidEmailFormat = "Email không đúng format"
     static let messageEmailNoHave = "Email này không tồn tại trong hệ thống"
+    static let invalidInput = "Vui lòng nhập đầy đủ thông tin"
+    static let limitCount = "Mật khẩu phải có 6 kí tự"
+    static let invalidConfirmPassword = "Nhập lại mật khẩu không đúng"
+    static let invalidCurentPassword = "Mật khẩu không đúng"
 }
 
 struct NavigationTitle {

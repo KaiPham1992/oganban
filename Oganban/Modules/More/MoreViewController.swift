@@ -83,8 +83,9 @@ extension MoreViewController: UITableViewDelegate, UITableViewDataSource
             break
         case MoreRowName.logout.index():
             if UserDefaultHelper.shared.loginUserInfo != nil {
-                presenter?.goToPage(name: .logout)
-            } 
+//                presenter?.goToPage(name: .logout)
+                print("logout")
+            }
             break
         default:
             break
