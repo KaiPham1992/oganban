@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         
         AppRouter.shared.openTabbar()
-//        let vcLogin = SignUpRouter.createModule()
+//        let vcLogin = LoginRouter.createModule()
 //        let nc = UINavigationController(rootViewController: vcLogin)
 //        window?.rootViewController = nc
 

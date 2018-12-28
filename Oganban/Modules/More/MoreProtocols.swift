@@ -20,12 +20,14 @@ protocol MorePresenterProtocol: class {
 
     var interactor: MoreInteractorInputProtocol? { get set }
     func goToPage(name: MoreRowName)
+    func logout()
 }
 
 //MARK: Interactor -
 protocol MoreInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    func logoutSuccess()
 }
 
 protocol MoreInteractorInputProtocol: class {
@@ -33,6 +35,7 @@ protocol MoreInteractorInputProtocol: class {
     var presenter: MoreInteractorOutputProtocol?  { get set }
 
     /* Presenter -> Interactor */
+    func logout()
 }
 
 //MARK: View -
@@ -41,4 +44,5 @@ protocol MoreViewProtocol: class {
     var presenter: MorePresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
+    func logoutSuccess()
 }

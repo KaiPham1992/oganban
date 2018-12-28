@@ -8,11 +8,12 @@
 
 import UIKit
 
-class MoreViewController: BaseViewController, MoreViewProtocol {
+class MoreViewController: BaseViewController {
     
     var presenter: MorePresenterProtocol?
     
     @IBOutlet weak var tvMore: UITableView!
+    var rowList: [MoreRowName] = [MoreRowName]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,9 +24,28 @@ class MoreViewController: BaseViewController, MoreViewProtocol {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.getData()
         tvMore.reloadData()
     }
     
+    func getData() {
+        
+        rowList.removeAll()
+        
+        rowList.append(.header)
+        rowList.append(.historyCoin)
+        rowList.append(.historyBuy)
+        rowList.append(.policy)
+        rowList.append(.tutorial)
+        rowList.append(.setting)
+        
+        if UserDefaultHelper.shared.loginUserInfo != nil {
+            rowList.append(.changePassword)
+            rowList.append(.logout)
+        }
+        
+        rowList.append(.logout)
+    }
     func registerTableView(){
         tvMore.delegate = self
         tvMore.dataSource = self
@@ -39,7 +59,7 @@ class MoreViewController: BaseViewController, MoreViewProtocol {
 extension MoreViewController: UITableViewDelegate, UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return MoreRowName.allCases.count
+        return rowList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -49,45 +69,57 @@ extension MoreViewController: UITableViewDelegate, UITableViewDataSource
             cell.setupView()
             cell.selectionStyle = .none
             return cell
-        } else {
+        }
+        else {
             let cell = tableView.dequeue(MoreCell.self, for: indexPath)
             cell.showData(index: indexPath.row)
             cell.selectionStyle = .none
             return cell
         }
-        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath.row {
-        case MoreRowName.header.index():
+        
+        if indexPath.row == MoreRowName.header.index() {
             presenter?.goToPage(name: .header)
-            break
-        case MoreRowName.historyCoin.index():
+            return
+        }
+        
+        if indexPath.row == MoreRowName.historyCoin.index() {
             presenter?.goToPage(name: .historyCoin)
-            break
-        case MoreRowName.historyBuy.index():
+            return
+        }
+        
+        if indexPath.row == MoreRowName.historyBuy.index() {
             presenter?.goToPage(name: .historyBuy)
-            break
-        case MoreRowName.policy.index():
+            return
+        }
+        if indexPath.row == MoreRowName.policy.index() {
             presenter?.goToPage(name: .policy)
-            break
-        case MoreRowName.tutorial.index():
+            return
+        }
+        if indexPath.row == MoreRowName.tutorial.index() {
             presenter?.goToPage(name: .tutorial)
-            break
-        case MoreRowName.setting.index():
+            return
+        }
+        if indexPath.row == MoreRowName.setting.index(){
             presenter?.goToPage(name: .setting)
-            break
-        case MoreRowName.changePassword.index():
-            presenter?.goToPage(name: .changePassword)
-            break
-        case MoreRowName.logout.index():
-            if UserDefaultHelper.shared.loginUserInfo != nil {
+            return
+        }
+        
+        if UserDefaultHelper.shared.loginUserInfo != nil {
+            if indexPath.row == MoreRowName.changePassword.index(){
+                presenter?.goToPage(name: .changePassword)
+                return
+            }
+            if indexPath.row == MoreRowName.logout.index(){
                 presenter?.goToPage(name: .logout)
-            } 
-            break
-        default:
-            break
+                return
+            }
+        }
+        
+        if indexPath.row == MoreRowName.version.index() {
+            return
         }
     }
     
@@ -99,11 +131,12 @@ extension MoreViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        
-       if UserDefaultHelper.shared.loginUserInfo == nil {
+       return 0
+    }
+}
 
-        return 0
-        }
-        return 4
+extension MoreViewController: MoreViewProtocol {
+    func logoutSuccess() {
+        tvMore.reloadData()
     }
 }

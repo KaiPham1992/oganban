@@ -27,4 +27,20 @@ class UpdateProfileInteractor: UpdateProfileInteractorInputProtocol {
             self.presenter?.didErrorUpdateProfile(error: error)
         }
     }
+    
+    func updateAvatar(image: UIImage) {
+        ProgressView.shared.show()
+        Provider.shared.userAPIService.uploadAvatar(image: image, success: { _user in
+            guard var user = UserDefaultHelper.shared.loginUserInfo else {return }
+            ProgressView.shared.hide()
+            
+            user.imgSRC = _user?.imgSRC
+            user.imgCropSrc = _user?.imgCropSrc
+            UserDefaultHelper.shared.loginUserInfo = user
+            self.presenter?.didSuccessUpdateProfile(user: user)
+        }, failure: { error in
+            ProgressView.shared.hide()
+            self.presenter?.didErrorUpdateProfile(error: error)
+        })
+    }
 }

@@ -54,14 +54,24 @@ class DateFollowWeekPopup: BaseViewXib  {
     }
     
     func getDefaultData(){
-        dateList = self.generateDates(fromStartDate: Date(), value: 6)
+        let curentDay = Date()
+        dateList.append(curentDay)
+        let curentDayIndex = curentDay.getIndexOfDay()
+        let previousDate = self.generateDates(isNextDate: false, fromStartDate: curentDay, value: -curentDayIndex)
+        let nextDate = self.generateDates(isNextDate: true, fromStartDate: curentDay, value: 6 - curentDayIndex)
+       
+        for item in previousDate.reversed() {
+           dateList.insert(item, at: 0)
+        }
+        dateList.append(contentsOf: nextDate)
+        //dateList = self.generateDates(fromStartDate: Date(), value: 6)
         cvDate.reloadData()
     }
     
     func generateDates(isNextDate: Bool = true, fromStartDate :Date, addbyUnit:Calendar.Component = .day, value : Int) -> [Date] {
         
         var dates = [Date]()
-        dates.append(fromStartDate)
+        //dates.append(fromStartDate)
         
         var date = fromStartDate
         let endDate = Calendar.current.date(byAdding: addbyUnit, value: value, to: date)!
@@ -81,18 +91,27 @@ class DateFollowWeekPopup: BaseViewXib  {
     }
     
     func calculateDates (isNextDate: Bool) {
+        
         if isNextDate {
             guard let endDate = self.dateList.last else {
                 return
             }
+            dateList.removeAll()
             let startDate = Calendar.current.date(byAdding: .day, value: 1, to: endDate)!
-            dateList = self.generateDates(isNextDate: true, fromStartDate: startDate, value: 6)
+            dateList.append(startDate)
+            let nextDates = self.generateDates(isNextDate: true, fromStartDate: startDate, value: 6)
+            dateList.append(contentsOf: nextDates)
         } else {
             guard let endDate = self.dateList.first else {
                 return
             }
+            dateList.removeAll()
             let startDate = Calendar.current.date(byAdding: .day, value: -1, to: endDate)!
-            dateList = self.generateDates(isNextDate: false, fromStartDate: startDate, value: -6)
+            dateList.append(startDate)
+            let previousDates = self.generateDates(isNextDate: false, fromStartDate: startDate, value: -6)
+            for item in previousDates.reversed() {
+                dateList.insert(item, at: 0)
+            }
         }
         self.cvDate.reloadData()
     }
@@ -153,11 +172,7 @@ extension DateFollowWeekPopup: UICollectionViewDelegate, UICollectionViewDataSou
         guard let cell = collectionView.cellForItem(at: indexPath) as? DateFollowWeekCell else { return }
         cell.setColorSelectedDate(isSelected: true, date: self.dateList[indexPath.item])
         selectedDate = self.dateList[indexPath.item]
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        guard let cell = collectionView.cellForItem(at: indexPath) as? DateFollowWeekCell else { return }
-        cell.setColorSelectedDate(isSelected: false, date: self.dateList[indexPath.item])
+        cvDate.reloadData()
     }
 }
 

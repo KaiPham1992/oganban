@@ -13,4 +13,15 @@ import UIKit
 class MoreInteractor: MoreInteractorInputProtocol {
 
     weak var presenter: MoreInteractorOutputProtocol?
+    
+    func logout() {
+        ProgressView.shared.show()
+        ProgressView.shared.hide()
+        Provider.shared.userAPIService.logout(success: { (_) in
+            UserUtils.clearLogin()
+            self.presenter?.logoutSuccess()
+        }) { (error) in
+            ProgressView.shared.hide()
+        }
+    }
 }

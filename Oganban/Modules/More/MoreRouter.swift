@@ -11,20 +11,20 @@
 import UIKit
 
 class MoreRouter: MoreWireframeProtocol {
-
+    
     weak var viewController: UIViewController?
-
+    
     static func createModule() -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = MoreViewController(nibName: nil, bundle: nil)
         let interactor = MoreInteractor()
         let router = MoreRouter()
         let presenter = MorePresenter(interface: view, interactor: interactor, router: router)
-
+        
         view.presenter = presenter
         interactor.presenter = presenter
         router.viewController = view
-
+        
         return view
     }
     
@@ -43,7 +43,7 @@ class MoreRouter: MoreWireframeProtocol {
             print("Chọn Lịch sử mua tin")
             break
         case MoreRowName.policy:
-            tapMore()
+            tapPolicy()
             print("Chọn Điều khoản sử dụng")
             break
         case MoreRowName.tutorial:
@@ -53,6 +53,7 @@ class MoreRouter: MoreWireframeProtocol {
             print("Chọn Cài đặt")
             break
         case MoreRowName.changePassword:
+            tapChangePassword()
             print("Chọn Đổi mật khẩu")
             break
         case MoreRowName.logout:
@@ -75,22 +76,18 @@ class MoreRouter: MoreWireframeProtocol {
     }
     
     private func tapHistoryCoin(){
-        let vc = LoginRouter.createModule()
-        viewController?.present(controller: vc, animated: true)
+      
     }
     
     private func tapHistoryBuy(){
-        PopUpHelper.shared.showDateFollowWeekPopup(completionDate: { (date) in
-            if let date = date {
-                print("SELECTED DATE: " + date.toString(dateFormat: AppDateFormat.ddMMYYYY_VN))
-            }
-        })
+
     }
     
-    private func tapMore(){
-        let vc = SupplementaryInfoRouter.createModule()
-        vc.modalPresentationStyle = .overFullScreen
-        viewController?.present(controller: vc, animated: true)
+    private func tapPolicy(){
     }
     
+    private func tapChangePassword() {
+        let vc = ChangePasswordRouter.createModule()
+        viewController?.navigationController?.pushViewController(vc, animated: true)
+    }
 }

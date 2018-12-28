@@ -77,12 +77,6 @@
 		B35F529821D276A000D3FA30 /* SignUpParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35F529721D276A000D3FA30 /* SignUpParam.swift */; };
 		B36AEE9B21CDD90500BED43C /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36AEE9921CDD90500BED43C /* TabbarViewController.swift */; };
 		B36AEE9C21CDD90500BED43C /* TabbarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36AEE9A21CDD90500BED43C /* TabbarProtocol.swift */; };
-		B36AEEA421CDDB6600BED43C /* MybuyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36AEE9E21CDDB6600BED43C /* MybuyPresenter.swift */; };
-		B36AEEA521CDDB6600BED43C /* MybuyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36AEE9F21CDDB6600BED43C /* MybuyRouter.swift */; };
-		B36AEEA621CDDB6600BED43C /* MybuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36AEEA021CDDB6600BED43C /* MybuyViewController.swift */; };
-		B36AEEA721CDDB6600BED43C /* MybuyProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36AEEA121CDDB6600BED43C /* MybuyProtocols.swift */; };
-		B36AEEA821CDDB6600BED43C /* MybuyInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36AEEA221CDDB6600BED43C /* MybuyInteractor.swift */; };
-		B36AEEA921CDDB6600BED43C /* MybuyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B36AEEA321CDDB6600BED43C /* MybuyViewController.xib */; };
 		B36AEEB121CDDB8000BED43C /* MySellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36AEEAB21CDDB8000BED43C /* MySellPresenter.swift */; };
 		B36AEEB221CDDB8000BED43C /* MySellRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36AEEAC21CDDB8000BED43C /* MySellRouter.swift */; };
 		B36AEEB321CDDB8000BED43C /* MySellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36AEEAD21CDDB8000BED43C /* MySellViewController.swift */; };
@@ -181,6 +175,12 @@
 		CB3A8F1321C64FC1008144BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB3A8F1121C64FC1008144BD /* Main.storyboard */; };
 		CB3A8F1521C64FC1008144BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB3A8F1421C64FC1008144BD /* Assets.xcassets */; };
 		CB3A8F1821C64FC1008144BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB3A8F1621C64FC1008144BD /* LaunchScreen.storyboard */; };
+		CBBB3DF421D5C74400281ABB /* ChangePasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBB3DEE21D5C74400281ABB /* ChangePasswordPresenter.swift */; };
+		CBBB3DF521D5C74400281ABB /* ChangePasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBB3DEF21D5C74400281ABB /* ChangePasswordRouter.swift */; };
+		CBBB3DF621D5C74400281ABB /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBB3DF021D5C74400281ABB /* ChangePasswordViewController.swift */; };
+		CBBB3DF721D5C74400281ABB /* ChangePasswordProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBB3DF121D5C74400281ABB /* ChangePasswordProtocols.swift */; };
+		CBBB3DF821D5C74400281ABB /* ChangePasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBB3DF221D5C74400281ABB /* ChangePasswordInteractor.swift */; };
+		CBBB3DF921D5C74400281ABB /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBBB3DF321D5C74400281ABB /* ChangePasswordViewController.xib */; };
 		DE07F56921CF539D00DE2032 /* AppCollectionPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE07F56821CF539D00DE2032 /* AppCollectionPhoto.swift */; };
 		DE0DBAE421D3B6DA0097E38F /* NotificationProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0DBADB21D3B6DA0097E38F /* NotificationProtocols.swift */; };
 		DE0DBAE521D3B6DA0097E38F /* NotificationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0DBADC21D3B6DA0097E38F /* NotificationPresenter.swift */; };
@@ -195,6 +195,7 @@
 		DE0DBAF121D3BA460097E38F /* NotificationEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0DBAF021D3BA460097E38F /* NotificationEndPoint.swift */; };
 		DE0DBAF321D3BBAC0097E38F /* NotificationAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0DBAF221D3BBAC0097E38F /* NotificationAPIService.swift */; };
 		DE0DBAF521D3BC590097E38F /* ParentNotificationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0DBAF421D3BC590097E38F /* ParentNotificationEntity.swift */; };
+		DE0E79D721D658080053786D /* SelectImageFromMobileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0E79D621D658080053786D /* SelectImageFromMobileHelper.swift */; };
 		DE2181FA21CD3AD300FDD9F1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE2181F921CD3AD300FDD9F1 /* GoogleService-Info.plist */; };
 		DE2181FC21CD3C1400FDD9F1 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2181FB21CD3C1400FDD9F1 /* AppRouter.swift */; };
 		DE2181FE21CD3DC300FDD9F1 /* AppDelegate+Push.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2181FD21CD3DC300FDD9F1 /* AppDelegate+Push.swift */; };
@@ -384,12 +385,6 @@
 		B35F529721D276A000D3FA30 /* SignUpParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpParam.swift; sourceTree = "<group>"; };
 		B36AEE9921CDD90500BED43C /* TabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		B36AEE9A21CDD90500BED43C /* TabbarProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarProtocol.swift; sourceTree = "<group>"; };
-		B36AEE9E21CDDB6600BED43C /* MybuyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MybuyPresenter.swift; sourceTree = "<group>"; };
-		B36AEE9F21CDDB6600BED43C /* MybuyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MybuyRouter.swift; sourceTree = "<group>"; };
-		B36AEEA021CDDB6600BED43C /* MybuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MybuyViewController.swift; sourceTree = "<group>"; };
-		B36AEEA121CDDB6600BED43C /* MybuyProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MybuyProtocols.swift; sourceTree = "<group>"; };
-		B36AEEA221CDDB6600BED43C /* MybuyInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MybuyInteractor.swift; sourceTree = "<group>"; };
-		B36AEEA321CDDB6600BED43C /* MybuyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MybuyViewController.xib; sourceTree = "<group>"; };
 		B36AEEAB21CDDB8000BED43C /* MySellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySellPresenter.swift; sourceTree = "<group>"; };
 		B36AEEAC21CDDB8000BED43C /* MySellRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySellRouter.swift; sourceTree = "<group>"; };
 		B36AEEAD21CDDB8000BED43C /* MySellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySellViewController.swift; sourceTree = "<group>"; };
@@ -492,6 +487,12 @@
 		CB3A8F1421C64FC1008144BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB3A8F1721C64FC1008144BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB3A8F1921C64FC1008144BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBBB3DEE21D5C74400281ABB /* ChangePasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordPresenter.swift; sourceTree = "<group>"; };
+		CBBB3DEF21D5C74400281ABB /* ChangePasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordRouter.swift; sourceTree = "<group>"; };
+		CBBB3DF021D5C74400281ABB /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		CBBB3DF121D5C74400281ABB /* ChangePasswordProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordProtocols.swift; sourceTree = "<group>"; };
+		CBBB3DF221D5C74400281ABB /* ChangePasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordInteractor.swift; sourceTree = "<group>"; };
+		CBBB3DF321D5C74400281ABB /* ChangePasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangePasswordViewController.xib; sourceTree = "<group>"; };
 		DE07F56821CF539D00DE2032 /* AppCollectionPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCollectionPhoto.swift; sourceTree = "<group>"; };
 		DE0DBADB21D3B6DA0097E38F /* NotificationProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationProtocols.swift; sourceTree = "<group>"; };
 		DE0DBADC21D3B6DA0097E38F /* NotificationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationPresenter.swift; sourceTree = "<group>"; };
@@ -506,6 +507,7 @@
 		DE0DBAF021D3BA460097E38F /* NotificationEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationEndPoint.swift; sourceTree = "<group>"; };
 		DE0DBAF221D3BBAC0097E38F /* NotificationAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAPIService.swift; sourceTree = "<group>"; };
 		DE0DBAF421D3BC590097E38F /* ParentNotificationEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentNotificationEntity.swift; sourceTree = "<group>"; };
+		DE0E79D621D658080053786D /* SelectImageFromMobileHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectImageFromMobileHelper.swift; sourceTree = "<group>"; };
 		DE2181F921CD3AD300FDD9F1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DE2181FB21CD3C1400FDD9F1 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		DE2181FD21CD3DC300FDD9F1 /* AppDelegate+Push.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Push.swift"; sourceTree = "<group>"; };
@@ -794,19 +796,6 @@
 			path = Tabbar;
 			sourceTree = "<group>";
 		};
-		B36AEE9D21CDDB3F00BED43C /* MyBuy */ = {
-			isa = PBXGroup;
-			children = (
-				B36AEE9E21CDDB6600BED43C /* MybuyPresenter.swift */,
-				B36AEE9F21CDDB6600BED43C /* MybuyRouter.swift */,
-				B36AEEA021CDDB6600BED43C /* MybuyViewController.swift */,
-				B36AEEA121CDDB6600BED43C /* MybuyProtocols.swift */,
-				B36AEEA221CDDB6600BED43C /* MybuyInteractor.swift */,
-				B36AEEA321CDDB6600BED43C /* MybuyViewController.xib */,
-			);
-			path = MyBuy;
-			sourceTree = "<group>";
-		};
 		B36AEEAA21CDDB7000BED43C /* MySell */ = {
 			isa = PBXGroup;
 			children = (
@@ -912,7 +901,6 @@
 				DE0DBADA21D3B6DA0097E38F /* Notification */,
 				DE442C3621CFA1FE0051C0B8 /* OrderDetail */,
 				B36AEEAA21CDDB7000BED43C /* MySell */,
-				B36AEE9D21CDDB3F00BED43C /* MyBuy */,
 				B36AEE9721CDD8CD00BED43C /* Tabbar */,
 				DE21821421CD40AE00FDD9F1 /* UserManager */,
 				84421BE621CBEEA600F468F5 /* More */,
@@ -1099,6 +1087,7 @@
 				CB172B6B21C6A2EE0068CF92 /* UserUtils.swift */,
 				CB172B6C21C6A2EE0068CF92 /* AnimationHelper.swift */,
 				CB172B6D21C6A2EE0068CF92 /* Utils.swift */,
+				DE0E79D621D658080053786D /* SelectImageFromMobileHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1204,6 +1193,19 @@
 			path = Oganban;
 			sourceTree = "<group>";
 		};
+		CBBB3DED21D5C72200281ABB /* ChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				CBBB3DEE21D5C74400281ABB /* ChangePasswordPresenter.swift */,
+				CBBB3DEF21D5C74400281ABB /* ChangePasswordRouter.swift */,
+				CBBB3DF021D5C74400281ABB /* ChangePasswordViewController.swift */,
+				CBBB3DF121D5C74400281ABB /* ChangePasswordProtocols.swift */,
+				CBBB3DF221D5C74400281ABB /* ChangePasswordInteractor.swift */,
+				CBBB3DF321D5C74400281ABB /* ChangePasswordViewController.xib */,
+			);
+			path = ChangePassword;
+			sourceTree = "<group>";
+		};
 		DE0DBADA21D3B6DA0097E38F /* Notification */ = {
 			isa = PBXGroup;
 			children = (
@@ -1252,6 +1254,7 @@
 		DE21821421CD40AE00FDD9F1 /* UserManager */ = {
 			isa = PBXGroup;
 			children = (
+				CBBB3DED21D5C72200281ABB /* ChangePassword */,
 				CB0C3A1C21D3BE990052DD91 /* ForgotPassword */,
 				84ABC68021CFF06700E0D202 /* UpdateProfile */,
 				84421C0021CBF47000F468F5 /* SupplementaryInfo */,
@@ -1687,11 +1690,11 @@
 				84487C8C21CB80D7008B25B2 /* Roboto-LightItalic.ttf in Resources */,
 				B3E67E9D21CF41260012546F /* DropdownPhoneCell.xib in Resources */,
 				B36AEEC921CDF47A00BED43C /* AdmobCell.xib in Resources */,
-				B36AEEA921CDDB6600BED43C /* MybuyViewController.xib in Resources */,
 				84ABC68C21CFF06700E0D202 /* UpdateProfileViewController.xib in Resources */,
 				84421BFB21CBEF1E00F468F5 /* MoreCell.xib in Resources */,
 				84487C8821CB7EA0008B25B2 /* Roboto-Bold.ttf in Resources */,
 				DE442C5621CFB7570051C0B8 /* SubCommentCell.xib in Resources */,
+				CBBB3DF921D5C74400281ABB /* ChangePasswordViewController.xib in Resources */,
 				DE442C4D21CFAAD70051C0B8 /* CommentCell.xib in Resources */,
 				84487C9021CB80F2008B25B2 /* Roboto-Thin.ttf in Resources */,
 				DEC5166B21CE986400A17CBF /* AdmobBannerView.xib in Resources */,
@@ -1876,6 +1879,7 @@
 				DE21827021CD473100FDD9F1 /* KActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
 				84A92BEE21CA518200148191 /* OganbanCustomButton.swift in Sources */,
 				84ABC68A21CFF06700E0D202 /* UpdateProfileViewController.swift in Sources */,
+				CBBB3DF821D5C74400281ABB /* ChangePasswordInteractor.swift in Sources */,
 				B355EF5321C8EB3F00379F57 /* HomeInteractor.swift in Sources */,
 				CB172C0E21C6A2EF0068CF92 /* UIDevice+extension.swift in Sources */,
 				B355EF5021C8EB3F00379F57 /* HomeRouter.swift in Sources */,
@@ -1936,17 +1940,14 @@
 				DE21826A21CD473100FDD9F1 /* KActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
 				CB172C9121C6A2EF0068CF92 /* AppImage.swift in Sources */,
 				CB172B4021C6A2A20068CF92 /* Provider.swift in Sources */,
-				B36AEEA721CDDB6600BED43C /* MybuyProtocols.swift in Sources */,
 				CB172C2821C6A2EF0068CF92 /* AnimationHelper.swift in Sources */,
 				B36AEEB421CDDB8000BED43C /* MySellProtocols.swift in Sources */,
 				DEC5167021CE98F200A17CBF /* AppPhoto.swift in Sources */,
 				DE21827F21CD473100FDD9F1 /* KActivityIndicatorAnimationBallPulseRise.swift in Sources */,
 				B355EF5121C8EB3F00379F57 /* HomeViewController.swift in Sources */,
-				B36AEEA521CDDB6600BED43C /* MybuyRouter.swift in Sources */,
 				CB172C2721C6A2EF0068CF92 /* UserUtils.swift in Sources */,
 				DE0DBAF521D3BC590097E38F /* ParentNotificationEntity.swift in Sources */,
 				DE21822821CD440B00FDD9F1 /* Login+GoogleSignIn.swift in Sources */,
-				B36AEEA421CDDB6600BED43C /* MybuyPresenter.swift in Sources */,
 				DE2181FC21CD3C1400FDD9F1 /* AppRouter.swift in Sources */,
 				CB172C0B21C6A2EF0068CF92 /* PopUpNotification.swift in Sources */,
 				DE21827221CD473100FDD9F1 /* KActivityIndicatorAnimationBallTrianglePath.swift in Sources */,
@@ -1976,7 +1977,6 @@
 				84396D3E21D1389B00818FAB /* UpdateProfile+Event.swift in Sources */,
 				84421BF921CBEF1E00F468F5 /* MoreHeaderCell.swift in Sources */,
 				DE21823021CD458E00FDD9F1 /* UserAPIService.swift in Sources */,
-				B36AEEA821CDDB6600BED43C /* MybuyInteractor.swift in Sources */,
 				84A92BF721CA555900148191 /* LoginRouter.swift in Sources */,
 				84421BEE21CBEECF00F468F5 /* MoreRouter.swift in Sources */,
 				B355EF5D21C8FB1400379F57 /* SignUpRouter.swift in Sources */,
@@ -2005,6 +2005,8 @@
 				CB172C9221C6A2EF0068CF92 /* NotificationConstant.swift in Sources */,
 				8432075021CF529D00A4F11E /* DateFollowWeekPopup.swift in Sources */,
 				DEE1DA7A21CE2E130036FEB7 /* PopUpUpdateQuantityBuy.swift in Sources */,
+				DE0E79D721D658080053786D /* SelectImageFromMobileHelper.swift in Sources */,
+				CBBB3DF621D5C74400281ABB /* ChangePasswordViewController.swift in Sources */,
 				DE21829421CD4EB600FDD9F1 /* FTextField.swift in Sources */,
 				84421BF121CBEECF00F468F5 /* MoreInteractor.swift in Sources */,
 				DE21822121CD419B00FDD9F1 /* PhoneEntity.swift in Sources */,
@@ -2025,6 +2027,7 @@
 				CB172C9821C6A2EF0068CF92 /* AppFont.swift in Sources */,
 				84ABC68E21CFF06700E0D202 /* UpdateProfilePresenter.swift in Sources */,
 				DE21820021CD3DE800FDD9F1 /* AppDelegate+GoogleSignIn.swift in Sources */,
+				CBBB3DF521D5C74400281ABB /* ChangePasswordRouter.swift in Sources */,
 				DE21827E21CD473100FDD9F1 /* KActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */,
 				DE21822621CD43E200FDD9F1 /* Login+Facebook.swift in Sources */,
 				DE0DBAF121D3BA460097E38F /* NotificationEndPoint.swift in Sources */,
@@ -2032,6 +2035,8 @@
 				84ABC68D21CFF06700E0D202 /* UpdateProfileInteractor.swift in Sources */,
 				CB172C9E21C6A2EF0068CF92 /* BaseView.swift in Sources */,
 				B392FB3721D3B0170076A7B5 /* CategoryEndPoint.swift in Sources */,
+				CBBB3DF721D5C74400281ABB /* ChangePasswordProtocols.swift in Sources */,
+				CBBB3DF421D5C74400281ABB /* ChangePasswordPresenter.swift in Sources */,
 				DEE1DA5F21CDF3050036FEB7 /* AdmobNativeView.swift in Sources */,
 				CB172C9421C6A2EF0068CF92 /* APIConstant.swift in Sources */,
 				DE442C4121CFA2130051C0B8 /* OrderDetailInteractor.swift in Sources */,
@@ -2065,7 +2070,6 @@
 				DE21828721CD473100FDD9F1 /* ProgressView.swift in Sources */,
 				DE21828221CD473100FDD9F1 /* KActivityIndicatorView.swift in Sources */,
 				DE0DBAE621D3B6DA0097E38F /* NotificationInteractor.swift in Sources */,
-				B36AEEA621CDDB6600BED43C /* MybuyViewController.swift in Sources */,
 				DE21823521CD465700FDD9F1 /* UserEndPoint.swift in Sources */,
 				B36AEE9B21CDD90500BED43C /* TabbarViewController.swift in Sources */,
 				CB3A8F0E21C64FC1008144BD /* AppDelegate.swift in Sources */,

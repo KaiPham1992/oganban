@@ -33,25 +33,40 @@ enum MoreRowName: String, CaseIterable {
     case setting
     case changePassword
     case logout
+    case version
     
     func index() -> Int {
-        switch self {
-        case .header:
+        
+        if self == .header {
             return 0
-        case .historyCoin:
-            return 1
-        case .historyBuy:
-            return 2
-        case .policy:
-            return 3
-        case .tutorial:
-            return 4
-        case .setting:
-            return 5
-        case .changePassword:
-            return 6
-        case .logout:
-            return 7
         }
+        if self == .historyCoin {
+            return 1
+        }
+        if self == .historyBuy {
+            return 2
+        }
+        if self == .policy {
+            return 3
+        }
+        if self == .tutorial {
+            return 4
+        }
+        if self == .setting {
+            return 5
+        }
+        
+        if UserDefaultHelper.shared.loginUserInfo != nil {
+            if self == .changePassword {
+                return 6
+            }
+            if self == .logout {
+                return 7
+            }
+            if self == .version {
+                return 8
+            }
+        }
+        return 6 // index for version if user don't login
     }
 }

@@ -9,7 +9,7 @@
 import UIKit
 
 class MoreCell: UITableViewCell {
-
+    
     @IBOutlet weak var imgIcon: UIImageView!
     @IBOutlet weak var vTopLine: UIView!
     @IBOutlet weak var vBottomLine: UIView!
@@ -21,51 +21,56 @@ class MoreCell: UITableViewCell {
         vBottomLine.isHidden = false
         imgIcon.isHidden = false
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
-    func showLogout(){
+    func showData(index: Int){
+        
+        lbTitle.textColor = AppColor.gray_65_65_65
+        vBottomLine.isHidden = false
+        imgIcon.isHidden = false
+        
+        if index == MoreRowName.historyCoin.index() {
+            lbTitle.text = MoreTitle.historyCoin
+            return
+        }
+        
+        if index == MoreRowName.historyBuy.index() {
+            lbTitle.text = MoreTitle.historyBuy
+            return
+        }
+        if index == MoreRowName.policy.index() {
+            lbTitle.text = MoreTitle.policy
+            return
+        }
+        if index == MoreRowName.tutorial.index() {
+            lbTitle.text = MoreTitle.tutorial
+            return
+        }
+        if index == MoreRowName.setting.index(){
+            lbTitle.text = MoreTitle.setting
+            return
+        }
+        
         if UserDefaultHelper.shared.loginUserInfo != nil {
-            lbTitle.textColor = AppColor.gray_65_65_65
-            lbTitle.text = MoreTitle.logout
-            vBottomLine.isHidden = false
-            imgIcon.isHidden = false
-        } else {
+            if index == MoreRowName.changePassword.index(){
+                lbTitle.text = MoreTitle.changePassword
+                return
+            }
+            if index == MoreRowName.logout.index(){
+                lbTitle.text = MoreTitle.logout
+                return
+            }
+        }
+        
+        if index == MoreRowName.version.index() {
             lbTitle.textColor = AppColor.gray_200_200_200
             lbTitle.text = MoreTitle.version + " 1.0"
             vBottomLine.isHidden = true
             imgIcon.isHidden = true
-        }
-    }
-    
-    func showData(index: Int){
-        
-        switch index {
-        case MoreRowName.historyCoin.index():
-            lbTitle.text = MoreTitle.historyCoin
-            break
-        case MoreRowName.historyBuy.index():
-            lbTitle.text = MoreTitle.historyBuy
-            break
-        case MoreRowName.policy.index():
-            lbTitle.text = MoreTitle.policy
-            break
-        case MoreRowName.tutorial.index():
-            lbTitle.text = MoreTitle.tutorial
-            break
-        case MoreRowName.setting.index():
-            lbTitle.text = MoreTitle.setting
-            break
-        case MoreRowName.changePassword.index():
-            lbTitle.text = MoreTitle.changePassword
-            break
-        case MoreRowName.logout.index():
-            self.showLogout()
-            break
-        default:
-            break
+            return
         }
     }
 }

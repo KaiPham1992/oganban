@@ -5,7 +5,7 @@
 //  Created by Kai Pham on 12/21/18.
 //  Copyright © 2018 Coby. All rights reserved.
 //
-
+import UIKit
 import Alamofire
 import ObjectMapper
 
@@ -29,6 +29,7 @@ enum UserEndPoint {
     case addFavoriteStaff(type: String, staffID: String)
     
     case updateProfileSocial(param: UpdateProfileSocial)
+    case uploadAvatar()
 }
 
 extension UserEndPoint: EndPointType {
@@ -39,37 +40,39 @@ extension UserEndPoint: EndPointType {
         case .fogotPassword(_):
             return "_api/user/forgot_password"
         case .checkLogin():
-            return "user/check_login"
+            return "_api/user/check_login"
         case .getCaptcha:
             return "_api/user/get_captcha"
         case .logout:
-            return "user/logout"
+            return "_api/user/logout"
         case .loginGmail, .loginFacebook:
             return "_api/user/login_social"
         case .signUp:
             return "_api/user/register"
         case .changePassword:
-            return "user/change_password"
+            return "_api/user/change_password"
         case .updateProfile:
             return "_api/user/update_profile"
         case .verifyPhone:
             return "_api/user/verify_phone"
         case .getListFavorite:
-            return "user/favorite_list"
+            return "_api/user/favorite_list"
         case .getIntroduceList:
-            return "user/introduce_list"
+            return "_api/user/introduce_list"
         case .getPointHistory:
-            return "point/point_list_log"
+            return "_api/point/point_list_log"
         case .addFavorite, .addFavoriteStaff:
-            return "user/add_favorite"
+            return "_api/user/add_favorite"
         case .updateProfileSocial:
             return "_api/user/update_profile_social"
+        case .uploadAvatar:
+            return "_api/user/upload_avatar"
         }
     }
     
     var httpMethod: HTTPMethod {
         switch self {
-        case .login, .fogotPassword, .checkLogin, .logout, .loginGmail, .loginFacebook, .verifyPhone, .getPointHistory, .getListFavorite, .addFavorite, .addFavoriteStaff, .signUp:
+        case .login, .fogotPassword, .checkLogin, .logout, .loginGmail, .loginFacebook, .verifyPhone, .getPointHistory, .getListFavorite, .addFavorite, .addFavoriteStaff, .signUp, .uploadAvatar:
             return .post
         case .getCaptcha, .getIntroduceList:
             return .get
@@ -94,7 +97,9 @@ extension UserEndPoint: EndPointType {
         case .getCaptcha:
             return [:]
         case .logout:
-            return [:]
+            var param = [:] as [String: Any]
+            param = BaseParam.addDeviceParams(inputParams: param)
+            return param
         case .loginGmail(let param):
             let newParam = BaseParam.addDeviceParams(inputParams: param.toJSON())
             return newParam
@@ -102,15 +107,14 @@ extension UserEndPoint: EndPointType {
             var newParm = fbEntity.toJSON()
             newParm = BaseParam.addDeviceParams(inputParams: newParm)
             newParm["phone_number"] = phone
-            
-            
             return newParm
         case .signUp(let param):
             let params = BaseParam.addDeviceParams(inputParams: param.toJSON())
             return params
         case .changePassword(let current, let new):
-            let param = ["current_password": current,
+            var param = ["current_password": current,
                          "new_password": new] as [String: Any]
+            param = BaseParam.addDeviceParams(inputParams: param)
             return param
         case .updateProfile(let param):
             let param = ["fullname": param.fullName ?? "",
@@ -146,6 +150,8 @@ extension UserEndPoint: EndPointType {
             
         case .updateProfileSocial(let param):
             return param.toJSON()
+        case .uploadAvatar:
+            return [:]
         }
     }
     

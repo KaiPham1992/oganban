@@ -58,8 +58,8 @@ extension UpdateProfileViewController {
                     gender = "other"
                 }
                 
-                let userInfo = UserEntity(displayName: displayName, phoneNumber: phone, phoneCode: phoneCode, birthday: birthDay, gender: gender, houseAddress: self.tfAddress1.tfContent.text, companyAddress: self.tfAddress2.tfContent.text)
-                self.presenter?.updateProfile(userInfo: userInfo)
+                self.user = UserEntity(displayName: displayName, phoneNumber: phone, phoneCode: phoneCode, birthday: birthDay, gender: gender, houseAddress: self.tfAddress1.tfContent.text, companyAddress: self.tfAddress2.tfContent.text)
+                self.fbAccountKit.verifyPhone()
                 
             } else {
                 print("Update Error")
@@ -94,7 +94,7 @@ extension UpdateProfileViewController {
 extension UpdateProfileViewController: UpdateProfileViewProtocol{
     func didSuccessUpdateProfile(user: UserEntity?) {
         if let _ = user {
-            print ("HIỂN THỊ MÀN HÌNH XÁC THỰC SỐ ĐIỆN THOẠI")
+            PopUpHelper.shared.showMessageHaveAds(message: "Lưu thay đổi thành công")
         }
     }
     

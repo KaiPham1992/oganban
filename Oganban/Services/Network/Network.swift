@@ -20,6 +20,7 @@ import SwiftyJSON
 protocol APINetworkProtocol {
     func requestData(endPoint: EndPointType, success: @escaping NetworkSuccess, failure: @escaping RequestFailure)
     func uploadImages(image: UIImage, endPoint: EndPointType, success: @escaping NetworkSuccess, failure: @escaping RequestFailure)
+    func uploadAvatar(image: UIImage, endPoint: EndPointType, success: @escaping NetworkSuccess, failure: @escaping RequestFailure)
 }
 
 struct APINetwork: APINetworkProtocol {
@@ -58,14 +59,31 @@ struct APINetwork: APINetworkProtocol {
         }
     }
     
+    func uploadAvatar(image: UIImage, endPoint: EndPointType, success: @escaping NetworkSuccess, failure: @escaping RequestFailure) {
+        print(endPoint.parameters)
+        
+        request.uploadAvatar(image: image, endPoint: endPoint, success: { data in
+            let json = JSON(data)
+            print(json)
+            
+            guard let result = Mapper<BaseResponse>().map(JSONObject: json.dictionaryObject) else {
+                failure(APPError.canNotParseData)
+                return
+            }
+            
+            self.handleResponse(response: result, success: success, failure: failure)
+        }) { error in
+            print("APINetwork - uploadImages: \(String(describing: error?.code?.description&))")
+            failure(APIError(error: error))
+        }
+    }
+    
     func uploadImages(image: UIImage, endPoint: EndPointType, success: @escaping NetworkSuccess, failure: @escaping RequestFailure) {
         print(endPoint.parameters)
         
         request.uploadImages(image: image, endPoint: endPoint, success: { data in
             let json = JSON(data)
             print(json)
-            
-           
             
             guard let result = Mapper<BaseResponse>().map(JSONObject: json.dictionaryObject) else {
                 failure(APPError.canNotParseData)
@@ -84,12 +102,6 @@ struct APINetwork: APINetworkProtocol {
 extension APINetwork {
     private func handleResponse(response: BaseResponse, success: @escaping NetworkSuccess, failure: @escaping RequestFailure) {
         if response.status == 200 || response.status == nil {
-            //            if let _ = response.data {
-            //                success(response)
-            //            } else {
-            //                // handle error parser data
-            //                failure(APPError.canNotParseData)
-            //            }
             success(response)
         } else {
             // handle error with message from API
