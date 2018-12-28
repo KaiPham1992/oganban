@@ -26,7 +26,6 @@ class SupplementaryInfoViewController: BaseViewController {
     @IBOutlet weak var tfName: OganbanCustomTextfield!
     @IBOutlet weak var vContent: UIView!
     
-    var loginSocialParam: LoginSocialParam?
     
     var isCheck: Bool = false {
         didSet{
@@ -54,8 +53,6 @@ class SupplementaryInfoViewController: BaseViewController {
         addGesture()
         tapSendButton()
         textFieldDidBeginEditing()
-        
-        tfName.tfContent.text = self.loginSocialParam?.fullName
     }
     
     func hideError(isHidden: Bool = true, message: String? = nil){
@@ -66,11 +63,11 @@ class SupplementaryInfoViewController: BaseViewController {
 
 extension SupplementaryInfoViewController: SupplementaryInfoViewProtocol {
     func didLogin(user: UserEntity?) {
-        
+        self.dismiss()
     }
     
     func didLogin(error: APIError?) {
-        
+        self.lbError.text = error?.message
     }
 }
 

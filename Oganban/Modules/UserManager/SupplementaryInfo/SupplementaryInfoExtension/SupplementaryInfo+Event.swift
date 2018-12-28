@@ -23,10 +23,9 @@ extension SupplementaryInfoViewController {
         btnSend.tapButton = {
             self.view.endEditing(true)
             if self.validateInputData() {
-                guard let param = self.loginSocialParam else { return }
-                param.updateParam(fullName: self.tfName.tfContent.text&, birthDay: self.tfBirthday.tfContent.text&, gender: self.gender?.keyParam&, address1: self.tfAddress1.tfContent.text, address2: self.tfAddress2.tfContent.text, codeIntro: self.tfCode.tfContent.text)
+                let newParam = UpdateProfileSocial(fullName: self.tfName.tfContent.text&, birthDay: self.tfBirthday.tfContent.text&, gender: self.gender?.keyParam&, address1: self.tfAddress1.tfContent.text, address2: self.tfAddress2.tfContent.text, codeIntroduction: self.tfCode.tfContent.text)
                 
-                self.presenter?.loginSocial(socialParam: param)
+                self.presenter?.updateLoginSocial(socialParam: newParam)
                 
             } else {
                 print("Login Error")

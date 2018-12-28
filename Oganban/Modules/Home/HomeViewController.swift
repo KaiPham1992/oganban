@@ -25,6 +25,9 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var vScaleDropdown   : UIView!
     @IBOutlet weak var btnFavorite      : UIButton!
     @IBOutlet weak var lbCategory       : UILabel!
+    @IBOutlet weak var lbDistance       : UILabel!
+    @IBOutlet weak var tfSearch         : UITextField!
+    
     
 	var presenter: HomePresenterProtocol?
     
@@ -36,7 +39,7 @@ class HomeViewController: BaseViewController {
     
     var listRecord: [RecordEntity] = [] {
         didSet {
-            print(listRecord)
+            self.cvHome.reloadData()
         }
     }
     
@@ -45,6 +48,7 @@ class HomeViewController: BaseViewController {
     var listCategory: [CategoryEntity] = []
     
     let scaleDropdown = DropDown()
+    var paramFilter = RecordParam()
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +56,7 @@ class HomeViewController: BaseViewController {
         configureCollectionView()
         configureTableView()
         presenter?.getCategoryMerge()
+        presenter?.filterRecord(param: paramFilter)
         
     }
     
@@ -77,7 +82,7 @@ class HomeViewController: BaseViewController {
         cvHome.dataSource = self
     }
     
-    func configureTableView() {
+    private func configureTableView() {
         tbLeft.registerTableCell(MenuCell.self)
         tbRight.registerTableCell(MenuCell.self)
         tbRight.registerTableCell(AcceptCell.self)
@@ -96,15 +101,31 @@ class HomeViewController: BaseViewController {
     
     override func setUpViews() {
         setUpScaleDropdown()
+        tfSearch.delegate = self
     }
     
     private func setUpScaleDropdown() {
         scaleDropdown.anchorView = vScaleDropdown
-        scaleDropdown.dataSource = ["1km", "2km", "3km"]
+        let data = [Scale(title: "100m", distance: "100"),
+                    Scale(title: "200m", distance: "200"),
+                    Scale(title: "500m", distance: "500"),
+                    Scale(title: "1km", distance: "1000"),
+                    Scale(title: "2km", distance: "2000"),
+                    Scale(title: "5km", distance: "5000"),
+                    Scale(title: "10km", distance: "10000"),
+                    Scale(title: "50km", distance: "50000"),
+                    Scale(title: "Không giới hạn", distance: nil)]
+        scaleDropdown.dataSource = data.map({$0.title&})
         scaleDropdown.backgroundColor = AppColor.main
-        scaleDropdown.setupCornerRadius(10)
+        DropDown.appearance().setupCornerRadius(10)
         scaleDropdown.textColor = .white
         scaleDropdown.downScaleTransform = CGAffineTransform(rotationAngle: (-.pi))
+        scaleDropdown.selectionAction = { [weak self](index, item) in
+            guard let `self` = self else { return }
+            self.lbDistance.text = item
+            self.paramFilter.radius = data[index].distance&
+            self.presenter?.filterRecord(param: self.paramFilter)
+        }
     }
     
     @IBAction func hideDropdownTapped() {
@@ -172,10 +193,22 @@ extension HomeViewController: HomeViewProtocol {
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 10
+        if listRecord.count%10 == 0 {
+            return listRecord.count/10
+        } else {
+            return listRecord.count/10 + 1
+        }
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 11
+        if listRecord.count%10 == 0 {
+            return 11
+        } else {
+            if section == listRecord.count/10 {
+                return listRecord.count%10 + 1
+            } else {
+                return 11
+            }
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -184,6 +217,8 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
             return cell
         } else {
             let cell = collectionView.dequeueCollectionCell(HomeCell.self, indexPath: indexPath)
+            let temp = (indexPath.row - 1) + indexPath.section * 10
+            cell.setData(record: listRecord[temp])
             return cell
         }
     }
@@ -290,20 +325,42 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 extension HomeViewController: AcceptCellDelegate {
     func acceptTapped() {
         hideDropdown()
+       
         let listChoose = menu[index].cateChild.filter { (item) -> Bool in
             return item.isSelected
+        }
+        
+        for temp in 0...menu.count - 1 {
+            if temp != index {
+                for indexCate in 0...menu[temp].cateChild.count - 1 {
+                    menu[temp].cateChild[indexCate].isSelected = false
+                }
+            }
         }
         var category = ""
         for choose in listChoose {
             category += "\(choose.name&), "
         }
-        lbCategory.text = category
+        if category != "" {
+            lbCategory.text = category
+        } else {
+            lbCategory.text = "Tất cả danh mục"
+        }
         
-        var listCate = listChoose.map { (item) -> String in
+        
+        let listCate = listChoose.map { (item) -> String in
             return item.id&
         }
-        listCate.append("13")
-        let param = RecordParam(id: listCate)
-        presenter?.filterRecord(param: param)
+        
+        paramFilter.categoryId = listCate
+        presenter?.filterRecord(param: paramFilter)
+    }
+}
+
+extension HomeViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        paramFilter.keyword = textField.text&
+        presenter?.filterRecord(param: paramFilter)
+        return true
     }
 }

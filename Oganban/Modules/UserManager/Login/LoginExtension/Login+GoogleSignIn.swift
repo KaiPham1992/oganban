@@ -35,7 +35,8 @@ extension LoginViewController: GIDSignInDelegate {
             print("Error login gmail: \(error.localizedDescription)")
         } else {
             let newLoginSocialParam = LoginSocialParam(user: user)
-            self.presenter?.showSupplementaryInfoPage(loginSocialParam: newLoginSocialParam)
+            self.loginType = .gmail
+            self.presenter?.loginSocial(param: newLoginSocialParam)
         }
     }
     

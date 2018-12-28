@@ -8,9 +8,9 @@ PODS:
   - Bolts/Tasks (1.9.0)
   - CryptoSwift (0.13.1)
   - DropDown (2.3.12)
-  - FBSDKCoreKit (4.39.0):
+  - FBSDKCoreKit (4.38.0):
     - Bolts (~> 1.9)
-  - FBSDKLoginKit (4.38.1):
+  - FBSDKLoginKit (4.38.0):
     - FBSDKCoreKit
   - Firebase/Core (5.15.0):
     - Firebase/CoreOnly
@@ -119,7 +119,8 @@ DEPENDENCIES:
   - Alamofire (= 4.7.3)
   - CryptoSwift (from `https://github.com/krzyzanowskim/CryptoSwift`, branch `master`)
   - DropDown
-  - FBSDKLoginKit (= 4.38.1)
+  - FBSDKCoreKit (= 4.38.0)
+  - FBSDKLoginKit (= 4.38.0)
   - Firebase/Core
   - Firebase/Messaging
   - Google-Mobile-Ads-SDK
@@ -185,8 +186,8 @@ SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   CryptoSwift: ff68c35a53e03177d31aaa2c1e8b3e010aeed6cb
   DropDown: 0bcc278799ec11a3d34ce1aac9367fbbaf5423d9
-  FBSDKCoreKit: 1e3981faefab8c88edfaa9eecd94aab02d99a9bc
-  FBSDKLoginKit: 4621c690d9dd8628031a4791497062183ea34b0d
+  FBSDKCoreKit: 2ab7fdbf600dc6b628ba7a49aa29d357a7b4c74e
+  FBSDKLoginKit: 634fa27e72e33620eb6389253337342c03d4a407
   Firebase: 8bb9268bff82374f2cbaaabb143e725743c316ae
   FirebaseAnalytics: c06f9d70577d79074214700a71fd5d39de5550fb
   FirebaseAnalyticsInterop: e5f21be9af6548372e2f0815834ff909bff395a2
@@ -211,6 +212,6 @@ SPEC CHECKSUMS:
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: f22b95f920ca0d62f4ed1a05b304442b1dc1f966
+PODFILE CHECKSUM: 99b8355e1477852f0a099271e70e7e824cb5fb7b
 
 COCOAPODS: 1.5.3
