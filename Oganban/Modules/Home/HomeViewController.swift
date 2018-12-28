@@ -48,7 +48,8 @@ class HomeViewController: BaseViewController {
     var listCategory: [CategoryEntity] = []
     
     let scaleDropdown = DropDown()
-    
+    var paramFilter = RecordParam()
+    var dataSource: [PositionRangeEntity] = []
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +57,8 @@ class HomeViewController: BaseViewController {
         configureCollectionView()
         configureTableView()
         presenter?.getCategoryMerge()
-        presenter?.filterRecord(param: RecordParam())
+        presenter?.filterRecord(param: paramFilter)
+        presenter?.getPositionRange()
         
     }
     
@@ -106,16 +108,6 @@ class HomeViewController: BaseViewController {
     
     private func setUpScaleDropdown() {
         scaleDropdown.anchorView = vScaleDropdown
-        let data = [Scale(title: "100m", distance: "100"),
-                    Scale(title: "200m", distance: "200"),
-                    Scale(title: "500m", distance: "500"),
-                    Scale(title: "1km", distance: "1000"),
-                    Scale(title: "2km", distance: "2000"),
-                    Scale(title: "5km", distance: "5000"),
-                    Scale(title: "10km", distance: "10000"),
-                    Scale(title: "50km", distance: "50000"),
-                    Scale(title: "Không giới hạn", distance: nil)]
-        scaleDropdown.dataSource = data.map({$0.title&})
         scaleDropdown.backgroundColor = AppColor.main
         DropDown.appearance().setupCornerRadius(10)
         scaleDropdown.textColor = .white
@@ -123,7 +115,8 @@ class HomeViewController: BaseViewController {
         scaleDropdown.selectionAction = { [weak self](index, item) in
             guard let `self` = self else { return }
             self.lbDistance.text = item
-            self.presenter?.filterRecord(param: RecordParam(radius: data[index].distance&))
+            self.paramFilter.radius = self.dataSource[index].title&
+            self.presenter?.filterRecord(param: self.paramFilter)
         }
     }
     
@@ -158,6 +151,11 @@ class HomeViewController: BaseViewController {
 }
 
 extension HomeViewController: HomeViewProtocol {
+    func didGetPositionRange(list: [PositionRangeEntity]) {
+        self.dataSource = list
+        scaleDropdown.dataSource = list.map({$0.title&})
+    }
+    
     func didFilterRecord(list: [RecordEntity]) {
         listRecord = list
     }
@@ -192,10 +190,22 @@ extension HomeViewController: HomeViewProtocol {
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        if listRecord.count%10 == 0 {
+            return listRecord.count/10
+        } else {
+            return listRecord.count/10 + 1
+        }
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return listRecord.count + 1
+        if listRecord.count%10 == 0 {
+            return 11
+        } else {
+            if section == listRecord.count/10 {
+                return listRecord.count%10 + 1
+            } else {
+                return 11
+            }
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -204,7 +214,8 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
             return cell
         } else {
             let cell = collectionView.dequeueCollectionCell(HomeCell.self, indexPath: indexPath)
-            cell.setData(record: listRecord[indexPath.row - 1])
+            let temp = (indexPath.row - 1) + indexPath.section * 10
+            cell.setData(record: listRecord[temp])
             return cell
         }
     }
@@ -338,15 +349,15 @@ extension HomeViewController: AcceptCellDelegate {
             return item.id&
         }
         
-        let param = RecordParam(id: listCate)
-        presenter?.filterRecord(param: param)
+        paramFilter.categoryId = listCate
+        presenter?.filterRecord(param: paramFilter)
     }
 }
 
 extension HomeViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        let param = RecordParam(keyword: textField.text&)
-        presenter?.filterRecord(param: param)
+        paramFilter.keyword = textField.text&
+        presenter?.filterRecord(param: paramFilter)
         return true
     }
 }

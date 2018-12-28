@@ -13,6 +13,7 @@ enum CategoryEndPoint {
     case getCategoryChild(categoryId: String)
     case getCategoryMerge()
     case filterRecord(param: RecordParam)
+    case getPositionRange()
 }
 
 extension CategoryEndPoint: EndPointType {
@@ -26,12 +27,14 @@ extension CategoryEndPoint: EndPointType {
             return "_api/category/get_category_merge"
         case .filterRecord:
             return "_api/record/get_all_records_by_category"
+        case .getPositionRange:
+            return "_api/common/position_range"
         }
     }
     
     var httpMethod: HTTPMethod {
         switch self {
-        case .getCategory, .getCategoryChild, .getCategoryMerge, .filterRecord:
+        case .getCategory, .getCategoryChild, .getCategoryMerge, .filterRecord, .getPositionRange:
             return .post
         }
     }
@@ -44,6 +47,8 @@ extension CategoryEndPoint: EndPointType {
             return ["category_id": categoryId]
         case .filterRecord(let param):
             return param.toJSON()
+        case .getPositionRange:
+            return [:]
         }
     }
     

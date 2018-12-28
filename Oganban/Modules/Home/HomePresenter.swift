@@ -11,6 +11,10 @@
 import UIKit
 
 class HomePresenter: HomePresenterProtocol {
+    func getPositionRange() {
+        interactor?.getPositionRange()
+    }
+    
     func filterRecord(param: RecordParam) {
         interactor?.filterRecord(param: param)
     }
@@ -41,6 +45,10 @@ class HomePresenter: HomePresenterProtocol {
 }
 
 extension HomePresenter: HomeInteractorOutputProtocol  {
+    func didGetPositionRange(list: [PositionRangeEntity]) {
+        view?.didGetPositionRange(list: list)
+    }
+    
     func didFilterRecord(list: [RecordEntity]) {
         view?.didFilterRecord(list: list)
     }

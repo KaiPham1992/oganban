@@ -13,7 +13,7 @@ protocol CategoryAPIServiceProtocol {
     func getCategoryChild(categoryId: String, success: @escaping SuccessHandler<CategoryEntity>.array, failure: @escaping RequestFailure)
     func getCategoryMerge(success: @escaping SuccessHandler<CategoryMergeEntity>.array, failure: @escaping RequestFailure)
     func filterRecord(param: RecordParam, success: @escaping SuccessHandler<RecordEntity>.array, failure: @escaping RequestFailure)
-    
+    func getPositionRange(success: @escaping SuccessHandler<PositionRangeEntity>.array, failure: @escaping RequestFailure)
 }
 
 class CategoryAPIService: CategoryAPIServiceProtocol {
@@ -41,6 +41,11 @@ class CategoryAPIService: CategoryAPIServiceProtocol {
     
     func filterRecord(param: RecordParam, success: @escaping SuccessHandler<RecordEntity>.array, failure: @escaping RequestFailure) {
         let endPoint = CategoryEndPoint.filterRecord(param: param)
+        network.requestData(endPoint: endPoint, success: MapperData.mapArray(success), failure: failure)
+    }
+    
+    func getPositionRange(success: @escaping SuccessHandler<PositionRangeEntity>.array, failure: @escaping RequestFailure) {
+        let endPoint = CategoryEndPoint.getPositionRange()
         network.requestData(endPoint: endPoint, success: MapperData.mapArray(success), failure: failure)
     }
 }

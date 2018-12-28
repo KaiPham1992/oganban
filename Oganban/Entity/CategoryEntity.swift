@@ -59,12 +59,26 @@ class Menu {
     }
 }
 
-class Scale {
-    var title: String?
-    var distance: String?
+struct PositionRangeEntity: Mappable {
     
-    init(title: String, distance: String?) {
-        self.title = title
-        self.distance = distance
+    var id: String?
+    var value: String?
+    var title: String?
+    
+    init?(map: Map) {
+        
+    }
+    mutating func mapping(map: Map) {
+        self.id <- map["_id"]
+        self.value <- map["_value"]
+        
+        if let _value = Int(value&) {
+            if _value < 1000 {
+                self.title = "\(value&)m"
+            } else {
+                self.title = "\(_value/1000)km"
+            }
+        }
     }
 }
+
