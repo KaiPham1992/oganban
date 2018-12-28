@@ -27,6 +27,7 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var lbCategory       : UILabel!
     @IBOutlet weak var lbDistance       : UILabel!
     @IBOutlet weak var tfSearch         : UITextField!
+    @IBOutlet weak var vAccept         : UIView!
     
     
 	var presenter: HomePresenterProtocol?
@@ -99,6 +100,7 @@ class HomeViewController: BaseViewController {
         tbRight.layer.cornerRadius = 10
         tbRight.allowsMultipleSelection = true
         tbLeft.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: tbLeft.bounds.size.width - 10)
+        tbRight.contentInset.bottom = 40
     }
     
     override func setUpViews() {
@@ -128,6 +130,7 @@ class HomeViewController: BaseViewController {
         tbRight.isHidden = true
         tbLeft.isHidden = true
         btnHideDropdown.isHidden = true
+        vAccept.isHidden = true
     }
     
     @IBAction func btnShowDropdownCategoryTapped() {
@@ -147,6 +150,39 @@ class HomeViewController: BaseViewController {
     @IBAction func btnGotoFavoriteTapped() {
         let vc = SignUpRouter.createModule()
         self.push(controller: vc)
+    }
+    
+    @IBAction func acceptTapped() {
+        hideDropdown()
+        
+        let listChoose = menu[index].cateChild.filter { (item) -> Bool in
+            return item.isSelected
+        }
+        
+        for temp in 0...menu.count - 1 {
+            if temp != index {
+                for indexCate in 0...menu[temp].cateChild.count - 1 {
+                    menu[temp].cateChild[indexCate].isSelected = false
+                }
+            }
+        }
+        var category = ""
+        for choose in listChoose {
+            category += "\(choose.name&), "
+        }
+        if category != "" {
+            lbCategory.text = category
+        } else {
+            lbCategory.text = "Tất cả danh mục"
+        }
+        
+        
+        let listCate = listChoose.map { (item) -> String in
+            return item.id&
+        }
+        
+        paramFilter.categoryId = listCate
+        presenter?.filterRecord(param: paramFilter)
     }
 }
 
@@ -244,7 +280,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return menu.count
         case tbRight:
             if menu.count > 0 {
-                return menu[index].cateChild.count + 1
+                return menu[index].cateChild.count
             } else {
                 return 0
             }
@@ -265,17 +301,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
             
         case tbRight:
-            if indexPath.row == menu[index].cateChild.count {
-                let cell = tableView.dequeueTableCell(AcceptCell.self)
-                cell.delegate = self
-                return cell
-            } else {
-                let cell = tableView.dequeueTableCell(MenuCell.self)
-                cell.lbTitle.text = menu[index].cateChild[indexPath.row].name
-                self.heightRight.constant = heightContent < heightMax ? tableView.contentSize.height : (heightMax)
-                cell.isSelect = menu[index].cateChild[indexPath.row].isSelected
-                return cell
-            }
+            let cell = tableView.dequeueTableCell(MenuCell.self)
+            cell.lbTitle.text = menu[index].cateChild[indexPath.row].name
+            self.heightRight.constant = heightContent < heightMax ? tableView.contentSize.height : (heightMax)
+            cell.isSelect = menu[index].cateChild[indexPath.row].isSelected
+            return cell
             
         default:
             self.heightLeft.constant = tableView.contentSize.height
@@ -290,6 +320,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             index = indexPath.row
             tbRight.reloadData()
             tbRight.isHidden = false
+            vAccept.isHidden = false
             menu[index].isSelected = !menu[index].isSelected
         case tbRight:
             if indexPath.row == menu[index].cateChild.count {
@@ -316,41 +347,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             animations: {
                 cell.transform = CGAffineTransform(translationX: 0, y: 0)
         })
-    }
-}
-
-extension HomeViewController: AcceptCellDelegate {
-    func acceptTapped() {
-        hideDropdown()
-       
-        let listChoose = menu[index].cateChild.filter { (item) -> Bool in
-            return item.isSelected
-        }
-        
-        for temp in 0...menu.count - 1 {
-            if temp != index {
-                for indexCate in 0...menu[temp].cateChild.count - 1 {
-                    menu[temp].cateChild[indexCate].isSelected = false
-                }
-            }
-        }
-        var category = ""
-        for choose in listChoose {
-            category += "\(choose.name&), "
-        }
-        if category != "" {
-            lbCategory.text = category
-        } else {
-            lbCategory.text = "Tất cả danh mục"
-        }
-        
-        
-        let listCate = listChoose.map { (item) -> String in
-            return item.id&
-        }
-        
-        paramFilter.categoryId = listCate
-        presenter?.filterRecord(param: paramFilter)
     }
 }
 

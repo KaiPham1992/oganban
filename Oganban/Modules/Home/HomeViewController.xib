@@ -21,6 +21,7 @@
                 <outlet property="tbLeft" destination="bbl-Wi-fSH" id="Vaz-8W-eTq"/>
                 <outlet property="tbRight" destination="j06-9j-smc" id="t57-de-NeI"/>
                 <outlet property="tfSearch" destination="CjW-FX-T8r" id="8oT-Tz-7K5"/>
+                <outlet property="vAccept" destination="xyt-pj-ypa" id="oLW-pH-dQR"/>
                 <outlet property="vCategory" destination="mSp-cb-O6q" id="zzq-nO-ReI"/>
                 <outlet property="vScale" destination="hAx-5I-iJz" id="bUv-yl-t6Z"/>
                 <outlet property="vScaleDropdown" destination="de8-mz-OC3" id="taA-mB-RMV"/>
@@ -345,6 +346,37 @@
                         <constraint firstAttribute="height" constant="150" id="IYq-A9-Yvg"/>
                     </constraints>
                 </tableView>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xyt-pj-ypa">
+                    <rect key="frame" x="188.5" y="244" width="172.5" height="40"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgm-cE-6aw">
+                            <rect key="frame" x="45.5" y="10" width="82" height="20"/>
+                            <color key="backgroundColor" red="0.78431372549019607" green="0.78431372549019607" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="82" id="MMM-QJ-5Ar"/>
+                                <constraint firstAttribute="height" constant="20" id="re0-NZ-QeW"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                            <state key="normal" title="Áp dụng">
+                                <color key="titleColor" red="0.43137254899999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="acceptTapped" destination="-1" eventType="touchUpInside" id="5BH-3w-6lh"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="9P5-Es-Pmw"/>
+                        <constraint firstItem="qgm-cE-6aw" firstAttribute="centerX" secondItem="xyt-pj-ypa" secondAttribute="centerX" id="YoE-Dx-92u"/>
+                        <constraint firstItem="qgm-cE-6aw" firstAttribute="centerY" secondItem="xyt-pj-ypa" secondAttribute="centerY" id="e0B-dJ-Hin"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -355,11 +387,14 @@
                 <constraint firstItem="wzU-jb-x5F" firstAttribute="bottom" secondItem="Tzb-Rw-GPi" secondAttribute="bottom" id="FXG-Ig-d6x"/>
                 <constraint firstItem="bbl-Wi-fSH" firstAttribute="width" secondItem="d9e-Hh-d4D" secondAttribute="width" multiplier="1/2" id="PQu-5d-OI6"/>
                 <constraint firstItem="wzU-jb-x5F" firstAttribute="bottom" secondItem="QVD-c8-nVF" secondAttribute="bottom" id="Q8e-zx-rrX"/>
+                <constraint firstItem="xyt-pj-ypa" firstAttribute="trailing" secondItem="j06-9j-smc" secondAttribute="trailing" id="T6F-GP-3Y0"/>
                 <constraint firstItem="ogO-6E-7DS" firstAttribute="top" secondItem="wzU-jb-x5F" secondAttribute="top" id="TFI-pd-OL4"/>
+                <constraint firstItem="xyt-pj-ypa" firstAttribute="bottom" secondItem="j06-9j-smc" secondAttribute="bottom" id="Vha-Wl-gkB"/>
                 <constraint firstItem="wzU-jb-x5F" firstAttribute="trailing" secondItem="QVD-c8-nVF" secondAttribute="trailing" id="aWK-5A-yHY"/>
                 <constraint firstItem="j06-9j-smc" firstAttribute="leading" secondItem="bbl-Wi-fSH" secondAttribute="trailing" constant="1" id="bt6-qs-Sgm"/>
                 <constraint firstItem="wzU-jb-x5F" firstAttribute="trailing" secondItem="Tzb-Rw-GPi" secondAttribute="trailing" id="d94-tU-ouA"/>
                 <constraint firstItem="Tzb-Rw-GPi" firstAttribute="top" secondItem="wzU-jb-x5F" secondAttribute="top" id="dZW-lp-hrn"/>
+                <constraint firstItem="xyt-pj-ypa" firstAttribute="leading" secondItem="j06-9j-smc" secondAttribute="leading" id="gPT-fh-uKy"/>
                 <constraint firstItem="bbl-Wi-fSH" firstAttribute="leading" secondItem="d9e-Hh-d4D" secondAttribute="leading" id="o24-Fu-krj"/>
                 <constraint firstItem="ogO-6E-7DS" firstAttribute="leading" secondItem="wzU-jb-x5F" secondAttribute="leading" id="qZ4-TO-9o5"/>
                 <constraint firstItem="bbl-Wi-fSH" firstAttribute="top" secondItem="d9e-Hh-d4D" secondAttribute="bottom" id="xOn-id-Ekm"/>
