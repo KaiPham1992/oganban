@@ -32,6 +32,7 @@ extension UpdateProfileViewController {
         tfGender.tfContent.isEnabled = false
         
         tvPhone.tfPhone.keyboardType = .numberPad
+        tvPhone.delegate = self
         
         tfAddress1.setupLayoutTextfield(placeholderText: TitleString.placeHolderHouseAddress, titleText: TitleString.houseAddress, placeholderColor: AppColor.black414141)
         tfAddress2.setupLayoutTextfield(placeholderText: TitleString.placeHolderCompanyAddress, titleText: TitleString.companyAddress, placeholderColor: AppColor.black414141)
