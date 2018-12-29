@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MySellExpiredViewController">
+            <connections>
+                <outlet property="lbTotalExpired" destination="4uo-3L-2Ry" id="GjZ-D6-LkG"/>
+                <outlet property="lbTotalHiden" destination="9UX-qG-FYw" id="4Ux-Kg-w7m"/>
+                <outlet property="tbExpired" destination="gyy-Ci-VUU" id="EUq-rl-lVJ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J0N-iZ-tCs">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tin hết hạn: 1" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4uo-3L-2Ry">
+                            <rect key="frame" x="15" y="7.5" width="67.5" height="15"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="11"/>
+                            <color key="textColor" red="0.0031099999999999999" green="0.48585882352941179" blue="0.7921607843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tin đã ẩn: 5" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9UX-qG-FYw">
+                            <rect key="frame" x="302.5" y="7.5" width="57.5" height="15"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="11"/>
+                            <color key="textColor" red="0.0039399999999999999" green="0.48627058823529412" blue="0.79214117647058824" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="9UX-qG-FYw" secondAttribute="trailing" constant="15" id="1hK-DS-eSy"/>
+                        <constraint firstItem="4uo-3L-2Ry" firstAttribute="leading" secondItem="J0N-iZ-tCs" secondAttribute="leading" constant="15" id="G4i-SV-mBN"/>
+                        <constraint firstItem="4uo-3L-2Ry" firstAttribute="centerY" secondItem="J0N-iZ-tCs" secondAttribute="centerY" id="UHH-lq-F7h"/>
+                        <constraint firstAttribute="height" constant="30" id="XoH-AD-E9p"/>
+                        <constraint firstItem="9UX-qG-FYw" firstAttribute="centerY" secondItem="4uo-3L-2Ry" secondAttribute="centerY" id="mR4-gL-zjo"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gyy-Ci-VUU">
+                    <rect key="frame" x="0.0" y="30" width="375" height="637"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="gyy-Ci-VUU" firstAttribute="top" secondItem="J0N-iZ-tCs" secondAttribute="bottom" id="DtT-Oi-ZFM"/>
+                <constraint firstItem="gyy-Ci-VUU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Kid-QN-K4b"/>
+                <constraint firstItem="J0N-iZ-tCs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Ryg-Jp-MZI"/>
+                <constraint firstAttribute="bottom" secondItem="gyy-Ci-VUU" secondAttribute="bottom" id="fG7-cY-jRw"/>
+                <constraint firstItem="J0N-iZ-tCs" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="mqQ-n2-nrB"/>
+                <constraint firstAttribute="trailing" secondItem="J0N-iZ-tCs" secondAttribute="trailing" id="wKQ-Yh-PV5"/>
+                <constraint firstAttribute="trailing" secondItem="gyy-Ci-VUU" secondAttribute="trailing" id="xSr-oN-Mmu"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

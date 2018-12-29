@@ -14,12 +14,14 @@ import Foundation
 protocol MySellContainerWireframeProtocol: class {
 
     func gotoLogin()
+    func gotoMySellExpired()
 }
 //MARK: Presenter -
 protocol MySellContainerPresenterProtocol: class {
 
     var interactor: MySellContainerInteractorInputProtocol? { get set }
     func gotoLogin()
+    func gotoMySellExpired()
 }
 
 //MARK: Interactor -

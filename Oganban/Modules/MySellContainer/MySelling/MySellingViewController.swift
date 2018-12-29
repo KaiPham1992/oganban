@@ -13,6 +13,7 @@ import UIKit
 
 protocol MySellingViewControllerDelegate: class {
     func gotoLogin()
+    func gotoMySellExpired()
 }
 
 class MySellingViewController: UIViewController {
@@ -76,7 +77,8 @@ class MySellingViewController: UIViewController {
     }
     
     @IBAction func btnExpired() {
-        
+//        presenter?.gotoMySellExpired()
+        delegate?.gotoMySellExpired()
     }
     
     @IBAction func login() {

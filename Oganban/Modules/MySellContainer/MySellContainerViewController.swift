@@ -44,4 +44,8 @@ extension MySellContainerViewController: MySellingViewControllerDelegate, MyExch
     func gotoLogin() {
         presenter?.gotoLogin()
     }
+    
+    func gotoMySellExpired() {
+        presenter?.gotoMySellExpired()
+    }
 }

@@ -29,4 +29,7 @@ class MySellingRouter: MySellingWireframeProtocol {
         return view
     }
     
+    func gotoMySellExpired() {
+        
+    }
 }

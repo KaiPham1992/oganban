@@ -27,10 +27,12 @@ class RecordSellingView: BaseViewXib {
             }
             lbProductName.text = _record.name
             lbTime.text = _record.createTime?.timeAgo()
-            lbPrice.text = _record.price
-            lbCoin.text = _record.coin
+            lbPrice.text = "\(_record.price ?? "") đ"
+            lbCoin.text = "\(_record.coin ?? "") ơ"
             let qty = _record.quantity
             lbTotal.text = "SL còn lại: \(qty ?? "")"
+            lbCoin.underlineLastCharacter()
+            lbPrice.underlineLastCharacter()
         }
     }
     
