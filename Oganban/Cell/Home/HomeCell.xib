@@ -76,20 +76,20 @@
                                                             <constraint firstAttribute="width" constant="60" id="lSV-kh-NJk"/>
                                                         </constraints>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Nyb-IR-Beo">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Nyb-IR-Beo">
                                                         <rect key="frame" x="0.0" y="0.0" width="144" height="30"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vUq-H9-JCi">
-                                                                <rect key="frame" x="0.0" y="0.0" width="144" height="15"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="144" height="13.5"/>
                                                                 <subviews>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_money" translatesAutoresizingMaskIntoConstraints="NO" id="lLJ-jI-EYO">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="15" height="15"/>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_money" translatesAutoresizingMaskIntoConstraints="NO" id="lLJ-jI-EYO">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="13.5" height="13.5"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="lLJ-jI-EYO" secondAttribute="height" multiplier="1:1" id="lm2-kI-as9"/>
                                                                         </constraints>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999,000,000 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OHS-Hb-btz">
-                                                                        <rect key="frame" x="15" y="0.0" width="129" height="15"/>
+                                                                        <rect key="frame" x="13.5" y="0.0" width="130.5" height="13.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                                         <color key="textColor" red="0.82352941176470584" green="0.0078431372549019607" blue="0.0078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -107,16 +107,16 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nTM-H1-UpR">
-                                                                <rect key="frame" x="0.0" y="15" width="144" height="15"/>
+                                                                <rect key="frame" x="0.0" y="16.5" width="144" height="13.5"/>
                                                                 <subviews>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_coin" translatesAutoresizingMaskIntoConstraints="NO" id="c6A-js-Dv6">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="15" height="15"/>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_coin" translatesAutoresizingMaskIntoConstraints="NO" id="c6A-js-Dv6">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="13.5" height="13.5"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="c6A-js-Dv6" secondAttribute="height" multiplier="1:1" id="DSf-4V-Huf"/>
                                                                         </constraints>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="49,950.00 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPP-1E-z2y">
-                                                                        <rect key="frame" x="15" y="0.0" width="129" height="15"/>
+                                                                        <rect key="frame" x="13.5" y="0.0" width="130.5" height="13.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                                         <color key="textColor" red="0.0" green="0.34509803921568627" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -252,10 +252,10 @@
     </objects>
     <resources>
         <image name="avatar" width="22.5" height="22.5"/>
-        <image name="ic_coin" width="8" height="11"/>
-        <image name="ic_money" width="9.5" height="11"/>
+        <image name="ic_coin" width="14.5" height="20"/>
+        <image name="ic_money" width="17" height="20"/>
         <image name="new_label" width="49" height="48"/>
         <image name="rectangle_560271_copy" width="157.5" height="105"/>
-        <image name="star" width="10" height="10"/>
+        <image name="star" width="25" height="25"/>
     </resources>
 </document>
