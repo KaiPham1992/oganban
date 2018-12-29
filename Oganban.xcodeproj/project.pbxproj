@@ -63,6 +63,7 @@
 		B325C2EF21CE05B20048A148 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B325C2ED21CE05B20048A148 /* MenuCell.swift */; };
 		B325C2F021CE05B20048A148 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B325C2EE21CE05B20048A148 /* MenuCell.xib */; };
 		B325C2F221CE26900048A148 /* FTextFieldChoose.swift in Sources */ = {isa = PBXBuildFile; fileRef = B325C2F121CE26900048A148 /* FTextFieldChoose.swift */; };
+		B329A49C21D78A59004BBEE6 /* PositionMapsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B329A49B21D78A59004BBEE6 /* PositionMapsHelper.swift */; };
 		B355EF4F21C8EB3F00379F57 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B355EF4921C8EB3F00379F57 /* HomePresenter.swift */; };
 		B355EF5021C8EB3F00379F57 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B355EF4A21C8EB3F00379F57 /* HomeRouter.swift */; };
 		B355EF5121C8EB3F00379F57 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B355EF4B21C8EB3F00379F57 /* HomeViewController.swift */; };
@@ -420,6 +421,7 @@
 		B325C2ED21CE05B20048A148 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		B325C2EE21CE05B20048A148 /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		B325C2F121CE26900048A148 /* FTextFieldChoose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTextFieldChoose.swift; sourceTree = "<group>"; };
+		B329A49B21D78A59004BBEE6 /* PositionMapsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionMapsHelper.swift; sourceTree = "<group>"; };
 		B355EF4921C8EB3F00379F57 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		B355EF4A21C8EB3F00379F57 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		B355EF4B21C8EB3F00379F57 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -1212,6 +1214,7 @@
 				CB172B6C21C6A2EE0068CF92 /* AnimationHelper.swift */,
 				CB172B6D21C6A2EE0068CF92 /* Utils.swift */,
 				DE0E79D621D658080053786D /* SelectImageFromMobileHelper.swift */,
+				B329A49B21D78A59004BBEE6 /* PositionMapsHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -2313,6 +2316,7 @@
 				84421BF121CBEECF00F468F5 /* MoreInteractor.swift in Sources */,
 				DE21822121CD419B00FDD9F1 /* PhoneEntity.swift in Sources */,
 				B36AEEB121CDDB8000BED43C /* MySellPresenter.swift in Sources */,
+				B329A49C21D78A59004BBEE6 /* PositionMapsHelper.swift in Sources */,
 				DE442C3221CF93C60051C0B8 /* PhotoEntity.swift in Sources */,
 				B36AEEB321CDDB8000BED43C /* MySellViewController.swift in Sources */,
 				CBD1C29721D732CB006DB3FF /* MyBuyRouter.swift in Sources */,

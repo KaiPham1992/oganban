@@ -28,7 +28,7 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var lbCategory       : UILabel!
     @IBOutlet weak var lbDistance       : UILabel!
     @IBOutlet weak var tfSearch         : UITextField!
-    @IBOutlet weak var vAccept         : UIView!
+    @IBOutlet weak var vAccept          : UIView!
     
     private let refreshControl = UIRefreshControl()
 	var presenter: HomePresenterProtocol?
@@ -85,6 +85,7 @@ class HomeViewController: BaseViewController {
         cvHome.registerCollectionCell(HomeCell.self)
         cvHome.delegate = self
         cvHome.dataSource = self
+        cvHome.alwaysBounceVertical = true
         cvHome.contentInset.bottom = 20
         cvHome.addSubview(refreshControl)
         refreshControl.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
@@ -160,12 +161,18 @@ class HomeViewController: BaseViewController {
     }
     
     @IBAction func btnGotoPositionTapped() {
-        presenter?.gotoPositionMaps(delegate: self)
+        presenter?.gotoPositionMaps(delegate: self, address: lbPosition.text&)
     }
     
     @IBAction func btnGotoFavoriteTapped() {
         let vc = SignUpRouter.createModule()
         self.push(controller: vc)
+    }
+    
+    @IBAction func btnSearchTapped() {
+        view.endEditing(true)
+        paramFilter.keyword = tfSearch.text&
+        presenter?.filterRecord(param: paramFilter)
     }
     
     @IBAction func acceptTapped() {
@@ -276,7 +283,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
         if indexPath.row == 0 {
             return CGSize(width: collectionView.frame.width, height: 125)
         } else {
-            return CGSize(width: collectionView.frame.width/2, height: 250)
+            return CGSize(width: collectionView.frame.width/2, height: 260)
         }
     }
     
@@ -382,19 +389,27 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension HomeViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
         paramFilter.keyword = textField.text&
         presenter?.filterRecord(param: paramFilter)
         return true
     }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        view.endEditing(true)
+        paramFilter.keyword = textField.text&
+        presenter?.filterRecord(param: paramFilter)
+    }
 }
 
 extension HomeViewController: PositionViewControllerDelegate {
-    func positionSelected(location: CLLocationCoordinate2D, address: String) {
+    func positionSelected(location: CLLocationCoordinate2D, address: String, distance: Int) {
         let long = String(location.longitude)
         let lat = String(location.latitude)
         paramFilter.long = long
         paramFilter.lat = lat
         lbPosition.text = address
+        self.paramFilter.radius = self.dataSource[distance].title&
         presenter?.filterRecord(param: paramFilter)
     }
 }

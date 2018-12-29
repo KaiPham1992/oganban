@@ -10,9 +10,11 @@
 
 import UIKit
 import GoogleMaps
+import GooglePlaces
+//import GooglePlacePicker
 
 protocol PositionViewControllerDelegate: class {
-    func positionSelected(location: CLLocationCoordinate2D, address: String)
+    func positionSelected(location: CLLocationCoordinate2D, address: String, distance: Int)
 }
 
 class PositionViewController: BaseViewController {
@@ -20,29 +22,37 @@ class PositionViewController: BaseViewController {
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var lbTitleMarker: UILabel!
     @IBOutlet weak var vTitleMarker: UIView!
+    @IBOutlet weak var tfAddress: UITextField!
     
 	var presenter: PositionPresenterProtocol?
     var locationManager = CLLocationManager()
     var centerMapCoordinate:CLLocationCoordinate2D!
     var marker:GMSMarker!
+    var address = ""
+    var dataSource: [String] = []
+    var indexDistance = 0
     weak var delegate: PositionViewControllerDelegate?
     
 	override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func setUpViews() {
         self.mapView?.isMyLocationEnabled = true
-        
         //Location Manager code to fetch current location
         self.locationManager.delegate = self
         self.locationManager.startUpdatingLocation()
         mapView.settings.myLocationButton = true
         mapView.delegate = self
+        tfAddress.delegate = self
+        tfAddress.text = address
     }
 
     override func setUpNavigation() {
         super.setUpNavigation()
         setTitleNavigation(title: "Chọn vị trí của bạn")
-        addButtonTextToNavigation(title: "Huỷ", style: .left, action: #selector(btnRejectTapped))
-        addButtonTextToNavigation(title: "Xong", style: .right, action: #selector(btnDoneTapped))
+        addButtonTextToNavigation(title: "Huỷ", style: .left, action: #selector(btnRejectTapped), textColor: .gray)
+        addButtonTextToNavigation(title: "Xong", style: .right, action: #selector(btnDoneTapped), textColor: .yellow)
     }
     
     @objc func btnRejectTapped() {
@@ -50,7 +60,7 @@ class PositionViewController: BaseViewController {
     }
     
     @objc func btnDoneTapped() {
-        delegate?.positionSelected(location: centerMapCoordinate, address: "Nhà của Tiến")
+        delegate?.positionSelected(location: centerMapCoordinate, address: tfAddress.text&, distance: 2)
         presenter?.dismiss()
     }
 }
@@ -78,7 +88,6 @@ extension PositionViewController: GMSMapViewDelegate {
         centerMapCoordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         self.placeMarkerOnCenter(centerMapCoordinate:centerMapCoordinate)
         print(centerMapCoordinate)
-//        vTitleMarker.isHidden = true
     }
     
     func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
@@ -98,5 +107,13 @@ extension PositionViewController: GMSMapViewDelegate {
 
         marker.position = centerMapCoordinate
         marker.map = self.mapView
+    }
+}
+
+extension PositionViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        PositionMapsHelper.shared.showSearch { address in
+            self.tfAddress.text = address
+        }
     }
 }

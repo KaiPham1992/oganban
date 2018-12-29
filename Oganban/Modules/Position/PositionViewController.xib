@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="lbTitleMarker" destination="2tK-SX-Sff" id="pdX-mm-gKn"/>
                 <outlet property="mapView" destination="dA5-Ir-BIy" id="fhc-J9-agM"/>
+                <outlet property="tfAddress" destination="uBB-t5-wUA" id="9ZK-No-qrb"/>
                 <outlet property="vTitleMarker" destination="tVW-fV-G8Q" id="Bf5-ss-ofO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -70,10 +71,10 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tVW-fV-G8Q">
-                    <rect key="frame" x="99" y="310.5" width="177" height="16"/>
+                    <rect key="frame" x="99" y="307.5" width="177" height="22"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+999 Tin đăng bán gần đây" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tK-SX-Sff">
-                            <rect key="frame" x="5" y="0.0" width="167" height="16"/>
+                            <rect key="frame" x="5" y="3" width="167" height="16"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -81,14 +82,29 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="2tK-SX-Sff" firstAttribute="top" secondItem="tVW-fV-G8Q" secondAttribute="top" id="5ks-4Z-PNf"/>
+                        <constraint firstItem="2tK-SX-Sff" firstAttribute="top" secondItem="tVW-fV-G8Q" secondAttribute="top" constant="3" id="5ks-4Z-PNf"/>
                         <constraint firstAttribute="trailing" secondItem="2tK-SX-Sff" secondAttribute="trailing" constant="5" id="Atk-nq-l96"/>
-                        <constraint firstAttribute="bottom" secondItem="2tK-SX-Sff" secondAttribute="bottom" id="ZFT-Td-9vF"/>
+                        <constraint firstAttribute="bottom" secondItem="2tK-SX-Sff" secondAttribute="bottom" constant="3" id="ZFT-Td-9vF"/>
                         <constraint firstItem="2tK-SX-Sff" firstAttribute="leading" secondItem="tVW-fV-G8Q" secondAttribute="leading" constant="5" id="hIb-02-769"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <real key="value" value="10"/>
+                            <real key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                            <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="0.5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                            <size key="value" width="3" height="3"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
