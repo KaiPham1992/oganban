@@ -16,12 +16,8 @@ postfix func *<T>(element: T?) -> Int {
 
 
 extension Double {
-    func toDistance() -> String {
-        if self < 1000 {
-            return String(format:">%.1fkm", self)
-        } else {
-            return String(format:">%.0fkm", self)
-        }
+    func roundedTwoDemical() -> String {
+        return String(format: "%.2f", self)
     }
 }
 
@@ -54,6 +50,17 @@ extension Int {
     }
 }
 
+extension UInt64 {
+    var toCurrency: String {
+        let price = self as NSNumber
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.locale = Locale(identifier: "vi_vn")
+        
+        guard let currency = formatter.string(from: price) else { return ""}
+        return currency.replacingOccurrences(of: ".", with: ",")
+    }
+}
 
 public extension Double {
     
@@ -68,5 +75,15 @@ public extension Double {
     /// - Returns:      Returns a random double point number between 0 and n max
     public static func random(min: Double, max: Double) -> Double {
         return Double.random * (max - min) + min
+    }
+    
+    var toCurrency: String {
+        let price = self as NSNumber
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.locale = Locale(identifier: "en_us")
+        
+        guard let currency = formatter.string(from: price) else { return ""}
+        return currency.replacingOccurrences(of: "$", with: "")
     }
 }

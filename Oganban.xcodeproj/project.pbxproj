@@ -296,6 +296,13 @@
 		DEBEE80421D740D7004B8D88 /* MySellContainerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBEE7FE21D740D7004B8D88 /* MySellContainerProtocols.swift */; };
 		DEBEE80521D740D7004B8D88 /* MySellContainerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBEE7FF21D740D7004B8D88 /* MySellContainerInteractor.swift */; };
 		DEBEE80621D740D7004B8D88 /* MySellContainerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBEE80021D740D7004B8D88 /* MySellContainerViewController.xib */; };
+		DEBEE80921D7594E004B8D88 /* AppRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBEE80821D7594E004B8D88 /* AppRadioButton.swift */; };
+		DEBEE80D21D7654B004B8D88 /* OrderInfoUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBEE80B21D7654B004B8D88 /* OrderInfoUserCell.swift */; };
+		DEBEE80E21D7654B004B8D88 /* OrderInfoUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBEE80C21D7654B004B8D88 /* OrderInfoUserCell.xib */; };
+		DEBEE81221D76B6F004B8D88 /* OrderIntroCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBEE81021D76B6F004B8D88 /* OrderIntroCell.swift */; };
+		DEBEE81321D76B6F004B8D88 /* OrderIntroCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBEE81121D76B6F004B8D88 /* OrderIntroCell.xib */; };
+		DEBEE81621D76C58004B8D88 /* LevelMemberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBEE81521D76C58004B8D88 /* LevelMemberView.swift */; };
+		DEBEE81821D76C79004B8D88 /* LevelMemberView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBEE81721D76C79004B8D88 /* LevelMemberView.xib */; };
 		DEC5166221CE8DB600A17CBF /* PopUpSettingGPS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC5166121CE8DB600A17CBF /* PopUpSettingGPS.swift */; };
 		DEC5166421CE8DCD00A17CBF /* PopUpSettingGPSContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC5166321CE8DCD00A17CBF /* PopUpSettingGPSContent.swift */; };
 		DEC5166621CE8DDF00A17CBF /* PopUpSettingGPSContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEC5166521CE8DDF00A17CBF /* PopUpSettingGPSContent.xib */; };
@@ -629,6 +636,13 @@
 		DEBEE7FE21D740D7004B8D88 /* MySellContainerProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySellContainerProtocols.swift; sourceTree = "<group>"; };
 		DEBEE7FF21D740D7004B8D88 /* MySellContainerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySellContainerInteractor.swift; sourceTree = "<group>"; };
 		DEBEE80021D740D7004B8D88 /* MySellContainerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MySellContainerViewController.xib; sourceTree = "<group>"; };
+		DEBEE80821D7594E004B8D88 /* AppRadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRadioButton.swift; sourceTree = "<group>"; };
+		DEBEE80B21D7654B004B8D88 /* OrderInfoUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInfoUserCell.swift; sourceTree = "<group>"; };
+		DEBEE80C21D7654B004B8D88 /* OrderInfoUserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderInfoUserCell.xib; sourceTree = "<group>"; };
+		DEBEE81021D76B6F004B8D88 /* OrderIntroCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderIntroCell.swift; sourceTree = "<group>"; };
+		DEBEE81121D76B6F004B8D88 /* OrderIntroCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderIntroCell.xib; sourceTree = "<group>"; };
+		DEBEE81521D76C58004B8D88 /* LevelMemberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelMemberView.swift; sourceTree = "<group>"; };
+		DEBEE81721D76C79004B8D88 /* LevelMemberView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LevelMemberView.xib; sourceTree = "<group>"; };
 		DEC5166121CE8DB600A17CBF /* PopUpSettingGPS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpSettingGPS.swift; sourceTree = "<group>"; };
 		DEC5166321CE8DCD00A17CBF /* PopUpSettingGPSContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpSettingGPSContent.swift; sourceTree = "<group>"; };
 		DEC5166521CE8DDF00A17CBF /* PopUpSettingGPSContent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpSettingGPSContent.xib; sourceTree = "<group>"; };
@@ -734,6 +748,8 @@
 		84A92BE921CA50F000148191 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				DEBEE81421D76C3F004B8D88 /* LevelMemberView */,
+				DEBEE80721D7594E004B8D88 /* AppRadioButton */,
 				DEA3A09621D67EBB00643296 /* PaddingLabel */,
 				DEA3A08521D6738100643296 /* AppImageSlide */,
 				DE442C4321CFA33D0051C0B8 /* PostCommentView */,
@@ -1475,6 +1491,8 @@
 		DE442C4821CFAAA90051C0B8 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				DEBEE80F21D76B5C004B8D88 /* OrderIntroCell */,
+				DEBEE80A21D76515004B8D88 /* OrderInfoUserCell */,
 				DEA3A08F21D6797D00643296 /* OrderDetailImageCell */,
 				DE442C6621CFC18B0051C0B8 /* ReplyComentCell */,
 				DE442C6121CFBD7C0051C0B8 /* HeaderOrderDetail */,
@@ -1587,6 +1605,41 @@
 				DEBEE80021D740D7004B8D88 /* MySellContainerViewController.xib */,
 			);
 			path = MySellContainer;
+			sourceTree = "<group>";
+		};
+		DEBEE80721D7594E004B8D88 /* AppRadioButton */ = {
+			isa = PBXGroup;
+			children = (
+				DEBEE80821D7594E004B8D88 /* AppRadioButton.swift */,
+			);
+			path = AppRadioButton;
+			sourceTree = "<group>";
+		};
+		DEBEE80A21D76515004B8D88 /* OrderInfoUserCell */ = {
+			isa = PBXGroup;
+			children = (
+				DEBEE80B21D7654B004B8D88 /* OrderInfoUserCell.swift */,
+				DEBEE80C21D7654B004B8D88 /* OrderInfoUserCell.xib */,
+			);
+			path = OrderInfoUserCell;
+			sourceTree = "<group>";
+		};
+		DEBEE80F21D76B5C004B8D88 /* OrderIntroCell */ = {
+			isa = PBXGroup;
+			children = (
+				DEBEE81021D76B6F004B8D88 /* OrderIntroCell.swift */,
+				DEBEE81121D76B6F004B8D88 /* OrderIntroCell.xib */,
+			);
+			path = OrderIntroCell;
+			sourceTree = "<group>";
+		};
+		DEBEE81421D76C3F004B8D88 /* LevelMemberView */ = {
+			isa = PBXGroup;
+			children = (
+				DEBEE81521D76C58004B8D88 /* LevelMemberView.swift */,
+				DEBEE81721D76C79004B8D88 /* LevelMemberView.xib */,
+			);
+			path = LevelMemberView;
 			sourceTree = "<group>";
 		};
 		DEC5166021CE8DA300A17CBF /* PopUpSettingGPS */ = {
@@ -1827,6 +1880,7 @@
 				84487C8A21CB80D2008B25B2 /* Roboto-Italic.ttf in Resources */,
 				CB172C8821C6A2EF0068CF92 /* OpenSans-Italic.ttf in Resources */,
 				8432074F21CF529D00A4F11E /* DateFollowWeekPopup.xib in Resources */,
+				DEBEE80E21D7654B004B8D88 /* OrderInfoUserCell.xib in Resources */,
 				DEE1DA5321CDE3080036FEB7 /* PopUpNotificationHaveAdmobContent.xib in Resources */,
 				CB172C8D21C6A2EF0068CF92 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				DE0DBAE721D3B6DA0097E38F /* NotificationCell.xib in Resources */,
@@ -1834,6 +1888,7 @@
 				B392FB3E21D3D6AE0076A7B5 /* AcceptCell.xib in Resources */,
 				84421BFA21CBEF1E00F468F5 /* MoreHeaderCell.xib in Resources */,
 				B325C2F021CE05B20048A148 /* MenuCell.xib in Resources */,
+				DEBEE81821D76C79004B8D88 /* LevelMemberView.xib in Resources */,
 				DEA3A08921D6738200643296 /* AppImageSlide.xib in Resources */,
 				DEA3A09321D679A000643296 /* OrderDetailImageCell.xib in Resources */,
 				84487C8921CB7EA4008B25B2 /* Roboto-BoldItalic.ttf in Resources */,
@@ -1852,6 +1907,7 @@
 				CB172C8721C6A2EF0068CF92 /* OpenSans-Light.ttf in Resources */,
 				B36AEECF21CDF52B00BED43C /* HomeCell.xib in Resources */,
 				84487C8D21CB80DB008B25B2 /* Roboto-Medium.ttf in Resources */,
+				DEBEE81321D76B6F004B8D88 /* OrderIntroCell.xib in Resources */,
 				DEBEE80621D740D7004B8D88 /* MySellContainerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1971,6 +2027,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84421C0721CBF52900F468F5 /* SupplementaryInfoPresenter.swift in Sources */,
+				DEBEE80D21D7654B004B8D88 /* OrderInfoUserCell.swift in Sources */,
 				84C8542C21CFD72900BDABE5 /* Login+SetupUI.swift in Sources */,
 				B392FB3921D3B13E0076A7B5 /* CategoryAPIService.swift in Sources */,
 				CB172C9321C6A2EF0068CF92 /* AppString.swift in Sources */,
@@ -2043,6 +2100,7 @@
 				84421BF821CBEF1E00F468F5 /* MoreCell.swift in Sources */,
 				CB172B2F21C6A22A0068CF92 /* BaseParam.swift in Sources */,
 				DEE1DA6D21CDF5E70036FEB7 /* PopUpSelectGenderContent.swift in Sources */,
+				DEBEE80921D7594E004B8D88 /* AppRadioButton.swift in Sources */,
 				84ABC68F21CFF06700E0D202 /* UpdateProfileRouter.swift in Sources */,
 				CB172C1321C6A2EF0068CF92 /* UIButton+extension.swift in Sources */,
 				DE21826D21CD473100FDD9F1 /* KActivityIndicatorAnimationBallPulse.swift in Sources */,
@@ -2213,7 +2271,9 @@
 				DE21826121CD473100FDD9F1 /* KActivityIndicatorAnimationAudioEqualizer.swift in Sources */,
 				CB172C0F21C6A2EF0068CF92 /* UIColor+extension.swift in Sources */,
 				CB172B3921C6A26F0068CF92 /* APIError.swift in Sources */,
+				DEBEE81621D76C58004B8D88 /* LevelMemberView.swift in Sources */,
 				DE21821B21CD40FA00FDD9F1 /* FBAccountKit.swift in Sources */,
+				DEBEE81221D76B6F004B8D88 /* OrderIntroCell.swift in Sources */,
 				DE21827D21CD473100FDD9F1 /* KActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
 				CB172C0A21C6A2EF0068CF92 /* PopUpNotificationContent.swift in Sources */,
 			);
