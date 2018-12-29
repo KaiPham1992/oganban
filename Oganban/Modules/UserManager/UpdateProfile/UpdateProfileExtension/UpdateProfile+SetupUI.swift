@@ -55,11 +55,6 @@ extension UpdateProfileViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         PositionMapsHelper.shared.showSearch { address in
             textField.text = address
-//            if textField == self.tfAddress1.tfContent {
-//
-//            } else {
-//
-//            }
         }
     }
 }
