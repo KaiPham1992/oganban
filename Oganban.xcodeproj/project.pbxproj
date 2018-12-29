@@ -95,6 +95,12 @@
 		B392FB3E21D3D6AE0076A7B5 /* AcceptCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B392FB3C21D3D6AE0076A7B5 /* AcceptCell.xib */; };
 		B392FB4121D3E37C0076A7B5 /* RecordParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = B392FB4021D3E37C0076A7B5 /* RecordParam.swift */; };
 		B392FB4321D3E93E0076A7B5 /* RecordEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B392FB4221D3E93E0076A7B5 /* RecordEntity.swift */; };
+		B3CC856F21D72DD200ADBFD8 /* PositionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CC856921D72DD200ADBFD8 /* PositionPresenter.swift */; };
+		B3CC857021D72DD200ADBFD8 /* PositionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CC856A21D72DD200ADBFD8 /* PositionRouter.swift */; };
+		B3CC857121D72DD200ADBFD8 /* PositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CC856B21D72DD200ADBFD8 /* PositionViewController.swift */; };
+		B3CC857221D72DD200ADBFD8 /* PositionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CC856C21D72DD200ADBFD8 /* PositionProtocols.swift */; };
+		B3CC857321D72DD200ADBFD8 /* PositionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CC856D21D72DD200ADBFD8 /* PositionInteractor.swift */; };
+		B3CC857421D72DD200ADBFD8 /* PositionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3CC856E21D72DD200ADBFD8 /* PositionViewController.xib */; };
 		B3E67E9C21CF41260012546F /* DropdownPhoneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E67E9A21CF41260012546F /* DropdownPhoneCell.swift */; };
 		B3E67E9D21CF41260012546F /* DropdownPhoneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3E67E9B21CF41260012546F /* DropdownPhoneCell.xib */; };
 		B3E67EAC21CF756E0012546F /* PhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E67EAB21CF756E0012546F /* PhoneNumber.swift */; };
@@ -182,6 +188,34 @@
 		CBBB3DF721D5C74400281ABB /* ChangePasswordProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBB3DF121D5C74400281ABB /* ChangePasswordProtocols.swift */; };
 		CBBB3DF821D5C74400281ABB /* ChangePasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBB3DF221D5C74400281ABB /* ChangePasswordInteractor.swift */; };
 		CBBB3DF921D5C74400281ABB /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBBB3DF321D5C74400281ABB /* ChangePasswordViewController.xib */; };
+		CBD1C28821D73088006DB3FF /* MyBuyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD1C28621D73087006DB3FF /* MyBuyCell.xib */; };
+		CBD1C28921D73088006DB3FF /* MyBuyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C28721D73087006DB3FF /* MyBuyCell.swift */; };
+		CBD1C28D21D73096006DB3FF /* ProductMyBuyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD1C28B21D73096006DB3FF /* ProductMyBuyView.xib */; };
+		CBD1C28E21D73096006DB3FF /* ProductMyBuyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C28C21D73096006DB3FF /* ProductMyBuyView.swift */; };
+		CBD1C29621D732CB006DB3FF /* MyBuyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C29021D732CB006DB3FF /* MyBuyPresenter.swift */; };
+		CBD1C29721D732CB006DB3FF /* MyBuyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C29121D732CB006DB3FF /* MyBuyRouter.swift */; };
+		CBD1C29821D732CB006DB3FF /* MyBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C29221D732CB006DB3FF /* MyBuyViewController.swift */; };
+		CBD1C29921D732CB006DB3FF /* MyBuyProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C29321D732CB006DB3FF /* MyBuyProtocols.swift */; };
+		CBD1C29A21D732CC006DB3FF /* MyBuyInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C29421D732CB006DB3FF /* MyBuyInteractor.swift */; };
+		CBD1C29B21D732CC006DB3FF /* MyBuyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD1C29521D732CB006DB3FF /* MyBuyViewController.xib */; };
+		CBD1C29E21D74B79006DB3FF /* RecordSellingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C29D21D74B79006DB3FF /* RecordSellingView.swift */; };
+		CBD1C2A021D74B88006DB3FF /* RecordSellingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD1C29F21D74B88006DB3FF /* RecordSellingView.xib */; };
+		CBD1C2A821D74DA6006DB3FF /* MySellingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C2A221D74DA6006DB3FF /* MySellingPresenter.swift */; };
+		CBD1C2A921D74DA6006DB3FF /* MySellingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C2A321D74DA6006DB3FF /* MySellingRouter.swift */; };
+		CBD1C2AA21D74DA6006DB3FF /* MySellingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C2A421D74DA6006DB3FF /* MySellingViewController.swift */; };
+		CBD1C2AB21D74DA6006DB3FF /* MySellingProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C2A521D74DA6006DB3FF /* MySellingProtocols.swift */; };
+		CBD1C2AC21D74DA6006DB3FF /* MySellingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C2A621D74DA6006DB3FF /* MySellingInteractor.swift */; };
+		CBD1C2AD21D74DA6006DB3FF /* MySellingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD1C2A721D74DA6006DB3FF /* MySellingViewController.xib */; };
+		CBD1C2B121D74EF4006DB3FF /* MySellingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C2AF21D74EF4006DB3FF /* MySellingCell.swift */; };
+		CBD1C2B221D74EF4006DB3FF /* MySellingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD1C2B021D74EF4006DB3FF /* MySellingCell.xib */; };
+		CBD1C2BA21D75BA5006DB3FF /* MyExchangePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C2B421D75BA5006DB3FF /* MyExchangePresenter.swift */; };
+		CBD1C2BB21D75BA5006DB3FF /* MyExchangeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C2B521D75BA5006DB3FF /* MyExchangeRouter.swift */; };
+		CBD1C2BC21D75BA5006DB3FF /* MyExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C2B621D75BA5006DB3FF /* MyExchangeViewController.swift */; };
+		CBD1C2BD21D75BA5006DB3FF /* MyExchangeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C2B721D75BA5006DB3FF /* MyExchangeProtocols.swift */; };
+		CBD1C2BE21D75BA5006DB3FF /* MyExchangeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C2B821D75BA5006DB3FF /* MyExchangeInteractor.swift */; };
+		CBD1C2BF21D75BA5006DB3FF /* MyExchangeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD1C2B921D75BA5006DB3FF /* MyExchangeViewController.xib */; };
+		CBD1C2C121D76BEB006DB3FF /* RecordEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C2C021D76BEB006DB3FF /* RecordEndPoint.swift */; };
+		CBD1C2C321D76E4D006DB3FF /* RecordAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C2C221D76E4D006DB3FF /* RecordAPIService.swift */; };
 		DE07F56921CF539D00DE2032 /* AppCollectionPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE07F56821CF539D00DE2032 /* AppCollectionPhoto.swift */; };
 		DE0DBAE421D3B6DA0097E38F /* NotificationProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0DBADB21D3B6DA0097E38F /* NotificationProtocols.swift */; };
 		DE0DBAE521D3B6DA0097E38F /* NotificationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0DBADC21D3B6DA0097E38F /* NotificationPresenter.swift */; };
@@ -429,6 +463,12 @@
 		B392FB3C21D3D6AE0076A7B5 /* AcceptCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AcceptCell.xib; sourceTree = "<group>"; };
 		B392FB4021D3E37C0076A7B5 /* RecordParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordParam.swift; sourceTree = "<group>"; };
 		B392FB4221D3E93E0076A7B5 /* RecordEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordEntity.swift; sourceTree = "<group>"; };
+		B3CC856921D72DD200ADBFD8 /* PositionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionPresenter.swift; sourceTree = "<group>"; };
+		B3CC856A21D72DD200ADBFD8 /* PositionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionRouter.swift; sourceTree = "<group>"; };
+		B3CC856B21D72DD200ADBFD8 /* PositionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionViewController.swift; sourceTree = "<group>"; };
+		B3CC856C21D72DD200ADBFD8 /* PositionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionProtocols.swift; sourceTree = "<group>"; };
+		B3CC856D21D72DD200ADBFD8 /* PositionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionInteractor.swift; sourceTree = "<group>"; };
+		B3CC856E21D72DD200ADBFD8 /* PositionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PositionViewController.xib; sourceTree = "<group>"; };
 		B3E67E9A21CF41260012546F /* DropdownPhoneCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownPhoneCell.swift; sourceTree = "<group>"; };
 		B3E67E9B21CF41260012546F /* DropdownPhoneCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DropdownPhoneCell.xib; sourceTree = "<group>"; };
 		B3E67EAB21CF756E0012546F /* PhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumber.swift; sourceTree = "<group>"; };
@@ -520,6 +560,34 @@
 		CBBB3DF121D5C74400281ABB /* ChangePasswordProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordProtocols.swift; sourceTree = "<group>"; };
 		CBBB3DF221D5C74400281ABB /* ChangePasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordInteractor.swift; sourceTree = "<group>"; };
 		CBBB3DF321D5C74400281ABB /* ChangePasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangePasswordViewController.xib; sourceTree = "<group>"; };
+		CBD1C28621D73087006DB3FF /* MyBuyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyBuyCell.xib; sourceTree = "<group>"; };
+		CBD1C28721D73087006DB3FF /* MyBuyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBuyCell.swift; sourceTree = "<group>"; };
+		CBD1C28B21D73096006DB3FF /* ProductMyBuyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductMyBuyView.xib; sourceTree = "<group>"; };
+		CBD1C28C21D73096006DB3FF /* ProductMyBuyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductMyBuyView.swift; sourceTree = "<group>"; };
+		CBD1C29021D732CB006DB3FF /* MyBuyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBuyPresenter.swift; sourceTree = "<group>"; };
+		CBD1C29121D732CB006DB3FF /* MyBuyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBuyRouter.swift; sourceTree = "<group>"; };
+		CBD1C29221D732CB006DB3FF /* MyBuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBuyViewController.swift; sourceTree = "<group>"; };
+		CBD1C29321D732CB006DB3FF /* MyBuyProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBuyProtocols.swift; sourceTree = "<group>"; };
+		CBD1C29421D732CB006DB3FF /* MyBuyInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBuyInteractor.swift; sourceTree = "<group>"; };
+		CBD1C29521D732CB006DB3FF /* MyBuyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyBuyViewController.xib; sourceTree = "<group>"; };
+		CBD1C29D21D74B79006DB3FF /* RecordSellingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSellingView.swift; sourceTree = "<group>"; };
+		CBD1C29F21D74B88006DB3FF /* RecordSellingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordSellingView.xib; sourceTree = "<group>"; };
+		CBD1C2A221D74DA6006DB3FF /* MySellingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySellingPresenter.swift; sourceTree = "<group>"; };
+		CBD1C2A321D74DA6006DB3FF /* MySellingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySellingRouter.swift; sourceTree = "<group>"; };
+		CBD1C2A421D74DA6006DB3FF /* MySellingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySellingViewController.swift; sourceTree = "<group>"; };
+		CBD1C2A521D74DA6006DB3FF /* MySellingProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySellingProtocols.swift; sourceTree = "<group>"; };
+		CBD1C2A621D74DA6006DB3FF /* MySellingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySellingInteractor.swift; sourceTree = "<group>"; };
+		CBD1C2A721D74DA6006DB3FF /* MySellingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MySellingViewController.xib; sourceTree = "<group>"; };
+		CBD1C2AF21D74EF4006DB3FF /* MySellingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySellingCell.swift; sourceTree = "<group>"; };
+		CBD1C2B021D74EF4006DB3FF /* MySellingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MySellingCell.xib; sourceTree = "<group>"; };
+		CBD1C2B421D75BA5006DB3FF /* MyExchangePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExchangePresenter.swift; sourceTree = "<group>"; };
+		CBD1C2B521D75BA5006DB3FF /* MyExchangeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExchangeRouter.swift; sourceTree = "<group>"; };
+		CBD1C2B621D75BA5006DB3FF /* MyExchangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExchangeViewController.swift; sourceTree = "<group>"; };
+		CBD1C2B721D75BA5006DB3FF /* MyExchangeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExchangeProtocols.swift; sourceTree = "<group>"; };
+		CBD1C2B821D75BA5006DB3FF /* MyExchangeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExchangeInteractor.swift; sourceTree = "<group>"; };
+		CBD1C2B921D75BA5006DB3FF /* MyExchangeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyExchangeViewController.xib; sourceTree = "<group>"; };
+		CBD1C2C021D76BEB006DB3FF /* RecordEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordEndPoint.swift; sourceTree = "<group>"; };
+		CBD1C2C221D76E4D006DB3FF /* RecordAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordAPIService.swift; sourceTree = "<group>"; };
 		DE07F56821CF539D00DE2032 /* AppCollectionPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCollectionPhoto.swift; sourceTree = "<group>"; };
 		DE0DBADB21D3B6DA0097E38F /* NotificationProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationProtocols.swift; sourceTree = "<group>"; };
 		DE0DBADC21D3B6DA0097E38F /* NotificationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationPresenter.swift; sourceTree = "<group>"; };
@@ -750,6 +818,8 @@
 			children = (
 				DEBEE81421D76C3F004B8D88 /* LevelMemberView */,
 				DEBEE80721D7594E004B8D88 /* AppRadioButton */,
+				CBD1C29C21D74B53006DB3FF /* RecordSellingView */,
+				CBD1C28A21D73096006DB3FF /* ProductMyBuyView */,
 				DEA3A09621D67EBB00643296 /* PaddingLabel */,
 				DEA3A08521D6738100643296 /* AppImageSlide */,
 				DE442C4321CFA33D0051C0B8 /* PostCommentView */,
@@ -912,6 +982,19 @@
 			path = RecordParam;
 			sourceTree = "<group>";
 		};
+		B3CC856821D72DB600ADBFD8 /* Position */ = {
+			isa = PBXGroup;
+			children = (
+				B3CC856921D72DD200ADBFD8 /* PositionPresenter.swift */,
+				B3CC856A21D72DD200ADBFD8 /* PositionRouter.swift */,
+				B3CC856B21D72DD200ADBFD8 /* PositionViewController.swift */,
+				B3CC856C21D72DD200ADBFD8 /* PositionProtocols.swift */,
+				B3CC856D21D72DD200ADBFD8 /* PositionInteractor.swift */,
+				B3CC856E21D72DD200ADBFD8 /* PositionViewController.xib */,
+			);
+			path = Position;
+			sourceTree = "<group>";
+		};
 		B3E67E9421CF3EE20012546F /* PhoneNumber */ = {
 			isa = PBXGroup;
 			children = (
@@ -954,6 +1037,8 @@
 		CB172B1821C6A1480068CF92 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				B3CC856821D72DB600ADBFD8 /* Position */,
+				CBD1C28421D73087006DB3FF /* MyBuy */,
 				DEBEE7FA21D740C2004B8D88 /* MySellContainer */,
 				DE0DBADA21D3B6DA0097E38F /* Notification */,
 				DE442C3621CFA1FE0051C0B8 /* OrderDetail */,
@@ -1001,6 +1086,7 @@
 				DE442C2F21CF93750051C0B8 /* CommonAPIService.swift */,
 				B392FB3821D3B13E0076A7B5 /* CategoryAPIService.swift */,
 				DE0DBAF221D3BBAC0097E38F /* NotificationAPIService.swift */,
+				CBD1C2C221D76E4D006DB3FF /* RecordAPIService.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -1023,6 +1109,7 @@
 				DE442C3321CF94600051C0B8 /* CommonEndPoint.swift */,
 				B392FB3621D3B0170076A7B5 /* CategoryEndPoint.swift */,
 				DE0DBAF021D3BA460097E38F /* NotificationEndPoint.swift */,
+				CBD1C2C021D76BEB006DB3FF /* RecordEndPoint.swift */,
 			);
 			path = EndPoint;
 			sourceTree = "<group>";
@@ -1264,6 +1351,83 @@
 				CBBB3DF321D5C74400281ABB /* ChangePasswordViewController.xib */,
 			);
 			path = ChangePassword;
+			sourceTree = "<group>";
+		};
+		CBD1C28421D73087006DB3FF /* MyBuy */ = {
+			isa = PBXGroup;
+			children = (
+				CBD1C28521D73087006DB3FF /* MyBuyCell */,
+				CBD1C29021D732CB006DB3FF /* MyBuyPresenter.swift */,
+				CBD1C29121D732CB006DB3FF /* MyBuyRouter.swift */,
+				CBD1C29221D732CB006DB3FF /* MyBuyViewController.swift */,
+				CBD1C29321D732CB006DB3FF /* MyBuyProtocols.swift */,
+				CBD1C29421D732CB006DB3FF /* MyBuyInteractor.swift */,
+				CBD1C29521D732CB006DB3FF /* MyBuyViewController.xib */,
+			);
+			path = MyBuy;
+			sourceTree = "<group>";
+		};
+		CBD1C28521D73087006DB3FF /* MyBuyCell */ = {
+			isa = PBXGroup;
+			children = (
+				CBD1C28621D73087006DB3FF /* MyBuyCell.xib */,
+				CBD1C28721D73087006DB3FF /* MyBuyCell.swift */,
+			);
+			path = MyBuyCell;
+			sourceTree = "<group>";
+		};
+		CBD1C28A21D73096006DB3FF /* ProductMyBuyView */ = {
+			isa = PBXGroup;
+			children = (
+				CBD1C28B21D73096006DB3FF /* ProductMyBuyView.xib */,
+				CBD1C28C21D73096006DB3FF /* ProductMyBuyView.swift */,
+			);
+			path = ProductMyBuyView;
+			sourceTree = "<group>";
+		};
+		CBD1C29C21D74B53006DB3FF /* RecordSellingView */ = {
+			isa = PBXGroup;
+			children = (
+				CBD1C29D21D74B79006DB3FF /* RecordSellingView.swift */,
+				CBD1C29F21D74B88006DB3FF /* RecordSellingView.xib */,
+			);
+			path = RecordSellingView;
+			sourceTree = "<group>";
+		};
+		CBD1C2A121D74D88006DB3FF /* MySelling */ = {
+			isa = PBXGroup;
+			children = (
+				CBD1C2AE21D74ED5006DB3FF /* MySellingCell */,
+				CBD1C2A221D74DA6006DB3FF /* MySellingPresenter.swift */,
+				CBD1C2A321D74DA6006DB3FF /* MySellingRouter.swift */,
+				CBD1C2A421D74DA6006DB3FF /* MySellingViewController.swift */,
+				CBD1C2A521D74DA6006DB3FF /* MySellingProtocols.swift */,
+				CBD1C2A621D74DA6006DB3FF /* MySellingInteractor.swift */,
+				CBD1C2A721D74DA6006DB3FF /* MySellingViewController.xib */,
+			);
+			path = MySelling;
+			sourceTree = "<group>";
+		};
+		CBD1C2AE21D74ED5006DB3FF /* MySellingCell */ = {
+			isa = PBXGroup;
+			children = (
+				CBD1C2AF21D74EF4006DB3FF /* MySellingCell.swift */,
+				CBD1C2B021D74EF4006DB3FF /* MySellingCell.xib */,
+			);
+			path = MySellingCell;
+			sourceTree = "<group>";
+		};
+		CBD1C2B321D75B86006DB3FF /* MyExchange */ = {
+			isa = PBXGroup;
+			children = (
+				CBD1C2B421D75BA5006DB3FF /* MyExchangePresenter.swift */,
+				CBD1C2B521D75BA5006DB3FF /* MyExchangeRouter.swift */,
+				CBD1C2B621D75BA5006DB3FF /* MyExchangeViewController.swift */,
+				CBD1C2B721D75BA5006DB3FF /* MyExchangeProtocols.swift */,
+				CBD1C2B821D75BA5006DB3FF /* MyExchangeInteractor.swift */,
+				CBD1C2B921D75BA5006DB3FF /* MyExchangeViewController.xib */,
+			);
+			path = MyExchange;
 			sourceTree = "<group>";
 		};
 		DE0DBADA21D3B6DA0097E38F /* Notification */ = {
@@ -1597,6 +1761,8 @@
 		DEBEE7FA21D740C2004B8D88 /* MySellContainer */ = {
 			isa = PBXGroup;
 			children = (
+				CBD1C2B321D75B86006DB3FF /* MyExchange */,
+				CBD1C2A121D74D88006DB3FF /* MySelling */,
 				DEBEE7FB21D740D7004B8D88 /* MySellContainerPresenter.swift */,
 				DEBEE7FC21D740D7004B8D88 /* MySellContainerRouter.swift */,
 				DEBEE7FD21D740D7004B8D88 /* MySellContainerViewController.swift */,
@@ -1843,9 +2009,11 @@
 				CB172C8C21C6A2EF0068CF92 /* OpenSans-SemiBoldItalic.ttf in Resources */,
 				DEE1DA5A21CDE6740036FEB7 /* PopUpSelectDateContent.xib in Resources */,
 				84A92BFB21CA555900148191 /* LoginViewController.xib in Resources */,
+				CBD1C28821D73088006DB3FF /* MyBuyCell.xib in Resources */,
 				84487C8E21CB80DE008B25B2 /* Roboto-MediumItalic.ttf in Resources */,
 				84487C8F21CB80E1008B25B2 /* Roboto-Regular.ttf in Resources */,
 				84487C8C21CB80D7008B25B2 /* Roboto-LightItalic.ttf in Resources */,
+				CBD1C29B21D732CC006DB3FF /* MyBuyViewController.xib in Resources */,
 				B3E67E9D21CF41260012546F /* DropdownPhoneCell.xib in Resources */,
 				B36AEEC921CDF47A00BED43C /* AdmobCell.xib in Resources */,
 				84ABC68C21CFF06700E0D202 /* UpdateProfileViewController.xib in Resources */,
@@ -1856,9 +2024,11 @@
 				DE442C4D21CFAAD70051C0B8 /* CommentCell.xib in Resources */,
 				84487C9021CB80F2008B25B2 /* Roboto-Thin.ttf in Resources */,
 				DEC5166B21CE986400A17CBF /* AdmobBannerView.xib in Resources */,
+				CBD1C2BF21D75BA5006DB3FF /* MyExchangeViewController.xib in Resources */,
 				84421C0C21CBF52900F468F5 /* SupplementaryInfoViewController.xib in Resources */,
 				CB172C8F21C6A2EF0068CF92 /* OpenSans-Regular.ttf in Resources */,
 				B355EF6121C8FB1400379F57 /* SignUpViewController.xib in Resources */,
+				B3CC857421D72DD200ADBFD8 /* PositionViewController.xib in Resources */,
 				8432075121CF529D00A4F11E /* DateFollowWeekCell.xib in Resources */,
 				DE0DBAEA21D3B6DA0097E38F /* NotificationViewController.xib in Resources */,
 				DE442C4621CFA33D0051C0B8 /* PostCommentView.xib in Resources */,
@@ -1866,6 +2036,7 @@
 				DE442C6521CFBDA40051C0B8 /* HeaderOrderDetail.xib in Resources */,
 				84487C8621CB7E96008B25B2 /* Roboto-Black.ttf in Resources */,
 				DEE1DA6121CDF3E60036FEB7 /* AdmobNativeView.xib in Resources */,
+				CBD1C2A021D74B88006DB3FF /* RecordSellingView.xib in Resources */,
 				CB172C8B21C6A2EF0068CF92 /* OpenSans-Bold.ttf in Resources */,
 				CB172C8E21C6A2EF0068CF92 /* LICENSE.txt in Resources */,
 				DEC5166621CE8DDF00A17CBF /* PopUpSettingGPSContent.xib in Resources */,
@@ -1890,15 +2061,18 @@
 				B325C2F021CE05B20048A148 /* MenuCell.xib in Resources */,
 				DEBEE81821D76C79004B8D88 /* LevelMemberView.xib in Resources */,
 				DEA3A08921D6738200643296 /* AppImageSlide.xib in Resources */,
+				CBD1C2B221D74EF4006DB3FF /* MySellingCell.xib in Resources */,
 				DEA3A09321D679A000643296 /* OrderDetailImageCell.xib in Resources */,
 				84487C8921CB7EA4008B25B2 /* Roboto-BoldItalic.ttf in Resources */,
 				DE21821321CD403100FDD9F1 /* AccountKitStrings.bundle in Resources */,
+				CBD1C2AD21D74DA6006DB3FF /* MySellingViewController.xib in Resources */,
 				DE2181FA21CD3AD300FDD9F1 /* GoogleService-Info.plist in Resources */,
 				CB3A8F1321C64FC1008144BD /* Main.storyboard in Resources */,
 				B3E67EAE21CF75A90012546F /* PhoneNumber.xib in Resources */,
 				DEE1DA6B21CDF5D60036FEB7 /* PopUpSelectGenderContent.xib in Resources */,
 				CB172C8621C6A2EF0068CF92 /* OpenSans-SemiBold.ttf in Resources */,
 				DEE1DA7421CE20260036FEB7 /* PopUpYesNoHaveAdmobContent.xib in Resources */,
+				CBD1C28D21D73096006DB3FF /* ProductMyBuyView.xib in Resources */,
 				DEE1DA7E21CE2E6A0036FEB7 /* PopUpUpdateQuantityBuyContent.xib in Resources */,
 				B355EF5421C8EB3F00379F57 /* HomeViewController.xib in Resources */,
 				DE442C4221CFA2130051C0B8 /* OrderDetailViewController.xib in Resources */,
@@ -2034,6 +2208,7 @@
 				DE21828021CD473100FDD9F1 /* KActivityIndicatorAnimationBallRotate.swift in Sources */,
 				DE0E79D921D65F760053786D /* Connectivity.swift in Sources */,
 				B36AEECE21CDF52B00BED43C /* HomeCell.swift in Sources */,
+				CBD1C2C121D76BEB006DB3FF /* RecordEndPoint.swift in Sources */,
 				B36AEEB221CDDB8000BED43C /* MySellRouter.swift in Sources */,
 				DE21822E21CD44D600FDD9F1 /* BaseEntity.swift in Sources */,
 				DEA3A09821D67ECE00643296 /* PaddingLabel.swift in Sources */,
@@ -2045,6 +2220,7 @@
 				DE442C3D21CFA2130051C0B8 /* OrderDetailPresenter.swift in Sources */,
 				DEE1DA4F21CDE1CE0036FEB7 /* PopUpNotificationHaveAdmob.swift in Sources */,
 				DE21827021CD473100FDD9F1 /* KActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
+				B3CC856F21D72DD200ADBFD8 /* PositionPresenter.swift in Sources */,
 				84A92BEE21CA518200148191 /* OganbanCustomButton.swift in Sources */,
 				84ABC68A21CFF06700E0D202 /* UpdateProfileViewController.swift in Sources */,
 				CBBB3DF821D5C74400281ABB /* ChangePasswordInteractor.swift in Sources */,
@@ -2054,6 +2230,7 @@
 				DEC5166421CE8DCD00A17CBF /* PopUpSettingGPSContent.swift in Sources */,
 				CB172C9521C6A2EF0068CF92 /* ConstantStoryboard.swift in Sources */,
 				CB172C9921C6A2EF0068CF92 /* BaseViewController.swift in Sources */,
+				CBD1C2AC21D74DA6006DB3FF /* MySellingInteractor.swift in Sources */,
 				DE442C3021CF93750051C0B8 /* CommonAPIService.swift in Sources */,
 				DEF9AA3821D501CE001334EB /* UpdateProfileSocial.swift in Sources */,
 				84421C0821CBF52900F468F5 /* SupplementaryInfoRouter.swift in Sources */,
@@ -2078,6 +2255,9 @@
 				DE442C5921CFB7870051C0B8 /* BaseCommentCell.swift in Sources */,
 				DEE1DA5621CDE6550036FEB7 /* PopUpSelectDate.swift in Sources */,
 				DEE7306D21CFDA1700F20D68 /* OrderDetail+PostComment.swift in Sources */,
+				CBD1C2BA21D75BA5006DB3FF /* MyExchangePresenter.swift in Sources */,
+				CBD1C2BB21D75BA5006DB3FF /* MyExchangeRouter.swift in Sources */,
+				CBD1C29621D732CB006DB3FF /* MyBuyPresenter.swift in Sources */,
 				DEBEE80421D740D7004B8D88 /* MySellContainerProtocols.swift in Sources */,
 				CB0C3A2721D3BECD0052DD91 /* ForgotPasswordInteractor.swift in Sources */,
 				DE21827121CD473100FDD9F1 /* KActivityIndicatorAnimationBlank.swift in Sources */,
@@ -2085,6 +2265,7 @@
 				DE21826B21CD473100FDD9F1 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				84421C0B21CBF52900F468F5 /* SupplementaryInfoInteractor.swift in Sources */,
 				CB172C0D21C6A2EF0068CF92 /* UIApplication+extension.swift in Sources */,
+				B3CC857321D72DD200ADBFD8 /* PositionInteractor.swift in Sources */,
 				84ABC68921CFF06700E0D202 /* UpdateProfile+SetupUI.swift in Sources */,
 				DE21823321CD45F300FDD9F1 /* LoginSocialParam.swift in Sources */,
 				CB0C3A2321D3BECD0052DD91 /* ForgotPasswordPresenter.swift in Sources */,
@@ -2097,10 +2278,12 @@
 				B3092D9821D676C800494CC4 /* UILabel+Extension.swift in Sources */,
 				B392FB3521D3AE970076A7B5 /* CategoryEntity.swift in Sources */,
 				B36AEEC821CDF47A00BED43C /* AdmobCell.swift in Sources */,
+				B3CC857221D72DD200ADBFD8 /* PositionProtocols.swift in Sources */,
 				84421BF821CBEF1E00F468F5 /* MoreCell.swift in Sources */,
 				CB172B2F21C6A22A0068CF92 /* BaseParam.swift in Sources */,
 				DEE1DA6D21CDF5E70036FEB7 /* PopUpSelectGenderContent.swift in Sources */,
 				DEBEE80921D7594E004B8D88 /* AppRadioButton.swift in Sources */,
+				CBD1C2BC21D75BA5006DB3FF /* MyExchangeViewController.swift in Sources */,
 				84ABC68F21CFF06700E0D202 /* UpdateProfileRouter.swift in Sources */,
 				CB172C1321C6A2EF0068CF92 /* UIButton+extension.swift in Sources */,
 				DE21826D21CD473100FDD9F1 /* KActivityIndicatorAnimationBallPulse.swift in Sources */,
@@ -2111,6 +2294,8 @@
 				DE21826A21CD473100FDD9F1 /* KActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
 				CB172C9121C6A2EF0068CF92 /* AppImage.swift in Sources */,
 				CB172B4021C6A2A20068CF92 /* Provider.swift in Sources */,
+				CBD1C2AB21D74DA6006DB3FF /* MySellingProtocols.swift in Sources */,
+				CBD1C2B121D74EF4006DB3FF /* MySellingCell.swift in Sources */,
 				CB172C2821C6A2EF0068CF92 /* AnimationHelper.swift in Sources */,
 				B36AEEB421CDDB8000BED43C /* MySellProtocols.swift in Sources */,
 				DEC5167021CE98F200A17CBF /* AppPhoto.swift in Sources */,
@@ -2135,6 +2320,7 @@
 				B35F529821D276A000D3FA30 /* SignUpParam.swift in Sources */,
 				CB0C3A2621D3BECD0052DD91 /* ForgotPasswordProtocols.swift in Sources */,
 				DE21827A21CD473100FDD9F1 /* KActivityIndicatorAnimationCubeTransition.swift in Sources */,
+				CBD1C2A821D74DA6006DB3FF /* MySellingPresenter.swift in Sources */,
 				B3E67EAC21CF756E0012546F /* PhoneNumber.swift in Sources */,
 				DE21822C21CD44B700FDD9F1 /* FaceBookEntity.swift in Sources */,
 				DE21827B21CD473100FDD9F1 /* KActivityIndicatorAnimationBallZigZag.swift in Sources */,
@@ -2147,6 +2333,7 @@
 				CB172C2521C6A2EF0068CF92 /* PopUpHelper.swift in Sources */,
 				DEE7306F21CFDAA300F20D68 /* OrderDetail+Table.swift in Sources */,
 				DE21828121CD473100FDD9F1 /* KActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */,
+				CBD1C29921D732CB006DB3FF /* MyBuyProtocols.swift in Sources */,
 				84396D3E21D1389B00818FAB /* UpdateProfile+Event.swift in Sources */,
 				DEA3A09521D67B1300643296 /* BannerEntity.swift in Sources */,
 				84421BF921CBEF1E00F468F5 /* MoreHeaderCell.swift in Sources */,
@@ -2156,11 +2343,14 @@
 				B355EF5D21C8FB1400379F57 /* SignUpRouter.swift in Sources */,
 				DE442C5D21CFB9140051C0B8 /* AddressCell.swift in Sources */,
 				CB172C2321C6A2EF0068CF92 /* UserDefaultHelper.swift in Sources */,
+				CBD1C2BE21D75BA5006DB3FF /* MyExchangeInteractor.swift in Sources */,
 				DE21826E21CD473100FDD9F1 /* KActivityIndicatorAnimationBallClipRotate.swift in Sources */,
 				CB172C1421C6A2EF0068CF92 /* UIView+extension.swift in Sources */,
+				CBD1C2A921D74DA6006DB3FF /* MySellingRouter.swift in Sources */,
 				DE0DBAE421D3B6DA0097E38F /* NotificationProtocols.swift in Sources */,
 				DE21826921CD473100FDD9F1 /* KActivityIndicatorAnimationBallScale.swift in Sources */,
 				DE21826F21CD473100FDD9F1 /* KActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
+				CBD1C28E21D73096006DB3FF /* ProductMyBuyView.swift in Sources */,
 				B325C2EF21CE05B20048A148 /* MenuCell.swift in Sources */,
 				84C8543421CFEC8D00BDABE5 /* SupplementaryInfo+SetupUI.swift in Sources */,
 				DEBEE7F821D74041004B8D88 /* AppPageView.swift in Sources */,
@@ -2182,6 +2372,7 @@
 				8432075021CF529D00A4F11E /* DateFollowWeekPopup.swift in Sources */,
 				DEE1DA7A21CE2E130036FEB7 /* PopUpUpdateQuantityBuy.swift in Sources */,
 				DE0E79D721D658080053786D /* SelectImageFromMobileHelper.swift in Sources */,
+				CBD1C2AA21D74DA6006DB3FF /* MySellingViewController.swift in Sources */,
 				CBBB3DF621D5C74400281ABB /* ChangePasswordViewController.swift in Sources */,
 				DE21829421CD4EB600FDD9F1 /* FTextField.swift in Sources */,
 				84421BF121CBEECF00F468F5 /* MoreInteractor.swift in Sources */,
@@ -2189,7 +2380,10 @@
 				B36AEEB121CDDB8000BED43C /* MySellPresenter.swift in Sources */,
 				DE442C3221CF93C60051C0B8 /* PhotoEntity.swift in Sources */,
 				B36AEEB321CDDB8000BED43C /* MySellViewController.swift in Sources */,
+				CBD1C29721D732CB006DB3FF /* MyBuyRouter.swift in Sources */,
+				CBD1C28921D73088006DB3FF /* MyBuyCell.swift in Sources */,
 				B392FB3D21D3D6AE0076A7B5 /* AcceptCell.swift in Sources */,
+				CBD1C29A21D732CC006DB3FF /* MyBuyInteractor.swift in Sources */,
 				DEBEE80521D740D7004B8D88 /* MySellContainerInteractor.swift in Sources */,
 				84421BED21CBEECF00F468F5 /* MorePresenter.swift in Sources */,
 				DEBEE80321D740D7004B8D88 /* MySellContainerViewController.swift in Sources */,
@@ -2215,6 +2409,7 @@
 				B392FB3721D3B0170076A7B5 /* CategoryEndPoint.swift in Sources */,
 				CBBB3DF721D5C74400281ABB /* ChangePasswordProtocols.swift in Sources */,
 				CBBB3DF421D5C74400281ABB /* ChangePasswordPresenter.swift in Sources */,
+				CBD1C2BD21D75BA5006DB3FF /* MyExchangeProtocols.swift in Sources */,
 				DEE1DA5F21CDF3050036FEB7 /* AdmobNativeView.swift in Sources */,
 				CB172C9421C6A2EF0068CF92 /* APIConstant.swift in Sources */,
 				DE442C4121CFA2130051C0B8 /* OrderDetailInteractor.swift in Sources */,
@@ -2230,8 +2425,10 @@
 				DE0DBAED21D3B7380097E38F /* NotificationEntity.swift in Sources */,
 				DE0DBAEB21D3B6DA0097E38F /* NotificationViewController.swift in Sources */,
 				84421BF021CBEECF00F468F5 /* MoreProtocols.swift in Sources */,
+				CBD1C2C321D76E4D006DB3FF /* RecordAPIService.swift in Sources */,
 				CB172C2021C6A2EF0068CF92 /* FileManagerHelper.swift in Sources */,
 				DE21827C21CD473100FDD9F1 /* KActivityIndicatorAnimationBallPulseSync.swift in Sources */,
+				CBD1C29E21D74B79006DB3FF /* RecordSellingView.swift in Sources */,
 				DEBEE80121D740D7004B8D88 /* MySellContainerPresenter.swift in Sources */,
 				DE21827521CD473100FDD9F1 /* KActivityIndicatorAnimationLineScale.swift in Sources */,
 				84A92BED21CA518200148191 /* OganbanCustomTextfield.swift in Sources */,
@@ -2241,6 +2438,7 @@
 				CB172C1821C6A2EF0068CF92 /* UIViewController+extension.swift in Sources */,
 				DE07F56921CF539D00DE2032 /* AppCollectionPhoto.swift in Sources */,
 				DEA3A08821D6738200643296 /* AppImageSlide.swift in Sources */,
+				CBD1C29821D732CB006DB3FF /* MyBuyViewController.swift in Sources */,
 				CB172C9A21C6A2EF0068CF92 /* BaseCollectionCell.swift in Sources */,
 				CB172C1D21C6A2EF0068CF92 /* UITextField+extension.swift in Sources */,
 				CB172C2221C6A2EF0068CF92 /* PopUpNotificationHelper.swift in Sources */,
@@ -2254,6 +2452,7 @@
 				DE21823521CD465700FDD9F1 /* UserEndPoint.swift in Sources */,
 				B36AEE9B21CDD90500BED43C /* TabbarViewController.swift in Sources */,
 				CB3A8F0E21C64FC1008144BD /* AppDelegate.swift in Sources */,
+				B3CC857121D72DD200ADBFD8 /* PositionViewController.swift in Sources */,
 				DE21827621CD473100FDD9F1 /* KActivityIndicatorAnimationLineScaleParty.swift in Sources */,
 				DEBEE7F421D73443004B8D88 /* MoreEntity.swift in Sources */,
 				DEE1DA5821CDE6610036FEB7 /* PopUpSelectDateContent.swift in Sources */,
@@ -2264,6 +2463,7 @@
 				CB172C9621C6A2EF0068CF92 /* AppColor.swift in Sources */,
 				84ABC68B21CFF06700E0D202 /* UpdateProfileProtocols.swift in Sources */,
 				B36AEE9C21CDD90500BED43C /* TabbarProtocol.swift in Sources */,
+				B3CC857021D72DD200ADBFD8 /* PositionRouter.swift in Sources */,
 				DE0DBAE821D3B6DA0097E38F /* NotificationCell.swift in Sources */,
 				CB172B4321C6A2AA0068CF92 /* EndPointType.swift in Sources */,
 				DE0DBAE521D3B6DA0097E38F /* NotificationPresenter.swift in Sources */,

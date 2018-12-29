@@ -92,6 +92,8 @@ struct MessageString {
 struct NavigationTitle {
     static let profileInfo = "Thông tin tài khoản"
     static let more = "Xem thêm"
+    static let myBuy = "Tôi mua"
+    static let mySell = "Tôi bán"
 }
 
 struct Params {

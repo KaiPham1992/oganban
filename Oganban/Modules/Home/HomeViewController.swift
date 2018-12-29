@@ -10,6 +10,7 @@
 
 import UIKit
 import DropDown
+import GoogleMaps
 
 class HomeViewController: BaseViewController {
     
@@ -51,6 +52,7 @@ class HomeViewController: BaseViewController {
     let scaleDropdown = DropDown()
     var paramFilter = RecordParam()
     var dataSource: [PositionRangeEntity] = []
+    var indexReload: Int?
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -158,7 +160,7 @@ class HomeViewController: BaseViewController {
     }
     
     @IBAction func btnGotoPositionTapped() {
-        
+        presenter?.gotoPositionMaps(delegate: self)
     }
     
     @IBAction func btnGotoFavoriteTapped() {
@@ -333,7 +335,18 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         switch tableView {
         case tbLeft:
             index = indexPath.row
-            menu[index].isSelected = !menu[index].isSelected
+            for (temp, _) in menu.enumerated() {
+                if temp != index {
+                    if menu[temp].isSelected == true {
+                        indexReload = temp
+                        menu[temp].isSelected = false
+                        self.tbLeft.reloadRows(at: [IndexPath(item: temp, section: indexPath.section)], with: .none)
+                    }
+                    
+                }
+            }
+            menu[index].isSelected = true
+            tbLeft.reloadRows(at: [indexPath], with: .none)
             tbRight.reloadData()
             tbRight.isHidden = false
             vAccept.isHidden = false
@@ -353,16 +366,17 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
-        cell.transform = CGAffineTransform(rotationAngle: (-.pi))
-
-        UIView.animate(
-            withDuration: 0.3,
-            delay: 0,
-            options: [.curveEaseInOut],
-            animations: {
-                cell.transform = CGAffineTransform(translationX: 0, y: 0)
-        })
+        if indexPath.row != indexReload {
+            cell.transform = CGAffineTransform(rotationAngle: (-.pi))
+            
+            UIView.animate(
+                withDuration: 0.3,
+                delay: 0,
+                options: [.curveEaseInOut],
+                animations: {
+                    cell.transform = CGAffineTransform(translationX: 0, y: 0)
+            })
+        }
     }
 }
 
@@ -371,5 +385,16 @@ extension HomeViewController: UITextFieldDelegate {
         paramFilter.keyword = textField.text&
         presenter?.filterRecord(param: paramFilter)
         return true
+    }
+}
+
+extension HomeViewController: PositionViewControllerDelegate {
+    func positionSelected(location: CLLocationCoordinate2D, address: String) {
+        let long = String(location.longitude)
+        let lat = String(location.latitude)
+        paramFilter.long = long
+        paramFilter.lat = lat
+        lbPosition.text = address
+        presenter?.filterRecord(param: paramFilter)
     }
 }

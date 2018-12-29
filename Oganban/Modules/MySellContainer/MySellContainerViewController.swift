@@ -10,7 +10,7 @@
 
 import UIKit
 
-class MySellContainerViewController: UIViewController, MySellContainerViewProtocol {
+class MySellContainerViewController: BaseViewController, MySellContainerViewProtocol {
 
 	var presenter: MySellContainerPresenterProtocol?
     @IBOutlet weak var vPageView: AppPageView!
@@ -20,10 +20,12 @@ class MySellContainerViewController: UIViewController, MySellContainerViewProtoc
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let vc1 = UIViewController()
+        self.setTitleNavigation(title: NavigationTitle.mySell)
+        
+        let sellingVC = MySellingViewController.initFromNib()
 //        vc1.view.backgroundColor = .red
         
-        let vc2 = UIViewController()
+        let exchangeVC = MyExchangeRouter.createModule()
 //        vc2.view.backgroundColor = .green
         
         let listItem = [
@@ -31,7 +33,7 @@ class MySellContainerViewController: UIViewController, MySellContainerViewProtoc
             KCategory(title: "GIAO DỊCH", isSelected: false)
         ]
         
-        self.listControllers = [vc1, vc2]
+        self.listControllers = [sellingVC, exchangeVC]
         vPageView.setUpMenuAndController(controllers: listControllers, menuColorBackground: AppColor.white, menuFont: AppFont.fontRegular11, menuColorNormal: AppColor.gray_158_158_158, menuColorSelected: AppColor.green, menuColorHorizontal: AppColor.red_110_0_0, heightHorizontal: 2, listItem: listItem, isFull: true, isHaveLineTop: false)
     }
 

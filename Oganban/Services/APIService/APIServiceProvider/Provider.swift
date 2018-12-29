@@ -32,4 +32,8 @@ class Provider {
     var notificationAPIService: NotificationAPIServiceProtocol {
         return NotificationAPIService(network: networkManager)
     }
+    
+    var recordAPIService: RecordAPIServiceProtocol {
+        return RecordAPIService(network: networkManager)
+    }
 }
