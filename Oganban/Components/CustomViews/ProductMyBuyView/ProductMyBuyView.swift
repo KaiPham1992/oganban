@@ -18,8 +18,8 @@ class ProductMyBuyView: BaseViewXib {
     @IBOutlet weak var lbName: UILabel!
     @IBOutlet weak var lbRank: UILabel!
     @IBOutlet weak var lbNote: UILabel!
-    
+    @IBOutlet weak var lbStatus: UILabel!
     override func setUpViews() {
-        imgAvatar.setBorder(cornerRadius: imgAvatar.frame.width / 2)
+        imgAvatar.setBorderWithCornerRadius()
     }
 }

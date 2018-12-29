@@ -182,6 +182,16 @@
 		CBBB3DF721D5C74400281ABB /* ChangePasswordProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBB3DF121D5C74400281ABB /* ChangePasswordProtocols.swift */; };
 		CBBB3DF821D5C74400281ABB /* ChangePasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBB3DF221D5C74400281ABB /* ChangePasswordInteractor.swift */; };
 		CBBB3DF921D5C74400281ABB /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBBB3DF321D5C74400281ABB /* ChangePasswordViewController.xib */; };
+		CBD1C28821D73088006DB3FF /* MyBuyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD1C28621D73087006DB3FF /* MyBuyCell.xib */; };
+		CBD1C28921D73088006DB3FF /* MyBuyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C28721D73087006DB3FF /* MyBuyCell.swift */; };
+		CBD1C28D21D73096006DB3FF /* ProductMyBuyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD1C28B21D73096006DB3FF /* ProductMyBuyView.xib */; };
+		CBD1C28E21D73096006DB3FF /* ProductMyBuyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C28C21D73096006DB3FF /* ProductMyBuyView.swift */; };
+		CBD1C29621D732CB006DB3FF /* MyBuyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C29021D732CB006DB3FF /* MyBuyPresenter.swift */; };
+		CBD1C29721D732CB006DB3FF /* MyBuyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C29121D732CB006DB3FF /* MyBuyRouter.swift */; };
+		CBD1C29821D732CB006DB3FF /* MyBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C29221D732CB006DB3FF /* MyBuyViewController.swift */; };
+		CBD1C29921D732CB006DB3FF /* MyBuyProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C29321D732CB006DB3FF /* MyBuyProtocols.swift */; };
+		CBD1C29A21D732CC006DB3FF /* MyBuyInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C29421D732CB006DB3FF /* MyBuyInteractor.swift */; };
+		CBD1C29B21D732CC006DB3FF /* MyBuyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD1C29521D732CB006DB3FF /* MyBuyViewController.xib */; };
 		DE07F56921CF539D00DE2032 /* AppCollectionPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE07F56821CF539D00DE2032 /* AppCollectionPhoto.swift */; };
 		DE0DBAE421D3B6DA0097E38F /* NotificationProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0DBADB21D3B6DA0097E38F /* NotificationProtocols.swift */; };
 		DE0DBAE521D3B6DA0097E38F /* NotificationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0DBADC21D3B6DA0097E38F /* NotificationPresenter.swift */; };
@@ -504,6 +514,16 @@
 		CBBB3DF121D5C74400281ABB /* ChangePasswordProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordProtocols.swift; sourceTree = "<group>"; };
 		CBBB3DF221D5C74400281ABB /* ChangePasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordInteractor.swift; sourceTree = "<group>"; };
 		CBBB3DF321D5C74400281ABB /* ChangePasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangePasswordViewController.xib; sourceTree = "<group>"; };
+		CBD1C28621D73087006DB3FF /* MyBuyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyBuyCell.xib; sourceTree = "<group>"; };
+		CBD1C28721D73087006DB3FF /* MyBuyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBuyCell.swift; sourceTree = "<group>"; };
+		CBD1C28B21D73096006DB3FF /* ProductMyBuyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductMyBuyView.xib; sourceTree = "<group>"; };
+		CBD1C28C21D73096006DB3FF /* ProductMyBuyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductMyBuyView.swift; sourceTree = "<group>"; };
+		CBD1C29021D732CB006DB3FF /* MyBuyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBuyPresenter.swift; sourceTree = "<group>"; };
+		CBD1C29121D732CB006DB3FF /* MyBuyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBuyRouter.swift; sourceTree = "<group>"; };
+		CBD1C29221D732CB006DB3FF /* MyBuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBuyViewController.swift; sourceTree = "<group>"; };
+		CBD1C29321D732CB006DB3FF /* MyBuyProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBuyProtocols.swift; sourceTree = "<group>"; };
+		CBD1C29421D732CB006DB3FF /* MyBuyInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBuyInteractor.swift; sourceTree = "<group>"; };
+		CBD1C29521D732CB006DB3FF /* MyBuyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyBuyViewController.xib; sourceTree = "<group>"; };
 		DE07F56821CF539D00DE2032 /* AppCollectionPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCollectionPhoto.swift; sourceTree = "<group>"; };
 		DE0DBADB21D3B6DA0097E38F /* NotificationProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationProtocols.swift; sourceTree = "<group>"; };
 		DE0DBADC21D3B6DA0097E38F /* NotificationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationPresenter.swift; sourceTree = "<group>"; };
@@ -716,6 +736,7 @@
 		84A92BE921CA50F000148191 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				CBD1C28A21D73096006DB3FF /* ProductMyBuyView */,
 				DEA3A09621D67EBB00643296 /* PaddingLabel */,
 				DEA3A08521D6738100643296 /* AppImageSlide */,
 				DE442C4321CFA33D0051C0B8 /* PostCommentView */,
@@ -920,6 +941,7 @@
 		CB172B1821C6A1480068CF92 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				CBD1C28421D73087006DB3FF /* MyBuy */,
 				DE0DBADA21D3B6DA0097E38F /* Notification */,
 				DE442C3621CFA1FE0051C0B8 /* OrderDetail */,
 				B36AEEAA21CDDB7000BED43C /* MySell */,
@@ -1228,6 +1250,38 @@
 				CBBB3DF321D5C74400281ABB /* ChangePasswordViewController.xib */,
 			);
 			path = ChangePassword;
+			sourceTree = "<group>";
+		};
+		CBD1C28421D73087006DB3FF /* MyBuy */ = {
+			isa = PBXGroup;
+			children = (
+				CBD1C28521D73087006DB3FF /* MyBuyCell */,
+				CBD1C29021D732CB006DB3FF /* MyBuyPresenter.swift */,
+				CBD1C29121D732CB006DB3FF /* MyBuyRouter.swift */,
+				CBD1C29221D732CB006DB3FF /* MyBuyViewController.swift */,
+				CBD1C29321D732CB006DB3FF /* MyBuyProtocols.swift */,
+				CBD1C29421D732CB006DB3FF /* MyBuyInteractor.swift */,
+				CBD1C29521D732CB006DB3FF /* MyBuyViewController.xib */,
+			);
+			path = MyBuy;
+			sourceTree = "<group>";
+		};
+		CBD1C28521D73087006DB3FF /* MyBuyCell */ = {
+			isa = PBXGroup;
+			children = (
+				CBD1C28621D73087006DB3FF /* MyBuyCell.xib */,
+				CBD1C28721D73087006DB3FF /* MyBuyCell.swift */,
+			);
+			path = MyBuyCell;
+			sourceTree = "<group>";
+		};
+		CBD1C28A21D73096006DB3FF /* ProductMyBuyView */ = {
+			isa = PBXGroup;
+			children = (
+				CBD1C28B21D73096006DB3FF /* ProductMyBuyView.xib */,
+				CBD1C28C21D73096006DB3FF /* ProductMyBuyView.swift */,
+			);
+			path = ProductMyBuyView;
 			sourceTree = "<group>";
 		};
 		DE0DBADA21D3B6DA0097E38F /* Notification */ = {
@@ -1747,9 +1801,11 @@
 				CB172C8C21C6A2EF0068CF92 /* OpenSans-SemiBoldItalic.ttf in Resources */,
 				DEE1DA5A21CDE6740036FEB7 /* PopUpSelectDateContent.xib in Resources */,
 				84A92BFB21CA555900148191 /* LoginViewController.xib in Resources */,
+				CBD1C28821D73088006DB3FF /* MyBuyCell.xib in Resources */,
 				84487C8E21CB80DE008B25B2 /* Roboto-MediumItalic.ttf in Resources */,
 				84487C8F21CB80E1008B25B2 /* Roboto-Regular.ttf in Resources */,
 				84487C8C21CB80D7008B25B2 /* Roboto-LightItalic.ttf in Resources */,
+				CBD1C29B21D732CC006DB3FF /* MyBuyViewController.xib in Resources */,
 				B3E67E9D21CF41260012546F /* DropdownPhoneCell.xib in Resources */,
 				B36AEEC921CDF47A00BED43C /* AdmobCell.xib in Resources */,
 				84ABC68C21CFF06700E0D202 /* UpdateProfileViewController.xib in Resources */,
@@ -1801,6 +1857,7 @@
 				DEE1DA6B21CDF5D60036FEB7 /* PopUpSelectGenderContent.xib in Resources */,
 				CB172C8621C6A2EF0068CF92 /* OpenSans-SemiBold.ttf in Resources */,
 				DEE1DA7421CE20260036FEB7 /* PopUpYesNoHaveAdmobContent.xib in Resources */,
+				CBD1C28D21D73096006DB3FF /* ProductMyBuyView.xib in Resources */,
 				DEE1DA7E21CE2E6A0036FEB7 /* PopUpUpdateQuantityBuyContent.xib in Resources */,
 				B355EF5421C8EB3F00379F57 /* HomeViewController.xib in Resources */,
 				DE442C4221CFA2130051C0B8 /* OrderDetailViewController.xib in Resources */,
@@ -1977,6 +2034,7 @@
 				DE442C5921CFB7870051C0B8 /* BaseCommentCell.swift in Sources */,
 				DEE1DA5621CDE6550036FEB7 /* PopUpSelectDate.swift in Sources */,
 				DEE7306D21CFDA1700F20D68 /* OrderDetail+PostComment.swift in Sources */,
+				CBD1C29621D732CB006DB3FF /* MyBuyPresenter.swift in Sources */,
 				CB0C3A2721D3BECD0052DD91 /* ForgotPasswordInteractor.swift in Sources */,
 				DE21827121CD473100FDD9F1 /* KActivityIndicatorAnimationBlank.swift in Sources */,
 				84C8543621CFEE7300BDABE5 /* SupplementaryInfo+Event.swift in Sources */,
@@ -2043,6 +2101,7 @@
 				CB172C2521C6A2EF0068CF92 /* PopUpHelper.swift in Sources */,
 				DEE7306F21CFDAA300F20D68 /* OrderDetail+Table.swift in Sources */,
 				DE21828121CD473100FDD9F1 /* KActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */,
+				CBD1C29921D732CB006DB3FF /* MyBuyProtocols.swift in Sources */,
 				84396D3E21D1389B00818FAB /* UpdateProfile+Event.swift in Sources */,
 				DEA3A09521D67B1300643296 /* BannerEntity.swift in Sources */,
 				84421BF921CBEF1E00F468F5 /* MoreHeaderCell.swift in Sources */,
@@ -2057,6 +2116,7 @@
 				DE0DBAE421D3B6DA0097E38F /* NotificationProtocols.swift in Sources */,
 				DE21826921CD473100FDD9F1 /* KActivityIndicatorAnimationBallScale.swift in Sources */,
 				DE21826F21CD473100FDD9F1 /* KActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
+				CBD1C28E21D73096006DB3FF /* ProductMyBuyView.swift in Sources */,
 				B325C2EF21CE05B20048A148 /* MenuCell.swift in Sources */,
 				84C8543421CFEC8D00BDABE5 /* SupplementaryInfo+SetupUI.swift in Sources */,
 				CB172C9B21C6A2EF0068CF92 /* BaseViewXib.swift in Sources */,
@@ -2083,7 +2143,10 @@
 				B36AEEB121CDDB8000BED43C /* MySellPresenter.swift in Sources */,
 				DE442C3221CF93C60051C0B8 /* PhotoEntity.swift in Sources */,
 				B36AEEB321CDDB8000BED43C /* MySellViewController.swift in Sources */,
+				CBD1C29721D732CB006DB3FF /* MyBuyRouter.swift in Sources */,
+				CBD1C28921D73088006DB3FF /* MyBuyCell.swift in Sources */,
 				B392FB3D21D3D6AE0076A7B5 /* AcceptCell.swift in Sources */,
+				CBD1C29A21D732CC006DB3FF /* MyBuyInteractor.swift in Sources */,
 				84421BED21CBEECF00F468F5 /* MorePresenter.swift in Sources */,
 				DE442C3E21CFA2130051C0B8 /* OrderDetailRouter.swift in Sources */,
 				CB172C1A21C6A2EF0068CF92 /* NSMutableAttributedString+Extension.swift in Sources */,
@@ -2132,6 +2195,7 @@
 				CB172C1821C6A2EF0068CF92 /* UIViewController+extension.swift in Sources */,
 				DE07F56921CF539D00DE2032 /* AppCollectionPhoto.swift in Sources */,
 				DEA3A08821D6738200643296 /* AppImageSlide.swift in Sources */,
+				CBD1C29821D732CB006DB3FF /* MyBuyViewController.swift in Sources */,
 				CB172C9A21C6A2EF0068CF92 /* BaseCollectionCell.swift in Sources */,
 				CB172C1D21C6A2EF0068CF92 /* UITextField+extension.swift in Sources */,
 				CB172C2221C6A2EF0068CF92 /* PopUpNotificationHelper.swift in Sources */,
