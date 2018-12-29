@@ -39,7 +39,6 @@ class AppImageSlide: BaseViewXib {
                 lbIndex.text = ""
                 imageSlideShow.isHidden = true
             }
-           
         }
     }
     

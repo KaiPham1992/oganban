@@ -22,8 +22,17 @@ class MorePresenter: MorePresenterProtocol {
         self.router = router
     }
     
-    func goToPage(name: MoreRowName) {
-        router.goToPage(name: name)
+    func goToPage(name: MoreEntityType) {
+        if name == .logout {
+            PopUpHelper.shared.showYesNoQuestionHaveAds(question: "Bạn chắc chắn muốn đăng xuất?", completionYes: {
+                self.logout()
+            }) {
+                //----
+            }
+            
+        } else {
+            router.goToPage(name: name)
+        }
     }
 
     func logout() {

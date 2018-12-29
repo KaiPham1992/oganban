@@ -35,28 +35,28 @@
             <rect key="frame" x="0.0" y="0.0" width="387" height="142"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eYL-YP-jcQ">
-                    <rect key="frame" x="8" y="8" width="125" height="83.5"/>
-                    <color key="backgroundColor" red="0.92941176469999998" green="0.1098023529" blue="0.14117450979999999" alpha="1" colorSpace="calibratedRGB"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rectangle_560282_copy_3" translatesAutoresizingMaskIntoConstraints="NO" id="eYL-YP-jcQ">
+                    <rect key="frame" x="15" y="8" width="125" height="83.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="83.5" id="AeD-8Y-dsv"/>
                         <constraint firstAttribute="width" constant="125" id="DfT-U4-0ZT"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Xe Honda Vision 2013 màu xanh dương" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DjJ-GN-kAh">
-                    <rect key="frame" x="153" y="8" width="224" height="16"/>
+                    <rect key="frame" x="160" y="8" width="217" height="14"/>
                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20 phút trước" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czf-M1-zco">
-                    <rect key="frame" x="153" y="29" width="61" height="13.5"/>
+                    <rect key="frame" x="160" y="27" width="62.5" height="12"/>
                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="10"/>
                     <color key="textColor" red="0.60001176470588224" green="0.60001176470588224" blue="0.60001176470588224" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_money" translatesAutoresizingMaskIntoConstraints="NO" id="H09-Ok-Cdj">
-                    <rect key="frame" x="153" y="50.5" width="8.5" height="10"/>
+                    <rect key="frame" x="160" y="47" width="8.5" height="10"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="8.5" id="EpP-eE-PlJ"/>
@@ -64,45 +64,45 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20,000,000  đ" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MVw-gC-3ME">
-                    <rect key="frame" x="166.5" y="47.5" width="72" height="16"/>
+                    <rect key="frame" x="173.5" y="45" width="74" height="14"/>
                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                     <color key="textColor" red="0.82352156862745096" green="0.0078399999999999997" blue="0.0078399999999999997" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="adx-uU-G7W">
-                    <rect key="frame" x="153" y="71.5" width="23" height="23"/>
-                    <color key="backgroundColor" red="0.25098039220000001" green="0.72941176470000002" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ellipse_98222_copy_4" translatesAutoresizingMaskIntoConstraints="NO" id="adx-uU-G7W">
+                    <rect key="frame" x="160" y="67" width="23" height="23"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="23" id="9rw-Db-wJA"/>
                         <constraint firstAttribute="width" constant="23" id="cvd-Ag-mtS"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trịnh Nguyệt" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v6f-fo-vwj">
-                    <rect key="frame" x="184" y="71.5" width="58" height="13.5"/>
+                    <rect key="frame" x="191" y="67" width="57" height="12"/>
                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="10"/>
                     <color key="textColor" red="0.76861960784313721" green="0.0078399999999999997" blue="0.47452156862745098" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gold " lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fE-gj-DI8">
-                    <rect key="frame" x="184" y="90" width="19" height="11"/>
+                    <rect key="frame" x="191" y="84" width="19.5" height="9.5"/>
                     <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="8"/>
                     <color key="textColor" red="0.0" green="0.53374901960784316" blue="0.94507058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11A-xD-PfX">
-                    <rect key="frame" x="205" y="90" width="7.5" height="7"/>
+                    <rect key="frame" x="212.5" y="84" width="7.5" height="6"/>
                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="5"/>
-                    <color key="textColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="textColor" red="0.0" green="0.53333333333333333" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.1" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t81-9E-sw6">
-                    <rect key="frame" x="365" y="71.5" width="14" height="13.5"/>
+                    <rect key="frame" x="365" y="67" width="14" height="12"/>
                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="10"/>
                     <color key="textColor" red="0.25491019607843135" green="0.25491019607843135" blue="0.25491019607843135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_star" translatesAutoresizingMaskIntoConstraints="NO" id="GU5-oD-pZA">
-                    <rect key="frame" x="366" y="90" width="12" height="12"/>
+                    <rect key="frame" x="366" y="84" width="12" height="12"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="12" id="GN8-Rr-8ej"/>
@@ -110,7 +110,7 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chờ duyệt" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIn-Z7-lmP">
-                    <rect key="frame" x="8" y="96.5" width="66" height="15"/>
+                    <rect key="frame" x="15" y="96.5" width="66" height="15"/>
                     <color key="backgroundColor" red="0.89237647058823499" green="0.98431372549019602" blue="0.11580078431372499" alpha="1" colorSpace="deviceRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="15" id="bUB-7M-M9q"/>
@@ -126,7 +126,7 @@
                 <constraint firstItem="2fE-gj-DI8" firstAttribute="top" secondItem="v6f-fo-vwj" secondAttribute="bottom" constant="5" id="5Rm-57-fps"/>
                 <constraint firstItem="MVw-gC-3ME" firstAttribute="leading" secondItem="H09-Ok-Cdj" secondAttribute="trailing" constant="5" id="5xt-qB-D43"/>
                 <constraint firstItem="MVw-gC-3ME" firstAttribute="centerY" secondItem="H09-Ok-Cdj" secondAttribute="centerY" id="6dQ-0W-YLB"/>
-                <constraint firstItem="eYL-YP-jcQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="9ok-AR-AlV"/>
+                <constraint firstItem="eYL-YP-jcQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="9ok-AR-AlV"/>
                 <constraint firstItem="GU5-oD-pZA" firstAttribute="top" secondItem="t81-9E-sw6" secondAttribute="bottom" constant="5" id="ADp-4R-ai7"/>
                 <constraint firstItem="11A-xD-PfX" firstAttribute="leading" secondItem="2fE-gj-DI8" secondAttribute="trailing" constant="2" id="Aqt-b1-pqJ"/>
                 <constraint firstItem="aIn-Z7-lmP" firstAttribute="leading" secondItem="eYL-YP-jcQ" secondAttribute="leading" id="B1F-9z-Ep8"/>
@@ -155,7 +155,9 @@
         </view>
     </objects>
     <resources>
+        <image name="ellipse_98222_copy_4" width="22.5" height="22.5"/>
         <image name="ic_money" width="9.5" height="11"/>
         <image name="ic_star" width="12" height="12"/>
+        <image name="rectangle_560282_copy_3" width="157.5" height="105"/>
     </resources>
 </document>

@@ -1,5 +1,5 @@
 //
-//  MyBuyViewController.swift
+//  MyExchangeViewController.swift
 //  Oganban
 //
 //  Created Coby on 12/29/18.
@@ -11,36 +11,36 @@
 import UIKit
 import DropDown
 
-class MyBuyViewController: BaseViewController {
-
-    @IBOutlet weak var tbMyBuy: UITableView!
-    @IBOutlet weak var vRecordBuy: UIView!
-    @IBOutlet weak var lbStatusRecord: UILabel!
+class MyExchangeViewController: BaseViewController {
+    
+    @IBOutlet weak var tbMyExchange: UITableView!
+    @IBOutlet weak var vRecordExchange: UIView!
+    @IBOutlet weak var lbStatusExchange: UILabel!
     @IBOutlet weak var lbTotal: UILabel!
     @IBOutlet weak var vDropDownStatus: UIView!
     
-	var presenter: MyBuyPresenterProtocol?
-
+    var presenter: MyExchangePresenterProtocol?
+    
     let dropDownStatus = DropDown()
     
-	override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
     }
-
+    
     func setupView() {
-        self.setTitleNavigation(title: NavigationTitle.myBuy)
+        
         configTableView()
         setupDropDownStatus()
     }
     
     func configTableView() {
-        tbMyBuy.dataSource = self
-        tbMyBuy.delegate = self
+        tbMyExchange.dataSource = self
+        tbMyExchange.delegate = self
         
-        tbMyBuy.registerTableCell(MyBuyCell.self)
+        tbMyExchange.registerTableCell(MyBuyCell.self)
         
-        tbMyBuy.contentInset.bottom = 10
+        tbMyExchange.contentInset.bottom = 10
     }
     
     private func setupDropDownStatus() {
@@ -56,7 +56,7 @@ class MyBuyViewController: BaseViewController {
         dropDownStatus.dataSource = ["Chờ duyệt", "Đang giao", "Hoàn Tất", "Đã huỷ", "Tất cả"]
         dropDownStatus.selectionAction = { [weak self](index, item) in
             guard let `self` = self else { return }
-            self.lbStatusRecord.text = item
+            self.lbStatusExchange.text = item
             switch item {
             case "Chờ duyệt":
                 self.lbTotal.text = "Tổng đơn hàng đang chờ duyệt: 1"
@@ -79,7 +79,7 @@ class MyBuyViewController: BaseViewController {
     }
 }
 
-extension MyBuyViewController: UITableViewDataSource, UITableViewDelegate {
+extension MyExchangeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
@@ -95,6 +95,8 @@ extension MyBuyViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
-extension MyBuyViewController: MyBuyViewProtocol {
+extension MyExchangeViewController: MyExchangeViewProtocol {
+    
+    
     
 }

@@ -84,6 +84,10 @@ class UserDefaultHelper {
         guard let _token = userToken else { return false }
         return !_token.isEmpty
     }
+    
+    var isSocialLogin: Bool {
+        return  loginUserInfo?.socialImage != nil 
+    }
 }
 
 extension UserDefaultHelper {
