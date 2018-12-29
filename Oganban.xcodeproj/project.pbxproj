@@ -78,12 +78,6 @@
 		B35F529821D276A000D3FA30 /* SignUpParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35F529721D276A000D3FA30 /* SignUpParam.swift */; };
 		B36AEE9B21CDD90500BED43C /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36AEE9921CDD90500BED43C /* TabbarViewController.swift */; };
 		B36AEE9C21CDD90500BED43C /* TabbarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36AEE9A21CDD90500BED43C /* TabbarProtocol.swift */; };
-		B36AEEB121CDDB8000BED43C /* MySellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36AEEAB21CDDB8000BED43C /* MySellPresenter.swift */; };
-		B36AEEB221CDDB8000BED43C /* MySellRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36AEEAC21CDDB8000BED43C /* MySellRouter.swift */; };
-		B36AEEB321CDDB8000BED43C /* MySellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36AEEAD21CDDB8000BED43C /* MySellViewController.swift */; };
-		B36AEEB421CDDB8000BED43C /* MySellProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36AEEAE21CDDB8000BED43C /* MySellProtocols.swift */; };
-		B36AEEB521CDDB8000BED43C /* MySellInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36AEEAF21CDDB8000BED43C /* MySellInteractor.swift */; };
-		B36AEEB621CDDB8000BED43C /* MySellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B36AEEB021CDDB8000BED43C /* MySellViewController.xib */; };
 		B36AEEC821CDF47A00BED43C /* AdmobCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36AEEC621CDF47A00BED43C /* AdmobCell.swift */; };
 		B36AEEC921CDF47A00BED43C /* AdmobCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B36AEEC721CDF47A00BED43C /* AdmobCell.xib */; };
 		B36AEECE21CDF52B00BED43C /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36AEECC21CDF52B00BED43C /* HomeCell.swift */; };
@@ -216,6 +210,12 @@
 		CBD1C2BF21D75BA5006DB3FF /* MyExchangeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD1C2B921D75BA5006DB3FF /* MyExchangeViewController.xib */; };
 		CBD1C2C121D76BEB006DB3FF /* RecordEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C2C021D76BEB006DB3FF /* RecordEndPoint.swift */; };
 		CBD1C2C321D76E4D006DB3FF /* RecordAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C2C221D76E4D006DB3FF /* RecordAPIService.swift */; };
+		CBD1C2CC21D78916006DB3FF /* MySellExpiredPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C2C621D78916006DB3FF /* MySellExpiredPresenter.swift */; };
+		CBD1C2CD21D78916006DB3FF /* MySellExpiredRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C2C721D78916006DB3FF /* MySellExpiredRouter.swift */; };
+		CBD1C2CE21D78916006DB3FF /* MySellExpiredViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C2C821D78916006DB3FF /* MySellExpiredViewController.swift */; };
+		CBD1C2CF21D78916006DB3FF /* MySellExpiredProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C2C921D78916006DB3FF /* MySellExpiredProtocols.swift */; };
+		CBD1C2D021D78916006DB3FF /* MySellExpiredInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C2CA21D78916006DB3FF /* MySellExpiredInteractor.swift */; };
+		CBD1C2D121D78916006DB3FF /* MySellExpiredViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD1C2CB21D78916006DB3FF /* MySellExpiredViewController.xib */; };
 		DE07F56921CF539D00DE2032 /* AppCollectionPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE07F56821CF539D00DE2032 /* AppCollectionPhoto.swift */; };
 		DE0DBAE421D3B6DA0097E38F /* NotificationProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0DBADB21D3B6DA0097E38F /* NotificationProtocols.swift */; };
 		DE0DBAE521D3B6DA0097E38F /* NotificationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0DBADC21D3B6DA0097E38F /* NotificationPresenter.swift */; };
@@ -446,12 +446,6 @@
 		B35F529721D276A000D3FA30 /* SignUpParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpParam.swift; sourceTree = "<group>"; };
 		B36AEE9921CDD90500BED43C /* TabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		B36AEE9A21CDD90500BED43C /* TabbarProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarProtocol.swift; sourceTree = "<group>"; };
-		B36AEEAB21CDDB8000BED43C /* MySellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySellPresenter.swift; sourceTree = "<group>"; };
-		B36AEEAC21CDDB8000BED43C /* MySellRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySellRouter.swift; sourceTree = "<group>"; };
-		B36AEEAD21CDDB8000BED43C /* MySellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySellViewController.swift; sourceTree = "<group>"; };
-		B36AEEAE21CDDB8000BED43C /* MySellProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySellProtocols.swift; sourceTree = "<group>"; };
-		B36AEEAF21CDDB8000BED43C /* MySellInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySellInteractor.swift; sourceTree = "<group>"; };
-		B36AEEB021CDDB8000BED43C /* MySellViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MySellViewController.xib; sourceTree = "<group>"; };
 		B36AEEC621CDF47A00BED43C /* AdmobCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobCell.swift; sourceTree = "<group>"; };
 		B36AEEC721CDF47A00BED43C /* AdmobCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdmobCell.xib; sourceTree = "<group>"; };
 		B36AEECC21CDF52B00BED43C /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
@@ -588,6 +582,12 @@
 		CBD1C2B921D75BA5006DB3FF /* MyExchangeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyExchangeViewController.xib; sourceTree = "<group>"; };
 		CBD1C2C021D76BEB006DB3FF /* RecordEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordEndPoint.swift; sourceTree = "<group>"; };
 		CBD1C2C221D76E4D006DB3FF /* RecordAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordAPIService.swift; sourceTree = "<group>"; };
+		CBD1C2C621D78916006DB3FF /* MySellExpiredPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySellExpiredPresenter.swift; sourceTree = "<group>"; };
+		CBD1C2C721D78916006DB3FF /* MySellExpiredRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySellExpiredRouter.swift; sourceTree = "<group>"; };
+		CBD1C2C821D78916006DB3FF /* MySellExpiredViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySellExpiredViewController.swift; sourceTree = "<group>"; };
+		CBD1C2C921D78916006DB3FF /* MySellExpiredProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySellExpiredProtocols.swift; sourceTree = "<group>"; };
+		CBD1C2CA21D78916006DB3FF /* MySellExpiredInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySellExpiredInteractor.swift; sourceTree = "<group>"; };
+		CBD1C2CB21D78916006DB3FF /* MySellExpiredViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MySellExpiredViewController.xib; sourceTree = "<group>"; };
 		DE07F56821CF539D00DE2032 /* AppCollectionPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCollectionPhoto.swift; sourceTree = "<group>"; };
 		DE0DBADB21D3B6DA0097E38F /* NotificationProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationProtocols.swift; sourceTree = "<group>"; };
 		DE0DBADC21D3B6DA0097E38F /* NotificationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationPresenter.swift; sourceTree = "<group>"; };
@@ -922,19 +922,6 @@
 			path = Tabbar;
 			sourceTree = "<group>";
 		};
-		B36AEEAA21CDDB7000BED43C /* MySell */ = {
-			isa = PBXGroup;
-			children = (
-				B36AEEAB21CDDB8000BED43C /* MySellPresenter.swift */,
-				B36AEEAC21CDDB8000BED43C /* MySellRouter.swift */,
-				B36AEEAD21CDDB8000BED43C /* MySellViewController.swift */,
-				B36AEEAE21CDDB8000BED43C /* MySellProtocols.swift */,
-				B36AEEAF21CDDB8000BED43C /* MySellInteractor.swift */,
-				B36AEEB021CDDB8000BED43C /* MySellViewController.xib */,
-			);
-			path = MySell;
-			sourceTree = "<group>";
-		};
 		B36AEEC521CDF41C00BED43C /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1042,7 +1029,6 @@
 				DEBEE7FA21D740C2004B8D88 /* MySellContainer */,
 				DE0DBADA21D3B6DA0097E38F /* Notification */,
 				DE442C3621CFA1FE0051C0B8 /* OrderDetail */,
-				B36AEEAA21CDDB7000BED43C /* MySell */,
 				B36AEE9721CDD8CD00BED43C /* Tabbar */,
 				DE21821421CD40AE00FDD9F1 /* UserManager */,
 				84421BE621CBEEA600F468F5 /* More */,
@@ -1397,6 +1383,7 @@
 		CBD1C2A121D74D88006DB3FF /* MySelling */ = {
 			isa = PBXGroup;
 			children = (
+				CBD1C2C521D788ED006DB3FF /* MySellExpired */,
 				CBD1C2AE21D74ED5006DB3FF /* MySellingCell */,
 				CBD1C2A221D74DA6006DB3FF /* MySellingPresenter.swift */,
 				CBD1C2A321D74DA6006DB3FF /* MySellingRouter.swift */,
@@ -1428,6 +1415,19 @@
 				CBD1C2B921D75BA5006DB3FF /* MyExchangeViewController.xib */,
 			);
 			path = MyExchange;
+			sourceTree = "<group>";
+		};
+		CBD1C2C521D788ED006DB3FF /* MySellExpired */ = {
+			isa = PBXGroup;
+			children = (
+				CBD1C2C621D78916006DB3FF /* MySellExpiredPresenter.swift */,
+				CBD1C2C721D78916006DB3FF /* MySellExpiredRouter.swift */,
+				CBD1C2C821D78916006DB3FF /* MySellExpiredViewController.swift */,
+				CBD1C2C921D78916006DB3FF /* MySellExpiredProtocols.swift */,
+				CBD1C2CA21D78916006DB3FF /* MySellExpiredInteractor.swift */,
+				CBD1C2CB21D78916006DB3FF /* MySellExpiredViewController.xib */,
+			);
+			path = MySellExpired;
 			sourceTree = "<group>";
 		};
 		DE0DBADA21D3B6DA0097E38F /* Notification */ = {
@@ -2004,7 +2004,6 @@
 				CB172C0C21C6A2EF0068CF92 /* Localizable.strings in Resources */,
 				84487C9121CB80F5008B25B2 /* Roboto-ThinItalic.ttf in Resources */,
 				DE442C5E21CFB9140051C0B8 /* AddressCell.xib in Resources */,
-				B36AEEB621CDDB8000BED43C /* MySellViewController.xib in Resources */,
 				CB3A8F1821C64FC1008144BD /* LaunchScreen.storyboard in Resources */,
 				CB172C8C21C6A2EF0068CF92 /* OpenSans-SemiBoldItalic.ttf in Resources */,
 				DEE1DA5A21CDE6740036FEB7 /* PopUpSelectDateContent.xib in Resources */,
@@ -2038,6 +2037,7 @@
 				DEE1DA6121CDF3E60036FEB7 /* AdmobNativeView.xib in Resources */,
 				CBD1C2A021D74B88006DB3FF /* RecordSellingView.xib in Resources */,
 				CB172C8B21C6A2EF0068CF92 /* OpenSans-Bold.ttf in Resources */,
+				CBD1C2D121D78916006DB3FF /* MySellExpiredViewController.xib in Resources */,
 				CB172C8E21C6A2EF0068CF92 /* LICENSE.txt in Resources */,
 				DEC5166621CE8DDF00A17CBF /* PopUpSettingGPSContent.xib in Resources */,
 				84421BFE21CBEF7600F468F5 /* MoreViewController.xib in Resources */,
@@ -2209,7 +2209,6 @@
 				DE0E79D921D65F760053786D /* Connectivity.swift in Sources */,
 				B36AEECE21CDF52B00BED43C /* HomeCell.swift in Sources */,
 				CBD1C2C121D76BEB006DB3FF /* RecordEndPoint.swift in Sources */,
-				B36AEEB221CDDB8000BED43C /* MySellRouter.swift in Sources */,
 				DE21822E21CD44D600FDD9F1 /* BaseEntity.swift in Sources */,
 				DEA3A09821D67ECE00643296 /* PaddingLabel.swift in Sources */,
 				DE21827821CD473100FDD9F1 /* KActivityIndicatorAnimationSquareSpin.swift in Sources */,
@@ -2247,6 +2246,7 @@
 				CB172C9721C6A2EF0068CF92 /* Enum.swift in Sources */,
 				DEC5167221CE995F00A17CBF /* AppCollectionPhotoCell.swift in Sources */,
 				B355EF5F21C8FB1400379F57 /* SignUpProtocols.swift in Sources */,
+				CBD1C2D021D78916006DB3FF /* MySellExpiredInteractor.swift in Sources */,
 				CB172C1221C6A2EF0068CF92 /* Date+extension.swift in Sources */,
 				DE21827321CD473100FDD9F1 /* KActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
 				B355EF6021C8FB1400379F57 /* SignUpInteractor.swift in Sources */,
@@ -2287,6 +2287,7 @@
 				84ABC68F21CFF06700E0D202 /* UpdateProfileRouter.swift in Sources */,
 				CB172C1321C6A2EF0068CF92 /* UIButton+extension.swift in Sources */,
 				DE21826D21CD473100FDD9F1 /* KActivityIndicatorAnimationBallPulse.swift in Sources */,
+				CBD1C2CC21D78916006DB3FF /* MySellExpiredPresenter.swift in Sources */,
 				DE442C3421CF94600051C0B8 /* CommonEndPoint.swift in Sources */,
 				DE442C4021CFA2130051C0B8 /* OrderDetailProtocols.swift in Sources */,
 				DE21828521CD473100FDD9F1 /* FadeInOutAnimation.swift in Sources */,
@@ -2297,7 +2298,6 @@
 				CBD1C2AB21D74DA6006DB3FF /* MySellingProtocols.swift in Sources */,
 				CBD1C2B121D74EF4006DB3FF /* MySellingCell.swift in Sources */,
 				CB172C2821C6A2EF0068CF92 /* AnimationHelper.swift in Sources */,
-				B36AEEB421CDDB8000BED43C /* MySellProtocols.swift in Sources */,
 				DEC5167021CE98F200A17CBF /* AppPhoto.swift in Sources */,
 				DEBEE80221D740D7004B8D88 /* MySellContainerRouter.swift in Sources */,
 				DE21827F21CD473100FDD9F1 /* KActivityIndicatorAnimationBallPulseRise.swift in Sources */,
@@ -2313,7 +2313,6 @@
 				CB172B3D21C6A26F0068CF92 /* NetworkRequest.swift in Sources */,
 				84A92BF821CA555900148191 /* LoginViewController.swift in Sources */,
 				DEE1DA5C21CDF22C0036FEB7 /* AppConstant.swift in Sources */,
-				B36AEEB521CDDB8000BED43C /* MySellInteractor.swift in Sources */,
 				DE21826821CD473100FDD9F1 /* KActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
 				DE442C6B21CFC1BD0051C0B8 /* ReplyCommentCell.swift in Sources */,
 				DE21829121CD4E7F00FDD9F1 /* AppTextFiled.swift in Sources */,
@@ -2359,6 +2358,7 @@
 				DE442C5721CFB7570051C0B8 /* SubCommentCell.swift in Sources */,
 				DE21827421CD473100FDD9F1 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
 				CB172C1921C6A2EF0068CF92 /* String+extension.swift in Sources */,
+				CBD1C2CF21D78916006DB3FF /* MySellExpiredProtocols.swift in Sources */,
 				DE21827921CD473100FDD9F1 /* KActivityIndicatorAnimationBallBeat.swift in Sources */,
 				8432074E21CF529D00A4F11E /* DateFollowWeekCell.swift in Sources */,
 				CB172C1B21C6A2EF0068CF92 /* Bool+extension.swift in Sources */,
@@ -2377,16 +2377,16 @@
 				DE21829421CD4EB600FDD9F1 /* FTextField.swift in Sources */,
 				84421BF121CBEECF00F468F5 /* MoreInteractor.swift in Sources */,
 				DE21822121CD419B00FDD9F1 /* PhoneEntity.swift in Sources */,
-				B36AEEB121CDDB8000BED43C /* MySellPresenter.swift in Sources */,
 				DE442C3221CF93C60051C0B8 /* PhotoEntity.swift in Sources */,
-				B36AEEB321CDDB8000BED43C /* MySellViewController.swift in Sources */,
 				CBD1C29721D732CB006DB3FF /* MyBuyRouter.swift in Sources */,
 				CBD1C28921D73088006DB3FF /* MyBuyCell.swift in Sources */,
+				CBD1C2CD21D78916006DB3FF /* MySellExpiredRouter.swift in Sources */,
 				B392FB3D21D3D6AE0076A7B5 /* AcceptCell.swift in Sources */,
 				CBD1C29A21D732CC006DB3FF /* MyBuyInteractor.swift in Sources */,
 				DEBEE80521D740D7004B8D88 /* MySellContainerInteractor.swift in Sources */,
 				84421BED21CBEECF00F468F5 /* MorePresenter.swift in Sources */,
 				DEBEE80321D740D7004B8D88 /* MySellContainerViewController.swift in Sources */,
+				CBD1C2CE21D78916006DB3FF /* MySellExpiredViewController.swift in Sources */,
 				DE442C3E21CFA2130051C0B8 /* OrderDetailRouter.swift in Sources */,
 				CB172C1A21C6A2EF0068CF92 /* NSMutableAttributedString+Extension.swift in Sources */,
 				DE21822A21CD449800FDD9F1 /* UserEntity.swift in Sources */,

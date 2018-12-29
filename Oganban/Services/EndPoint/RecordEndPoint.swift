@@ -35,7 +35,7 @@ extension RecordEndPoint: EndPointType {
     
     var parameters: JSONDictionary {
         switch self {
-        case .getRecordSellerPost(let status, let limit, let offset):
+        case .getRecordSellerPost(let status, let offset, let limit):
             let param = ["status": status,
                          "offset": offset,
                          "limit": limit] as [String: Any]

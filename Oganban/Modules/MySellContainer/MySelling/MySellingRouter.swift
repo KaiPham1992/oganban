@@ -14,17 +14,22 @@ class MySellingRouter: MySellingWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule() -> UIViewController {
+    static func createModule(delegate: MySellingViewControllerDelegate) -> MySellingViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = MySellingViewController(nibName: nil, bundle: nil)
+        let view = MySellingViewController.initFromNib()
         let interactor = MySellingInteractor()
         let router = MySellingRouter()
         let presenter = MySellingPresenter(interface: view, interactor: interactor, router: router)
-
+        
+        view.delegate = delegate
         view.presenter = presenter
         interactor.presenter = presenter
         router.viewController = view
 
         return view
+    }
+    
+    func gotoMySellExpired() {
+        
     }
 }

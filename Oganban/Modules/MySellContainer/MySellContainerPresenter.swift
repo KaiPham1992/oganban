@@ -22,4 +22,11 @@ class MySellContainerPresenter: MySellContainerPresenterProtocol, MySellContaine
         self.router = router
     }
 
+    func gotoLogin() {
+        router.gotoLogin()
+    }
+    
+    func gotoMySellExpired() {
+        router.gotoMySellExpired()
+    }
 }
