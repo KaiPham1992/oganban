@@ -22,8 +22,12 @@ class MorePresenter: MorePresenterProtocol {
         self.router = router
     }
     
-    func goToPage(name: MoreRowName) {
-        router.goToPage(name: name)
+    func goToPage(name: MoreEntityType) {
+        if name == .logout {
+            logout()
+        } else {
+            router.goToPage(name: name)
+        }
     }
 
     func logout() {

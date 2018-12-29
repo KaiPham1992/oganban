@@ -26,48 +26,16 @@ class MoreCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func showData(index: Int){
+    func showData(type: MoreEntityType){
         
         lbTitle.textColor = AppColor.gray_65_65_65
         vBottomLine.isHidden = false
         imgIcon.isHidden = false
+        lbTitle.text = type.rawValue
         
-        if index == MoreRowName.historyCoin.index() {
-            lbTitle.text = MoreTitle.historyCoin
-            return
-        }
-        
-        if index == MoreRowName.historyBuy.index() {
-            lbTitle.text = MoreTitle.historyBuy
-            return
-        }
-        if index == MoreRowName.policy.index() {
-            lbTitle.text = MoreTitle.policy
-            return
-        }
-        if index == MoreRowName.tutorial.index() {
-            lbTitle.text = MoreTitle.tutorial
-            return
-        }
-        if index == MoreRowName.setting.index(){
-            lbTitle.text = MoreTitle.setting
-            return
-        }
-        
-        if UserDefaultHelper.shared.loginUserInfo != nil {
-            if index == MoreRowName.changePassword.index(){
-                lbTitle.text = MoreTitle.changePassword
-                return
-            }
-            if index == MoreRowName.logout.index(){
-                lbTitle.text = MoreTitle.logout
-                return
-            }
-        }
-        
-        if index == MoreRowName.version.index() {
+        if type == .version {
             lbTitle.textColor = AppColor.gray_200_200_200
-            lbTitle.text = MoreTitle.version + " 1.0"
+            lbTitle.text = type.rawValue + " 1.0"
             vBottomLine.isHidden = true
             imgIcon.isHidden = true
             return

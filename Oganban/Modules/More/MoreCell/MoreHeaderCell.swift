@@ -55,9 +55,7 @@ class MoreHeaderCell: UITableViewCell {
         
         if let urlString = user.imgCropSrc, let url = URL(string: BASE_URL_IMAGE + urlString) {
             ivAvatar.sd_setImage(with: url , placeholderImage: AppImage.imgDefaultUser)
-        }
-        
-        if let urlString = user.socialImage, let url = URL(string: urlString) {
+        } else if let urlString = user.socialImage, let url = URL(string: urlString) {
             ivAvatar.sd_setImage(with: url , placeholderImage: AppImage.imgDefaultUser)
         }
         

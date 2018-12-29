@@ -287,6 +287,7 @@
 		DEA3A09321D679A000643296 /* OrderDetailImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEA3A09121D679A000643296 /* OrderDetailImageCell.xib */; };
 		DEA3A09521D67B1300643296 /* BannerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3A09421D67B1300643296 /* BannerEntity.swift */; };
 		DEA3A09821D67ECE00643296 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3A09721D67ECE00643296 /* PaddingLabel.swift */; };
+		DEBEE7F421D73443004B8D88 /* MoreEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBEE7F321D73443004B8D88 /* MoreEntity.swift */; };
 		DEC5166221CE8DB600A17CBF /* PopUpSettingGPS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC5166121CE8DB600A17CBF /* PopUpSettingGPS.swift */; };
 		DEC5166421CE8DCD00A17CBF /* PopUpSettingGPSContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC5166321CE8DCD00A17CBF /* PopUpSettingGPSContent.swift */; };
 		DEC5166621CE8DDF00A17CBF /* PopUpSettingGPSContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEC5166521CE8DDF00A17CBF /* PopUpSettingGPSContent.xib */; };
@@ -611,6 +612,7 @@
 		DEA3A09121D679A000643296 /* OrderDetailImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderDetailImageCell.xib; sourceTree = "<group>"; };
 		DEA3A09421D67B1300643296 /* BannerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerEntity.swift; sourceTree = "<group>"; };
 		DEA3A09721D67ECE00643296 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		DEBEE7F321D73443004B8D88 /* MoreEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreEntity.swift; sourceTree = "<group>"; };
 		DEC5166121CE8DB600A17CBF /* PopUpSettingGPS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpSettingGPS.swift; sourceTree = "<group>"; };
 		DEC5166321CE8DCD00A17CBF /* PopUpSettingGPSContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpSettingGPSContent.swift; sourceTree = "<group>"; };
 		DEC5166521CE8DDF00A17CBF /* PopUpSettingGPSContent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpSettingGPSContent.xib; sourceTree = "<group>"; };
@@ -1310,6 +1312,7 @@
 				DE0DBAEC21D3B7380097E38F /* NotificationEntity.swift */,
 				B392FB4221D3E93E0076A7B5 /* RecordEntity.swift */,
 				DEA3A09421D67B1300643296 /* BannerEntity.swift */,
+				DEBEE7F321D73443004B8D88 /* MoreEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -2146,6 +2149,7 @@
 				B36AEE9B21CDD90500BED43C /* TabbarViewController.swift in Sources */,
 				CB3A8F0E21C64FC1008144BD /* AppDelegate.swift in Sources */,
 				DE21827621CD473100FDD9F1 /* KActivityIndicatorAnimationLineScaleParty.swift in Sources */,
+				DEBEE7F421D73443004B8D88 /* MoreEntity.swift in Sources */,
 				DEE1DA5821CDE6610036FEB7 /* PopUpSelectDateContent.swift in Sources */,
 				84A92BF621CA555900148191 /* LoginPresenter.swift in Sources */,
 				CB172C1021C6A2EF0068CF92 /* Int+extension.swift in Sources */,

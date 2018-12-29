@@ -28,35 +28,35 @@ class MoreRouter: MoreWireframeProtocol {
         return view
     }
     
-    func goToPage (name: MoreRowName){
+    func goToPage (name: MoreEntityType){
         switch name {
-        case MoreRowName.header:
+        case MoreEntityType.header:
             tapHeader()
             print("Tap header")
             break
-        case MoreRowName.historyCoin:
+        case MoreEntityType.historyCoin:
             tapHistoryCoin()
             print("Chọn Lịch sử ƠCoin")
             break
-        case MoreRowName.historyBuy:
+        case MoreEntityType.historyBuy:
             tapHistoryBuy()
             print("Chọn Lịch sử mua tin")
             break
-        case MoreRowName.policy:
+        case MoreEntityType.policy:
             tapPolicy()
             print("Chọn Điều khoản sử dụng")
             break
-        case MoreRowName.tutorial:
+        case MoreEntityType.tutorial:
             print("Chọn Hướng dẫn")
             break
-        case MoreRowName.setting:
+        case MoreEntityType.setting:
             print("Chọn Cài đặt")
             break
-        case MoreRowName.changePassword:
+        case MoreEntityType.changePassword:
             tapChangePassword()
             print("Chọn Đổi mật khẩu")
             break
-        case MoreRowName.logout:
+        case MoreEntityType.logout:
             print("Chọn Đăng xuất")
             
             break
