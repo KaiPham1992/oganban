@@ -14,7 +14,7 @@
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Oganban cần sử dụng thư viện ảnh để đăng hình</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<true/>
+	<false/>
 	<key>AccountKitClientToken</key>
 	<string>195782fa5d85685a90d770734824afb3</string>
 	<key>CFBundleDevelopmentRegion</key>
