@@ -18,13 +18,19 @@ enum OrderDetailInfoType: Int {
     case comment
 }
 
-class OrderDetailViewController: BaseViewController, OrderDetailViewProtocol {
+class OrderDetailViewController: BaseViewController {
 
 	var presenter: OrderDetailPresenterProtocol?
     
     @IBOutlet weak var vPostCommentView: PostCommentView!
     @IBOutlet weak var bottomConstant: NSLayoutConstraint!
     @IBOutlet weak var heightConstant: NSLayoutConstraint!
+    
+    var record: RecordEntity? {
+        didSet {
+            tbDetail.reloadData()
+        }
+    }
     
     var listHeader = ["Chi tiết", "Giới thiệu","Thông tin người bán", "Địa chỉ", "Bình Luận"]
     
@@ -40,8 +46,7 @@ class OrderDetailViewController: BaseViewController, OrderDetailViewProtocol {
         vPostCommentView.delegate = self
         configureTable()
         
-        // FIX ME
-        testComment()
+        presenter?.getDetail(id: "31")
     }
     
     override func setUpNavigation() {
@@ -55,18 +60,24 @@ class OrderDetailViewController: BaseViewController, OrderDetailViewProtocol {
         print("share native")
     }
     
-    func testComment() {
-        for i in 0...3 {
-            let newComment = CommentEntity(comment: "Comment \(i)")
-            
-            for j in 0...4 {
-                let newSubComment = SubCommentEntity(comment: "Sub comment \(j)")
-                newComment.subComment.append(newSubComment)
-            }
-            
-            listComment.append(newComment)
-        }
-        
-        tbDetail.reloadData()
+//    func testComment() {
+//        for i in 0...3 {
+//            let newComment = CommentEntity(comment: "Comment \(i)")
+//
+//            for j in 0...4 {
+//                let newSubComment = SubCommentEntity(comment: "Sub comment \(j)")
+//                newComment.subComment.append(newSubComment)
+//            }
+//
+//            listComment.append(newComment)
+//        }
+//
+//        tbDetail.reloadData()
+//    }
+}
+
+extension OrderDetailViewController: OrderDetailViewProtocol {
+    func didGetDetail(record: RecordEntity?) {
+        self.record = record
     }
 }

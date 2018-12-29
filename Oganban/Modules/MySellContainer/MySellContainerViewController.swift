@@ -24,6 +24,7 @@ class MySellContainerViewController: BaseViewController, MySellContainerViewProt
         
         let sellingVC = MySellingViewController.initFromNib()
 //        vc1.view.backgroundColor = .red
+        sellingVC.parrentNavigation = self.navigationController
         
         let exchangeVC = MyExchangeRouter.createModule()
 //        vc2.view.backgroundColor = .green

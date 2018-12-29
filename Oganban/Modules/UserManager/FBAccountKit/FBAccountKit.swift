@@ -37,11 +37,9 @@ class FBAccountKit: NSObject {
     func getCountryCodeAndPhoneNumber(completion: @escaping CompletionAny) {
         accountKit.requestAccount {
             (account, error) -> Void in
-            
-            
             guard let phoneNumber = account?.phoneNumber?.phoneNumber, let phoneCode = account?.phoneNumber?.countryCode else { return }
             let phone = PhoneEntity(phoneNumber: phoneNumber, phoneCode: phoneCode)
-            
+            self.logOut()
             completion(phone)
         }
     }

@@ -17,6 +17,43 @@ class OrderDetailImageCell: BaseTableCell {
     @IBOutlet weak var radioCoin: AppRadioButton!
     @IBOutlet weak var vMoneyCoin: UIStackView!
     @IBOutlet weak var heightMoneyCoin: NSLayoutConstraint!
+    
+    @IBOutlet weak var lbNameRecord: UILabel!
+    @IBOutlet weak var lbExpireDate: UILabel!
+    @IBOutlet weak var lbQuantity: UILabel!
+    
+    // My sell
+    var record: RecordEntity? {
+        didSet {
+            guard let _record = record else { return }
+            setDefautlMySell()
+            
+            //--
+            imageSlide.listItem = _record.imgSrc
+            lbNameRecord.text = _record.name
+            if _record.expiredDate == nil {
+                lbExpireDate.text = Date().toString(dateFormat: AppDateFormat.ddMMYYYY_VN)
+            } else {
+                lbExpireDate.text = _record.expiredDate?.toString(dateFormat: AppDateFormat.ddMMYYYY_VN)
+            }
+            
+            lbQuantity.text = "Số lượng: \(_record.quantity&)"
+            
+            if let price = _record.price {
+                 radioMoney.setMoney(money: price.toUInt64())
+            }
+            
+            radioCoin.setOCoin(coin: _record.coin ?? 0)
+        }
+    }
+    
+    private func setDefautlMySell() {
+        radioMoney.setMoney(money: 0)
+        radioCoin.setOCoin(coin: 0)
+        radioMoney.setOneImage(image: AppImage.imgMoney)
+        radioCoin.setOneImage(image: AppImage.imgCoin)
+        
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,16 +61,15 @@ class OrderDetailImageCell: BaseTableCell {
         btnHide.setAttributed(title: "Ẩn bài đăng", color: AppColor.gray_158_158_158, font: AppFont.fontRegular13, isUnderLine: true)
         btnCancel.setAttributed(title: "Huỷ giao dịch", color: AppColor.gray_158_158_158, font: AppFont.fontRegular13, isUnderLine: true)
         
-        radioMoney.setMoney(money: 2000000)
-        radioCoin.setOCoin(coin: 1999.09)
+       
         // test fix me
-        imageSlide.listItem = [
-            BannerEntity(url: "http://file.vforum.vn/hinh/2015/09/vforum-bo-hinh-nen-phong-canh-thien-nhien-dep-nhat-16.jpg"),
-            BannerEntity(url: "http://file.vforum.vn/hinh/2015/09/vforum-bo-hinh-nen-phong-canh-thien-nhien-dep-nhat-16.jpg"),
-            BannerEntity(url: "http://file.vforum.vn/hinh/2015/09/vforum-bo-hinh-nen-phong-canh-thien-nhien-dep-nhat-16.jpg"),
-            BannerEntity(url: "http://file.vforum.vn/hinh/2015/09/vforum-bo-hinh-nen-phong-canh-thien-nhien-dep-nhat-16.jpg"),
-            BannerEntity(url: "http://file.vforum.vn/hinh/2015/09/vforum-bo-hinh-nen-phong-canh-thien-nhien-dep-nhat-16.jpg")
-        ]
+//        imageSlide.listItem = [
+//            BannerEntity(url: "http://file.vforum.vn/hinh/2015/09/vforum-bo-hinh-nen-phong-canh-thien-nhien-dep-nhat-16.jpg"),
+//            BannerEntity(url: "http://file.vforum.vn/hinh/2015/09/vforum-bo-hinh-nen-phong-canh-thien-nhien-dep-nhat-16.jpg"),
+//            BannerEntity(url: "http://file.vforum.vn/hinh/2015/09/vforum-bo-hinh-nen-phong-canh-thien-nhien-dep-nhat-16.jpg"),
+//            BannerEntity(url: "http://file.vforum.vn/hinh/2015/09/vforum-bo-hinh-nen-phong-canh-thien-nhien-dep-nhat-16.jpg"),
+//            BannerEntity(url: "http://file.vforum.vn/hinh/2015/09/vforum-bo-hinh-nen-phong-canh-thien-nhien-dep-nhat-16.jpg")
+//        ]
     }
     
     func hideMoneyCoin() {

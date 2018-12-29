@@ -9,7 +9,13 @@
 import UIKit
 
 class OrderIntroCell: BaseTableCell {
-
+    @IBOutlet weak var lbAbout: UILabel!
+    var record: RecordEntity? {
+        didSet {
+            guard let _record = record else { return }
+            lbAbout.text = _record.about
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

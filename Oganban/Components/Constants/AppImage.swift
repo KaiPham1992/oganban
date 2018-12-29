@@ -9,7 +9,7 @@
 import UIKit
 
 struct AppImage {
-
+    
     //Tabbar
     
     static let imgCheckMenu               = UIImage(named: "ic_check")!
@@ -26,7 +26,7 @@ struct AppImage {
     static let imgMoreSelected = UIImage(named: "ic_seemore_selected")!
     static let imgMore = UIImage(named: "ic_seemore")!
     static let imgBack = UIImage(named: "back")!
-  
+    
     // Oganban
     static let imgExit = UIImage(named: "exit")!
     static let imgFb = UIImage(named: "fb")!
@@ -49,5 +49,7 @@ struct AppImage {
     static let imgPlaceHolderImage = UIImage(named: "placeHolderImage")!
     static let imgDefaultUser = UIImage(named: "defaultUser")!
     
-     static let imgShare = UIImage(named: "ic_share_social")!
+    static let imgShare = UIImage(named: "ic_share_social")!
+    static let imgMoney = UIImage(named: "ic_money")!
+    static let imgCoin = UIImage(named: "ic_coin")!
 }

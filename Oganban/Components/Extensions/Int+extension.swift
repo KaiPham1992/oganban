@@ -19,6 +19,12 @@ extension Double {
     func roundedTwoDemical() -> String {
         return String(format: "%.2f", self)
     }
+    
+    func toUInt64() -> UInt64 {
+        let number = UInt64(self)
+        
+        return number
+    }
 }
 
 extension Float {

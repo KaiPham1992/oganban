@@ -89,14 +89,20 @@ class AppRadioButton: BaseView {
     func setTitle(title: String) {
         self.lbTitle.text = title.showLanguage
     }
+    
+    func setOneImage(image: UIImage) {
+        self.imgUnCheck = image
+        self.imgCheck = image
+        self.imgIcon.image = image
+    }
 }
 
 
 extension AppRadioButton {
     func setMoney(money: UInt64) {
         let attr = NSMutableAttributedString()
-        let attr1 = "Tiền mặt: ".toAttributedString(color: AppColor.red_110_0_0, font: AppFont.fontRegular13, isUnderLine: false)
-        let attr2 = "\(money.toCurrency) ".toAttributedString(color: AppColor.red_110_0_0, font: AppFont.fontBold13, isUnderLine: false)
+        let attr1 = "Tiền mặt: ".toAttributedString(color: AppColor.red_210_2_2, font: AppFont.fontRegular13, isUnderLine: false)
+        let attr2 = "\(money.toCurrency) ".toAttributedString(color: AppColor.red_210_2_2, font: AppFont.fontBold13, isUnderLine: false)
         attr.append(attr1)
         attr.append(attr2)
         self.lbTitle.attributedText = attr

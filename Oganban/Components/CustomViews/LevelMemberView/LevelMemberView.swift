@@ -7,28 +7,21 @@
 //
 
 import UIKit
-
-enum LevelMemberType: String {
-    case member = "Member"
-    case sliver = "Sliver"
-    case titan = "Titan"
-    case gold = "Gold"
-    case platinum = "Platinum"
-    case diamond = "Diamond"
-}
-
 class LevelMemberView: BaseViewXib {
     @IBOutlet weak var lbLevel: UILabel!
     @IBOutlet weak var lbPro: UILabel!
     
-    var levelType: LevelMemberType =  LevelMemberType.member {
-        didSet {
-            self.lbLevel.text = levelType.rawValue
+    func setLevel(level: String, isPro: String?) {
+        if isPro == "1" {
+            lbPro.isHidden = false
+        } else {
+            lbPro.isHidden = true
         }
+        
+        self.lbLevel.text = level
     }
     
     override func setUpViews() {
         super.setUpViews()
-        self.levelType = .member
     }
 }

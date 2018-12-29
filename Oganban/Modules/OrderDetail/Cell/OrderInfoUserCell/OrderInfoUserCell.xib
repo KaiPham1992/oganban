@@ -84,6 +84,14 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imgAvatar" destination="FAD-gA-w9E" id="E2r-cW-ws7"/>
+                <outlet property="lbName" destination="PdA-ro-Y1R" id="mH7-Id-7Qg"/>
+                <outlet property="lbPhone" destination="aLR-UB-mme" id="Luf-Op-zej"/>
+                <outlet property="lbReview" destination="UYT-5D-seh" id="vLb-jL-FRF"/>
+                <outlet property="lbStar" destination="4Gy-wq-TDx" id="qfh-w0-zeC"/>
+                <outlet property="vLevel" destination="OBY-VX-nar" id="3la-iH-NAH"/>
+            </connections>
             <point key="canvasLocation" x="137.59999999999999" y="101.64917541229386"/>
         </tableViewCell>
     </objects>

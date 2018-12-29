@@ -47,10 +47,11 @@ class UpdateProfileViewController: BaseViewController {
         hideError()
         addGesture()
         setDefaultData()
-        self.fbAccountKit = FBAccountKit(_controller: self)
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.fbAccountKit = FBAccountKit(_controller: self)
         super.viewWillAppear(animated)
         if fbAccountKit.isLogged {
             DispatchQueue.main.async(execute: {
