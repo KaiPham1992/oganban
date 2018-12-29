@@ -17,18 +17,8 @@ class NotificationEntity: BaseEntity {
     var isRead: Bool?
     var readTime: Date?
     var createTime: Date?
-//    var timstamp: Unit64?
-    
-    //    {
-    //        "_id": "292",
-    //        "_title": "OGANBAN thông báo",
-    //        "_content": "test mô tả",
-    //        "action_key": "OTHER",
-    //        "is_read": "1",
-    //        "read_time": "2018-08-20 18:42:24",
-    //        "create_time": "2018-08-18 13:40:32",
-    //        "create_time_mi": "1534574432984"
-    //    },
+    var createFromTimestamp: Date?
+    var actionKey: String?
     
     override func mapping(map: Map) {
         super.mapping(map: map)
@@ -37,9 +27,11 @@ class NotificationEntity: BaseEntity {
         self.content <- map["_content"]
         self.createTime <- (map["create_time"], yyyyMMddHHmmssTransform())
         self.readTime <- (map["read_time"], yyyyMMddHHmmssTransform())
+        self.createFromTimestamp <- (map["create_time_mi"], AppTimestampTransform())
         self.isRead <- map["is_read"]
         self.isReadString <- map["is_read"]
-       self.isRead =  self.isReadString == "1"
+        self.isRead =  self.isReadString == "1"
+        self.actionKey <- map["action_key"]
     }
     
     required init?(map: Map) {

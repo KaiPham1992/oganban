@@ -47,7 +47,7 @@ class TabbarViewController: UITabBarController {
         let vcHome = HomeRouter.createModule()
         
         let vcMyBuy = OrderDetailRouter.createModule()
-        let vcMySell = MySellRouter.createModule()
+        let vcMySell = MySellContainerRouter.createModule()
         let vcNotification = NotificationRouter.createModule()
         let vcMore = MoreRouter.createModule()
         
