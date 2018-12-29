@@ -12,6 +12,7 @@ import Foundation
 
 //MARK: Wireframe -
 protocol HomeWireframeProtocol: class {
+    func gotoPositionMaps(delegate: PositionViewControllerDelegate)
 
 }
 //MARK: Presenter -
@@ -23,6 +24,7 @@ protocol HomePresenterProtocol: class {
     func getCategoryMerge()
     func filterRecord(param: RecordParam)
     func getPositionRange()
+    func gotoPositionMaps(delegate: PositionViewControllerDelegate)
 }
 
 //MARK: Interactor -

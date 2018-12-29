@@ -18,6 +18,7 @@ class MenuCell: UITableViewCell {
             setData()
         }
     }
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,7 +29,9 @@ class MenuCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         selectionStyle = .none
-//        lbTitle.textColor =  selected ? .yellow : .white
+//        if isLeft {
+//            lbTitle.textColor =  selected ? .yellow : .white
+//        }
     }
     
     func setData() {

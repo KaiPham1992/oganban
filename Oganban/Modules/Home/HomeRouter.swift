@@ -11,7 +11,12 @@
 import UIKit
 
 class HomeRouter: HomeWireframeProtocol {
-
+    func gotoPositionMaps(delegate: PositionViewControllerDelegate) {
+        let vc = PositionRouter.createModule(delegate: delegate)
+        let nav = UINavigationController(rootViewController: vc)
+        viewController?.present(controller: nav)
+    }
+    
     weak var viewController: UIViewController?
 
     static func createModule() -> UIViewController {

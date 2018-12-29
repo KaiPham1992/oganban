@@ -95,6 +95,12 @@
 		B392FB3E21D3D6AE0076A7B5 /* AcceptCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B392FB3C21D3D6AE0076A7B5 /* AcceptCell.xib */; };
 		B392FB4121D3E37C0076A7B5 /* RecordParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = B392FB4021D3E37C0076A7B5 /* RecordParam.swift */; };
 		B392FB4321D3E93E0076A7B5 /* RecordEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B392FB4221D3E93E0076A7B5 /* RecordEntity.swift */; };
+		B3CC856F21D72DD200ADBFD8 /* PositionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CC856921D72DD200ADBFD8 /* PositionPresenter.swift */; };
+		B3CC857021D72DD200ADBFD8 /* PositionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CC856A21D72DD200ADBFD8 /* PositionRouter.swift */; };
+		B3CC857121D72DD200ADBFD8 /* PositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CC856B21D72DD200ADBFD8 /* PositionViewController.swift */; };
+		B3CC857221D72DD200ADBFD8 /* PositionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CC856C21D72DD200ADBFD8 /* PositionProtocols.swift */; };
+		B3CC857321D72DD200ADBFD8 /* PositionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CC856D21D72DD200ADBFD8 /* PositionInteractor.swift */; };
+		B3CC857421D72DD200ADBFD8 /* PositionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3CC856E21D72DD200ADBFD8 /* PositionViewController.xib */; };
 		B3E67E9C21CF41260012546F /* DropdownPhoneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E67E9A21CF41260012546F /* DropdownPhoneCell.swift */; };
 		B3E67E9D21CF41260012546F /* DropdownPhoneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3E67E9B21CF41260012546F /* DropdownPhoneCell.xib */; };
 		B3E67EAC21CF756E0012546F /* PhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E67EAB21CF756E0012546F /* PhoneNumber.swift */; };
@@ -413,6 +419,12 @@
 		B392FB3C21D3D6AE0076A7B5 /* AcceptCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AcceptCell.xib; sourceTree = "<group>"; };
 		B392FB4021D3E37C0076A7B5 /* RecordParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordParam.swift; sourceTree = "<group>"; };
 		B392FB4221D3E93E0076A7B5 /* RecordEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordEntity.swift; sourceTree = "<group>"; };
+		B3CC856921D72DD200ADBFD8 /* PositionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionPresenter.swift; sourceTree = "<group>"; };
+		B3CC856A21D72DD200ADBFD8 /* PositionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionRouter.swift; sourceTree = "<group>"; };
+		B3CC856B21D72DD200ADBFD8 /* PositionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionViewController.swift; sourceTree = "<group>"; };
+		B3CC856C21D72DD200ADBFD8 /* PositionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionProtocols.swift; sourceTree = "<group>"; };
+		B3CC856D21D72DD200ADBFD8 /* PositionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionInteractor.swift; sourceTree = "<group>"; };
+		B3CC856E21D72DD200ADBFD8 /* PositionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PositionViewController.xib; sourceTree = "<group>"; };
 		B3E67E9A21CF41260012546F /* DropdownPhoneCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropdownPhoneCell.swift; sourceTree = "<group>"; };
 		B3E67E9B21CF41260012546F /* DropdownPhoneCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DropdownPhoneCell.xib; sourceTree = "<group>"; };
 		B3E67EAB21CF756E0012546F /* PhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumber.swift; sourceTree = "<group>"; };
@@ -878,6 +890,19 @@
 			path = RecordParam;
 			sourceTree = "<group>";
 		};
+		B3CC856821D72DB600ADBFD8 /* Position */ = {
+			isa = PBXGroup;
+			children = (
+				B3CC856921D72DD200ADBFD8 /* PositionPresenter.swift */,
+				B3CC856A21D72DD200ADBFD8 /* PositionRouter.swift */,
+				B3CC856B21D72DD200ADBFD8 /* PositionViewController.swift */,
+				B3CC856C21D72DD200ADBFD8 /* PositionProtocols.swift */,
+				B3CC856D21D72DD200ADBFD8 /* PositionInteractor.swift */,
+				B3CC856E21D72DD200ADBFD8 /* PositionViewController.xib */,
+			);
+			path = Position;
+			sourceTree = "<group>";
+		};
 		B3E67E9421CF3EE20012546F /* PhoneNumber */ = {
 			isa = PBXGroup;
 			children = (
@@ -920,6 +945,7 @@
 		CB172B1821C6A1480068CF92 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				B3CC856821D72DB600ADBFD8 /* Position */,
 				DE0DBADA21D3B6DA0097E38F /* Notification */,
 				DE442C3621CFA1FE0051C0B8 /* OrderDetail */,
 				B36AEEAA21CDDB7000BED43C /* MySell */,
@@ -1763,6 +1789,7 @@
 				84421C0C21CBF52900F468F5 /* SupplementaryInfoViewController.xib in Resources */,
 				CB172C8F21C6A2EF0068CF92 /* OpenSans-Regular.ttf in Resources */,
 				B355EF6121C8FB1400379F57 /* SignUpViewController.xib in Resources */,
+				B3CC857421D72DD200ADBFD8 /* PositionViewController.xib in Resources */,
 				8432075121CF529D00A4F11E /* DateFollowWeekCell.xib in Resources */,
 				DE0DBAEA21D3B6DA0097E38F /* NotificationViewController.xib in Resources */,
 				DE442C4621CFA33D0051C0B8 /* PostCommentView.xib in Resources */,
@@ -1944,6 +1971,7 @@
 				DE442C3D21CFA2130051C0B8 /* OrderDetailPresenter.swift in Sources */,
 				DEE1DA4F21CDE1CE0036FEB7 /* PopUpNotificationHaveAdmob.swift in Sources */,
 				DE21827021CD473100FDD9F1 /* KActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
+				B3CC856F21D72DD200ADBFD8 /* PositionPresenter.swift in Sources */,
 				84A92BEE21CA518200148191 /* OganbanCustomButton.swift in Sources */,
 				84ABC68A21CFF06700E0D202 /* UpdateProfileViewController.swift in Sources */,
 				CBBB3DF821D5C74400281ABB /* ChangePasswordInteractor.swift in Sources */,
@@ -1983,6 +2011,7 @@
 				DE21826B21CD473100FDD9F1 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				84421C0B21CBF52900F468F5 /* SupplementaryInfoInteractor.swift in Sources */,
 				CB172C0D21C6A2EF0068CF92 /* UIApplication+extension.swift in Sources */,
+				B3CC857321D72DD200ADBFD8 /* PositionInteractor.swift in Sources */,
 				84ABC68921CFF06700E0D202 /* UpdateProfile+SetupUI.swift in Sources */,
 				DE21823321CD45F300FDD9F1 /* LoginSocialParam.swift in Sources */,
 				CB0C3A2321D3BECD0052DD91 /* ForgotPasswordPresenter.swift in Sources */,
@@ -1995,6 +2024,7 @@
 				B3092D9821D676C800494CC4 /* UILabel+Extension.swift in Sources */,
 				B392FB3521D3AE970076A7B5 /* CategoryEntity.swift in Sources */,
 				B36AEEC821CDF47A00BED43C /* AdmobCell.swift in Sources */,
+				B3CC857221D72DD200ADBFD8 /* PositionProtocols.swift in Sources */,
 				84421BF821CBEF1E00F468F5 /* MoreCell.swift in Sources */,
 				CB172B2F21C6A22A0068CF92 /* BaseParam.swift in Sources */,
 				DEE1DA6D21CDF5E70036FEB7 /* PopUpSelectGenderContent.swift in Sources */,
@@ -2145,6 +2175,7 @@
 				DE21823521CD465700FDD9F1 /* UserEndPoint.swift in Sources */,
 				B36AEE9B21CDD90500BED43C /* TabbarViewController.swift in Sources */,
 				CB3A8F0E21C64FC1008144BD /* AppDelegate.swift in Sources */,
+				B3CC857121D72DD200ADBFD8 /* PositionViewController.swift in Sources */,
 				DE21827621CD473100FDD9F1 /* KActivityIndicatorAnimationLineScaleParty.swift in Sources */,
 				DEE1DA5821CDE6610036FEB7 /* PopUpSelectDateContent.swift in Sources */,
 				84A92BF621CA555900148191 /* LoginPresenter.swift in Sources */,
@@ -2154,6 +2185,7 @@
 				CB172C9621C6A2EF0068CF92 /* AppColor.swift in Sources */,
 				84ABC68B21CFF06700E0D202 /* UpdateProfileProtocols.swift in Sources */,
 				B36AEE9C21CDD90500BED43C /* TabbarProtocol.swift in Sources */,
+				B3CC857021D72DD200ADBFD8 /* PositionRouter.swift in Sources */,
 				DE0DBAE821D3B6DA0097E38F /* NotificationCell.swift in Sources */,
 				CB172B4321C6A2AA0068CF92 /* EndPointType.swift in Sources */,
 				DE0DBAE521D3B6DA0097E38F /* NotificationPresenter.swift in Sources */,
