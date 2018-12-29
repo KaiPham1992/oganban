@@ -19,6 +19,7 @@ class RecordSellingView: BaseViewXib {
     @IBOutlet weak var lbStatus: UILabel!
     
     override func setUpViews() {
-        
+        lbCoin.underlineLastCharacter()
+        lbPrice.underlineLastCharacter()
     }
 }

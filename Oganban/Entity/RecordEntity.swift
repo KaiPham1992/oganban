@@ -23,10 +23,14 @@ class RecordEntity: BaseEntity {
     var totalRating: String?
     var avgRating: String?
     var imgSrcAccount: String?
-    var createTime: String?
+    var createTime: Date?
     var distance: String?
     var imgSrc: String?
     var level: String?
+    
+    var quantity: String?
+    var expiredDate: Date?
+    var isActive: String?
     
     required init?(map: Map) {
         super.init()
@@ -46,10 +50,13 @@ class RecordEntity: BaseEntity {
         self.totalRating <- map["total_rating"]
         self.avgRating <- map["avg_rating"]
         self.imgSrcAccount <- map["img_src_account"]
-        self.createTime <- map["create_time_mi"]
+        self.createTime <- (map["create_time_mi"], AppTimestampTransform())
         self.distance <- map["distance"]
         self.imgSrc <- map["img_src"]
         self.level <- map["level"]
         
+        self.quantity <- map["quantity"]
+        self.expiredDate <- (map["expired_date"],yyyyMMddHHmmssTransform())
+        self.isActive <- map["is_active"]
     }
 }
