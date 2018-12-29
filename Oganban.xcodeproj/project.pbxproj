@@ -208,6 +208,8 @@
 		CBD1C2BD21D75BA5006DB3FF /* MyExchangeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C2B721D75BA5006DB3FF /* MyExchangeProtocols.swift */; };
 		CBD1C2BE21D75BA5006DB3FF /* MyExchangeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C2B821D75BA5006DB3FF /* MyExchangeInteractor.swift */; };
 		CBD1C2BF21D75BA5006DB3FF /* MyExchangeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD1C2B921D75BA5006DB3FF /* MyExchangeViewController.xib */; };
+		CBD1C2C121D76BEB006DB3FF /* RecordEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C2C021D76BEB006DB3FF /* RecordEndPoint.swift */; };
+		CBD1C2C321D76E4D006DB3FF /* RecordAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C2C221D76E4D006DB3FF /* RecordAPIService.swift */; };
 		DE07F56921CF539D00DE2032 /* AppCollectionPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE07F56821CF539D00DE2032 /* AppCollectionPhoto.swift */; };
 		DE0DBAE421D3B6DA0097E38F /* NotificationProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0DBADB21D3B6DA0097E38F /* NotificationProtocols.swift */; };
 		DE0DBAE521D3B6DA0097E38F /* NotificationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0DBADC21D3B6DA0097E38F /* NotificationPresenter.swift */; };
@@ -565,6 +567,8 @@
 		CBD1C2B721D75BA5006DB3FF /* MyExchangeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExchangeProtocols.swift; sourceTree = "<group>"; };
 		CBD1C2B821D75BA5006DB3FF /* MyExchangeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExchangeInteractor.swift; sourceTree = "<group>"; };
 		CBD1C2B921D75BA5006DB3FF /* MyExchangeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyExchangeViewController.xib; sourceTree = "<group>"; };
+		CBD1C2C021D76BEB006DB3FF /* RecordEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordEndPoint.swift; sourceTree = "<group>"; };
+		CBD1C2C221D76E4D006DB3FF /* RecordAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordAPIService.swift; sourceTree = "<group>"; };
 		DE07F56821CF539D00DE2032 /* AppCollectionPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCollectionPhoto.swift; sourceTree = "<group>"; };
 		DE0DBADB21D3B6DA0097E38F /* NotificationProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationProtocols.swift; sourceTree = "<group>"; };
 		DE0DBADC21D3B6DA0097E38F /* NotificationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationPresenter.swift; sourceTree = "<group>"; };
@@ -1040,6 +1044,7 @@
 				DE442C2F21CF93750051C0B8 /* CommonAPIService.swift */,
 				B392FB3821D3B13E0076A7B5 /* CategoryAPIService.swift */,
 				DE0DBAF221D3BBAC0097E38F /* NotificationAPIService.swift */,
+				CBD1C2C221D76E4D006DB3FF /* RecordAPIService.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -1062,6 +1067,7 @@
 				DE442C3321CF94600051C0B8 /* CommonEndPoint.swift */,
 				B392FB3621D3B0170076A7B5 /* CategoryEndPoint.swift */,
 				DE0DBAF021D3BA460097E38F /* NotificationEndPoint.swift */,
+				CBD1C2C021D76BEB006DB3FF /* RecordEndPoint.swift */,
 			);
 			path = EndPoint;
 			sourceTree = "<group>";
@@ -2118,6 +2124,7 @@
 				DE21828021CD473100FDD9F1 /* KActivityIndicatorAnimationBallRotate.swift in Sources */,
 				DE0E79D921D65F760053786D /* Connectivity.swift in Sources */,
 				B36AEECE21CDF52B00BED43C /* HomeCell.swift in Sources */,
+				CBD1C2C121D76BEB006DB3FF /* RecordEndPoint.swift in Sources */,
 				B36AEEB221CDDB8000BED43C /* MySellRouter.swift in Sources */,
 				DE21822E21CD44D600FDD9F1 /* BaseEntity.swift in Sources */,
 				DEA3A09821D67ECE00643296 /* PaddingLabel.swift in Sources */,
@@ -2330,6 +2337,7 @@
 				DE0DBAED21D3B7380097E38F /* NotificationEntity.swift in Sources */,
 				DE0DBAEB21D3B6DA0097E38F /* NotificationViewController.swift in Sources */,
 				84421BF021CBEECF00F468F5 /* MoreProtocols.swift in Sources */,
+				CBD1C2C321D76E4D006DB3FF /* RecordAPIService.swift in Sources */,
 				CB172C2021C6A2EF0068CF92 /* FileManagerHelper.swift in Sources */,
 				DE21827C21CD473100FDD9F1 /* KActivityIndicatorAnimationBallPulseSync.swift in Sources */,
 				CBD1C29E21D74B79006DB3FF /* RecordSellingView.swift in Sources */,
