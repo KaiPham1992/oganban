@@ -28,7 +28,7 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10/12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x75-hU-yee" customClass="PaddingLabel" customModule="Oganban" customModuleProvider="target">
-                    <rect key="frame" x="169.5" y="229" width="36.5" height="25"/>
+                    <rect key="frame" x="169.5" y="202" width="36.5" height="25"/>
                     <color key="backgroundColor" red="0.43137254899999999" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="25" id="MXj-Gd-Rag"/>
@@ -49,7 +49,7 @@
                 <constraint firstItem="FzH-X0-Avz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ZaT-oC-Pef"/>
                 <constraint firstItem="FzH-X0-Avz" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="eoT-s0-bhh"/>
                 <constraint firstItem="mnk-3O-iU5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="jnQ-7Y-OuB"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="x75-hU-yee" secondAttribute="bottom" constant="8" id="qjq-BM-DgC"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="x75-hU-yee" secondAttribute="bottom" constant="35" id="qjq-BM-DgC"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

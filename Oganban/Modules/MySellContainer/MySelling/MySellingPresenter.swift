@@ -10,7 +10,7 @@
 
 import UIKit
 
-class MySellingPresenter: MySellingPresenterProtocol, MySellingInteractorOutputProtocol {
+class MySellingPresenter: MySellingPresenterProtocol {
 
     weak private var view: MySellingViewProtocol?
     var interactor: MySellingInteractorInputProtocol?
@@ -22,4 +22,21 @@ class MySellingPresenter: MySellingPresenterProtocol, MySellingInteractorOutputP
         self.router = router
     }
 
+    func getRecordSellerPost(status: String, offset: Int, limit: Int) {
+        interactor?.getRecordSellerPost(status: status, offset: offset, limit: limit)
+    }
+    
+    func gotoMySellExpired() {
+        router.gotoMySellExpired()
+    }
+}
+
+extension MySellingPresenter: MySellingInteractorOutputProtocol {
+    func didGetRecordSellerPost(listRecord: [RecordEntity]) {
+        view?.didGetRecordSellerPost(listRecord: listRecord)
+    }
+    
+    func didGetRecordSellerPost(error: APIError?) {
+        view?.didGetRecordSellerPost(error: error)
+    }
 }

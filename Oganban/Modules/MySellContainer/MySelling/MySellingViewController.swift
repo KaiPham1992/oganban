@@ -10,25 +10,57 @@
 
 import UIKit
 
-class MySellingViewController: UIViewController, MySellingViewProtocol {
+
+protocol MySellingViewControllerDelegate: class {
+    func gotoLogin()
+    func gotoMySellExpired()
+}
+
+class MySellingViewController: UIViewController {
 
     @IBOutlet weak var vContain: UIView!
     @IBOutlet weak var lbTotalPosted: UILabel!
     @IBOutlet weak var lbTotalSubPost: UILabel!
-    
+    @IBOutlet weak var vCheckLogin: UIView!
+    @IBOutlet weak var btnLogin: UIButton!
     @IBOutlet weak var tbMySelling: UITableView!
     
 	var presenter: MySellingPresenterProtocol?
 
+    weak var delegate: MySellingViewControllerDelegate?
+    
+    var listRecord: [RecordEntity] = [] {
+        didSet {
+            tbMySelling.reloadData()
+        }
+    }
+    
 	override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+//        getData()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        checkLogin()
+    }
+    
     func setupView() {
+        btnLogin.setBorderWithCornerRadius(borderWidth: 0, borderColor: .clear, cornerRadius: 20)
         vContain.setBorderWithCornerRadius(borderWidth: 0, borderColor: .clear, cornerRadius: 10)
         
         configTable()
+    }
+    
+    func checkLogin() {
+        if UserDefaultHelper.shared.isLoggedIn {
+            vCheckLogin.isHidden = true
+            getData()
+        } else {
+            vCheckLogin.isHidden = false
+        }
     }
     
     func configTable() {
@@ -40,23 +72,45 @@ class MySellingViewController: UIViewController, MySellingViewProtocol {
         tbMySelling.contentInset.bottom = 10
     }
     
+    func getData() {
+        presenter?.getRecordSellerPost(status: "show", offset: 0, limit: 10)
+    }
+    
     @IBAction func btnExpired() {
-        
+//        presenter?.gotoMySellExpired()
+        delegate?.gotoMySellExpired()
+    }
+    
+    @IBAction func login() {
+        delegate?.gotoLogin()
     }
 }
 
 extension MySellingViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return listRecord.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueTableCell(MySellingCell.self)
-        
+        cell.vRecordSelling.record = listRecord[indexPath.item]
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 130
     }
+}
+
+extension MySellingViewController: MySellingViewProtocol {
+    
+    func didGetRecordSellerPost(listRecord: [RecordEntity]) {
+        self.listRecord = listRecord
+    }
+    
+    func didGetRecordSellerPost(error: APIError?) {
+        print("ERROR .....")
+    }
+    
+    
 }

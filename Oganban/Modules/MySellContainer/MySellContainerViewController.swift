@@ -22,10 +22,11 @@ class MySellContainerViewController: BaseViewController, MySellContainerViewProt
         
         self.setTitleNavigation(title: NavigationTitle.mySell)
         
-        let sellingVC = MySellingViewController.initFromNib()
+        let sellingVC = MySellingRouter.createModule(delegate: self)
+        
 //        vc1.view.backgroundColor = .red
         
-        let exchangeVC = MyExchangeRouter.createModule()
+        let exchangeVC = MyExchangeRouter.createModule(delegate: self)
 //        vc2.view.backgroundColor = .green
         
         let listItem = [
@@ -37,4 +38,14 @@ class MySellContainerViewController: BaseViewController, MySellContainerViewProt
         vPageView.setUpMenuAndController(controllers: listControllers, menuColorBackground: AppColor.white, menuFont: AppFont.fontRegular11, menuColorNormal: AppColor.gray_158_158_158, menuColorSelected: AppColor.green, menuColorHorizontal: AppColor.red_110_0_0, heightHorizontal: 2, listItem: listItem, isFull: true, isHaveLineTop: false)
     }
 
+}
+
+extension MySellContainerViewController: MySellingViewControllerDelegate, MyExchangeViewControllerDelegate {
+    func gotoLogin() {
+        presenter?.gotoLogin()
+    }
+    
+    func gotoMySellExpired() {
+        presenter?.gotoMySellExpired()
+    }
 }

@@ -9,9 +9,7 @@
 import UIKit
 
 class AddressCell: BaseTableCell {
-
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
 }

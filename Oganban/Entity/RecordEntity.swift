@@ -29,6 +29,10 @@ class RecordEntity: BaseEntity {
     var level: String?
     var distanceConvert: String?
     
+    var quantity: String?
+    var expiredDate: Date?
+    var isActive: String?
+    
     required init?(map: Map) {
         super.init()
     }
@@ -61,5 +65,8 @@ class RecordEntity: BaseEntity {
             }
         }
         
+        self.quantity <- map["quantity"]
+        self.expiredDate <- (map["expired_date"],yyyyMMddHHmmssTransform())
+        self.isActive <- map["is_active"]
     }
 }

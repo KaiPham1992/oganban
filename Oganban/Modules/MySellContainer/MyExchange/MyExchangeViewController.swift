@@ -11,6 +11,10 @@
 import UIKit
 import DropDown
 
+protocol MyExchangeViewControllerDelegate: class {
+    func gotoLogin()
+}
+
 class MyExchangeViewController: BaseViewController {
     
     @IBOutlet weak var tbMyExchange: UITableView!
@@ -20,6 +24,7 @@ class MyExchangeViewController: BaseViewController {
     @IBOutlet weak var vDropDownStatus: UIView!
     
     var presenter: MyExchangePresenterProtocol?
+    weak var delegate: MyExchangeViewControllerDelegate?
     
     let dropDownStatus = DropDown()
     

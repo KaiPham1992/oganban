@@ -13,4 +13,15 @@ import UIKit
 class MySellingInteractor: MySellingInteractorInputProtocol {
 
     weak var presenter: MySellingInteractorOutputProtocol?
+    
+    func getRecordSellerPost(status: String, offset: Int, limit: Int) {
+        ProgressView.shared.show()
+        Provider.shared.recordAPIService.getRecordSellerPost(status: status, offset: offset, limit: limit, success: { (listRecord) in
+            ProgressView.shared.hide()
+            self.presenter?.didGetRecordSellerPost(listRecord: listRecord)
+        }) { (error) in
+            ProgressView.shared.hide()
+            self.presenter?.didGetRecordSellerPost(error: error)
+        }
+    }
 }

@@ -18,6 +18,8 @@ extension OrderDetailViewController: UITableViewDelegate, UITableViewDataSource 
         tbDetail.registerXibFile(SubCommentCell.self)
         tbDetail.registerXibFile(ReplyCommentCell.self)
         tbDetail.registerXibFile(OrderDetailImageCell.self)
+        tbDetail.registerXibFile(OrderInfoUserCell.self)
+        tbDetail.registerXibFile(OrderIntroCell.self)
         tbDetail.separatorStyle = .none
         
         tbDetail.rowHeight = UITableView.automaticDimension
@@ -35,7 +37,15 @@ extension OrderDetailViewController: UITableViewDelegate, UITableViewDataSource 
             let cell = tbDetail.dequeue(OrderDetailImageCell.self, for: indexPath)
             
             return cell
-        case OrderDetailInfoType.intro.rawValue, OrderDetailInfoType.infoSaler.rawValue, OrderDetailInfoType.address.rawValue:
+        case OrderDetailInfoType.intro.rawValue:
+            let cell = tbDetail.dequeue(OrderIntroCell.self, for: indexPath)
+            
+            return cell
+        case OrderDetailInfoType.infoSaler.rawValue:
+            let cell = tbDetail.dequeue(OrderInfoUserCell.self, for: indexPath)
+            
+            return cell
+        case OrderDetailInfoType.address.rawValue:
             let cell = tbDetail.dequeue(AddressCell.self, for: indexPath)
             
             return cell
@@ -86,10 +96,10 @@ extension OrderDetailViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         // comment show header only one
-        if section >= self.listHeader.count {
+        if section >= self.listHeader.count || section == 0 {
             return 0
         }
-        return 50
+        return 47.5
     }
 }
 

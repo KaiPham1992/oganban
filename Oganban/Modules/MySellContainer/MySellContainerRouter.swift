@@ -27,4 +27,14 @@ class MySellContainerRouter: MySellContainerWireframeProtocol {
 
         return view
     }
+    
+    func gotoLogin() {
+        let vc = LoginRouter.createModule()
+        viewController?.present(controller: vc, animated: true)
+    }
+    
+    func gotoMySellExpired() {
+        let mySellExpiredVC = MySellExpiredRouter.createModule()
+        viewController?.push(controller: mySellExpiredVC)
+    }
 }

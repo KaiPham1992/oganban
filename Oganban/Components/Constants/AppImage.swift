@@ -36,8 +36,8 @@ struct AppImage {
     static let imgOpenEye = UIImage(named: "openEye")!
     static let imgClose = UIImage(named: "close")!
     static let imgArrowDown = UIImage(named: "arrowDown")!
-    static let imgUnCheck = UIImage(named: "uncheck")!
-    static let imgCheck = UIImage(named: "check")!
+    static let imgUnCheck = UIImage(named: "ic_check")!
+    static let imgCheck = UIImage(named: "ic_checked")!
     static let imgDown = UIImage(named: "down")!
     static let imgCheckTerm = UIImage(named: "ic_check_term")!
     static let imgCheckedTerm = UIImage(named: "ic_checked_term")!
@@ -48,4 +48,6 @@ struct AppImage {
     static let imgDeletePhoto = UIImage(named: "ic_close")!
     static let imgPlaceHolderImage = UIImage(named: "placeHolderImage")!
     static let imgDefaultUser = UIImage(named: "defaultUser")!
+    
+     static let imgShare = UIImage(named: "ic_share_social")!
 }

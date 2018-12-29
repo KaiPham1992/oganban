@@ -22,5 +22,6 @@ class ProductMyBuyView: BaseViewXib {
     override func setUpViews() {
         imgAvatar.setBorderWithCornerRadius()
         lbStatus.isHidden = true
+        lbPrice.underlineLastCharacter()
     }
 }

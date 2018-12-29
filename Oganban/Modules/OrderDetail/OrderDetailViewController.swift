@@ -44,6 +44,17 @@ class OrderDetailViewController: BaseViewController, OrderDetailViewProtocol {
         testComment()
     }
     
+    override func setUpNavigation() {
+        super.setUpNavigation()
+        setTitleNavigation(title: "Chi tiết sản phẩm")
+        addBackToNavigation()
+        addButtonToNavigation(image: AppImage.imgShare, style: .right, action: #selector(btnShareTapped))
+    }
+    
+    @objc func btnShareTapped() {
+        print("share native")
+    }
+    
     func testComment() {
         for i in 0...3 {
             let newComment = CommentEntity(comment: "Comment \(i)")
