@@ -20,9 +20,9 @@ class AppImageSlide: BaseViewXib {
             var listUrlTemp = [URL]()
             var imageSource: [SDWebImageSource] = []
             
-            if let listImage = listItem as? [BannerEntity] {
-                imageSource = listImage.map { _banner -> SDWebImageSource? in
-                    if let url = URL(string: "\(_banner.url&)") {
+            if let listImage = listItem as? [String] {
+                imageSource = listImage.map { _url -> SDWebImageSource? in
+                    if let url = URL(string: "\(BASE_URL)\(_url)") {
                         listUrlTemp.append(url)
                         return SDWebImageSource(url: url, placeholder: AppImage.imgPlaceHolderImage)
                     }

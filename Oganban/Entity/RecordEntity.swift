@@ -12,8 +12,8 @@ class RecordEntity: BaseEntity {
     
     var id: String?
     var name: String?
-    var price: String?
-    var coin: String?
+    var price: Double?
+    var coin: Double?
     var isNew: String?
     var isPro: String?
     var long: String?
@@ -25,13 +25,18 @@ class RecordEntity: BaseEntity {
     var imgSrcAccount: String?
     var createTime: Date?
     var distance: String?
-    var imgSrc: String?
+    var imgSrc = [String]()
     var level: String?
     var distanceConvert: String?
+    var about: String?
+    var address1: String?
+    var address2: String?
+    var phone: String?
     
-    var quantity: String?
+    var quantity: Double?
     var expiredDate: Date?
     var isActive: String?
+    var cropImage: String?
     
     required init?(map: Map) {
         super.init()
@@ -54,7 +59,11 @@ class RecordEntity: BaseEntity {
         self.createTime <- (map["create_time_mi"], AppTimestampTransform())
         self.distance <- map["distance"]
         self.imgSrc <- map["img_src"]
+        self.address1 <- map["address_1"]
+        self.address2 <- map["address_2"]
         self.level <- map["level"]
+        self.phone <- map["phone"]
+        self.cropImage <- map["crop_img_src_account"]
         
         if let distance = self.distance, let dis = Double(distance) {
             let temp = dis * 1000
@@ -68,5 +77,10 @@ class RecordEntity: BaseEntity {
         self.quantity <- map["quantity"]
         self.expiredDate <- (map["expired_date"],yyyyMMddHHmmssTransform())
         self.isActive <- map["is_active"]
+        self.about <- map["about_record"]
+    }
+    
+    var urlAvatar: URL? {
+        return URL(string: "\(BASE_URL)\(self.cropImage&)")
     }
 }

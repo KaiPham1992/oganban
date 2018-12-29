@@ -27,6 +27,7 @@ class MySellingViewController: UIViewController {
     
 	var presenter: MySellingPresenterProtocol?
 
+    var parrentNavigation: UINavigationController?
     weak var delegate: MySellingViewControllerDelegate?
     
     var listRecord: [RecordEntity] = [] {
@@ -99,6 +100,11 @@ extension MySellingViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 130
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = OrderDetailRouter.createModule()
+        parrentNavigation?.pushViewController(vc, animated: true)
     }
 }
 

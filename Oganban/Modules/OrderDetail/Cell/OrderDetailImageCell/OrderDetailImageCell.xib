@@ -142,6 +142,9 @@
                 <outlet property="btnHide" destination="caS-wE-Zyb" id="WxO-kA-peF"/>
                 <outlet property="heightMoneyCoin" destination="AqW-Ac-zk4" id="iMG-ce-CcC"/>
                 <outlet property="imageSlide" destination="9WM-0u-DCl" id="EQD-M1-gdy"/>
+                <outlet property="lbExpireDate" destination="Wpn-V1-34W" id="ScL-FL-3df"/>
+                <outlet property="lbNameRecord" destination="4co-hu-wEI" id="rQo-yb-n4c"/>
+                <outlet property="lbQuantity" destination="KM8-Sm-sLZ" id="oo7-M5-83Q"/>
                 <outlet property="radioCoin" destination="zwV-uM-VZ8" id="BsG-GT-lqt"/>
                 <outlet property="radioMoney" destination="umW-Kw-3DM" id="6aZ-RU-zsb"/>
                 <outlet property="vMoneyCoin" destination="CIB-uk-LIi" id="lOL-bf-HJB"/>

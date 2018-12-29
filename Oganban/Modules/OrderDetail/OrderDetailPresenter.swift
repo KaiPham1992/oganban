@@ -10,7 +10,7 @@
 
 import UIKit
 
-class OrderDetailPresenter: OrderDetailPresenterProtocol, OrderDetailInteractorOutputProtocol {
+class OrderDetailPresenter: OrderDetailPresenterProtocol {
 
     weak private var view: OrderDetailViewProtocol?
     var interactor: OrderDetailInteractorInputProtocol?
@@ -21,5 +21,16 @@ class OrderDetailPresenter: OrderDetailPresenterProtocol, OrderDetailInteractorO
         self.interactor = interactor
         self.router = router
     }
+    
+    
 
+    func getDetail(id: String) {
+        interactor?.getDetail(id: id)
+    }
+}
+
+extension OrderDetailPresenter: OrderDetailInteractorOutputProtocol {
+    func didGetDetail(record: RecordEntity?) {
+        view?.didGetDetail(record: record)
+    }
 }

@@ -18,12 +18,14 @@ protocol OrderDetailWireframeProtocol: class {
 protocol OrderDetailPresenterProtocol: class {
 
     var interactor: OrderDetailInteractorInputProtocol? { get set }
+    func getDetail(id: String)
 }
 
 //MARK: Interactor -
 protocol OrderDetailInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    func didGetDetail(record: RecordEntity?)
 }
 
 protocol OrderDetailInteractorInputProtocol: class {
@@ -31,6 +33,7 @@ protocol OrderDetailInteractorInputProtocol: class {
     var presenter: OrderDetailInteractorOutputProtocol?  { get set }
 
     /* Presenter -> Interactor */
+    func getDetail(id: String)
 }
 
 //MARK: View -
@@ -39,4 +42,5 @@ protocol OrderDetailViewProtocol: class {
     var presenter: OrderDetailPresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
+    func didGetDetail(record: RecordEntity?)
 }

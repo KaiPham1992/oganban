@@ -22,15 +22,15 @@ class RecordSellingView: BaseViewXib {
     var record: RecordEntity? {
         didSet {
             guard let _record = record else { return }
-            if let url = URL(string: "\(BASE_URL_IMAGE)\(_record.imgSrc ?? "")") {
-                imgProduct.sd_setImage(with: url, placeholderImage: AppImage.imgLogo)
-            }
+//            if let url = URL(string: "\(BASE_URL_IMAGE)\(_record.imgSrc ?? "")") {
+//                imgProduct.sd_setImage(with: url, placeholderImage: AppImage.imgLogo)
+//            }
             lbProductName.text = _record.name
             lbTime.text = _record.createTime?.timeAgo()
-            lbPrice.text = "\(_record.price ?? "") đ"
-            lbCoin.text = "\(_record.coin ?? "") ơ"
+            lbPrice.text = "\(_record.price?.description ?? "") đ"
+            lbCoin.text = "\(_record.coin?.description ?? "") ơ"
             let qty = _record.quantity
-            lbTotal.text = "SL còn lại: \(qty ?? "")"
+            lbTotal.text = "SL còn lại: \(qty?.description ?? "")"
             lbCoin.underlineLastCharacter()
             lbPrice.underlineLastCharacter()
         }

@@ -35,19 +35,19 @@ extension OrderDetailViewController: UITableViewDelegate, UITableViewDataSource 
         switch indexPath.section {
         case OrderDetailInfoType.infoProduct.rawValue:
             let cell = tbDetail.dequeue(OrderDetailImageCell.self, for: indexPath)
-            
+            cell.record = self.record
             return cell
         case OrderDetailInfoType.intro.rawValue:
             let cell = tbDetail.dequeue(OrderIntroCell.self, for: indexPath)
-            
+            cell.record = self.record
             return cell
         case OrderDetailInfoType.infoSaler.rawValue:
             let cell = tbDetail.dequeue(OrderInfoUserCell.self, for: indexPath)
-            
+            cell.record = self.record
             return cell
         case OrderDetailInfoType.address.rawValue:
             let cell = tbDetail.dequeue(AddressCell.self, for: indexPath)
-            
+            cell.record = self.record
             return cell
         default:
             let indexComment = getIndexSectionComment(sectionTable: indexPath.section)
