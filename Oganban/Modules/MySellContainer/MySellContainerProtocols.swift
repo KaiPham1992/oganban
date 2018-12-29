@@ -13,11 +13,13 @@ import Foundation
 //MARK: Wireframe -
 protocol MySellContainerWireframeProtocol: class {
 
+    func gotoLogin()
 }
 //MARK: Presenter -
 protocol MySellContainerPresenterProtocol: class {
 
     var interactor: MySellContainerInteractorInputProtocol? { get set }
+    func gotoLogin()
 }
 
 //MARK: Interactor -
