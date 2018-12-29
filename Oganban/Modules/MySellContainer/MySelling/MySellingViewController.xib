@@ -15,9 +15,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MySellingViewController">
             <connections>
+                <outlet property="btnLogin" destination="7tU-6R-ZAv" id="hId-QN-VUy"/>
                 <outlet property="lbTotalPosted" destination="Szp-JV-ukD" id="Dsp-jK-WO0"/>
                 <outlet property="lbTotalSubPost" destination="lKd-lx-D9n" id="HHO-L7-l9U"/>
                 <outlet property="tbMySelling" destination="3hn-Nm-v3e" id="kiN-VP-9ap"/>
+                <outlet property="vCheckLogin" destination="YFz-C6-HqV" id="xKO-jF-7fu"/>
                 <outlet property="vContain" destination="NMI-Xg-SnW" id="ZjI-gU-T7g"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -95,16 +97,46 @@
                     <rect key="frame" x="0.0" y="50" width="375" height="617"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YFz-C6-HqV">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7tU-6R-ZAv">
+                            <rect key="frame" x="30" y="313.5" width="315" height="40"/>
+                            <color key="backgroundColor" red="0.0" green="0.34509294117647099" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="cea-Di-yyI"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                            <state key="normal" title="Đăng nhập">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="login" destination="-1" eventType="touchUpInside" id="ddL-Xn-pI4"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="7tU-6R-ZAv" secondAttribute="trailing" constant="30" id="90z-QQ-ARv"/>
+                        <constraint firstItem="7tU-6R-ZAv" firstAttribute="leading" secondItem="YFz-C6-HqV" secondAttribute="leading" constant="30" id="gBX-oJ-ofT"/>
+                        <constraint firstItem="7tU-6R-ZAv" firstAttribute="centerX" secondItem="YFz-C6-HqV" secondAttribute="centerX" id="gxh-sd-Mdj"/>
+                        <constraint firstItem="7tU-6R-ZAv" firstAttribute="centerY" secondItem="YFz-C6-HqV" secondAttribute="centerY" id="joL-mu-ONR"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="3hn-Nm-v3e" secondAttribute="bottom" id="3RK-CA-Q65"/>
                 <constraint firstItem="3hn-Nm-v3e" firstAttribute="top" secondItem="0Pm-PQ-j8u" secondAttribute="bottom" id="8D8-mc-o8M"/>
+                <constraint firstAttribute="trailing" secondItem="YFz-C6-HqV" secondAttribute="trailing" id="A65-V6-maR"/>
                 <constraint firstItem="0Pm-PQ-j8u" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Dt5-Po-UvN"/>
                 <constraint firstAttribute="trailing" secondItem="3hn-Nm-v3e" secondAttribute="trailing" id="YZA-gt-6ga"/>
                 <constraint firstItem="0Pm-PQ-j8u" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="g01-IT-qdK"/>
+                <constraint firstItem="YFz-C6-HqV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="kEO-Sj-W2Z"/>
                 <constraint firstItem="3hn-Nm-v3e" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ldJ-Ff-qZE"/>
                 <constraint firstAttribute="trailing" secondItem="0Pm-PQ-j8u" secondAttribute="trailing" id="oZa-2p-Qhw"/>
+                <constraint firstAttribute="bottom" secondItem="YFz-C6-HqV" secondAttribute="bottom" id="uEy-Pz-LRP"/>
+                <constraint firstItem="YFz-C6-HqV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="wHK-jv-hUN"/>
             </constraints>
             <point key="canvasLocation" x="53.600000000000001" y="75.112443778110944"/>
         </view>

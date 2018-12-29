@@ -18,12 +18,17 @@ protocol MySellingWireframeProtocol: class {
 protocol MySellingPresenterProtocol: class {
 
     var interactor: MySellingInteractorInputProtocol? { get set }
+    func getRecordSellerPost(status: String, offset: Int, limit: Int)
+    
+    //--
 }
 
 //MARK: Interactor -
 protocol MySellingInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    func didGetRecordSellerPost(listRecord: [RecordEntity])
+    func didGetRecordSellerPost(error: APIError?)
 }
 
 protocol MySellingInteractorInputProtocol: class {
@@ -31,6 +36,7 @@ protocol MySellingInteractorInputProtocol: class {
     var presenter: MySellingInteractorOutputProtocol?  { get set }
 
     /* Presenter -> Interactor */
+    func getRecordSellerPost(status: String, offset: Int, limit: Int)
 }
 
 //MARK: View -
@@ -39,4 +45,6 @@ protocol MySellingViewProtocol: class {
     var presenter: MySellingPresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
+    func didGetRecordSellerPost(listRecord: [RecordEntity])
+    func didGetRecordSellerPost(error: APIError?)
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MySellingCell: UITableViewCell {
+class MySellingCell: BaseTableCell {
 
     @IBOutlet weak var vRecordSelling: RecordSellingView!
     
