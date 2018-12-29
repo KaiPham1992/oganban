@@ -295,3 +295,55 @@ extension Date {
         }
     }
 }
+
+
+extension Date {
+    func timeAgo() -> String {
+        let currentDate = Date()//.toLocalTime()
+        let different = Calendar.current.dateComponents([.year, .month, .weekday, .day, .hour, .minute, .second], from: self, to: currentDate)
+        
+        if let year = different.year {
+            if year > 0 {
+                return "\(year) năm trước"
+            }
+            if let month = different.month {
+                if month > 0 {
+                    return  "\(month) tháng trước"
+                }
+            }
+            
+            if let week = different.weekday {
+                if week > 0 {
+                    return "\(week) tuần trước"
+                }
+            }
+            
+            if let day = different.day {
+                if day > 0 {
+                    return "\(day) ngày trước"
+                }
+            }
+            
+            if let hour = different.hour {
+                if hour > 0 {
+                    return "\(hour) giờ trước"
+                }
+            }
+            
+            if let minute = different.minute {
+                if minute > 0 {
+                    return "\(minute) phút trước"
+                }
+            }
+            if let second = different.second {
+                if second > 0 {
+                    return "\(second) giây trước"
+                }
+            }
+            
+            return "Ngay bây giờ"
+        }
+        
+        return ""
+    }
+}

@@ -46,8 +46,8 @@ class TabbarViewController: UITabBarController {
         navigationItem.setHidesBackButton(true, animated: true)
         let vcHome = HomeRouter.createModule()
         
-        let vcMyBuy = OrderDetailRouter.createModule()
-        let vcMySell = MySellRouter.createModule()
+        let vcMyBuy = MyBuyRouter.createModule()
+        let vcMySell = MySellContainerRouter.createModule()
         let vcNotification = NotificationRouter.createModule()
         let vcMore = MoreRouter.createModule()
         

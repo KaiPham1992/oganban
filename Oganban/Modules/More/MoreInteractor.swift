@@ -16,8 +16,9 @@ class MoreInteractor: MoreInteractorInputProtocol {
     
     func logout() {
         ProgressView.shared.show()
-        ProgressView.shared.hide()
+        
         Provider.shared.userAPIService.logout(success: { (_) in
+            ProgressView.shared.hide()
             UserUtils.clearLogin()
             self.presenter?.logoutSuccess()
         }) { (error) in
