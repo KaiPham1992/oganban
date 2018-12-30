@@ -10,23 +10,35 @@
 
 import UIKit
 
-class MySellExpiredViewController: BaseViewController, MySellExpiredViewProtocol {
+class MySellExpiredViewController: BaseViewController {
 
     @IBOutlet weak var lbTotalExpired: UILabel!
     @IBOutlet weak var lbTotalHiden: UILabel!
     @IBOutlet weak var tbExpired: UITableView!
     
 	var presenter: MySellExpiredPresenterProtocol?
-
+    var refeshControl: UIRefreshControl?
+    
+    
+    var listSellExpired: [RecordEntity] = [] {
+        didSet {
+            tbExpired.reloadData()
+        }
+    }
+    
 	override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        getData()
     }
     
     func setupView() {
         self.setTitleNavigation(title: "Tin hết hạn/ ẩn ")
         addBackToNavigation()
         configTable()
+        refeshControl = UIRefreshControl()
+        refeshControl?.addTarget(self, action: #selector(self.refeshData), for: .valueChanged)
+        tbExpired.addSubview(refeshControl!)
     }
     
     func configTable() {
@@ -36,6 +48,15 @@ class MySellExpiredViewController: BaseViewController, MySellExpiredViewProtocol
         tbExpired.registerTableCell(MySellingCell.self)
         
         tbExpired.contentInset.bottom = 10
+    }
+    
+    func getData() {
+        presenter?.getSellExpired()
+    }
+    
+    @objc private func refeshData() {
+        getData()
+        refeshControl?.endRefreshing()
     }
     
 }
@@ -55,4 +76,12 @@ extension MySellExpiredViewController: UITableViewDataSource, UITableViewDelegat
     }
 }
 
-
+extension MySellExpiredViewController: MySellExpiredViewProtocol {
+    func didGetSellPired(data: [RecordEntity]) {
+        self.listSellExpired = data
+    }
+    
+    func didGetSellPired(error: APIError?) {
+        
+    }
+}

@@ -10,7 +10,7 @@
 
 import UIKit
 
-class MySellExpiredPresenter: MySellExpiredPresenterProtocol, MySellExpiredInteractorOutputProtocol {
+class MySellExpiredPresenter: MySellExpiredPresenterProtocol {
 
     weak private var view: MySellExpiredViewProtocol?
     var interactor: MySellExpiredInteractorInputProtocol?
@@ -22,4 +22,17 @@ class MySellExpiredPresenter: MySellExpiredPresenterProtocol, MySellExpiredInter
         self.router = router
     }
 
+    func getSellExpired() {
+        interactor?.getSellExpired()
+    }
+}
+
+extension MySellExpiredPresenter: MySellExpiredInteractorOutputProtocol {
+    func didGetSellPired(data: [RecordEntity]) {
+        view?.didGetSellPired(data: data)
+    }
+    
+    func didGetSellPired(error: APIError?) {
+        view?.didGetSellPired(error: error)
+    }
 }

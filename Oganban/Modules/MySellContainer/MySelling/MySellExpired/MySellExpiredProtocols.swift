@@ -18,12 +18,16 @@ protocol MySellExpiredWireframeProtocol: class {
 protocol MySellExpiredPresenterProtocol: class {
 
     var interactor: MySellExpiredInteractorInputProtocol? { get set }
+    
+    func getSellExpired()
 }
 
 //MARK: Interactor -
 protocol MySellExpiredInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    func didGetSellPired(data: [RecordEntity])
+    func didGetSellPired(error: APIError?)
 }
 
 protocol MySellExpiredInteractorInputProtocol: class {
@@ -31,6 +35,7 @@ protocol MySellExpiredInteractorInputProtocol: class {
     var presenter: MySellExpiredInteractorOutputProtocol?  { get set }
 
     /* Presenter -> Interactor */
+    func getSellExpired()
 }
 
 //MARK: View -
@@ -39,4 +44,6 @@ protocol MySellExpiredViewProtocol: class {
     var presenter: MySellExpiredPresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
+    func didGetSellPired(data: [RecordEntity])
+    func didGetSellPired(error: APIError?)
 }

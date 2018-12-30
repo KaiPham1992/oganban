@@ -13,4 +13,8 @@ import UIKit
 class MySellExpiredInteractor: MySellExpiredInteractorInputProtocol {
 
     weak var presenter: MySellExpiredInteractorOutputProtocol?
+    
+    func getSellExpired() {
+        
+    }
 }
