@@ -16,7 +16,7 @@ protocol MySellingViewControllerDelegate: class {
     func gotoMySellExpired()
 }
 
-class MySellingViewController: UIViewController {
+class MySellingViewController: BaseViewController {
 
     @IBOutlet weak var vContain: UIView!
     @IBOutlet weak var lbTotalPosted: UILabel!
@@ -35,6 +35,13 @@ class MySellingViewController: UIViewController {
     var listRecord: [RecordEntity] = [] {
         didSet {
             tbMySelling.reloadData()
+            
+            if self.listRecord.isEmpty {
+                tbMySelling.isHidden = true
+                showNoData()
+            } else {
+                hideNoData()
+            }
         }
     }
     
@@ -75,7 +82,7 @@ class MySellingViewController: UIViewController {
         tbMySelling.delegate = self
         
         tbMySelling.registerTableCell(MySellingCell.self)
-        
+        tbMySelling.separatorStyle = .none
         tbMySelling.contentInset.bottom = 10
     }
     
