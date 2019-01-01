@@ -42,10 +42,10 @@ class LoginInteractor: LoginInteractorInputProtocol {
     }
     
     func updateProfile(codeVerify: String, phoneCode: String, phoneNumber: String) {
-        Provider.shared.userAPIService.verifyPhone(code: codeVerify, phone: phoneNumber, phonCode: phoneCode, success: { (response) in
-            self.presenter?.didUpdateProfile(response: response)
+        Provider.shared.userAPIService.verifyPhone(code: codeVerify, phone: phoneNumber, phonCode: phoneCode, success: { (user) in
+            self.presenter?.didLogin(user: user)
         }) { (error) in
-            self.presenter?.didUpdateProfile(error: error)
+            self.presenter?.didLogin(error: error)
         }
     }
 }

@@ -55,6 +55,12 @@ class LoginViewController: BaseViewController {
         self.fbAccountKit = FBAccountKit(_controller: self)
     }
     
+    override func setUpNavigation() {
+        super.setUpNavigation()
+        addCloseToNavigation()
+        showNavigation()
+    }
+    
     @IBAction func btnForgotPasswordTapped() {
         presenter?.gotoForgotPassword()
     }
@@ -62,7 +68,6 @@ class LoginViewController: BaseViewController {
 
 extension LoginViewController {
     func validateInputData() -> Bool {
-        
         guard let email = self.tfEmail.tfContent.text,  let password = self.tfPassword.tfContent.text else {
             hideError(isHidden: false, message: MessageString.invalidLoginEmailPassword)
             return false

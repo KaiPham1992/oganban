@@ -210,17 +210,17 @@ extension BaseViewController {
         addButtonImageToNavigation(image: AppImage.imgBack, style: .left, action: #selector(btnBackTapped))
     }
     
-//    func addBackBlackToNavigation() {
-//        addButtonImageToNavigation(image: AppImage.imgBackBlack, style: .left, action: #selector(btnBackTapped))
-//    }
+    func addCloseToNavigation() {
+        addButtonImageToNavigation(image: AppImage.imgExit, style: .left, action: #selector(btnCloseTapped))
+    }
+    
+    @objc func btnCloseTapped() {
+        self.dismiss()
+    }
     
     @objc func btnBackTapped() {
         self.pop()
     }
-//    
-//    func addMainLogo() {
-//        setTitleImageNavigation(image: AppImage.imgLogo)
-//    }
 }
 
 extension BaseViewController {

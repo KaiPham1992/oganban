@@ -40,16 +40,16 @@ class OrderDetailImageCell: BaseTableCell {
             lbQuantity.text = "Số lượng: \(_record.quantity&)"
             
             if let price = _record.price {
-                 radioMoney.setMoney(money: price.toUInt64())
+                 radioMoney.setMoney(money: price)
             }
             
-            radioCoin.setOCoin(coin: _record.coin ?? 0)
+            radioCoin.setOCoin(coin: _record.coin&)
         }
     }
     
     private func setDefautlMySell() {
-        radioMoney.setMoney(money: 0)
-        radioCoin.setOCoin(coin: 0)
+        radioMoney.setMoney(money: "0")
+        radioCoin.setOCoin(coin: "0")
         radioMoney.setOneImage(image: AppImage.imgMoney)
         radioCoin.setOneImage(image: AppImage.imgCoin)
         

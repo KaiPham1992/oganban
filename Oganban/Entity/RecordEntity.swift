@@ -12,8 +12,8 @@ class RecordEntity: BaseEntity {
     
     var id: String?
     var name: String?
-    var price: Double?
-    var coin: Double?
+    var price: String?
+    var coin: String?
     var isNew: String?
     var isPro: String?
     var long: String?
@@ -33,7 +33,7 @@ class RecordEntity: BaseEntity {
     var address2: String?
     var phone: String?
     
-    var quantity: Double?
+    var quantity: String?
     var expiredDate: Date?
     var isActive: String?
     var cropImage: String?

@@ -13,7 +13,6 @@ import UIKit
 extension LoginViewController {
     
     func setupView() {
-        hideNavigation()
         setupContentView()
         setupButtons()
         hidePassword(isHidden: true)

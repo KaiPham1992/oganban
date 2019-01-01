@@ -99,19 +99,21 @@ class AppRadioButton: BaseView {
 
 
 extension AppRadioButton {
-    func setMoney(money: UInt64) {
+    
+    
+    func setMoney(money: String) {
         let attr = NSMutableAttributedString()
         let attr1 = "Tiền mặt: ".toAttributedString(color: AppColor.red_210_2_2, font: AppFont.fontRegular13, isUnderLine: false)
-        let attr2 = "\(money.toCurrency) ".toAttributedString(color: AppColor.red_210_2_2, font: AppFont.fontBold13, isUnderLine: false)
+        let attr2 = "\(money) ".toAttributedString(color: AppColor.red_210_2_2, font: AppFont.fontBold13, isUnderLine: false)
         attr.append(attr1)
         attr.append(attr2)
         self.lbTitle.attributedText = attr
     }
     
-    func setOCoin(coin: Double) {
+    func setOCoin(coin: String) {
         let attr = NSMutableAttributedString()
         let attr1 = "Đổi Ơcoin: ".toAttributedString(color: AppColor.green, font: AppFont.fontRegular13, isUnderLine: false)
-        let attr2 = "\(coin.toCurrency)".toAttributedString(color: AppColor.green, font: AppFont.fontBold13, isUnderLine: false)
+        let attr2 = "\(coin)".toAttributedString(color: AppColor.green, font: AppFont.fontBold13, isUnderLine: false)
         let attr3 = " ơ".toAttributedString(color: AppColor.green, font: AppFont.fontBold13, isUnderLine: true)
         
         attr.append(attr1)

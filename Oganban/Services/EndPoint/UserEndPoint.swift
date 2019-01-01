@@ -71,8 +71,7 @@ extension UserEndPoint: EndPointType {
     }
     
     var httpMethod: HTTPMethod {
-        switch self {
-        case .login, .fogotPassword, .checkLogin, .logout, .loginGmail, .loginFacebook, .verifyPhone, .getPointHistory, .getListFavorite, .addFavorite, .addFavoriteStaff, .signUp, .uploadAvatar:
+        switch self { case .login, .fogotPassword, .checkLogin, .logout, .loginGmail, .loginFacebook, .verifyPhone, .getPointHistory, .getListFavorite, .addFavorite, .addFavoriteStaff, .signUp, .uploadAvatar:
             return .post
         case .getCaptcha, .getIntroduceList:
             return .get
@@ -156,8 +155,16 @@ extension UserEndPoint: EndPointType {
     }
     
     var headers: HTTPHeaders? {
-        var header = DefaultHeader().addAuthHeader()
-        header["Type"] = "client"
-        return header
+        switch self {
+        case .updateProfileSocial:
+            var header: [String: String] = ["Content-Type": "application/json"]
+            header["Authorization"] = "Bearer " + DataManager.shared.tempToken
+            return header
+        default:
+            var header = DefaultHeader().addAuthHeader()
+            header["Type"] = "client"
+            return header
+        }
+        
     }
 }
