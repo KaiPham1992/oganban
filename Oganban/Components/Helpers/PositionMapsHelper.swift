@@ -11,6 +11,7 @@ import GoogleMaps
 import GooglePlaces
 class PositionMapsHelper: NSObject {
     static let shared = PositionMapsHelper()
+    var controller: UIViewController?
     var completion: CompletionMessage?
 }
 
@@ -24,7 +25,7 @@ extension PositionMapsHelper: GMSAutocompleteViewControllerDelegate {
 //        self.tfAddress.text = place.formattedAddress
         print("Place attributions: \(String(describing: place.attributions))")
         
-        UIApplication.topViewController()?.dismiss(animated: true, completion: nil)
+        controller?.dismiss(animated: true, completion: nil)
     }
     func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
         // TODO: handle the error.
@@ -35,13 +36,14 @@ extension PositionMapsHelper: GMSAutocompleteViewControllerDelegate {
     // User canceled the operation.
     func wasCancelled(_ viewController: GMSAutocompleteViewController) {
         print("Autocomplete was cancelled.")
-        UIApplication.topViewController()?.dismiss(animated: true, completion: nil)
+        controller?.dismiss(animated: true, completion: nil)
     }
     
-    func showSearch(completion: CompletionMessage?) {
+    func showSearch(controller: UIViewController?, completion: CompletionMessage?) {
         self.completion = completion
+        self.controller = controller
         let acController = GMSAutocompleteViewController()
         acController.delegate = self
-        UIApplication.topViewController()?.present(acController, animated: true, completion: nil)
+        controller?.present(acController, animated: true, completion: nil)
     }
 }

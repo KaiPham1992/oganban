@@ -63,7 +63,7 @@ class SupplementaryInfoViewController: BaseViewController, UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        PositionMapsHelper.shared.showSearch { address in
+        PositionMapsHelper.shared.showSearch(controller: self) { address in
             textField.text = address
         }
     }

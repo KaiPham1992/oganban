@@ -10,7 +10,7 @@ import Foundation
 
 import UIKit
 
-let tabIconInsets = UIEdgeInsets(top: 4, left: 0, bottom: -4, right: 0)
+let tabIconInsets = UIEdgeInsets(top: 0, left: 0, bottom: -4, right: 0)
 let tabBarIncrease: CGFloat = 13
 
 class TabbarViewController: UITabBarController {
@@ -53,18 +53,23 @@ class TabbarViewController: UITabBarController {
         
         vcHome.tabBarItem = setBarItem(selectedImage: AppImage.imgHomeSelected.withRenderingMode(.alwaysOriginal), normalImage: AppImage.imgHome.withRenderingMode(.alwaysOriginal))
         vcHome.tabBarItem.title  = "Trang chủ"
+        vcHome.tabBarItem.tag = 1
         
         vcMyBuy.tabBarItem = setBarItem(selectedImage: AppImage.imgMyBuySelected.withRenderingMode(.alwaysOriginal), normalImage: AppImage.imgMyBuy.withRenderingMode(.alwaysOriginal))
         vcMyBuy.tabBarItem.title = "Tôi mua"
+        vcMyBuy.tabBarItem.tag = 2
 
         vcMySell.tabBarItem = setBarItem(selectedImage: AppImage.imgMySellSelected.withRenderingMode(.alwaysOriginal), normalImage: AppImage.imgMySell.withRenderingMode(.alwaysOriginal))
         vcMySell.tabBarItem.title = "Tôi bán"
+        vcMySell.tabBarItem.tag = 3
 
         vcNotification.tabBarItem = setBarItem(selectedImage: AppImage.imgNotificationSelected.withRenderingMode(.alwaysOriginal), normalImage: AppImage.imgNotification.withRenderingMode(.alwaysOriginal))
         vcNotification.tabBarItem.title = "Thông báo"
+        vcNotification.tabBarItem.tag = 4
 
         vcMore.tabBarItem = setBarItem(selectedImage: AppImage.imgMoreSelected.withRenderingMode(.alwaysOriginal), normalImage: AppImage.imgMore.withRenderingMode(.alwaysOriginal))
         vcMore.tabBarItem.title = "Xem thêm"
+        vcMore.tabBarItem.tag = 5
         
         listViewController = [vcHome, vcMyBuy, vcMySell, vcNotification, vcMore]
         
@@ -78,10 +83,10 @@ class TabbarViewController: UITabBarController {
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: unselectedColor], for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: selectedColor], for: .selected)
         
-        if UIDevice.current.isIphone5_8Inch() == true {
+        if UIDevice.current.isIphoneXOrLater() == true {
             UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 4)
         } else {
-            UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -4)
+            UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 0)
         }
         
         self.tabBar.tintColor = UIColor.white
@@ -111,11 +116,23 @@ class TabbarViewController: UITabBarController {
 
 extension TabbarViewController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        
-        //        for (index, vc) in listViewController.enumerated() {
-        //            vc.tabBarItem.title = index == tabBarController.selectedIndex ? titleTabbars[index] : ""
-        //        }
-        
         tabbarDelagate?.tabbarSelected(index: tabBarController.selectedIndex)
+    }
+    
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        let itemView =  self.tabBar.subviews[item.tag]
+        let itemImageView = itemView.subviews.first as! UIImageView
+        itemImageView.contentMode = .center
+        
+        self.playBounceAnimation(itemImageView)
+    }
+    
+    func playBounceAnimation(_ icon: UIImageView) {
+        let bounceAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
+        bounceAnimation.values = [1.0, 1.4, 0.9, 1.15, 0.95, 1.02, 1.0]
+        bounceAnimation.duration = TimeInterval(0.5)
+        bounceAnimation.calculationMode = CAAnimationCalculationMode.cubic
+        
+        icon.layer.add(bounceAnimation, forKey: nil)
     }
 }

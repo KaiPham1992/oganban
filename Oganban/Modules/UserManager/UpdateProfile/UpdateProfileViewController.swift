@@ -18,6 +18,7 @@ class UpdateProfileViewController: BaseViewController {
     @IBOutlet weak var lbRateCount: UILabel!
     @IBOutlet weak var lbRating: UILabel!
     @IBOutlet weak var lbLevel: UILabel!
+    @IBOutlet weak var lbPro: UILabel!
     @IBOutlet weak var lbError: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imgAvatar: UIImageView!
@@ -97,7 +98,15 @@ class UpdateProfileViewController: BaseViewController {
                 lbCodeIntro.text = user.codeIntro
             }
             if user.level != nil {
-                 lbLevel.text = user.level
+                self.lbLevel.text = user.level
+                if user.isPro == "1" {
+                    self.lbPro.isHidden = false
+                    self.lbPro.text = "  Pro"
+                } else {
+                    self.lbPro.isHidden = true
+                    self.lbPro.text = ""
+                }
+                
             }
             
             if let fullName = user.fullName {

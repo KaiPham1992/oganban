@@ -106,4 +106,12 @@ public extension UIDevice {
     func isIphone5_8Inch() -> Bool {
         return (name == DeviceName.iphoneX.rawValue)
     }
+    
+    func isIphoneXOrLater() -> Bool {
+        if isIphone4_7Inch() || isIphone4Inch() || isIphone5_5Inch() {
+            return false
+        }
+        
+        return true
+    }
 }
