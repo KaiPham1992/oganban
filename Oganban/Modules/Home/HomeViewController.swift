@@ -94,7 +94,6 @@ class HomeViewController: BaseViewController {
     }
     
     private func configureTableView() {
-//        tbLeft.registerTableCell(MenuCell.self)
         tbRight.registerTableCell(MenuCell.self)
         tbRight.registerTableCell(AcceptCell.self)
         tbLeft.registerTableCell(LeftMenuCell.self)
@@ -130,18 +129,36 @@ class HomeViewController: BaseViewController {
         scaleDropdown.selectionAction = { [weak self](index, item) in
             guard let `self` = self else { return }
             self.lbDistance.text = item
-            self.paramFilter.radius = self.dataSource[index].title&
+            if  self.dataSource[index].title& == "Không giới hạn" {
+                self.paramFilter.radius = ""
+            } else {
+                self.paramFilter.radius = self.dataSource[index].title&
+            }
             self.presenter?.filterRecord(param: self.paramFilter)
         }
     }
     
     @objc private func refreshData(_ sender: Any) {
         // Fetch Weather Data
+        refreshFilter()
+        paramFilter = RecordParam()
+        presenter?.filterRecord(param: paramFilter)
+    }
+    
+    private func refreshFilter() {
+        index = 0
         self.refreshControl.endRefreshing()
         lbCategory.text = "Tất cả danh mục"
         tfSearch.text = ""
-        paramFilter = RecordParam()
-        presenter?.filterRecord(param: paramFilter)
+        for (temp, item) in menu.enumerated() {
+            menu[temp].isSelected = false
+            for (indexChild, _) in item.cateChild.enumerated() {
+                menu[temp].cateChild[indexChild].isSelected = false
+            }
+        }
+        hideDropdown()
+        tbLeft.reloadData()
+        tbRight.reloadData()
     }
     
     @IBAction func hideDropdownTapped() {
@@ -217,7 +234,10 @@ class HomeViewController: BaseViewController {
 extension HomeViewController: HomeViewProtocol {
     func didGetPositionRange(list: [PositionRangeEntity]) {
         self.dataSource = list
-        scaleDropdown.dataSource = list.map({$0.title&})
+        if let last = PositionRangeEntity(JSON: ["_id": "8", "_value": "Không giới hạn"]) {
+            self.dataSource.append(last)
+        }
+        scaleDropdown.dataSource = dataSource.map({$0.title&})
     }
     
     func didFilterRecord(list: [RecordEntity]) {
