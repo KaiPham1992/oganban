@@ -10,7 +10,7 @@
 
 import UIKit
 
-class SupplementaryInfoViewController: BaseViewController {
+class SupplementaryInfoViewController: BaseViewController, UITextFieldDelegate {
 
 	var presenter: SupplementaryInfoPresenterProtocol?
 
@@ -25,7 +25,6 @@ class SupplementaryInfoViewController: BaseViewController {
     @IBOutlet weak var tfBirthday: OganbanCustomTextfield!
     @IBOutlet weak var tfName: OganbanCustomTextfield!
     @IBOutlet weak var vContent: UIView!
-    
     
     var isCheck: Bool = false {
         didSet{
@@ -53,11 +52,20 @@ class SupplementaryInfoViewController: BaseViewController {
         addGesture()
         tapSendButton()
         textFieldDidBeginEditing()
+        
+        tfAddress1.tfContent.delegate = self
+        tfAddress2.tfContent.delegate = self
     }
     
     func hideError(isHidden: Bool = true, message: String? = nil){
         lbError.isHidden = isHidden
         lbError.text = message ?? ""
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        PositionMapsHelper.shared.showSearch { address in
+            textField.text = address
+        }
     }
 }
 

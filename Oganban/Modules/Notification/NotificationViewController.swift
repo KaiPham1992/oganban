@@ -34,12 +34,16 @@ class NotificationViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTable()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         presenter?.getNotification(offset: 0)
     }
     
     override func setUpNavigation() {
         super.setUpNavigation()
-//        addButtonTextToNavigation(title: TitleString.markReadAll, style: .right, action: #selector(btnMarkReadAllTapped))
+        //        addButtonTextToNavigation(title: TitleString.markReadAll, style: .right, action: #selector(btnMarkReadAllTapped))
         setTitleNavigation(title: TitleString.notification)
     }
     

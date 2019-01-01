@@ -30,8 +30,6 @@ protocol LoginPresenterProtocol: class {
     //---
     func login(email: String, password: String)
     func loginSocial(param: LoginSocialParam)
-//    func loginGmail(user: GIDGoogleUser, phone: String)
-//    func loginFacebook(fbEntity: FacebookEntity, phone: String)
     func updateProfile(codeVerify: String, phoneCode: String, phoneNumber: String)
 }
 
@@ -42,8 +40,7 @@ protocol LoginInteractorOutputProtocol: class {
     func didLogin(user: UserEntity?)
     func didLogin(error: APIError?)
     
-    func didUpdateProfile(response: BaseResponse?)
-    func didUpdateProfile(error: APIError?)
+//    func didUpdateProfile(response: BaseResponse?)
 }
 
 protocol LoginInteractorInputProtocol: class {
@@ -53,8 +50,6 @@ protocol LoginInteractorInputProtocol: class {
     /* Presenter -> Interactor */
     func login(email: String, password: String)
     func loginSocial(param: LoginSocialParam)
-//    func loginGmail(user: GIDGoogleUser, phone: String)
-//    func loginFacebook(fbEntity: FacebookEntity, phone: String)
     func updateProfile(codeVerify: String, phoneCode: String, phoneNumber: String)
 }
 
@@ -66,6 +61,5 @@ protocol LoginViewProtocol: class {
     /* Presenter -> ViewController */
     func didLogin(user: UserEntity?)
     func didError(error: APIError?)
-    func didUpdateProfile(response: BaseResponse?)
-    func didUpdateProfile(error: APIError?)
+//    func didUpdateProfile(response: BaseResponse?)
 }

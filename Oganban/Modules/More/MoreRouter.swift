@@ -12,11 +12,11 @@ import UIKit
 
 class MoreRouter: MoreWireframeProtocol {
     
-    weak var viewController: UIViewController?
+    weak var viewController: MoreViewController?
     
-    static func createModule() -> UIViewController {
+    static func createModule() -> MoreViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = MoreViewController(nibName: nil, bundle: nil)
+        let view = MoreViewController.initFromNib()
         let interactor = MoreInteractor()
         let router = MoreRouter()
         let presenter = MorePresenter(interface: view, interactor: interactor, router: router)
@@ -72,7 +72,8 @@ class MoreRouter: MoreWireframeProtocol {
             viewController?.navigationController?.pushViewController(vc, animated: true)
         } else {
             let vc = LoginRouter.createModule()
-            viewController?.present(controller: vc, animated: true)
+            let nc = UINavigationController(rootViewController: vc)
+            viewController?.present(controller: nc, animated: true)
         }
     }
     

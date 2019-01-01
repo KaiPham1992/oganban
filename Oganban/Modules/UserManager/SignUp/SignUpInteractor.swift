@@ -13,7 +13,7 @@ import UIKit
 class SignUpInteractor: SignUpInteractorInputProtocol {
     func verifyPhone(verifyCode: String, phoneCode: String, phoneNum: String) {
         Provider.shared.userAPIService.verifyPhone(code: verifyCode, phone: phoneNum, phonCode: phoneCode, success: { (response) in
-            self.presenter?.didVerifyPhone(response: response)
+//            self.presenter?.didVerifyPhone(response: response)
         }) { (error) in
             self.presenter?.didVerifyPhone(error: error)
         }

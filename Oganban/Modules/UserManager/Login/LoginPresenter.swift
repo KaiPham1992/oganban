@@ -60,10 +60,10 @@ extension LoginPresenter: LoginInteractorOutputProtocol {
         view?.didError(error: error)
     }
     
-    func didUpdateProfile(error: APIError?) {
-        view?.didUpdateProfile(error: error)
-    }
-    func didUpdateProfile(response: BaseResponse?) {
-        view?.didUpdateProfile(response: response)
-    }
+//    func didUpdateProfile(error: APIError?) {
+//        view?.didError(error: error)
+//    }
+//    func didUpdateProfile(response: BaseResponse?) {
+//        view?.didUpdateProfile(response: response)
+//    }
 }

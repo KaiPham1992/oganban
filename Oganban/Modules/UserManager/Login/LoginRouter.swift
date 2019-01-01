@@ -12,9 +12,9 @@ import UIKit
 
 class LoginRouter: LoginWireframeProtocol {
     
-    weak var viewController: UIViewController?
+    weak var viewController: LoginViewController?
     
-    static func createModule() -> UIViewController {
+    static func createModule() -> LoginViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = LoginViewController(nibName: nil, bundle: nil)
         let interactor = LoginInteractor()
@@ -31,7 +31,8 @@ class LoginRouter: LoginWireframeProtocol {
     
     func gotoSignUp() {
         let signUpVC = SignUpRouter.createModule()
-        viewController?.navigationController?.pushViewController(signUpVC, animated: true)
+        viewController?.navigationController?
+            .pushViewController(signUpVC, animated: true)
     }
     
     func gotoHome() {
@@ -44,7 +45,7 @@ class LoginRouter: LoginWireframeProtocol {
         vc.modalPresentationStyle = .overFullScreen
         viewController?.present(controller: vc, animated: true)
     }
-    
+
     func gotoForgotPassword() {
         let forgotPasswordVC = ForgotPasswordRouter.createModule()
         viewController?.navigationController?.pushViewController(forgotPasswordVC, animated: true)

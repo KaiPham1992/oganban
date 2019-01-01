@@ -12,24 +12,10 @@ import GoogleMaps
 class DataManager {
     // MARK: - Properties
     
-    private static var sharedDataManager: DataManager = {
-        let dataManager = DataManager()
-        
-        // Configuration
-        // ...
-        
-        return dataManager
-    }()
-    
-    // Initialization
-    private init() {
-        
-    }
-    
     // MARK: - Accessors
     
-    class func shared() -> DataManager {
-        return sharedDataManager
-    }
+    static let shared = DataManager()
+    
+    var tempToken: String = ""
     
 }

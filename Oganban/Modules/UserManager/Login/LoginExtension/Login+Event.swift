@@ -24,18 +24,24 @@ extension LoginViewController {
 extension LoginViewController: LoginViewProtocol {
     func didLogin(user: UserEntity?) {
         guard let _user = user else { return }
-        UserUtils.saveUser(user: _user)
-        
         if loginType != .normal {
             if user?.isLoggedSocial == nil {
+                DataManager.shared.tempToken = _user.jwt&
                 self.presenter?.showSupplementaryInfoPage()
             }
-            
-            if user?.isLoggedSocial == "1" && user?.isVerified == "1" {
-                self.dismiss()
+            // update info and verify
+            if user?.isLoggedSocial == "1" {
+                if user?.isVerified == "1" {
+                    UserUtils.saveUser(user: _user)
+                    self.dismiss()
+                } else {
+                    self.verifyCode = _user.codeVerify
+                    fbAccountKit.verifyPhone()
+                }
             }
         } else {
-             self.dismiss(animated: true)
+            UserUtils.saveUser(user: _user)
+            self.dismiss(animated: true)
         }
     }
     
@@ -49,18 +55,13 @@ extension LoginViewController: LoginViewProtocol {
                 self.verifyCode = error?.codeVerify
                 fbAccountKit.verifyPhone()
                 break
+            case "PHONE_IS_EXISTED":
+                PopUpHelper.shared.showMessageHaveAds(message: "Số điện thoại đã tồn tại")
             default:
                 break
             }
         }
-    }
     
-    func didUpdateProfile(response: BaseResponse?) {
-        
-    }
-    
-    func didUpdateProfile(error: APIError?) {
-        
     }
 }
 
@@ -104,9 +105,7 @@ extension LoginViewController {
         
         self.btnSignUp.tapButton = {
             self.view.endEditing(true)
-            print("TAP SIGN UP")
-            
-            PopUpHelper.shared.showNoGPS()
+            self.presenter?.gotoSignUp()
         }
         
         self.tfPassword.completeTapRightIcon = { (success) in
