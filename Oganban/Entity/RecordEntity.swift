@@ -26,6 +26,7 @@ class RecordEntity: BaseEntity {
     var createTime: Date?
     var distance: String?
     var imgSrc = [String]()
+    var imgHome: String?
     var level: String?
     var distanceConvert: String?
     var about: String?
@@ -59,6 +60,7 @@ class RecordEntity: BaseEntity {
         self.createTime <- (map["create_time_mi"], AppTimestampTransform())
         self.distance <- map["distance"]
         self.imgSrc <- map["img_src"]
+        self.imgHome <- map["img_src"]
         self.address1 <- map["address_1"]
         self.address2 <- map["address_2"]
         self.level <- map["level"]

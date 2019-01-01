@@ -64,7 +64,7 @@ class HomeCell: UICollectionViewCell {
             lbPro.isHidden = true
         }
         
-        if let url = URL(string: "\(BASE_URL)\(record.imgSrc&)") {
+        if let url = URL(string: "\(BASE_URL)\(record.imgHome&)") {
             imgRecord.sd_setImage(with: url, placeholderImage: AppImage.imgPlaceHolderImage)
         }
         

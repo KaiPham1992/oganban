@@ -78,6 +78,8 @@ struct PositionRangeEntity: Mappable {
             } else {
                 self.title = "\(_value/1000)km"
             }
+        } else {
+            self.title = "Không giới hạn"
         }
     }
 }
