@@ -17,7 +17,7 @@ class PositionRouter: PositionWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule(delegate: PositionViewControllerDelegate, address: String) -> PositionViewController {
+    static func createModule(delegate: PositionViewControllerDelegate, address: String, dataSource: [PositionRangeEntity]) -> PositionViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = PositionViewController(nibName: nil, bundle: nil)
         let interactor = PositionInteractor()
@@ -25,6 +25,7 @@ class PositionRouter: PositionWireframeProtocol {
         let presenter = PositionPresenter(interface: view, interactor: interactor, router: router)
         view.delegate = delegate
         view.presenter = presenter
+        view.dataSource = dataSource.map({$0.title&})
         interactor.presenter = presenter
         router.viewController = view
         view.address = address

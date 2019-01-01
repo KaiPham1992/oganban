@@ -183,7 +183,7 @@ class HomeViewController: BaseViewController {
     }
     
     @IBAction func btnGotoPositionTapped() {
-        presenter?.gotoPositionMaps(delegate: self, address: lbPosition.text&)
+        presenter?.gotoPositionMaps(delegate: self, address: lbPosition.text&, dataSource: self.dataSource)
     }
     
     @IBAction func btnGotoFavoriteTapped() {

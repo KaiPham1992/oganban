@@ -11,10 +11,10 @@
 import UIKit
 import GoogleMaps
 import GooglePlaces
-//import GooglePlacePicker
+import DropDown
 
 protocol PositionViewControllerDelegate: class {
-    func positionSelected(location: CLLocationCoordinate2D, address: String, distance: Int)
+    func positionSelected(location: CLLocationCoordinate2D, address: String, distance: Int, scale: String)
 }
 
 class PositionViewController: BaseViewController {
@@ -23,6 +23,8 @@ class PositionViewController: BaseViewController {
     @IBOutlet weak var lbTitleMarker: UILabel!
     @IBOutlet weak var vTitleMarker: UIView!
     @IBOutlet weak var tfAddress: UITextField!
+    @IBOutlet weak var vDropdown: UIView!
+    @IBOutlet weak var lbScale: UILabel!
     
 	var presenter: PositionPresenterProtocol?
     var locationManager = CLLocationManager()
@@ -32,6 +34,7 @@ class PositionViewController: BaseViewController {
     var dataSource: [String] = []
     var indexDistance = 0
     weak var delegate: PositionViewControllerDelegate?
+    let scaleDropdown = DropDown()
     
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +49,29 @@ class PositionViewController: BaseViewController {
         mapView.delegate = self
         tfAddress.delegate = self
         tfAddress.text = address
+        setUpDropdown()
+    }
+    
+    func setUpDropdown() {
+        scaleDropdown.anchorView = vDropdown
+        scaleDropdown.backgroundColor = AppColor.main
+        DropDown.appearance().setupCornerRadius(10)
+        scaleDropdown.textColor = .white
+        scaleDropdown.textFont = AppFont.fontRegular11
+        scaleDropdown.separatorColor = .gray
+        scaleDropdown.selectionBackgroundColor = AppColor.main
+        scaleDropdown.selectedTextColor = .yellow
+        scaleDropdown.downScaleTransform = CGAffineTransform(rotationAngle: (-.pi))
+        scaleDropdown.selectionAction = { [weak self](index, item) in
+            guard let `self` = self else { return }
+            self.lbScale.text = item
+//            if  self.dataSource[index].title& == "Không giới hạn" {
+//                self.paramFilter.radius = ""
+//            } else {
+//                self.paramFilter.radius = self.dataSource[index].title&
+//            }
+//            self.presenter?.filterRecord(param: self.paramFilter)
+        }
     }
 
     override func setUpNavigation() {
@@ -60,8 +86,12 @@ class PositionViewController: BaseViewController {
     }
     
     @objc func btnDoneTapped() {
-        delegate?.positionSelected(location: centerMapCoordinate, address: tfAddress.text&, distance: 2)
+        delegate?.positionSelected(location: centerMapCoordinate, address: tfAddress.text&, distance: 2, scale: <#String#>)
         presenter?.dismiss()
+    }
+    
+    @IBAction func showDropdownTapped() {
+        scaleDropdown.show()
     }
 }
 

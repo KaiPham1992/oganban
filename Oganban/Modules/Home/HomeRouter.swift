@@ -11,8 +11,8 @@
 import UIKit
 
 class HomeRouter: HomeWireframeProtocol {
-    func gotoPositionMaps(delegate: PositionViewControllerDelegate, address: String) {
-        let vc = PositionRouter.createModule(delegate: delegate, address: address)
+    func gotoPositionMaps(delegate: PositionViewControllerDelegate, address: String, dataSource: [PositionRangeEntity]) {
+        let vc = PositionRouter.createModule(delegate: delegate, address: address, dataSource: dataSource)
         let nav = UINavigationController(rootViewController: vc)
         viewController?.present(controller: nav)
     }

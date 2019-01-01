@@ -11,9 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PositionViewController">
             <connections>
+                <outlet property="lbScale" destination="5Bu-iy-wG3" id="cpy-IP-mMG"/>
                 <outlet property="lbTitleMarker" destination="2tK-SX-Sff" id="pdX-mm-gKn"/>
                 <outlet property="mapView" destination="dA5-Ir-BIy" id="fhc-J9-agM"/>
                 <outlet property="tfAddress" destination="uBB-t5-wUA" id="9ZK-No-qrb"/>
+                <outlet property="vDropdown" destination="x9o-O5-SyW" id="bl6-8I-Nav"/>
                 <outlet property="vTitleMarker" destination="tVW-fV-G8Q" id="Bf5-ss-ofO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -54,14 +56,33 @@
                                 <constraint firstAttribute="width" constant="20" id="t66-Qi-hu4"/>
                             </constraints>
                         </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x9o-O5-SyW">
+                            <rect key="frame" x="90.5" y="29" width="100" height="1"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="JWy-xd-CsI"/>
+                                <constraint firstAttribute="height" constant="1" id="SSr-u1-6Am"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vV2-if-1zl">
+                            <rect key="frame" x="90.5" y="0.0" width="100" height="30"/>
+                            <connections>
+                                <action selector="showDropdownTapped" destination="-1" eventType="touchUpInside" id="xQl-VU-FuO"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="vV2-if-1zl" firstAttribute="centerX" secondItem="x9o-O5-SyW" secondAttribute="centerX" id="4JL-dJ-pb4"/>
                         <constraint firstItem="5Bu-iy-wG3" firstAttribute="centerY" secondItem="eLB-Eb-szo" secondAttribute="centerY" id="5uE-Eg-YZA"/>
                         <constraint firstItem="5Bu-iy-wG3" firstAttribute="leading" secondItem="eLB-Eb-szo" secondAttribute="trailing" constant="20" id="7Yv-uM-8qI"/>
                         <constraint firstItem="6jt-SP-yHJ" firstAttribute="centerY" secondItem="5Bu-iy-wG3" secondAttribute="centerY" id="8ca-Nw-izq"/>
+                        <constraint firstItem="vV2-if-1zl" firstAttribute="bottom" secondItem="x9o-O5-SyW" secondAttribute="bottom" id="B7b-Yy-bPM"/>
                         <constraint firstItem="eLB-Eb-szo" firstAttribute="leading" secondItem="3NA-hK-XUy" secondAttribute="leading" id="LeW-Zl-By1"/>
+                        <constraint firstItem="vV2-if-1zl" firstAttribute="width" secondItem="x9o-O5-SyW" secondAttribute="width" id="SwX-eF-AcR"/>
+                        <constraint firstItem="x9o-O5-SyW" firstAttribute="bottom" secondItem="5Bu-iy-wG3" secondAttribute="bottom" id="VaD-Kh-n9Z"/>
                         <constraint firstItem="eLB-Eb-szo" firstAttribute="centerY" secondItem="3NA-hK-XUy" secondAttribute="centerY" id="XGl-Im-gsz"/>
+                        <constraint firstItem="x9o-O5-SyW" firstAttribute="leading" secondItem="5Bu-iy-wG3" secondAttribute="leading" id="g76-gD-3YK"/>
                         <constraint firstAttribute="height" constant="40" id="hff-ef-Jor"/>
                         <constraint firstItem="6jt-SP-yHJ" firstAttribute="leading" secondItem="5Bu-iy-wG3" secondAttribute="trailing" constant="10" id="kcH-la-dNZ"/>
                     </constraints>
