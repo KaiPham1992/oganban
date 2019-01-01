@@ -11,7 +11,7 @@ import SDWebImage
 
 class MoreHeaderCell: UITableViewCell {
     
-    @IBOutlet weak var lbLevel: UILabel!
+    @IBOutlet weak var vLevel: LevelMemberView!
     @IBOutlet weak var ivAvatar: UIImageView!
     @IBOutlet weak var lbPhone: UILabel!
     @IBOutlet weak var lbCoinTotal: UILabel!
@@ -21,8 +21,6 @@ class MoreHeaderCell: UITableViewCell {
         super.awakeFromNib()
         ivAvatar.layer.cornerRadius = ivAvatar.frame.width / 2.0
         ivAvatar.layer.masksToBounds = true
-        lbLevel.font = AppFont.fontBoldRoboto15
-        lbLevel.textColor = AppColor.blue_0_136_241
     }
     
     func setupView() {
@@ -31,7 +29,7 @@ class MoreHeaderCell: UITableViewCell {
             
             lbCoinTotal.isHidden = false
             lbPhone.isHidden = false
-            lbLevel.isHidden = false
+            vLevel.isHidden = false
             lbName.font = AppFont.fontRegularRoboto15
             lbName.textColor = AppColor.black
             self.showData(user: user)
@@ -39,7 +37,7 @@ class MoreHeaderCell: UITableViewCell {
 
             lbCoinTotal.isHidden = true
             lbPhone.isHidden = true
-            lbLevel.isHidden = true
+            vLevel.isHidden = true
             ivAvatar.image = AppImage.imgDefaultUser
             lbName.font = AppFont.fontBoldRoboto15
             lbName.textColor = AppColor.blue_0_136_241
@@ -51,7 +49,7 @@ class MoreHeaderCell: UITableViewCell {
     func showData(user: UserEntity) {
         lbName.text = user.fullName
         lbPhone.text = user.phone
-        lbLevel.text = user.level
+        vLevel.setLevel(level: user.level&, isPro: user.isPro)
         
         if let urlString = user.imgCropSrc, let url = URL(string: BASE_URL_IMAGE + urlString) {
             ivAvatar.sd_setImage(with: url , placeholderImage: AppImage.imgDefaultUser)

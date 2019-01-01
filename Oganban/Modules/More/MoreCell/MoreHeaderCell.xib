@@ -34,19 +34,19 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x7o-Mq-SOV">
-                        <rect key="frame" x="130" y="68" width="37" height="20"/>
+                        <rect key="frame" x="130" y="70" width="37" height="20"/>
                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wwv-MF-rHd">
-                        <rect key="frame" x="130" y="93" width="37" height="20"/>
+                        <rect key="frame" x="130" y="95" width="37" height="20"/>
                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NextArrow" translatesAutoresizingMaskIntoConstraints="NO" id="ak3-Ri-y8V">
-                        <rect key="frame" x="295" y="73" width="10" height="10"/>
+                        <rect key="frame" x="295" y="75" width="10" height="10"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="10" id="I2f-PV-NFn"/>
                             <constraint firstAttribute="width" secondItem="ak3-Ri-y8V" secondAttribute="height" multiplier="1:1" id="z0B-iE-8Kb"/>
@@ -60,27 +60,37 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8QO-Nc-IYQ">
-                        <rect key="frame" x="130" y="118" width="175" height="20"/>
+                        <rect key="frame" x="130" y="120" width="175" height="20"/>
                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f33-Lt-TDM">
-                        <rect key="frame" x="130" y="30" width="37" height="18"/>
+                        <rect key="frame" x="130" y="30" width="37" height="20"/>
                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="15"/>
                         <color key="textColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wia-6H-Twg" customClass="LevelMemberView" customModule="Oganban" customModuleProvider="target">
+                        <rect key="frame" x="130" y="30" width="150" height="20"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="150" id="CcD-2B-g86"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Wwv-MF-rHd" firstAttribute="top" secondItem="x7o-Mq-SOV" secondAttribute="bottom" constant="5" id="4Je-w0-Vy4"/>
                     <constraint firstItem="Wwv-MF-rHd" firstAttribute="leading" secondItem="x7o-Mq-SOV" secondAttribute="leading" id="4qT-AG-uuc"/>
+                    <constraint firstItem="Wia-6H-Twg" firstAttribute="leading" secondItem="f33-Lt-TDM" secondAttribute="leading" id="9wD-Qb-Gsy"/>
                     <constraint firstItem="x7o-Mq-SOV" firstAttribute="leading" secondItem="f33-Lt-TDM" secondAttribute="leading" id="Hj6-wa-sM6"/>
+                    <constraint firstItem="Wia-6H-Twg" firstAttribute="bottom" secondItem="f33-Lt-TDM" secondAttribute="bottom" id="Hyp-WO-NVO"/>
                     <constraint firstItem="x7o-Mq-SOV" firstAttribute="top" secondItem="f33-Lt-TDM" secondAttribute="bottom" constant="20" id="JUP-qO-S8q"/>
                     <constraint firstAttribute="bottom" secondItem="FE2-b4-SoD" secondAttribute="bottom" id="PUq-Xf-hdD"/>
                     <constraint firstAttribute="trailing" secondItem="ak3-Ri-y8V" secondAttribute="trailing" constant="15" id="Vwz-Yz-skh"/>
                     <constraint firstItem="f33-Lt-TDM" firstAttribute="top" secondItem="Nhs-UF-mgV" secondAttribute="top" constant="10" id="aJQ-Ro-SGe"/>
                     <constraint firstItem="FE2-b4-SoD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="afu-52-ABk"/>
+                    <constraint firstItem="Wia-6H-Twg" firstAttribute="top" secondItem="f33-Lt-TDM" secondAttribute="top" id="b32-Ud-l7x"/>
                     <constraint firstItem="f33-Lt-TDM" firstAttribute="leading" secondItem="Nhs-UF-mgV" secondAttribute="trailing" constant="20" id="fDs-0b-5Se"/>
                     <constraint firstItem="Nhs-UF-mgV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="faD-kc-7m6"/>
                     <constraint firstItem="8QO-Nc-IYQ" firstAttribute="top" secondItem="Wwv-MF-rHd" secondAttribute="bottom" constant="5" id="gtj-md-5ds"/>
@@ -95,15 +105,15 @@
             <connections>
                 <outlet property="ivAvatar" destination="Nhs-UF-mgV" id="Fb2-LJ-qXi"/>
                 <outlet property="lbCoinTotal" destination="8QO-Nc-IYQ" id="iPK-6J-B2i"/>
-                <outlet property="lbLevel" destination="f33-Lt-TDM" id="F8e-jk-Ztn"/>
                 <outlet property="lbName" destination="x7o-Mq-SOV" id="iSp-S1-Bbd"/>
                 <outlet property="lbPhone" destination="Wwv-MF-rHd" id="j5t-fX-U1m"/>
+                <outlet property="vLevel" destination="Wia-6H-Twg" id="zYR-eo-Cvw"/>
             </connections>
-            <point key="canvasLocation" x="-133" y="64"/>
+            <point key="canvasLocation" x="-134.40000000000001" y="63.418290854572717"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="1024" width="1024" height="1024"/>
+        <image name="1024" width="512" height="512"/>
         <image name="NextArrow" width="11" height="20"/>
     </resources>
 </document>
