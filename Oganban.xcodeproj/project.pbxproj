@@ -90,6 +90,8 @@
 		B392FB3E21D3D6AE0076A7B5 /* AcceptCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B392FB3C21D3D6AE0076A7B5 /* AcceptCell.xib */; };
 		B392FB4121D3E37C0076A7B5 /* RecordParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = B392FB4021D3E37C0076A7B5 /* RecordParam.swift */; };
 		B392FB4321D3E93E0076A7B5 /* RecordEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B392FB4221D3E93E0076A7B5 /* RecordEntity.swift */; };
+		B3A3237121DB332100E1AD4C /* LeftMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A3236F21DB332100E1AD4C /* LeftMenuCell.swift */; };
+		B3A3237221DB332100E1AD4C /* LeftMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3A3237021DB332100E1AD4C /* LeftMenuCell.xib */; };
 		B3CC856F21D72DD200ADBFD8 /* PositionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CC856921D72DD200ADBFD8 /* PositionPresenter.swift */; };
 		B3CC857021D72DD200ADBFD8 /* PositionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CC856A21D72DD200ADBFD8 /* PositionRouter.swift */; };
 		B3CC857121D72DD200ADBFD8 /* PositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CC856B21D72DD200ADBFD8 /* PositionViewController.swift */; };
@@ -459,6 +461,8 @@
 		B392FB3C21D3D6AE0076A7B5 /* AcceptCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AcceptCell.xib; sourceTree = "<group>"; };
 		B392FB4021D3E37C0076A7B5 /* RecordParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordParam.swift; sourceTree = "<group>"; };
 		B392FB4221D3E93E0076A7B5 /* RecordEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordEntity.swift; sourceTree = "<group>"; };
+		B3A3236F21DB332100E1AD4C /* LeftMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuCell.swift; sourceTree = "<group>"; };
+		B3A3237021DB332100E1AD4C /* LeftMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeftMenuCell.xib; sourceTree = "<group>"; };
 		B3CC856921D72DD200ADBFD8 /* PositionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionPresenter.swift; sourceTree = "<group>"; };
 		B3CC856A21D72DD200ADBFD8 /* PositionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionRouter.swift; sourceTree = "<group>"; };
 		B3CC856B21D72DD200ADBFD8 /* PositionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionViewController.swift; sourceTree = "<group>"; };
@@ -883,6 +887,7 @@
 		B325C2EC21CE059E0048A148 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				B3A3236E21DB330D00E1AD4C /* Left */,
 				B325C2ED21CE05B20048A148 /* MenuCell.swift */,
 				B325C2EE21CE05B20048A148 /* MenuCell.xib */,
 			);
@@ -969,6 +974,15 @@
 				B392FB4021D3E37C0076A7B5 /* RecordParam.swift */,
 			);
 			path = RecordParam;
+			sourceTree = "<group>";
+		};
+		B3A3236E21DB330D00E1AD4C /* Left */ = {
+			isa = PBXGroup;
+			children = (
+				B3A3236F21DB332100E1AD4C /* LeftMenuCell.swift */,
+				B3A3237021DB332100E1AD4C /* LeftMenuCell.xib */,
+			);
+			path = Left;
 			sourceTree = "<group>";
 		};
 		B3CC856821D72DB600ADBFD8 /* Position */ = {
@@ -2062,6 +2076,7 @@
 				B392FB3E21D3D6AE0076A7B5 /* AcceptCell.xib in Resources */,
 				84421BFA21CBEF1E00F468F5 /* MoreHeaderCell.xib in Resources */,
 				B325C2F021CE05B20048A148 /* MenuCell.xib in Resources */,
+				B3A3237221DB332100E1AD4C /* LeftMenuCell.xib in Resources */,
 				DEBEE81821D76C79004B8D88 /* LevelMemberView.xib in Resources */,
 				DEA3A08921D6738200643296 /* AppImageSlide.xib in Resources */,
 				CBD1C2B221D74EF4006DB3FF /* MySellingCell.xib in Resources */,
@@ -2380,7 +2395,6 @@
 				DE21829421CD4EB600FDD9F1 /* FTextField.swift in Sources */,
 				84421BF121CBEECF00F468F5 /* MoreInteractor.swift in Sources */,
 				DE21822121CD419B00FDD9F1 /* PhoneEntity.swift in Sources */,
-				B36AEEB121CDDB8000BED43C /* MySellPresenter.swift in Sources */,
 				B329A49C21D78A59004BBEE6 /* PositionMapsHelper.swift in Sources */,
 				DE442C3221CF93C60051C0B8 /* PhotoEntity.swift in Sources */,
 				CBD1C29721D732CB006DB3FF /* MyBuyRouter.swift in Sources */,
@@ -2481,6 +2495,7 @@
 				DEBEE81221D76B6F004B8D88 /* OrderIntroCell.swift in Sources */,
 				DE21827D21CD473100FDD9F1 /* KActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
 				CB172C0A21C6A2EF0068CF92 /* PopUpNotificationContent.swift in Sources */,
+				B3A3237121DB332100E1AD4C /* LeftMenuCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

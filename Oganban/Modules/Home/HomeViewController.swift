@@ -92,9 +92,10 @@ class HomeViewController: BaseViewController {
     }
     
     private func configureTableView() {
-        tbLeft.registerTableCell(MenuCell.self)
+//        tbLeft.registerTableCell(MenuCell.self)
         tbRight.registerTableCell(MenuCell.self)
         tbRight.registerTableCell(AcceptCell.self)
+        tbLeft.registerTableCell(LeftMenuCell.self)
         tbRight.delegate = self
         tbRight.dataSource = self
         tbLeft.delegate = self
@@ -135,6 +136,8 @@ class HomeViewController: BaseViewController {
     @objc private func refreshData(_ sender: Any) {
         // Fetch Weather Data
         self.refreshControl.endRefreshing()
+        lbCategory.text = "Tất cả danh mục"
+        tfSearch.text = ""
         paramFilter = RecordParam()
         presenter?.filterRecord(param: paramFilter)
     }
@@ -249,20 +252,33 @@ extension HomeViewController: HomeViewProtocol {
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        if listRecord.count%10 == 0 {
-            return listRecord.count/10
+        if listRecord.count == 0 {
+            showNoData()
+            return 0
         } else {
-            return listRecord.count/10 + 1
+            hideNoData()
+            if listRecord.count%10 == 0 {
+                return listRecord.count/10
+            } else {
+                return listRecord.count/10 + 1
+            }
         }
     }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if listRecord.count%10 == 0 {
-            return 11
+        if listRecord.count == 0 {
+            showNoData()
+            return 0
         } else {
-            if section == listRecord.count/10 {
-                return listRecord.count%10 + 1
-            } else {
+            hideNoData()
+            if listRecord.count%10 == 0 {
                 return 11
+            } else {
+                if section == listRecord.count/10 {
+                    return listRecord.count%10 + 1
+                } else {
+                    return 11
+                }
             }
         }
     }
@@ -318,10 +334,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let heightMax = UIScreen.main.bounds.height - 300
         switch tableView {
         case tbLeft:
-            let cell = tableView.dequeueTableCell(MenuCell.self)
+            let cell = tableView.dequeueTableCell(LeftMenuCell.self)
             cell.lbTitle.text = menu[indexPath.row].name
             cell.lbTitle.textColor = menu[indexPath.row].isSelected ? .yellow : .white
             self.heightLeft.constant = heightContent < heightMax ? tableView.contentSize.height : (heightMax)
+            cell.indexPath = indexPath
+            cell.delegate = self
             return cell
             
         case tbRight:
@@ -354,10 +372,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             }
             menu[index].isSelected = true
             tbLeft.reloadRows(at: [indexPath], with: .none)
-            tbRight.reloadData()
-            tbRight.isHidden = false
-            vAccept.isHidden = false
-            
+            tbLeft.isHidden = true
+            btnHideDropdown.isHidden = true
+            lbCategory.text = menu[index].name
+            paramFilter.categoryId = [menu[index].id&]
+            presenter?.filterRecord(param: paramFilter)
         case tbRight:
             if indexPath.row == menu[index].cateChild.count {
                 
@@ -411,5 +430,26 @@ extension HomeViewController: PositionViewControllerDelegate {
         lbPosition.text = address
         self.paramFilter.radius = self.dataSource[distance].title&
         presenter?.filterRecord(param: paramFilter)
+    }
+}
+
+extension HomeViewController: LeftMenuCellDelegate {
+    func openRightMenu(indexPath: IndexPath) {
+        index = indexPath.row
+        for (temp, _) in menu.enumerated() {
+            if temp != index {
+                if menu[temp].isSelected == true {
+                    indexReload = temp
+                    menu[temp].isSelected = false
+                    self.tbLeft.reloadRows(at: [IndexPath(item: temp, section: indexPath.section)], with: .none)
+                }
+                
+            }
+        }
+        menu[index].isSelected = true
+        tbLeft.reloadRows(at: [indexPath], with: .none)
+        tbRight.reloadData()
+        tbRight.isHidden = false
+        vAccept.isHidden = false
     }
 }
