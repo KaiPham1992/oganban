@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension UpdateProfileViewController {
+extension UpdateProfileViewController: UITextFieldDelegate {
     
     func setupView(){
         self.setTitleNavigation(title: NavigationTitle.profileInfo)
@@ -39,6 +39,9 @@ extension UpdateProfileViewController {
         
         btnSave.setupLayoutButton(backgroundColor: AppColor.green005800, titleColor: AppColor.white, text: ButtonName.saveProfile)
         scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        
+        tfAddress1.tfContent.delegate = self
+        tfAddress2.tfContent.delegate = self
     }
     
     func addGesture() {
@@ -47,5 +50,11 @@ extension UpdateProfileViewController {
         
         let tapSexGesture = UITapGestureRecognizer(target: self, action: #selector(self.selectSex(_:)))
         self.tfGender.addGestureRecognizer(tapSexGesture)
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        PositionMapsHelper.shared.showSearch { address in
+            textField.text = address
+        }
     }
 }

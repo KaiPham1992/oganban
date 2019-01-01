@@ -26,9 +26,6 @@ class MySellingPresenter: MySellingPresenterProtocol {
         interactor?.getRecordSellerPost(status: status, offset: offset, limit: limit)
     }
     
-    func gotoMySellExpired() {
-        router.gotoMySellExpired()
-    }
 }
 
 extension MySellingPresenter: MySellingInteractorOutputProtocol {

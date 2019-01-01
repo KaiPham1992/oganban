@@ -12,7 +12,6 @@ import Foundation
 
 //MARK: Wireframe -
 protocol MySellingWireframeProtocol: class {
-    func gotoMySellExpired()
 }
 //MARK: Presenter -
 protocol MySellingPresenterProtocol: class {
@@ -21,7 +20,6 @@ protocol MySellingPresenterProtocol: class {
     func getRecordSellerPost(status: String, offset: Int, limit: Int)
     
     //--
-    func gotoMySellExpired()
 }
 
 //MARK: Interactor -

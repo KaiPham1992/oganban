@@ -76,9 +76,9 @@ class ChangePasswordViewController: BaseViewController {
     }
 
     @IBAction func btnSaveTapped() {
-            let password = tfPassword.tfContent.text&.sha256()
-            let newPassword = tfNewPassword.tfContent.text&.sha256()
-            let confirmPassword = tfConfirmNewPassword.tfContent.text&.sha256()
+            let password = tfPassword.tfContent.text&
+            let newPassword = tfNewPassword.tfContent.text&
+            let confirmPassword = tfConfirmNewPassword.tfContent.text&
         if password.isEmptyIgnoreNewLine() || newPassword.isEmptyIgnoreNewLine() || confirmPassword.isEmptyIgnoreNewLine() {
             return lbStatus.text = MessageString.invalidInput
         }
@@ -89,7 +89,7 @@ class ChangePasswordViewController: BaseViewController {
             return lbStatus.text = MessageString.invalidConfirmPassword
         }
         
-        presenter?.changePassword(password: password, newPassword: newPassword)
+        presenter?.changePassword(password: password.sha256(), newPassword: newPassword.sha256())
     }
 }
 

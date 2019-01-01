@@ -10,7 +10,7 @@
 
 import UIKit
 
-class SignUpViewController: BaseViewController {
+class SignUpViewController: BaseViewController, UITextFieldDelegate {
     
     @IBOutlet weak var vLoginName       : FTextField!
     @IBOutlet weak var vLoginEmail      : FTextField!
@@ -85,6 +85,15 @@ class SignUpViewController: BaseViewController {
         vCaptcha.textField.keyboardType = .phonePad
         vLoginName.textField.keyboardType = .emailAddress
         vLoginEmail.textField.keyboardType = .emailAddress
+        
+        vHouseAddress.textField.delegate = self
+        vCompanyAddress.textField.delegate = self
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        PositionMapsHelper.shared.showSearch { address in
+            textField.text = address
+        }
     }
     
     @IBAction func btnTermOfPolicyTapped() {

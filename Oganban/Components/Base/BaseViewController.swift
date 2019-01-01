@@ -80,7 +80,7 @@ class BaseViewController: UIViewController {
         statusBar.tintColor =  AppColor.red
     }
     
-    func setWriteStatusBar() {
+    func setWhiteStatusBar() {
         UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
         guard let statusBar = UIApplication.shared.value(forKey: "statusBar") as? UIView else { return }

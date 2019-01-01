@@ -67,12 +67,14 @@ class HomeViewController: BaseViewController {
     
     override func setUpNavigation() {
         super.setUpNavigation()
+        setRedStatusBar()
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
+        setRedStatusBar()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

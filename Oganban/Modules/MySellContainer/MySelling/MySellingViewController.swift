@@ -29,6 +29,8 @@ class MySellingViewController: UIViewController {
 
     var parrentNavigation: UINavigationController?
     weak var delegate: MySellingViewControllerDelegate?
+    var refeshControl: UIRefreshControl?
+    var isCanLoadMore: Bool = false
     
     var listRecord: [RecordEntity] = [] {
         didSet {
@@ -39,7 +41,7 @@ class MySellingViewController: UIViewController {
 	override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-//        getData()
+        getData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -53,6 +55,10 @@ class MySellingViewController: UIViewController {
         vContain.setBorderWithCornerRadius(borderWidth: 0, borderColor: .clear, cornerRadius: 10)
         
         configTable()
+        
+        refeshControl = UIRefreshControl()
+        refeshControl?.addTarget(self, action: #selector(self.refeshData), for: .valueChanged)
+        tbMySelling.addSubview(refeshControl!)
     }
     
     func checkLogin() {
@@ -77,14 +83,20 @@ class MySellingViewController: UIViewController {
         presenter?.getRecordSellerPost(status: "show", offset: 0, limit: 10)
     }
     
+    @objc private func refeshData() {
+        getData()
+        refeshControl?.endRefreshing()
+    }
+    
     @IBAction func btnExpired() {
-//        presenter?.gotoMySellExpired()
         delegate?.gotoMySellExpired()
     }
     
     @IBAction func login() {
         delegate?.gotoLogin()
     }
+    
+    
 }
 
 extension MySellingViewController: UITableViewDataSource, UITableViewDelegate {
@@ -105,6 +117,15 @@ extension MySellingViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = OrderDetailRouter.createModule()
         parrentNavigation?.pushViewController(vc, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if isCanLoadMore && listRecord.count >= 20 {
+            if indexPath.item == self.listRecord.count - 10 {
+                isCanLoadMore = false
+                presenter?.getRecordSellerPost(status: "show", offset: listRecord.count, limit: 20)
+            }
+        }
     }
 }
 
