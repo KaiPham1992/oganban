@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol OrderDetailImageCellDelegate: class {
+    func btnHideTapped()
+}
+
 class OrderDetailImageCell: BaseTableCell {
     
     @IBOutlet weak var imageSlide: AppImageSlide!
@@ -47,6 +51,8 @@ class OrderDetailImageCell: BaseTableCell {
         }
     }
     
+    weak var delegate: OrderDetailImageCellDelegate?
+    
     private func setDefautlMySell() {
         radioMoney.setMoney(money: "0")
         radioCoin.setOCoin(coin: "0")
@@ -60,7 +66,7 @@ class OrderDetailImageCell: BaseTableCell {
         
         btnHide.setAttributed(title: "Ẩn bài đăng", color: AppColor.gray_158_158_158, font: AppFont.fontRegular13, isUnderLine: true)
         btnCancel.setAttributed(title: "Huỷ giao dịch", color: AppColor.gray_158_158_158, font: AppFont.fontRegular13, isUnderLine: true)
-        
+        btnCancel.isHidden = true
        
         // test fix me
 //        imageSlide.listItem = [
@@ -74,6 +80,10 @@ class OrderDetailImageCell: BaseTableCell {
     
     func hideMoneyCoin() {
         heightMoneyCoin.constant = 0 // 0 25 50 
+    }
+    
+    @IBAction func btnHideTapped() {
+        delegate?.btnHideTapped()
     }
     
 }

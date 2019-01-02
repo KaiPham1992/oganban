@@ -19,6 +19,7 @@ protocol OrderDetailPresenterProtocol: class {
 
     var interactor: OrderDetailInteractorInputProtocol? { get set }
     func getDetail(id: String)
+    func hideRecord(recordID: Int)
 }
 
 //MARK: Interactor -
@@ -26,6 +27,7 @@ protocol OrderDetailInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
     func didGetDetail(record: RecordEntity?)
+    func didHideRecord(data: BaseResponse?)
 }
 
 protocol OrderDetailInteractorInputProtocol: class {
@@ -34,6 +36,7 @@ protocol OrderDetailInteractorInputProtocol: class {
 
     /* Presenter -> Interactor */
     func getDetail(id: String)
+    func hideRecord(recordID: Int)
 }
 
 //MARK: View -
@@ -43,4 +46,5 @@ protocol OrderDetailViewProtocol: class {
 
     /* Presenter -> ViewController */
     func didGetDetail(record: RecordEntity?)
+    func didHideRecord(data: BaseResponse?)
 }

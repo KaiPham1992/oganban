@@ -27,10 +27,18 @@ class OrderDetailPresenter: OrderDetailPresenterProtocol {
     func getDetail(id: String) {
         interactor?.getDetail(id: id)
     }
+    
+    func hideRecord(recordID: Int) {
+        interactor?.hideRecord(recordID: recordID)
+    }
 }
 
 extension OrderDetailPresenter: OrderDetailInteractorOutputProtocol {
     func didGetDetail(record: RecordEntity?) {
         view?.didGetDetail(record: record)
+    }
+    
+    func didHideRecord(data: BaseResponse?) {
+        view?.didHideRecord(data: data)
     }
 }
