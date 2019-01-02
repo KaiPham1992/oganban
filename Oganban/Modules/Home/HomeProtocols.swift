@@ -12,7 +12,7 @@ import Foundation
 
 //MARK: Wireframe -
 protocol HomeWireframeProtocol: class {
-    func gotoPositionMaps(delegate: PositionViewControllerDelegate, address: String, dataSource: [PositionRangeEntity])
+    func gotoPositionMaps(delegate: PositionViewControllerDelegate, address: String, dataSource: [PositionRangeEntity], distance: PositionRangeEntity)
 
 }
 //MARK: Presenter -
@@ -24,7 +24,7 @@ protocol HomePresenterProtocol: class {
     func getCategoryMerge()
     func filterRecord(param: RecordParam)
     func getPositionRange()
-    func gotoPositionMaps(delegate: PositionViewControllerDelegate, address: String, dataSource: [PositionRangeEntity])
+    func gotoPositionMaps(delegate: PositionViewControllerDelegate, address: String, dataSource: [PositionRangeEntity], distance: PositionRangeEntity)
 }
 
 //MARK: Interactor -

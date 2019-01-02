@@ -53,6 +53,7 @@ class HomeViewController: BaseViewController {
     var paramFilter = RecordParam()
     var dataSource: [PositionRangeEntity] = []
     var indexReload: Int?
+    var distance: PositionRangeEntity?
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,6 +118,7 @@ class HomeViewController: BaseViewController {
     }
     
     private func setUpScaleDropdown() {
+      
         scaleDropdown.anchorView = vScaleDropdown
         scaleDropdown.backgroundColor = AppColor.main
         DropDown.appearance().setupCornerRadius(10)
@@ -134,6 +136,7 @@ class HomeViewController: BaseViewController {
             } else {
                 self.paramFilter.radius = self.dataSource[index].title&
             }
+            self.distance = self.dataSource[index]
             self.presenter?.filterRecord(param: self.paramFilter)
         }
     }
@@ -183,7 +186,8 @@ class HomeViewController: BaseViewController {
     }
     
     @IBAction func btnGotoPositionTapped() {
-        presenter?.gotoPositionMaps(delegate: self, address: lbPosition.text&, dataSource: self.dataSource)
+        guard let distance = distance else { return }
+        presenter?.gotoPositionMaps(delegate: self, address: lbPosition.text&, dataSource: self.dataSource, distance: distance)
     }
     
     @IBAction func btnGotoFavoriteTapped() {
@@ -238,6 +242,7 @@ extension HomeViewController: HomeViewProtocol {
             self.dataSource.append(last)
         }
         scaleDropdown.dataSource = dataSource.map({$0.title&})
+        distance = dataSource[3]
     }
     
     func didFilterRecord(list: [RecordEntity]) {
@@ -444,13 +449,14 @@ extension HomeViewController: UITextFieldDelegate {
 }
 
 extension HomeViewController: PositionViewControllerDelegate {
-    func positionSelected(location: CLLocationCoordinate2D, address: String, distance: Int) {
+    func positionSelected(location: CLLocationCoordinate2D, address: String, distance: PositionRangeEntity) {
         let long = String(location.longitude)
         let lat = String(location.latitude)
         paramFilter.long = long
         paramFilter.lat = lat
         lbPosition.text = address
-        self.paramFilter.radius = self.dataSource[distance].title&
+        self.lbDistance.text = distance.title
+        self.paramFilter.radius = distance.value&
         presenter?.filterRecord(param: paramFilter)
     }
 }

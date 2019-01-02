@@ -14,7 +14,7 @@ import GooglePlaces
 import DropDown
 
 protocol PositionViewControllerDelegate: class {
-    func positionSelected(location: CLLocationCoordinate2D, address: String, distance: Int, scale: String)
+    func positionSelected(location: CLLocationCoordinate2D, address: String, distance: PositionRangeEntity)
 }
 
 class PositionViewController: BaseViewController {
@@ -31,8 +31,8 @@ class PositionViewController: BaseViewController {
     var centerMapCoordinate:CLLocationCoordinate2D!
     var marker:GMSMarker!
     var address = ""
-    var dataSource: [String] = []
-    var indexDistance = 0
+    var dataSource: [PositionRangeEntity] = []
+    var distance: PositionRangeEntity?
     weak var delegate: PositionViewControllerDelegate?
     let scaleDropdown = DropDown()
     
@@ -65,6 +65,7 @@ class PositionViewController: BaseViewController {
         scaleDropdown.selectionAction = { [weak self](index, item) in
             guard let `self` = self else { return }
             self.lbScale.text = item
+            self.distance = self.dataSource[index]
 //            if  self.dataSource[index].title& == "Không giới hạn" {
 //                self.paramFilter.radius = ""
 //            } else {
@@ -72,6 +73,7 @@ class PositionViewController: BaseViewController {
 //            }
 //            self.presenter?.filterRecord(param: self.paramFilter)
         }
+        scaleDropdown.dataSource = dataSource.map({$0.title&})
     }
 
     override func setUpNavigation() {
@@ -86,7 +88,8 @@ class PositionViewController: BaseViewController {
     }
     
     @objc func btnDoneTapped() {
-        delegate?.positionSelected(location: centerMapCoordinate, address: tfAddress.text&, distance: 2, scale: <#String#>)
+        guard let distance = distance else { return }
+        delegate?.positionSelected(location: centerMapCoordinate, address: tfAddress.text&, distance: distance)
         presenter?.dismiss()
     }
     

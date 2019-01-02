@@ -11,8 +11,8 @@
 import UIKit
 
 class HomePresenter: HomePresenterProtocol {
-    func gotoPositionMaps(delegate: PositionViewControllerDelegate, address: String, dataSource: [PositionRangeEntity]) {
-        router.gotoPositionMaps(delegate: delegate, address: address, dataSource: dataSource)
+    func gotoPositionMaps(delegate: PositionViewControllerDelegate, address: String, dataSource: [PositionRangeEntity], distance: PositionRangeEntity) {
+        router.gotoPositionMaps(delegate: delegate, address: address, dataSource: dataSource, distance: distance)
     }
     
     func getPositionRange() {
