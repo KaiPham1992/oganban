@@ -28,9 +28,16 @@ class MyExchangeViewController: BaseViewController {
     
     let dropDownStatus = DropDown()
     
-    var listData: [RecordEntity] = [] {
+    var listData: [OrderEntity] = [] {
         didSet {
             tbMyExchange.reloadData()
+            
+            if self.listData.isEmpty {
+                tbMyExchange.isHidden = true
+                showNoData()
+            } else {
+                hideNoData()
+            }
         }
     }
     
@@ -43,6 +50,11 @@ class MyExchangeViewController: BaseViewController {
         
         configTableView()
         setupDropDownStatus()
+        getData()
+    }
+    
+    func getData() {
+        self.presenter?.getTransactionSeller(status: "new", limit: 10, offset: 0)
     }
     
     func configTableView() {
@@ -52,6 +64,7 @@ class MyExchangeViewController: BaseViewController {
         tbMyExchange.registerTableCell(MyBuyCell.self)
         
         tbMyExchange.contentInset.bottom = 10
+//        tbMyExchange.separatorStyle = .none
     }
     
     private func setupDropDownStatus() {
@@ -71,6 +84,7 @@ class MyExchangeViewController: BaseViewController {
             switch item {
             case "Chờ duyệt":
                 self.lbTotal.text = "Tổng đơn hàng đang chờ duyệt: \(self.listData.count)"
+                self.presenter?.getTransactionSeller(status: "new", limit: 10, offset: 0)
             case "Đang giao":
                 self.lbTotal.text = "Tổng đơn hàng đang giao: \(self.listData.count)"
             case "Hoàn Tất":
@@ -92,23 +106,23 @@ class MyExchangeViewController: BaseViewController {
 
 extension MyExchangeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return listData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueTableCell(MyBuyCell.self)
-        
+        cell.vMyBuyView.order = listData[indexPath.item]
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 140
+        return 120
     }
 }
 
 extension MyExchangeViewController: MyExchangeViewProtocol {
     
-    func didGetTransactionSeller(data: [RecordEntity]) {
+    func didGetTransactionSeller(data: [OrderEntity]) {
         self.listData = data
     }
     

@@ -22,8 +22,8 @@ class MySellExpiredPresenter: MySellExpiredPresenterProtocol {
         self.router = router
     }
 
-    func getSellExpired() {
-        interactor?.getSellExpired()
+    func getSellExpired(status: String, limit: Int, offset: Int) {
+        interactor?.getSellExpired(status: status, limit: limit, offset: offset)
     }
 }
 

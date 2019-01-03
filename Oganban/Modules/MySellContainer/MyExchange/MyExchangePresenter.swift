@@ -28,7 +28,7 @@ class MyExchangePresenter: MyExchangePresenterProtocol {
 }
 
 extension MyExchangePresenter: MyExchangeInteractorOutputProtocol {
-    func didGetTransactionSeller(data: [RecordEntity]) {
+    func didGetTransactionSeller(data: [OrderEntity]) {
         view?.didGetTransactionSeller(data: data)
     }
 }

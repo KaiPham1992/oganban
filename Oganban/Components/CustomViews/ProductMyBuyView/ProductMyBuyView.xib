@@ -21,6 +21,7 @@
             <connections>
                 <outlet property="imgAvatar" destination="adx-uU-G7W" id="BeL-rN-dLR"/>
                 <outlet property="imgProduct" destination="eYL-YP-jcQ" id="kQZ-Ok-P4O"/>
+                <outlet property="lbAvgRating" destination="t81-9E-sw6" id="Z4W-e8-epm"/>
                 <outlet property="lbName" destination="v6f-fo-vwj" id="xAz-Fn-WAi"/>
                 <outlet property="lbNote" destination="11A-xD-PfX" id="uKx-MT-2jG"/>
                 <outlet property="lbPrice" destination="MVw-gC-3ME" id="FQS-6q-vRr"/>

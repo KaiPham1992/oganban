@@ -45,6 +45,7 @@ class MySellingViewController: BaseViewController {
         }
     }
     
+    
 	override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -82,7 +83,7 @@ class MySellingViewController: BaseViewController {
         tbMySelling.delegate = self
         
         tbMySelling.registerTableCell(MySellingCell.self)
-        tbMySelling.separatorStyle = .none
+//        tbMySelling.separatorStyle = .none
         tbMySelling.contentInset.bottom = 10
     }
     

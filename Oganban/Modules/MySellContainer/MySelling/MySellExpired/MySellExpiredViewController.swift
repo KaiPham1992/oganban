@@ -23,6 +23,13 @@ class MySellExpiredViewController: BaseViewController {
     var listSellExpired: [RecordEntity] = [] {
         didSet {
             tbExpired.reloadData()
+            
+            if self.listSellExpired.isEmpty {
+                tbExpired.isHidden = true
+                showNoData()
+            } else {
+                hideNoData()
+            }
         }
     }
     
@@ -48,10 +55,11 @@ class MySellExpiredViewController: BaseViewController {
         tbExpired.registerTableCell(MySellingCell.self)
         
         tbExpired.contentInset.bottom = 10
+//        tbExpired.separatorStyle = .none
     }
     
     func getData() {
-        presenter?.getSellExpired()
+        presenter?.getSellExpired(status: "hide", limit: 10, offset: 0)
     }
     
     @objc private func refeshData() {
@@ -63,11 +71,11 @@ class MySellExpiredViewController: BaseViewController {
 
 extension MySellExpiredViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return listSellExpired.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueTableCell(MySellingCell.self)
-        
+        cell.vRecordSelling.record = listSellExpired[indexPath.item]
         return cell
     }
     

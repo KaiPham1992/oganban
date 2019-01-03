@@ -19,7 +19,7 @@ protocol MySellExpiredPresenterProtocol: class {
 
     var interactor: MySellExpiredInteractorInputProtocol? { get set }
     
-    func getSellExpired()
+    func getSellExpired(status: String, limit: Int, offset: Int)
 }
 
 //MARK: Interactor -
@@ -35,7 +35,7 @@ protocol MySellExpiredInteractorInputProtocol: class {
     var presenter: MySellExpiredInteractorOutputProtocol?  { get set }
 
     /* Presenter -> Interactor */
-    func getSellExpired()
+    func getSellExpired(status: String, limit: Int, offset: Int)
 }
 
 //MARK: View -

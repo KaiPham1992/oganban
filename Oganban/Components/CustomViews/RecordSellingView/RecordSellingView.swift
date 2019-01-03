@@ -22,9 +22,9 @@ class RecordSellingView: BaseViewXib {
     var record: RecordEntity? {
         didSet {
             guard let _record = record else { return }
-//            if let url = URL(string: "\(BASE_URL_IMAGE)\(_record.imgSrc ?? "")") {
-//                imgProduct.sd_setImage(with: url, placeholderImage: AppImage.imgLogo)
-//            }
+            if let url = URL(string: "\(BASE_URL_IMAGE)\(_record.imgHome ?? "")") {
+                imgProduct.sd_setImage(with: url, placeholderImage: AppImage.imgLogo)
+            }
             lbProductName.text = _record.name
             lbTime.text = _record.createTime?.timeAgo()
             lbPrice.text = "\(_record.price?.description ?? "") đ"
