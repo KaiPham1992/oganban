@@ -9,10 +9,16 @@
 import Foundation
 import GoogleMobileAds
 
+protocol AdmobNativeViewDelegate: class {
+    func admobNativeView(_ admobNativeView: AdmobNativeView)
+}
+
 class AdmobNativeView: BaseViewXib {
     
     @IBOutlet weak var vAdsGoogle: GADUnifiedNativeAdView!
     var adLoader: GADAdLoader!
+    
+    weak var delegate: AdmobNativeViewDelegate?
     
     override func setUpViews() {
         super.setUpViews()
@@ -32,35 +38,38 @@ extension AdmobNativeView: GADUnifiedNativeAdLoaderDelegate {
     
     func adLoader(_ adLoader: GADAdLoader, didReceive nativeAd: GADUnifiedNativeAd) {
         vAdsGoogle.nativeAd = nativeAd
-//        nativeAd.delegate = self
+        nativeAd.delegate = self
     }
 }
 
 // MARK: - GADUnifiedNativeAdDelegate implementation
-//extension AdmobNativeView : GADUnifiedNativeAdDelegate {
-//
-//    func nativeAdDidRecordClick(_ nativeAd: GADUnifiedNativeAd) {
-//        print("\(#function) called")
-//    }
-//
-//    func nativeAdDidRecordImpression(_ nativeAd: GADUnifiedNativeAd) {
-//        print("\(#function) called")
-//    }
-//
-//    func nativeAdWillPresentScreen(_ nativeAd: GADUnifiedNativeAd) {
-//        print("\(#function) called")
-//    }
-//
-//    func nativeAdWillDismissScreen(_ nativeAd: GADUnifiedNativeAd) {
-//        print("\(#function) called")
-//    }
-//
-//    func nativeAdDidDismissScreen(_ nativeAd: GADUnifiedNativeAd) {
-//        print("\(#function) called")
-//    }
-//
-//    func nativeAdWillLeaveApplication(_ nativeAd: GADUnifiedNativeAd) {
-//        print("\(#function) called")
-//    }
-//}
+extension AdmobNativeView : GADUnifiedNativeAdDelegate {
+
+    func nativeAdDidRecordClick(_ nativeAd: GADUnifiedNativeAd) {
+        print("\(#function) called")
+        
+    }
+
+    func nativeAdDidRecordImpression(_ nativeAd: GADUnifiedNativeAd) {
+        print("\(#function) called")
+    }
+
+    func nativeAdWillPresentScreen(_ nativeAd: GADUnifiedNativeAd) {
+        print("\(#function) called")
+         delegate?.admobNativeView(self)
+    }
+
+    func nativeAdWillDismissScreen(_ nativeAd: GADUnifiedNativeAd) {
+        print("\(#function) called")
+    }
+
+    func nativeAdDidDismissScreen(_ nativeAd: GADUnifiedNativeAd) {
+        print("\(#function) called")
+    }
+
+    func nativeAdWillLeaveApplication(_ nativeAd: GADUnifiedNativeAd) {
+        print("\(#function) called")
+        delegate?.admobNativeView(self)
+    }
+}
 

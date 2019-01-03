@@ -8,8 +8,9 @@ def main_pods
     pod 'Firebase/Core'
     pod 'GoogleMaps', '2.7.0'
     pod 'GooglePlaces', '2.7.0'
-    pod 'FBSDKLoginKit', '4.38.0'
-    pod 'FBSDKCoreKit', '4.38.0'
+    pod 'FBSDKLoginKit', '4.39.0'
+    #pod 'FBSDKCoreKit', '4.38.1'
+    pod 'FBSDKCoreKit', :git => 'https://github.com/facebook/facebook-objc-sdk.git', :branch => 'master'
     pod 'GoogleSignIn', '4.3.0'
     pod 'DropDown'
     pod 'CryptoSwift', :git => "https://github.com/krzyzanowskim/CryptoSwift", :branch => "master"

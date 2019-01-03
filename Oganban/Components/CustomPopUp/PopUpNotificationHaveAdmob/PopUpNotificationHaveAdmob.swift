@@ -8,10 +8,11 @@
 
 import Foundation
 
-class PopUpNotificationHaveAdmob: BasePopUpView {
+class PopUpNotificationHaveAdmob: BasePopUpView, AdmobNativeViewDelegate {
     lazy var vHaveAdmob: PopUpNotificationHaveAdmobContent = {
         let v = PopUpNotificationHaveAdmobContent()
         v.btnClose.addTarget(self, action: #selector(btnCloseTapped), for: .touchUpInside)
+        v.admobNativeView.delegate = self
         return v
     }()
     
@@ -25,5 +26,9 @@ class PopUpNotificationHaveAdmob: BasePopUpView {
         let width = UIScreen.main.bounds.width - 30
         vHaveAdmob.lbMessage.text = message
         super.showPopUp(width: width, height: 256, type: .zoomOut)
+    }
+    
+    func admobNativeView(_ admobNativeView: AdmobNativeView) {
+        hidePopUp()
     }
 }

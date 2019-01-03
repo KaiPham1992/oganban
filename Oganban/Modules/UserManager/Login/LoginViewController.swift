@@ -43,6 +43,17 @@ class LoginViewController: BaseViewController {
     
     var verifyCode: String?
     
+   var _fbLoginManager: FBSDKLoginManager?
+    
+    var fbLoginManager: FBSDKLoginManager {
+        get {
+            if _fbLoginManager == nil {
+                _fbLoginManager = FBSDKLoginManager()
+            }
+            return _fbLoginManager!
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

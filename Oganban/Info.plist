@@ -2,19 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Oganban muốn sử dụng vị trí</string>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
-	<key>NSCameraUsageDescription</key>
-	<string>Oganban cần sử dụng camera để đăng hình</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Oganban cần sử dụng thư viện ảnh để đăng hình</string>
-	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<false/>
 	<key>AccountKitClientToken</key>
 	<string>195782fa5d85685a90d770734824afb3</string>
 	<key>CFBundleDevelopmentRegion</key>
@@ -51,7 +38,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>201901020048</string>
 	<key>FacebookAppID</key>
 	<string>225241758398999</string>
 	<key>FacebookDisplayName</key>
@@ -65,6 +52,17 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Oganban cần sử dụng camera để đăng hình</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Oganban muốn sử dụng vị trí</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Oganban cần sử dụng thư viện ảnh để đăng hình</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Roboto-Bold.ttf</string>
@@ -99,5 +97,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 </dict>
 </plist>

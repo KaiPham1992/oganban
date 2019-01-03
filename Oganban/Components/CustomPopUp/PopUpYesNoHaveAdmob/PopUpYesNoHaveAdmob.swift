@@ -8,11 +8,12 @@
 
 import Foundation
 
-class PopUpYesNoHaveAdmob: BasePopUpView {
+class PopUpYesNoHaveAdmob: BasePopUpView, AdmobNativeViewDelegate {
     lazy var vHaveAdmob: PopUpYesNoHaveAdmobContent = {
         let v = PopUpYesNoHaveAdmobContent()
         v.btnYes.addTarget(self, action: #selector(btnYesTapped), for: .touchUpInside)
         v.btnNo.addTarget(self, action: #selector(btnCloseTapped), for: .touchUpInside)
+        v.admobNativeView.delegate = self 
         return v
     }()
     
@@ -38,5 +39,9 @@ class PopUpYesNoHaveAdmob: BasePopUpView {
     override func btnCloseTapped() {
         super.btnCloseTapped()
         self.completionNo?()
+    }
+    
+    func admobNativeView(_ admobNativeView: AdmobNativeView) {
+        hidePopUp()
     }
 }

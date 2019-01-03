@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopUpNotificationHaveAdmobContent" customModule="Oganban" customModuleProvider="target">
             <connections>
+                <outlet property="admobNativeView" destination="Iwr-CM-eWB" id="Br7-mH-SLE"/>
                 <outlet property="btnClose" destination="cOr-Jr-t7F" id="MoP-Jn-yCw"/>
                 <outlet property="lbMessage" destination="iVT-E5-KHb" id="A6a-EF-Ukd"/>
             </connections>
@@ -37,7 +38,8 @@
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iVT-E5-KHb">
                     <rect key="frame" x="20" y="201" width="335" height="36"/>
-                    <string key="text">Số Ơcoin tích lũy của bạn không đủ để đổi sản phẩm. Vui lòng kiểm tra lại !</string>
+                    <string key="text">Số Ơcoin tích lũy của bạn không đủ để 
+đổi sản phẩm. Vui lòng kiểm tra lại !</string>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" red="0.25490196078431371" green="0.25490196078431371" blue="0.25490196078431371" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
