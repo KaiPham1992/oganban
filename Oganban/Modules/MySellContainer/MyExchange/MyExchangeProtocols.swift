@@ -18,19 +18,22 @@ protocol MyExchangeWireframeProtocol: class {
 protocol MyExchangePresenterProtocol: class {
 
     var interactor: MyExchangeInteractorInputProtocol? { get set }
+    func getTransactionSeller(status: String, limit: Int, offset: Int)
 }
 
 //MARK: Interactor -
 protocol MyExchangeInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    func didGetTransactionSeller(data: [RecordEntity])
 }
 
 protocol MyExchangeInteractorInputProtocol: class {
 
     var presenter: MyExchangeInteractorOutputProtocol?  { get set }
-
+    
     /* Presenter -> Interactor */
+    func getTransactionSeller(status: String, limit: Int, offset: Int)
 }
 
 //MARK: View -
@@ -39,4 +42,5 @@ protocol MyExchangeViewProtocol: class {
     var presenter: MyExchangePresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
+    func didGetTransactionSeller(data: [RecordEntity])
 }
