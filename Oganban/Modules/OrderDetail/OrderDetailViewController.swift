@@ -45,6 +45,7 @@ class OrderDetailViewController: BaseViewController {
         }
     }
     
+    var recordId: String?
     var listHeader = ["Chi tiết", "Giới thiệu","Thông tin người bán", "Địa chỉ", "Bình Luận"]
     
     var listComment = [CommentEntity]()
@@ -59,7 +60,7 @@ class OrderDetailViewController: BaseViewController {
         vPostCommentView.delegate = self
         configureTable()
         
-        presenter?.getDetail(id: "31")
+        presenter?.getDetail(id: recordId&)
 //        vPostCommentView.isHidden = true
 //        btnReceived.isHidden = true
         vSelect.isHidden = true

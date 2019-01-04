@@ -11,7 +11,7 @@ import Alamofire
 
 enum RecordEndPoint {
     case getRecordSellerPost(status: String, offset: Int, limit: Int)
-    case getRecordDetail(id: Int)
+    case getRecordDetail(id: String)
     case hideRecord(recordID: Int)
     case postRecord(param: PostRecordParam)
 }

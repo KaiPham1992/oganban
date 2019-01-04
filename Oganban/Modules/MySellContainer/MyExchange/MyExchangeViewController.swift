@@ -141,7 +141,8 @@ extension MyExchangeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = OrderDetailRouter.createModule()
+        let record = listData?.dataOrder[indexPath.item]
+        let vc = OrderDetailRouter.createModule(recordId: record?.id)
         if listData?.dataOrder[indexPath.item].status == "new" {
             vc.isNew = true
         } else if listData?.dataOrder[indexPath.item].status == "wait_delivery" {

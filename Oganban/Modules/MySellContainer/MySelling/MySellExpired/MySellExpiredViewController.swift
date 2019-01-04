@@ -90,8 +90,9 @@ extension MySellExpiredViewController: UITableViewDataSource, UITableViewDelegat
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = OrderDetailRouter.createModule()
-        if listSellExpired?.dataRecord[indexPath.item].status == "hide" {
+        let record = listSellExpired?.dataRecord[indexPath.item]
+        let vc = OrderDetailRouter.createModule(recordId: record?.id)
+        if record?.status == "hide" {
             vc.isMySellHide = true
         } else if listSellExpired?.dataRecord[indexPath.item].status == "expired" {
             vc.isMySellExpired = true

@@ -129,7 +129,8 @@ extension MySellingViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = OrderDetailRouter.createModule()
+        let record = self.listRecord?.dataRecord[indexPath.item]
+        let vc = OrderDetailRouter.createModule(recordId: record?.id)
         parrentNavigation?.pushViewController(vc, animated: true)
     }
     

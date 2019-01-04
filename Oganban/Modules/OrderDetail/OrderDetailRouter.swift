@@ -14,7 +14,7 @@ class OrderDetailRouter: OrderDetailWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule() -> OrderDetailViewController {
+    static func createModule(recordId: String?) -> OrderDetailViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = OrderDetailViewController(nibName: nil, bundle: nil)
         let interactor = OrderDetailInteractor()
@@ -22,6 +22,7 @@ class OrderDetailRouter: OrderDetailWireframeProtocol {
         let presenter = OrderDetailPresenter(interface: view, interactor: interactor, router: router)
 
         view.presenter = presenter
+        view.recordId = recordId
         interactor.presenter = presenter
         router.viewController = view
 
