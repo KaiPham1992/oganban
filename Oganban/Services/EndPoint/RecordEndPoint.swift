@@ -12,6 +12,8 @@ import Alamofire
 enum RecordEndPoint {
     case getRecordSellerPost(status: String, offset: Int, limit: Int)
     case getRecordDetail(id: Int)
+    case hideRecord(recordID: Int)
+    case postRecord(param: PostRecordParam)
 }
 
 extension RecordEndPoint: EndPointType {
@@ -21,15 +23,21 @@ extension RecordEndPoint: EndPointType {
             return "_api/record/get_record_seller_post"
         case .getRecordDetail(let id):
             return "_api/record/get_record_detail/\(id)"
+        case .hideRecord:
+            return "_api/record/hide_record"
+        case .postRecord:
+            return "_api/record/add_record"
         }
     }
     
     var httpMethod: HTTPMethod {
         switch self {
-        case .getRecordSellerPost:
+        case .getRecordSellerPost, .postRecord:
             return .post
         case .getRecordDetail:
             return .get
+        case .hideRecord:
+            return .put
         }
     }
     
@@ -42,6 +50,11 @@ extension RecordEndPoint: EndPointType {
             return param
         case .getRecordDetail:
             return [:]
+        case .hideRecord(let recordID):
+            let param = ["record_id": recordID]
+            return param
+        case .postRecord(let param):
+            return param.toJSON()
         }
     }
     

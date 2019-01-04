@@ -95,12 +95,16 @@ class AppRadioButton: BaseView {
         self.imgCheck = image
         self.imgIcon.image = image
     }
+    
+    func setTwoImage(imgCheck: UIImage, imgUnCheck: UIImage) {
+        self.imgUnCheck = imgUnCheck
+        self.imgCheck = imgCheck
+        self.imgIcon.image = imgUnCheck
+    }
 }
 
 
 extension AppRadioButton {
-    
-    
     func setMoney(money: String) {
         let attr = NSMutableAttributedString()
         let attr1 = "Tiền mặt: ".toAttributedString(color: AppColor.red_210_2_2, font: AppFont.fontRegular13, isUnderLine: false)

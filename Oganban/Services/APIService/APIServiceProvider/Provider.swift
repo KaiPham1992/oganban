@@ -36,4 +36,8 @@ class Provider {
     var recordAPIService: RecordAPIServiceProtocol {
         return RecordAPIService(network: networkManager)
     }
+    
+    var orderAPIService: OrderAPIServiceProtocol {
+        return OrderAPIService(network: networkManager)
+    }
 }

@@ -43,17 +43,6 @@ class LoginViewController: BaseViewController {
     
     var verifyCode: String?
     
-   var _fbLoginManager: FBSDKLoginManager?
-    
-    var fbLoginManager: FBSDKLoginManager {
-        get {
-            if _fbLoginManager == nil {
-                _fbLoginManager = FBSDKLoginManager()
-            }
-            return _fbLoginManager!
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -64,6 +53,8 @@ class LoginViewController: BaseViewController {
         self.addDelegate()
         self.hideError()
         self.fbAccountKit = FBAccountKit(_controller: self)
+        NotificationCenter.default.removeObserver(self)
+        NotificationCenter.default.addObserver(self, selector: #selector(didGetVerifyCode), name: AppConstant.notiDidUpdateSocial, object: nil)
     }
     
     override func setUpNavigation() {

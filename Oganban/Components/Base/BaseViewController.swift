@@ -71,6 +71,14 @@ class BaseViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
     }
     
+    func showTabbar() {
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    func hideTabbar() {
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
     func setRedStatusBar() {
         UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)

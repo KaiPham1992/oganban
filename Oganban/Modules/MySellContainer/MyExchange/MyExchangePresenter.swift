@@ -10,7 +10,7 @@
 
 import UIKit
 
-class MyExchangePresenter: MyExchangePresenterProtocol, MyExchangeInteractorOutputProtocol {
+class MyExchangePresenter: MyExchangePresenterProtocol {
 
     weak private var view: MyExchangeViewProtocol?
     var interactor: MyExchangeInteractorInputProtocol?
@@ -22,4 +22,13 @@ class MyExchangePresenter: MyExchangePresenterProtocol, MyExchangeInteractorOutp
         self.router = router
     }
 
+    func getTransactionSeller(status: String, limit: Int, offset: Int) {
+        interactor?.getTransactionSeller(status: status, limit: limit, offset: offset)
+    }
+}
+
+extension MyExchangePresenter: MyExchangeInteractorOutputProtocol {
+    func didGetTransactionSeller(data: [RecordEntity]) {
+        view?.didGetTransactionSeller(data: data)
+    }
 }

@@ -88,6 +88,16 @@ class UserDefaultHelper {
     var isSocialLogin: Bool {
         return  loginUserInfo?.socialImage != nil 
     }
+    
+    var lat: String {
+        guard let _lat = get(key: .lat) as? CLLocationDegrees else { return ""}
+        return _lat.description
+    }
+    
+    var long: String {
+        guard let _lat = get(key: .long) as? CLLocationDegrees else { return ""}
+        return _lat.description
+    }
 }
 
 extension UserDefaultHelper {

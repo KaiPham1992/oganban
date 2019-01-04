@@ -13,4 +13,12 @@ import UIKit
 class MyExchangeInteractor: MyExchangeInteractorInputProtocol {
 
     weak var presenter: MyExchangeInteractorOutputProtocol?
+    
+    func getTransactionSeller(status: String, limit: Int, offset: Int) {
+        Provider.shared.orderAPIService.getTransactionSeller(status: status, limit: limit, offset: offset, success: { (data) in
+            self.presenter?.didGetTransactionSeller(data: data)
+        }) { (_) in
+            
+        }
+    }
 }

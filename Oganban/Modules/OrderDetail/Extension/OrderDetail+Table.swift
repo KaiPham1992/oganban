@@ -35,6 +35,7 @@ extension OrderDetailViewController: UITableViewDelegate, UITableViewDataSource 
         switch indexPath.section {
         case OrderDetailInfoType.infoProduct.rawValue:
             let cell = tbDetail.dequeue(OrderDetailImageCell.self, for: indexPath)
+            cell.delegate = self
             cell.record = self.record
             return cell
         case OrderDetailInfoType.intro.rawValue:
@@ -72,7 +73,9 @@ extension OrderDetailViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-        case OrderDetailInfoType.infoProduct.rawValue, OrderDetailInfoType.intro.rawValue, OrderDetailInfoType.infoSaler.rawValue, OrderDetailInfoType.address.rawValue:
+        case OrderDetailInfoType.infoProduct.rawValue, OrderDetailInfoType.intro.rawValue, OrderDetailInfoType.infoSaler.rawValue:
+            return 1
+        case OrderDetailInfoType.address.rawValue:
             return 1
         default:
             let indexComment = section - (self.listHeader.count - 1)

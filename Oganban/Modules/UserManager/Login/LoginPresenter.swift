@@ -60,6 +60,10 @@ extension LoginPresenter: LoginInteractorOutputProtocol {
         view?.didError(error: error)
     }
     
+    func getVerifyCode(verifyCode: String) {
+        
+    }
+    
 //    func didUpdateProfile(error: APIError?) {
 //        view?.didError(error: error)
 //    }

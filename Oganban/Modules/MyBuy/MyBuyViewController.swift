@@ -34,6 +34,11 @@ class MyBuyViewController: BaseViewController {
         setupDropDownStatus()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        showTabbar()
+    }
+    
     func configTableView() {
         tbMyBuy.dataSource = self
         tbMyBuy.delegate = self
@@ -92,6 +97,12 @@ extension MyBuyViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 140
+    }
+    
+    // FIX ME
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = PostStepOneRouter.createModule()
+        self.push(controller: vc)
     }
 }
 

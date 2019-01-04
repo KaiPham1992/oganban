@@ -26,6 +26,11 @@ class OrderDetailViewController: BaseViewController {
     @IBOutlet weak var bottomConstant: NSLayoutConstraint!
     @IBOutlet weak var heightConstant: NSLayoutConstraint!
     
+    @IBOutlet weak var vSelect: UIView!
+    @IBOutlet weak var btnAccept: UIButton!
+    @IBOutlet weak var btnDecline: UIButton!
+    @IBOutlet weak var btnReceived: UIButton!
+    
     var record: RecordEntity? {
         didSet {
             tbDetail.reloadData()
@@ -47,6 +52,9 @@ class OrderDetailViewController: BaseViewController {
         configureTable()
         
         presenter?.getDetail(id: "31")
+//        vPostCommentView.isHidden = true
+//        btnReceived.isHidden = true
+        vSelect.isHidden = true
     }
     
     override func setUpNavigation() {
@@ -79,5 +87,21 @@ class OrderDetailViewController: BaseViewController {
 extension OrderDetailViewController: OrderDetailViewProtocol {
     func didGetDetail(record: RecordEntity?) {
         self.record = record
+    }
+    
+    func didHideRecord(data: BaseResponse?) {
+        PopUpHelper.shared.showMessageHaveAds(message: "Bạn đã ẩn tin đăng bán sản phẩm này !") {
+            self.pop()
+        }
+    }
+}
+
+extension OrderDetailViewController: OrderDetailImageCellDelegate {
+    func btnHideTapped() {
+        PopUpHelper.shared.showYesNoQuestionHaveAds(question: "Bạn có chắc muốn ẩn bài đăng này ?", completionYes: {
+            self.presenter?.hideRecord(recordID: 5)
+        }) {
+            
+        }
     }
 }

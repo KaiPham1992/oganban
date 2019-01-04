@@ -44,6 +44,16 @@ struct TitleString {
     static let markReadAll = "MarkReadAll"
     static let notification = "Thông báo"
     
+    // post record step 1
+    static let titleRecord             = "Tiêu đề tin *"
+    static let placeTitleRecord  = "Nhập tiêu đề tin (Tối đa 60 ký tự)"
+    
+    static let titleQuantity             = "Số lượng"
+    static let placeTitleQuantity  = "1"
+    
+    static let titleExpireSell             = "Thời hạn đăng bán *"
+    static let placeTitleExpireSell = "Chọn Ngày"
+    
 }
 
 struct ButtonName {

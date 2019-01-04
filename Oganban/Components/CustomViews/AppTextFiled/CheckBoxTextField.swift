@@ -1,18 +1,14 @@
 //
-//  FTextFieldChooseDate.swift
+//  CheckBoxTextField.swift
 //  Oganban
 //
-//  Created by DINH VAN TIEN on 12/22/18.
-//  Copyright © 2018 Coby. All rights reserved.
+//  Created by Kai Pham on 1/4/19.
+//  Copyright © 2019 Coby. All rights reserved.
 //
 
 import UIKit
 
-protocol FTextFieldChooseDelegate: class {
-    func btnChooseTapped(sender: FTextFieldChoose)
-}
-
-class FTextFieldChoose: BaseView {
+class CheckBoxTextField: BaseView {
     let vContent: UIView = {
         let view = UIView()
         view.backgroundColor = .white
@@ -28,25 +24,15 @@ class FTextFieldChoose: BaseView {
         return tf
     }()
     
-    let lbTitle: UILabel = {
-        let lb = UILabel()
-        lb.textColor = AppColor.textLabel
-        lb.font = AppFont.fontRegularRoboto12
-        lb.backgroundColor = .white
-        return lb
-    }()
-    
-    let imgDown: UIImageView = {
-        let img = UIImageView()
-        img.image = AppImage.imgDown
-        return img
-    }()
-    
-    let btnChoose: UIButton = {
-        let btn = UIButton()
-        btn.addTarget(self, action: #selector(btnChooseTapped), for: .touchUpInside)
+    let btnCheckBox: AppRadioButton = {
+        let btn = AppRadioButton()
+        btn.setTwoImage(imgCheck: AppImage.imgCheckedTerm, imgUnCheck: AppImage.imgCheckTerm)
+        btn.lbTitle.textColor = AppColor.textLabel
+        btn.lbTitle.font = AppFont.fontRegularRoboto12
+        
         return btn
     }()
+    
     
     let vLine: UIView = {
         let view = UIView()
@@ -54,26 +40,22 @@ class FTextFieldChoose: BaseView {
         return view
     }()
     
-    weak var delegate: FTextFieldChooseDelegate?
-    
     override func setUpViews() {
         self.addSubview(vContent)
-        vContent.addSubview(lbTitle)
+        vContent.addSubview(btnCheckBox)
         vContent.addSubview(vLine)
         vContent.addSubview(textField)
-        vContent.addSubview(imgDown)
-        vContent.addSubview(btnChoose)
         
         vContent.fillSuperview()
-        lbTitle.anchor(vContent.topAnchor,
+        btnCheckBox.anchor(vContent.topAnchor,
                        left         : vContent.leftAnchor,
                        right        : vContent.rightAnchor,
                        topConstant  : 0,
                        leftConstant : 0,
-                       rightConstant: 0)
-        textField.fillSuperview()
+                       rightConstant: 0,
+                       heightConstant: 20)
+        textField.anchor(btnCheckBox.bottomAnchor, left: btnCheckBox.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0)
         
-        imgDown.anchor(bottom: vContent.bottomAnchor, right: vContent.rightAnchor, bottomConstant: 5, rightConstant: 5, widthConstant: 15, heightConstant: 15)
         vLine.anchor(left           : vContent.leftAnchor,
                      bottom         : vContent.bottomAnchor,
                      right          : vContent.rightAnchor,
@@ -81,12 +63,11 @@ class FTextFieldChoose: BaseView {
                      bottomConstant : 0,
                      rightConstant  : 0,
                      heightConstant : 1)
-        btnChoose.fillSuperview()
         textField.delegate = self
     }
     
     func setTitleTextField(text: String) {
-        lbTitle.text = text
+        btnCheckBox.setTitle(title: text)
     }
     
     func setPlaceholder(placeHolder: String) {
@@ -95,17 +76,13 @@ class FTextFieldChoose: BaseView {
     }
     
     func setTextField(title: String, placeHolder: String) {
-        lbTitle.text = title
+        btnCheckBox.setTitle(title: title)
         textField.attributedPlaceholder = NSAttributedString(string: placeHolder,
                                                              attributes: [NSAttributedString.Key.foregroundColor: AppColor.gray_65_65_65])
     }
-    
-    @objc func btnChooseTapped() {
-        delegate?.btnChooseTapped(sender: self)
-    }
 }
 
-extension FTextFieldChoose: UITextFieldDelegate {
+extension CheckBoxTextField: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         vLine.backgroundColor = UIColor.red
     }
@@ -114,4 +91,3 @@ extension FTextFieldChoose: UITextFieldDelegate {
         vLine.backgroundColor = AppColor.textLabel
     }
 }
-

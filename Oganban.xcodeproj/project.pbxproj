@@ -109,6 +109,8 @@
 		CB0C3A2621D3BECD0052DD91 /* ForgotPasswordProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0C3A2021D3BECD0052DD91 /* ForgotPasswordProtocols.swift */; };
 		CB0C3A2721D3BECD0052DD91 /* ForgotPasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0C3A2121D3BECD0052DD91 /* ForgotPasswordInteractor.swift */; };
 		CB0C3A2821D3BECD0052DD91 /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB0C3A2221D3BECD0052DD91 /* ForgotPasswordViewController.xib */; };
+		CB0FD72021DDBAD10093B06B /* OrderEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0FD71F21DDBAD10093B06B /* OrderEndPoint.swift */; };
+		CB0FD72221DDBC670093B06B /* OrderAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0FD72121DDBC670093B06B /* OrderAPIService.swift */; };
 		CB172B2F21C6A22A0068CF92 /* BaseParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B2721C6A22A0068CF92 /* BaseParam.swift */; };
 		CB172B3921C6A26F0068CF92 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B3321C6A26F0068CF92 /* APIError.swift */; };
 		CB172B3A21C6A26F0068CF92 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B3521C6A26F0068CF92 /* BaseResponse.swift */; };
@@ -293,6 +295,21 @@
 		DE21828721CD473100FDD9F1 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21826021CD473100FDD9F1 /* ProgressView.swift */; };
 		DE21829121CD4E7F00FDD9F1 /* AppTextFiled.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21828F21CD4E7F00FDD9F1 /* AppTextFiled.swift */; };
 		DE21829421CD4EB600FDD9F1 /* FTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE21829321CD4EB600FDD9F1 /* FTextField.swift */; };
+		DE33034B21DF13EB00409F83 /* PostStepOnePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE33034521DF13EB00409F83 /* PostStepOnePresenter.swift */; };
+		DE33034C21DF13EB00409F83 /* PostStepOneRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE33034621DF13EB00409F83 /* PostStepOneRouter.swift */; };
+		DE33034D21DF13EB00409F83 /* PostStepOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE33034721DF13EB00409F83 /* PostStepOneViewController.swift */; };
+		DE33034E21DF13EB00409F83 /* PostStepOneProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE33034821DF13EB00409F83 /* PostStepOneProtocols.swift */; };
+		DE33034F21DF13EB00409F83 /* PostStepOneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE33034921DF13EB00409F83 /* PostStepOneInteractor.swift */; };
+		DE33035021DF13EB00409F83 /* PostStepOneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE33034A21DF13EB00409F83 /* PostStepOneViewController.xib */; };
+		DE33035421DF1D7B00409F83 /* AppTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE33035321DF1D7B00409F83 /* AppTextView.swift */; };
+		DE33035621DF53CE00409F83 /* PostRecordParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE33035521DF53CE00409F83 /* PostRecordParam.swift */; };
+		DE33035E21DF5EDB00409F83 /* PostStepTwoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE33035821DF5EDB00409F83 /* PostStepTwoPresenter.swift */; };
+		DE33035F21DF5EDB00409F83 /* PostStepTwoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE33035921DF5EDB00409F83 /* PostStepTwoRouter.swift */; };
+		DE33036021DF5EDB00409F83 /* PostStepTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE33035A21DF5EDB00409F83 /* PostStepTwoViewController.swift */; };
+		DE33036121DF5EDB00409F83 /* PostStepTwoProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE33035B21DF5EDB00409F83 /* PostStepTwoProtocols.swift */; };
+		DE33036221DF5EDB00409F83 /* PostStepTwoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE33035C21DF5EDB00409F83 /* PostStepTwoInteractor.swift */; };
+		DE33036321DF5EDB00409F83 /* PostStepTwoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE33035D21DF5EDB00409F83 /* PostStepTwoViewController.xib */; };
+		DE33036521DF685800409F83 /* CheckBoxTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE33036421DF685800409F83 /* CheckBoxTextField.swift */; };
 		DE442C3021CF93750051C0B8 /* CommonAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE442C2F21CF93750051C0B8 /* CommonAPIService.swift */; };
 		DE442C3221CF93C60051C0B8 /* PhotoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE442C3121CF93C60051C0B8 /* PhotoEntity.swift */; };
 		DE442C3421CF94600051C0B8 /* CommonEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE442C3321CF94600051C0B8 /* CommonEndPoint.swift */; };
@@ -480,6 +497,8 @@
 		CB0C3A2021D3BECD0052DD91 /* ForgotPasswordProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordProtocols.swift; sourceTree = "<group>"; };
 		CB0C3A2121D3BECD0052DD91 /* ForgotPasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordInteractor.swift; sourceTree = "<group>"; };
 		CB0C3A2221D3BECD0052DD91 /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
+		CB0FD71F21DDBAD10093B06B /* OrderEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderEndPoint.swift; sourceTree = "<group>"; };
+		CB0FD72121DDBC670093B06B /* OrderAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderAPIService.swift; sourceTree = "<group>"; };
 		CB172B2721C6A22A0068CF92 /* BaseParam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseParam.swift; sourceTree = "<group>"; };
 		CB172B3321C6A26F0068CF92 /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		CB172B3521C6A26F0068CF92 /* BaseResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
@@ -669,6 +688,21 @@
 		DE21826021CD473100FDD9F1 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		DE21828F21CD4E7F00FDD9F1 /* AppTextFiled.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTextFiled.swift; sourceTree = "<group>"; };
 		DE21829321CD4EB600FDD9F1 /* FTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTextField.swift; sourceTree = "<group>"; };
+		DE33034521DF13EB00409F83 /* PostStepOnePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostStepOnePresenter.swift; sourceTree = "<group>"; };
+		DE33034621DF13EB00409F83 /* PostStepOneRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostStepOneRouter.swift; sourceTree = "<group>"; };
+		DE33034721DF13EB00409F83 /* PostStepOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostStepOneViewController.swift; sourceTree = "<group>"; };
+		DE33034821DF13EB00409F83 /* PostStepOneProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostStepOneProtocols.swift; sourceTree = "<group>"; };
+		DE33034921DF13EB00409F83 /* PostStepOneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostStepOneInteractor.swift; sourceTree = "<group>"; };
+		DE33034A21DF13EB00409F83 /* PostStepOneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostStepOneViewController.xib; sourceTree = "<group>"; };
+		DE33035321DF1D7B00409F83 /* AppTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextView.swift; sourceTree = "<group>"; };
+		DE33035521DF53CE00409F83 /* PostRecordParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRecordParam.swift; sourceTree = "<group>"; };
+		DE33035821DF5EDB00409F83 /* PostStepTwoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostStepTwoPresenter.swift; sourceTree = "<group>"; };
+		DE33035921DF5EDB00409F83 /* PostStepTwoRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostStepTwoRouter.swift; sourceTree = "<group>"; };
+		DE33035A21DF5EDB00409F83 /* PostStepTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostStepTwoViewController.swift; sourceTree = "<group>"; };
+		DE33035B21DF5EDB00409F83 /* PostStepTwoProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostStepTwoProtocols.swift; sourceTree = "<group>"; };
+		DE33035C21DF5EDB00409F83 /* PostStepTwoInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostStepTwoInteractor.swift; sourceTree = "<group>"; };
+		DE33035D21DF5EDB00409F83 /* PostStepTwoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostStepTwoViewController.xib; sourceTree = "<group>"; };
+		DE33036421DF685800409F83 /* CheckBoxTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxTextField.swift; sourceTree = "<group>"; };
 		DE442C2F21CF93750051C0B8 /* CommonAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonAPIService.swift; sourceTree = "<group>"; };
 		DE442C3121CF93C60051C0B8 /* PhotoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEntity.swift; sourceTree = "<group>"; };
 		DE442C3321CF94600051C0B8 /* CommonEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonEndPoint.swift; sourceTree = "<group>"; };
@@ -822,6 +856,7 @@
 		84A92BE921CA50F000148191 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				DE33035121DF1CD600409F83 /* AppTextView */,
 				DEBEE81421D76C3F004B8D88 /* LevelMemberView */,
 				DEBEE80721D7594E004B8D88 /* AppRadioButton */,
 				CBD1C29C21D74B53006DB3FF /* RecordSellingView */,
@@ -972,6 +1007,7 @@
 			isa = PBXGroup;
 			children = (
 				B392FB4021D3E37C0076A7B5 /* RecordParam.swift */,
+				DE33035521DF53CE00409F83 /* PostRecordParam.swift */,
 			);
 			path = RecordParam;
 			sourceTree = "<group>";
@@ -1040,6 +1076,8 @@
 		CB172B1821C6A1480068CF92 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				DE33035721DF5ECB00409F83 /* PostStepTwo */,
+				DE33034421DF13C700409F83 /* PostStepOne */,
 				B3CC856821D72DB600ADBFD8 /* Position */,
 				CBD1C28421D73087006DB3FF /* MyBuy */,
 				DEBEE7FA21D740C2004B8D88 /* MySellContainer */,
@@ -1089,6 +1127,7 @@
 				B392FB3821D3B13E0076A7B5 /* CategoryAPIService.swift */,
 				DE0DBAF221D3BBAC0097E38F /* NotificationAPIService.swift */,
 				CBD1C2C221D76E4D006DB3FF /* RecordAPIService.swift */,
+				CB0FD72121DDBC670093B06B /* OrderAPIService.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -1112,6 +1151,7 @@
 				B392FB3621D3B0170076A7B5 /* CategoryEndPoint.swift */,
 				DE0DBAF021D3BA460097E38F /* NotificationEndPoint.swift */,
 				CBD1C2C021D76BEB006DB3FF /* RecordEndPoint.swift */,
+				CB0FD71F21DDBAD10093B06B /* OrderEndPoint.swift */,
 			);
 			path = EndPoint;
 			sourceTree = "<group>";
@@ -1641,8 +1681,43 @@
 				DE21829321CD4EB600FDD9F1 /* FTextField.swift */,
 				DE21828F21CD4E7F00FDD9F1 /* AppTextFiled.swift */,
 				B325C2F121CE26900048A148 /* FTextFieldChoose.swift */,
+				DE33036421DF685800409F83 /* CheckBoxTextField.swift */,
 			);
 			path = AppTextFiled;
+			sourceTree = "<group>";
+		};
+		DE33034421DF13C700409F83 /* PostStepOne */ = {
+			isa = PBXGroup;
+			children = (
+				DE33034521DF13EB00409F83 /* PostStepOnePresenter.swift */,
+				DE33034621DF13EB00409F83 /* PostStepOneRouter.swift */,
+				DE33034721DF13EB00409F83 /* PostStepOneViewController.swift */,
+				DE33034821DF13EB00409F83 /* PostStepOneProtocols.swift */,
+				DE33034921DF13EB00409F83 /* PostStepOneInteractor.swift */,
+				DE33034A21DF13EB00409F83 /* PostStepOneViewController.xib */,
+			);
+			path = PostStepOne;
+			sourceTree = "<group>";
+		};
+		DE33035121DF1CD600409F83 /* AppTextView */ = {
+			isa = PBXGroup;
+			children = (
+				DE33035321DF1D7B00409F83 /* AppTextView.swift */,
+			);
+			path = AppTextView;
+			sourceTree = "<group>";
+		};
+		DE33035721DF5ECB00409F83 /* PostStepTwo */ = {
+			isa = PBXGroup;
+			children = (
+				DE33035821DF5EDB00409F83 /* PostStepTwoPresenter.swift */,
+				DE33035921DF5EDB00409F83 /* PostStepTwoRouter.swift */,
+				DE33035A21DF5EDB00409F83 /* PostStepTwoViewController.swift */,
+				DE33035B21DF5EDB00409F83 /* PostStepTwoProtocols.swift */,
+				DE33035C21DF5EDB00409F83 /* PostStepTwoInteractor.swift */,
+				DE33035D21DF5EDB00409F83 /* PostStepTwoViewController.xib */,
+			);
+			path = PostStepTwo;
 			sourceTree = "<group>";
 		};
 		DE442C3621CFA1FE0051C0B8 /* OrderDetail */ = {
@@ -2071,12 +2146,14 @@
 				DEBEE80E21D7654B004B8D88 /* OrderInfoUserCell.xib in Resources */,
 				DEE1DA5321CDE3080036FEB7 /* PopUpNotificationHaveAdmobContent.xib in Resources */,
 				CB172C8D21C6A2EF0068CF92 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
+				DE33035021DF13EB00409F83 /* PostStepOneViewController.xib in Resources */,
 				DE0DBAE721D3B6DA0097E38F /* NotificationCell.xib in Resources */,
 				CB3A8F1521C64FC1008144BD /* Assets.xcassets in Resources */,
 				B392FB3E21D3D6AE0076A7B5 /* AcceptCell.xib in Resources */,
 				84421BFA21CBEF1E00F468F5 /* MoreHeaderCell.xib in Resources */,
 				B325C2F021CE05B20048A148 /* MenuCell.xib in Resources */,
 				B3A3237221DB332100E1AD4C /* LeftMenuCell.xib in Resources */,
+				DE33036321DF5EDB00409F83 /* PostStepTwoViewController.xib in Resources */,
 				DEBEE81821D76C79004B8D88 /* LevelMemberView.xib in Resources */,
 				DEA3A08921D6738200643296 /* AppImageSlide.xib in Resources */,
 				CBD1C2B221D74EF4006DB3FF /* MySellingCell.xib in Resources */,
@@ -2244,19 +2321,23 @@
 				B355EF5321C8EB3F00379F57 /* HomeInteractor.swift in Sources */,
 				CB172C0E21C6A2EF0068CF92 /* UIDevice+extension.swift in Sources */,
 				B355EF5021C8EB3F00379F57 /* HomeRouter.swift in Sources */,
+				CB0FD72021DDBAD10093B06B /* OrderEndPoint.swift in Sources */,
 				DEC5166421CE8DCD00A17CBF /* PopUpSettingGPSContent.swift in Sources */,
 				CB172C9521C6A2EF0068CF92 /* ConstantStoryboard.swift in Sources */,
 				CB172C9921C6A2EF0068CF92 /* BaseViewController.swift in Sources */,
 				CBD1C2AC21D74DA6006DB3FF /* MySellingInteractor.swift in Sources */,
 				DE442C3021CF93750051C0B8 /* CommonAPIService.swift in Sources */,
 				DEF9AA3821D501CE001334EB /* UpdateProfileSocial.swift in Sources */,
+				DE33036521DF685800409F83 /* CheckBoxTextField.swift in Sources */,
 				84421C0821CBF52900F468F5 /* SupplementaryInfoRouter.swift in Sources */,
 				CB172C1621C6A2EF0068CF92 /* Bundle+extension.swift in Sources */,
 				DE21826C21CD473100FDD9F1 /* KActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
 				DEE1DA7221CE20130036FEB7 /* PopUpYesNoHaveAdmobContent.swift in Sources */,
 				DE442C6021CFB9790051C0B8 /* CommentEntity.swift in Sources */,
+				DE33034E21DF13EB00409F83 /* PostStepOneProtocols.swift in Sources */,
 				DEC5166221CE8DB600A17CBF /* PopUpSettingGPS.swift in Sources */,
 				DE21826421CD473100FDD9F1 /* KActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */,
+				DE33035E21DF5EDB00409F83 /* PostStepTwoPresenter.swift in Sources */,
 				B355EF4F21C8EB3F00379F57 /* HomePresenter.swift in Sources */,
 				84A92BF921CA555900148191 /* LoginProtocols.swift in Sources */,
 				DE21826721CD473100FDD9F1 /* KActivityIndicatorAnimationBallRotateChase.swift in Sources */,
@@ -2264,6 +2345,7 @@
 				CB172C9721C6A2EF0068CF92 /* Enum.swift in Sources */,
 				DEC5167221CE995F00A17CBF /* AppCollectionPhotoCell.swift in Sources */,
 				B355EF5F21C8FB1400379F57 /* SignUpProtocols.swift in Sources */,
+				DE33036221DF5EDB00409F83 /* PostStepTwoInteractor.swift in Sources */,
 				CBD1C2D021D78916006DB3FF /* MySellExpiredInteractor.swift in Sources */,
 				CB172C1221C6A2EF0068CF92 /* Date+extension.swift in Sources */,
 				DE21827321CD473100FDD9F1 /* KActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
@@ -2272,6 +2354,7 @@
 				DE0DBAEF21D3B8BF0097E38F /* Date+Transform.swift in Sources */,
 				DE442C5921CFB7870051C0B8 /* BaseCommentCell.swift in Sources */,
 				DEE1DA5621CDE6550036FEB7 /* PopUpSelectDate.swift in Sources */,
+				CB0FD72221DDBC670093B06B /* OrderAPIService.swift in Sources */,
 				DEE7306D21CFDA1700F20D68 /* OrderDetail+PostComment.swift in Sources */,
 				CBD1C2BA21D75BA5006DB3FF /* MyExchangePresenter.swift in Sources */,
 				CBD1C2BB21D75BA5006DB3FF /* MyExchangeRouter.swift in Sources */,
@@ -2281,11 +2364,13 @@
 				DE21827121CD473100FDD9F1 /* KActivityIndicatorAnimationBlank.swift in Sources */,
 				84C8543621CFEE7300BDABE5 /* SupplementaryInfo+Event.swift in Sources */,
 				DE21826B21CD473100FDD9F1 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
+				DE33034B21DF13EB00409F83 /* PostStepOnePresenter.swift in Sources */,
 				84421C0B21CBF52900F468F5 /* SupplementaryInfoInteractor.swift in Sources */,
 				CB172C0D21C6A2EF0068CF92 /* UIApplication+extension.swift in Sources */,
 				B3CC857321D72DD200ADBFD8 /* PositionInteractor.swift in Sources */,
 				84ABC68921CFF06700E0D202 /* UpdateProfile+SetupUI.swift in Sources */,
 				DE21823321CD45F300FDD9F1 /* LoginSocialParam.swift in Sources */,
+				DE33034C21DF13EB00409F83 /* PostStepOneRouter.swift in Sources */,
 				CB0C3A2321D3BECD0052DD91 /* ForgotPasswordPresenter.swift in Sources */,
 				DE0DBAE921D3B6DA0097E38F /* NotificationRouter.swift in Sources */,
 				CB172C1721C6A2EF0068CF92 /* Double+extension.swift in Sources */,
@@ -2328,6 +2413,7 @@
 				CB172C0B21C6A2EF0068CF92 /* PopUpNotification.swift in Sources */,
 				DE21827221CD473100FDD9F1 /* KActivityIndicatorAnimationBallTrianglePath.swift in Sources */,
 				B325C2F221CE26900048A148 /* FTextFieldChoose.swift in Sources */,
+				DE33035621DF53CE00409F83 /* PostRecordParam.swift in Sources */,
 				CB172B3D21C6A26F0068CF92 /* NetworkRequest.swift in Sources */,
 				84A92BF821CA555900148191 /* LoginViewController.swift in Sources */,
 				DEE1DA5C21CDF22C0036FEB7 /* AppConstant.swift in Sources */,
@@ -2344,6 +2430,7 @@
 				CB0C3A2521D3BECD0052DD91 /* ForgotPasswordViewController.swift in Sources */,
 				CB172C1521C6A2EF0068CF92 /* UIImage+extension.swift in Sources */,
 				84421C0A21CBF52900F468F5 /* SupplementaryInfoProtocols.swift in Sources */,
+				DE33035421DF1D7B00409F83 /* AppTextView.swift in Sources */,
 				CB3A8F1021C64FC1008144BD /* ViewController.swift in Sources */,
 				B355EF5221C8EB3F00379F57 /* HomeProtocols.swift in Sources */,
 				DE442C3F21CFA2130051C0B8 /* OrderDetailViewController.swift in Sources */,
@@ -2351,6 +2438,7 @@
 				DEE7306F21CFDAA300F20D68 /* OrderDetail+Table.swift in Sources */,
 				DE21828121CD473100FDD9F1 /* KActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */,
 				CBD1C29921D732CB006DB3FF /* MyBuyProtocols.swift in Sources */,
+				DE33036021DF5EDB00409F83 /* PostStepTwoViewController.swift in Sources */,
 				84396D3E21D1389B00818FAB /* UpdateProfile+Event.swift in Sources */,
 				DEA3A09521D67B1300643296 /* BannerEntity.swift in Sources */,
 				84421BF921CBEF1E00F468F5 /* MoreHeaderCell.swift in Sources */,
@@ -2373,6 +2461,7 @@
 				DEBEE7F821D74041004B8D88 /* AppPageView.swift in Sources */,
 				CB172C9B21C6A2EF0068CF92 /* BaseViewXib.swift in Sources */,
 				B355EF5C21C8FB1400379F57 /* SignUpPresenter.swift in Sources */,
+				DE33036121DF5EDB00409F83 /* PostStepTwoProtocols.swift in Sources */,
 				DE442C5721CFB7570051C0B8 /* SubCommentCell.swift in Sources */,
 				DE21827421CD473100FDD9F1 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
 				CB172C1921C6A2EF0068CF92 /* String+extension.swift in Sources */,
@@ -2398,6 +2487,7 @@
 				B329A49C21D78A59004BBEE6 /* PositionMapsHelper.swift in Sources */,
 				DE442C3221CF93C60051C0B8 /* PhotoEntity.swift in Sources */,
 				CBD1C29721D732CB006DB3FF /* MyBuyRouter.swift in Sources */,
+				DE33034D21DF13EB00409F83 /* PostStepOneViewController.swift in Sources */,
 				CBD1C28921D73088006DB3FF /* MyBuyCell.swift in Sources */,
 				CBD1C2CD21D78916006DB3FF /* MySellExpiredRouter.swift in Sources */,
 				B392FB3D21D3D6AE0076A7B5 /* AcceptCell.swift in Sources */,
@@ -2475,6 +2565,7 @@
 				DE21827621CD473100FDD9F1 /* KActivityIndicatorAnimationLineScaleParty.swift in Sources */,
 				DEBEE7F421D73443004B8D88 /* MoreEntity.swift in Sources */,
 				DEE1DA5821CDE6610036FEB7 /* PopUpSelectDateContent.swift in Sources */,
+				DE33034F21DF13EB00409F83 /* PostStepOneInteractor.swift in Sources */,
 				84A92BF621CA555900148191 /* LoginPresenter.swift in Sources */,
 				CB172C1021C6A2EF0068CF92 /* Int+extension.swift in Sources */,
 				CB172C1121C6A2EF0068CF92 /* UIWindow+extension.swift in Sources */,
@@ -2482,6 +2573,7 @@
 				CB172C9621C6A2EF0068CF92 /* AppColor.swift in Sources */,
 				84ABC68B21CFF06700E0D202 /* UpdateProfileProtocols.swift in Sources */,
 				B36AEE9C21CDD90500BED43C /* TabbarProtocol.swift in Sources */,
+				DE33035F21DF5EDB00409F83 /* PostStepTwoRouter.swift in Sources */,
 				B3CC857021D72DD200ADBFD8 /* PositionRouter.swift in Sources */,
 				DE0DBAE821D3B6DA0097E38F /* NotificationCell.swift in Sources */,
 				CB172B4321C6A2AA0068CF92 /* EndPointType.swift in Sources */,

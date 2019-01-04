@@ -18,7 +18,7 @@ class AppCollectionPhotoCell: BaseCollectionCell {
     let imgPhoto: UIImageView = {
         let img = UIImageView()
         img.contentMode = .scaleAspectFill
-        
+        img.backgroundColor = AppColor.gray_238_238_238
         return img
     }()
     

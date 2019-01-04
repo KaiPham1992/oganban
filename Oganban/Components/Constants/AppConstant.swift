@@ -6,9 +6,11 @@
 //  Copyright © 2018 Coby. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct AppConstant {
     static let admobNativeAds = "ca-app-pub-3940256099942544/3986624511"
     static let admobBanner = "ca-app-pub-3940256099942544/2934735716"
+    
+    static let notiDidUpdateSocial = NSNotification.Name.init("didUpdateSocial")
 }

@@ -129,8 +129,15 @@ extension LoginViewController {
         tfEmail.textFieldDidBeginEditing = {
             self.hideError()
         }
+        
         tfPassword.textFieldDidBeginEditing = {
             self.hideError()
         }
+    }
+    
+    @objc func didGetVerifyCode(notification: Notification) {
+        guard let verifyCode = notification.object as? String else { return }
+        self.verifyCode = verifyCode
+        fbAccountKit.verifyPhone()
     }
 }

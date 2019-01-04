@@ -68,13 +68,13 @@ class FTextField: BaseView {
     
     func setPlaceholder(placeHolder: String) {
         textField.attributedPlaceholder = NSAttributedString(string: placeHolder,
-                                                             attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
+                                                             attributes: [NSAttributedString.Key.foregroundColor: AppColor.gray_65_65_65])
     }
     
     func setTextField(title: String, placeHolder: String) {
         lbTitle.text = title
         textField.attributedPlaceholder = NSAttributedString(string: placeHolder,
-                                                             attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
+                                                             attributes: [NSAttributedString.Key.foregroundColor: AppColor.gray_65_65_65])
     }
 }
 
@@ -105,5 +105,3 @@ class MyUITextField: UITextField {
     }
     
 }
-
-

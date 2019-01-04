@@ -16,6 +16,7 @@ class PopUpNotificationHaveAdmob: BasePopUpView, AdmobNativeViewDelegate {
         return v
     }()
     
+    var completionClose: CompletionClosure?
     override func setupView() {
         super.setupView()
         vContent.addSubview(vHaveAdmob)
@@ -28,7 +29,19 @@ class PopUpNotificationHaveAdmob: BasePopUpView, AdmobNativeViewDelegate {
         super.showPopUp(width: width, height: 256, type: .zoomOut)
     }
     
+
     func admobNativeView(_ admobNativeView: AdmobNativeView) {
         hidePopUp()
+    }
+
+    func showPopUp(message: String, closeCompletion: @escaping CompletionClosure) {
+        self.completionClose = closeCompletion
+        self.showPopUp(message: message)
+    }
+    
+    
+    override func btnCloseTapped() {
+        super.btnCloseTapped()
+        completionClose?()
     }
 }

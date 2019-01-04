@@ -23,4 +23,12 @@ class OrderDetailInteractor: OrderDetailInteractorInputProtocol {
             ProgressView.shared.hide()
         }
     }
+    
+    func hideRecord(recordID: Int) {
+        Provider.shared.recordAPIService.hideRecord(recordID: recordID, success: { (data) in
+            self.presenter?.didHideRecord(data: data)
+        }) { (_) in
+            
+        }
+    }
 }

@@ -49,7 +49,7 @@ class AppCollectionPhoto: UIView {
     var numberOfItemsPerRow: Int = 4
     var canEdit: Bool = true
     var deleteIcon: UIImage = AppImage.imgDeletePhoto
-    var addIcon: UIImage = AppImage.imgUploadPhoto
+    var addIcon: UIImage = AppImage.imgCamera
     var cellBorderColor: UIColor = AppColor.line
     var borderAll: Bool = true
     var ratioCell: CGFloat = 1
@@ -104,9 +104,11 @@ extension AppCollectionPhoto: UICollectionViewDataSource, UICollectionViewDelega
         cell.imgClose.image = deleteIcon
         if canEdit && indexPath.item == 0 {
             cell.imgPhoto.image = addIcon
+            cell.imgPhoto.contentMode = .center
             cell.borderColor = cellBorderColor
         } else {
             let i = canEdit ? 1 : 0
+            cell.imgPhoto.contentMode = .scaleToFill
             cell.photo = listImage[indexPath.item - i]
             if canEdit {
                 cell.btnRemove.tag = indexPath.item - i
@@ -168,11 +170,17 @@ extension AppCollectionPhoto: ImagePickerDelegate {
         
         delegate?.appCollectionPhoto(self, selectedImages: imagesItems)
         
-        images.forEach { _image in
+        imagesItems.forEach { _imageItem in
+            guard let _image = _imageItem.image else { return }
+            
             Provider.shared.commonAPIService.uploadImage(image: _image, success: { photo in
-                
+                _imageItem.status = AppPhotoStatus.uploaded
+                _imageItem.url = photo?.imgSrc
+                self.cvPhoto.reloadData()
             }) { error in
+                _imageItem.status = AppPhotoStatus.error
                 print(error.debugDescription)
+                self.cvPhoto.reloadData()
             }
         }
         

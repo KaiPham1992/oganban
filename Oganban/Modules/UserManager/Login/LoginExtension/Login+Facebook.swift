@@ -26,9 +26,7 @@ extension LoginViewController {
     }
     
     func FBlogin() {
-//        let fbLoginManager = FBSDKLoginManager()
-//        fbLoginManager.loginBehavior = .native
-        _fbLoginManager = nil
+        let fbLoginManager = FBSDKLoginManager()
         fbLoginManager.logOut()
         
         fbLoginManager.logIn(withReadPermissions: ["public_profile", "email"], from: self) { (result, error) in

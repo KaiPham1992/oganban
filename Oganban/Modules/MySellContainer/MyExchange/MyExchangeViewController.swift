@@ -28,6 +28,12 @@ class MyExchangeViewController: BaseViewController {
     
     let dropDownStatus = DropDown()
     
+    var listData: [RecordEntity] = [] {
+        didSet {
+            tbMyExchange.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -64,15 +70,15 @@ class MyExchangeViewController: BaseViewController {
             self.lbStatusExchange.text = item
             switch item {
             case "Chờ duyệt":
-                self.lbTotal.text = "Tổng đơn hàng đang chờ duyệt: 1"
+                self.lbTotal.text = "Tổng đơn hàng đang chờ duyệt: \(self.listData.count)"
             case "Đang giao":
-                self.lbTotal.text = "Tổng đơn hàng đang giao: 1"
+                self.lbTotal.text = "Tổng đơn hàng đang giao: \(self.listData.count)"
             case "Hoàn Tất":
-                self.lbTotal.text = "Tổng đơn hàng đã hoàn tất: 1"
+                self.lbTotal.text = "Tổng đơn hàng đã hoàn tất: \(self.listData.count)"
             case "Đã huỷ":
-                self.lbTotal.text = "Tổng đơn hàng đã huỷ: 1"
+                self.lbTotal.text = "Tổng đơn hàng đã huỷ: \(self.listData.count)"
             case "Tất cả":
-                self.lbTotal.text = "Tổng tất cả đơn hàng: 1"
+                self.lbTotal.text = "Tổng tất cả đơn hàng: \(self.listData.count)"
             default:
                 break
             }
@@ -102,6 +108,8 @@ extension MyExchangeViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension MyExchangeViewController: MyExchangeViewProtocol {
     
-    
+    func didGetTransactionSeller(data: [RecordEntity]) {
+        self.listData = data
+    }
     
 }

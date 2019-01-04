@@ -38,7 +38,7 @@ class AppRouter {
     func openTest() {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate, let windowApp = appDelegate.window else { return }
         //---
-//        let tabBar = ProfileRouter.createModule()
-//        windowApp.rootViewController = tabBar
+        let tabBar = PostStepOneRouter.createModule()
+        windowApp.rootViewController = tabBar
     }
 }

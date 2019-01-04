@@ -38,6 +38,11 @@ class MySellContainerViewController: BaseViewController, MySellContainerViewProt
         self.listControllers = [sellingVC, exchangeVC]
         vPageView.setUpMenuAndController(controllers: listControllers, menuColorBackground: AppColor.white, menuFont: AppFont.fontRegular11, menuColorNormal: AppColor.gray_158_158_158, menuColorSelected: AppColor.green, menuColorHorizontal: AppColor.red_110_0_0, heightHorizontal: 2, listItem: listItem, isFull: true, isHaveLineTop: false)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        showTabbar()
+    }
 
 }
 
