@@ -19,20 +19,33 @@ class RecordSellingView: BaseViewXib {
     @IBOutlet weak var lbCoin: UILabel!
     @IBOutlet weak var lbTotal: UILabel!
     
+    var isHideOrExpired: Bool = false
+    
     var record: RecordEntity? {
         didSet {
             guard let _record = record else { return }
-//            if let url = URL(string: "\(BASE_URL_IMAGE)\(_record.imgSrc ?? "")") {
-//                imgProduct.sd_setImage(with: url, placeholderImage: AppImage.imgLogo)
-//            }
+            if let url = URL(string: "\(BASE_URL_IMAGE)\(_record.imgHome ?? "")") {
+                imgProduct.sd_setImage(with: url, placeholderImage: AppImage.imgLogo)
+            }
             lbProductName.text = _record.name
             lbTime.text = _record.createTime?.timeAgo()
             lbPrice.text = "\(_record.price?.description ?? "") đ"
             lbCoin.text = "\(_record.coin?.description ?? "") ơ"
-            let qty = _record.quantity
-            lbTotal.text = "SL còn lại: \(qty?.description ?? "")"
             lbCoin.underlineLastCharacter()
             lbPrice.underlineLastCharacter()
+            if _record.status == "expired" {
+                lbTotal.text = "Tin hết hạn"
+                lbTotal.backgroundColor = AppColor.gray_233_233_234
+                lbTotal.textColor = AppColor.red_233_1_1
+            } else if _record.status == "hide" {
+                lbTotal.text = "Tin đã ẩn"
+                lbTotal.backgroundColor = AppColor.yellow_288_251_30
+                lbTotal.textColor = AppColor.red_233_1_1
+            } else {
+                let qty = _record.quantity
+                lbTotal.text = "SL còn lại: \(qty?.description ?? "")"
+            }
+            
         }
     }
     

@@ -22,13 +22,13 @@ class MySellExpiredPresenter: MySellExpiredPresenterProtocol {
         self.router = router
     }
 
-    func getSellExpired() {
-        interactor?.getSellExpired()
+    func getSellExpired(status: String, limit: Int, offset: Int) {
+        interactor?.getSellExpired(status: status, limit: limit, offset: offset)
     }
 }
 
 extension MySellExpiredPresenter: MySellExpiredInteractorOutputProtocol {
-    func didGetSellPired(data: [RecordEntity]) {
+    func didGetSellPired(data: BaseRecordEntity?) {
         view?.didGetSellPired(data: data)
     }
     

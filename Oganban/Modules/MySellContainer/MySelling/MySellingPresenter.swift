@@ -29,7 +29,7 @@ class MySellingPresenter: MySellingPresenterProtocol {
 }
 
 extension MySellingPresenter: MySellingInteractorOutputProtocol {
-    func didGetRecordSellerPost(listRecord: [RecordEntity]) {
+    func didGetRecordSellerPost(listRecord: BaseRecordEntity?) {
         view?.didGetRecordSellerPost(listRecord: listRecord)
     }
     

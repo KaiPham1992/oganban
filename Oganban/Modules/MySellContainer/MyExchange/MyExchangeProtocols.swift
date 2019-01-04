@@ -25,7 +25,7 @@ protocol MyExchangePresenterProtocol: class {
 protocol MyExchangeInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
-    func didGetTransactionSeller(data: [RecordEntity])
+    func didGetTransactionSeller(data: BaseOrderEntity?)
 }
 
 protocol MyExchangeInteractorInputProtocol: class {
@@ -42,5 +42,5 @@ protocol MyExchangeViewProtocol: class {
     var presenter: MyExchangePresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
-    func didGetTransactionSeller(data: [RecordEntity])
+    func didGetTransactionSeller(data: BaseOrderEntity?)
 }

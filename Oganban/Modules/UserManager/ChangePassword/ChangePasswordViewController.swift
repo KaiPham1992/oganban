@@ -96,7 +96,9 @@ class ChangePasswordViewController: BaseViewController {
 extension ChangePasswordViewController: ChangePasswordViewProtocol {
     func didChangePassword(data: BaseResponseString?) {
         lbStatus.text = ""
-        PopUpHelper.shared.showMessageHaveAds(message: "Đổi mật khẩu thành công")
+        PopUpHelper.shared.showMessageHaveAds(message: "Đổi mật khẩu thành công") {
+            self.pop()
+        }
     }
     
     func didChangePassword(error: APIError?) {

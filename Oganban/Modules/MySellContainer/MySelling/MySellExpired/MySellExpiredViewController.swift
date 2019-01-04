@@ -19,10 +19,19 @@ class MySellExpiredViewController: BaseViewController {
 	var presenter: MySellExpiredPresenterProtocol?
     var refeshControl: UIRefreshControl?
     
-    
-    var listSellExpired: [RecordEntity] = [] {
+    var listSellExpired: BaseRecordEntity? {
         didSet {
             tbExpired.reloadData()
+            
+            if (self.listSellExpired?.dataRecord.isEmpty)! {
+                tbExpired.isHidden = true
+                showNoData()
+            } else {
+                hideNoData()
+            }
+            
+            lbTotalHiden.text = "Tin đã ẩn: \(listSellExpired?.countHide ?? 0)"
+            lbTotalExpired.text = "Tin hết hạn: \(listSellExpired?.countExpired ?? 00)"
         }
     }
     
@@ -35,10 +44,12 @@ class MySellExpiredViewController: BaseViewController {
     func setupView() {
         self.setTitleNavigation(title: "Tin hết hạn/ ẩn ")
         addBackToNavigation()
+        self.tabBarController?.tabBar.isHidden = true
         configTable()
         refeshControl = UIRefreshControl()
         refeshControl?.addTarget(self, action: #selector(self.refeshData), for: .valueChanged)
         tbExpired.addSubview(refeshControl!)
+        
     }
     
     func configTable() {
@@ -48,10 +59,12 @@ class MySellExpiredViewController: BaseViewController {
         tbExpired.registerTableCell(MySellingCell.self)
         
         tbExpired.contentInset.bottom = 10
+//        tbExpired.separatorStyle = .none
+        tbExpired.tableFooterView = UIView()
     }
     
     func getData() {
-        presenter?.getSellExpired()
+        presenter?.getSellExpired(status: "hide", limit: 10, offset: 0)
     }
     
     @objc private func refeshData() {
@@ -63,21 +76,34 @@ class MySellExpiredViewController: BaseViewController {
 
 extension MySellExpiredViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        guard let count = listSellExpired?.dataRecord.count else { return 0}
+        return count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueTableCell(MySellingCell.self)
-        
+        cell.vRecordSelling.record = listSellExpired?.dataRecord[indexPath.item]
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 130
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = OrderDetailRouter.createModule()
+        if listSellExpired?.dataRecord[indexPath.item].status == "hide" {
+            vc.isMySellHide = true
+        } else if listSellExpired?.dataRecord[indexPath.item].status == "expired" {
+            vc.isMySellExpired = true
+        }
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension MySellExpiredViewController: MySellExpiredViewProtocol {
-    func didGetSellPired(data: [RecordEntity]) {
+    
+    func didGetSellPired(data: BaseRecordEntity?) {
         self.listSellExpired = data
     }
     

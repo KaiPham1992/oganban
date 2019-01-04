@@ -14,7 +14,11 @@ class MySellExpiredInteractor: MySellExpiredInteractorInputProtocol {
 
     weak var presenter: MySellExpiredInteractorOutputProtocol?
     
-    func getSellExpired() {
-        
+    func getSellExpired(status: String, limit: Int, offset: Int) {
+        Provider.shared.recordAPIService.getRecordSellerPost(status: status, offset: offset, limit: limit, success: { (data) in
+            self.presenter?.didGetSellPired(data: data)
+        }) { (_) in
+            
+        }
     }
 }

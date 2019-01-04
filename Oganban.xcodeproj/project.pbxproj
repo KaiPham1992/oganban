@@ -111,6 +111,7 @@
 		CB0C3A2821D3BECD0052DD91 /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB0C3A2221D3BECD0052DD91 /* ForgotPasswordViewController.xib */; };
 		CB0FD72021DDBAD10093B06B /* OrderEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0FD71F21DDBAD10093B06B /* OrderEndPoint.swift */; };
 		CB0FD72221DDBC670093B06B /* OrderAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0FD72121DDBC670093B06B /* OrderAPIService.swift */; };
+		CB0FD72621DE5A430093B06B /* OrderEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0FD72521DE5A430093B06B /* OrderEntity.swift */; };
 		CB172B2F21C6A22A0068CF92 /* BaseParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B2721C6A22A0068CF92 /* BaseParam.swift */; };
 		CB172B3921C6A26F0068CF92 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B3321C6A26F0068CF92 /* APIError.swift */; };
 		CB172B3A21C6A26F0068CF92 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B3521C6A26F0068CF92 /* BaseResponse.swift */; };
@@ -176,6 +177,8 @@
 		CB172C9C21C6A2EF0068CF92 /* BaseTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172C0621C6A2EF0068CF92 /* BaseTableCell.swift */; };
 		CB172C9D21C6A2EF0068CF92 /* BasePopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172C0721C6A2EF0068CF92 /* BasePopUpView.swift */; };
 		CB172C9E21C6A2EF0068CF92 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172C0821C6A2EF0068CF92 /* BaseView.swift */; };
+		CB31FB7721DF413D001DFC7F /* BaseRecordEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB31FB7621DF413D001DFC7F /* BaseRecordEntity.swift */; };
+		CB31FB7921DF4736001DFC7F /* BaseOrderEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB31FB7821DF4736001DFC7F /* BaseOrderEntity.swift */; };
 		CB3A8F0E21C64FC1008144BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3A8F0D21C64FC1008144BD /* AppDelegate.swift */; };
 		CB3A8F1021C64FC1008144BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3A8F0F21C64FC1008144BD /* ViewController.swift */; };
 		CB3A8F1321C64FC1008144BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB3A8F1121C64FC1008144BD /* Main.storyboard */; };
@@ -499,6 +502,7 @@
 		CB0C3A2221D3BECD0052DD91 /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
 		CB0FD71F21DDBAD10093B06B /* OrderEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderEndPoint.swift; sourceTree = "<group>"; };
 		CB0FD72121DDBC670093B06B /* OrderAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderAPIService.swift; sourceTree = "<group>"; };
+		CB0FD72521DE5A430093B06B /* OrderEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderEntity.swift; sourceTree = "<group>"; };
 		CB172B2721C6A22A0068CF92 /* BaseParam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseParam.swift; sourceTree = "<group>"; };
 		CB172B3321C6A26F0068CF92 /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		CB172B3521C6A26F0068CF92 /* BaseResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
@@ -566,6 +570,8 @@
 		CB172C0621C6A2EF0068CF92 /* BaseTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableCell.swift; sourceTree = "<group>"; };
 		CB172C0721C6A2EF0068CF92 /* BasePopUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePopUpView.swift; sourceTree = "<group>"; };
 		CB172C0821C6A2EF0068CF92 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		CB31FB7621DF413D001DFC7F /* BaseRecordEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRecordEntity.swift; sourceTree = "<group>"; };
+		CB31FB7821DF4736001DFC7F /* BaseOrderEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseOrderEntity.swift; sourceTree = "<group>"; };
 		CB3A8F0A21C64FC1008144BD /* Oganban.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Oganban.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB3A8F0D21C64FC1008144BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB3A8F0F21C64FC1008144BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -1568,6 +1574,9 @@
 				B392FB4221D3E93E0076A7B5 /* RecordEntity.swift */,
 				DEA3A09421D67B1300643296 /* BannerEntity.swift */,
 				DEBEE7F321D73443004B8D88 /* MoreEntity.swift */,
+				CB0FD72521DE5A430093B06B /* OrderEntity.swift */,
+				CB31FB7621DF413D001DFC7F /* BaseRecordEntity.swift */,
+				CB31FB7821DF4736001DFC7F /* BaseOrderEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -2317,6 +2326,7 @@
 				B3CC856F21D72DD200ADBFD8 /* PositionPresenter.swift in Sources */,
 				84A92BEE21CA518200148191 /* OganbanCustomButton.swift in Sources */,
 				84ABC68A21CFF06700E0D202 /* UpdateProfileViewController.swift in Sources */,
+				CB0FD72621DE5A430093B06B /* OrderEntity.swift in Sources */,
 				CBBB3DF821D5C74400281ABB /* ChangePasswordInteractor.swift in Sources */,
 				B355EF5321C8EB3F00379F57 /* HomeInteractor.swift in Sources */,
 				CB172C0E21C6A2EF0068CF92 /* UIDevice+extension.swift in Sources */,
@@ -2329,6 +2339,7 @@
 				DE442C3021CF93750051C0B8 /* CommonAPIService.swift in Sources */,
 				DEF9AA3821D501CE001334EB /* UpdateProfileSocial.swift in Sources */,
 				DE33036521DF685800409F83 /* CheckBoxTextField.swift in Sources */,
+				CB31FB7921DF4736001DFC7F /* BaseOrderEntity.swift in Sources */,
 				84421C0821CBF52900F468F5 /* SupplementaryInfoRouter.swift in Sources */,
 				CB172C1621C6A2EF0068CF92 /* Bundle+extension.swift in Sources */,
 				DE21826C21CD473100FDD9F1 /* KActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
@@ -2386,6 +2397,7 @@
 				CB172B2F21C6A22A0068CF92 /* BaseParam.swift in Sources */,
 				DEE1DA6D21CDF5E70036FEB7 /* PopUpSelectGenderContent.swift in Sources */,
 				DEBEE80921D7594E004B8D88 /* AppRadioButton.swift in Sources */,
+				CB31FB7721DF413D001DFC7F /* BaseRecordEntity.swift in Sources */,
 				CBD1C2BC21D75BA5006DB3FF /* MyExchangeViewController.swift in Sources */,
 				84ABC68F21CFF06700E0D202 /* UpdateProfileRouter.swift in Sources */,
 				CB172C1321C6A2EF0068CF92 /* UIButton+extension.swift in Sources */,

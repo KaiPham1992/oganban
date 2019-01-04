@@ -39,6 +39,8 @@ class RecordEntity: BaseEntity {
     var isActive: String?
     var cropImage: String?
     
+    var status: String?
+    
     required init?(map: Map) {
         super.init()
     }
@@ -80,6 +82,7 @@ class RecordEntity: BaseEntity {
         self.expiredDate <- (map["expired_date"],yyyyMMddHHmmssTransform())
         self.isActive <- map["is_active"]
         self.about <- map["about_record"]
+        self.status <- map["status"]
     }
     
     var urlAvatar: URL? {

@@ -21,6 +21,7 @@ class MySellContainerViewController: BaseViewController, MySellContainerViewProt
         super.viewDidLoad()
         
         self.setTitleNavigation(title: NavigationTitle.mySell)
+        self.tabBarController?.tabBar.isHidden = false
         
         let sellingVC = MySellingRouter.createModule(delegate: self)
         
@@ -29,6 +30,7 @@ class MySellContainerViewController: BaseViewController, MySellContainerViewProt
         
         let exchangeVC = MyExchangeRouter.createModule(delegate: self)
 //        vc2.view.backgroundColor = .green
+        exchangeVC.parrentNavigation = self.navigationController
         
         let listItem = [
             KCategory(title: "ĐANG BÁN", isSelected: true),
