@@ -27,16 +27,21 @@ class MyExchangeViewController: BaseViewController {
     weak var delegate: MyExchangeViewControllerDelegate?
     
     let dropDownStatus = DropDown()
+    var parrentNavigation: UINavigationController?
     
     var listData: BaseOrderEntity? {
         didSet {
             tbMyExchange.reloadData()
             
-            if let count = self.listData?.dataOrder, count.isEmpty {
-                tbMyExchange.isHidden = true
-                showNoData()
-            } else {
-                hideNoData()
+            if let count = self.listData?.dataOrder.count {
+                if count == 0 {
+                    tbMyExchange.isHidden = true
+                    showNoData()
+                } else {
+                    tbMyExchange.isHidden = false
+                    hideNoData()
+                    setupDropDownStatus()
+                }
             }
         }
     }
@@ -47,14 +52,17 @@ class MyExchangeViewController: BaseViewController {
     }
     
     func setupView() {
-        
+                
         configTableView()
         setupDropDownStatus()
         getData()
+        guard let countOrder = self.listData?.dataOrder.count else { return }
+        self.lbTotal.text = "Tổng đơn hàng đang chờ duyệt: \(countOrder)"
     }
     
     func getData() {
         self.presenter?.getTransactionSeller(status: "new", limit: 10, offset: 0)
+        
     }
     
     func configTableView() {
@@ -64,7 +72,7 @@ class MyExchangeViewController: BaseViewController {
         tbMyExchange.registerTableCell(MyBuyCell.self)
         
         tbMyExchange.contentInset.bottom = 10
-//        tbMyExchange.separatorStyle = .none
+        //        tbMyExchange.separatorStyle = .none
         tbMyExchange.tableFooterView = UIView()
     }
     
@@ -82,22 +90,29 @@ class MyExchangeViewController: BaseViewController {
         dropDownStatus.selectionAction = { [weak self](index, item) in
             guard let `self` = self else { return }
             self.lbStatusExchange.text = item
+            guard let countOrder = self.listData?.dataOrder.count else { return }
             switch item {
+                
             case "Chờ duyệt":
-                self.lbTotal.text = "Tổng đơn hàng đang chờ duyệt: \(self.listData?.countOrder ?? 0)"
+                
                 self.presenter?.getTransactionSeller(status: "new", limit: 10, offset: 0)
+                self.lbTotal.text = "Tổng đơn hàng đang chờ duyệt: \(countOrder)"
             case "Đang giao":
-                self.lbTotal.text = "Tổng đơn hàng đang giao: \(self.listData?.countOrder ?? 0)"
+                
                 self.presenter?.getTransactionSeller(status: "wait_delivery", limit: 10, offset: 0)
+                self.lbTotal.text = "Tổng đơn hàng đang giao: \(countOrder)"
             case "Hoàn Tất":
-                self.lbTotal.text = "Tổng đơn hàng đã hoàn tất: \(self.listData?.countOrder ?? 0)"
+                
                 self.presenter?.getTransactionSeller(status: "done", limit: 10, offset: 0)
+                self.lbTotal.text = "Tổng đơn hàng đã hoàn tất: \(countOrder)"
             case "Đã huỷ":
-                self.lbTotal.text = "Tổng đơn hàng đã huỷ: \(self.listData?.countOrder ?? 0)"
                 self.presenter?.getTransactionSeller(status: "cancel", limit: 10, offset: 0)
+                self.lbTotal.text = "Tổng đơn hàng đã huỷ: \(countOrder)"
+                
             case "Tất cả":
-                self.lbTotal.text = "Tổng tất cả đơn hàng: \(self.listData?.countOrder ?? 0)"
+                
                 self.presenter?.getTransactionSeller(status: "new", limit: 10, offset: 0)
+                self.lbTotal.text = "Tổng tất cả đơn hàng: \(countOrder)"
             default:
                 break
             }
@@ -123,6 +138,21 @@ extension MyExchangeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = OrderDetailRouter.createModule()
+        if listData?.dataOrder[indexPath.item].status == "new" {
+            vc.isNew = true
+        } else if listData?.dataOrder[indexPath.item].status == "wait_delivery" {
+            vc.isWait = true
+        } else if listData?.dataOrder[indexPath.item].status == "done" {
+            vc.isDone = true
+        } else if listData?.dataOrder[indexPath.item].status == "cancel" {
+            vc.isCancel = true
+        }
+        parrentNavigation?.pushViewController(vc, animated: true)
+        
     }
 }
 

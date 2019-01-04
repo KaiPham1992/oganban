@@ -31,6 +31,14 @@ class OrderDetailViewController: BaseViewController {
     @IBOutlet weak var btnDecline: UIButton!
     @IBOutlet weak var btnReceived: UIButton!
     
+    var isMySellHide: Bool = false
+    var isMySellExpired: Bool = false
+    
+    var isNew: Bool = false
+    var isWait: Bool = false
+    var isDone: Bool = false
+    var isCancel: Bool = false
+    
     var record: RecordEntity? {
         didSet {
             tbDetail.reloadData()
@@ -55,6 +63,7 @@ class OrderDetailViewController: BaseViewController {
 //        vPostCommentView.isHidden = true
 //        btnReceived.isHidden = true
         vSelect.isHidden = true
+        setupView()
     }
     
     override func setUpNavigation() {
@@ -62,6 +71,23 @@ class OrderDetailViewController: BaseViewController {
         setTitleNavigation(title: "Chi tiết sản phẩm")
         addBackToNavigation()
         addButtonToNavigation(image: AppImage.imgShare, style: .right, action: #selector(btnShareTapped))
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    func setupView() {
+        if isMySellHide || isMySellExpired {
+            vPostCommentView.isHidden = true
+        } else if isNew {
+            vSelect.isHidden = false
+            btnReceived.isHidden = true
+            vPostCommentView.isHidden = true
+        } else if isWait {
+            vSelect.isHidden = false
+            btnReceived.isHidden = false
+            btnAccept.isHidden = true
+            btnDecline.isHidden = true
+            vPostCommentView.isHidden = true
+        }
     }
     
     @objc func btnShareTapped() {

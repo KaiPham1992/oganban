@@ -14,7 +14,7 @@ class OrderDetailRouter: OrderDetailWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule() -> UIViewController {
+    static func createModule() -> OrderDetailViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = OrderDetailViewController(nibName: nil, bundle: nil)
         let interactor = OrderDetailInteractor()

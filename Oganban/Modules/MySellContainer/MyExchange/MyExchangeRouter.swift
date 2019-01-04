@@ -14,7 +14,7 @@ class MyExchangeRouter: MyExchangeWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule(delegate: MyExchangeViewControllerDelegate) -> UIViewController {
+    static func createModule(delegate: MyExchangeViewControllerDelegate) -> MyExchangeViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = MyExchangeViewController(nibName: nil, bundle: nil)
         let interactor = MyExchangeInteractor()

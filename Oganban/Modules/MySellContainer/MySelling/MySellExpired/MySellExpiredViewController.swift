@@ -19,7 +19,6 @@ class MySellExpiredViewController: BaseViewController {
 	var presenter: MySellExpiredPresenterProtocol?
     var refeshControl: UIRefreshControl?
     
-    
     var listSellExpired: BaseRecordEntity? {
         didSet {
             tbExpired.reloadData()
@@ -45,10 +44,12 @@ class MySellExpiredViewController: BaseViewController {
     func setupView() {
         self.setTitleNavigation(title: "Tin hết hạn/ ẩn ")
         addBackToNavigation()
+        self.tabBarController?.tabBar.isHidden = true
         configTable()
         refeshControl = UIRefreshControl()
         refeshControl?.addTarget(self, action: #selector(self.refeshData), for: .valueChanged)
         tbExpired.addSubview(refeshControl!)
+        
     }
     
     func configTable() {
@@ -86,6 +87,17 @@ extension MySellExpiredViewController: UITableViewDataSource, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 130
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = OrderDetailRouter.createModule()
+        if listSellExpired?.dataRecord[indexPath.item].status == "hide" {
+            vc.isMySellHide = true
+        } else if listSellExpired?.dataRecord[indexPath.item].status == "expired" {
+            vc.isMySellExpired = true
+        }
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
