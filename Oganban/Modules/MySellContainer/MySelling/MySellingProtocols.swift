@@ -26,7 +26,7 @@ protocol MySellingPresenterProtocol: class {
 protocol MySellingInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
-    func didGetRecordSellerPost(listRecord: [RecordEntity])
+    func didGetRecordSellerPost(listRecord: BaseRecordEntity?)
     func didGetRecordSellerPost(error: APIError?)
 }
 
@@ -44,6 +44,6 @@ protocol MySellingViewProtocol: class {
     var presenter: MySellingPresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
-    func didGetRecordSellerPost(listRecord: [RecordEntity])
+    func didGetRecordSellerPost(listRecord: BaseRecordEntity?)
     func didGetRecordSellerPost(error: APIError?)
 }

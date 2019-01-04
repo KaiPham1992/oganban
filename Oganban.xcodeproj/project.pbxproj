@@ -177,6 +177,8 @@
 		CB172C9C21C6A2EF0068CF92 /* BaseTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172C0621C6A2EF0068CF92 /* BaseTableCell.swift */; };
 		CB172C9D21C6A2EF0068CF92 /* BasePopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172C0721C6A2EF0068CF92 /* BasePopUpView.swift */; };
 		CB172C9E21C6A2EF0068CF92 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172C0821C6A2EF0068CF92 /* BaseView.swift */; };
+		CB31FB7721DF413D001DFC7F /* BaseRecordEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB31FB7621DF413D001DFC7F /* BaseRecordEntity.swift */; };
+		CB31FB7921DF4736001DFC7F /* BaseOrderEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB31FB7821DF4736001DFC7F /* BaseOrderEntity.swift */; };
 		CB3A8F0E21C64FC1008144BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3A8F0D21C64FC1008144BD /* AppDelegate.swift */; };
 		CB3A8F1021C64FC1008144BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3A8F0F21C64FC1008144BD /* ViewController.swift */; };
 		CB3A8F1321C64FC1008144BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB3A8F1121C64FC1008144BD /* Main.storyboard */; };
@@ -553,6 +555,8 @@
 		CB172C0621C6A2EF0068CF92 /* BaseTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableCell.swift; sourceTree = "<group>"; };
 		CB172C0721C6A2EF0068CF92 /* BasePopUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePopUpView.swift; sourceTree = "<group>"; };
 		CB172C0821C6A2EF0068CF92 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		CB31FB7621DF413D001DFC7F /* BaseRecordEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRecordEntity.swift; sourceTree = "<group>"; };
+		CB31FB7821DF4736001DFC7F /* BaseOrderEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseOrderEntity.swift; sourceTree = "<group>"; };
 		CB3A8F0A21C64FC1008144BD /* Oganban.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Oganban.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB3A8F0D21C64FC1008144BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB3A8F0F21C64FC1008144BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -1537,6 +1541,8 @@
 				DEA3A09421D67B1300643296 /* BannerEntity.swift */,
 				DEBEE7F321D73443004B8D88 /* MoreEntity.swift */,
 				CB0FD72521DE5A430093B06B /* OrderEntity.swift */,
+				CB31FB7621DF413D001DFC7F /* BaseRecordEntity.swift */,
+				CB31FB7821DF4736001DFC7F /* BaseOrderEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -2261,6 +2267,7 @@
 				CBD1C2AC21D74DA6006DB3FF /* MySellingInteractor.swift in Sources */,
 				DE442C3021CF93750051C0B8 /* CommonAPIService.swift in Sources */,
 				DEF9AA3821D501CE001334EB /* UpdateProfileSocial.swift in Sources */,
+				CB31FB7921DF4736001DFC7F /* BaseOrderEntity.swift in Sources */,
 				84421C0821CBF52900F468F5 /* SupplementaryInfoRouter.swift in Sources */,
 				CB172C1621C6A2EF0068CF92 /* Bundle+extension.swift in Sources */,
 				DE21826C21CD473100FDD9F1 /* KActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
@@ -2313,6 +2320,7 @@
 				CB172B2F21C6A22A0068CF92 /* BaseParam.swift in Sources */,
 				DEE1DA6D21CDF5E70036FEB7 /* PopUpSelectGenderContent.swift in Sources */,
 				DEBEE80921D7594E004B8D88 /* AppRadioButton.swift in Sources */,
+				CB31FB7721DF413D001DFC7F /* BaseRecordEntity.swift in Sources */,
 				CBD1C2BC21D75BA5006DB3FF /* MyExchangeViewController.swift in Sources */,
 				84ABC68F21CFF06700E0D202 /* UpdateProfileRouter.swift in Sources */,
 				CB172C1321C6A2EF0068CF92 /* UIButton+extension.swift in Sources */,

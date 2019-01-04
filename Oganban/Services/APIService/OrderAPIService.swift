@@ -9,7 +9,7 @@
 import Foundation
 
 protocol OrderAPIServiceProtocol {
-    func getTransactionSeller(status: String, limit: Int, offset: Int, success: @escaping SuccessHandler<OrderEntity>.array, failure: @escaping RequestFailure)
+    func getTransactionSeller(status: String, limit: Int, offset: Int, success: @escaping SuccessHandler<BaseOrderEntity>.object, failure: @escaping RequestFailure)
 }
 
 class OrderAPIService: OrderAPIServiceProtocol {
@@ -18,8 +18,8 @@ class OrderAPIService: OrderAPIServiceProtocol {
     init(network: APINetworkProtocol) {
         self.network = network
     }
-    func getTransactionSeller(status: String, limit: Int, offset: Int, success: @escaping SuccessHandler<OrderEntity>.array, failure: @escaping RequestFailure) {
+    func getTransactionSeller(status: String, limit: Int, offset: Int, success: @escaping SuccessHandler<BaseOrderEntity>.object, failure: @escaping RequestFailure) {
         let endPoint = OrderEndPoint.getTransactionSeller(status: status, limit: limit, offset: offset)
-        network.requestData(endPoint: endPoint, success: MapperData.mapArray(success), failure: failure)
+        network.requestData(endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
     }
 }

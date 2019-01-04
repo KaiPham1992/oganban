@@ -20,16 +20,19 @@ class MySellExpiredViewController: BaseViewController {
     var refeshControl: UIRefreshControl?
     
     
-    var listSellExpired: [RecordEntity] = [] {
+    var listSellExpired: BaseRecordEntity? {
         didSet {
             tbExpired.reloadData()
             
-            if self.listSellExpired.isEmpty {
+            if (self.listSellExpired?.dataRecord.isEmpty)! {
                 tbExpired.isHidden = true
                 showNoData()
             } else {
                 hideNoData()
             }
+            
+            lbTotalHiden.text = "Tin đã ẩn: \(listSellExpired?.countHide ?? 0)"
+            lbTotalExpired.text = "Tin hết hạn: \(listSellExpired?.countExpired ?? 00)"
         }
     }
     
@@ -56,6 +59,7 @@ class MySellExpiredViewController: BaseViewController {
         
         tbExpired.contentInset.bottom = 10
 //        tbExpired.separatorStyle = .none
+        tbExpired.tableFooterView = UIView()
     }
     
     func getData() {
@@ -71,11 +75,12 @@ class MySellExpiredViewController: BaseViewController {
 
 extension MySellExpiredViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listSellExpired.count
+        guard let count = listSellExpired?.dataRecord.count else { return 0}
+        return count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueTableCell(MySellingCell.self)
-        cell.vRecordSelling.record = listSellExpired[indexPath.item]
+        cell.vRecordSelling.record = listSellExpired?.dataRecord[indexPath.item]
         return cell
     }
     
@@ -85,7 +90,8 @@ extension MySellExpiredViewController: UITableViewDataSource, UITableViewDelegat
 }
 
 extension MySellExpiredViewController: MySellExpiredViewProtocol {
-    func didGetSellPired(data: [RecordEntity]) {
+    
+    func didGetSellPired(data: BaseRecordEntity?) {
         self.listSellExpired = data
     }
     

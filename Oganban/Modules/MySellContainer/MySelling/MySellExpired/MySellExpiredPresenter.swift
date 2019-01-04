@@ -28,7 +28,7 @@ class MySellExpiredPresenter: MySellExpiredPresenterProtocol {
 }
 
 extension MySellExpiredPresenter: MySellExpiredInteractorOutputProtocol {
-    func didGetSellPired(data: [RecordEntity]) {
+    func didGetSellPired(data: BaseRecordEntity?) {
         view?.didGetSellPired(data: data)
     }
     

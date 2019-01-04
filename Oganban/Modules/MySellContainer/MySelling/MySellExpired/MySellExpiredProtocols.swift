@@ -26,7 +26,7 @@ protocol MySellExpiredPresenterProtocol: class {
 protocol MySellExpiredInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
-    func didGetSellPired(data: [RecordEntity])
+    func didGetSellPired(data: BaseRecordEntity?)
     func didGetSellPired(error: APIError?)
 }
 
@@ -44,6 +44,6 @@ protocol MySellExpiredViewProtocol: class {
     var presenter: MySellExpiredPresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
-    func didGetSellPired(data: [RecordEntity])
+    func didGetSellPired(data: BaseRecordEntity?)
     func didGetSellPired(error: APIError?)
 }

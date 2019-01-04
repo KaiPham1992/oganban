@@ -28,11 +28,11 @@ class MyExchangeViewController: BaseViewController {
     
     let dropDownStatus = DropDown()
     
-    var listData: [OrderEntity] = [] {
+    var listData: BaseOrderEntity? {
         didSet {
             tbMyExchange.reloadData()
             
-            if self.listData.isEmpty {
+            if let count = self.listData?.dataOrder, count.isEmpty {
                 tbMyExchange.isHidden = true
                 showNoData()
             } else {
@@ -65,6 +65,7 @@ class MyExchangeViewController: BaseViewController {
         
         tbMyExchange.contentInset.bottom = 10
 //        tbMyExchange.separatorStyle = .none
+        tbMyExchange.tableFooterView = UIView()
     }
     
     private func setupDropDownStatus() {
@@ -83,16 +84,20 @@ class MyExchangeViewController: BaseViewController {
             self.lbStatusExchange.text = item
             switch item {
             case "Chờ duyệt":
-                self.lbTotal.text = "Tổng đơn hàng đang chờ duyệt: \(self.listData.count)"
+                self.lbTotal.text = "Tổng đơn hàng đang chờ duyệt: \(self.listData?.countOrder ?? 0)"
                 self.presenter?.getTransactionSeller(status: "new", limit: 10, offset: 0)
             case "Đang giao":
-                self.lbTotal.text = "Tổng đơn hàng đang giao: \(self.listData.count)"
+                self.lbTotal.text = "Tổng đơn hàng đang giao: \(self.listData?.countOrder ?? 0)"
+                self.presenter?.getTransactionSeller(status: "wait_delivery", limit: 10, offset: 0)
             case "Hoàn Tất":
-                self.lbTotal.text = "Tổng đơn hàng đã hoàn tất: \(self.listData.count)"
+                self.lbTotal.text = "Tổng đơn hàng đã hoàn tất: \(self.listData?.countOrder ?? 0)"
+                self.presenter?.getTransactionSeller(status: "done", limit: 10, offset: 0)
             case "Đã huỷ":
-                self.lbTotal.text = "Tổng đơn hàng đã huỷ: \(self.listData.count)"
+                self.lbTotal.text = "Tổng đơn hàng đã huỷ: \(self.listData?.countOrder ?? 0)"
+                self.presenter?.getTransactionSeller(status: "cancel", limit: 10, offset: 0)
             case "Tất cả":
-                self.lbTotal.text = "Tổng tất cả đơn hàng: \(self.listData.count)"
+                self.lbTotal.text = "Tổng tất cả đơn hàng: \(self.listData?.countOrder ?? 0)"
+                self.presenter?.getTransactionSeller(status: "new", limit: 10, offset: 0)
             default:
                 break
             }
@@ -106,12 +111,13 @@ class MyExchangeViewController: BaseViewController {
 
 extension MyExchangeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listData.count
+        guard let count = listData?.dataOrder.count else { return 0 }
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueTableCell(MyBuyCell.self)
-        cell.vMyBuyView.order = listData[indexPath.item]
+        cell.vMyBuyView.order = listData?.dataOrder[indexPath.item]
         return cell
     }
     
@@ -122,7 +128,7 @@ extension MyExchangeViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension MyExchangeViewController: MyExchangeViewProtocol {
     
-    func didGetTransactionSeller(data: [OrderEntity]) {
+    func didGetTransactionSeller(data: BaseOrderEntity?) {
         self.listData = data
     }
     

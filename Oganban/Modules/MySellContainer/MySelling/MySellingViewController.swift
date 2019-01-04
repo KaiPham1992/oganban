@@ -32,16 +32,19 @@ class MySellingViewController: BaseViewController {
     var refeshControl: UIRefreshControl?
     var isCanLoadMore: Bool = false
     
-    var listRecord: [RecordEntity] = [] {
+    var listRecord: BaseRecordEntity? {
         didSet {
             tbMySelling.reloadData()
             
-            if self.listRecord.isEmpty {
+            if let count = self.listRecord?.dataRecord, count.isEmpty  {
                 tbMySelling.isHidden = true
                 showNoData()
             } else {
                 hideNoData()
             }
+            
+            lbTotalPosted.text = "Tin đã đăng: \(listRecord?.allowShow ?? 0)"
+            lbTotalSubPost.text = "Tin cho phép đăng: \(listRecord?.allowNews ?? 0)"
         }
     }
     
@@ -85,6 +88,7 @@ class MySellingViewController: BaseViewController {
         tbMySelling.registerTableCell(MySellingCell.self)
 //        tbMySelling.separatorStyle = .none
         tbMySelling.contentInset.bottom = 10
+        tbMySelling.tableFooterView = UIView()
     }
     
     func getData() {
@@ -109,12 +113,14 @@ class MySellingViewController: BaseViewController {
 
 extension MySellingViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listRecord.count
+        guard let count = listRecord?.dataRecord.count else { return 0}
+
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueTableCell(MySellingCell.self)
-        cell.vRecordSelling.record = listRecord[indexPath.item]
+        cell.vRecordSelling.record = listRecord?.dataRecord[indexPath.item]
         return cell
     }
     
@@ -128,10 +134,11 @@ extension MySellingViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if isCanLoadMore && listRecord.count >= 20 {
-            if indexPath.item == self.listRecord.count - 10 {
+        guard let count = listRecord?.dataRecord.count else { return }
+        if isCanLoadMore &&  count >= 20 {
+            if indexPath.item == count - 10 {
                 isCanLoadMore = false
-                presenter?.getRecordSellerPost(status: "show", offset: listRecord.count, limit: 20)
+                presenter?.getRecordSellerPost(status: "show", offset: count, limit: 20)
             }
         }
     }
@@ -139,7 +146,7 @@ extension MySellingViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension MySellingViewController: MySellingViewProtocol {
     
-    func didGetRecordSellerPost(listRecord: [RecordEntity]) {
+    func didGetRecordSellerPost(listRecord: BaseRecordEntity?) {
         self.listRecord = listRecord
     }
     

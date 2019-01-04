@@ -9,7 +9,7 @@
 import Foundation
 
 protocol RecordAPIServiceProtocol {
-    func getRecordSellerPost(status: String, offset: Int, limit: Int, success: @escaping SuccessHandler<RecordEntity>.array, failure: @escaping RequestFailure)
+    func getRecordSellerPost(status: String, offset: Int, limit: Int, success: @escaping SuccessHandler<BaseRecordEntity>.object, failure: @escaping RequestFailure)
     func getRecordDetail(id: Int, success: @escaping SuccessHandler<RecordEntity>.object, failure: @escaping RequestFailure)
     func hideRecord(recordID: Int, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
     
@@ -28,9 +28,9 @@ class RecordAPIService: RecordAPIServiceProtocol {
         network.requestData(endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
     }
     
-    func getRecordSellerPost(status: String, offset: Int, limit: Int, success: @escaping SuccessHandler<RecordEntity>.array, failure: @escaping (APIError?) -> Void) {
+    func getRecordSellerPost(status: String, offset: Int, limit: Int, success: @escaping SuccessHandler<BaseRecordEntity>.object, failure: @escaping (APIError?) -> Void) {
         let endPoint = RecordEndPoint.getRecordSellerPost(status: status, offset: offset, limit: limit)
-        network.requestData(endPoint: endPoint, success: MapperData.mapArray(success), failure: failure)
+        network.requestData(endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
     }
     
     func hideRecord(recordID: Int, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure) {
