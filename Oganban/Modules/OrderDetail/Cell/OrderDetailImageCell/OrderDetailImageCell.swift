@@ -47,15 +47,15 @@ class OrderDetailImageCell: BaseTableCell {
                  radioMoney.setMoney(money: price)
             }
             
-            radioCoin.setOCoin(coin: _record.coin&)
+            radioCoin.setOCoin(coin: _record.coin)
         }
     }
     
     weak var delegate: OrderDetailImageCellDelegate?
     
     private func setDefautlMySell() {
-        radioMoney.setMoney(money: "0")
-        radioCoin.setOCoin(coin: "0")
+        radioMoney.setMoney(money: 0)
+        radioCoin.setOCoin(coin: 0)
         radioMoney.setOneImage(image: AppImage.imgMoney)
         radioCoin.setOneImage(image: AppImage.imgCoin)
         

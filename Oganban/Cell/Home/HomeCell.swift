@@ -44,9 +44,9 @@ class HomeCell: UICollectionViewCell {
             }
         }
         
-        lbPrice.text = "\(record.price&) đ"
+        lbPrice.text = record.showMoney()
         lbPrice.underlineLastCharacter()
-        lbCoin.text = "\(record.coin&) ơ"
+        lbCoin.text = record.showCoin()
         lbCoin.underlineLastCharacter()
         lbName.text = record.fullName
         lbStar.text = record.avgRating

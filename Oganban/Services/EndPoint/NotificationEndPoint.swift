@@ -10,7 +10,7 @@ import Alamofire
 
 enum NotificationEndPoint {
     case getNotification(offset: Int)
-    case readNotification(notificationId: Int)
+    case readNotification(notificationId: String)
 }
 
 extension NotificationEndPoint: EndPointType {
@@ -40,6 +40,4 @@ extension NotificationEndPoint: EndPointType {
         let header = DefaultHeader().addAuthHeader()
         return header
     }
-    
-    
 }

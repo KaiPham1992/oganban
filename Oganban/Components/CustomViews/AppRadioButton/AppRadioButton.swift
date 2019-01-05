@@ -105,19 +105,20 @@ class AppRadioButton: BaseView {
 
 
 extension AppRadioButton {
-    func setMoney(money: String) {
+    func setMoney(money: Double) {
         let attr = NSMutableAttributedString()
         let attr1 = "Tiền mặt: ".toAttributedString(color: AppColor.red_210_2_2, font: AppFont.fontRegular13, isUnderLine: false)
-        let attr2 = "\(money) ".toAttributedString(color: AppColor.red_210_2_2, font: AppFont.fontBold13, isUnderLine: false)
+        let attr2 = "\(money.toUInt64().toCurrency) ".toAttributedString(color: AppColor.red_210_2_2, font: AppFont.fontBold13, isUnderLine: false)
         attr.append(attr1)
         attr.append(attr2)
         self.lbTitle.attributedText = attr
     }
     
-    func setOCoin(coin: String) {
+    func setOCoin(coin: Double?) {
+        guard let _coin = coin else { return }
         let attr = NSMutableAttributedString()
         let attr1 = "Đổi Ơcoin: ".toAttributedString(color: AppColor.green, font: AppFont.fontRegular13, isUnderLine: false)
-        let attr2 = "\(coin)".toAttributedString(color: AppColor.green, font: AppFont.fontBold13, isUnderLine: false)
+        let attr2 = "\(_coin.toCurrency&)".toAttributedString(color: AppColor.green, font: AppFont.fontBold13, isUnderLine: false)
         let attr3 = " ơ".toAttributedString(color: AppColor.green, font: AppFont.fontBold13, isUnderLine: true)
         
         attr.append(attr1)

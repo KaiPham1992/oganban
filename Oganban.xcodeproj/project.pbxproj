@@ -344,6 +344,15 @@
 		DEA3A09321D679A000643296 /* OrderDetailImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEA3A09121D679A000643296 /* OrderDetailImageCell.xib */; };
 		DEA3A09521D67B1300643296 /* BannerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3A09421D67B1300643296 /* BannerEntity.swift */; };
 		DEA3A09821D67ECE00643296 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3A09721D67ECE00643296 /* PaddingLabel.swift */; };
+		DEB854F221E08BB9007479A7 /* Post+Valid.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB854F121E08BB9007479A7 /* Post+Valid.swift */; };
+		DEB854F521E0A59C007479A7 /* ExpirePostEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB854F421E0A59C007479A7 /* ExpirePostEntity.swift */; };
+		DEB854F721E0B0C8007479A7 /* ShareNativeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB854F621E0B0C8007479A7 /* ShareNativeHelper.swift */; };
+		DEB854FF21E0B42D007479A7 /* NotificationDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB854F921E0B42D007479A7 /* NotificationDetailPresenter.swift */; };
+		DEB8550021E0B42D007479A7 /* NotificationDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB854FA21E0B42D007479A7 /* NotificationDetailRouter.swift */; };
+		DEB8550121E0B42D007479A7 /* NotificationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB854FB21E0B42D007479A7 /* NotificationDetailViewController.swift */; };
+		DEB8550221E0B42D007479A7 /* NotificationDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB854FC21E0B42D007479A7 /* NotificationDetailProtocols.swift */; };
+		DEB8550321E0B42D007479A7 /* NotificationDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB854FD21E0B42D007479A7 /* NotificationDetailInteractor.swift */; };
+		DEB8550421E0B42D007479A7 /* NotificationDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEB854FE21E0B42D007479A7 /* NotificationDetailViewController.xib */; };
 		DEBEE7F421D73443004B8D88 /* MoreEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBEE7F321D73443004B8D88 /* MoreEntity.swift */; };
 		DEBEE7F821D74041004B8D88 /* AppPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBEE7F621D74041004B8D88 /* AppPageView.swift */; };
 		DEBEE7F921D74041004B8D88 /* AppPageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBEE7F721D74041004B8D88 /* AppPageMenu.swift */; };
@@ -741,6 +750,15 @@
 		DEA3A09121D679A000643296 /* OrderDetailImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderDetailImageCell.xib; sourceTree = "<group>"; };
 		DEA3A09421D67B1300643296 /* BannerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerEntity.swift; sourceTree = "<group>"; };
 		DEA3A09721D67ECE00643296 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		DEB854F121E08BB9007479A7 /* Post+Valid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+Valid.swift"; sourceTree = "<group>"; };
+		DEB854F421E0A59C007479A7 /* ExpirePostEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpirePostEntity.swift; sourceTree = "<group>"; };
+		DEB854F621E0B0C8007479A7 /* ShareNativeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareNativeHelper.swift; sourceTree = "<group>"; };
+		DEB854F921E0B42D007479A7 /* NotificationDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetailPresenter.swift; sourceTree = "<group>"; };
+		DEB854FA21E0B42D007479A7 /* NotificationDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetailRouter.swift; sourceTree = "<group>"; };
+		DEB854FB21E0B42D007479A7 /* NotificationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetailViewController.swift; sourceTree = "<group>"; };
+		DEB854FC21E0B42D007479A7 /* NotificationDetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetailProtocols.swift; sourceTree = "<group>"; };
+		DEB854FD21E0B42D007479A7 /* NotificationDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetailInteractor.swift; sourceTree = "<group>"; };
+		DEB854FE21E0B42D007479A7 /* NotificationDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationDetailViewController.xib; sourceTree = "<group>"; };
 		DEBEE7F321D73443004B8D88 /* MoreEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreEntity.swift; sourceTree = "<group>"; };
 		DEBEE7F621D74041004B8D88 /* AppPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppPageView.swift; sourceTree = "<group>"; };
 		DEBEE7F721D74041004B8D88 /* AppPageMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppPageMenu.swift; sourceTree = "<group>"; };
@@ -1082,6 +1100,7 @@
 		CB172B1821C6A1480068CF92 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				DEB854F821E0B418007479A7 /* NotificationDetail */,
 				DE33035721DF5ECB00409F83 /* PostStepTwo */,
 				DE33034421DF13C700409F83 /* PostStepOne */,
 				B3CC856821D72DB600ADBFD8 /* Position */,
@@ -1283,6 +1302,7 @@
 				CB172B6D21C6A2EE0068CF92 /* Utils.swift */,
 				DE0E79D621D658080053786D /* SelectImageFromMobileHelper.swift */,
 				B329A49B21D78A59004BBEE6 /* PositionMapsHelper.swift */,
+				DEB854F621E0B0C8007479A7 /* ShareNativeHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1577,6 +1597,7 @@
 				CB0FD72521DE5A430093B06B /* OrderEntity.swift */,
 				CB31FB7621DF413D001DFC7F /* BaseRecordEntity.swift */,
 				CB31FB7821DF4736001DFC7F /* BaseOrderEntity.swift */,
+				DEB854F421E0A59C007479A7 /* ExpirePostEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1698,6 +1719,7 @@
 		DE33034421DF13C700409F83 /* PostStepOne */ = {
 			isa = PBXGroup;
 			children = (
+				DEB854F021E08B8E007479A7 /* extension */,
 				DE33034521DF13EB00409F83 /* PostStepOnePresenter.swift */,
 				DE33034621DF13EB00409F83 /* PostStepOneRouter.swift */,
 				DE33034721DF13EB00409F83 /* PostStepOneViewController.swift */,
@@ -1719,6 +1741,7 @@
 		DE33035721DF5ECB00409F83 /* PostStepTwo */ = {
 			isa = PBXGroup;
 			children = (
+				DEB854F321E093E0007479A7 /* Extension */,
 				DE33035821DF5EDB00409F83 /* PostStepTwoPresenter.swift */,
 				DE33035921DF5EDB00409F83 /* PostStepTwoRouter.swift */,
 				DE33035A21DF5EDB00409F83 /* PostStepTwoViewController.swift */,
@@ -1848,6 +1871,34 @@
 				DEA3A09721D67ECE00643296 /* PaddingLabel.swift */,
 			);
 			path = PaddingLabel;
+			sourceTree = "<group>";
+		};
+		DEB854F021E08B8E007479A7 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				DEB854F121E08BB9007479A7 /* Post+Valid.swift */,
+			);
+			path = extension;
+			sourceTree = "<group>";
+		};
+		DEB854F321E093E0007479A7 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		DEB854F821E0B418007479A7 /* NotificationDetail */ = {
+			isa = PBXGroup;
+			children = (
+				DEB854F921E0B42D007479A7 /* NotificationDetailPresenter.swift */,
+				DEB854FA21E0B42D007479A7 /* NotificationDetailRouter.swift */,
+				DEB854FB21E0B42D007479A7 /* NotificationDetailViewController.swift */,
+				DEB854FC21E0B42D007479A7 /* NotificationDetailProtocols.swift */,
+				DEB854FD21E0B42D007479A7 /* NotificationDetailInteractor.swift */,
+				DEB854FE21E0B42D007479A7 /* NotificationDetailViewController.xib */,
+			);
+			path = NotificationDetail;
 			sourceTree = "<group>";
 		};
 		DEBEE7F521D74041004B8D88 /* AppPageView */ = {
@@ -2180,6 +2231,7 @@
 				DEE1DA7E21CE2E6A0036FEB7 /* PopUpUpdateQuantityBuyContent.xib in Resources */,
 				B355EF5421C8EB3F00379F57 /* HomeViewController.xib in Resources */,
 				DE442C4221CFA2130051C0B8 /* OrderDetailViewController.xib in Resources */,
+				DEB8550421E0B42D007479A7 /* NotificationDetailViewController.xib in Resources */,
 				CB172C8A21C6A2EF0068CF92 /* OpenSans-LightItalic.ttf in Resources */,
 				CB172C0921C6A2EF0068CF92 /* PopUpNotificationContent.xib in Resources */,
 				CB172C8721C6A2EF0068CF92 /* OpenSans-Light.ttf in Resources */,
@@ -2310,6 +2362,7 @@
 				B392FB3921D3B13E0076A7B5 /* CategoryAPIService.swift in Sources */,
 				CB172C9321C6A2EF0068CF92 /* AppString.swift in Sources */,
 				DE21828021CD473100FDD9F1 /* KActivityIndicatorAnimationBallRotate.swift in Sources */,
+				DEB8550121E0B42D007479A7 /* NotificationDetailViewController.swift in Sources */,
 				DE0E79D921D65F760053786D /* Connectivity.swift in Sources */,
 				B36AEECE21CDF52B00BED43C /* HomeCell.swift in Sources */,
 				CBD1C2C121D76BEB006DB3FF /* RecordEndPoint.swift in Sources */,
@@ -2330,9 +2383,11 @@
 				CBBB3DF821D5C74400281ABB /* ChangePasswordInteractor.swift in Sources */,
 				B355EF5321C8EB3F00379F57 /* HomeInteractor.swift in Sources */,
 				CB172C0E21C6A2EF0068CF92 /* UIDevice+extension.swift in Sources */,
+				DEB854FF21E0B42D007479A7 /* NotificationDetailPresenter.swift in Sources */,
 				B355EF5021C8EB3F00379F57 /* HomeRouter.swift in Sources */,
 				CB0FD72021DDBAD10093B06B /* OrderEndPoint.swift in Sources */,
 				DEC5166421CE8DCD00A17CBF /* PopUpSettingGPSContent.swift in Sources */,
+				DEB854F521E0A59C007479A7 /* ExpirePostEntity.swift in Sources */,
 				CB172C9521C6A2EF0068CF92 /* ConstantStoryboard.swift in Sources */,
 				CB172C9921C6A2EF0068CF92 /* BaseViewController.swift in Sources */,
 				CBD1C2AC21D74DA6006DB3FF /* MySellingInteractor.swift in Sources */,
@@ -2399,6 +2454,7 @@
 				DEBEE80921D7594E004B8D88 /* AppRadioButton.swift in Sources */,
 				CB31FB7721DF413D001DFC7F /* BaseRecordEntity.swift in Sources */,
 				CBD1C2BC21D75BA5006DB3FF /* MyExchangeViewController.swift in Sources */,
+				DEB8550221E0B42D007479A7 /* NotificationDetailProtocols.swift in Sources */,
 				84ABC68F21CFF06700E0D202 /* UpdateProfileRouter.swift in Sources */,
 				CB172C1321C6A2EF0068CF92 /* UIButton+extension.swift in Sources */,
 				DE21826D21CD473100FDD9F1 /* KActivityIndicatorAnimationBallPulse.swift in Sources */,
@@ -2455,6 +2511,7 @@
 				DEA3A09521D67B1300643296 /* BannerEntity.swift in Sources */,
 				84421BF921CBEF1E00F468F5 /* MoreHeaderCell.swift in Sources */,
 				DE21823021CD458E00FDD9F1 /* UserAPIService.swift in Sources */,
+				DEB854F721E0B0C8007479A7 /* ShareNativeHelper.swift in Sources */,
 				84A92BF721CA555900148191 /* LoginRouter.swift in Sources */,
 				84421BEE21CBEECF00F468F5 /* MoreRouter.swift in Sources */,
 				B355EF5D21C8FB1400379F57 /* SignUpRouter.swift in Sources */,
@@ -2515,6 +2572,7 @@
 				DEE1DA6921CDF5A90036FEB7 /* PopUpSelectGender.swift in Sources */,
 				84C8542E21CFDB6600BDABE5 /* Login+Event.swift in Sources */,
 				DE21826521CD473100FDD9F1 /* KActivityIndicatorAnimationBallGridPulse.swift in Sources */,
+				DEB8550021E0B42D007479A7 /* NotificationDetailRouter.swift in Sources */,
 				DE2181FE21CD3DC300FDD9F1 /* AppDelegate+Push.swift in Sources */,
 				CB172C1C21C6A2EF0068CF92 /* UICollectionView+extension.swift in Sources */,
 				CB172C9821C6A2EF0068CF92 /* AppFont.swift in Sources */,
@@ -2548,6 +2606,7 @@
 				84421BF021CBEECF00F468F5 /* MoreProtocols.swift in Sources */,
 				CBD1C2C321D76E4D006DB3FF /* RecordAPIService.swift in Sources */,
 				CB172C2021C6A2EF0068CF92 /* FileManagerHelper.swift in Sources */,
+				DEB8550321E0B42D007479A7 /* NotificationDetailInteractor.swift in Sources */,
 				DE21827C21CD473100FDD9F1 /* KActivityIndicatorAnimationBallPulseSync.swift in Sources */,
 				CBD1C29E21D74B79006DB3FF /* RecordSellingView.swift in Sources */,
 				DEBEE80121D740D7004B8D88 /* MySellContainerPresenter.swift in Sources */,
@@ -2562,6 +2621,7 @@
 				CBD1C29821D732CB006DB3FF /* MyBuyViewController.swift in Sources */,
 				CB172C9A21C6A2EF0068CF92 /* BaseCollectionCell.swift in Sources */,
 				CB172C1D21C6A2EF0068CF92 /* UITextField+extension.swift in Sources */,
+				DEB854F221E08BB9007479A7 /* Post+Valid.swift in Sources */,
 				CB172C2221C6A2EF0068CF92 /* PopUpNotificationHelper.swift in Sources */,
 				CB172C1F21C6A2EF0068CF92 /* UITableView+extension.swift in Sources */,
 				DE21827721CD473100FDD9F1 /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,

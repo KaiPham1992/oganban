@@ -46,7 +46,7 @@ class AppImageSlide: BaseViewXib {
         super.setUpViews()
         imageSlideShow.pageIndicator = nil
         imageSlideShow.slideshowInterval = 5
-        imageSlideShow.contentScaleMode = .scaleAspectFit
+        imageSlideShow.contentScaleMode = .scaleAspectFill
         imageSlideShow.backgroundColor = UIColor.black
         
         imageSlideShow.activityIndicator = DefaultActivityIndicator()
