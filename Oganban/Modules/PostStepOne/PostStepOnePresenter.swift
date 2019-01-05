@@ -10,7 +10,11 @@
 
 import UIKit
 
-class PostStepOnePresenter: PostStepOnePresenterProtocol, PostStepOneInteractorOutputProtocol {
+class PostStepOnePresenter: PostStepOnePresenterProtocol {
+    func getCategoryMerge() {
+        interactor?.getCategoryMerge()
+    }
+    
 
     weak private var view: PostStepOneViewProtocol?
     var interactor: PostStepOneInteractorInputProtocol?
@@ -21,5 +25,11 @@ class PostStepOnePresenter: PostStepOnePresenterProtocol, PostStepOneInteractorO
         self.interactor = interactor
         self.router = router
     }
+    
+}
 
+extension PostStepOnePresenter: PostStepOneInteractorOutputProtocol {
+    func didGetCategoryMerge(list: [CategoryMergeEntity]) {
+        view?.didGetCategoryMerge(list: list)
+    }
 }
