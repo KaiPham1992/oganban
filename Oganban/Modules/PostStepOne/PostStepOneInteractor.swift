@@ -13,4 +13,12 @@ import UIKit
 class PostStepOneInteractor: PostStepOneInteractorInputProtocol {
 
     weak var presenter: PostStepOneInteractorOutputProtocol?
+    
+    func getCategoryMerge() {
+        Provider.shared.categoryAPIService.getCategoryMerge(success: { (result) in
+            self.presenter?.didGetCategoryMerge(list: result)
+        }) { (error) in
+            
+        }
+    }
 }

@@ -18,18 +18,20 @@ protocol PostStepOneWireframeProtocol: class {
 protocol PostStepOnePresenterProtocol: class {
 
     var interactor: PostStepOneInteractorInputProtocol? { get set }
+    func getCategoryMerge()
 }
 
 //MARK: Interactor -
 protocol PostStepOneInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    func didGetCategoryMerge(list: [CategoryMergeEntity])
 }
 
 protocol PostStepOneInteractorInputProtocol: class {
 
     var presenter: PostStepOneInteractorOutputProtocol?  { get set }
-
+    func getCategoryMerge()
     /* Presenter -> Interactor */
 }
 
@@ -37,6 +39,7 @@ protocol PostStepOneInteractorInputProtocol: class {
 protocol PostStepOneViewProtocol: class {
 
     var presenter: PostStepOnePresenterProtocol?  { get set }
+    func didGetCategoryMerge(list: [CategoryMergeEntity])
 
     /* Presenter -> ViewController */
 }
