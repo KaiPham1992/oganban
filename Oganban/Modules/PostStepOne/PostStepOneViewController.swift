@@ -39,7 +39,7 @@ class PostStepOneViewController: BaseViewController {
     //--Menu
     var menu: [CategoryMergeEntity] = [] {
         didSet {
-            //            self.tbLeft.reloadData()
+//            self.tbLeft.reloadData()
         }
     }
     var indexReload: Int?
@@ -47,6 +47,8 @@ class PostStepOneViewController: BaseViewController {
     var paramFilter = RecordParam()
     var oldParentSelected: Int?
     var oldChildSelected: Int?
+    var heightTableLeft: CGFloat = 300
+    var heightTableRight: CGFloat = 200
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,11 +97,15 @@ class PostStepOneViewController: BaseViewController {
         tbLeft.dataSource = self
         tbRight.rowHeight = UITableView.automaticDimension
         tbLeft.rowHeight = UITableView.automaticDimension
-        hideDropdown()
+//        hideDropdown()
         tbLeft.layer.cornerRadius = 10
         tbRight.layer.cornerRadius = 10
         tbLeft.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: tbLeft.bounds.size.width - 10)
         tbRight.contentInset.bottom = 40
+        //---
+        self.btnHideDropdown.isHidden = true
+        self.heightLeft.constant = 0
+        self.heightRight.constant = 0
     }
     
     
@@ -108,17 +114,26 @@ class PostStepOneViewController: BaseViewController {
     }
     
     func hideDropdown() {
-        tbRight.isHidden = true
-        tbLeft.isHidden = true
-        btnHideDropdown.isHidden = true
+        UIView.animate(withDuration: 0.3) {
+            self.btnHideDropdown.isHidden = true
+            self.heightLeft.constant = 0
+            self.heightRight.constant = 0
+            self.view.layoutIfNeeded()
+        }
+        
     }
     
     @IBAction func btnCategoryTapped() {
-        tbLeft.isHidden = false
-        if oldChildSelected != nil {
-            tbRight.isHidden = false
+        self.btnHideDropdown.isHidden = false
+        UIView.animate(withDuration: 0.3) {
+            
+            self.heightLeft.constant = self.heightTableLeft
+            if self.oldChildSelected != nil {
+                self.heightRight.constant = self.heightTableRight
+            }
+            self.view.layoutIfNeeded()
         }
-        btnHideDropdown.isHidden = false
+        
     }
     
     @IBAction func btnContinueTapped() {
@@ -190,6 +205,7 @@ extension PostStepOneViewController: UITableViewDelegate, UITableViewDataSource 
             cell.lbTitle.text = menu[indexPath.row].name
             cell.lbTitle.textColor = menu[indexPath.row].isSelected ? .yellow : .white
             self.heightLeft.constant = heightContent < heightMax ? tableView.contentSize.height : (heightMax)
+            self.heightTableLeft = heightContent < heightMax ? tableView.contentSize.height : (heightMax)
             cell.indexPath = indexPath
             cell.delegate = self
             return cell
@@ -198,6 +214,7 @@ extension PostStepOneViewController: UITableViewDelegate, UITableViewDataSource 
             let cell = tableView.dequeueTableCell(MenuCell.self)
             cell.lbTitle.text = menu[index].cateChild[indexPath.row].name
             self.heightRight.constant = heightContent < heightMax ? tableView.contentSize.height : (heightMax)
+            self.heightTableRight = heightContent < heightMax ? tableView.contentSize.height : (heightMax)
             cell.isSelect = menu[index].cateChild[indexPath.row].isSelected
             return cell
             
@@ -267,5 +284,9 @@ extension PostStepOneViewController: LeftMenuCellDelegate {
         oldParentSelected = index
         tbRight.reloadData()
         tbRight.isHidden = false
+        UIView.animate(withDuration: 0.3) {
+            self.heightRight.constant = self.heightTableRight
+            self.view.layoutIfNeeded()
+        }
     }
 }
