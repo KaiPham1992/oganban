@@ -72,9 +72,10 @@ class SupplementaryInfoViewController: BaseViewController, UITextFieldDelegate {
 
 extension SupplementaryInfoViewController: SupplementaryInfoViewProtocol {
     func didLogin(user: UserEntity?) {
+        guard let _user = user else { return }
         guard let _verifyCode = user?.codeVerify else { return }
         NotificationCenter.default.post(name: AppConstant.notiDidUpdateSocial, object: _verifyCode)
-        
+        UserUtils.saveUser(user: _user)
         self.dismiss()
     }
     

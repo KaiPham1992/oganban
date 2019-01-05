@@ -41,12 +41,14 @@ extension LoginViewController: LoginViewProtocol {
             }
         } else {
             UserUtils.saveUser(user: _user)
+            NotificationCenter.default.post(name: AppConstant.notiReloadMoreView, object: nil)
             self.dismiss(animated: true)
         }
     }
     
     func didError(error: APIError?) {
         if let message = error?.message {
+            UserUtils.clearLogin()
             switch message {
             case "INVALID_USERNAME_OR_PASSWORD":
                 hideError(isHidden: false, message:  MessageString.invalidLoginEmailPassword)
@@ -138,6 +140,8 @@ extension LoginViewController {
     @objc func didGetVerifyCode(notification: Notification) {
         guard let verifyCode = notification.object as? String else { return }
         self.verifyCode = verifyCode
-        fbAccountKit.verifyPhone()
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+            self.fbAccountKit.verifyPhone()
+        }
     }
 }
