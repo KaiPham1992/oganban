@@ -206,8 +206,8 @@ extension BaseViewController {
     }
 }
 extension BaseViewController {
-    func addBackToNavigation() {
-        addButtonImageToNavigation(image: AppImage.imgBack, style: .left, action: #selector(btnBackTapped))
+    func addBackToNavigation(icon: UIImage = AppImage.imgBack) {
+        addButtonImageToNavigation(image: icon, style: .left, action: #selector(btnBackTapped))
     }
     
     func addCloseToNavigation() {

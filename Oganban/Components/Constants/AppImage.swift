@@ -52,4 +52,5 @@ struct AppImage {
     static let imgShare = UIImage(named: "ic_share_social")!
     static let imgMoney = UIImage(named: "ic_money")!
     static let imgCoin = UIImage(named: "ic_coin")!
+     static let imgWhiteBack = UIImage(named: "ic_back")!
 }
