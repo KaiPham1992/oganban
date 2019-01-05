@@ -31,6 +31,7 @@ class PostStepOneViewController: BaseViewController {
     var category: CategoryEntity?
     var dateSeleted: Date?
     
+    //--Menu
     var menu: [CategoryMergeEntity] = [] {
         didSet {
             //            self.tbLeft.reloadData()
@@ -39,6 +40,8 @@ class PostStepOneViewController: BaseViewController {
     var indexReload: Int?
     var index = 0
     var paramFilter = RecordParam()
+    var oldParentSelected: Int?
+    var oldChildSelected: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -105,42 +108,11 @@ class PostStepOneViewController: BaseViewController {
         btnHideDropdown.isHidden = true
     }
     
-    @IBAction func acceptTapped() {
-        hideDropdown()
-        
-        let listChoose = menu[index].cateChild.filter { (item) -> Bool in
-            return item.isSelected
-        }
-        
-        for temp in 0...menu.count - 1 {
-            if temp != index {
-                for indexCate in 0...menu[temp].cateChild.count - 1 {
-                    menu[temp].cateChild[indexCate].isSelected = false
-                }
-            }
-        }
-        var category = ""
-        for choose in listChoose {
-            category += "\(choose.name&), "
-        }
-        if category != "" {
-            lbCategory.text = category
-        } else {
-            lbCategory.text = "Tất cả danh mục"
-        }
-        
-        
-        let listCate = listChoose.map { (item) -> String in
-            return item.id&
-        }
-        
-        paramFilter.categoryId = listCate
-//        presenter?.filterRecord(param: paramFilter)
-    }
-    
     @IBAction func btnCategoryTapped() {
         tbLeft.isHidden = false
-        tbLeft.reloadData()
+        if oldChildSelected != nil {
+            tbRight.isHidden = false
+        }
         btnHideDropdown.isHidden = false
     }
     
@@ -231,30 +203,25 @@ extension PostStepOneViewController: UITableViewDelegate, UITableViewDataSource 
         switch tableView {
         case tbLeft:
             index = indexPath.row
-            for (temp, _) in menu.enumerated() {
-                if temp != index {
-                    if menu[temp].isSelected == true {
-                        indexReload = temp
-                        menu[temp].isSelected = false
-                        self.tbLeft.reloadRows(at: [IndexPath(item: temp, section: indexPath.section)], with: .none)
-                    }
-                    
-                }
-            }
+            menu[oldParentSelected*].isSelected = false
+            menu[oldParentSelected*].cateChild[oldChildSelected*].isSelected = false
             menu[index].isSelected = true
-            tbLeft.reloadRows(at: [indexPath], with: .none)
-            tbLeft.isHidden = true
-            btnHideDropdown.isHidden = true
+            tbLeft.reloadRows(at: [IndexPath(item: oldParentSelected*, section: indexPath.section), indexPath], with: .none)
+            oldParentSelected = index
             lbCategory.text = menu[index].name
             paramFilter.categoryId = [menu[index].id&]
+            hideDropdown()
+            //--ID category parent
 //            presenter?.filterRecord(param: paramFilter)
         case tbRight:
-            if indexPath.row == menu[index].cateChild.count {
-                
-            } else {
-                menu[index].cateChild[indexPath.row].isSelected = !menu[index].cateChild[indexPath.row].isSelected
-                tbRight.reloadRows(at: [indexPath], with: .none)
-            }
+            menu[oldParentSelected*].cateChild[oldChildSelected*].isSelected = false
+            menu[oldParentSelected*].cateChild[indexPath.row].isSelected = true
+            tbRight.reloadRows(at: [IndexPath(item: oldChildSelected*, section: indexPath.section), indexPath], with: .none)
+            oldChildSelected = indexPath.row
+            lbCategory.text =  menu[oldParentSelected*].cateChild[indexPath.row].name
+            paramFilter.categoryId =  [menu[oldParentSelected*].cateChild[indexPath.row].id&]
+            //--get id category there
+            hideDropdown()
             
         default:
             break
@@ -280,18 +247,15 @@ extension PostStepOneViewController: UITableViewDelegate, UITableViewDataSource 
 extension PostStepOneViewController: LeftMenuCellDelegate {
     func openRightMenu(indexPath: IndexPath) {
         index = indexPath.row
-        for (temp, _) in menu.enumerated() {
-            if temp != index {
-                if menu[temp].isSelected == true {
-                    indexReload = temp
-                    menu[temp].isSelected = false
-                    self.tbLeft.reloadRows(at: [IndexPath(item: temp, section: indexPath.section)], with: .none)
-                }
-                
-            }
+        
+        if oldParentSelected != index {
+            menu[oldParentSelected*].isSelected = false
+            menu[oldParentSelected*].cateChild[oldChildSelected*].isSelected = false
+            
         }
         menu[index].isSelected = true
-        tbLeft.reloadRows(at: [indexPath], with: .none)
+        tbLeft.reloadRows(at: [IndexPath(item: oldParentSelected*, section: indexPath.section), indexPath], with: .none)
+        oldParentSelected = index
         tbRight.reloadData()
         tbRight.isHidden = false
     }
