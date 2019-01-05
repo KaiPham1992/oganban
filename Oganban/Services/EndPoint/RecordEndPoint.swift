@@ -14,6 +14,7 @@ enum RecordEndPoint {
     case getRecordDetail(id: String)
     case hideRecord(recordID: Int)
     case postRecord(param: PostRecordParam)
+    case getExpirePostRecord()
 }
 
 extension RecordEndPoint: EndPointType {
@@ -27,12 +28,14 @@ extension RecordEndPoint: EndPointType {
             return "_api/record/hide_record"
         case .postRecord:
             return "_api/record/add_record"
+        case .getExpirePostRecord:
+            return "_api/record/expired_date_post_record"
         }
     }
     
     var httpMethod: HTTPMethod {
         switch self {
-        case .getRecordSellerPost, .postRecord:
+        case .getRecordSellerPost, .postRecord, .getExpirePostRecord:
             return .post
         case .getRecordDetail:
             return .get
@@ -48,7 +51,7 @@ extension RecordEndPoint: EndPointType {
                          "offset": offset,
                          "limit": limit] as [String: Any]
             return param
-        case .getRecordDetail:
+        case .getRecordDetail, .getExpirePostRecord:
             return [:]
         case .hideRecord(let recordID):
             let param = ["record_id": recordID]

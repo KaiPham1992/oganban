@@ -92,7 +92,7 @@ class OrderDetailViewController: BaseViewController {
     }
     
     @objc func btnShareTapped() {
-        print("share native")
+        ShareNativeHelper.shared.showShare(controller: self, items: ["share content"])
     }
     
 //    func testComment() {

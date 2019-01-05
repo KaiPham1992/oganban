@@ -26,4 +26,12 @@ class NotificationInteractor: NotificationInteractorInputProtocol {
             self.presenter?.didGetError(error: error)
         }
     }
+    
+    func readNotification(id: String) {
+        Provider.shared.notificationAPIService.readNotification(notificationId: id, success: { _ in
+            
+        }) { _ in
+            
+        }
+    }
 }

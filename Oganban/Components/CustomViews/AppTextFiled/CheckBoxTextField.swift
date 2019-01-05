@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol CheckBoxTextFieldDelegate: class {
+    func checkBoxTextField(checkBoxTextField: CheckBoxTextField, isChecked: Bool)
+    func checkBoxTextField(didEndEditting checkBoxTextField: CheckBoxTextField)
+}
+
 class CheckBoxTextField: BaseView {
     let vContent: UIView = {
         let view = UIView()
@@ -40,6 +45,12 @@ class CheckBoxTextField: BaseView {
         return view
     }()
     
+    var isCheck: Bool {
+        return btnCheckBox.isChecked
+    }
+    
+    weak var delegate: CheckBoxTextFieldDelegate?
+    
     override func setUpViews() {
         self.addSubview(vContent)
         vContent.addSubview(btnCheckBox)
@@ -48,12 +59,12 @@ class CheckBoxTextField: BaseView {
         
         vContent.fillSuperview()
         btnCheckBox.anchor(vContent.topAnchor,
-                       left         : vContent.leftAnchor,
-                       right        : vContent.rightAnchor,
-                       topConstant  : 0,
-                       leftConstant : 0,
-                       rightConstant: 0,
-                       heightConstant: 20)
+                           left         : vContent.leftAnchor,
+                           right        : vContent.rightAnchor,
+                           topConstant  : 0,
+                           leftConstant : 0,
+                           rightConstant: 0,
+                           heightConstant: 20)
         textField.anchor(btnCheckBox.bottomAnchor, left: btnCheckBox.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0)
         
         vLine.anchor(left           : vContent.leftAnchor,
@@ -64,6 +75,7 @@ class CheckBoxTextField: BaseView {
                      rightConstant  : 0,
                      heightConstant : 1)
         textField.delegate = self
+        btnCheckBox.delegate = self
     }
     
     func setTitleTextField(text: String) {
@@ -82,12 +94,17 @@ class CheckBoxTextField: BaseView {
     }
 }
 
-extension CheckBoxTextField: UITextFieldDelegate {
+extension CheckBoxTextField: UITextFieldDelegate,  AppRadioButtonDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         vLine.backgroundColor = UIColor.red
+        delegate?.checkBoxTextField(didEndEditting: self)
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         vLine.backgroundColor = AppColor.textLabel
+    }
+    
+    func changedSelected(sender: AppRadioButton, isSelected: Bool) {
+        delegate?.checkBoxTextField(checkBoxTextField: self, isChecked: isSelected)
     }
 }

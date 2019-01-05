@@ -47,6 +47,7 @@ class MoreRouter: MoreWireframeProtocol {
             print("Chọn Điều khoản sử dụng")
             break
         case MoreEntityType.tutorial:
+            tapTutorial()
             print("Chọn Hướng dẫn")
             break
         case MoreEntityType.setting:
@@ -66,6 +67,11 @@ class MoreRouter: MoreWireframeProtocol {
         
     }
     
+    private func tapTutorial(){
+        let vc = ProductListRouter.createModule()
+        viewController?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     private func tapHeader(){
         if UserDefaultHelper.shared.loginUserInfo != nil {
             let vc = UpdateProfileRouter.createModule()
@@ -78,20 +84,25 @@ class MoreRouter: MoreWireframeProtocol {
     }
     
     private func tapHistoryCoin(){
-        if UserDefaultHelper.shared.loginUserInfo != nil {
-            //Goto histotyCoin
-        } else {
-            let vc = LoginRouter.createModule()
-            let nc = UINavigationController(rootViewController: vc)
-            viewController?.present(controller: nc, animated: true)
-        }
+        let vc = HistoryCoinRouter.createModule()
+        viewController?.navigationController?.pushViewController(vc, animated: true)
+//        if UserDefaultHelper.shared.loginUserInfo != nil {
+//            //Goto histotyCoin
+//        } else {
+//            let vc = LoginRouter.createModule()
+//            let nc = UINavigationController(rootViewController: vc)
+//            viewController?.present(controller: nc, animated: true)
+//        }
     }
     
     private func tapHistoryBuy(){
-
+        let vc = HistoryBuyRouter.createModule()
+        viewController?.navigationController?.pushViewController(vc, animated: true)
     }
     
     private func tapPolicy(){
+        let vc = FavouriteRouter.createModule()
+        viewController?.navigationController?.pushViewController(vc, animated: true)
     }
     
     private func tapChangePassword() {

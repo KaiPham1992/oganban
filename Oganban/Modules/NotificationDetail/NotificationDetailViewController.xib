@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NotificationDetailViewController">
+            <connections>
+                <outlet property="lbContent" destination="muR-E6-8Xb" id="Hkh-eK-3KM"/>
+                <outlet property="lbTime" destination="duY-49-vt5" id="cXJ-zN-Df1"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="duY-49-vt5">
+                    <rect key="frame" x="16" y="30" width="343" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="U3f-E9-Ex1"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="muR-E6-8Xb">
+                    <rect key="frame" x="16" y="61" width="343" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="duY-49-vt5" firstAttribute="top" secondItem="Uwr-xf-yM8" secondAttribute="top" constant="10" id="F2p-IF-pIR"/>
+                <constraint firstItem="Uwr-xf-yM8" firstAttribute="trailing" secondItem="duY-49-vt5" secondAttribute="trailing" constant="16" id="Kji-4R-OHg"/>
+                <constraint firstItem="duY-49-vt5" firstAttribute="leading" secondItem="Uwr-xf-yM8" secondAttribute="leading" constant="16" id="L1Z-RA-5P7"/>
+                <constraint firstItem="muR-E6-8Xb" firstAttribute="leading" secondItem="Uwr-xf-yM8" secondAttribute="leading" constant="16" id="RsM-Pw-0bL"/>
+                <constraint firstItem="Uwr-xf-yM8" firstAttribute="trailing" secondItem="muR-E6-8Xb" secondAttribute="trailing" constant="16" id="cDk-wk-qE0"/>
+                <constraint firstItem="muR-E6-8Xb" firstAttribute="top" secondItem="duY-49-vt5" secondAttribute="bottom" constant="10" id="zOH-Yu-J1y"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Uwr-xf-yM8"/>
+        </view>
+    </objects>
+</document>

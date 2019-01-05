@@ -12,8 +12,8 @@ class RecordEntity: BaseEntity {
     
     var id: String?
     var name: String?
-    var price: String?
-    var coin: String?
+    var price: Double?
+    var coin: Double?
     var isNew: String?
     var isPro: String?
     var long: String?
@@ -34,7 +34,7 @@ class RecordEntity: BaseEntity {
     var address2: String?
     var phone: String?
     
-    var quantity: String?
+    var quantity: Int?
     var expiredDate: Date?
     var isActive: String?
     var cropImage: String?
@@ -87,5 +87,17 @@ class RecordEntity: BaseEntity {
     
     var urlAvatar: URL? {
         return URL(string: "\(BASE_URL)\(self.cropImage&)")
+    }
+    
+    func showMoney() -> String? {
+        return self.price?.toUInt64().toCurrency
+    }
+    
+    func showCoin() -> String? {
+        if let _coin = self.coin {
+            return "\(String(describing: _coin.toCurrency)) ơ"
+        }
+        
+        return nil
     }
 }

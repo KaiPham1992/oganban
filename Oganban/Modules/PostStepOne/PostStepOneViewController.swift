@@ -30,6 +30,11 @@ class PostStepOneViewController: BaseViewController {
     var postParam = PostRecordParam()
     var category: CategoryEntity?
     var dateSeleted: Date?
+    var errorMessage: String = "" {
+        didSet {
+            print(errorMessage)
+        }
+    }
     
     //--Menu
     var menu: [CategoryMergeEntity] = [] {
@@ -117,6 +122,10 @@ class PostStepOneViewController: BaseViewController {
     }
     
     @IBAction func btnContinueTapped() {
+//        if !validInput() {
+//            return
+//        }
+        
         let imgSrc = vPhoto.listImage.map {$0.url&}
         let expireDate = dateSeleted?.toString(dateFormat: AppDateFormat.yyyyMMdd)&
         

@@ -34,8 +34,6 @@ class MySellingViewController: BaseViewController {
     
     var listRecord: BaseRecordEntity? {
         didSet {
-            tbMySelling.reloadData()
-            
             if let count = self.listRecord?.dataRecord, count.isEmpty  {
                 tbMySelling.isHidden = true
                 showNoData()
@@ -45,6 +43,8 @@ class MySellingViewController: BaseViewController {
             
             lbTotalPosted.text = "Tin đã đăng: \(listRecord?.allowShow ?? 0)"
             lbTotalSubPost.text = "Tin cho phép đăng: \(listRecord?.allowNews ?? 0)"
+            
+            tbMySelling.reloadData()
         }
     }
     

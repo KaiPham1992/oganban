@@ -108,6 +108,16 @@ extension NotificationViewController: UITableViewDelegate, UITableViewDataSource
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let noti = self.listNotification[indexPath.item]
+        noti.isRead = true
+        noti.isReadString = "1"
+        presenter?.readNotification(id: noti.id&)
+        
+        let vc = NotificationDetailRouter.createModule(notification: noti)
+        self.push(controller: vc)
+    }
+    
     @objc func pullToRefresh() {
         isRefresh = true
         self.refreshControl.endRefreshing()

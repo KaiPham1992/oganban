@@ -20,16 +20,14 @@ class MoreViewController: BaseViewController {
         
         self.setTitleNavigation(title: NavigationTitle.more)
         self.registerTableView()
+        
+        NotificationCenter.default.removeObserver(self)
+        NotificationCenter.default.addObserver(self, selector: #selector(btnReloadPage), name: AppConstant.notiReloadMoreView, object: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if UserDefaultHelper.shared.isLoggedIn {
-            getMenuLoggedIn()
-        } else {
-            getMenuNotLogin()
-        }
-        tvMore.reloadData()
+        btnReloadPage()
     }
     
     func getMenuNotLogin() {
@@ -64,6 +62,15 @@ class MoreViewController: BaseViewController {
         tvMore.registerXibFile(MoreCell.self)
         tvMore.tableFooterView = UIView()
         tvMore.separatorStyle = .none
+    }
+    
+    @objc func btnReloadPage() {
+        if UserDefaultHelper.shared.isLoggedIn {
+            getMenuLoggedIn()
+        } else {
+            getMenuNotLogin()
+        }
+        tvMore.reloadData()
     }
 }
 

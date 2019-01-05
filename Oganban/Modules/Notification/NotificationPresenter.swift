@@ -25,6 +25,10 @@ class NotificationPresenter: NotificationPresenterProtocol {
     func getNotification(offset: Int) {
         interactor?.getNotification(offset: offset)
     }
+    
+    func readNotification(id: String) {
+        interactor?.readNotification(id: id)
+    }
 
 }
 

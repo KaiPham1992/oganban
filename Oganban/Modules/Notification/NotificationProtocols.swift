@@ -20,6 +20,7 @@ protocol NotificationPresenterProtocol: class {
     var interactor: NotificationInteractorInputProtocol? { get set }
     
     func getNotification(offset: Int)
+    func readNotification(id: String)
     
 }
 
@@ -37,6 +38,7 @@ protocol NotificationInteractorInputProtocol: class {
 
     /* Presenter -> Interactor */
     func getNotification(offset: Int)
+    func readNotification(id: String)
 }
 
 //MARK: View -

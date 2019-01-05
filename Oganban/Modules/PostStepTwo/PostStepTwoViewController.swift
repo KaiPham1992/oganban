@@ -21,6 +21,7 @@ class PostStepTwoViewController: BaseViewController {
     @IBOutlet weak var vCoin: CheckBoxTextField!
     
     var param = PostRecordParam()
+    var errorMessage: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +36,22 @@ class PostStepTwoViewController: BaseViewController {
         vCheckGPS.lbTitle.textColor = AppColor.textTextField
         
         vMoney.setTextField(title: "Tiền mặt", placeHolder: "Nhập số tiền sẽ bán")
+        vMoney.textField.keyboardType = UIKeyboardType.numberPad
+        vMoney.textField.addTarget(self, action: #selector(editingChanged), for: UIControl.Event.editingChanged)
         vCoin.setTextField(title: "Trao đổi Ơcoin", placeHolder: "Nhập số Ơcoin sẽ bán")
+        vCoin.textField.keyboardType = UIKeyboardType.numberPad
+        
+        
+        vCoin.delegate = self
+        vMoney.delegate = self
+        vAddress1.delegate = self
+        vAddress2.delegate = self
+        
+        vAddress1.textField.isEnabled = false
+        vAddress2.textField.isEnabled = false
+        vMoney.textField.isEnabled = false
+        vCoin.textField.isEnabled = false
+        showDataSaved()
     }
     
     override func setUpNavigation() {
@@ -44,6 +60,24 @@ class PostStepTwoViewController: BaseViewController {
         addBackToNavigation()
         setTitleNavigation(title: "Đăng tin bán")
         setRedStatusBar()
+    }
+    
+    func showDataSaved() {
+        guard let _user = UserDefaultHelper.shared.loginUserInfo else { return }
+        if _user.houseAddress != nil {
+            vAddress1.textField.text = _user.houseAddress
+        }
+        
+        if _user.companyAddress != nil {
+            vAddress2.textField.text = _user.companyAddress
+        }
+        
+    }
+    
+    @objc func editingChanged(textField: UITextField) {
+        let money = textField.text&.toDouble()
+        let coin = money / AppConstant.moneyToCoint
+        vCoin.textField.text = coin.roundedTwoDemical()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,6 +91,30 @@ class PostStepTwoViewController: BaseViewController {
         presenter?.postRecord(param: param)
     }
     
+    func validInput() -> Bool {
+        if vAddress1.textField.text& == "" && vAddress1.isCheck {
+            errorMessage = "Nhập địa chỉ 1"
+            return false
+        }
+        
+        if vAddress2.textField.text& == "" &&  vAddress2.isCheck {
+            errorMessage = "Nhập địa chỉ 2"
+            return false
+        }
+        
+        if vMoney.textField.text& == "" && vMoney.isCheck {
+            errorMessage = "Nhập số tiền cần bán"
+            return false
+        }
+        
+        if vCoin.textField.text& == "" && vCoin.isCheck {
+            errorMessage = "Nhập số coin"
+            return false
+        }
+        
+        return true
+    }
+    
 }
 
 extension PostStepTwoViewController: PostStepTwoViewProtocol {
@@ -66,5 +124,21 @@ extension PostStepTwoViewController: PostStepTwoViewProtocol {
     
     func didError(error: APIError?) {
         print(error?.message&)
+    }
+}
+
+extension PostStepTwoViewController: CheckBoxTextFieldDelegate {
+    func checkBoxTextField(didEndEditting checkBoxTextField: CheckBoxTextField) {
+        if checkBoxTextField == vAddress2 || checkBoxTextField == vAddress1 {
+            if checkBoxTextField.isCheck {
+                PositionMapsHelper.shared.showSearch(controller: self) { address in
+                    checkBoxTextField.textField.text = address
+                }
+            }
+        }
+    }
+    
+    func checkBoxTextField(checkBoxTextField: CheckBoxTextField, isChecked: Bool) {
+        checkBoxTextField.textField.isEnabled = isChecked
     }
 }

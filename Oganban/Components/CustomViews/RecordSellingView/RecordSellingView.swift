@@ -29,8 +29,8 @@ class RecordSellingView: BaseViewXib {
             }
             lbProductName.text = _record.name
             lbTime.text = _record.createTime?.timeAgo()
-            lbPrice.text = "\(_record.price?.description ?? "") đ"
-            lbCoin.text = "\(_record.coin?.description ?? "") ơ"
+            lbPrice.text = _record.showMoney()//"\(_record.price?.description ?? "") đ"
+            lbCoin.text = _record.showCoin() //"\(_record.coin?.description ?? "") ơ"
             lbCoin.underlineLastCharacter()
             lbPrice.underlineLastCharacter()
             if _record.status == "expired" {
