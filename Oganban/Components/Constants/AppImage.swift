@@ -54,5 +54,8 @@ struct AppImage {
     static let imgCoin = UIImage(named: "ic_coin")!
     static let imgCamera = UIImage(named: "ic_camera")!
     static let imgWhiteBack = UIImage(named: "ic_back")!
+    
+    static let imgStarYellow = UIImage(named: "star")!
+    static let imgStarEmpty = UIImage(named: "ic_star_line")!
 
 }

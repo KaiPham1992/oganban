@@ -27,34 +27,33 @@ class MyBuyImageCell: BaseTableCell {
     
     weak var delegate: MyBuyImageCellDelegate?
     
-    // My sell
-    var order: OrderDetailEntity? {
-        didSet {
-            guard let _order = order else { return }
-            setDefautlMySell()
-            
-            //--
-            imageSlide.listItem = _order.arrayImage
-            lbName.text = _order.name
-            lbStatus.text = _order.getStatus().rawValue
-            btnTime.setTitle(_order.creatTime?.timeAgo(), for: .normal)
-            lbQuantity.text = "SL đặt mua: \(_order.quantity&)"
-            
-            if _order.paymentType == "cash" {
-                radioMoney.setOneImage(image: AppImage.imgMoney)
-                if let price = _order.totalPrice {
-                    radioMoney.setMoney(money: price)
-                }
-            } else {
-                radioMoney.setOneImage(image: AppImage.imgCoin)
-                radioMoney.setOCoin(coin: _order.totalCoin)
-            }
-            
+    func setData(order: OrderDetailEntity?, isSaler: Bool) {
+        guard let _order = order else { return }
+        setDefautlMySell()
+        if isSaler {
+            btnCancel.isHidden = true
+        } else {
             if _order.getStatus() == .new || _order.getStatus() == .waitDelivery {
                 btnCancel.isHidden = false
             } else {
                 btnCancel.isHidden = true
             }
+        }
+        //--
+        imageSlide.listItem = _order.arrayImage
+        lbName.text = _order.name
+        lbStatus.text = _order.getStatus().rawValue
+        btnTime.setTitle(_order.creatTime?.timeAgo(), for: .normal)
+        lbQuantity.text = "SL đặt mua: \(_order.quantity&)"
+        
+        if _order.paymentType == "cash" {
+            radioMoney.setOneImage(image: AppImage.imgMoney)
+            if let price = _order.totalPrice {
+                radioMoney.setMoney(money: price)
+            }
+        } else {
+            radioMoney.setOneImage(image: AppImage.imgCoin)
+            radioMoney.setOCoin(coin: _order.totalCoin)
         }
     }
     
@@ -63,14 +62,14 @@ class MyBuyImageCell: BaseTableCell {
         btnCancel.setAttributed(title: "Huỷ giao dịch", color: AppColor.gray_158_158_158, font: AppFont.fontRegular13, isUnderLine: true)
         
     }
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
     }
     
     func hideMoneyCoin() {
-        heightMoneyCoin.constant = 0 // 0 25 50 
+        heightMoneyCoin.constant = 0 // 0 25 50
     }
     
     @IBAction func btnCancelTapped() {

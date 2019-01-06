@@ -177,18 +177,21 @@ extension MyExchangeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let record = listData?.dataOrder[indexPath.item]
-        let vc = OrderDetailRouter.createModule(recordId: record?.id)
-        if listData?.dataOrder[indexPath.item].status == StatusType.new.rawValue {
-            vc.isNew = true
-        } else if listData?.dataOrder[indexPath.item].status == StatusType.wait_delivery.rawValue {
-            vc.isWait = true
-        } else if listData?.dataOrder[indexPath.item].status == StatusType.done.rawValue {
-            vc.isDone = true
-        } else if listData?.dataOrder[indexPath.item].status == StatusType.cancel.rawValue {
-            vc.isCancel = true
-        }
-        parrentNavigation?.pushViewController(vc, animated: true)
+        guard let order = listData?.dataOrder[indexPath.item] else { return }
+//        let vc = OrderDetailRouter.createModule(recordId: record?.id)
+//        if listData?.dataOrder[indexPath.item].status == StatusType.new.rawValue {
+//            vc.isNew = true
+//        } else if listData?.dataOrder[indexPath.item].status == StatusType.wait_delivery.rawValue {
+//            vc.isWait = true
+//        } else if listData?.dataOrder[indexPath.item].status == StatusType.done.rawValue {
+//            vc.isDone = true
+//        } else if listData?.dataOrder[indexPath.item].status == StatusType.cancel.rawValue {
+//            vc.isCancel = true
+//        }
+//        parrentNavigation?.pushViewController(vc, animated: true)
+        
+        let vc = MyBuyDetailRouter.createModule(orderId: order.id&, isSaler: true)
+        self.parrentNavigation?.pushViewController(vc, animated: true)
         
     }
 }

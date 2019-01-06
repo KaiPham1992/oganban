@@ -56,4 +56,9 @@ class RecordAPIService: RecordAPIServiceProtocol {
         let endPoint = RecordEndPoint.deleteRecord(recordID: recordID)
         network.requestData(endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
     }
+    
+    func getFavouriteRecord(status: String, offset: Int, limit: Int, success: @escaping SuccessHandler<RecordEntity>.array, failure: @escaping (APIError?) -> Void) {
+        let endPoint = RecordEndPoint.getFavouriteRecord()
+        network.requestData(endPoint: endPoint, success: MapperData.mapArray(success), failure: failure)
+    }
 }
