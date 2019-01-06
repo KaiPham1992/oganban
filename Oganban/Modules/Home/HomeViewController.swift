@@ -53,7 +53,11 @@ class HomeViewController: BaseViewController {
     var paramFilter = RecordParam()
     var dataSource: [PositionRangeEntity] = []
     var indexReload: Int?
-    var distance: PositionRangeEntity?
+    var distance: PositionRangeEntity? {
+        didSet {
+            self.lbDistance.text = distance?.title
+        }
+    }
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,6 +80,11 @@ class HomeViewController: BaseViewController {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
         setRedStatusBar()
+        if isSetting {
+            self.distance = UserDefaultHelper.shared.radius
+            isSetting = false
+        }
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -115,6 +124,8 @@ class HomeViewController: BaseViewController {
     override func setUpViews() {
         setUpScaleDropdown()
         tfSearch.delegate = self
+        lbDistance.text = UserDefaultHelper.shared.radius?.title
+        self.distance = UserDefaultHelper.shared.radius
     }
     
     private func setUpScaleDropdown() {
@@ -242,7 +253,7 @@ extension HomeViewController: HomeViewProtocol {
             self.dataSource.append(last)
         }
         scaleDropdown.dataSource = dataSource.map({$0.title&})
-        distance = dataSource[3]
+//        distance = dataSource[3]
     }
     
     func didFilterRecord(list: [RecordEntity]) {
@@ -456,7 +467,7 @@ extension HomeViewController: PositionViewControllerDelegate {
         paramFilter.long = long
         paramFilter.lat = lat
         lbPosition.text = address
-        self.lbDistance.text = distance.title
+        self.distance = distance
         self.paramFilter.radius = distance.value&
         presenter?.filterRecord(param: paramFilter)
     }
