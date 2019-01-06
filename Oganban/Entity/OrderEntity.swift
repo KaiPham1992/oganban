@@ -14,6 +14,7 @@ enum OrderStatusType: String {
     case waitDelivery = "Đơn hàng đang giao"
     case done = "Đơn hàng hoàn tất"
     case cancel = "Đơn hàng đã huỷ"
+    case orderNotYetArrived =  "Đơn hàng không đến"
 }
 
 enum OrderStatusKey: String {
@@ -21,6 +22,9 @@ enum OrderStatusKey: String {
     case waitDelivery = "wait_delivery"
     case cancel = "cancel"
     case done = "done"
+    case buyerCancel = "buyer_cancel"
+    case orderNotYetArrived = "order_not_yet_arrived"
+    
 }
 
 
@@ -85,12 +89,14 @@ struct OrderEntity: Mappable {
             return .waitDelivery
         case OrderStatusKey.done.rawValue:
             return .done
-        case OrderStatusKey.cancel.rawValue:
+        case OrderStatusKey.cancel.rawValue, OrderStatusKey.buyerCancel.rawValue:
             return .cancel
         default:
-            return .new
+            return .orderNotYetArrived
         }
     }
+    
+   
     
     var urlAvatar: URL? {
         //
