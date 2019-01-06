@@ -15,7 +15,7 @@ enum StatusType: String {
     case new = "new"
     case wait_delivery = "wait_delivery"
     case done = "done"
-    case cancel = "cancel"
+    case cancel = "buyer_cancel"
     case all = "all"
 }
 

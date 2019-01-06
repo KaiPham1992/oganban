@@ -30,6 +30,8 @@ class OrderDetailImageCell: BaseTableCell {
     var isMySellHide: Bool = false
     var isMySellExpired: Bool = false
     
+    var isToOrderSellDetail: Bool = false
+    
     // My sell
     var record: RecordEntity? {
         didSet {
@@ -60,6 +62,7 @@ class OrderDetailImageCell: BaseTableCell {
     private func setDefautlMySell() {
         radioMoney.setMoney(money: 0)
         radioCoin.setOCoin(coin: 0)
+        
         radioMoney.setOneImage(image: AppImage.imgMoney)
         radioCoin.setOneImage(image: AppImage.imgCoin)
         

@@ -266,6 +266,14 @@
 		CBD1C2CF21D78916006DB3FF /* MySellExpiredProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C2C921D78916006DB3FF /* MySellExpiredProtocols.swift */; };
 		CBD1C2D021D78916006DB3FF /* MySellExpiredInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C2CA21D78916006DB3FF /* MySellExpiredInteractor.swift */; };
 		CBD1C2D121D78916006DB3FF /* MySellExpiredViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD1C2CB21D78916006DB3FF /* MySellExpiredViewController.xib */; };
+		CBE2186121E219B80035F00B /* OrderBuyDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE2183E21E219B70035F00B /* OrderBuyDetailProtocols.swift */; };
+		CBE2186221E219B80035F00B /* OrderBuyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE2183F21E219B70035F00B /* OrderBuyDetailViewController.swift */; };
+		CBE2186321E219B80035F00B /* OrderBuyDetail+PostComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE2184121E219B70035F00B /* OrderBuyDetail+PostComment.swift */; };
+		CBE2186421E219B80035F00B /* OrderBuyDetail+Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE2184221E219B70035F00B /* OrderBuyDetail+Table.swift */; };
+		CBE2186521E219B80035F00B /* OrderBuyDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE2184321E219B70035F00B /* OrderBuyDetailPresenter.swift */; };
+		CBE2186621E219B80035F00B /* OrderBuyDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBE2184421E219B70035F00B /* OrderBuyDetailViewController.xib */; };
+		CBE2186721E219B80035F00B /* OrderBuyDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE2184521E219B70035F00B /* OrderBuyDetailInteractor.swift */; };
+		CBE2187921E219B80035F00B /* OrderBuyDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE2186021E219B70035F00B /* OrderBuyDetailRouter.swift */; };
 		DE07F56921CF539D00DE2032 /* AppCollectionPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE07F56821CF539D00DE2032 /* AppCollectionPhoto.swift */; };
 		DE0DBAE421D3B6DA0097E38F /* NotificationProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0DBADB21D3B6DA0097E38F /* NotificationProtocols.swift */; };
 		DE0DBAE521D3B6DA0097E38F /* NotificationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0DBADC21D3B6DA0097E38F /* NotificationPresenter.swift */; };
@@ -724,6 +732,14 @@
 		CBD1C2C921D78916006DB3FF /* MySellExpiredProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySellExpiredProtocols.swift; sourceTree = "<group>"; };
 		CBD1C2CA21D78916006DB3FF /* MySellExpiredInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySellExpiredInteractor.swift; sourceTree = "<group>"; };
 		CBD1C2CB21D78916006DB3FF /* MySellExpiredViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MySellExpiredViewController.xib; sourceTree = "<group>"; };
+		CBE2183E21E219B70035F00B /* OrderBuyDetailProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderBuyDetailProtocols.swift; sourceTree = "<group>"; };
+		CBE2183F21E219B70035F00B /* OrderBuyDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderBuyDetailViewController.swift; sourceTree = "<group>"; };
+		CBE2184121E219B70035F00B /* OrderBuyDetail+PostComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OrderBuyDetail+PostComment.swift"; sourceTree = "<group>"; };
+		CBE2184221E219B70035F00B /* OrderBuyDetail+Table.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OrderBuyDetail+Table.swift"; sourceTree = "<group>"; };
+		CBE2184321E219B70035F00B /* OrderBuyDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderBuyDetailPresenter.swift; sourceTree = "<group>"; };
+		CBE2184421E219B70035F00B /* OrderBuyDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderBuyDetailViewController.xib; sourceTree = "<group>"; };
+		CBE2184521E219B70035F00B /* OrderBuyDetailInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderBuyDetailInteractor.swift; sourceTree = "<group>"; };
+		CBE2186021E219B70035F00B /* OrderBuyDetailRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderBuyDetailRouter.swift; sourceTree = "<group>"; };
 		DE07F56821CF539D00DE2032 /* AppCollectionPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCollectionPhoto.swift; sourceTree = "<group>"; };
 		DE0DBADB21D3B6DA0097E38F /* NotificationProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationProtocols.swift; sourceTree = "<group>"; };
 		DE0DBADC21D3B6DA0097E38F /* NotificationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationPresenter.swift; sourceTree = "<group>"; };
@@ -1352,6 +1368,7 @@
 		CB172B1821C6A1480068CF92 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				CBE2183D21E219B70035F00B /* OrderBuyDetail */,
 				DE5E083A21E1C0E70053EC9D /* MyBuyDetail */,
 				84329F5021DFE1E000047B5E /* ProductList */,
 				84329F3E21DFD82900047B5E /* Favourite */,
@@ -1775,6 +1792,29 @@
 				CBD1C2CB21D78916006DB3FF /* MySellExpiredViewController.xib */,
 			);
 			path = MySellExpired;
+			sourceTree = "<group>";
+		};
+		CBE2183D21E219B70035F00B /* OrderBuyDetail */ = {
+			isa = PBXGroup;
+			children = (
+				CBE2184021E219B70035F00B /* Extension */,
+				CBE2183E21E219B70035F00B /* OrderBuyDetailProtocols.swift */,
+				CBE2184321E219B70035F00B /* OrderBuyDetailPresenter.swift */,
+				CBE2184521E219B70035F00B /* OrderBuyDetailInteractor.swift */,
+				CBE2186021E219B70035F00B /* OrderBuyDetailRouter.swift */,
+				CBE2183F21E219B70035F00B /* OrderBuyDetailViewController.swift */,
+				CBE2184421E219B70035F00B /* OrderBuyDetailViewController.xib */,
+			);
+			path = OrderBuyDetail;
+			sourceTree = "<group>";
+		};
+		CBE2184021E219B70035F00B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CBE2184121E219B70035F00B /* OrderBuyDetail+PostComment.swift */,
+				CBE2184221E219B70035F00B /* OrderBuyDetail+Table.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		DE0DBADA21D3B6DA0097E38F /* Notification */ = {
@@ -2524,6 +2564,7 @@
 				DE33035021DF13EB00409F83 /* PostStepOneViewController.xib in Resources */,
 				DE0DBAE721D3B6DA0097E38F /* NotificationCell.xib in Resources */,
 				84329F5C21DFE1FA00047B5E /* ProductListViewController.xib in Resources */,
+				CBE2186621E219B80035F00B /* OrderBuyDetailViewController.xib in Resources */,
 				CB3A8F1521C64FC1008144BD /* Assets.xcassets in Resources */,
 				B392FB3E21D3D6AE0076A7B5 /* AcceptCell.xib in Resources */,
 				84329F2221DFB5E100047B5E /* HistoryCoinViewController.xib in Resources */,
@@ -2674,6 +2715,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBE2187921E219B80035F00B /* OrderBuyDetailRouter.swift in Sources */,
 				84421C0721CBF52900F468F5 /* SupplementaryInfoPresenter.swift in Sources */,
 				DEBEE80D21D7654B004B8D88 /* OrderInfoUserCell.swift in Sources */,
 				84329F4821DFD92F00047B5E /* FavouriteProtocols.swift in Sources */,
@@ -2738,6 +2780,7 @@
 				84421C0921CBF52900F468F5 /* SupplementaryInfoViewController.swift in Sources */,
 				CB172C9721C6A2EF0068CF92 /* Enum.swift in Sources */,
 				DEC5167221CE995F00A17CBF /* AppCollectionPhotoCell.swift in Sources */,
+				CBE2186721E219B80035F00B /* OrderBuyDetailInteractor.swift in Sources */,
 				B355EF5F21C8FB1400379F57 /* SignUpProtocols.swift in Sources */,
 				DE33036221DF5EDB00409F83 /* PostStepTwoInteractor.swift in Sources */,
 				CBD1C2D021D78916006DB3FF /* MySellExpiredInteractor.swift in Sources */,
@@ -2770,6 +2813,7 @@
 				84329F2021DFB5E100047B5E /* HistoryCoinProtocols.swift in Sources */,
 				DE21823321CD45F300FDD9F1 /* LoginSocialParam.swift in Sources */,
 				DE33034C21DF13EB00409F83 /* PostStepOneRouter.swift in Sources */,
+				CBE2186321E219B80035F00B /* OrderBuyDetail+PostComment.swift in Sources */,
 				CB0C3A2321D3BECD0052DD91 /* ForgotPasswordPresenter.swift in Sources */,
 				DE0DBAE921D3B6DA0097E38F /* NotificationRouter.swift in Sources */,
 				CB172C1721C6A2EF0068CF92 /* Double+extension.swift in Sources */,
@@ -2830,9 +2874,11 @@
 				DE21829121CD4E7F00FDD9F1 /* AppTextFiled.swift in Sources */,
 				B35F529821D276A000D3FA30 /* SignUpParam.swift in Sources */,
 				CBC8F11321E1B61000F88D4F /* MyExchangeDetailViewController.swift in Sources */,
+				CBE2186221E219B80035F00B /* OrderBuyDetailViewController.swift in Sources */,
 				DE5E085321E1DF000053EC9D /* OrderDetailEntity.swift in Sources */,
 				CB0C3A2621D3BECD0052DD91 /* ForgotPasswordProtocols.swift in Sources */,
 				DE21827A21CD473100FDD9F1 /* KActivityIndicatorAnimationCubeTransition.swift in Sources */,
+				CBE2186121E219B80035F00B /* OrderBuyDetailProtocols.swift in Sources */,
 				CBD1C2A821D74DA6006DB3FF /* MySellingPresenter.swift in Sources */,
 				B3E67EAC21CF756E0012546F /* PhoneNumber.swift in Sources */,
 				DE21822C21CD44B700FDD9F1 /* FaceBookEntity.swift in Sources */,
@@ -2873,6 +2919,7 @@
 				84C8543421CFEC8D00BDABE5 /* SupplementaryInfo+SetupUI.swift in Sources */,
 				DEBEE7F821D74041004B8D88 /* AppPageView.swift in Sources */,
 				CB172C9B21C6A2EF0068CF92 /* BaseViewXib.swift in Sources */,
+				CBE2186421E219B80035F00B /* OrderBuyDetail+Table.swift in Sources */,
 				B355EF5C21C8FB1400379F57 /* SignUpPresenter.swift in Sources */,
 				DE33036121DF5EDB00409F83 /* PostStepTwoProtocols.swift in Sources */,
 				DE442C5721CFB7570051C0B8 /* SubCommentCell.swift in Sources */,
@@ -3003,6 +3050,7 @@
 				B36AEE9C21CDD90500BED43C /* TabbarProtocol.swift in Sources */,
 				DE33035F21DF5EDB00409F83 /* PostStepTwoRouter.swift in Sources */,
 				B3CC857021D72DD200ADBFD8 /* PositionRouter.swift in Sources */,
+				CBE2186521E219B80035F00B /* OrderBuyDetailPresenter.swift in Sources */,
 				DE5E084B21E1C60A0053EC9D /* MyBuyImageCell.swift in Sources */,
 				DE0DBAE821D3B6DA0097E38F /* NotificationCell.swift in Sources */,
 				84329F3521DFC95600047B5E /* HistoryBuyViewController.swift in Sources */,

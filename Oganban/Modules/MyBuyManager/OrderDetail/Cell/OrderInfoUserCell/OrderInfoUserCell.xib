@@ -31,12 +31,28 @@
                         <color key="textColor" red="0.76862745098039209" green="0.0078431372549019607" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_phone" translatesAutoresizingMaskIntoConstraints="NO" id="jpT-eF-S7g">
+                        <rect key="frame" x="84" y="52.5" width="13" height="13"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="13" id="BtW-Lg-sUC"/>
+                            <constraint firstAttribute="width" constant="13" id="VlM-95-DdL"/>
+                        </constraints>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+84986131381" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLR-UB-mme">
-                        <rect key="frame" x="84" y="50" width="104.5" height="18"/>
+                        <rect key="frame" x="102" y="50" width="104.5" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.25490196078431371" green="0.25490196078431371" blue="0.25490196078431371" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NfE-OP-1Pg">
+                        <rect key="frame" x="84" y="50" width="122.5" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="LEz-cX-1vv"/>
+                        </constraints>
+                        <connections>
+                            <action selector="btnPhoneTapped" destination="KGk-i7-Jjw" eventType="touchUpInside" id="80h-mn-Soa"/>
+                        </connections>
+                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Gy-wq-TDx">
                         <rect key="frame" x="284" y="24" width="20" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -72,31 +88,40 @@
                     <constraint firstItem="OBY-VX-nar" firstAttribute="leading" secondItem="FAD-gA-w9E" secondAttribute="leading" id="9WP-fK-6w2"/>
                     <constraint firstItem="JUa-LR-K90" firstAttribute="top" secondItem="4Gy-wq-TDx" secondAttribute="bottom" constant="8" id="9vy-dq-yhc"/>
                     <constraint firstItem="OBY-VX-nar" firstAttribute="top" secondItem="FAD-gA-w9E" secondAttribute="bottom" constant="8" id="Cq9-gl-Ttj"/>
-                    <constraint firstItem="aLR-UB-mme" firstAttribute="leading" secondItem="PdA-ro-Y1R" secondAttribute="leading" id="FOh-jz-ccL"/>
+                    <constraint firstItem="jpT-eF-S7g" firstAttribute="leading" secondItem="PdA-ro-Y1R" secondAttribute="leading" id="DX3-aU-WEM"/>
+                    <constraint firstItem="jpT-eF-S7g" firstAttribute="centerY" secondItem="aLR-UB-mme" secondAttribute="centerY" id="FLZ-re-3I6"/>
+                    <constraint firstItem="NfE-OP-1Pg" firstAttribute="trailing" secondItem="aLR-UB-mme" secondAttribute="trailing" id="NbS-yJ-OhM"/>
                     <constraint firstItem="PdA-ro-Y1R" firstAttribute="top" secondItem="FAD-gA-w9E" secondAttribute="top" constant="8" id="QUs-iI-9BJ"/>
                     <constraint firstItem="UYT-5D-seh" firstAttribute="trailing" secondItem="JUa-LR-K90" secondAttribute="trailing" id="TLr-aY-AAx"/>
                     <constraint firstAttribute="bottom" secondItem="UYT-5D-seh" secondAttribute="bottom" constant="20" id="U4j-bs-F3u"/>
                     <constraint firstItem="FAD-gA-w9E" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Ycl-lb-WwJ"/>
+                    <constraint firstItem="aLR-UB-mme" firstAttribute="leading" secondItem="jpT-eF-S7g" secondAttribute="trailing" constant="5" id="fZf-G1-drG"/>
                     <constraint firstItem="FAD-gA-w9E" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="gcK-vz-59L"/>
+                    <constraint firstItem="NfE-OP-1Pg" firstAttribute="top" secondItem="aLR-UB-mme" secondAttribute="top" id="hwF-7n-Q8I"/>
                     <constraint firstItem="aLR-UB-mme" firstAttribute="top" secondItem="PdA-ro-Y1R" secondAttribute="bottom" constant="8" id="w1r-GW-rmk"/>
                     <constraint firstAttribute="trailing" secondItem="4Gy-wq-TDx" secondAttribute="trailing" constant="16" id="xSE-ym-er3"/>
                     <constraint firstItem="4Gy-wq-TDx" firstAttribute="centerY" secondItem="PdA-ro-Y1R" secondAttribute="centerY" id="z4k-zI-XHf"/>
+                    <constraint firstItem="NfE-OP-1Pg" firstAttribute="leading" secondItem="jpT-eF-S7g" secondAttribute="leading" id="zjB-Ta-99e"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="btnPhone" destination="NfE-OP-1Pg" id="ufh-AC-yMW"/>
                 <outlet property="imgAvatar" destination="FAD-gA-w9E" id="E2r-cW-ws7"/>
+                <outlet property="imgPhone" destination="jpT-eF-S7g" id="qIn-KX-D6h"/>
                 <outlet property="lbName" destination="PdA-ro-Y1R" id="mH7-Id-7Qg"/>
                 <outlet property="lbPhone" destination="aLR-UB-mme" id="Luf-Op-zej"/>
                 <outlet property="lbReview" destination="UYT-5D-seh" id="vLb-jL-FRF"/>
                 <outlet property="lbStar" destination="4Gy-wq-TDx" id="qfh-w0-zeC"/>
+                <outlet property="lcsWidthImgPhone" destination="VlM-95-DdL" id="GY0-ga-RcK"/>
                 <outlet property="vLevel" destination="OBY-VX-nar" id="3la-iH-NAH"/>
             </connections>
             <point key="canvasLocation" x="137.59999999999999" y="101.64917541229386"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="ic_avatar" width="22" height="22"/>
+        <image name="ic_avatar" width="22.5" height="22.5"/>
+        <image name="ic_phone" width="13" height="13"/>
         <image name="ic_star" width="12" height="12"/>
     </resources>
 </document>

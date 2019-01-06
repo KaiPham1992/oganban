@@ -127,7 +127,7 @@ extension OrderDetailViewController: OrderDetailViewProtocol {
 extension OrderDetailViewController: OrderDetailImageCellDelegate {
     func btnDeleteTapped() {
         PopUpHelper.shared.showYesNoQuestionHaveAds(question: "Bạn chắc chắn muốn xoá bài đăng này ?", completionYes: {
-            
+            //FIXME
         }) {
             
         }

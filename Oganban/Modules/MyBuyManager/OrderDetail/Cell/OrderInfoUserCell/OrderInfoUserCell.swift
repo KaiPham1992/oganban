@@ -9,6 +9,10 @@
 import UIKit
 import SDWebImage
 
+protocol OrderInfoUserCellDelegate: class {
+    func btnPhoneTapped()
+}
+
 class OrderInfoUserCell: BaseTableCell {
     @IBOutlet weak var lbReview: UILabel!
     @IBOutlet weak var lbStar: UILabel!
@@ -16,6 +20,11 @@ class OrderInfoUserCell: BaseTableCell {
     @IBOutlet weak var lbPhone: UILabel!
     @IBOutlet weak var vLevel: LevelMemberView!
     @IBOutlet weak var imgAvatar: UIImageView!
+    @IBOutlet weak var imgPhone: UIImageView!
+    @IBOutlet weak var btnPhone: UIButton!
+    @IBOutlet weak var lcsWidthImgPhone: NSLayoutConstraint!
+    
+    weak var delegate: OrderInfoUserCellDelegate?
     
     var record: RecordEntity? {
         didSet {
@@ -29,9 +38,14 @@ class OrderInfoUserCell: BaseTableCell {
         }
     }
 
+    @IBAction func btnPhoneTapped() {
+        delegate?.btnPhoneTapped()
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        btnPhone.isHidden = true
+        lcsWidthImgPhone.constant = 0
     }
     
 }
