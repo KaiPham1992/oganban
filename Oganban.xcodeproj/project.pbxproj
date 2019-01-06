@@ -72,6 +72,9 @@
 		84487C8F21CB80E1008B25B2 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84487C8321CB7890008B25B2 /* Roboto-Regular.ttf */; };
 		84487C9021CB80F2008B25B2 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84487C8121CB788F008B25B2 /* Roboto-Thin.ttf */; };
 		84487C9121CB80F5008B25B2 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84487C8521CB7890008B25B2 /* Roboto-ThinItalic.ttf */; };
+		8463FAF921E1CBCA00522D0C /* HistoryBuyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8463FAF821E1CBCA00522D0C /* HistoryBuyEntity.swift */; };
+		8463FAFB21E1E1D900522D0C /* HistoryCoinEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8463FAFA21E1E1D900522D0C /* HistoryCoinEntity.swift */; };
+		8463FAFD21E1F06000522D0C /* FavouriteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8463FAFC21E1F06000522D0C /* FavouriteEntity.swift */; };
 		84A92BED21CA518200148191 /* OganbanCustomTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A92BEB21CA518100148191 /* OganbanCustomTextfield.swift */; };
 		84A92BEE21CA518200148191 /* OganbanCustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A92BEC21CA518200148191 /* OganbanCustomButton.swift */; };
 		84A92BF621CA555900148191 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A92BF021CA555900148191 /* LoginPresenter.swift */; };
@@ -507,6 +510,9 @@
 		84487C8321CB7890008B25B2 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		84487C8421CB7890008B25B2 /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
 		84487C8521CB7890008B25B2 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
+		8463FAF821E1CBCA00522D0C /* HistoryBuyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryBuyEntity.swift; sourceTree = "<group>"; };
+		8463FAFA21E1E1D900522D0C /* HistoryCoinEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCoinEntity.swift; sourceTree = "<group>"; };
+		8463FAFC21E1F06000522D0C /* FavouriteEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteEntity.swift; sourceTree = "<group>"; };
 		84A92BEB21CA518100148191 /* OganbanCustomTextfield.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OganbanCustomTextfield.swift; sourceTree = "<group>"; };
 		84A92BEC21CA518200148191 /* OganbanCustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OganbanCustomButton.swift; sourceTree = "<group>"; };
 		84A92BF021CA555900148191 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
@@ -1813,6 +1819,9 @@
 				CB31FB7621DF413D001DFC7F /* BaseRecordEntity.swift */,
 				CB31FB7821DF4736001DFC7F /* BaseOrderEntity.swift */,
 				DEB854F421E0A59C007479A7 /* ExpirePostEntity.swift */,
+				8463FAF821E1CBCA00522D0C /* HistoryBuyEntity.swift */,
+				8463FAFA21E1E1D900522D0C /* HistoryCoinEntity.swift */,
+				8463FAFC21E1F06000522D0C /* FavouriteEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -2760,6 +2769,7 @@
 				DE21826E21CD473100FDD9F1 /* KActivityIndicatorAnimationBallClipRotate.swift in Sources */,
 				CB172C1421C6A2EF0068CF92 /* UIView+extension.swift in Sources */,
 				CBD1C2A921D74DA6006DB3FF /* MySellingRouter.swift in Sources */,
+				8463FAFB21E1E1D900522D0C /* HistoryCoinEntity.swift in Sources */,
 				DE0DBAE421D3B6DA0097E38F /* NotificationProtocols.swift in Sources */,
 				CBC8F11521E1B61000F88D4F /* MyExchangeDetailInteractor.swift in Sources */,
 				DE21826921CD473100FDD9F1 /* KActivityIndicatorAnimationBallScale.swift in Sources */,
@@ -2868,6 +2878,7 @@
 				CBD1C29821D732CB006DB3FF /* MyBuyViewController.swift in Sources */,
 				CB172C9A21C6A2EF0068CF92 /* BaseCollectionCell.swift in Sources */,
 				CB172C1D21C6A2EF0068CF92 /* UITextField+extension.swift in Sources */,
+				8463FAFD21E1F06000522D0C /* FavouriteEntity.swift in Sources */,
 				DEB854F221E08BB9007479A7 /* Post+Valid.swift in Sources */,
 				CB172C2221C6A2EF0068CF92 /* PopUpNotificationHelper.swift in Sources */,
 				84329F1D21DFB5E100047B5E /* HistoryCoinPresenter.swift in Sources */,
@@ -2889,6 +2900,7 @@
 				DE33034F21DF13EB00409F83 /* PostStepOneInteractor.swift in Sources */,
 				84A92BF621CA555900148191 /* LoginPresenter.swift in Sources */,
 				CB172C1021C6A2EF0068CF92 /* Int+extension.swift in Sources */,
+				8463FAF921E1CBCA00522D0C /* HistoryBuyEntity.swift in Sources */,
 				CB172C1121C6A2EF0068CF92 /* UIWindow+extension.swift in Sources */,
 				B3E67E9C21CF41260012546F /* DropdownPhoneCell.swift in Sources */,
 				CB172C9621C6A2EF0068CF92 /* AppColor.swift in Sources */,

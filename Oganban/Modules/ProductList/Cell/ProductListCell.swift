@@ -2,7 +2,7 @@
 //  ProductListCell.swift
 //  Oganban
 //
-//  Created by Admin on 1/5/19.
+//  Created by Kent on 1/5/19.
 //  Copyright © 2019 Coby. All rights reserved.
 //
 
