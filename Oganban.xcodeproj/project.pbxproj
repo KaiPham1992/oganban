@@ -1133,6 +1133,44 @@
 			path = SignUp;
 			sourceTree = "<group>";
 		};
+		B36A235021E1ABE900AA20DF /* MoreManager */ = {
+			isa = PBXGroup;
+			children = (
+				84329F2C21DFC93B00047B5E /* HistoryBuy */,
+				843014AE21DFB59900B39084 /* HistoryCoin */,
+				84421BE621CBEEA600F468F5 /* More */,
+			);
+			path = MoreManager;
+			sourceTree = "<group>";
+		};
+		B36A235121E1AC3A00AA20DF /* NotificationManager */ = {
+			isa = PBXGroup;
+			children = (
+				DEB854F821E0B418007479A7 /* NotificationDetail */,
+				DE0DBADA21D3B6DA0097E38F /* Notification */,
+			);
+			path = NotificationManager;
+			sourceTree = "<group>";
+		};
+		B36A235221E1ACB200AA20DF /* MyBuyManager */ = {
+			isa = PBXGroup;
+			children = (
+				DE442C3621CFA1FE0051C0B8 /* OrderDetail */,
+				CBD1C28421D73087006DB3FF /* MyBuy */,
+			);
+			path = MyBuyManager;
+			sourceTree = "<group>";
+		};
+		B36A235321E1ACC600AA20DF /* MySellManager */ = {
+			isa = PBXGroup;
+			children = (
+				DE33035721DF5ECB00409F83 /* PostStepTwo */,
+				DE33034421DF13C700409F83 /* PostStepOne */,
+				DEBEE7FA21D740C2004B8D88 /* MySellContainer */,
+			);
+			path = MySellManager;
+			sourceTree = "<group>";
+		};
 		B36AEE9721CDD8CD00BED43C /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
@@ -1254,21 +1292,15 @@
 		CB172B1821C6A1480068CF92 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				DEB854F821E0B418007479A7 /* NotificationDetail */,
-				DE33035721DF5ECB00409F83 /* PostStepTwo */,
-				DE33034421DF13C700409F83 /* PostStepOne */,
 				84329F5021DFE1E000047B5E /* ProductList */,
 				84329F3E21DFD82900047B5E /* Favourite */,
-				84329F2C21DFC93B00047B5E /* HistoryBuy */,
-				843014AE21DFB59900B39084 /* HistoryCoin */,
 				B3CC856821D72DB600ADBFD8 /* Position */,
-				CBD1C28421D73087006DB3FF /* MyBuy */,
-				DEBEE7FA21D740C2004B8D88 /* MySellContainer */,
-				DE0DBADA21D3B6DA0097E38F /* Notification */,
-				DE442C3621CFA1FE0051C0B8 /* OrderDetail */,
 				B36AEE9721CDD8CD00BED43C /* Tabbar */,
+				B36A235321E1ACC600AA20DF /* MySellManager */,
+				B36A235221E1ACB200AA20DF /* MyBuyManager */,
+				B36A235121E1AC3A00AA20DF /* NotificationManager */,
 				DE21821421CD40AE00FDD9F1 /* UserManager */,
-				84421BE621CBEEA600F468F5 /* More */,
+				B36A235021E1ABE900AA20DF /* MoreManager */,
 				B355EF4821C8EB2E00379F57 /* Home */,
 			);
 			path = Modules;
