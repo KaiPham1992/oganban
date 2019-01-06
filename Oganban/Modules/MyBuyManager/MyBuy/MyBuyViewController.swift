@@ -16,6 +16,7 @@ class MyBuyViewController: BaseViewController {
     @IBOutlet weak var tbMyBuy: UITableView!
     @IBOutlet weak var vRecordBuy: UIView!
     @IBOutlet weak var lbStatusRecord: UILabel!
+    @IBOutlet weak var lbTextTotal: UILabel!
     @IBOutlet weak var lbTotal: UILabel!
     @IBOutlet weak var vDropDownStatus: UIView!
     @IBOutlet weak var vCheckLogin: UIView!
@@ -49,6 +50,7 @@ class MyBuyViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        getData()
     }
     
     
@@ -57,9 +59,8 @@ class MyBuyViewController: BaseViewController {
         self.setTitleNavigation(title: NavigationTitle.myBuy)
         configTableView()
         setupDropDownStatus()
-        getData()
+        
         btnLogin.setBorderWithCornerRadius(borderWidth: 0, borderColor: .clear, cornerRadius: 20)
-
     }
     
     func getData() {
@@ -70,12 +71,12 @@ class MyBuyViewController: BaseViewController {
         super.viewWillAppear(animated)
         showTabbar()
         checkLogin()
+        
     }
     
     func checkLogin() {
         if UserDefaultHelper.shared.isLoggedIn {
             vCheckLogin.isHidden = true
-            getData()
         } else {
             vCheckLogin.isHidden = false
         }
@@ -88,29 +89,13 @@ class MyBuyViewController: BaseViewController {
         tbMyBuy.registerTableCell(MyBuyCell.self)
         
         tbMyBuy.contentInset.bottom = 10
+        tbMyBuy.separatorStyle = .none
         tbMyBuy.tableFooterView = UIView()
     }
     
     func setStatusType() {
-        if (dataOrder?.dataOrder.count)! > 0 {
-            if let status = dataOrder?.dataOrder[0].status, let countOrder = dataOrder?.countOrder {
-                switch  status  {
-                case StatusType.new.rawValue:
-                    self.lbTotal.text = "Tổng đơn hàng đang chờ duyệt: \(countOrder)"
-                case StatusType.wait_delivery.rawValue:
-                    self.lbTotal.text = "Tổng đơn hàng đang giao: \(countOrder)"
-                case StatusType.done.rawValue:
-                    self.lbTotal.text = "Tổng đơn hàng đã hoàn tất: \(countOrder)"
-                case StatusType.cancel.rawValue:
-                    self.lbTotal.text = "Tổng đơn hàng đã huỷ: \(countOrder)"
-                case StatusType.all.rawValue:
-                    self.lbTotal.text = "Tất cả các đơn hàng: \(countOrder)"
-                default:
-                    self.lbTotal.text = "Tổng đơn hàng: 0"
-                }
-            }
-        }
-        
+        guard let countOrder = dataOrder?.countOrder else { return }
+                lbTotal.text = "\(countOrder)"
     }
     
     private func setupDropDownStatus() {
@@ -132,25 +117,25 @@ class MyBuyViewController: BaseViewController {
             case "Chờ duyệt":
                 self.presenter?.getHistoryOrder(status: StatusType.new.rawValue, offset: 0, limit: 10)
                 
-                self.lbTotal.text = "Tổng đơn hàng đang chờ duyệt: 0"
+                self.lbTextTotal.text = "Tổng đơn hàng đang chờ duyệt: "
                 
             case "Đang giao":
                 self.presenter?.getHistoryOrder(status: StatusType.wait_delivery.rawValue, offset: 0, limit: 10)
                 
-                self.lbTotal.text = "Tổng đơn hàng đang giao: 0"
+                self.lbTextTotal.text = "Tổng đơn hàng đang giao: "
                 
             case "Hoàn Tất":
                 self.presenter?.getHistoryOrder(status: StatusType.done.rawValue, offset: 0, limit: 10)
                 
-                self.lbTotal.text = "Tổng đơn hàng đã hoàn tất: 0"
+                self.lbTextTotal.text = "Tổng đơn hàng đã hoàn tất: "
                 
             case "Đã huỷ":
                 self.presenter?.getHistoryOrder(status: StatusType.cancel.rawValue, offset: 0, limit: 10)
                 
-                self.lbTotal.text = "Tổng đơn hàng đã huỷ: 0"
+                self.lbTextTotal.text = "Tổng đơn hàng đã huỷ: "
             case "Tất cả":
                 self.presenter?.getHistoryOrder(status: StatusType.all.rawValue, offset: 0, limit: 10)
-                self.lbTotal.text = "Tổng tất cả các đơn hàng: 0"
+                self.lbTextTotal.text = "Tổng tất cả các đơn hàng: "
                 self.isAllOrder = true
             default:
                 break

@@ -11,7 +11,7 @@ import UIKit
 class BaseTableCell: UITableViewCell {
     let vLine: UIView = {
         let v = UIView()
-        v.backgroundColor = AppColor.white
+        v.backgroundColor = AppColor.gray_233_233_234
         
         return v
     }()
@@ -31,7 +31,7 @@ class BaseTableCell: UITableViewCell {
         self.selectionStyle = .none
     }
     
-    func addLineWhiteToBottom() {
+    func addLineToBottom() {
         addSubview(vLine)
         vLine.anchor( left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 1)
     }

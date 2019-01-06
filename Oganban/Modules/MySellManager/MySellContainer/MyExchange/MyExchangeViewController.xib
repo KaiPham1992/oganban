@@ -17,7 +17,8 @@
             <connections>
                 <outlet property="btnLogin" destination="yte-Zc-ete" id="mfo-6g-CO1"/>
                 <outlet property="lbStatusExchange" destination="KSV-OT-JYu" id="av5-eC-Mux"/>
-                <outlet property="lbTotal" destination="RR6-7b-jgb" id="EDr-Ie-Wba"/>
+                <outlet property="lbTextTotal" destination="RR6-7b-jgb" id="RMX-Qw-eW0"/>
+                <outlet property="lbTotal" destination="bXK-jg-s33" id="ybT-iV-QXF"/>
                 <outlet property="tbMyExchange" destination="iaZ-OJ-TTq" id="0IX-LU-fn1"/>
                 <outlet property="vCheckLogin" destination="FSL-vR-CNu" id="PBU-C0-sAf"/>
                 <outlet property="vDropDownStatus" destination="F29-3z-m9Z" id="T23-h9-8BZ"/>
@@ -46,8 +47,14 @@
                                 <constraint firstAttribute="width" constant="7.5" id="osp-dx-Fvz"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tổng đơn hàng đang chờ duyệt: 1" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RR6-7b-jgb">
-                            <rect key="frame" x="15" y="37" width="165" height="15"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tổng đơn hàng đang chờ duyệt: " textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RR6-7b-jgb">
+                            <rect key="frame" x="15" y="37" width="159" height="15"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="11"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXK-jg-s33">
+                            <rect key="frame" x="179" y="37" width="6.5" height="15"/>
                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="11"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -73,12 +80,14 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="lbg-pK-JLU" firstAttribute="leading" secondItem="67u-nA-mNZ" secondAttribute="leading" id="4vT-Hm-efb"/>
+                        <constraint firstItem="bXK-jg-s33" firstAttribute="leading" secondItem="RR6-7b-jgb" secondAttribute="trailing" constant="5" id="8WQ-aD-1cn"/>
                         <constraint firstItem="lbg-pK-JLU" firstAttribute="top" secondItem="67u-nA-mNZ" secondAttribute="top" id="9v4-93-vLp"/>
                         <constraint firstItem="F29-3z-m9Z" firstAttribute="top" secondItem="KSV-OT-JYu" secondAttribute="bottom" constant="4" id="IwM-7h-ntX"/>
                         <constraint firstItem="RR6-7b-jgb" firstAttribute="leading" secondItem="67u-nA-mNZ" secondAttribute="leading" constant="15" id="K8l-h4-xKz"/>
                         <constraint firstItem="KSV-OT-JYu" firstAttribute="top" secondItem="67u-nA-mNZ" secondAttribute="top" constant="8" id="MDc-Xv-G7q"/>
                         <constraint firstItem="KSV-OT-JYu" firstAttribute="centerX" secondItem="67u-nA-mNZ" secondAttribute="centerX" id="MmM-4x-AsR"/>
                         <constraint firstItem="69h-q7-fWt" firstAttribute="centerY" secondItem="KSV-OT-JYu" secondAttribute="centerY" id="bEa-NT-RGe"/>
+                        <constraint firstItem="bXK-jg-s33" firstAttribute="centerY" secondItem="RR6-7b-jgb" secondAttribute="centerY" id="iUi-ML-M23"/>
                         <constraint firstAttribute="trailing" secondItem="lbg-pK-JLU" secondAttribute="trailing" id="jWe-G5-ssk"/>
                         <constraint firstItem="F29-3z-m9Z" firstAttribute="centerX" secondItem="KSV-OT-JYu" secondAttribute="centerX" id="mot-ls-msl"/>
                         <constraint firstAttribute="height" constant="60" id="rgJ-wl-FTd"/>

@@ -26,6 +26,9 @@ class OrderDetailImageCell: BaseTableCell {
     @IBOutlet weak var lbExpireDate: UILabel!
     @IBOutlet weak var lbQuantity: UILabel!
     
+    var isMySellHide: Bool = false
+    var isMySellExpired: Bool = false
+    
     // My sell
     var record: RecordEntity? {
         didSet {
@@ -83,6 +86,7 @@ class OrderDetailImageCell: BaseTableCell {
     }
     
     @IBAction func btnHideTapped() {
+        
         delegate?.btnHideTapped()
     }
     

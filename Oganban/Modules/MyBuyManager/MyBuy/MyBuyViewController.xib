@@ -17,7 +17,8 @@
             <connections>
                 <outlet property="btnLogin" destination="ukp-PI-eDo" id="Yf4-Tb-9ft"/>
                 <outlet property="lbStatusRecord" destination="6Gv-f4-wqH" id="3SC-uU-lTO"/>
-                <outlet property="lbTotal" destination="aju-iJ-HDt" id="bSr-kf-q52"/>
+                <outlet property="lbTextTotal" destination="aju-iJ-HDt" id="bSr-kf-q52"/>
+                <outlet property="lbTotal" destination="ZYz-nT-ccI" id="qaV-jF-OeE"/>
                 <outlet property="tbMyBuy" destination="OWD-T5-ZQO" id="nWB-Gh-teS"/>
                 <outlet property="vCheckLogin" destination="eZH-0G-adf" id="A0X-Au-vx4"/>
                 <outlet property="vDropDownStatus" destination="urQ-nD-49W" id="J1U-yu-TjE"/>
@@ -46,8 +47,14 @@
                                 <constraint firstAttribute="height" constant="7.5" id="zVK-18-kaW"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tổng đơn hàng đang chờ duyệt: 0" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aju-iJ-HDt">
-                            <rect key="frame" x="15" y="37" width="165" height="15"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tổng đơn hàng đang chờ duyệt: " textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aju-iJ-HDt">
+                            <rect key="frame" x="15" y="37" width="159" height="15"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="11"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYz-nT-ccI">
+                            <rect key="frame" x="179" y="37" width="7" height="15"/>
                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="11"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -72,8 +79,10 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="ZYz-nT-ccI" firstAttribute="centerY" secondItem="aju-iJ-HDt" secondAttribute="centerY" id="0Wl-Lh-ENg"/>
                         <constraint firstAttribute="height" constant="60" id="35E-wn-mPx"/>
                         <constraint firstItem="aju-iJ-HDt" firstAttribute="leading" secondItem="hjU-7C-osd" secondAttribute="leading" constant="15" id="IIx-7c-T4h"/>
+                        <constraint firstItem="ZYz-nT-ccI" firstAttribute="leading" secondItem="aju-iJ-HDt" secondAttribute="trailing" constant="5" id="IL1-bL-vDG"/>
                         <constraint firstAttribute="trailing" secondItem="2kQ-nJ-Ne4" secondAttribute="trailing" id="ORI-l8-Hvf"/>
                         <constraint firstItem="6Gv-f4-wqH" firstAttribute="top" secondItem="hjU-7C-osd" secondAttribute="top" constant="8" id="PJJ-YT-o9C"/>
                         <constraint firstItem="2kQ-nJ-Ne4" firstAttribute="leading" secondItem="hjU-7C-osd" secondAttribute="leading" id="SGP-1q-MJg"/>
