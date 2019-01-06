@@ -32,12 +32,21 @@ class PositionViewController: BaseViewController {
     var marker:GMSMarker!
     var address = ""
     var dataSource: [PositionRangeEntity] = []
-    var distance: PositionRangeEntity?
+    var distance: PositionRangeEntity? {
+        didSet {
+//            lbScale.text = distance?.title
+        }
+    }
     weak var delegate: PositionViewControllerDelegate?
     let scaleDropdown = DropDown()
     
 	override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+//        self.distance = UserDefaultHelper.shared.radius
     }
     
     override func setUpViews() {
@@ -50,6 +59,7 @@ class PositionViewController: BaseViewController {
         tfAddress.delegate = self
         tfAddress.text = address
         setUpDropdown()
+        lbScale.text = distance?.title
     }
     
     func setUpDropdown() {
@@ -64,7 +74,6 @@ class PositionViewController: BaseViewController {
         scaleDropdown.downScaleTransform = CGAffineTransform(rotationAngle: (-.pi))
         scaleDropdown.selectionAction = { [weak self](index, item) in
             guard let `self` = self else { return }
-            self.lbScale.text = item
             self.distance = self.dataSource[index]
             
 //            if  self.dataSource[index].title& == "Không giới hạn" {

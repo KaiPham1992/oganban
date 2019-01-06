@@ -59,7 +59,7 @@ class Menu {
     }
 }
 
-struct PositionRangeEntity: Mappable {
+struct PositionRangeEntity: Mappable, Codable {
     
     var id: String?
     var value: String?

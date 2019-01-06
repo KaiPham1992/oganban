@@ -16,6 +16,7 @@ enum UserDefaultHelperKey: String {
     case long = "LongUser"
     case userToken = "UserToken"
      case email = "email"
+    case radius = "radius"
 }
 
 class UserDefaultHelper {
@@ -97,6 +98,25 @@ class UserDefaultHelper {
     var long: String {
         guard let _lat = get(key: .long) as? CLLocationDegrees else { return ""}
         return _lat.description
+    }
+    
+    var radius: PositionRangeEntity? {
+        get {
+            if let savedUser = UserDefaults.standard.object(forKey: UserDefaultHelperKey.radius.rawValue) as? Data {
+                let decoder = JSONDecoder()
+                if let _radius = try? decoder.decode(PositionRangeEntity.self, from: savedUser) {
+                    return _radius
+                }
+            }
+            return PositionRangeEntity(JSON: ["_id": "4",
+                                              "_value":"1000"])
+        }
+        set(radius) {
+            let encoder = JSONEncoder()
+            if let encoded = try? encoder.encode(radius) {
+                UserDefaults.standard.set(encoded, forKey: UserDefaultHelperKey.radius.rawValue)
+            }
+        }
     }
 }
 

@@ -109,6 +109,12 @@
 		B355EF6021C8FB1400379F57 /* SignUpInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B355EF5A21C8FB1400379F57 /* SignUpInteractor.swift */; };
 		B355EF6121C8FB1400379F57 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B355EF5B21C8FB1400379F57 /* SignUpViewController.xib */; };
 		B35F529821D276A000D3FA30 /* SignUpParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35F529721D276A000D3FA30 /* SignUpParam.swift */; };
+		B36A235B21E1AEBA00AA20DF /* SettingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36A235521E1AEBA00AA20DF /* SettingPresenter.swift */; };
+		B36A235C21E1AEBA00AA20DF /* SettingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36A235621E1AEBA00AA20DF /* SettingRouter.swift */; };
+		B36A235D21E1AEBA00AA20DF /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36A235721E1AEBA00AA20DF /* SettingViewController.swift */; };
+		B36A235E21E1AEBA00AA20DF /* SettingProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36A235821E1AEBA00AA20DF /* SettingProtocols.swift */; };
+		B36A235F21E1AEBA00AA20DF /* SettingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36A235921E1AEBA00AA20DF /* SettingInteractor.swift */; };
+		B36A236021E1AEBA00AA20DF /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B36A235A21E1AEBA00AA20DF /* SettingViewController.xib */; };
 		B36AEE9B21CDD90500BED43C /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36AEE9921CDD90500BED43C /* TabbarViewController.swift */; };
 		B36AEE9C21CDD90500BED43C /* TabbarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36AEE9A21CDD90500BED43C /* TabbarProtocol.swift */; };
 		B36AEEC821CDF47A00BED43C /* AdmobCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36AEEC621CDF47A00BED43C /* AdmobCell.swift */; };
@@ -540,6 +546,12 @@
 		B355EF6321C8FBE300379F57 /* FTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTextField.swift; sourceTree = "<group>"; };
 		B355EF6421C8FBE300379F57 /* AppTextFiled.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTextFiled.swift; sourceTree = "<group>"; };
 		B35F529721D276A000D3FA30 /* SignUpParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpParam.swift; sourceTree = "<group>"; };
+		B36A235521E1AEBA00AA20DF /* SettingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPresenter.swift; sourceTree = "<group>"; };
+		B36A235621E1AEBA00AA20DF /* SettingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRouter.swift; sourceTree = "<group>"; };
+		B36A235721E1AEBA00AA20DF /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		B36A235821E1AEBA00AA20DF /* SettingProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingProtocols.swift; sourceTree = "<group>"; };
+		B36A235921E1AEBA00AA20DF /* SettingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingInteractor.swift; sourceTree = "<group>"; };
+		B36A235A21E1AEBA00AA20DF /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 		B36AEE9921CDD90500BED43C /* TabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		B36AEE9A21CDD90500BED43C /* TabbarProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarProtocol.swift; sourceTree = "<group>"; };
 		B36AEEC621CDF47A00BED43C /* AdmobCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobCell.swift; sourceTree = "<group>"; };
@@ -1136,6 +1148,7 @@
 		B36A235021E1ABE900AA20DF /* MoreManager */ = {
 			isa = PBXGroup;
 			children = (
+				B36A235421E1AEAB00AA20DF /* Setting */,
 				84329F2C21DFC93B00047B5E /* HistoryBuy */,
 				843014AE21DFB59900B39084 /* HistoryCoin */,
 				84421BE621CBEEA600F468F5 /* More */,
@@ -1169,6 +1182,19 @@
 				DEBEE7FA21D740C2004B8D88 /* MySellContainer */,
 			);
 			path = MySellManager;
+			sourceTree = "<group>";
+		};
+		B36A235421E1AEAB00AA20DF /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				B36A235521E1AEBA00AA20DF /* SettingPresenter.swift */,
+				B36A235621E1AEBA00AA20DF /* SettingRouter.swift */,
+				B36A235721E1AEBA00AA20DF /* SettingViewController.swift */,
+				B36A235821E1AEBA00AA20DF /* SettingProtocols.swift */,
+				B36A235921E1AEBA00AA20DF /* SettingInteractor.swift */,
+				B36A235A21E1AEBA00AA20DF /* SettingViewController.xib */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		B36AEE9721CDD8CD00BED43C /* Tabbar */ = {
@@ -2409,6 +2435,7 @@
 				84421BFA21CBEF1E00F468F5 /* MoreHeaderCell.xib in Resources */,
 				B325C2F021CE05B20048A148 /* MenuCell.xib in Resources */,
 				B3A3237221DB332100E1AD4C /* LeftMenuCell.xib in Resources */,
+				B36A236021E1AEBA00AA20DF /* SettingViewController.xib in Resources */,
 				DE33036321DF5EDB00409F83 /* PostStepTwoViewController.xib in Resources */,
 				DEBEE81821D76C79004B8D88 /* LevelMemberView.xib in Resources */,
 				DEA3A08921D6738200643296 /* AppImageSlide.xib in Resources */,
@@ -2562,6 +2589,7 @@
 				DEB8550121E0B42D007479A7 /* NotificationDetailViewController.swift in Sources */,
 				84329F4621DFD92F00047B5E /* FavouriteRouter.swift in Sources */,
 				DE0E79D921D65F760053786D /* Connectivity.swift in Sources */,
+				B36A235D21E1AEBA00AA20DF /* SettingViewController.swift in Sources */,
 				DEB8550621E0BF07007479A7 /* SelectPhotoCanCropPopUp.swift in Sources */,
 				B36AEECE21CDF52B00BED43C /* HomeCell.swift in Sources */,
 				CBD1C2C121D76BEB006DB3FF /* RecordEndPoint.swift in Sources */,
@@ -2573,6 +2601,7 @@
 				DEE1DA8021CE39180036FEB7 /* GADBannerView+extension.swift in Sources */,
 				CB172C2121C6A2EF0068CF92 /* DataManager.swift in Sources */,
 				B392FB4121D3E37C0076A7B5 /* RecordParam.swift in Sources */,
+				B36A235C21E1AEBA00AA20DF /* SettingRouter.swift in Sources */,
 				DE442C3D21CFA2130051C0B8 /* OrderDetailPresenter.swift in Sources */,
 				DEE1DA4F21CDE1CE0036FEB7 /* PopUpNotificationHaveAdmob.swift in Sources */,
 				DE21827021CD473100FDD9F1 /* KActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
@@ -2650,6 +2679,7 @@
 				DE21828421CD473100FDD9F1 /* KActivityIndicatorShape.swift in Sources */,
 				CB0C3A2421D3BECD0052DD91 /* ForgotPasswordRouter.swift in Sources */,
 				B355EF5E21C8FB1400379F57 /* SignUpViewController.swift in Sources */,
+				B36A235B21E1AEBA00AA20DF /* SettingPresenter.swift in Sources */,
 				DEE1DA5121CDE2B60036FEB7 /* PopUpNotificationHaveAdmobContent.swift in Sources */,
 				B3092D9821D676C800494CC4 /* UILabel+Extension.swift in Sources */,
 				B392FB3521D3AE970076A7B5 /* CategoryEntity.swift in Sources */,
@@ -2711,6 +2741,7 @@
 				84421C0A21CBF52900F468F5 /* SupplementaryInfoProtocols.swift in Sources */,
 				DE33035421DF1D7B00409F83 /* AppTextView.swift in Sources */,
 				B355EF5221C8EB3F00379F57 /* HomeProtocols.swift in Sources */,
+				B36A235F21E1AEBA00AA20DF /* SettingInteractor.swift in Sources */,
 				DE442C3F21CFA2130051C0B8 /* OrderDetailViewController.swift in Sources */,
 				CB172C2521C6A2EF0068CF92 /* PopUpHelper.swift in Sources */,
 				DEE7306F21CFDAA300F20D68 /* OrderDetail+Table.swift in Sources */,
@@ -2825,6 +2856,7 @@
 				DE21827C21CD473100FDD9F1 /* KActivityIndicatorAnimationBallPulseSync.swift in Sources */,
 				CBD1C29E21D74B79006DB3FF /* RecordSellingView.swift in Sources */,
 				DEBEE80121D740D7004B8D88 /* MySellContainerPresenter.swift in Sources */,
+				B36A235E21E1AEBA00AA20DF /* SettingProtocols.swift in Sources */,
 				DE21827521CD473100FDD9F1 /* KActivityIndicatorAnimationLineScale.swift in Sources */,
 				84A92BED21CA518200148191 /* OganbanCustomTextfield.swift in Sources */,
 				DE21826221CD473100FDD9F1 /* KActivityIndicatorAnimationOrbit.swift in Sources */,

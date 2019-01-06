@@ -51,6 +51,7 @@ class MoreRouter: MoreWireframeProtocol {
             print("Chọn Hướng dẫn")
             break
         case MoreEntityType.setting:
+            tapSetting()
             print("Chọn Cài đặt")
             break
         case MoreEntityType.changePassword:
@@ -108,5 +109,10 @@ class MoreRouter: MoreWireframeProtocol {
     private func tapChangePassword() {
         let vc = ChangePasswordRouter.createModule()
         viewController?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func tapSetting() {
+        let vc = SettingRouter.createModule()
+        viewController?.push(controller: vc)
     }
 }
