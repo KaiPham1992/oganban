@@ -101,7 +101,7 @@ extension MyBuyViewController: UITableViewDataSource, UITableViewDelegate {
     
     // FIX ME
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = PostStepOneRouter.createModule()
+        let vc = MyBuyDetailRouter.createModule()
         self.push(controller: vc)
     }
 }

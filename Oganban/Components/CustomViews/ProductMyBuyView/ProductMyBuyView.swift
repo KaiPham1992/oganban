@@ -35,9 +35,11 @@ class ProductMyBuyView: BaseViewXib {
             lbAvgRating.text = _order.avgRating
             
             if _order.paymentType == "cash" {
-                lbPrice.text = "\(_order.totalPrice ?? "") đ"
+                lbPrice.text = _order.showMoney()
             } else {
-                lbPrice.text = "\(_order.totalCoin ?? "") ơ"            }
+                lbPrice.text = _order.showCoin()
+                
+            }
             
             
             if let url = URL(string: "\(BASE_URL_IMAGE)\(_order.imgSrc ?? "")") {

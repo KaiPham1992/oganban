@@ -9,14 +9,18 @@
 import Foundation
 import ObjectMapper
 
+enum OrderStatusType: String {
+    case new = "Đơn hàng chờ duyệt"
+}
+
 struct OrderEntity: Mappable {
     
     var id: String?
     var status: String?
     var paymentType: String?
-    var totalPrice: String?
-    var salePrice: String?
-    var quantity: String?
+    var totalPrice: Double?
+    var salePrice: Double?
+    var quantity: Int?
     var accountID: String?
     var fullName: String?
     var imgSrcAccount: String?
@@ -29,8 +33,10 @@ struct OrderEntity: Mappable {
     var avgRating: String?
     var level: String?
     var imgSrc: String?
-    var totalCoin: String?
+    var totalCoin: Double?
     var coin: String?
+    
+    var arrayImgSrc = [String]()
     
     init?(map: Map) {
     }
@@ -56,5 +62,33 @@ struct OrderEntity: Mappable {
         self.imgSrc <- map["img_src"]
         self.totalCoin <- map["total_coin"]
         self.coin <- map["coin"]
+        
+        self.arrayImgSrc <- map["img_src"]
+    }
+    
+    func getStatus() -> OrderStatusType {
+        switch self.status& {
+        case "new":
+            return .new
+        default:
+            return .new
+        }
+    }
+    
+    var urlAvatar: URL? {
+        //
+        return URL(string: "\(BASE_URL)\(self.cropImgSrcAccount&)")
+    }
+    
+    func showMoney() -> String? {
+        return self.totalPrice?.toUInt64().toCurrency
+    }
+    
+    func showCoin() -> String? {
+        if let _coin = self.totalCoin {
+            return "\(String(describing: _coin.toCurrency)) ơ"
+        }
+        
+        return nil
     }
 }

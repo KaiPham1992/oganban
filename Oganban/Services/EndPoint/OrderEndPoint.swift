@@ -10,6 +10,7 @@ import Alamofire
 
 enum OrderEndPoint {
     case getTransactionSeller(status: String, limit: Int, offset: Int)
+    case getDetailOrder(id: String)
 }
 
 extension OrderEndPoint: EndPointType {
@@ -17,6 +18,8 @@ extension OrderEndPoint: EndPointType {
         switch self {
         case .getTransactionSeller:
             return "_api/order/get_transaction_seller"
+        case .getDetailOrder(let id):
+            return "_api/order/order_detail/\(id)"
         }
     }
     
@@ -24,6 +27,8 @@ extension OrderEndPoint: EndPointType {
         switch self {
         case .getTransactionSeller:
             return .post
+        case .getDetailOrder:
+            return .get
         }
     }
     
@@ -34,6 +39,8 @@ extension OrderEndPoint: EndPointType {
                          "limit": limit,
                          "offset": offset] as [String: Any]
             return param
+        case .getDetailOrder:
+            return [:]
         }
     }
     
