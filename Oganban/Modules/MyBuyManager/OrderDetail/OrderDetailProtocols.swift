@@ -19,7 +19,7 @@ protocol OrderDetailPresenterProtocol: class {
 
     var interactor: OrderDetailInteractorInputProtocol? { get set }
     func getDetail(id: String)
-    func hideRecord(recordID: Int)
+    func hideRecord(recordID: String)
 }
 
 //MARK: Interactor -
@@ -36,7 +36,7 @@ protocol OrderDetailInteractorInputProtocol: class {
 
     /* Presenter -> Interactor */
     func getDetail(id: String)
-    func hideRecord(recordID: Int)
+    func hideRecord(recordID: String)
 }
 
 //MARK: View -

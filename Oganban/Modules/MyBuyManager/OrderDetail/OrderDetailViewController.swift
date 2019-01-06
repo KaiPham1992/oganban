@@ -46,7 +46,8 @@ class OrderDetailViewController: BaseViewController {
     }
     
     var recordId: String?
-    var listHeader = ["Chi tiết", "Giới thiệu","Thông tin người bán", "Địa chỉ", "Bình Luận"]
+    
+    var listHeader = ["Chi tiết", "Giới thiệu","Thông tin người bán", "Địa chỉ gợi ý để giao dịch", "Bình Luận"]
     
     var listComment = [CommentEntity]()
     
@@ -124,9 +125,18 @@ extension OrderDetailViewController: OrderDetailViewProtocol {
 }
 
 extension OrderDetailViewController: OrderDetailImageCellDelegate {
+    func btnDeleteTapped() {
+        PopUpHelper.shared.showYesNoQuestionHaveAds(question: "Bạn chắc chắn muốn xoá bài đăng này ?", completionYes: {
+            
+        }) {
+            
+        }
+    }
+    
     func btnHideTapped() {
         PopUpHelper.shared.showYesNoQuestionHaveAds(question: "Bạn có chắc muốn ẩn bài đăng này ?", completionYes: {
-            self.presenter?.hideRecord(recordID: 5)
+            guard let id = self.record?.id else { return }
+            self.presenter?.hideRecord(recordID: id)
         }) {
             
         }

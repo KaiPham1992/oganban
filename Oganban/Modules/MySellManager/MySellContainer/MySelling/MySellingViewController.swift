@@ -80,7 +80,7 @@ class MySellingViewController: BaseViewController {
     func checkLogin() {
         if UserDefaultHelper.shared.isLoggedIn {
             vCheckLogin.isHidden = true
-            getData()
+//            getData()
         } else {
             vCheckLogin.isHidden = false
         }
@@ -91,8 +91,8 @@ class MySellingViewController: BaseViewController {
         tbMySelling.delegate = self
         
         tbMySelling.registerTableCell(MySellingCell.self)
-//        tbMySelling.separatorStyle = .none
-        tbMySelling.contentInset.bottom = 10
+        tbMySelling.separatorStyle = .none
+        tbMySelling.contentInset.bottom = 20
         tbMySelling.tableFooterView = UIView()
     }
     
@@ -146,6 +146,7 @@ extension MySellingViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard let count = listRecord?.dataRecord.count else { return }
+        
         if isCanLoadMore &&  count >= 20 {
             if indexPath.item == count - 10 {
                 isCanLoadMore = false

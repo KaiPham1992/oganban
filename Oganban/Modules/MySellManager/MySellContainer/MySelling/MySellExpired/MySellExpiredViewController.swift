@@ -59,7 +59,7 @@ class MySellExpiredViewController: BaseViewController {
         tbExpired.registerTableCell(MySellingCell.self)
         
         tbExpired.contentInset.bottom = 10
-//        tbExpired.separatorStyle = .none
+        tbExpired.separatorStyle = .none
         tbExpired.tableFooterView = UIView()
     }
     
@@ -94,7 +94,7 @@ extension MySellExpiredViewController: UITableViewDataSource, UITableViewDelegat
         let vc = OrderDetailRouter.createModule(recordId: record?.id)
         if record?.status == "hide" {
             vc.isMySellHide = true
-        } else if listSellExpired?.dataRecord[indexPath.item].status == "expired" {
+        } else if record?.status == "expired" {
             vc.isMySellExpired = true
         }
         
