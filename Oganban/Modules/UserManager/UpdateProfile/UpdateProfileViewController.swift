@@ -130,8 +130,9 @@ class UpdateProfileViewController: BaseViewController {
                 tvPhone.tfPhone.text = phone
             }
            
-            if let phoneCode = user.phoneCode {
-                tvPhone.lbCountryCode.text = phoneCode
+            if let dialCode = user.phoneCode, let countryCode = getCountryCodeFromDialCode(dialCode: dialCode) {
+                self.countryPhoneCode =  countryCode
+                tvPhone.lbCountryCode.text = dialCode
             }
             
             if let birthday = user.birthday {
@@ -165,6 +166,15 @@ class UpdateProfileViewController: BaseViewController {
             }
         }
         return ""
+    }
+    
+    func getCountryCodeFromDialCode(dialCode: String) -> CountryCodeEntity? {
+        for item in tvPhone.listCode {
+            if let code = item.dialCode, code.range(of:dialCode) != nil {
+                return item
+            }
+        }
+        return nil
     }
     
     func getBirthday(birthDay: String) -> String? {

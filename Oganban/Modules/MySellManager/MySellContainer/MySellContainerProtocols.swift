@@ -15,6 +15,7 @@ protocol MySellContainerWireframeProtocol: class {
 
     func gotoLogin()
     func gotoMySellExpired()
+    func gotoPostRecord()
 }
 //MARK: Presenter -
 protocol MySellContainerPresenterProtocol: class {
@@ -22,6 +23,7 @@ protocol MySellContainerPresenterProtocol: class {
     var interactor: MySellContainerInteractorInputProtocol? { get set }
     func gotoLogin()
     func gotoMySellExpired()
+    func gotoPostRecord()
 }
 
 //MARK: Interactor -

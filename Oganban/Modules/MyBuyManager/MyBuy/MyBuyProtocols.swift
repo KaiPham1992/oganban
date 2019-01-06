@@ -18,12 +18,14 @@ protocol MyBuyWireframeProtocol: class {
 protocol MyBuyPresenterProtocol: class {
 
     var interactor: MyBuyInteractorInputProtocol? { get set }
+    func getHistoryOrder(status: String, offset: Int, limit: Int)
 }
 
 //MARK: Interactor -
 protocol MyBuyInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    func didGetHistoryOrder(data: BaseOrderEntity?)
 }
 
 protocol MyBuyInteractorInputProtocol: class {
@@ -31,6 +33,7 @@ protocol MyBuyInteractorInputProtocol: class {
     var presenter: MyBuyInteractorOutputProtocol?  { get set }
 
     /* Presenter -> Interactor */
+    func getHistoryOrder(status: String, offset: Int, limit: Int)
 }
 
 //MARK: View -
@@ -39,4 +42,5 @@ protocol MyBuyViewProtocol: class {
     var presenter: MyBuyPresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
+    func didGetHistoryOrder(data: BaseOrderEntity?)
 }

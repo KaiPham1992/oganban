@@ -34,7 +34,7 @@ struct OrderEntity: Mappable {
     var level: String?
     var imgSrc: String?
     var totalCoin: Double?
-    var coin: String?
+    var coin: Int?
     
     var arrayImgSrc = [String]()
     

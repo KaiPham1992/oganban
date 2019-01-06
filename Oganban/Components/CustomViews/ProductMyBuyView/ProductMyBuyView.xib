@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,6 +20,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductMyBuyView" customModule="Oganban" customModuleProvider="target">
             <connections>
                 <outlet property="imgAvatar" destination="adx-uU-G7W" id="BeL-rN-dLR"/>
+                <outlet property="imgIconMoney" destination="H09-Ok-Cdj" id="Fb7-NM-8A2"/>
                 <outlet property="imgProduct" destination="eYL-YP-jcQ" id="kQZ-Ok-P4O"/>
                 <outlet property="lbAvgRating" destination="t81-9E-sw6" id="Z4W-e8-epm"/>
                 <outlet property="lbName" destination="v6f-fo-vwj" id="xAz-Fn-WAi"/>
@@ -85,7 +86,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gold " lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fE-gj-DI8">
-                    <rect key="frame" x="191" y="90" width="19" height="9.5"/>
+                    <rect key="frame" x="191" y="90" width="19" height="11"/>
                     <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="8"/>
                     <color key="textColor" red="0.0" green="0.53374901960784316" blue="0.94507058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>

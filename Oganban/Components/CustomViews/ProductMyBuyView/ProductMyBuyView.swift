@@ -21,6 +21,13 @@ class ProductMyBuyView: BaseViewXib {
     @IBOutlet weak var lbNote: UILabel!
     @IBOutlet weak var lbStatus: UILabel!
     @IBOutlet weak var lbAvgRating: UILabel!
+    @IBOutlet weak var imgIconMoney: UIImageView!
+    
+    var isAllOrder: Bool = false {
+        didSet {
+            setStatusOrder()
+        }
+    }
     
     var order: OrderEntity? {
         didSet {
@@ -36,9 +43,12 @@ class ProductMyBuyView: BaseViewXib {
             
             if _order.paymentType == "cash" {
                 lbPrice.text = _order.showMoney()
+                lbPrice.textColor = AppColor.red_233_1_1
+                imgIconMoney.image = UIImage(named: "ic_money")
             } else {
                 lbPrice.text = _order.showCoin()
-                
+                lbPrice.textColor = AppColor.green
+                imgIconMoney.image = UIImage(named: "ic_coin")
             }
             
             
@@ -57,5 +67,36 @@ class ProductMyBuyView: BaseViewXib {
         imgAvatar.setBorderWithCornerRadius()
         lbStatus.isHidden = true
         lbPrice.underlineLastCharacter()
+        setStatusOrder()
+    }
+    
+    func setStatusOrder() {
+        if isAllOrder {
+            lbStatus.isHidden = false
+            if let status = order?.status {
+                switch status {
+                case StatusType.new.rawValue:
+                    lbStatus.text = "Chờ duyệt"
+                    lbStatus.backgroundColor = AppColor.yellow_228_251_30
+                    lbStatus.textColor = AppColor.red_233_1_1
+                case StatusType.wait_delivery.rawValue:
+                    lbStatus.text = "Đang giao"
+                    lbStatus.backgroundColor = AppColor.yellow_228_251_30
+                    lbStatus.textColor = AppColor.red_233_1_1
+                case StatusType.done.rawValue:
+                    lbStatus.text = "Hoàn tất"
+                    lbStatus.backgroundColor = AppColor.green005800
+                    lbStatus.textColor = AppColor.yellow_245_255_0
+                case StatusType.cancel.rawValue:
+                    lbStatus.text = "Đã huỷ "
+                    lbStatus.backgroundColor = AppColor.gray_233_233_234
+                    lbStatus.textColor = AppColor.gray_65_65_65
+                default:
+                    break
+                }
+            }
+        } else {
+            lbStatus.isHidden = true
+        }
     }
 }
