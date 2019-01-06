@@ -55,5 +55,6 @@ struct AppColor {
      static let gray_238_238_238 = UIColor(red: 238/255.0, green: 238/255.0, blue: 238/255.0, alpha: 1.0)
     static let gray_233_233_234 = UIColor(red: 233/255, green: 233/255, blue: 234/255, alpha: 1)
     static let red_233_1_1 = UIColor(red: 233/255, green: 1/255, blue: 1/255, alpha: 1)
-    static let yellow_288_251_30 = UIColor(red: 288/255, green: 251/255, blue: 30/255, alpha: 1)
+    static let yellow_228_251_30 = UIColor(red: 228/255, green: 251/255, blue: 30/255, alpha: 1)
+    static let yellow_245_255_0 = UIColor(red: 245/255, green: 255/255, blue: 0/255, alpha: 1)
 }

@@ -26,6 +26,17 @@ class MyBuyViewController: BaseViewController {
     var dataOrder: BaseOrderEntity? {
         didSet {
             tbMyBuy.reloadData()
+            
+            if let count = self.dataOrder?.dataOrder.count {
+                if count == 0 {
+                    tbMyBuy.isHidden = true
+                    showNoData()
+                } else {
+                    tbMyBuy.isHidden = false
+                    hideNoData()
+                    setupDropDownStatus()
+                }
+            }
         }
     }
     
@@ -38,6 +49,14 @@ class MyBuyViewController: BaseViewController {
         self.setTitleNavigation(title: NavigationTitle.myBuy)
         configTableView()
         setupDropDownStatus()
+        getData()
+        guard let countOrder = self.dataOrder?.dataOrder.count else { return }
+        self.lbTotal.text = "Tổng đơn hàng đang chờ duyệt: \(countOrder)"
+        
+    }
+    
+    func getData() {
+        presenter?.getHistoryOrder(status: "new", offset: 0, limit: 10)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -68,17 +87,54 @@ class MyBuyViewController: BaseViewController {
         dropDownStatus.selectionAction = { [weak self](index, item) in
             guard let `self` = self else { return }
             self.lbStatusRecord.text = item
+            
             switch item {
             case "Chờ duyệt":
-                self.lbTotal.text = "Tổng đơn hàng đang chờ duyệt: 1"
+                self.presenter?.getHistoryOrder(status: StatusType.new.rawValue, offset: 0, limit: 10)
+                if let countOrder = self.dataOrder?.dataOrder.count {
+                    if countOrder > 0 {
+                        self.lbTotal.text = "Tổng đơn hàng đang chờ duyệt: \(countOrder)"
+                    } else {
+                        self.lbTotal.text = "Tổng đơn hàng đang chờ duyệt: 0"
+                    }
+                }
+                
             case "Đang giao":
-                self.lbTotal.text = "Tổng đơn hàng đang giao: 1"
+                self.presenter?.getHistoryOrder(status: StatusType.wait_delivery.rawValue, offset: 0, limit: 10)
+                if let countOrder = self.dataOrder?.dataOrder.count {
+                    if countOrder > 0 {
+                        self.lbTotal.text = "Tổng đơn hàng đang giao: \(countOrder)"
+                    } else {
+                        self.lbTotal.text = "Tổng đơn hàng đang giao: 0"
+                    }
+                }
             case "Hoàn Tất":
-                self.lbTotal.text = "Tổng đơn hàng đã hoàn tất: 1"
+                self.presenter?.getHistoryOrder(status: StatusType.done.rawValue, offset: 0, limit: 10)
+                if let countOrder = self.dataOrder?.dataOrder.count {
+                    if countOrder > 0 {
+                        self.lbTotal.text = "Tổng đơn hàng đã hoàn tất: \(countOrder)"
+                    } else {
+                        self.lbTotal.text = "Tổng đơn hàng đã hoàn tất: 0"
+                    }
+                }
             case "Đã huỷ":
-                self.lbTotal.text = "Tổng đơn hàng đã huỷ: 1"
+                self.presenter?.getHistoryOrder(status: StatusType.cancel.rawValue, offset: 0, limit: 10)
+                if let countOrder = self.dataOrder?.dataOrder.count {
+                    if countOrder > 0 {
+                        self.lbTotal.text = "Tổng đơn hàng đã huỷ: \(countOrder)"
+                    } else {
+                        self.lbTotal.text = "Tổng đơn hàng đã huỷ: 0"
+                    }
+                }
             case "Tất cả":
-                self.lbTotal.text = "Tổng tất cả đơn hàng: 1"
+                self.presenter?.getHistoryOrder(status: StatusType.all.rawValue, offset: 0, limit: 10)
+                if let countOrder = self.dataOrder?.dataOrder.count {
+                    if countOrder > 0 {
+                        self.lbTotal.text = "Tổng tất cả các đơn hàng: \(countOrder)"
+                    } else {
+                        self.lbTotal.text = "Tổng tất cả các đơn hàng: 0"
+                    }
+                }
             default:
                 break
             }
@@ -92,7 +148,8 @@ class MyBuyViewController: BaseViewController {
 
 extension MyBuyViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        guard let count = dataOrder?.dataOrder.count else { return 0 }
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
