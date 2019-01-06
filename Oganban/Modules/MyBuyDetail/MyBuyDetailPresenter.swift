@@ -34,4 +34,7 @@ class MyBuyDetailPresenter: MyBuyDetailPresenterProtocol, MyBuyDetailInteractorO
         interactor?.changedStatusOrder(status: status, id: id)
     }
 
+    func changedStatusOrderSaler(status: OrderStatusKey, id: String) {
+        interactor?.changedStatusOrderSaler(status: status, id: id)
+    }
 }

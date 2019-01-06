@@ -72,6 +72,9 @@
 		84487C8F21CB80E1008B25B2 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84487C8321CB7890008B25B2 /* Roboto-Regular.ttf */; };
 		84487C9021CB80F2008B25B2 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84487C8121CB788F008B25B2 /* Roboto-Thin.ttf */; };
 		84487C9121CB80F5008B25B2 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84487C8521CB7890008B25B2 /* Roboto-ThinItalic.ttf */; };
+		8463FAF921E1CBCA00522D0C /* HistoryBuyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8463FAF821E1CBCA00522D0C /* HistoryBuyEntity.swift */; };
+		8463FAFB21E1E1D900522D0C /* HistoryCoinEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8463FAFA21E1E1D900522D0C /* HistoryCoinEntity.swift */; };
+		8463FAFD21E1F06000522D0C /* FavouriteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8463FAFC21E1F06000522D0C /* FavouriteEntity.swift */; };
 		84A92BED21CA518200148191 /* OganbanCustomTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A92BEB21CA518100148191 /* OganbanCustomTextfield.swift */; };
 		84A92BEE21CA518200148191 /* OganbanCustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A92BEC21CA518200148191 /* OganbanCustomButton.swift */; };
 		84A92BF621CA555900148191 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A92BF021CA555900148191 /* LoginPresenter.swift */; };
@@ -397,6 +400,8 @@
 		DE5E085021E1DAEC0053EC9D /* MyBuyInfoUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5E084E21E1DAEC0053EC9D /* MyBuyInfoUserCell.swift */; };
 		DE5E085121E1DAEC0053EC9D /* MyBuyInfoUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE5E084F21E1DAEC0053EC9D /* MyBuyInfoUserCell.xib */; };
 		DE5E085321E1DF000053EC9D /* OrderDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5E085221E1DF000053EC9D /* OrderDetailEntity.swift */; };
+		DE5E085621E206D90053EC9D /* AppRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5E085521E206D90053EC9D /* AppRatingView.swift */; };
+		DE5E085821E206FF0053EC9D /* AppRatingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE5E085721E206FF0053EC9D /* AppRatingView.xib */; };
 		DEA3A08821D6738200643296 /* AppImageSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3A08621D6738100643296 /* AppImageSlide.swift */; };
 		DEA3A08921D6738200643296 /* AppImageSlide.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEA3A08721D6738100643296 /* AppImageSlide.xib */; };
 		DEA3A08D21D674A200643296 /* PreviewPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3A08B21D674A200643296 /* PreviewPhotoViewController.swift */; };
@@ -532,6 +537,9 @@
 		84487C8321CB7890008B25B2 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		84487C8421CB7890008B25B2 /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
 		84487C8521CB7890008B25B2 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
+		8463FAF821E1CBCA00522D0C /* HistoryBuyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryBuyEntity.swift; sourceTree = "<group>"; };
+		8463FAFA21E1E1D900522D0C /* HistoryCoinEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCoinEntity.swift; sourceTree = "<group>"; };
+		8463FAFC21E1F06000522D0C /* FavouriteEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteEntity.swift; sourceTree = "<group>"; };
 		84A92BEB21CA518100148191 /* OganbanCustomTextfield.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OganbanCustomTextfield.swift; sourceTree = "<group>"; };
 		84A92BEC21CA518200148191 /* OganbanCustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OganbanCustomButton.swift; sourceTree = "<group>"; };
 		84A92BF021CA555900148191 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
@@ -865,6 +873,8 @@
 		DE5E084E21E1DAEC0053EC9D /* MyBuyInfoUserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBuyInfoUserCell.swift; sourceTree = "<group>"; };
 		DE5E084F21E1DAEC0053EC9D /* MyBuyInfoUserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyBuyInfoUserCell.xib; sourceTree = "<group>"; };
 		DE5E085221E1DF000053EC9D /* OrderDetailEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailEntity.swift; sourceTree = "<group>"; };
+		DE5E085521E206D90053EC9D /* AppRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRatingView.swift; sourceTree = "<group>"; };
+		DE5E085721E206FF0053EC9D /* AppRatingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppRatingView.xib; sourceTree = "<group>"; };
 		DEA3A08621D6738100643296 /* AppImageSlide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppImageSlide.swift; sourceTree = "<group>"; };
 		DEA3A08721D6738100643296 /* AppImageSlide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppImageSlide.xib; sourceTree = "<group>"; };
 		DEA3A08B21D674A200643296 /* PreviewPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewPhotoViewController.swift; sourceTree = "<group>"; };
@@ -1031,7 +1041,7 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		84329F5021DFE1E000047B5E /* ProductList */ = {
+		84329F5021DFE1E000047B5E /* FavouriteProductList */ = {
 			isa = PBXGroup;
 			children = (
 				84329F5D21DFE20600047B5E /* Cell */,
@@ -1042,7 +1052,7 @@
 				84329F5521DFE1FA00047B5E /* ProductListInteractor.swift */,
 				84329F5621DFE1FA00047B5E /* ProductListViewController.xib */,
 			);
-			path = ProductList;
+			path = FavouriteProductList;
 			sourceTree = "<group>";
 		};
 		84329F5D21DFE20600047B5E /* Cell */ = {
@@ -1096,6 +1106,7 @@
 		84A92BE921CA50F000148191 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				DE5E085421E206BF0053EC9D /* AppRatingView */,
 				DE33035121DF1CD600409F83 /* AppTextView */,
 				DEBEE81421D76C3F004B8D88 /* LevelMemberView */,
 				DEBEE80721D7594E004B8D88 /* AppRadioButton */,
@@ -1371,6 +1382,9 @@
 				CBE2183D21E219B70035F00B /* OrderBuyDetail */,
 				DE5E083A21E1C0E70053EC9D /* MyBuyDetail */,
 				84329F5021DFE1E000047B5E /* ProductList */,
+
+				84329F5021DFE1E000047B5E /* FavouriteProductList */,
+
 				84329F3E21DFD82900047B5E /* Favourite */,
 				B3CC856821D72DB600ADBFD8 /* Position */,
 				B36AEE9721CDD8CD00BED43C /* Tabbar */,
@@ -1902,7 +1916,13 @@
 				CB31FB7621DF413D001DFC7F /* BaseRecordEntity.swift */,
 				CB31FB7821DF4736001DFC7F /* BaseOrderEntity.swift */,
 				DEB854F421E0A59C007479A7 /* ExpirePostEntity.swift */,
+
 				DE5E085221E1DF000053EC9D /* OrderDetailEntity.swift */,
+
+				8463FAF821E1CBCA00522D0C /* HistoryBuyEntity.swift */,
+				8463FAFA21E1E1D900522D0C /* HistoryCoinEntity.swift */,
+				8463FAFC21E1F06000522D0C /* FavouriteEntity.swift */,
+
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -2181,6 +2201,15 @@
 				DE5E084F21E1DAEC0053EC9D /* MyBuyInfoUserCell.xib */,
 			);
 			path = MyBuyInfoUserCell;
+			sourceTree = "<group>";
+		};
+		DE5E085421E206BF0053EC9D /* AppRatingView */ = {
+			isa = PBXGroup;
+			children = (
+				DE5E085521E206D90053EC9D /* AppRatingView.swift */,
+				DE5E085721E206FF0053EC9D /* AppRatingView.xib */,
+			);
+			path = AppRatingView;
 			sourceTree = "<group>";
 		};
 		DEA3A08521D6738100643296 /* AppImageSlide */ = {
@@ -2543,6 +2572,7 @@
 				CBD1C2D121D78916006DB3FF /* MySellExpiredViewController.xib in Resources */,
 				84329F2B21DFBBF100047B5E /* HistoryCoinCell.xib in Resources */,
 				CB172C8E21C6A2EF0068CF92 /* LICENSE.txt in Resources */,
+				DE5E085821E206FF0053EC9D /* AppRatingView.xib in Resources */,
 				DEC5166621CE8DDF00A17CBF /* PopUpSettingGPSContent.xib in Resources */,
 				84421BFE21CBEF7600F468F5 /* MoreViewController.xib in Resources */,
 				DE5E085121E1DAEC0053EC9D /* MyBuyInfoUserCell.xib in Resources */,
@@ -2726,6 +2756,7 @@
 				DEB8550121E0B42D007479A7 /* NotificationDetailViewController.swift in Sources */,
 				84329F4621DFD92F00047B5E /* FavouriteRouter.swift in Sources */,
 				DE0E79D921D65F760053786D /* Connectivity.swift in Sources */,
+				DE5E085621E206D90053EC9D /* AppRatingView.swift in Sources */,
 				B36A235D21E1AEBA00AA20DF /* SettingViewController.swift in Sources */,
 				DEB8550621E0BF07007479A7 /* SelectPhotoCanCropPopUp.swift in Sources */,
 				B36AEECE21CDF52B00BED43C /* HomeCell.swift in Sources */,
@@ -2910,6 +2941,7 @@
 				DE21826E21CD473100FDD9F1 /* KActivityIndicatorAnimationBallClipRotate.swift in Sources */,
 				CB172C1421C6A2EF0068CF92 /* UIView+extension.swift in Sources */,
 				CBD1C2A921D74DA6006DB3FF /* MySellingRouter.swift in Sources */,
+				8463FAFB21E1E1D900522D0C /* HistoryCoinEntity.swift in Sources */,
 				DE0DBAE421D3B6DA0097E38F /* NotificationProtocols.swift in Sources */,
 				CBC8F11521E1B61000F88D4F /* MyExchangeDetailInteractor.swift in Sources */,
 				DE21826921CD473100FDD9F1 /* KActivityIndicatorAnimationBallScale.swift in Sources */,
@@ -3022,6 +3054,7 @@
 				CBD1C29821D732CB006DB3FF /* MyBuyViewController.swift in Sources */,
 				CB172C9A21C6A2EF0068CF92 /* BaseCollectionCell.swift in Sources */,
 				CB172C1D21C6A2EF0068CF92 /* UITextField+extension.swift in Sources */,
+				8463FAFD21E1F06000522D0C /* FavouriteEntity.swift in Sources */,
 				DEB854F221E08BB9007479A7 /* Post+Valid.swift in Sources */,
 				CB172C2221C6A2EF0068CF92 /* PopUpNotificationHelper.swift in Sources */,
 				84329F1D21DFB5E100047B5E /* HistoryCoinPresenter.swift in Sources */,
@@ -3043,6 +3076,7 @@
 				DE33034F21DF13EB00409F83 /* PostStepOneInteractor.swift in Sources */,
 				84A92BF621CA555900148191 /* LoginPresenter.swift in Sources */,
 				CB172C1021C6A2EF0068CF92 /* Int+extension.swift in Sources */,
+				8463FAF921E1CBCA00522D0C /* HistoryBuyEntity.swift in Sources */,
 				CB172C1121C6A2EF0068CF92 /* UIWindow+extension.swift in Sources */,
 				B3E67E9C21CF41260012546F /* DropdownPhoneCell.swift in Sources */,
 				CB172C9621C6A2EF0068CF92 /* AppColor.swift in Sources */,

@@ -30,6 +30,10 @@ enum UserEndPoint {
     
     case updateProfileSocial(param: UpdateProfileSocial)
     case uploadAvatar()
+    
+    case getHistoryBuy()
+    case getHistoryCoin()
+    case getFavourite()
 }
 
 extension UserEndPoint: EndPointType {
@@ -67,13 +71,20 @@ extension UserEndPoint: EndPointType {
             return "_api/user/update_profile_social"
         case .uploadAvatar:
             return "_api/user/upload_avatar"
+        case .getHistoryBuy:
+            return "_api/user/history_buy"
+        case .getHistoryCoin:
+            return "_api/user/history_coin"
+        case .getFavourite:
+            return "_api/user/favourite"
         }
+        
     }
     
     var httpMethod: HTTPMethod {
         switch self { case .login, .fogotPassword, .checkLogin, .logout, .loginGmail, .loginFacebook, .verifyPhone, .getPointHistory, .getListFavorite, .addFavorite, .addFavoriteStaff, .signUp, .uploadAvatar:
             return .post
-        case .getCaptcha, .getIntroduceList:
+        case .getCaptcha, .getIntroduceList, .getHistoryBuy, .getHistoryCoin, .getFavourite:
             return .get
         case .changePassword, .updateProfile, .updateProfileSocial:
             return .put
@@ -151,6 +162,12 @@ extension UserEndPoint: EndPointType {
             return param.toJSON()
         case .uploadAvatar:
             return [:]
+        case .getHistoryBuy:
+            return [:]
+        case .getHistoryCoin:
+            return [:]
+        case .getFavourite:
+             return [:]
         }
     }
     

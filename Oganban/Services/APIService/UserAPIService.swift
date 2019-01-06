@@ -28,6 +28,12 @@ protocol UserAPIServiceProtocol {
     
     func updateProfileSocial(param: UpdateProfileSocial, success: @escaping SuccessHandler<UserEntity>.object, failure: @escaping RequestFailure)
     func uploadAvatar(image: UIImage, success: @escaping SuccessHandler<UserEntity>.object, failure: @escaping RequestFailure)
+    
+    func getHistoryBuy(success: @escaping SuccessHandler<HistoryBuyEntity>.array, failure: @escaping RequestFailure)
+    
+    func getHistoryCoin(success: @escaping SuccessHandler<HistoryCoinEntity>.array, failure: @escaping RequestFailure)
+    
+    func getFavourite(success: @escaping SuccessHandler<FavouriteEntity>.array, failure: @escaping RequestFailure)
 }
 
 class UserAPIService: UserAPIServiceProtocol {
@@ -101,6 +107,20 @@ class UserAPIService: UserAPIServiceProtocol {
         network.uploadAvatar(image: image, endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
     }
     
+    func getHistoryBuy(success: @escaping SuccessHandler<HistoryBuyEntity>.array, failure: @escaping RequestFailure) {
+        let endPoint = UserEndPoint.getHistoryBuy()
+        network.requestData(endPoint: endPoint, success: MapperData.mapArray(success), failure: failure)
+    }
+    
+    func getHistoryCoin(success: @escaping SuccessHandler<HistoryCoinEntity>.array, failure: @escaping RequestFailure) {
+        let endPoint = UserEndPoint.getHistoryCoin()
+        network.requestData(endPoint: endPoint, success: MapperData.mapArray(success), failure: failure)
+    }
+    
+    func getFavourite(success: @escaping SuccessHandler<FavouriteEntity>.array, failure: @escaping RequestFailure) {
+        let endPoint = UserEndPoint.getFavourite()
+        network.requestData(endPoint: endPoint, success: MapperData.mapArray(success), failure: failure)
+    }
 }
 
 

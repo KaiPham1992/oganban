@@ -97,6 +97,8 @@ class HomeViewController: BaseViewController {
     private func configureCollectionView() {
         cvHome.registerCollectionCell(AdmobCell.self)
         cvHome.registerCollectionCell(HomeCell.self)
+        cvHome.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+//        cvHome.registerCollectionCell(UICollectionViewCell.self)
         cvHome.delegate = self
         cvHome.dataSource = self
         cvHome.alwaysBounceVertical = true
@@ -323,28 +325,48 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
             return 0
         } else {
             hideNoData()
-            if listRecord.count%10 == 0 {
-                return 11
+            if listRecord.count == 1 {
+                return 3
             } else {
-                if section == listRecord.count/10 {
-                    return listRecord.count%10 + 1
-                } else {
+                if listRecord.count%10 == 0 {
                     return 11
+                } else {
+                    if section == listRecord.count/10 {
+                        return listRecord.count%10 + 1
+                    } else {
+                        return 11
+                    }
                 }
             }
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.row == 0 {
-            let cell = collectionView.dequeueCollectionCell(AdmobCell.self, indexPath: indexPath)
-            return cell
+        if listRecord.count == 1 {
+            if indexPath.row == 0 {
+                let cell = collectionView.dequeueCollectionCell(AdmobCell.self, indexPath: indexPath)
+                return cell
+            } else if indexPath.row == 2 {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
+                return cell
+            } else {
+                let cell = collectionView.dequeueCollectionCell(HomeCell.self, indexPath: indexPath)
+                let temp = (indexPath.row - 1) + indexPath.section * 10
+                cell.setData(record: listRecord[temp])
+                return cell
+            }
         } else {
-            let cell = collectionView.dequeueCollectionCell(HomeCell.self, indexPath: indexPath)
-            let temp = (indexPath.row - 1) + indexPath.section * 10
-            cell.setData(record: listRecord[temp])
-            return cell
+            if indexPath.row == 0 {
+                let cell = collectionView.dequeueCollectionCell(AdmobCell.self, indexPath: indexPath)
+                return cell
+            } else {
+                let cell = collectionView.dequeueCollectionCell(HomeCell.self, indexPath: indexPath)
+                let temp = (indexPath.row - 1) + indexPath.section * 10
+                cell.setData(record: listRecord[temp])
+                return cell
+            }
         }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

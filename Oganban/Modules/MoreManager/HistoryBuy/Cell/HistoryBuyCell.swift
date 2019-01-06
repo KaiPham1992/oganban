@@ -2,7 +2,7 @@
 //  HistoryBuyCell.swift
 //  Oganban
 //
-//  Created by Admin on 1/5/19.
+//  Created by Kent on 1/5/19.
 //  Copyright © 2019 Coby. All rights reserved.
 //
 
@@ -24,11 +24,13 @@ class HistoryBuyCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func showData(index: Int) {
-        if index == 0 {
-            lbContent.text = "dạhcdjhcbkj\nhadbaskjda/ndaskjdhasjd"
+    func showData(history: HistoryBuyEntity) {
+        if let date = history.createTime {
+            lbDate.text = date.toString(dateFormat: AppDateFormat.ddMMYYYY_VNHHmm)
         } else {
-            lbContent.text = "dạhcdjhcbkjhadbaskjda"
+            lbDate.text = ""
         }
+        
+        lbContent.text = history.content
     }
 }
