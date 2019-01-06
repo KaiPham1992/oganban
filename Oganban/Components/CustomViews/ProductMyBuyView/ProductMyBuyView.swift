@@ -42,11 +42,11 @@ class ProductMyBuyView: BaseViewXib {
             lbAvgRating.text = _order.avgRating
             
             if _order.paymentType == "cash" {
-                lbPrice.text = "\(_order.totalPrice ?? 0) đ"
+                lbPrice.text = _order.showMoney()
                 lbPrice.textColor = AppColor.red_233_1_1
                 imgIconMoney.image = UIImage(named: "ic_money")
             } else {
-                lbPrice.text = "\(_order.totalCoin ?? 0) ơ"
+                lbPrice.text = _order.showCoin()
                 lbPrice.textColor = AppColor.green
                 imgIconMoney.image = UIImage(named: "ic_coin")
             }

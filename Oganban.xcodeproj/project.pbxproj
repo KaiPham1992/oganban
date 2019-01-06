@@ -378,6 +378,17 @@
 		DE442C6521CFBDA40051C0B8 /* HeaderOrderDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE442C6421CFBDA40051C0B8 /* HeaderOrderDetail.xib */; };
 		DE442C6B21CFC1BD0051C0B8 /* ReplyCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE442C6921CFC1BD0051C0B8 /* ReplyCommentCell.swift */; };
 		DE442C6C21CFC1BD0051C0B8 /* ReplyCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE442C6A21CFC1BD0051C0B8 /* ReplyCommentCell.xib */; };
+		DE5E084121E1C1020053EC9D /* MyBuyDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5E083B21E1C1010053EC9D /* MyBuyDetailPresenter.swift */; };
+		DE5E084221E1C1020053EC9D /* MyBuyDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5E083C21E1C1010053EC9D /* MyBuyDetailRouter.swift */; };
+		DE5E084321E1C1020053EC9D /* MyBuyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5E083D21E1C1020053EC9D /* MyBuyDetailViewController.swift */; };
+		DE5E084421E1C1020053EC9D /* MyBuyDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5E083E21E1C1020053EC9D /* MyBuyDetailProtocols.swift */; };
+		DE5E084521E1C1020053EC9D /* MyBuyDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5E083F21E1C1020053EC9D /* MyBuyDetailInteractor.swift */; };
+		DE5E084621E1C1020053EC9D /* MyBuyDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE5E084021E1C1020053EC9D /* MyBuyDetailViewController.xib */; };
+		DE5E084B21E1C60A0053EC9D /* MyBuyImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5E084921E1C60A0053EC9D /* MyBuyImageCell.swift */; };
+		DE5E084C21E1C60A0053EC9D /* MyBuyImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE5E084A21E1C60A0053EC9D /* MyBuyImageCell.xib */; };
+		DE5E085021E1DAEC0053EC9D /* MyBuyInfoUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5E084E21E1DAEC0053EC9D /* MyBuyInfoUserCell.swift */; };
+		DE5E085121E1DAEC0053EC9D /* MyBuyInfoUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE5E084F21E1DAEC0053EC9D /* MyBuyInfoUserCell.xib */; };
+		DE5E085321E1DF000053EC9D /* OrderDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5E085221E1DF000053EC9D /* OrderDetailEntity.swift */; };
 		DEA3A08821D6738200643296 /* AppImageSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3A08621D6738100643296 /* AppImageSlide.swift */; };
 		DEA3A08921D6738200643296 /* AppImageSlide.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEA3A08721D6738100643296 /* AppImageSlide.xib */; };
 		DEA3A08D21D674A200643296 /* PreviewPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3A08B21D674A200643296 /* PreviewPhotoViewController.swift */; };
@@ -827,6 +838,17 @@
 		DE442C6421CFBDA40051C0B8 /* HeaderOrderDetail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderOrderDetail.xib; sourceTree = "<group>"; };
 		DE442C6921CFC1BD0051C0B8 /* ReplyCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyCommentCell.swift; sourceTree = "<group>"; };
 		DE442C6A21CFC1BD0051C0B8 /* ReplyCommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReplyCommentCell.xib; sourceTree = "<group>"; };
+		DE5E083B21E1C1010053EC9D /* MyBuyDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBuyDetailPresenter.swift; sourceTree = "<group>"; };
+		DE5E083C21E1C1010053EC9D /* MyBuyDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBuyDetailRouter.swift; sourceTree = "<group>"; };
+		DE5E083D21E1C1020053EC9D /* MyBuyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBuyDetailViewController.swift; sourceTree = "<group>"; };
+		DE5E083E21E1C1020053EC9D /* MyBuyDetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBuyDetailProtocols.swift; sourceTree = "<group>"; };
+		DE5E083F21E1C1020053EC9D /* MyBuyDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBuyDetailInteractor.swift; sourceTree = "<group>"; };
+		DE5E084021E1C1020053EC9D /* MyBuyDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyBuyDetailViewController.xib; sourceTree = "<group>"; };
+		DE5E084921E1C60A0053EC9D /* MyBuyImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBuyImageCell.swift; sourceTree = "<group>"; };
+		DE5E084A21E1C60A0053EC9D /* MyBuyImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyBuyImageCell.xib; sourceTree = "<group>"; };
+		DE5E084E21E1DAEC0053EC9D /* MyBuyInfoUserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBuyInfoUserCell.swift; sourceTree = "<group>"; };
+		DE5E084F21E1DAEC0053EC9D /* MyBuyInfoUserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyBuyInfoUserCell.xib; sourceTree = "<group>"; };
+		DE5E085221E1DF000053EC9D /* OrderDetailEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailEntity.swift; sourceTree = "<group>"; };
 		DEA3A08621D6738100643296 /* AppImageSlide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppImageSlide.swift; sourceTree = "<group>"; };
 		DEA3A08721D6738100643296 /* AppImageSlide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppImageSlide.xib; sourceTree = "<group>"; };
 		DEA3A08B21D674A200643296 /* PreviewPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewPhotoViewController.swift; sourceTree = "<group>"; };
@@ -1330,6 +1352,7 @@
 		CB172B1821C6A1480068CF92 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				DE5E083A21E1C0E70053EC9D /* MyBuyDetail */,
 				84329F5021DFE1E000047B5E /* ProductList */,
 				84329F3E21DFD82900047B5E /* Favourite */,
 				B3CC856821D72DB600ADBFD8 /* Position */,
@@ -1839,6 +1862,7 @@
 				CB31FB7621DF413D001DFC7F /* BaseRecordEntity.swift */,
 				CB31FB7821DF4736001DFC7F /* BaseOrderEntity.swift */,
 				DEB854F421E0A59C007479A7 /* ExpirePostEntity.swift */,
+				DE5E085221E1DF000053EC9D /* OrderDetailEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -2076,6 +2100,47 @@
 				DE442C6A21CFC1BD0051C0B8 /* ReplyCommentCell.xib */,
 			);
 			path = ReplyComentCell;
+			sourceTree = "<group>";
+		};
+		DE5E083A21E1C0E70053EC9D /* MyBuyDetail */ = {
+			isa = PBXGroup;
+			children = (
+				DE5E084721E1C5F60053EC9D /* Cell */,
+				DE5E083B21E1C1010053EC9D /* MyBuyDetailPresenter.swift */,
+				DE5E083C21E1C1010053EC9D /* MyBuyDetailRouter.swift */,
+				DE5E083D21E1C1020053EC9D /* MyBuyDetailViewController.swift */,
+				DE5E083E21E1C1020053EC9D /* MyBuyDetailProtocols.swift */,
+				DE5E083F21E1C1020053EC9D /* MyBuyDetailInteractor.swift */,
+				DE5E084021E1C1020053EC9D /* MyBuyDetailViewController.xib */,
+			);
+			path = MyBuyDetail;
+			sourceTree = "<group>";
+		};
+		DE5E084721E1C5F60053EC9D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DE5E084D21E1DAEC0053EC9D /* MyBuyInfoUserCell */,
+				DE5E084821E1C60A0053EC9D /* MyBuyImageCell */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		DE5E084821E1C60A0053EC9D /* MyBuyImageCell */ = {
+			isa = PBXGroup;
+			children = (
+				DE5E084921E1C60A0053EC9D /* MyBuyImageCell.swift */,
+				DE5E084A21E1C60A0053EC9D /* MyBuyImageCell.xib */,
+			);
+			path = MyBuyImageCell;
+			sourceTree = "<group>";
+		};
+		DE5E084D21E1DAEC0053EC9D /* MyBuyInfoUserCell */ = {
+			isa = PBXGroup;
+			children = (
+				DE5E084E21E1DAEC0053EC9D /* MyBuyInfoUserCell.swift */,
+				DE5E084F21E1DAEC0053EC9D /* MyBuyInfoUserCell.xib */,
+			);
+			path = MyBuyInfoUserCell;
 			sourceTree = "<group>";
 		};
 		DEA3A08521D6738100643296 /* AppImageSlide */ = {
@@ -2421,6 +2486,7 @@
 				84487C9021CB80F2008B25B2 /* Roboto-Thin.ttf in Resources */,
 				DEC5166B21CE986400A17CBF /* AdmobBannerView.xib in Resources */,
 				CBD1C2BF21D75BA5006DB3FF /* MyExchangeViewController.xib in Resources */,
+				DE5E084621E1C1020053EC9D /* MyBuyDetailViewController.xib in Resources */,
 				84421C0C21CBF52900F468F5 /* SupplementaryInfoViewController.xib in Resources */,
 				CB172C8F21C6A2EF0068CF92 /* OpenSans-Regular.ttf in Resources */,
 				B355EF6121C8FB1400379F57 /* SignUpViewController.xib in Resources */,
@@ -2439,6 +2505,7 @@
 				CB172C8E21C6A2EF0068CF92 /* LICENSE.txt in Resources */,
 				DEC5166621CE8DDF00A17CBF /* PopUpSettingGPSContent.xib in Resources */,
 				84421BFE21CBEF7600F468F5 /* MoreViewController.xib in Resources */,
+				DE5E085121E1DAEC0053EC9D /* MyBuyInfoUserCell.xib in Resources */,
 				84487C8721CB7E99008B25B2 /* Roboto-BlackItalic.ttf in Resources */,
 				DE442C6C21CFC1BD0051C0B8 /* ReplyCommentCell.xib in Resources */,
 				DEA3A08E21D674A200643296 /* PreviewPhotoViewController.xib in Resources */,
@@ -2452,6 +2519,7 @@
 				8432074F21CF529D00A4F11E /* DateFollowWeekPopup.xib in Resources */,
 				DEBEE80E21D7654B004B8D88 /* OrderInfoUserCell.xib in Resources */,
 				DEE1DA5321CDE3080036FEB7 /* PopUpNotificationHaveAdmobContent.xib in Resources */,
+				DE5E084C21E1C60A0053EC9D /* MyBuyImageCell.xib in Resources */,
 				CB172C8D21C6A2EF0068CF92 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				DE33035021DF13EB00409F83 /* PostStepOneViewController.xib in Resources */,
 				DE0DBAE721D3B6DA0097E38F /* NotificationCell.xib in Resources */,
@@ -2648,6 +2716,7 @@
 				CB172C9521C6A2EF0068CF92 /* ConstantStoryboard.swift in Sources */,
 				84329F5721DFE1FA00047B5E /* ProductListPresenter.swift in Sources */,
 				CB172C9921C6A2EF0068CF92 /* BaseViewController.swift in Sources */,
+				DE5E084521E1C1020053EC9D /* MyBuyDetailInteractor.swift in Sources */,
 				CBD1C2AC21D74DA6006DB3FF /* MySellingInteractor.swift in Sources */,
 				DE442C3021CF93750051C0B8 /* CommonAPIService.swift in Sources */,
 				DEF9AA3821D501CE001334EB /* UpdateProfileSocial.swift in Sources */,
@@ -2686,6 +2755,7 @@
 				CBD1C29621D732CB006DB3FF /* MyBuyPresenter.swift in Sources */,
 				DEBEE80421D740D7004B8D88 /* MySellContainerProtocols.swift in Sources */,
 				84329F5B21DFE1FA00047B5E /* ProductListInteractor.swift in Sources */,
+				DE5E084121E1C1020053EC9D /* MyBuyDetailPresenter.swift in Sources */,
 				CB0C3A2721D3BECD0052DD91 /* ForgotPasswordInteractor.swift in Sources */,
 				DE21827121CD473100FDD9F1 /* KActivityIndicatorAnimationBlank.swift in Sources */,
 				84C8543621CFEE7300BDABE5 /* SupplementaryInfo+Event.swift in Sources */,
@@ -2703,6 +2773,7 @@
 				CB0C3A2321D3BECD0052DD91 /* ForgotPasswordPresenter.swift in Sources */,
 				DE0DBAE921D3B6DA0097E38F /* NotificationRouter.swift in Sources */,
 				CB172C1721C6A2EF0068CF92 /* Double+extension.swift in Sources */,
+				DE5E085021E1DAEC0053EC9D /* MyBuyInfoUserCell.swift in Sources */,
 				84329F3321DFC95600047B5E /* HistoryBuyPresenter.swift in Sources */,
 				DE21828421CD473100FDD9F1 /* KActivityIndicatorShape.swift in Sources */,
 				CB0C3A2421D3BECD0052DD91 /* ForgotPasswordRouter.swift in Sources */,
@@ -2759,12 +2830,14 @@
 				DE21829121CD4E7F00FDD9F1 /* AppTextFiled.swift in Sources */,
 				B35F529821D276A000D3FA30 /* SignUpParam.swift in Sources */,
 				CBC8F11321E1B61000F88D4F /* MyExchangeDetailViewController.swift in Sources */,
+				DE5E085321E1DF000053EC9D /* OrderDetailEntity.swift in Sources */,
 				CB0C3A2621D3BECD0052DD91 /* ForgotPasswordProtocols.swift in Sources */,
 				DE21827A21CD473100FDD9F1 /* KActivityIndicatorAnimationCubeTransition.swift in Sources */,
 				CBD1C2A821D74DA6006DB3FF /* MySellingPresenter.swift in Sources */,
 				B3E67EAC21CF756E0012546F /* PhoneNumber.swift in Sources */,
 				DE21822C21CD44B700FDD9F1 /* FaceBookEntity.swift in Sources */,
 				DE21827B21CD473100FDD9F1 /* KActivityIndicatorAnimationBallZigZag.swift in Sources */,
+				DE5E084421E1C1020053EC9D /* MyBuyDetailProtocols.swift in Sources */,
 				CB0C3A2521D3BECD0052DD91 /* ForgotPasswordViewController.swift in Sources */,
 				CB172C1521C6A2EF0068CF92 /* UIImage+extension.swift in Sources */,
 				84421C0A21CBF52900F468F5 /* SupplementaryInfoProtocols.swift in Sources */,
@@ -2819,6 +2892,7 @@
 				CB172C9221C6A2EF0068CF92 /* NotificationConstant.swift in Sources */,
 				8432075021CF529D00A4F11E /* DateFollowWeekPopup.swift in Sources */,
 				DEE1DA7A21CE2E130036FEB7 /* PopUpUpdateQuantityBuy.swift in Sources */,
+				DE5E084321E1C1020053EC9D /* MyBuyDetailViewController.swift in Sources */,
 				DE0E79D721D658080053786D /* SelectImageFromMobileHelper.swift in Sources */,
 				CBD1C2AA21D74DA6006DB3FF /* MySellingViewController.swift in Sources */,
 				CBBB3DF621D5C74400281ABB /* ChangePasswordViewController.swift in Sources */,
@@ -2854,6 +2928,7 @@
 				CBBB3DF521D5C74400281ABB /* ChangePasswordRouter.swift in Sources */,
 				DE21827E21CD473100FDD9F1 /* KActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */,
 				84329F4E21DFD98700047B5E /* FavouriteCell.swift in Sources */,
+				DE5E084221E1C1020053EC9D /* MyBuyDetailRouter.swift in Sources */,
 				DE21822621CD43E200FDD9F1 /* Login+Facebook.swift in Sources */,
 				DE0DBAF121D3BA460097E38F /* NotificationEndPoint.swift in Sources */,
 				CB172C9C21C6A2EF0068CF92 /* BaseTableCell.swift in Sources */,
@@ -2928,6 +3003,7 @@
 				B36AEE9C21CDD90500BED43C /* TabbarProtocol.swift in Sources */,
 				DE33035F21DF5EDB00409F83 /* PostStepTwoRouter.swift in Sources */,
 				B3CC857021D72DD200ADBFD8 /* PositionRouter.swift in Sources */,
+				DE5E084B21E1C60A0053EC9D /* MyBuyImageCell.swift in Sources */,
 				DE0DBAE821D3B6DA0097E38F /* NotificationCell.swift in Sources */,
 				84329F3521DFC95600047B5E /* HistoryBuyViewController.swift in Sources */,
 				CB172B4321C6A2AA0068CF92 /* EndPointType.swift in Sources */,

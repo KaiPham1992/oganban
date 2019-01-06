@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -15,9 +15,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyExchangeViewController">
             <connections>
+                <outlet property="btnLogin" destination="yte-Zc-ete" id="mfo-6g-CO1"/>
                 <outlet property="lbStatusExchange" destination="KSV-OT-JYu" id="av5-eC-Mux"/>
                 <outlet property="lbTotal" destination="RR6-7b-jgb" id="EDr-Ie-Wba"/>
                 <outlet property="tbMyExchange" destination="iaZ-OJ-TTq" id="0IX-LU-fn1"/>
+                <outlet property="vCheckLogin" destination="FSL-vR-CNu" id="PBU-C0-sAf"/>
                 <outlet property="vDropDownStatus" destination="F29-3z-m9Z" id="T23-h9-8BZ"/>
                 <outlet property="vRecordExchange" destination="67u-nA-mNZ" id="YwH-vl-Hja"/>
                 <outlet property="view" destination="k5j-m4-vNF" id="yHB-P0-pp4"/>
@@ -88,14 +90,43 @@
                     <rect key="frame" x="0.0" y="60" width="375" height="607"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FSL-vR-CNu">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yte-Zc-ete">
+                            <rect key="frame" x="30" y="313.5" width="315" height="40"/>
+                            <color key="backgroundColor" red="0.0" green="0.3450929412" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="eEm-rO-F1u"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                            <state key="normal" title="Đăng nhập">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="btnLoginTapped" destination="-1" eventType="touchUpInside" id="Op7-BZ-ojh"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="yte-Zc-ete" firstAttribute="centerY" secondItem="FSL-vR-CNu" secondAttribute="centerY" id="OEe-vh-APZ"/>
+                        <constraint firstAttribute="trailing" secondItem="yte-Zc-ete" secondAttribute="trailing" constant="30" id="WD8-K7-qSQ"/>
+                        <constraint firstItem="yte-Zc-ete" firstAttribute="leading" secondItem="FSL-vR-CNu" secondAttribute="leading" constant="30" id="xkU-fw-1kx"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="iaZ-OJ-TTq" firstAttribute="top" secondItem="67u-nA-mNZ" secondAttribute="bottom" id="46P-xn-fG8"/>
+                <constraint firstItem="FSL-vR-CNu" firstAttribute="leading" secondItem="k5j-m4-vNF" secondAttribute="leading" id="Bnf-cO-FHF"/>
                 <constraint firstAttribute="bottom" secondItem="iaZ-OJ-TTq" secondAttribute="bottom" id="HLD-xk-Knw"/>
+                <constraint firstItem="FSL-vR-CNu" firstAttribute="top" secondItem="k5j-m4-vNF" secondAttribute="top" id="Hkt-ww-cpj"/>
                 <constraint firstAttribute="trailing" secondItem="67u-nA-mNZ" secondAttribute="trailing" id="KGY-Hv-FdI"/>
+                <constraint firstAttribute="trailing" secondItem="FSL-vR-CNu" secondAttribute="trailing" id="Rj0-sd-eEC"/>
                 <constraint firstItem="iaZ-OJ-TTq" firstAttribute="leading" secondItem="k5j-m4-vNF" secondAttribute="leading" id="SK5-dt-Nva"/>
                 <constraint firstItem="67u-nA-mNZ" firstAttribute="leading" secondItem="k5j-m4-vNF" secondAttribute="leading" id="W7F-nS-vlX"/>
+                <constraint firstAttribute="bottom" secondItem="FSL-vR-CNu" secondAttribute="bottom" id="Xiy-aI-L8u"/>
                 <constraint firstAttribute="trailing" secondItem="iaZ-OJ-TTq" secondAttribute="trailing" id="i0b-hY-Vgl"/>
                 <constraint firstItem="67u-nA-mNZ" firstAttribute="top" secondItem="k5j-m4-vNF" secondAttribute="top" id="mhH-lg-mVa"/>
             </constraints>

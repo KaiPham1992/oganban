@@ -9,14 +9,29 @@
 import Foundation
 import ObjectMapper
 
+enum OrderStatusType: String {
+    case new = "Đơn hàng chờ duyệt"
+    case waitDelivery = "Đơn hàng đang giao"
+    case done = "Đơn hàng hoàn tất"
+    case cancel = "Đơn hàng đã huỷ"
+}
+
+enum OrderStatusKey: String {
+    case new = "new"
+    case waitDelivery = "wait_delivery"
+    case cancel = "cancel"
+    case done = "done"
+}
+
+
 struct OrderEntity: Mappable {
     
     var id: String?
     var status: String?
     var paymentType: String?
-    var totalPrice: Int?
-    var salePrice: Int?
-    var quantity: String?
+    var totalPrice: Double?
+    var salePrice: Double?
+    var quantity: Int?
     var accountID: String?
     var fullName: String?
     var imgSrcAccount: String?
@@ -29,8 +44,10 @@ struct OrderEntity: Mappable {
     var avgRating: String?
     var level: String?
     var imgSrc: String?
-    var totalCoin: Int?
+    var totalCoin: Double?
     var coin: Int?
+    
+    var arrayImgSrc = [String]()
     
     init?(map: Map) {
     }
@@ -56,5 +73,39 @@ struct OrderEntity: Mappable {
         self.imgSrc <- map["img_src"]
         self.totalCoin <- map["total_coin"]
         self.coin <- map["coin"]
+        
+        self.arrayImgSrc <- map["img_src"]
+    }
+    
+    func getStatus() -> OrderStatusType {
+        switch self.status& {
+        case OrderStatusKey.new.rawValue:
+            return .new
+        case OrderStatusKey.waitDelivery.rawValue:
+            return .waitDelivery
+        case OrderStatusKey.done.rawValue:
+            return .done
+        case OrderStatusKey.cancel.rawValue:
+            return .cancel
+        default:
+            return .new
+        }
+    }
+    
+    var urlAvatar: URL? {
+        //
+        return URL(string: "\(BASE_URL)\(self.cropImgSrcAccount&)")
+    }
+    
+    func showMoney() -> String? {
+        return self.totalPrice?.toUInt64().toCurrency
+    }
+    
+    func showCoin() -> String? {
+        if let _coin = self.totalCoin {
+            return "\(String(describing: _coin.toCurrency)) ơ"
+        }
+        
+        return nil
     }
 }
