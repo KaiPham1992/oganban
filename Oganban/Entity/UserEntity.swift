@@ -81,4 +81,15 @@ struct UserEntity: Mappable, Codable {
         self.houseAddress = houseAddress
         self.companyAddress = companyAddress
     }
+    
+    var urlAvatar:  URL? {
+        if let urlString = self.imgCropSrc, let url = URL(string: BASE_URL_IMAGE + urlString) {
+            return url
+            
+        } else if let urlString = socialImage, let url = URL(string: urlString) {
+            return url
+        }
+        
+        return nil
+    }
 }

@@ -188,7 +188,7 @@ extension DateFollowWeekPopup: UICollectionViewDelegate, UICollectionViewDataSou
         }
         
         if _dateSelected.isSmaller(date: Date()) {
-            lbError.text = "Ngày chọn phải lớn hơn hoặc bằng ngày hiện tại"
+            lbError.text = "Ngày chọn phải lớn hơn hoặc bằng \(Date().toString(dateFormat: AppDateFormat.ddMMYYYY_VN))"
             return false
         }
         
