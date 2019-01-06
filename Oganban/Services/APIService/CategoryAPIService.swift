@@ -52,6 +52,6 @@ class CategoryAPIService: CategoryAPIServiceProtocol {
     
     func getCountRecordPosition(long: CGFloat, lat: CGFloat, radius: Int, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure) {
         let endPoint = CategoryEndPoint.getCountRecordPosition(long: long, lat: lat, radius: radius)
-        network.requestData(endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
+        network.requestData(endPoint: endPoint, success: MapperData.mapNoData(success), failure: failure)
     }
 }

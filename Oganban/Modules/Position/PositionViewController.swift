@@ -66,6 +66,7 @@ class PositionViewController: BaseViewController {
             guard let `self` = self else { return }
             self.lbScale.text = item
             self.distance = self.dataSource[index]
+            
 //            if  self.dataSource[index].title& == "Không giới hạn" {
 //                self.paramFilter.radius = ""
 //            } else {
@@ -99,7 +100,14 @@ class PositionViewController: BaseViewController {
 }
 
 extension PositionViewController: PositionViewProtocol {
-    
+    func didGetCountRecord(count: Int) {
+        if count < 1000 {
+            lbTitleMarker.text = "\(count) Tin đăng bán gần đây"
+        } else {
+            lbTitleMarker.text = "+999 Tin đăng bán gần đây"
+        }
+        vTitleMarker.isHidden = false
+    }
 }
 
 extension PositionViewController: CLLocationManagerDelegate {
@@ -114,6 +122,7 @@ extension PositionViewController: CLLocationManagerDelegate {
     }
 }
 
+//MARK: - delegate map position
 extension PositionViewController: GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
         let latitude = mapView.camera.target.latitude
@@ -126,7 +135,10 @@ extension PositionViewController: GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
         print(mapView.camera.target)
         print(position.target)
-        vTitleMarker.isHidden = false
+        let long = CGFloat(position.target.longitude)
+        let lat = CGFloat(position.target.latitude)
+        guard let distance = self.distance, let radius = Int(distance.value&) else { return }
+        presenter?.getCountRecord(long: long, lat: lat, radius: radius)
     }
     
     func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {

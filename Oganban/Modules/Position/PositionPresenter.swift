@@ -10,7 +10,11 @@
 
 import UIKit
 
-class PositionPresenter: PositionPresenterProtocol, PositionInteractorOutputProtocol {
+class PositionPresenter: PositionPresenterProtocol {
+    func getCountRecord(long: CGFloat, lat: CGFloat, radius: Int) {
+        interactor?.getCountRecord(long: long, lat: lat, radius: radius)
+    }
+    
     func dismiss() {
         router.dismiss()
     }
@@ -25,4 +29,10 @@ class PositionPresenter: PositionPresenterProtocol, PositionInteractorOutputProt
         self.router = router
     }
 
+}
+
+extension PositionPresenter: PositionInteractorOutputProtocol {
+    func didGetCountRecord(count: Int) {
+        view?.didGetCountRecord(count: count)
+    }
 }
