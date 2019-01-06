@@ -15,8 +15,6 @@ import SwiftyJSON
  Ouput: BaseResponse or error
  ***/
 
-
-
 protocol APINetworkProtocol {
     func requestData(endPoint: EndPointType, success: @escaping NetworkSuccess, failure: @escaping RequestFailure)
     func uploadImages(image: UIImage, endPoint: EndPointType, success: @escaping NetworkSuccess, failure: @escaping RequestFailure)
