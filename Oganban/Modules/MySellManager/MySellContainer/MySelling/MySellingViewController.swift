@@ -14,6 +14,7 @@ import UIKit
 protocol MySellingViewControllerDelegate: class {
     func gotoLogin()
     func gotoMySellExpired()
+    func gotoPostRecord()
 }
 
 class MySellingViewController: BaseViewController {
@@ -24,6 +25,9 @@ class MySellingViewController: BaseViewController {
     @IBOutlet weak var vCheckLogin: UIView!
     @IBOutlet weak var btnLogin: UIButton!
     @IBOutlet weak var tbMySelling: UITableView!
+    @IBOutlet weak var vPostRecord: UIView!
+    
+    
     
 	var presenter: MySellingPresenterProtocol?
 
@@ -64,6 +68,7 @@ class MySellingViewController: BaseViewController {
     func setupView() {
         btnLogin.setBorderWithCornerRadius(borderWidth: 0, borderColor: .clear, cornerRadius: 20)
         vContain.setBorderWithCornerRadius(borderWidth: 0, borderColor: .clear, cornerRadius: 10)
+        vPostRecord.setBorderWithCornerRadius(borderWidth: 0, borderColor: .clear, cornerRadius: 16.5)
         
         configTable()
         
@@ -98,6 +103,11 @@ class MySellingViewController: BaseViewController {
     @objc private func refeshData() {
         getData()
         refeshControl?.endRefreshing()
+    }
+    
+    @IBAction func btnPostRecordTapped() {
+        delegate?.gotoPostRecord()
+        
     }
     
     @IBAction func btnExpired() {

@@ -38,4 +38,9 @@ class MySellContainerRouter: MySellContainerWireframeProtocol {
         let mySellExpiredVC = MySellExpiredRouter.createModule()
         viewController?.push(controller: mySellExpiredVC)
     }
+    
+    func gotoPostRecord() {
+        let vc = PostStepOneRouter.createModule()
+        viewController?.push(controller: vc)
+    }
 }

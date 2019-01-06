@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="Roboto-Regular.ttf">
             <string>Roboto-Regular</string>
+        </array>
+        <array key="SFUIText.ttf">
+            <string>.SFUIText</string>
         </array>
     </customFonts>
     <objects>
@@ -21,6 +24,7 @@
                 <outlet property="tbMySelling" destination="3hn-Nm-v3e" id="kiN-VP-9ap"/>
                 <outlet property="vCheckLogin" destination="YFz-C6-HqV" id="xKO-jF-7fu"/>
                 <outlet property="vContain" destination="NMI-Xg-SnW" id="ZjI-gU-T7g"/>
+                <outlet property="vPostRecord" destination="fpa-X3-O8n" id="nnJ-Fu-la4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -97,7 +101,40 @@
                     <rect key="frame" x="0.0" y="50" width="375" height="617"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YFz-C6-HqV">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fpa-X3-O8n">
+                    <rect key="frame" x="113.5" y="599" width="148.5" height="33"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_camera_white" translatesAutoresizingMaskIntoConstraints="NO" id="XBk-aq-fXV">
+                            <rect key="frame" x="8" y="8" width="20" height="17"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đăng tin bán" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRa-Pa-Ogt">
+                            <rect key="frame" x="36" y="7.5" width="90" height="18"/>
+                            <fontDescription key="fontDescription" name=".SFUIText" family=".SF UI Text" pointSize="15"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfK-yG-mIs">
+                            <rect key="frame" x="0.0" y="0.0" width="148.5" height="33"/>
+                            <connections>
+                                <action selector="btnPostRecordTapped" destination="-1" eventType="touchUpInside" id="J7l-eK-xyX"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.34509803921568627" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="jfK-yG-mIs" firstAttribute="leading" secondItem="fpa-X3-O8n" secondAttribute="leading" id="0XW-Ul-YhM"/>
+                        <constraint firstAttribute="trailing" secondItem="jfK-yG-mIs" secondAttribute="trailing" id="6lJ-bU-ZJe"/>
+                        <constraint firstItem="XBk-aq-fXV" firstAttribute="leading" secondItem="fpa-X3-O8n" secondAttribute="leading" constant="8" id="UYZ-tD-bYU"/>
+                        <constraint firstItem="jfK-yG-mIs" firstAttribute="top" secondItem="fpa-X3-O8n" secondAttribute="top" id="ZVQ-C6-nzA"/>
+                        <constraint firstItem="TRa-Pa-Ogt" firstAttribute="centerY" secondItem="XBk-aq-fXV" secondAttribute="centerY" id="Zvu-XN-BD1"/>
+                        <constraint firstAttribute="height" constant="33" id="e0C-sD-n1h"/>
+                        <constraint firstItem="TRa-Pa-Ogt" firstAttribute="leading" secondItem="XBk-aq-fXV" secondAttribute="trailing" constant="8" id="g0U-c0-cxS"/>
+                        <constraint firstAttribute="width" constant="148.5" id="gwB-LY-bNE"/>
+                        <constraint firstItem="XBk-aq-fXV" firstAttribute="centerY" secondItem="fpa-X3-O8n" secondAttribute="centerY" id="hHx-dA-2PD"/>
+                        <constraint firstAttribute="bottom" secondItem="jfK-yG-mIs" secondAttribute="bottom" id="sKm-No-dG1"/>
+                    </constraints>
+                </view>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YFz-C6-HqV">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7tU-6R-ZAv">
@@ -130,6 +167,8 @@
                 <constraint firstItem="3hn-Nm-v3e" firstAttribute="top" secondItem="0Pm-PQ-j8u" secondAttribute="bottom" id="8D8-mc-o8M"/>
                 <constraint firstAttribute="trailing" secondItem="YFz-C6-HqV" secondAttribute="trailing" id="A65-V6-maR"/>
                 <constraint firstItem="0Pm-PQ-j8u" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Dt5-Po-UvN"/>
+                <constraint firstAttribute="bottom" secondItem="fpa-X3-O8n" secondAttribute="bottom" constant="35" id="LPs-0B-2Hu"/>
+                <constraint firstItem="fpa-X3-O8n" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="WEd-w4-me6"/>
                 <constraint firstAttribute="trailing" secondItem="3hn-Nm-v3e" secondAttribute="trailing" id="YZA-gt-6ga"/>
                 <constraint firstItem="0Pm-PQ-j8u" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="g01-IT-qdK"/>
                 <constraint firstItem="YFz-C6-HqV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="kEO-Sj-W2Z"/>
@@ -143,5 +182,6 @@
     </objects>
     <resources>
         <image name="ic_calendar" width="15" height="15"/>
+        <image name="ic_camera_white" width="20" height="17"/>
     </resources>
 </document>

@@ -56,4 +56,8 @@ extension MySellContainerViewController: MySellingViewControllerDelegate, MyExch
     func gotoMySellExpired() {
         presenter?.gotoMySellExpired()
     }
+    
+    func gotoPostRecord() {
+        presenter?.gotoPostRecord()
+    }
 }
