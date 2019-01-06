@@ -15,9 +15,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyBuyViewController">
             <connections>
+                <outlet property="btnLogin" destination="ukp-PI-eDo" id="Yf4-Tb-9ft"/>
                 <outlet property="lbStatusRecord" destination="6Gv-f4-wqH" id="3SC-uU-lTO"/>
                 <outlet property="lbTotal" destination="aju-iJ-HDt" id="bSr-kf-q52"/>
                 <outlet property="tbMyBuy" destination="OWD-T5-ZQO" id="nWB-Gh-teS"/>
+                <outlet property="vCheckLogin" destination="eZH-0G-adf" id="A0X-Au-vx4"/>
                 <outlet property="vDropDownStatus" destination="urQ-nD-49W" id="J1U-yu-TjE"/>
                 <outlet property="vRecordBuy" destination="hjU-7C-osd" id="LJC-zz-1vg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -88,15 +90,44 @@
                     <rect key="frame" x="0.0" y="60" width="375" height="607"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eZH-0G-adf">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ukp-PI-eDo">
+                            <rect key="frame" x="30" y="313.5" width="315" height="40"/>
+                            <color key="backgroundColor" red="0.0" green="0.34509803919999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="9Uf-Cz-Yws"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                            <state key="normal" title="Đăng nhập">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="btnLoginTapped" destination="-1" eventType="touchUpInside" id="Btg-Fx-kNx"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="ukp-PI-eDo" secondAttribute="trailing" constant="30" id="DGz-5d-pcp"/>
+                        <constraint firstItem="ukp-PI-eDo" firstAttribute="leading" secondItem="eZH-0G-adf" secondAttribute="leading" constant="30" id="HB1-dm-OT6"/>
+                        <constraint firstItem="ukp-PI-eDo" firstAttribute="centerY" secondItem="eZH-0G-adf" secondAttribute="centerY" id="MhD-Dm-4dc"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="hjU-7C-osd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Bnr-Ny-UhE"/>
+                <constraint firstItem="eZH-0G-adf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="CAl-iF-olH"/>
                 <constraint firstAttribute="bottom" secondItem="OWD-T5-ZQO" secondAttribute="bottom" id="FeU-kx-khl"/>
                 <constraint firstItem="hjU-7C-osd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Lmq-sN-gFF"/>
                 <constraint firstItem="OWD-T5-ZQO" firstAttribute="top" secondItem="hjU-7C-osd" secondAttribute="bottom" id="Nx9-Dk-LQ5"/>
                 <constraint firstAttribute="trailing" secondItem="OWD-T5-ZQO" secondAttribute="trailing" id="S1u-ok-9q7"/>
+                <constraint firstAttribute="bottom" secondItem="eZH-0G-adf" secondAttribute="bottom" id="UUd-Qo-ato"/>
+                <constraint firstAttribute="trailing" secondItem="eZH-0G-adf" secondAttribute="trailing" id="any-8b-MLW"/>
                 <constraint firstAttribute="trailing" secondItem="hjU-7C-osd" secondAttribute="trailing" id="dR5-Dn-Pqt"/>
+                <constraint firstItem="eZH-0G-adf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hFy-uh-2u2"/>
                 <constraint firstItem="OWD-T5-ZQO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="rAb-hl-95R"/>
             </constraints>
             <point key="canvasLocation" x="53.600000000000001" y="75.112443778110944"/>

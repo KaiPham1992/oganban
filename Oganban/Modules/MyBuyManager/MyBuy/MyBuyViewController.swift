@@ -12,16 +12,20 @@ import UIKit
 import DropDown
 
 class MyBuyViewController: BaseViewController {
-
+    
     @IBOutlet weak var tbMyBuy: UITableView!
     @IBOutlet weak var vRecordBuy: UIView!
     @IBOutlet weak var lbStatusRecord: UILabel!
     @IBOutlet weak var lbTotal: UILabel!
     @IBOutlet weak var vDropDownStatus: UIView!
+    @IBOutlet weak var vCheckLogin: UIView!
+    @IBOutlet weak var btnLogin: UIButton!
     
-	var presenter: MyBuyPresenterProtocol?
-
+    var presenter: MyBuyPresenterProtocol?
+    
     let dropDownStatus = DropDown()
+    
+    var isAllOrder: Bool = false
     
     var dataOrder: BaseOrderEntity? {
         didSet {
@@ -31,37 +35,50 @@ class MyBuyViewController: BaseViewController {
                 if count == 0 {
                     tbMyBuy.isHidden = true
                     showNoData()
+                    setStatusType()
                 } else {
                     tbMyBuy.isHidden = false
                     hideNoData()
                     setupDropDownStatus()
+                    setStatusType()
                 }
             }
         }
     }
     
-	override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
     }
-
+    
+    
+    
     func setupView() {
         self.setTitleNavigation(title: NavigationTitle.myBuy)
         configTableView()
         setupDropDownStatus()
         getData()
-        guard let countOrder = self.dataOrder?.dataOrder.count else { return }
-        self.lbTotal.text = "Tổng đơn hàng đang chờ duyệt: \(countOrder)"
-        
+        btnLogin.setBorderWithCornerRadius(borderWidth: 0, borderColor: .clear, cornerRadius: 20)
+
     }
     
     func getData() {
-        presenter?.getHistoryOrder(status: "new", offset: 0, limit: 10)
+        presenter?.getHistoryOrder(status: StatusType.new.rawValue, offset: 0, limit: 10)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         showTabbar()
+        checkLogin()
+    }
+    
+    func checkLogin() {
+        if UserDefaultHelper.shared.isLoggedIn {
+            vCheckLogin.isHidden = true
+            getData()
+        } else {
+            vCheckLogin.isHidden = false
+        }
     }
     
     func configTableView() {
@@ -71,6 +88,29 @@ class MyBuyViewController: BaseViewController {
         tbMyBuy.registerTableCell(MyBuyCell.self)
         
         tbMyBuy.contentInset.bottom = 10
+        tbMyBuy.tableFooterView = UIView()
+    }
+    
+    func setStatusType() {
+        if (dataOrder?.dataOrder.count)! > 0 {
+            if let status = dataOrder?.dataOrder[0].status, let countOrder = dataOrder?.countOrder {
+                switch  status  {
+                case StatusType.new.rawValue:
+                    self.lbTotal.text = "Tổng đơn hàng đang chờ duyệt: \(countOrder)"
+                case StatusType.wait_delivery.rawValue:
+                    self.lbTotal.text = "Tổng đơn hàng đang giao: \(countOrder)"
+                case StatusType.done.rawValue:
+                    self.lbTotal.text = "Tổng đơn hàng đã hoàn tất: \(countOrder)"
+                case StatusType.cancel.rawValue:
+                    self.lbTotal.text = "Tổng đơn hàng đã huỷ: \(countOrder)"
+                case StatusType.all.rawValue:
+                    self.lbTotal.text = "Tất cả các đơn hàng: \(countOrder)"
+                default:
+                    self.lbTotal.text = "Tổng đơn hàng: 0"
+                }
+            }
+        }
+        
     }
     
     private func setupDropDownStatus() {
@@ -91,50 +131,27 @@ class MyBuyViewController: BaseViewController {
             switch item {
             case "Chờ duyệt":
                 self.presenter?.getHistoryOrder(status: StatusType.new.rawValue, offset: 0, limit: 10)
-                if let countOrder = self.dataOrder?.dataOrder.count {
-                    if countOrder > 0 {
-                        self.lbTotal.text = "Tổng đơn hàng đang chờ duyệt: \(countOrder)"
-                    } else {
-                        self.lbTotal.text = "Tổng đơn hàng đang chờ duyệt: 0"
-                    }
-                }
+                
+                self.lbTotal.text = "Tổng đơn hàng đang chờ duyệt: 0"
                 
             case "Đang giao":
                 self.presenter?.getHistoryOrder(status: StatusType.wait_delivery.rawValue, offset: 0, limit: 10)
-                if let countOrder = self.dataOrder?.dataOrder.count {
-                    if countOrder > 0 {
-                        self.lbTotal.text = "Tổng đơn hàng đang giao: \(countOrder)"
-                    } else {
-                        self.lbTotal.text = "Tổng đơn hàng đang giao: 0"
-                    }
-                }
+                
+                self.lbTotal.text = "Tổng đơn hàng đang giao: 0"
+                
             case "Hoàn Tất":
                 self.presenter?.getHistoryOrder(status: StatusType.done.rawValue, offset: 0, limit: 10)
-                if let countOrder = self.dataOrder?.dataOrder.count {
-                    if countOrder > 0 {
-                        self.lbTotal.text = "Tổng đơn hàng đã hoàn tất: \(countOrder)"
-                    } else {
-                        self.lbTotal.text = "Tổng đơn hàng đã hoàn tất: 0"
-                    }
-                }
+                
+                self.lbTotal.text = "Tổng đơn hàng đã hoàn tất: 0"
+                
             case "Đã huỷ":
                 self.presenter?.getHistoryOrder(status: StatusType.cancel.rawValue, offset: 0, limit: 10)
-                if let countOrder = self.dataOrder?.dataOrder.count {
-                    if countOrder > 0 {
-                        self.lbTotal.text = "Tổng đơn hàng đã huỷ: \(countOrder)"
-                    } else {
-                        self.lbTotal.text = "Tổng đơn hàng đã huỷ: 0"
-                    }
-                }
+                
+                self.lbTotal.text = "Tổng đơn hàng đã huỷ: 0"
             case "Tất cả":
                 self.presenter?.getHistoryOrder(status: StatusType.all.rawValue, offset: 0, limit: 10)
-                if let countOrder = self.dataOrder?.dataOrder.count {
-                    if countOrder > 0 {
-                        self.lbTotal.text = "Tổng tất cả các đơn hàng: \(countOrder)"
-                    } else {
-                        self.lbTotal.text = "Tổng tất cả các đơn hàng: 0"
-                    }
-                }
+                self.lbTotal.text = "Tổng tất cả các đơn hàng: 0"
+                self.isAllOrder = true
             default:
                 break
             }
@@ -143,6 +160,10 @@ class MyBuyViewController: BaseViewController {
     
     @IBAction func btnChangeStatusRecord() {
         dropDownStatus.show()
+    }
+    
+    @IBAction func btnLoginTapped() {
+        
     }
 }
 
@@ -154,17 +175,18 @@ extension MyBuyViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueTableCell(MyBuyCell.self)
-        
+        cell.vMyBuyView.order = dataOrder?.dataOrder[indexPath.item]
+        cell.vMyBuyView.isAllOrder = self.isAllOrder
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 140
+        return 125
     }
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        
         let vc = MyBuyDetailRouter.createModule()
         self.push(controller: vc)
     }

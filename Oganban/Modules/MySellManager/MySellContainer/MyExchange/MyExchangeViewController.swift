@@ -30,6 +30,8 @@ class MyExchangeViewController: BaseViewController {
     @IBOutlet weak var lbStatusExchange: UILabel!
     @IBOutlet weak var lbTotal: UILabel!
     @IBOutlet weak var vDropDownStatus: UIView!
+    @IBOutlet weak var vCheckLogin: UIView!
+    @IBOutlet weak var btnLogin: UIButton!
     
     var presenter: MyExchangePresenterProtocol?
     weak var delegate: MyExchangeViewControllerDelegate?
@@ -64,11 +66,27 @@ class MyExchangeViewController: BaseViewController {
         setupView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        checkLogin()
+    }
+    
     func setupView() {
                 
         configTableView()
         setupDropDownStatus()
         getData()
+        btnLogin.setBorderWithCornerRadius(borderWidth: 0, borderColor: .clear, cornerRadius: 20)
+
+    }
+    
+    func checkLogin() {
+        if UserDefaultHelper.shared.isLoggedIn {
+            vCheckLogin.isHidden = true
+            getData()
+        } else {
+            vCheckLogin.isHidden = false
+        }
     }
     
     func getData() {
@@ -149,6 +167,10 @@ class MyExchangeViewController: BaseViewController {
     
     @IBAction func btnChangeStatusRecord() {
         dropDownStatus.show()
+    }
+    
+    @IBAction func btnLoginTapped() {
+        delegate?.gotoLogin()
     }
 }
 
