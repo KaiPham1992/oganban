@@ -103,10 +103,10 @@ class OrderDetailEntity: BaseEntity {
             return .waitDelivery
         case OrderStatusKey.done.rawValue:
             return .done
-        case OrderStatusKey.cancel.rawValue, OrderStatusKey.buyerCancel.rawValue:
+        case OrderStatusKey.cancel.rawValue, OrderStatusKey.buyerCancel.rawValue, OrderStatusKey.sellerCancel.rawValue:
             return .cancel
         default:
-            return .new
+            return .orderNotYetArrived
         }
     }
     

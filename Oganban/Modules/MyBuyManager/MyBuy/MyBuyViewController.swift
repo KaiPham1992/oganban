@@ -172,7 +172,7 @@ extension MyBuyViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         let orderId = self.dataOrder?.dataOrder[indexPath.item].id
-        let vc = MyBuyDetailRouter.createModule(orderId: orderId&)
+        let vc = MyBuyDetailRouter.createModule(orderId: orderId&, isSaler: false)
         
         self.push(controller: vc)
     }

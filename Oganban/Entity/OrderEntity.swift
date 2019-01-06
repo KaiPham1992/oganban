@@ -24,6 +24,7 @@ enum OrderStatusKey: String {
     case done = "done"
     case buyerCancel = "buyer_cancel"
     case orderNotYetArrived = "order_not_yet_arrived"
+    case sellerCancel = "seller_cancel"
     
 }
 
@@ -89,7 +90,7 @@ struct OrderEntity: Mappable {
             return .waitDelivery
         case OrderStatusKey.done.rawValue:
             return .done
-        case OrderStatusKey.cancel.rawValue, OrderStatusKey.buyerCancel.rawValue:
+        case OrderStatusKey.cancel.rawValue, OrderStatusKey.buyerCancel.rawValue, OrderStatusKey.sellerCancel.rawValue:
             return .cancel
         default:
             return .orderNotYetArrived
