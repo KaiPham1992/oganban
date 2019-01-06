@@ -80,9 +80,11 @@ class HomeViewController: BaseViewController {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
         setRedStatusBar()
-        if distance == nil {
+        if isSetting {
             self.distance = UserDefaultHelper.shared.radius
+            isSetting = false
         }
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -123,6 +125,7 @@ class HomeViewController: BaseViewController {
         setUpScaleDropdown()
         tfSearch.delegate = self
         lbDistance.text = UserDefaultHelper.shared.radius?.title
+        self.distance = UserDefaultHelper.shared.radius
     }
     
     private func setUpScaleDropdown() {

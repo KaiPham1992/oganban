@@ -75,7 +75,7 @@ class PositionViewController: BaseViewController {
         scaleDropdown.selectionAction = { [weak self](index, item) in
             guard let `self` = self else { return }
             self.distance = self.dataSource[index]
-            
+            self.lbScale.text = item
 //            if  self.dataSource[index].title& == "Không giới hạn" {
 //                self.paramFilter.radius = ""
 //            } else {

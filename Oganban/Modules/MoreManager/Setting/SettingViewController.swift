@@ -10,7 +10,7 @@
 
 import UIKit
 import DropDown
-
+var isSetting = false
 class SettingViewController: BaseViewController {
 
 	var presenter: SettingPresenterProtocol?
@@ -20,12 +20,21 @@ class SettingViewController: BaseViewController {
     
     let radiusDropdown = DropDown()
     var dataSource: [PositionRangeEntity] = []
-    var distance: PositionRangeEntity?
+    var distance: PositionRangeEntity? {
+        didSet {
+            self.lbRadius.text = distance?.title
+        }
+    }
 
 	override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.getPositionRange()
         setUpScaleDropdown()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.distance = UserDefaultHelper.shared.radius
     }
     
     override func setUpNavigation() {
@@ -48,7 +57,6 @@ class SettingViewController: BaseViewController {
         radiusDropdown.downScaleTransform = CGAffineTransform(rotationAngle: (-.pi))
         radiusDropdown.selectionAction = { [weak self](index, item) in
             guard let `self` = self else { return }
-            self.lbRadius.text = item
 //            if  self.dataSource[index].title& == "Không giới hạn" {
 //                self.paramFilter.radius = ""
 //            } else {
@@ -66,6 +74,7 @@ class SettingViewController: BaseViewController {
     
     @IBAction func btnSaveTapped() {
         UserDefaultHelper.shared.radius = self.distance
+        isSetting = true
         self.pop()
     }
 }
@@ -77,6 +86,5 @@ extension SettingViewController: SettingViewProtocol {
             self.dataSource.append(last)
         }
         radiusDropdown.dataSource = dataSource.map({$0.title&})
-        distance = dataSource[3]
     }
 }
