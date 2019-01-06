@@ -9,7 +9,7 @@
 import UIKit
 
 protocol MyBuyImageCellDelegate: class {
-    func btnHideTapped()
+    func btnCancelTapped()
 }
 
 class MyBuyImageCell: BaseTableCell {
@@ -25,17 +25,19 @@ class MyBuyImageCell: BaseTableCell {
     @IBOutlet weak var btnTime: UIButton!
     @IBOutlet weak var lbQuantity: UILabel!
     
+    weak var delegate: MyBuyImageCellDelegate?
+    
     // My sell
-    var order: OrderEntity? {
+    var order: OrderDetailEntity? {
         didSet {
             guard let _order = order else { return }
             setDefautlMySell()
             
             //--
-            imageSlide.listItem = _order.arrayImgSrc
+            imageSlide.listItem = _order.arrayImage
             lbName.text = _order.name
             lbStatus.text = _order.getStatus().rawValue
-            btnTime.setTitle(_order.createTimeMi?.timeAgo(), for: .normal)
+            btnTime.setTitle(_order.creatTime?.timeAgo(), for: .normal)
             lbQuantity.text = "SL đặt mua: \(_order.quantity&)"
             
             if _order.paymentType == "cash" {
@@ -47,10 +49,14 @@ class MyBuyImageCell: BaseTableCell {
                 radioMoney.setOneImage(image: AppImage.imgCoin)
                 radioMoney.setOCoin(coin: _order.totalCoin)
             }
+            
+            if _order.getStatus() == .new || _order.getStatus() == .waitDelivery {
+                btnCancel.isHidden = false
+            } else {
+                btnCancel.isHidden = true
+            }
         }
     }
-    
-    weak var delegate: MyBuyImageCellDelegate?
     
     private func setDefautlMySell() {
         radioMoney.setOneImage(image: AppImage.imgMoney)
@@ -67,8 +73,7 @@ class MyBuyImageCell: BaseTableCell {
         heightMoneyCoin.constant = 0 // 0 25 50 
     }
     
-    @IBAction func btnHideTapped() {
-        delegate?.btnHideTapped()
+    @IBAction func btnCancelTapped() {
+        delegate?.btnCancelTapped()
     }
-    
 }

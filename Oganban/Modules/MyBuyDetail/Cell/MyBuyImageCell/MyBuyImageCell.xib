@@ -55,9 +55,6 @@
                                         <state key="normal" title="Ẩn bài đăng">
                                             <color key="titleColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="btnHideTapped" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Bed-AG-lPK"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fD-fw-SZI">
                                         <rect key="frame" x="173" y="21" width="83" height="28"/>
@@ -65,6 +62,9 @@
                                         <state key="normal" title="Huỷ giao dịch">
                                             <color key="titleColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="btnCancelTapped" destination="KGk-i7-Jjw" eventType="touchUpInside" id="xKW-Dl-y68"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

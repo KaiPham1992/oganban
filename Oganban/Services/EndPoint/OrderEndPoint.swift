@@ -12,6 +12,7 @@ enum OrderEndPoint {
     case getTransactionSeller(status: String, limit: Int, offset: Int)
     case getDetailOrder(id: String)
     case getHistoryOrder(status: String, offset: Int, limit: Int)
+    case changeStatusOrderBuyer(status: OrderStatusKey, orderId: String)
 }
 
 extension OrderEndPoint: EndPointType {
@@ -23,12 +24,14 @@ extension OrderEndPoint: EndPointType {
             return "_api/order/order_detail/\(id)"
         case .getHistoryOrder:
             return "_api/order/get_history_orders"
+        case .changeStatusOrderBuyer:
+            return "_api/order/post_confirm_order_buyer"
         }
     }
     
     var httpMethod: HTTPMethod {
         switch self {
-        case .getTransactionSeller, .getHistoryOrder:
+        case .getTransactionSeller, .getHistoryOrder, .changeStatusOrderBuyer:
             return .post
         case .getDetailOrder:
             return .get
@@ -49,6 +52,11 @@ extension OrderEndPoint: EndPointType {
                          "offset": offset,
                          "limit": limit] as [String: Any]
             return param
+        case .changeStatusOrderBuyer(let status, let id):
+            return [
+                "status": "\(status.rawValue)",
+                "order_id": "\(id)"
+            ]
         }
         
     }

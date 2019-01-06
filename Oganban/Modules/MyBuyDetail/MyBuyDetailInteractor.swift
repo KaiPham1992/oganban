@@ -15,10 +15,23 @@ class MyBuyDetailInteractor: MyBuyDetailInteractorInputProtocol {
     weak var presenter: MyBuyDetailInteractorOutputProtocol?
     
     func getDetailOrder(id: String) {
+        ProgressView.shared.show()
         Provider.shared.orderAPIService.getDetailOrder(id: id, success: { order in
+            ProgressView.shared.hide()
             self.presenter?.didGetOrder(order: order)
         }) { error in
-            print(error?.message)
+            ProgressView.shared.hide()
+            PopUpHelper.shared.showMessageHaveAds(error: error)
+        }
+    }
+    
+    func changedStatusOrder(status: OrderStatusKey, id: String) {
+        ProgressView.shared.show()
+        Provider.shared.orderAPIService.changeStatusOrder(status: status, id: id, success: { _ in
+            self.getDetailOrder(id: id)
+        }) { error  in
+            ProgressView.shared.hide()
+            PopUpHelper.shared.showMessageHaveAds(error: error)
         }
     }
 }

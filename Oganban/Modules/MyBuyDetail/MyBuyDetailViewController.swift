@@ -12,27 +12,27 @@ import UIKit
 
 enum MyBuyType: Int {
     case infoProduct = 0
-//    case intro
-//    case infoSaler
-//    case address
+    case infoSaler
 }
 
 class MyBuyDetailViewController: BaseViewController {
 
 	var presenter: MyBuyDetailPresenterProtocol?
-    var listHeader = ["Chi tiết"] //MyBuyImageCell
+    var listHeader = ["Chi tiết", "Thông tin người bán"]
     
-    var order: OrderEntity? {
+    var order: OrderDetailEntity? {
         didSet {
             tbDetail.reloadData()
         }
     }
+    
+    var orderId: String = ""
 
      @IBOutlet weak var tbDetail: UITableView!
 	override func viewDidLoad() {
         super.viewDidLoad()
         
-        presenter?.getDetailOrder(id: "4")
+        presenter?.getDetailOrder(id: orderId)
         configureTable()
     }
     
@@ -45,7 +45,7 @@ class MyBuyDetailViewController: BaseViewController {
 }
 
 extension MyBuyDetailViewController: MyBuyDetailViewProtocol {
-    func didGetOrder(order: OrderEntity?) {
+    func didGetOrder(order: OrderDetailEntity?) {
         self.order = order
     }
 }
@@ -57,6 +57,7 @@ extension MyBuyDetailViewController: UITableViewDelegate, UITableViewDataSource 
         tbDetail.delegate = self
         tbDetail.dataSource = self
         tbDetail.registerXibFile(MyBuyImageCell.self)
+        tbDetail.registerXibFile(MyBuyInfoUserCell.self)
         
         tbDetail.separatorStyle = .none
         tbDetail.rowHeight = UITableView.automaticDimension
@@ -72,11 +73,13 @@ extension MyBuyDetailViewController: UITableViewDelegate, UITableViewDataSource 
         switch indexPath.section {
         case OrderDetailInfoType.infoProduct.rawValue:
             let cell = tbDetail.dequeue(MyBuyImageCell.self, for: indexPath)
-//            cell.delegate = self
             cell.order = self.order
+            cell.delegate = self
             return cell
         default:
-            return UITableViewCell()
+            let cell = tbDetail.dequeue(MyBuyInfoUserCell.self, for: indexPath)
+            cell.recordMyBuy = self.order
+            return cell
         }
     }
     
@@ -104,5 +107,16 @@ extension MyBuyDetailViewController: UITableViewDelegate, UITableViewDataSource 
             return 0
         }
         return 47.5
+    }
+}
+
+
+extension MyBuyDetailViewController: MyBuyImageCellDelegate {
+    func btnCancelTapped() {
+        PopUpHelper.shared.showYesNoQuestionHaveAds(question: "Bạn chắc chắn muốn huỷ giao dịch", completionYes: {
+            self.presenter?.changedStatusOrder(status: OrderStatusKey.cancel, id: self.orderId)
+        }) {
+            print("No")
+        }
     }
 }
