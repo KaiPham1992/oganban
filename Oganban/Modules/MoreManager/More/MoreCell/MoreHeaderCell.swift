@@ -42,13 +42,16 @@ class MoreHeaderCell: UITableViewCell {
             lbName.font = AppFont.fontBoldRoboto15
             lbName.textColor = AppColor.blue_0_136_241
             lbName.text = MoreTitle.loginSignup
-            
         }
     }
     
     func showData(user: UserEntity) {
         lbName.text = user.fullName
-        lbPhone.text = user.phone
+        
+        if let phoneCode = user.phoneCode, let phone = user.phone {
+            lbPhone.text = phoneCode + phone
+        }
+        
         vLevel.setLevel(level: user.level&, isPro: user.isPro)
         
         if let urlString = user.imgCropSrc, let url = URL(string: BASE_URL_IMAGE + urlString) {
@@ -57,11 +60,10 @@ class MoreHeaderCell: UITableViewCell {
             ivAvatar.sd_setImage(with: url , placeholderImage: AppImage.imgDefaultUser)
         }
         
-        let num: Double = 30005.12
-        let numString = String(num)
-        
-        if let coin = numString.addComma() {
+        if let _coin = user.coin, let coin = String(_coin).addComma() {
             lbCoinTotal.text = "Tổng ƠCoin tích luỹ: " + coin  + " ơ"
+        } else {
+            lbCoinTotal.text = "Tổng ƠCoin tích luỹ: 0 ơ"
         }
     }
 }

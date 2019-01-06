@@ -19,17 +19,20 @@ protocol PositionPresenterProtocol: class {
     
     var interactor: PositionInteractorInputProtocol? { get set }
     func dismiss()
+    func getCountRecord(long: CGFloat, lat: CGFloat, radius: Int)
 }
 
 //MARK: Interactor -
 protocol PositionInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    func didGetCountRecord(count: Int)
 }
 
 protocol PositionInteractorInputProtocol: class {
 
     var presenter: PositionInteractorOutputProtocol?  { get set }
+    func getCountRecord(long: CGFloat, lat: CGFloat, radius: Int)
 
     /* Presenter -> Interactor */
 }
@@ -40,4 +43,5 @@ protocol PositionViewProtocol: class {
     var presenter: PositionPresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
+    func didGetCountRecord(count: Int)
 }

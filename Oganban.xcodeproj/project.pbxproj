@@ -212,8 +212,6 @@
 		CB31FB7721DF413D001DFC7F /* BaseRecordEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB31FB7621DF413D001DFC7F /* BaseRecordEntity.swift */; };
 		CB31FB7921DF4736001DFC7F /* BaseOrderEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB31FB7821DF4736001DFC7F /* BaseOrderEntity.swift */; };
 		CB3A8F0E21C64FC1008144BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3A8F0D21C64FC1008144BD /* AppDelegate.swift */; };
-		CB3A8F1021C64FC1008144BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3A8F0F21C64FC1008144BD /* ViewController.swift */; };
-		CB3A8F1321C64FC1008144BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB3A8F1121C64FC1008144BD /* Main.storyboard */; };
 		CB3A8F1521C64FC1008144BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB3A8F1421C64FC1008144BD /* Assets.xcassets */; };
 		CB3A8F1821C64FC1008144BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB3A8F1621C64FC1008144BD /* LaunchScreen.storyboard */; };
 		CBBB3DF421D5C74400281ABB /* ChangePasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBB3DEE21D5C74400281ABB /* ChangePasswordPresenter.swift */; };
@@ -648,8 +646,6 @@
 		CB31FB7821DF4736001DFC7F /* BaseOrderEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseOrderEntity.swift; sourceTree = "<group>"; };
 		CB3A8F0A21C64FC1008144BD /* Oganban.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Oganban.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB3A8F0D21C64FC1008144BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CB3A8F0F21C64FC1008144BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CB3A8F1221C64FC1008144BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CB3A8F1421C64FC1008144BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB3A8F1721C64FC1008144BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB3A8F1921C64FC1008144BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1137,6 +1133,44 @@
 			path = SignUp;
 			sourceTree = "<group>";
 		};
+		B36A235021E1ABE900AA20DF /* MoreManager */ = {
+			isa = PBXGroup;
+			children = (
+				84329F2C21DFC93B00047B5E /* HistoryBuy */,
+				843014AE21DFB59900B39084 /* HistoryCoin */,
+				84421BE621CBEEA600F468F5 /* More */,
+			);
+			path = MoreManager;
+			sourceTree = "<group>";
+		};
+		B36A235121E1AC3A00AA20DF /* NotificationManager */ = {
+			isa = PBXGroup;
+			children = (
+				DEB854F821E0B418007479A7 /* NotificationDetail */,
+				DE0DBADA21D3B6DA0097E38F /* Notification */,
+			);
+			path = NotificationManager;
+			sourceTree = "<group>";
+		};
+		B36A235221E1ACB200AA20DF /* MyBuyManager */ = {
+			isa = PBXGroup;
+			children = (
+				DE442C3621CFA1FE0051C0B8 /* OrderDetail */,
+				CBD1C28421D73087006DB3FF /* MyBuy */,
+			);
+			path = MyBuyManager;
+			sourceTree = "<group>";
+		};
+		B36A235321E1ACC600AA20DF /* MySellManager */ = {
+			isa = PBXGroup;
+			children = (
+				DE33035721DF5ECB00409F83 /* PostStepTwo */,
+				DE33034421DF13C700409F83 /* PostStepOne */,
+				DEBEE7FA21D740C2004B8D88 /* MySellContainer */,
+			);
+			path = MySellManager;
+			sourceTree = "<group>";
+		};
 		B36AEE9721CDD8CD00BED43C /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
@@ -1258,24 +1292,15 @@
 		CB172B1821C6A1480068CF92 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-
-				DEB854F821E0B418007479A7 /* NotificationDetail */,
-				DE33035721DF5ECB00409F83 /* PostStepTwo */,
-				DE33034421DF13C700409F83 /* PostStepOne */,
-
 				84329F5021DFE1E000047B5E /* ProductList */,
 				84329F3E21DFD82900047B5E /* Favourite */,
-				84329F2C21DFC93B00047B5E /* HistoryBuy */,
-				843014AE21DFB59900B39084 /* HistoryCoin */,
-
 				B3CC856821D72DB600ADBFD8 /* Position */,
-				CBD1C28421D73087006DB3FF /* MyBuy */,
-				DEBEE7FA21D740C2004B8D88 /* MySellContainer */,
-				DE0DBADA21D3B6DA0097E38F /* Notification */,
-				DE442C3621CFA1FE0051C0B8 /* OrderDetail */,
 				B36AEE9721CDD8CD00BED43C /* Tabbar */,
+				B36A235321E1ACC600AA20DF /* MySellManager */,
+				B36A235221E1ACB200AA20DF /* MyBuyManager */,
+				B36A235121E1AC3A00AA20DF /* NotificationManager */,
 				DE21821421CD40AE00FDD9F1 /* UserManager */,
-				84421BE621CBEEA600F468F5 /* More */,
+				B36A235021E1ABE900AA20DF /* MoreManager */,
 				B355EF4821C8EB2E00379F57 /* Home */,
 			);
 			path = Modules;
@@ -1565,9 +1590,7 @@
 				B36AEEC521CDF41C00BED43C /* Cell */,
 				CB172B1821C6A1480068CF92 /* Modules */,
 				CB3A8F0D21C64FC1008144BD /* AppDelegate.swift */,
-				CB3A8F0F21C64FC1008144BD /* ViewController.swift */,
 				DE2181FB21CD3C1400FDD9F1 /* AppRouter.swift */,
-				CB3A8F1121C64FC1008144BD /* Main.storyboard */,
 				CB3A8F1421C64FC1008144BD /* Assets.xcassets */,
 				CB3A8F1621C64FC1008144BD /* LaunchScreen.storyboard */,
 				CB3A8F1921C64FC1008144BD /* Info.plist */,
@@ -2395,7 +2418,6 @@
 				DE21821321CD403100FDD9F1 /* AccountKitStrings.bundle in Resources */,
 				CBD1C2AD21D74DA6006DB3FF /* MySellingViewController.xib in Resources */,
 				DE2181FA21CD3AD300FDD9F1 /* GoogleService-Info.plist in Resources */,
-				CB3A8F1321C64FC1008144BD /* Main.storyboard in Resources */,
 				B3E67EAE21CF75A90012546F /* PhoneNumber.xib in Resources */,
 				DEE1DA6B21CDF5D60036FEB7 /* PopUpSelectGenderContent.xib in Resources */,
 				CB172C8621C6A2EF0068CF92 /* OpenSans-SemiBold.ttf in Resources */,
@@ -2537,11 +2559,8 @@
 				B392FB3921D3B13E0076A7B5 /* CategoryAPIService.swift in Sources */,
 				CB172C9321C6A2EF0068CF92 /* AppString.swift in Sources */,
 				DE21828021CD473100FDD9F1 /* KActivityIndicatorAnimationBallRotate.swift in Sources */,
-
 				DEB8550121E0B42D007479A7 /* NotificationDetailViewController.swift in Sources */,
-
 				84329F4621DFD92F00047B5E /* FavouriteRouter.swift in Sources */,
-
 				DE0E79D921D65F760053786D /* Connectivity.swift in Sources */,
 				DEB8550621E0BF07007479A7 /* SelectPhotoCanCropPopUp.swift in Sources */,
 				B36AEECE21CDF52B00BED43C /* HomeCell.swift in Sources */,
@@ -2564,11 +2583,8 @@
 				CBBB3DF821D5C74400281ABB /* ChangePasswordInteractor.swift in Sources */,
 				B355EF5321C8EB3F00379F57 /* HomeInteractor.swift in Sources */,
 				CB172C0E21C6A2EF0068CF92 /* UIDevice+extension.swift in Sources */,
-
 				DEB854FF21E0B42D007479A7 /* NotificationDetailPresenter.swift in Sources */,
-
 				84329F1F21DFB5E100047B5E /* HistoryCoinViewController.swift in Sources */,
-
 				B355EF5021C8EB3F00379F57 /* HomeRouter.swift in Sources */,
 				CB0FD72021DDBAD10093B06B /* OrderEndPoint.swift in Sources */,
 				DEC5166421CE8DCD00A17CBF /* PopUpSettingGPSContent.swift in Sources */,
@@ -2617,11 +2633,8 @@
 				DE21827121CD473100FDD9F1 /* KActivityIndicatorAnimationBlank.swift in Sources */,
 				84C8543621CFEE7300BDABE5 /* SupplementaryInfo+Event.swift in Sources */,
 				DE21826B21CD473100FDD9F1 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
-
 				DE33034B21DF13EB00409F83 /* PostStepOnePresenter.swift in Sources */,
-
 				84329F1E21DFB5E100047B5E /* HistoryCoinRouter.swift in Sources */,
-
 				84421C0B21CBF52900F468F5 /* SupplementaryInfoInteractor.swift in Sources */,
 				CB172C0D21C6A2EF0068CF92 /* UIApplication+extension.swift in Sources */,
 				B3CC857321D72DD200ADBFD8 /* PositionInteractor.swift in Sources */,
@@ -2697,7 +2710,6 @@
 				CB172C1521C6A2EF0068CF92 /* UIImage+extension.swift in Sources */,
 				84421C0A21CBF52900F468F5 /* SupplementaryInfoProtocols.swift in Sources */,
 				DE33035421DF1D7B00409F83 /* AppTextView.swift in Sources */,
-				CB3A8F1021C64FC1008144BD /* ViewController.swift in Sources */,
 				B355EF5221C8EB3F00379F57 /* HomeProtocols.swift in Sources */,
 				DE442C3F21CFA2130051C0B8 /* OrderDetailViewController.swift in Sources */,
 				CB172C2521C6A2EF0068CF92 /* PopUpHelper.swift in Sources */,
@@ -2881,14 +2893,6 @@
 				CB172B4C21C6A2EE0068CF92 /* vi */,
 			);
 			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		CB3A8F1121C64FC1008144BD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CB3A8F1221C64FC1008144BD /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		CB3A8F1621C64FC1008144BD /* LaunchScreen.storyboard */ = {

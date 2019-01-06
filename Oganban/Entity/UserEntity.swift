@@ -37,7 +37,7 @@ struct UserEntity: Mappable, Codable {
     var isVerified: String?
     var socialImage: String?
     var isPro: String?
-    
+    var coin: Double?
     init?(map: Map) {
         
     }
@@ -69,6 +69,7 @@ struct UserEntity: Mappable, Codable {
         self.isLoggedSocial <- map["is_logged_social"]
         self.socialImage <- map["social_img_src"]
         self.isPro <- map["is_pro"]
+        self.coin <- map["coin"]
     }
     
     init (displayName: String, phoneNumber: String,phoneCode: String, birthday: String,gender: String?, houseAddress: String?, companyAddress: String?) {
