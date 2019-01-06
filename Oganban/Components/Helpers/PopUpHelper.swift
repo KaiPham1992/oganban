@@ -16,6 +16,12 @@ class PopUpHelper {
         popUp.showPopUp(message: message)
     }
     
+    func showMessageHaveAds(error: APIError?) {
+        guard let _error = error else { return }
+        let popUp = PopUpNotificationHaveAdmob()
+        popUp.showPopUp(message: _error.message&)
+    }
+    
     func showMessageHaveAds(message: String, closeCompletion: @escaping CompletionClosure) {
         let popUp = PopUpNotificationHaveAdmob()
         popUp.showPopUp(message: message, closeCompletion: closeCompletion)

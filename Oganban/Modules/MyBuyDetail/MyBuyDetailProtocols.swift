@@ -19,13 +19,15 @@ protocol MyBuyDetailPresenterProtocol: class {
 
     var interactor: MyBuyDetailInteractorInputProtocol? { get set }
     func getDetailOrder(id: String)
+    func changedStatusOrder(status: OrderStatusKey, id: String)
 }
 
 //MARK: Interactor -
 protocol MyBuyDetailInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
-    func didGetOrder(order: OrderEntity?)
+    func didGetOrder(order: OrderDetailEntity?)
+    
 }
 
 protocol MyBuyDetailInteractorInputProtocol: class {
@@ -34,6 +36,7 @@ protocol MyBuyDetailInteractorInputProtocol: class {
 
     /* Presenter -> Interactor */
     func getDetailOrder(id: String)
+    func changedStatusOrder(status: OrderStatusKey, id: String)
 }
 
 //MARK: View -
@@ -42,5 +45,5 @@ protocol MyBuyDetailViewProtocol: class {
     var presenter: MyBuyDetailPresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
-    func didGetOrder(order: OrderEntity?)
+    func didGetOrder(order: OrderDetailEntity?)
 }

@@ -11,7 +11,18 @@ import ObjectMapper
 
 enum OrderStatusType: String {
     case new = "Đơn hàng chờ duyệt"
+    case waitDelivery = "Đơn hàng đang giao"
+    case done = "Đơn hàng hoàn tất"
+    case cancel = "Đơn hàng đã huỷ"
 }
+
+enum OrderStatusKey: String {
+    case new = "new"
+    case waitDelivery = "wait_delivery"
+    case cancel = "cancel"
+    case done = "done"
+}
+
 
 struct OrderEntity: Mappable {
     
@@ -68,8 +79,14 @@ struct OrderEntity: Mappable {
     
     func getStatus() -> OrderStatusType {
         switch self.status& {
-        case "new":
+        case OrderStatusKey.new.rawValue:
             return .new
+        case OrderStatusKey.waitDelivery.rawValue:
+            return .waitDelivery
+        case OrderStatusKey.done.rawValue:
+            return .done
+        case OrderStatusKey.cancel.rawValue:
+            return .cancel
         default:
             return .new
         }

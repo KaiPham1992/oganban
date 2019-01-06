@@ -388,6 +388,7 @@
 		DE5E084C21E1C60A0053EC9D /* MyBuyImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE5E084A21E1C60A0053EC9D /* MyBuyImageCell.xib */; };
 		DE5E085021E1DAEC0053EC9D /* MyBuyInfoUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5E084E21E1DAEC0053EC9D /* MyBuyInfoUserCell.swift */; };
 		DE5E085121E1DAEC0053EC9D /* MyBuyInfoUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE5E084F21E1DAEC0053EC9D /* MyBuyInfoUserCell.xib */; };
+		DE5E085321E1DF000053EC9D /* OrderDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5E085221E1DF000053EC9D /* OrderDetailEntity.swift */; };
 		DEA3A08821D6738200643296 /* AppImageSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3A08621D6738100643296 /* AppImageSlide.swift */; };
 		DEA3A08921D6738200643296 /* AppImageSlide.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEA3A08721D6738100643296 /* AppImageSlide.xib */; };
 		DEA3A08D21D674A200643296 /* PreviewPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3A08B21D674A200643296 /* PreviewPhotoViewController.swift */; };
@@ -847,6 +848,7 @@
 		DE5E084A21E1C60A0053EC9D /* MyBuyImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyBuyImageCell.xib; sourceTree = "<group>"; };
 		DE5E084E21E1DAEC0053EC9D /* MyBuyInfoUserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBuyInfoUserCell.swift; sourceTree = "<group>"; };
 		DE5E084F21E1DAEC0053EC9D /* MyBuyInfoUserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyBuyInfoUserCell.xib; sourceTree = "<group>"; };
+		DE5E085221E1DF000053EC9D /* OrderDetailEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailEntity.swift; sourceTree = "<group>"; };
 		DEA3A08621D6738100643296 /* AppImageSlide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppImageSlide.swift; sourceTree = "<group>"; };
 		DEA3A08721D6738100643296 /* AppImageSlide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppImageSlide.xib; sourceTree = "<group>"; };
 		DEA3A08B21D674A200643296 /* PreviewPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewPhotoViewController.swift; sourceTree = "<group>"; };
@@ -1860,6 +1862,7 @@
 				CB31FB7621DF413D001DFC7F /* BaseRecordEntity.swift */,
 				CB31FB7821DF4736001DFC7F /* BaseOrderEntity.swift */,
 				DEB854F421E0A59C007479A7 /* ExpirePostEntity.swift */,
+				DE5E085221E1DF000053EC9D /* OrderDetailEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -2827,6 +2830,7 @@
 				DE21829121CD4E7F00FDD9F1 /* AppTextFiled.swift in Sources */,
 				B35F529821D276A000D3FA30 /* SignUpParam.swift in Sources */,
 				CBC8F11321E1B61000F88D4F /* MyExchangeDetailViewController.swift in Sources */,
+				DE5E085321E1DF000053EC9D /* OrderDetailEntity.swift in Sources */,
 				CB0C3A2621D3BECD0052DD91 /* ForgotPasswordProtocols.swift in Sources */,
 				DE21827A21CD473100FDD9F1 /* KActivityIndicatorAnimationCubeTransition.swift in Sources */,
 				CBD1C2A821D74DA6006DB3FF /* MySellingPresenter.swift in Sources */,

@@ -14,7 +14,7 @@ class MyBuyDetailRouter: MyBuyDetailWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule() -> UIViewController {
+    static func createModule(orderId: String) -> MyBuyDetailViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = MyBuyDetailViewController(nibName: nil, bundle: nil)
         let interactor = MyBuyDetailInteractor()
@@ -22,6 +22,7 @@ class MyBuyDetailRouter: MyBuyDetailWireframeProtocol {
         let presenter = MyBuyDetailPresenter(interface: view, interactor: interactor, router: router)
 
         view.presenter = presenter
+        view.orderId = orderId
         interactor.presenter = presenter
         router.viewController = view
 

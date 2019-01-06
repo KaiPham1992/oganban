@@ -26,8 +26,12 @@ class MyBuyDetailPresenter: MyBuyDetailPresenterProtocol, MyBuyDetailInteractorO
         interactor?.getDetailOrder(id: id)
     }
     
-    func didGetOrder(order: OrderEntity?) {
+    func didGetOrder(order: OrderDetailEntity?) {
         view?.didGetOrder(order: order)
+    }
+    
+    func changedStatusOrder(status: OrderStatusKey, id: String) {
+        interactor?.changedStatusOrder(status: status, id: id)
     }
 
 }

@@ -14,8 +14,9 @@ enum UserDefaultHelperKey: String {
     case fcmToken = "FcmToken"
     case lat = "LatUser"
     case long = "LongUser"
+    case address = "Address"
     case userToken = "UserToken"
-     case email = "email"
+    case email = "email"
     case radius = "radius"
 }
 
@@ -100,6 +101,11 @@ class UserDefaultHelper {
         return _lat.description
     }
     
+    var address: String {
+        guard let _lat = get(key: .address) as? String else { return ""}
+        return _lat
+    }
+    
     var radius: PositionRangeEntity? {
         get {
             if let savedUser = UserDefaults.standard.object(forKey: UserDefaultHelperKey.radius.rawValue) as? Data {
@@ -130,9 +136,10 @@ extension UserDefaultHelper {
         return userDefaultManager.object(forKey: key.rawValue)
     }
     
-    private func saveLocation(lat: CLLocationDegrees, long: CLLocationDegrees) {
+    func saveLocation(lat: CLLocationDegrees, long: CLLocationDegrees, address: String) {
         save(value: lat, key: .lat)
         save(value: long, key: .long)
+        save(value: address, key: .address)
     }
     
     private func getLocation() -> CLLocationCoordinate2D? {
