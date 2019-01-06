@@ -92,11 +92,9 @@ class UpdateProfileViewController: BaseViewController {
                 lbRating.text =  String(format: "%.1f", 0)
             }
         
-            if let urlString = user.imgCropSrc, let url = URL(string: BASE_URL_IMAGE + urlString) {
-                imgAvatar.sd_setImage(with: url , placeholderImage: AppImage.imgDefaultUser)
-            } else if let urlString = user.socialImage, let url = URL(string: urlString) {
-                imgAvatar.sd_setImage(with: url , placeholderImage: AppImage.imgDefaultUser)
-            }
+            imgAvatar.sd_setImage(with: user.urlAvatar , placeholderImage: AppImage.imgDefaultUser)
+            
+
             
             if let email = user.email {
                 tfUsername.tfContent.text = email

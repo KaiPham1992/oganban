@@ -53,13 +53,7 @@ class MoreHeaderCell: UITableViewCell {
         }
         
         vLevel.setLevel(level: user.level&, isPro: user.isPro)
-        
-        if let urlString = user.imgCropSrc, let url = URL(string: BASE_URL_IMAGE + urlString) {
-            ivAvatar.sd_setImage(with: url , placeholderImage: AppImage.imgDefaultUser)
-        } else if let urlString = user.socialImage, let url = URL(string: urlString) {
-            ivAvatar.sd_setImage(with: url , placeholderImage: AppImage.imgDefaultUser)
-        }
-        
+        ivAvatar.sd_setImage(with: user.urlAvatar , placeholderImage: AppImage.imgDefaultUser)
         if let _coin = user.coin, let coin = String(_coin).addComma() {
             lbCoinTotal.text = "Tổng ƠCoin tích luỹ: " + coin  + " ơ"
         } else {

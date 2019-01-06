@@ -10,6 +10,7 @@ import Alamofire
 
 enum OrderEndPoint {
     case getTransactionSeller(status: String, limit: Int, offset: Int)
+    case getHistoryOrder(status: String, offset: Int, limit: Int)
 }
 
 extension OrderEndPoint: EndPointType {
@@ -17,12 +18,14 @@ extension OrderEndPoint: EndPointType {
         switch self {
         case .getTransactionSeller:
             return "_api/order/get_transaction_seller"
+        case .getHistoryOrder:
+            return "_api/order/get_history_orders"
         }
     }
     
     var httpMethod: HTTPMethod {
         switch self {
-        case .getTransactionSeller:
+        case .getTransactionSeller, .getHistoryOrder:
             return .post
         }
     }
@@ -34,7 +37,13 @@ extension OrderEndPoint: EndPointType {
                          "limit": limit,
                          "offset": offset] as [String: Any]
             return param
+        case .getHistoryOrder(let status, let offset, let limit):
+            let param = ["status": status,
+                         "offset": offset,
+                         "limit": limit] as [String: Any]
+            return param
         }
+        
     }
     
     var headers: HTTPHeaders? {

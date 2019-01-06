@@ -28,7 +28,7 @@ class PostStepOneViewController: BaseViewController {
     @IBOutlet weak var btnHideDropdown  : UIButton!
     
     var postParam = PostRecordParam()
-    var category: CategoryEntity?
+    var categoryId: String?
     var dateSeleted: Date?
     var errorMessage: String = "" {
         didSet {
@@ -44,7 +44,7 @@ class PostStepOneViewController: BaseViewController {
     }
     var indexReload: Int?
     var index = 0
-    var paramFilter = RecordParam()
+//    var paramFilter = RecordParam()
     var oldParentSelected: Int?
     var oldChildSelected: Int?
     var heightTableLeft: CGFloat = 300
@@ -66,6 +66,7 @@ class PostStepOneViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        presenter?.getExpireDate()
         hideTabbar()
     }
     
@@ -144,7 +145,7 @@ class PostStepOneViewController: BaseViewController {
         let imgSrc = vPhoto.listImage.map {$0.url&}
         let expireDate = dateSeleted?.toString(dateFormat: AppDateFormat.yyyyMMdd)&
         
-        postParam = PostRecordParam(categoryId: "128", name: vTitleRecord.textField.text&, imgSrc: imgSrc, quantity: vQuantity.textField.text&, expireDate: expireDate&, aboutRecord: vAbout.tvInput.text&)
+        postParam = PostRecordParam(categoryId: categoryId&, name: vTitleRecord.textField.text&, imgSrc: imgSrc, quantity: vQuantity.textField.text&, expireDate: expireDate&, aboutRecord: vAbout.tvInput.text&)
         
         let vc = PostStepTwoRouter.createModule(param: self.postParam)
         self.push(controller: vc)
@@ -171,7 +172,8 @@ extension PostStepOneViewController: AppCollectionPhotoDelegate {
 
 extension PostStepOneViewController: FTextFieldChooseDelegate {
     func btnChooseTapped(sender: FTextFieldChoose) {
-        PopUpHelper.shared.showDateFollowWeekPopup { date in
+        
+        PopUpHelper.shared.showDateFollowWeekPopup(maxDate: DataManager.shared.maxDate) { date in
             self.dateSeleted = date
             self.vChooseDate.textField.text = date?.toString(dateFormat: AppDateFormat.ddMMYYYY_VN)
         }
@@ -235,17 +237,19 @@ extension PostStepOneViewController: UITableViewDelegate, UITableViewDataSource 
             tbLeft.reloadRows(at: [IndexPath(item: oldParentSelected*, section: indexPath.section), indexPath], with: .none)
             oldParentSelected = index
             lbCategory.text = menu[index].name
-            paramFilter.categoryId = [menu[index].id&]
+//            paramFilter.categoryId = [menu[index].id&]
+            categoryId = menu[index].id&
             hideDropdown()
             //--ID category parent
 //            presenter?.filterRecord(param: paramFilter)
+            
         case tbRight:
             menu[oldParentSelected*].cateChild[oldChildSelected*].isSelected = false
             menu[oldParentSelected*].cateChild[indexPath.row].isSelected = true
             tbRight.reloadRows(at: [IndexPath(item: oldChildSelected*, section: indexPath.section), indexPath], with: .none)
             oldChildSelected = indexPath.row
             lbCategory.text =  menu[oldParentSelected*].cateChild[indexPath.row].name
-            paramFilter.categoryId =  [menu[oldParentSelected*].cateChild[indexPath.row].id&]
+            categoryId = menu[oldParentSelected*].cateChild[indexPath.row].id&
             //--get id category there
             hideDropdown()
             

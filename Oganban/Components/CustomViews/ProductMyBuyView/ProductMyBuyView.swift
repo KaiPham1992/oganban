@@ -21,6 +21,7 @@ class ProductMyBuyView: BaseViewXib {
     @IBOutlet weak var lbNote: UILabel!
     @IBOutlet weak var lbStatus: UILabel!
     @IBOutlet weak var lbAvgRating: UILabel!
+    @IBOutlet weak var imgIconMoney: UIImageView!
     
     var order: OrderEntity? {
         didSet {
@@ -35,9 +36,14 @@ class ProductMyBuyView: BaseViewXib {
             lbAvgRating.text = _order.avgRating
             
             if _order.paymentType == "cash" {
-                lbPrice.text = "\(_order.totalPrice ?? "") đ"
+                lbPrice.text = "\(_order.totalPrice ?? 0) đ"
+                lbPrice.textColor = AppColor.red_233_1_1
+                imgIconMoney.image = UIImage(named: "ic_money")
             } else {
-                lbPrice.text = "\(_order.totalCoin ?? "") ơ"            }
+                lbPrice.text = "\(_order.totalCoin ?? 0) ơ"
+                lbPrice.textColor = AppColor.green
+                imgIconMoney.image = UIImage(named: "ic_coin")
+            }
             
             
             if let url = URL(string: "\(BASE_URL_IMAGE)\(_order.imgSrc ?? "")") {

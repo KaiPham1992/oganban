@@ -30,14 +30,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.frame = UIScreen.main.bounds
         UIApplication.shared.statusBarStyle = .lightContent
         configureGoogle()
-
         
+        checkLogin()
         AppRouter.shared.openTabbar()
 //        let vcLogin = OrderDetailRouter.createModule()
 //        let nc = UINavigationController(rootViewController: vcLogin)
 //        window?.rootViewController = nc
 
         return true
+    }
+    
+    func checkLogin() {
+        Provider.shared.userAPIService.checkLogin(success: { _ in
+            
+        }) { _error in
+            UserUtils.clearLogin()
+        }
     }
     
     
@@ -47,10 +55,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                    sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
                                                    annotation: options[UIApplication.OpenURLOptionsKey.annotation])
         return fb || gg
+        
+        
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        checkLogin()
         if CLLocationManager.authorizationStatus() == .denied {
             PopUpHelper.shared.showNoGPS()
         }
