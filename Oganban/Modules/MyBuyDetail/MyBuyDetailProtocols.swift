@@ -20,6 +20,7 @@ protocol MyBuyDetailPresenterProtocol: class {
     var interactor: MyBuyDetailInteractorInputProtocol? { get set }
     func getDetailOrder(id: String)
     func changedStatusOrder(status: OrderStatusKey, id: String)
+    func changedStatusOrderSaler(status: OrderStatusKey, id: String)
 }
 
 //MARK: Interactor -
@@ -37,6 +38,7 @@ protocol MyBuyDetailInteractorInputProtocol: class {
     /* Presenter -> Interactor */
     func getDetailOrder(id: String)
     func changedStatusOrder(status: OrderStatusKey, id: String)
+    func changedStatusOrderSaler(status: OrderStatusKey, id: String)
 }
 
 //MARK: View -

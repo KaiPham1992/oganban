@@ -89,22 +89,24 @@ class OrderDetailEntity: BaseEntity {
         self.imgCropBuyer <- map["crop_img_src_buyer"]
         self.levelBuyer <- map["level_buyer"]
         
-        
-        
+    }
+    
+    func isBuyer() -> Bool {
+        return self.accountIDBuyer == UserDefaultHelper.shared.loginUserInfo?.id
     }
     
     func getStatus() -> OrderStatusType {
         switch self.status& {
-        case "new":
+        case OrderStatusKey.new.rawValue:
             return .new
-        case "wait_delivery":
+        case OrderStatusKey.waitDelivery.rawValue:
             return .waitDelivery
-        case "done":
+        case OrderStatusKey.done.rawValue:
             return .done
-        case "cancel":
+        case OrderStatusKey.cancel.rawValue, OrderStatusKey.buyerCancel.rawValue, OrderStatusKey.sellerCancel.rawValue:
             return .cancel
         default:
-            return .new
+            return .orderNotYetArrived
         }
     }
     

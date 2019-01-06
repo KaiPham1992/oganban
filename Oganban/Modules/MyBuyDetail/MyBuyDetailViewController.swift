@@ -22,13 +22,50 @@ class MyBuyDetailViewController: BaseViewController {
     
     var order: OrderDetailEntity? {
         didSet {
+            guard let _order = order else { return }
             tbDetail.reloadData()
+            
+            // BUYER
+            if !isSaler {
+                vControlSaler.isHidden = true
+                vDoneNotArrived.isHidden = _order.getStatus() != .waitDelivery
+                
+                if _order.getStatus() == .done || _order.getStatus() == .cancel {
+                    vContainerRating.isHidden = false
+                } else {
+                    vContainerRating.isHidden = true
+                }
+                // SALER
+            } else {
+                vControlSaler.isHidden = false
+                vAcceptCancel.isHidden = _order.getStatus() != .new
+                
+                if _order.getStatus() == .done || _order.getStatus() == .cancel {
+                    vContainerRatingSaler.isHidden = false
+                } else {
+                    vContainerRatingSaler.isHidden = true
+                }
+                
+            }
+            
         }
     }
     
     var orderId: String = ""
+    var isSaler = true
 
      @IBOutlet weak var tbDetail: UITableView!
+    // buyer
+    @IBOutlet weak var vDoneNotArrived: UIView!
+    @IBOutlet weak var vRating: AppRatingView!
+    @IBOutlet weak var vContainerRating: UIView!
+    
+    // saller
+    @IBOutlet weak var vControlSaler: UIView!
+    @IBOutlet weak var vAcceptCancel: UIView!
+    @IBOutlet weak var vRatingSaler: AppRatingView!
+    @IBOutlet weak var vContainerRatingSaler: UIView!
+    
 	override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,6 +77,11 @@ class MyBuyDetailViewController: BaseViewController {
         super.setUpNavigation()
         addBackToNavigation()
         setTitleNavigation(title: "Chi tiết đơn hàng")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        hideTabbar()
     }
 
 }
@@ -73,7 +115,7 @@ extension MyBuyDetailViewController: UITableViewDelegate, UITableViewDataSource 
         switch indexPath.section {
         case OrderDetailInfoType.infoProduct.rawValue:
             let cell = tbDetail.dequeue(MyBuyImageCell.self, for: indexPath)
-            cell.order = self.order
+            cell.setData(order: self.order, isSaler: self.isSaler)
             cell.delegate = self
             return cell
         default:
@@ -114,9 +156,38 @@ extension MyBuyDetailViewController: UITableViewDelegate, UITableViewDataSource 
 extension MyBuyDetailViewController: MyBuyImageCellDelegate {
     func btnCancelTapped() {
         PopUpHelper.shared.showYesNoQuestionHaveAds(question: "Bạn chắc chắn muốn huỷ giao dịch", completionYes: {
-            self.presenter?.changedStatusOrder(status: OrderStatusKey.cancel, id: self.orderId)
+            self.presenter?.changedStatusOrder(status: OrderStatusKey.buyerCancel, id: self.orderId)
         }) {
             print("No")
         }
     }
+    
+    @IBAction func btnDoneTapped() {
+        self.presenter?.changedStatusOrder(status: OrderStatusKey.done, id: self.orderId)
+    }
+    
+    @IBAction func btnNotArrivedTapped() {
+        self.presenter?.changedStatusOrder(status: OrderStatusKey.orderNotYetArrived, id: self.orderId)
+    }
+    
+    @IBAction func btnRatingTapped() {
+        // fix me
+        PopUpHelper.shared.showMessageHaveAds(message: "Đang đợi API")
+    }
+    
+    @IBAction func btnRatingSalerTapped() {
+        // fix me
+        PopUpHelper.shared.showMessageHaveAds(message: "Đang đợi API")
+    }
+    
+    
+    @IBAction func btnSaleAcceptBuy() {
+        self.presenter?.changedStatusOrderSaler(status: OrderStatusKey.waitDelivery, id: self.orderId)
+    }
+    
+    @IBAction func btnSaleCancelBuy() {
+        // fix me
+        self.presenter?.changedStatusOrderSaler(status: OrderStatusKey.sellerCancel, id: self.orderId)
+    }
+    
 }
