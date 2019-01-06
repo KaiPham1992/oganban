@@ -14,6 +14,7 @@ enum CategoryEndPoint {
     case getCategoryMerge()
     case filterRecord(param: RecordParam)
     case getPositionRange()
+    case getCountRecordPosition(long: CGFloat, lat: CGFloat, radius: Int)
 }
 
 extension CategoryEndPoint: EndPointType {
@@ -29,12 +30,14 @@ extension CategoryEndPoint: EndPointType {
             return "_api/record/get_all_records_by_category"
         case .getPositionRange:
             return "_api/common/position_range"
+        case .getCountRecordPosition(let long, let lat, let radius):
+            return "_api/record/count_record_position"
         }
     }
     
     var httpMethod: HTTPMethod {
         switch self {
-        case .getCategory, .getCategoryChild, .getCategoryMerge, .filterRecord, .getPositionRange:
+        case .getCategory, .getCategoryChild, .getCategoryMerge, .filterRecord, .getPositionRange, .getCountRecordPosition:
             return .post
         }
     }
@@ -49,6 +52,10 @@ extension CategoryEndPoint: EndPointType {
             return param.toJSON()
         case .getPositionRange:
             return [:]
+        case .getCountRecordPosition(let long, let lat, let radius):
+            return ["longitude": long,
+                    "latitude": lat,
+                    "nearby_radius": radius]
         }
     }
     
