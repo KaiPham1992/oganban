@@ -18,7 +18,19 @@ class PostStepOneInteractor: PostStepOneInteractorInputProtocol {
         Provider.shared.categoryAPIService.getCategoryMerge(success: { (result) in
             self.presenter?.didGetCategoryMerge(list: result)
         }) { (error) in
-            
+            print("PostStepOneInteractor: \(String(describing: error?.message&))")
+        }
+    }
+    
+    func getExpireDate() {
+        ProgressView.shared.show()
+        Provider.shared.recordAPIService.getExpireDateRecord(success: { expireEntity in
+            guard let date = expireEntity?.expiredDate else { return }
+            DataManager.shared.maxDate = date
+            ProgressView.shared.hide()
+        }) { error in
+            ProgressView.shared.hide()
+            print("PostStepOneInteractor: \(String(describing: error?.message&))")
         }
     }
 }

@@ -86,6 +86,7 @@ class RecordEntity: BaseEntity {
     }
     
     var urlAvatar: URL? {
+        //
         return URL(string: "\(BASE_URL)\(self.cropImage&)")
     }
     
