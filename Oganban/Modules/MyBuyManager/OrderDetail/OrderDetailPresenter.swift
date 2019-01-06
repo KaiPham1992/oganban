@@ -28,7 +28,7 @@ class OrderDetailPresenter: OrderDetailPresenterProtocol {
         interactor?.getDetail(id: id)
     }
     
-    func hideRecord(recordID: Int) {
+    func hideRecord(recordID: String) {
         interactor?.hideRecord(recordID: recordID)
     }
 }

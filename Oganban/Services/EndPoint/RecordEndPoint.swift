@@ -12,9 +12,10 @@ import Alamofire
 enum RecordEndPoint {
     case getRecordSellerPost(status: String, offset: Int, limit: Int)
     case getRecordDetail(id: String)
-    case hideRecord(recordID: Int)
+    case hideRecord(recordID: String)
     case postRecord(param: PostRecordParam)
     case getExpirePostRecord()
+    case deleteRecord(recordID: String)
 }
 
 extension RecordEndPoint: EndPointType {
@@ -30,6 +31,8 @@ extension RecordEndPoint: EndPointType {
             return "_api/record/add_record"
         case .getExpirePostRecord:
             return "_api/record/expired_date_post_record"
+        case .deleteRecord:
+            return "_api/record/delete_record"
         }
     }
     
@@ -39,7 +42,7 @@ extension RecordEndPoint: EndPointType {
             return .post
         case .getRecordDetail:
             return .get
-        case .hideRecord:
+        case .hideRecord, .deleteRecord:
             return .put
         }
     }
@@ -58,6 +61,9 @@ extension RecordEndPoint: EndPointType {
             return param
         case .postRecord(let param):
             return param.toJSON()
+        case .deleteRecord(let recordID):
+            let param = ["record_id": recordID]
+            return param
         }
     }
     

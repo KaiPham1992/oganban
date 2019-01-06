@@ -10,6 +10,7 @@ import UIKit
 
 protocol OrderDetailImageCellDelegate: class {
     func btnHideTapped()
+    func btnDeleteTapped()
 }
 
 class OrderDetailImageCell: BaseTableCell {
@@ -86,8 +87,11 @@ class OrderDetailImageCell: BaseTableCell {
     }
     
     @IBAction func btnHideTapped() {
-        
-        delegate?.btnHideTapped()
+        if isMySellHide {
+            delegate?.btnDeleteTapped()
+        } else {
+            delegate?.btnHideTapped()
+        }
     }
     
 }

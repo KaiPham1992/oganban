@@ -24,7 +24,7 @@ class OrderDetailInteractor: OrderDetailInteractorInputProtocol {
         }
     }
     
-    func hideRecord(recordID: Int) {
+    func hideRecord(recordID: String) {
         Provider.shared.recordAPIService.hideRecord(recordID: recordID, success: { (data) in
             self.presenter?.didHideRecord(data: data)
         }) { (_) in

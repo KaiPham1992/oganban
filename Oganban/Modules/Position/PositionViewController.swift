@@ -18,7 +18,7 @@ protocol PositionViewControllerDelegate: class {
 }
 
 class PositionViewController: BaseViewController {
-
+    
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var lbTitleMarker: UILabel!
     @IBOutlet weak var vTitleMarker: UIView!
@@ -26,7 +26,7 @@ class PositionViewController: BaseViewController {
     @IBOutlet weak var vDropdown: UIView!
     @IBOutlet weak var lbScale: UILabel!
     
-	var presenter: PositionPresenterProtocol?
+    var presenter: PositionPresenterProtocol?
     var locationManager = CLLocationManager()
     var centerMapCoordinate:CLLocationCoordinate2D!
     var marker:GMSMarker!
@@ -34,19 +34,19 @@ class PositionViewController: BaseViewController {
     var dataSource: [PositionRangeEntity] = []
     var distance: PositionRangeEntity? {
         didSet {
-//            lbScale.text = distance?.title
+            //            lbScale.text = distance?.title
         }
     }
     weak var delegate: PositionViewControllerDelegate?
     let scaleDropdown = DropDown()
     
-	override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        self.distance = UserDefaultHelper.shared.radius
+        //        self.distance = UserDefaultHelper.shared.radius
     }
     
     override func setUpViews() {
@@ -76,16 +76,16 @@ class PositionViewController: BaseViewController {
             guard let `self` = self else { return }
             self.distance = self.dataSource[index]
             self.lbScale.text = item
-//            if  self.dataSource[index].title& == "Không giới hạn" {
-//                self.paramFilter.radius = ""
-//            } else {
-//                self.paramFilter.radius = self.dataSource[index].title&
-//            }
-//            self.presenter?.filterRecord(param: self.paramFilter)
+            //            if  self.dataSource[index].title& == "Không giới hạn" {
+            //                self.paramFilter.radius = ""
+            //            } else {
+            //                self.paramFilter.radius = self.dataSource[index].title&
+            //            }
+            //            self.presenter?.filterRecord(param: self.paramFilter)
         }
         scaleDropdown.dataSource = dataSource.map({$0.title&})
     }
-
+    
     override func setUpNavigation() {
         super.setUpNavigation()
         setTitleNavigation(title: "Chọn vị trí của bạn")
@@ -146,6 +146,9 @@ extension PositionViewController: GMSMapViewDelegate {
         print(position.target)
         let long = CGFloat(position.target.longitude)
         let lat = CGFloat(position.target.latitude)
+        getAddressFromLocation(pdblLatitude: lat, withLongitude: long)
+
+        
         guard let distance = self.distance, let radius = Int(distance.value&) else { return }
         presenter?.getCountRecord(long: long, lat: lat, radius: radius)
     }
@@ -153,14 +156,69 @@ extension PositionViewController: GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
         vTitleMarker.isHidden = true
     }
-
+    
     func placeMarkerOnCenter(centerMapCoordinate:CLLocationCoordinate2D) {
         if marker == nil {
             marker = GMSMarker()
         }
-
+        
         marker.position = centerMapCoordinate
         marker.map = self.mapView
+    }
+    
+    
+    func getAddressFromLocation(pdblLatitude: CGFloat, withLongitude pdblLongitude: CGFloat) {
+        var center : CLLocationCoordinate2D = CLLocationCoordinate2D()
+        let lat: Double = Double("\(pdblLatitude)")!
+        //21.228124
+        let lon: Double = Double("\(pdblLongitude)")!
+        //72.833770
+        let ceo: CLGeocoder = CLGeocoder()
+        center.latitude = lat
+        center.longitude = lon
+        
+        let loc: CLLocation = CLLocation(latitude:center.latitude, longitude: center.longitude)
+        
+        var addressString : String = ""
+        ceo.reverseGeocodeLocation(loc, completionHandler:
+            {(placemarks, error) in
+                if (error != nil)
+                {
+                    print("reverse geodcode fail: \(error!.localizedDescription)")
+                }
+                let pm = placemarks! as [CLPlacemark]
+                
+                if pm.count > 0 {
+                    let pm = placemarks![0]
+                    print(pm.country)
+                    print(pm.locality)
+                    print(pm.subLocality)
+                    print(pm.thoroughfare)
+                    print(pm.postalCode)
+                    print(pm.subThoroughfare)
+                    
+                    
+                    if pm.thoroughfare != nil {
+                        addressString = addressString + pm.thoroughfare! + ", "
+                    }
+                    
+                    if pm.subLocality != nil {
+                        addressString = addressString + pm.subLocality! + ", "
+                    }
+                    
+                    if pm.locality != nil {
+                        addressString = addressString + pm.locality! + ", "
+                    }
+                    if pm.country != nil {
+                        addressString = addressString + pm.country! + ", "
+                    }
+                    if pm.postalCode != nil {
+                        addressString = addressString + pm.postalCode! + " "
+                    }
+                    print(addressString)
+                    self.tfAddress.text = addressString
+                }
+        })
     }
 }
 

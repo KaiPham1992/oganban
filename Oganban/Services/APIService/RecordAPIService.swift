@@ -11,9 +11,11 @@ import Foundation
 protocol RecordAPIServiceProtocol {
     func getRecordSellerPost(status: String, offset: Int, limit: Int, success: @escaping SuccessHandler<BaseRecordEntity>.object, failure: @escaping RequestFailure)
     func getRecordDetail(id: String, success: @escaping SuccessHandler<RecordEntity>.object, failure: @escaping RequestFailure)
-    func hideRecord(recordID: Int, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
+    func hideRecord(recordID: String, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
     func postRecord(param: PostRecordParam, success: @escaping SuccessHandler<RecordEntity>.object, failure: @escaping RequestFailure)
     func getExpireDateRecord(success: @escaping SuccessHandler<ExpirePostEntity>.object, failure: @escaping RequestFailure)
+    func deleteRecord(recordID: String, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
+
     
 }
 
@@ -35,7 +37,7 @@ class RecordAPIService: RecordAPIServiceProtocol {
         network.requestData(endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
     }
     
-    func hideRecord(recordID: Int, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure) {
+    func hideRecord(recordID: String, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure) {
         let endPoint = RecordEndPoint.hideRecord(recordID: recordID)
         network.requestData(endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
     }
@@ -50,4 +52,8 @@ class RecordAPIService: RecordAPIServiceProtocol {
         network.requestData(endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
     }
     
+    func deleteRecord(recordID: String, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure) {
+        let endPoint = RecordEndPoint.deleteRecord(recordID: recordID)
+        network.requestData(endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
+    }
 }

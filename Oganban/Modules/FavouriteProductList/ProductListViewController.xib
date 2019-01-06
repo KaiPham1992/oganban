@@ -8,9 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Roboto-Bold.ttf">
-            <string>Roboto-Bold</string>
-        </array>
         <array key="Roboto-Regular.ttf">
             <string>Roboto-Regular</string>
         </array>
@@ -20,6 +17,9 @@
             <connections>
                 <outlet property="cvProduct" destination="19p-Ro-boZ" id="YS0-QK-Wzs"/>
                 <outlet property="imgAvatar" destination="MTm-Au-ens" id="pxC-dQ-XBO"/>
+                <outlet property="lbName" destination="aqe-Bl-Slv" id="SzD-f5-dbP"/>
+                <outlet property="lbRating" destination="bQe-dD-eBI" id="bYB-In-J5L"/>
+                <outlet property="vLevel" destination="fKt-jW-STO" id="LNg-zV-cwv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -39,49 +39,51 @@
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tran Thi My Ngoc" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqe-Bl-Slv">
-                            <rect key="frame" x="53" y="17" width="94.5" height="14"/>
+                            <rect key="frame" x="53" y="17" width="95.5" height="16"/>
                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                             <color key="textColor" red="0.76862745099999996" green="0.0078431372550000003" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dimond" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWI-sS-A9X">
-                            <rect key="frame" x="53" y="33" width="39" height="13"/>
-                            <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="11"/>
-                            <color key="textColor" red="0.0" green="0.53333333329999999" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQe-dD-eBI">
-                            <rect key="frame" x="336.5" y="14" width="18.5" height="15.5"/>
+                            <rect key="frame" x="336.5" y="14" width="18.5" height="17.5"/>
                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
                             <color key="textColor" red="0.25490196079999999" green="0.25490196079999999" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_heart" translatesAutoresizingMaskIntoConstraints="NO" id="DCb-0b-Np6">
-                            <rect key="frame" x="311.5" y="34.5" width="15" height="15"/>
+                            <rect key="frame" x="311.5" y="36.5" width="15" height="15"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="co7-lr-lg5">
-                            <rect key="frame" x="338.5" y="34.5" width="15" height="15"/>
+                            <rect key="frame" x="338.5" y="36.5" width="15" height="15"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="co7-lr-lg5" secondAttribute="height" multiplier="1:1" id="DtI-30-Oh8"/>
                                 <constraint firstAttribute="width" constant="15" id="l4o-Pp-1bX"/>
                             </constraints>
                         </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fKt-jW-STO" customClass="LevelMemberView" customModule="Oganban" customModuleProvider="target">
+                            <rect key="frame" x="53" y="33" width="70" height="20"/>
+                            <color key="backgroundColor" red="0.93041235208511353" green="0.88607805967330933" blue="0.8897286057472229" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="YYz-E9-OA1"/>
+                                <constraint firstAttribute="width" constant="70" id="e6U-Pl-mhi"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" red="0.93041235208511353" green="0.88607805967330933" blue="0.8897286057472229" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="bQe-dD-eBI" secondAttribute="trailing" constant="20" id="7sC-35-aWY"/>
                         <constraint firstItem="MTm-Au-ens" firstAttribute="leading" secondItem="13P-MF-kH1" secondAttribute="leading" constant="15" id="DPy-5w-VPZ"/>
-                        <constraint firstItem="LWI-sS-A9X" firstAttribute="top" secondItem="aqe-Bl-Slv" secondAttribute="bottom" constant="2" id="Fz0-6F-1Tq"/>
                         <constraint firstItem="DCb-0b-Np6" firstAttribute="height" secondItem="co7-lr-lg5" secondAttribute="height" id="Hvn-5Z-D86"/>
                         <constraint firstItem="aqe-Bl-Slv" firstAttribute="leading" secondItem="MTm-Au-ens" secondAttribute="trailing" constant="10" id="UV1-c3-iNk"/>
                         <constraint firstItem="MTm-Au-ens" firstAttribute="centerY" secondItem="13P-MF-kH1" secondAttribute="centerY" id="aTs-b8-1CU"/>
                         <constraint firstItem="co7-lr-lg5" firstAttribute="centerX" secondItem="bQe-dD-eBI" secondAttribute="centerX" id="ctK-WJ-e3B"/>
                         <constraint firstItem="co7-lr-lg5" firstAttribute="top" secondItem="bQe-dD-eBI" secondAttribute="bottom" constant="5" id="gUR-AQ-ZE1"/>
-                        <constraint firstItem="LWI-sS-A9X" firstAttribute="leading" secondItem="aqe-Bl-Slv" secondAttribute="leading" id="kHC-BL-AzV"/>
                         <constraint firstItem="bQe-dD-eBI" firstAttribute="top" secondItem="13P-MF-kH1" secondAttribute="top" constant="14" id="o9p-hN-G6D"/>
+                        <constraint firstItem="fKt-jW-STO" firstAttribute="top" secondItem="aqe-Bl-Slv" secondAttribute="bottom" id="peE-5Z-4kb"/>
                         <constraint firstItem="DCb-0b-Np6" firstAttribute="top" secondItem="co7-lr-lg5" secondAttribute="top" id="q5w-ss-xr5"/>
                         <constraint firstItem="co7-lr-lg5" firstAttribute="leading" secondItem="DCb-0b-Np6" secondAttribute="trailing" constant="12" id="s8r-iK-iv8"/>
                         <constraint firstAttribute="height" constant="62" id="sZL-AX-2iM"/>
+                        <constraint firstItem="fKt-jW-STO" firstAttribute="leading" secondItem="aqe-Bl-Slv" secondAttribute="leading" id="taa-fa-BNa"/>
                         <constraint firstItem="aqe-Bl-Slv" firstAttribute="top" secondItem="MTm-Au-ens" secondAttribute="top" id="wKk-Cu-s1f"/>
                         <constraint firstItem="DCb-0b-Np6" firstAttribute="width" secondItem="co7-lr-lg5" secondAttribute="width" id="yle-Hz-2eS"/>
                     </constraints>
