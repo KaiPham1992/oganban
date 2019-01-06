@@ -42,26 +42,22 @@ class MoreHeaderCell: UITableViewCell {
             lbName.font = AppFont.fontBoldRoboto15
             lbName.textColor = AppColor.blue_0_136_241
             lbName.text = MoreTitle.loginSignup
-            
         }
     }
     
     func showData(user: UserEntity) {
         lbName.text = user.fullName
-        lbPhone.text = user.phone
-        vLevel.setLevel(level: user.level&, isPro: user.isPro)
         
-        if let urlString = user.imgCropSrc, let url = URL(string: BASE_URL_IMAGE + urlString) {
-            ivAvatar.sd_setImage(with: url , placeholderImage: AppImage.imgDefaultUser)
-        } else if let urlString = user.socialImage, let url = URL(string: urlString) {
-            ivAvatar.sd_setImage(with: url , placeholderImage: AppImage.imgDefaultUser)
+        if let phoneCode = user.phoneCode, let phone = user.phone {
+            lbPhone.text = phoneCode + phone
         }
         
-        let num: Double = 30005.12
-        let numString = String(num)
-        
-        if let coin = numString.addComma() {
+        vLevel.setLevel(level: user.level&, isPro: user.isPro)
+        ivAvatar.sd_setImage(with: user.urlAvatar , placeholderImage: AppImage.imgDefaultUser)
+        if let _coin = user.coin, let coin = String(_coin).addComma() {
             lbCoinTotal.text = "Tổng ƠCoin tích luỹ: " + coin  + " ơ"
+        } else {
+            lbCoinTotal.text = "Tổng ƠCoin tích luỹ: 0 ơ"
         }
     }
 }

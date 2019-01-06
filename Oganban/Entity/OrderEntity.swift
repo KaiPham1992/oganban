@@ -14,8 +14,8 @@ struct OrderEntity: Mappable {
     var id: String?
     var status: String?
     var paymentType: String?
-    var totalPrice: String?
-    var salePrice: String?
+    var totalPrice: Int?
+    var salePrice: Int?
     var quantity: String?
     var accountID: String?
     var fullName: String?
@@ -29,8 +29,8 @@ struct OrderEntity: Mappable {
     var avgRating: String?
     var level: String?
     var imgSrc: String?
-    var totalCoin: String?
-    var coin: String?
+    var totalCoin: Int?
+    var coin: Int?
     
     init?(map: Map) {
     }

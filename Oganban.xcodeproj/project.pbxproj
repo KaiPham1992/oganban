@@ -226,6 +226,12 @@
 		CBBB3DF721D5C74400281ABB /* ChangePasswordProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBB3DF121D5C74400281ABB /* ChangePasswordProtocols.swift */; };
 		CBBB3DF821D5C74400281ABB /* ChangePasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBB3DF221D5C74400281ABB /* ChangePasswordInteractor.swift */; };
 		CBBB3DF921D5C74400281ABB /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBBB3DF321D5C74400281ABB /* ChangePasswordViewController.xib */; };
+		CBC8F11121E1B61000F88D4F /* MyExchangeDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC8F10B21E1B61000F88D4F /* MyExchangeDetailPresenter.swift */; };
+		CBC8F11221E1B61000F88D4F /* MyExchangeDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC8F10C21E1B61000F88D4F /* MyExchangeDetailRouter.swift */; };
+		CBC8F11321E1B61000F88D4F /* MyExchangeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC8F10D21E1B61000F88D4F /* MyExchangeDetailViewController.swift */; };
+		CBC8F11421E1B61000F88D4F /* MyExchangeDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC8F10E21E1B61000F88D4F /* MyExchangeDetailProtocols.swift */; };
+		CBC8F11521E1B61000F88D4F /* MyExchangeDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC8F10F21E1B61000F88D4F /* MyExchangeDetailInteractor.swift */; };
+		CBC8F11621E1B61000F88D4F /* MyExchangeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBC8F11021E1B61000F88D4F /* MyExchangeDetailViewController.xib */; };
 		CBD1C28821D73088006DB3FF /* MyBuyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD1C28621D73087006DB3FF /* MyBuyCell.xib */; };
 		CBD1C28921D73088006DB3FF /* MyBuyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C28721D73087006DB3FF /* MyBuyCell.swift */; };
 		CBD1C28D21D73096006DB3FF /* ProductMyBuyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD1C28B21D73096006DB3FF /* ProductMyBuyView.xib */; };
@@ -667,6 +673,12 @@
 		CBBB3DF121D5C74400281ABB /* ChangePasswordProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordProtocols.swift; sourceTree = "<group>"; };
 		CBBB3DF221D5C74400281ABB /* ChangePasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordInteractor.swift; sourceTree = "<group>"; };
 		CBBB3DF321D5C74400281ABB /* ChangePasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangePasswordViewController.xib; sourceTree = "<group>"; };
+		CBC8F10B21E1B61000F88D4F /* MyExchangeDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExchangeDetailPresenter.swift; sourceTree = "<group>"; };
+		CBC8F10C21E1B61000F88D4F /* MyExchangeDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExchangeDetailRouter.swift; sourceTree = "<group>"; };
+		CBC8F10D21E1B61000F88D4F /* MyExchangeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExchangeDetailViewController.swift; sourceTree = "<group>"; };
+		CBC8F10E21E1B61000F88D4F /* MyExchangeDetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExchangeDetailProtocols.swift; sourceTree = "<group>"; };
+		CBC8F10F21E1B61000F88D4F /* MyExchangeDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExchangeDetailInteractor.swift; sourceTree = "<group>"; };
+		CBC8F11021E1B61000F88D4F /* MyExchangeDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyExchangeDetailViewController.xib; sourceTree = "<group>"; };
 		CBD1C28621D73087006DB3FF /* MyBuyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyBuyCell.xib; sourceTree = "<group>"; };
 		CBD1C28721D73087006DB3FF /* MyBuyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBuyCell.swift; sourceTree = "<group>"; };
 		CBD1C28B21D73096006DB3FF /* ProductMyBuyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductMyBuyView.xib; sourceTree = "<group>"; };
@@ -1624,6 +1636,19 @@
 			path = Oganban;
 			sourceTree = "<group>";
 		};
+		CBB489BD21E1B3160043C127 /* MyExchangeDetail */ = {
+			isa = PBXGroup;
+			children = (
+				CBC8F10B21E1B61000F88D4F /* MyExchangeDetailPresenter.swift */,
+				CBC8F10C21E1B61000F88D4F /* MyExchangeDetailRouter.swift */,
+				CBC8F10D21E1B61000F88D4F /* MyExchangeDetailViewController.swift */,
+				CBC8F10E21E1B61000F88D4F /* MyExchangeDetailProtocols.swift */,
+				CBC8F10F21E1B61000F88D4F /* MyExchangeDetailInteractor.swift */,
+				CBC8F11021E1B61000F88D4F /* MyExchangeDetailViewController.xib */,
+			);
+			path = MyExchangeDetail;
+			sourceTree = "<group>";
+		};
 		CBBB3DED21D5C72200281ABB /* ChangePassword */ = {
 			isa = PBXGroup;
 			children = (
@@ -1705,6 +1730,7 @@
 		CBD1C2B321D75B86006DB3FF /* MyExchange */ = {
 			isa = PBXGroup;
 			children = (
+				CBB489BD21E1B3160043C127 /* MyExchangeDetail */,
 				CBD1C2B421D75BA5006DB3FF /* MyExchangePresenter.swift */,
 				CBD1C2B521D75BA5006DB3FF /* MyExchangeRouter.swift */,
 				CBD1C2B621D75BA5006DB3FF /* MyExchangeViewController.swift */,
@@ -2386,6 +2412,7 @@
 				B36AEEC921CDF47A00BED43C /* AdmobCell.xib in Resources */,
 				84ABC68C21CFF06700E0D202 /* UpdateProfileViewController.xib in Resources */,
 				84329F4A21DFD92F00047B5E /* FavouriteViewController.xib in Resources */,
+				CBC8F11621E1B61000F88D4F /* MyExchangeDetailViewController.xib in Resources */,
 				84421BFB21CBEF1E00F468F5 /* MoreCell.xib in Resources */,
 				84487C8821CB7EA0008B25B2 /* Roboto-Bold.ttf in Resources */,
 				DE442C5621CFB7570051C0B8 /* SubCommentCell.xib in Resources */,
@@ -2637,6 +2664,7 @@
 				DE33035E21DF5EDB00409F83 /* PostStepTwoPresenter.swift in Sources */,
 				B355EF4F21C8EB3F00379F57 /* HomePresenter.swift in Sources */,
 				84A92BF921CA555900148191 /* LoginProtocols.swift in Sources */,
+				CBC8F11221E1B61000F88D4F /* MyExchangeDetailRouter.swift in Sources */,
 				DE21826721CD473100FDD9F1 /* KActivityIndicatorAnimationBallRotateChase.swift in Sources */,
 				84421C0921CBF52900F468F5 /* SupplementaryInfoViewController.swift in Sources */,
 				CB172C9721C6A2EF0068CF92 /* Enum.swift in Sources */,
@@ -2730,6 +2758,7 @@
 				DE442C6B21CFC1BD0051C0B8 /* ReplyCommentCell.swift in Sources */,
 				DE21829121CD4E7F00FDD9F1 /* AppTextFiled.swift in Sources */,
 				B35F529821D276A000D3FA30 /* SignUpParam.swift in Sources */,
+				CBC8F11321E1B61000F88D4F /* MyExchangeDetailViewController.swift in Sources */,
 				CB0C3A2621D3BECD0052DD91 /* ForgotPasswordProtocols.swift in Sources */,
 				DE21827A21CD473100FDD9F1 /* KActivityIndicatorAnimationCubeTransition.swift in Sources */,
 				CBD1C2A821D74DA6006DB3FF /* MySellingPresenter.swift in Sources */,
@@ -2763,6 +2792,7 @@
 				CB172C1421C6A2EF0068CF92 /* UIView+extension.swift in Sources */,
 				CBD1C2A921D74DA6006DB3FF /* MySellingRouter.swift in Sources */,
 				DE0DBAE421D3B6DA0097E38F /* NotificationProtocols.swift in Sources */,
+				CBC8F11521E1B61000F88D4F /* MyExchangeDetailInteractor.swift in Sources */,
 				DE21826921CD473100FDD9F1 /* KActivityIndicatorAnimationBallScale.swift in Sources */,
 				DE21826F21CD473100FDD9F1 /* KActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
 				CBD1C28E21D73096006DB3FF /* ProductMyBuyView.swift in Sources */,
@@ -2828,6 +2858,7 @@
 				DE0DBAF121D3BA460097E38F /* NotificationEndPoint.swift in Sources */,
 				CB172C9C21C6A2EF0068CF92 /* BaseTableCell.swift in Sources */,
 				84ABC68D21CFF06700E0D202 /* UpdateProfileInteractor.swift in Sources */,
+				CBC8F11421E1B61000F88D4F /* MyExchangeDetailProtocols.swift in Sources */,
 				CB172C9E21C6A2EF0068CF92 /* BaseView.swift in Sources */,
 				B392FB3721D3B0170076A7B5 /* CategoryEndPoint.swift in Sources */,
 				CBBB3DF721D5C74400281ABB /* ChangePasswordProtocols.swift in Sources */,
@@ -2841,6 +2872,7 @@
 				CB172C2421C6A2EF0068CF92 /* LanguageHelper.swift in Sources */,
 				DE21826321CD473100FDD9F1 /* KActivityIndicatorAnimationBallGridBeat.swift in Sources */,
 				DE21826621CD473100FDD9F1 /* KActivityIndicatorAnimationPacman.swift in Sources */,
+				CBC8F11121E1B61000F88D4F /* MyExchangeDetailPresenter.swift in Sources */,
 				DEC5166C21CE986400A17CBF /* AdmobBannerView.swift in Sources */,
 				DE21828621CD473100FDD9F1 /* KActivityIndicatorAnimationDelegate.swift in Sources */,
 				DE21822321CD432300FDD9F1 /* Login+VerifyOTP.swift in Sources */,

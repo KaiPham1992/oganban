@@ -17,5 +17,6 @@ class DataManager {
     static let shared = DataManager()
     
     var tempToken: String = ""
+    var maxDate: Date = Date()
     
 }

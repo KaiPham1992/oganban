@@ -11,7 +11,7 @@ import UIKit
 extension PostStepOneViewController {
     // FIX ME
     func validInput() -> Bool {
-        if category == nil {
+        if categoryId == nil {
             errorMessage = "Chọn danh mục để đăng tin"
             return false
         }

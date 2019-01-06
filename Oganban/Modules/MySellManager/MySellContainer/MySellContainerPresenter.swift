@@ -29,4 +29,8 @@ class MySellContainerPresenter: MySellContainerPresenterProtocol, MySellContaine
     func gotoMySellExpired() {
         router.gotoMySellExpired()
     }
+    
+    func gotoPostRecord() {
+        router.gotoPostRecord()
+    }
 }

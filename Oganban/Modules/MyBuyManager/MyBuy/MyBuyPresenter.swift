@@ -10,7 +10,7 @@
 
 import UIKit
 
-class MyBuyPresenter: MyBuyPresenterProtocol, MyBuyInteractorOutputProtocol {
+class MyBuyPresenter: MyBuyPresenterProtocol {
 
     weak private var view: MyBuyViewProtocol?
     var interactor: MyBuyInteractorInputProtocol?
@@ -22,4 +22,13 @@ class MyBuyPresenter: MyBuyPresenterProtocol, MyBuyInteractorOutputProtocol {
         self.router = router
     }
 
+    func getHistoryOrder(status: String, offset: Int, limit: Int) {
+        interactor?.getHistoryOrder(status: status, offset: offset, limit: limit)
+    }
+}
+
+extension MyBuyPresenter: MyBuyInteractorOutputProtocol {
+    func didGetHistoryOrder(data: BaseOrderEntity?) {
+        view?.didGetHistoryOrder(data: data)
+    }
 }

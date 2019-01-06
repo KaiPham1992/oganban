@@ -23,6 +23,12 @@ class MyBuyViewController: BaseViewController {
 
     let dropDownStatus = DropDown()
     
+    var dataOrder: BaseOrderEntity? {
+        didSet {
+            tbMyBuy.reloadData()
+        }
+    }
+    
 	override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -99,13 +105,14 @@ extension MyBuyViewController: UITableViewDataSource, UITableViewDelegate {
         return 140
     }
     
-    // FIX ME
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = PostStepOneRouter.createModule()
-        self.push(controller: vc)
+    
     }
 }
 
 extension MyBuyViewController: MyBuyViewProtocol {
-    
+    func didGetHistoryOrder(data: BaseOrderEntity?) {
+        self.dataOrder = data
+    }
 }

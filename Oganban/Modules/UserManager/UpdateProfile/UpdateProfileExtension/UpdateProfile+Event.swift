@@ -33,6 +33,9 @@ extension UpdateProfileViewController {
     
     @IBAction func tapShareButton(_ sender: UIButton) {
         print("TAP SHARE BUTTON")
+        if let user = UserDefaultHelper.shared.loginUserInfo, let codeIntro = user.codeIntro{
+            ShareNativeHelper.shared.showShare(controller: self, items: [codeIntro])
+        }
     }
     
     func tapSaveButton(){
@@ -42,7 +45,7 @@ extension UpdateProfileViewController {
                 guard let _ = self.tfUsername.tfContent.text,
                     let displayName = self.tfDisplayName.tfContent.text,
                     let phone =  self.tvPhone.tfPhone.text,
-                    let phoneCode = self.countryPhoneCode.code?.lowercased(),
+                    let dialCode = self.countryPhoneCode.dialCode,
                     let birthDay =  self.birthDay?.toString(dateFormat: AppDateFormat.yyyyMMdd) else {
                     return
                 }
@@ -58,8 +61,15 @@ extension UpdateProfileViewController {
                     gender = "other"
                 }
                 
-                self.user = UserEntity(displayName: displayName, phoneNumber: phone, phoneCode: phoneCode, birthday: birthDay, gender: gender, houseAddress: self.tfAddress1.tfContent.text, companyAddress: self.tfAddress2.tfContent.text)
-                self.fbAccountKit.verifyPhone()
+                self.user = UserEntity(displayName: displayName, phoneNumber: phone, phoneCode: dialCode, birthday: birthDay, gender: gender, houseAddress: self.tfAddress1.tfContent.text, companyAddress: self.tfAddress2.tfContent.text)
+                
+                if let oldUserInfo = UserDefaultHelper.shared.loginUserInfo, let newUserInfo = self.user {
+                    if phone != oldUserInfo.phone || dialCode.range(of:oldUserInfo.phoneCode ?? "nil") == nil {
+                        self.fbAccountKit.verifyPhone()
+                    } else {
+                         self.presenter?.updateProfile(userInfo: newUserInfo)
+                    }
+                }
                 
             } else {
                 print("Update Error")
@@ -94,7 +104,9 @@ extension UpdateProfileViewController {
 extension UpdateProfileViewController: UpdateProfileViewProtocol{
     func didSuccessUpdateProfile(user: UserEntity?) {
         if let _ = user {
-            PopUpHelper.shared.showMessageHaveAds(message: "Lưu thay đổi thành công")
+            PopUpHelper.shared.showMessageHaveAds(message: "Lưu thay đổi thành công") {
+                self.pop()
+            }
         }
     }
     

@@ -80,15 +80,21 @@ class UpdateProfileViewController: BaseViewController {
     
     func setDefaultData(){
         if let user = UserDefaultHelper.shared.loginUserInfo {
-            if let countRating = user.countRating{
+            if let countRating = user.countRating, countRating != "" {
                 lbRateCount.text = countRating + " đánh giá"
+            } else {
+                lbRateCount.text = "0 đánh giá"
             }
+            
             if let pointRatingAvg = user.pointRatingAvg, let pointRating = Float(pointRatingAvg) {
                 lbRating.text =  String(format: "%.1f", pointRating)
+            } else {
+                lbRating.text =  String(format: "%.1f", 0)
             }
-            if let urlString = user.imgCropSrc, let url = URL(string: BASE_URL_IMAGE + urlString) {
-                imgAvatar.sd_setImage(with: url , placeholderImage: AppImage.imgDefaultUser)
-            }
+        
+            imgAvatar.sd_setImage(with: user.urlAvatar , placeholderImage: AppImage.imgDefaultUser)
+            
+
             
             if let email = user.email {
                 tfUsername.tfContent.text = email
@@ -124,8 +130,9 @@ class UpdateProfileViewController: BaseViewController {
                 tvPhone.tfPhone.text = phone
             }
            
-            if let phoneCode = user.phoneCode {
-                tvPhone.lbCountryCode.text = phoneCode
+            if let dialCode = user.phoneCode, let countryCode = getCountryCodeFromDialCode(dialCode: dialCode) {
+                self.countryPhoneCode =  countryCode
+                tvPhone.lbCountryCode.text = dialCode
             }
             
             if let birthday = user.birthday {
@@ -159,6 +166,15 @@ class UpdateProfileViewController: BaseViewController {
             }
         }
         return ""
+    }
+    
+    func getCountryCodeFromDialCode(dialCode: String) -> CountryCodeEntity? {
+        for item in tvPhone.listCode {
+            if let code = item.dialCode, code.range(of:dialCode) != nil {
+                return item
+            }
+        }
+        return nil
     }
     
     func getBirthday(birthDay: String) -> String? {
