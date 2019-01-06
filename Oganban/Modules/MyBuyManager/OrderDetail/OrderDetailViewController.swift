@@ -46,7 +46,8 @@ class OrderDetailViewController: BaseViewController {
     }
     
     var recordId: String?
-    var listHeader = ["Chi tiết", "Giới thiệu","Thông tin người bán", "Địa chỉ", "Bình Luận"]
+    
+    var listHeader = ["Chi tiết", "Giới thiệu","Thông tin người bán", "Địa chỉ gợi ý để giao dịch", "Bình Luận"]
     
     var listComment = [CommentEntity]()
     

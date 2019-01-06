@@ -227,7 +227,7 @@ extension SignUpViewController: FTextFieldChooseDelegate {
 
 extension SignUpViewController: SignUpViewProtocol {
     func didVerifyPhone(response: BaseResponse?) {
-        self.pop()
+        self.navigationController?.dismiss()
     }
     
     func didVerifyPhone(error: APIError?) {

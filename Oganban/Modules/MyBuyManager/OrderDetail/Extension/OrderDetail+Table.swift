@@ -35,6 +35,11 @@ extension OrderDetailViewController: UITableViewDelegate, UITableViewDataSource 
         switch indexPath.section {
         case OrderDetailInfoType.infoProduct.rawValue:
             let cell = tbDetail.dequeue(OrderDetailImageCell.self, for: indexPath)
+            if isMySellExpired || isMySellHide {
+                cell.btnCancel.isHidden = false
+                cell.btnHide.setAttributed(title: "Xoá bài đăng", color: AppColor.gray_158_158_158, font: AppFont.fontRegular13, isUnderLine: true)
+                cell.btnCancel.setAttributed(title: "Sao chép tin", color: AppColor.gray_158_158_158, font: AppFont.fontRegular13, isUnderLine: true)
+            }
             cell.delegate = self
             cell.record = self.record
             return cell

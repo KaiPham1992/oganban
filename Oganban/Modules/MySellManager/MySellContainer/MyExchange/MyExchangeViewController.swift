@@ -28,6 +28,7 @@ class MyExchangeViewController: BaseViewController {
     @IBOutlet weak var tbMyExchange: UITableView!
     @IBOutlet weak var vRecordExchange: UIView!
     @IBOutlet weak var lbStatusExchange: UILabel!
+    @IBOutlet weak var lbTextTotal: UILabel!
     @IBOutlet weak var lbTotal: UILabel!
     @IBOutlet weak var vDropDownStatus: UIView!
     @IBOutlet weak var vCheckLogin: UIView!
@@ -64,6 +65,7 @@ class MyExchangeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        getData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -72,18 +74,18 @@ class MyExchangeViewController: BaseViewController {
     }
     
     func setupView() {
-                
+        
         configTableView()
         setupDropDownStatus()
-        getData()
+        
         btnLogin.setBorderWithCornerRadius(borderWidth: 0, borderColor: .clear, cornerRadius: 20)
-
+        
     }
     
     func checkLogin() {
         if UserDefaultHelper.shared.isLoggedIn {
             vCheckLogin.isHidden = true
-            getData()
+//            getData()
         } else {
             vCheckLogin.isHidden = false
         }
@@ -95,25 +97,8 @@ class MyExchangeViewController: BaseViewController {
     }
     
     func setStatusType() {
-        if (listData?.dataOrder.count)! > 0 {
-            if let status = listData?.dataOrder[0].status, let countOrder = listData?.countOrder {
-                switch  status  {
-                case StatusType.new.rawValue:
-                    self.lbTotal.text = "Tổng đơn hàng đang chờ duyệt: \(countOrder)"
-                case StatusType.wait_delivery.rawValue:
-                    self.lbTotal.text = "Tổng đơn hàng đang giao: \(countOrder)"
-                case StatusType.done.rawValue:
-                    self.lbTotal.text = "Tổng đơn hàng đã hoàn tất: \(countOrder)"
-                case StatusType.cancel.rawValue:
-                    self.lbTotal.text = "Tổng đơn hàng đã huỷ: \(countOrder)"
-                case StatusType.all.rawValue:
-                    self.lbTotal.text = "Tất cả các đơn hàng: \(countOrder)"
-                default:
-                    self.lbTotal.text = "Tổng đơn hàng: 0"
-                }
-            }
-        }
-        
+        guard let countOrder = listData?.countOrder else { return }
+        lbTotal.text = "\(countOrder)"
     }
     
     func configTableView() {
@@ -123,7 +108,7 @@ class MyExchangeViewController: BaseViewController {
         tbMyExchange.registerTableCell(MyBuyCell.self)
         
         tbMyExchange.contentInset.bottom = 10
-        //        tbMyExchange.separatorStyle = .none
+        tbMyExchange.separatorStyle = .none
         tbMyExchange.tableFooterView = UIView()
     }
     
@@ -145,19 +130,19 @@ class MyExchangeViewController: BaseViewController {
             switch item {
             case "Chờ duyệt":
                 self.presenter?.getTransactionSeller(status: StatusType.new.rawValue, limit: 10, offset: 0)
-                self.lbTotal.text = "Tổng đơn hàng đang chờ duyệt: 0"
+                self.lbTextTotal.text = "Tổng đơn hàng đang chờ duyệt: "
             case "Đang giao":
                 self.presenter?.getTransactionSeller(status: StatusType.wait_delivery.rawValue, limit: 10, offset: 0)
-                self.lbTotal.text = "Tổng đơn hàng đang giao: 0"
+                self.lbTextTotal.text = "Tổng đơn hàng đang giao: "
             case "Hoàn Tất":
                 self.presenter?.getTransactionSeller(status: StatusType.done.rawValue, limit: 10, offset: 0)
-                self.lbTotal.text = "Tổng đơn hàng đã hoàn tất: 0"
+                self.lbTextTotal.text = "Tổng đơn hàng đã hoàn tất: "
             case "Đã huỷ":
                 self.presenter?.getTransactionSeller(status: StatusType.cancel.rawValue, limit: 10, offset: 0)
-                self.lbTotal.text = "Tổng đơn hàng đã huỷ: 0"
+                self.lbTextTotal.text = "Tổng đơn hàng đã huỷ: "
             case "Tất cả":
                 self.presenter?.getTransactionSeller(status: StatusType.all.rawValue, limit: 10, offset: 0)
-                self.lbTotal.text = "Tổng tất cả đơn hàng: 0"
+                self.lbTextTotal.text = "Tổng tất cả đơn hàng: "
                 self.isAllOrder = true
             default:
                 break

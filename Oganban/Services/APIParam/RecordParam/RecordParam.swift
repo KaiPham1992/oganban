@@ -13,6 +13,7 @@ class RecordParam: BaseParam {
     var long        : String?
     var lat         : String?
     var isSave      : String?
+    var isParent    : String?
     var keyword      : String?
     var radius      : String?
     var offset      : Int?
@@ -25,6 +26,7 @@ class RecordParam: BaseParam {
         self.long           <- map["longitude"]
         self.lat            <- map["latitude"]
         self.isSave         <- map["is_save"]
+        self.isParent       <- map["is_parent"]
         self.keyword        <- map["keyword"]
         self.radius         <- map["nearby_radius"]
         self.offset         <- map["offset"]
@@ -35,6 +37,7 @@ class RecordParam: BaseParam {
          long       : String? = nil,
          lat        : String? = nil,
          isSave     : String? = nil,
+         isParent   : String? = nil,
          keyword    : String? = nil,
          radius     : String? = nil,
          offset     : Int? = 0,
@@ -44,6 +47,7 @@ class RecordParam: BaseParam {
         self.long               = long
         self.lat                = lat
         self.isSave             = isSave
+        self.isParent           = isParent
         self.keyword            = keyword
         self.radius             = radius
         self.offset             = offset

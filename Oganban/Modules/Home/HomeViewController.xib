@@ -421,7 +421,7 @@
     <resources>
         <image name="ic_arrowdown" width="10" height="5.5"/>
         <image name="ic_arrowdown-1" width="10" height="5.5"/>
-        <image name="ic_heart" width="27" height="25"/>
+        <image name="ic_heart" width="25" height="23.5"/>
         <image name="ic_location" width="10.5" height="14"/>
         <image name="ic_menu" width="12" height="11"/>
         <image name="ic_search" width="12" height="12"/>
