@@ -39,7 +39,7 @@ class RecordSellingView: BaseViewXib {
                 lbTotal.textColor = AppColor.red_233_1_1
             } else if _record.status == "hide" {
                 lbTotal.text = "Tin đã ẩn"
-                lbTotal.backgroundColor = AppColor.yellow_288_251_30
+                lbTotal.backgroundColor = AppColor.yellow_228_251_30
                 lbTotal.textColor = AppColor.red_233_1_1
             } else {
                 let qty = _record.quantity

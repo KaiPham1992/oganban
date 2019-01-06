@@ -11,6 +11,14 @@
 import UIKit
 import DropDown
 
+enum StatusType: String {
+    case new = "new"
+    case wait_delivery = "wait_delivery"
+    case done = "done"
+    case cancel = "cancel"
+    case all = "all"
+}
+
 protocol MyExchangeViewControllerDelegate: class {
     func gotoLogin()
 }
@@ -29,6 +37,8 @@ class MyExchangeViewController: BaseViewController {
     let dropDownStatus = DropDown()
     var parrentNavigation: UINavigationController?
     
+    var isAllOrder: Bool = false
+    
     var listData: BaseOrderEntity? {
         didSet {
             tbMyExchange.reloadData()
@@ -37,11 +47,14 @@ class MyExchangeViewController: BaseViewController {
                 if count == 0 {
                     tbMyExchange.isHidden = true
                     showNoData()
+                    setStatusType()
                 } else {
                     tbMyExchange.isHidden = false
                     hideNoData()
                     setupDropDownStatus()
+                    setStatusType()
                 }
+                
             }
         }
     }
@@ -56,12 +69,32 @@ class MyExchangeViewController: BaseViewController {
         configTableView()
         setupDropDownStatus()
         getData()
-        guard let countOrder = self.listData?.dataOrder.count else { return }
-        self.lbTotal.text = "Tổng đơn hàng đang chờ duyệt: \(countOrder)"
     }
     
     func getData() {
-        self.presenter?.getTransactionSeller(status: "new", limit: 10, offset: 0)
+        self.presenter?.getTransactionSeller(status: StatusType.new.rawValue, limit: 10, offset: 0)
+        
+    }
+    
+    func setStatusType() {
+        if (listData?.dataOrder.count)! > 0 {
+            if let status = listData?.dataOrder[0].status, let countOrder = listData?.countOrder {
+                switch  status  {
+                case StatusType.new.rawValue:
+                    self.lbTotal.text = "Tổng đơn hàng đang chờ duyệt: \(countOrder)"
+                case StatusType.wait_delivery.rawValue:
+                    self.lbTotal.text = "Tổng đơn hàng đang giao: \(countOrder)"
+                case StatusType.done.rawValue:
+                    self.lbTotal.text = "Tổng đơn hàng đã hoàn tất: \(countOrder)"
+                case StatusType.cancel.rawValue:
+                    self.lbTotal.text = "Tổng đơn hàng đã huỷ: \(countOrder)"
+                case StatusType.all.rawValue:
+                    self.lbTotal.text = "Tất cả các đơn hàng: \(countOrder)"
+                default:
+                    self.lbTotal.text = "Tổng đơn hàng: 0"
+                }
+            }
+        }
         
     }
     
@@ -90,29 +123,24 @@ class MyExchangeViewController: BaseViewController {
         dropDownStatus.selectionAction = { [weak self](index, item) in
             guard let `self` = self else { return }
             self.lbStatusExchange.text = item
-            guard let countOrder = self.listData?.dataOrder.count else { return }
+            
             switch item {
-                
             case "Chờ duyệt":
-                
-                self.presenter?.getTransactionSeller(status: "new", limit: 10, offset: 0)
-                self.lbTotal.text = "Tổng đơn hàng đang chờ duyệt: \(countOrder)"
+                self.presenter?.getTransactionSeller(status: StatusType.new.rawValue, limit: 10, offset: 0)
+                self.lbTotal.text = "Tổng đơn hàng đang chờ duyệt: 0"
             case "Đang giao":
-                
-                self.presenter?.getTransactionSeller(status: "wait_delivery", limit: 10, offset: 0)
-                self.lbTotal.text = "Tổng đơn hàng đang giao: \(countOrder)"
+                self.presenter?.getTransactionSeller(status: StatusType.wait_delivery.rawValue, limit: 10, offset: 0)
+                self.lbTotal.text = "Tổng đơn hàng đang giao: 0"
             case "Hoàn Tất":
-                
-                self.presenter?.getTransactionSeller(status: "done", limit: 10, offset: 0)
-                self.lbTotal.text = "Tổng đơn hàng đã hoàn tất: \(countOrder)"
+                self.presenter?.getTransactionSeller(status: StatusType.done.rawValue, limit: 10, offset: 0)
+                self.lbTotal.text = "Tổng đơn hàng đã hoàn tất: 0"
             case "Đã huỷ":
-                self.presenter?.getTransactionSeller(status: "cancel", limit: 10, offset: 0)
-                self.lbTotal.text = "Tổng đơn hàng đã huỷ: \(countOrder)"
-                
+                self.presenter?.getTransactionSeller(status: StatusType.cancel.rawValue, limit: 10, offset: 0)
+                self.lbTotal.text = "Tổng đơn hàng đã huỷ: 0"
             case "Tất cả":
-                
-                self.presenter?.getTransactionSeller(status: "new", limit: 10, offset: 0)
-                self.lbTotal.text = "Tổng tất cả đơn hàng: \(countOrder)"
+                self.presenter?.getTransactionSeller(status: StatusType.all.rawValue, limit: 10, offset: 0)
+                self.lbTotal.text = "Tổng tất cả đơn hàng: 0"
+                self.isAllOrder = true
             default:
                 break
             }
@@ -133,6 +161,7 @@ extension MyExchangeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueTableCell(MyBuyCell.self)
         cell.vMyBuyView.order = listData?.dataOrder[indexPath.item]
+        cell.vMyBuyView.isAllOrder = isAllOrder
         return cell
     }
     
@@ -143,13 +172,13 @@ extension MyExchangeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let record = listData?.dataOrder[indexPath.item]
         let vc = OrderDetailRouter.createModule(recordId: record?.id)
-        if listData?.dataOrder[indexPath.item].status == "new" {
+        if listData?.dataOrder[indexPath.item].status == StatusType.new.rawValue {
             vc.isNew = true
-        } else if listData?.dataOrder[indexPath.item].status == "wait_delivery" {
+        } else if listData?.dataOrder[indexPath.item].status == StatusType.wait_delivery.rawValue {
             vc.isWait = true
-        } else if listData?.dataOrder[indexPath.item].status == "done" {
+        } else if listData?.dataOrder[indexPath.item].status == StatusType.done.rawValue {
             vc.isDone = true
-        } else if listData?.dataOrder[indexPath.item].status == "cancel" {
+        } else if listData?.dataOrder[indexPath.item].status == StatusType.cancel.rawValue {
             vc.isCancel = true
         }
         parrentNavigation?.pushViewController(vc, animated: true)
