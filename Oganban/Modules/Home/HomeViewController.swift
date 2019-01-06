@@ -65,6 +65,8 @@ class HomeViewController: BaseViewController {
         configureCollectionView()
         configureTableView()
         presenter?.getCategoryMerge()
+        
+        getParamDefault()
         presenter?.filterRecord(param: paramFilter)
         presenter?.getPositionRange()
         
@@ -152,10 +154,17 @@ class HomeViewController: BaseViewController {
         }
     }
     
+    func getParamDefault() {
+        let radius = UserDefaultHelper.shared.radius?.value
+        let long = UserDefaultHelper.shared.long
+        let lat = UserDefaultHelper.shared.lat
+        paramFilter = RecordParam(long: long, lat: lat, radius: radius)
+    }
+    
     @objc private func refreshData(_ sender: Any) {
         // Fetch Weather Data
         refreshFilter()
-        paramFilter = RecordParam()
+        getParamDefault()
         presenter?.filterRecord(param: paramFilter)
     }
     
@@ -164,6 +173,8 @@ class HomeViewController: BaseViewController {
         self.refreshControl.endRefreshing()
         lbCategory.text = "Tất cả danh mục"
         tfSearch.text = ""
+        self.distance = UserDefaultHelper.shared.radius
+        scaleDropdown.clearSelection()
         for (temp, item) in menu.enumerated() {
             menu[temp].isSelected = false
             for (indexChild, _) in item.cateChild.enumerated() {
@@ -202,8 +213,8 @@ class HomeViewController: BaseViewController {
     }
     
     @IBAction func btnGotoFavoriteTapped() {
-        let vc = SignUpRouter.createModule()
-        self.push(controller: vc)
+//        let vc = SignUpRouter.createModule()
+//        self.push(controller: vc)
     }
     
     @IBAction func btnSearchTapped() {
@@ -291,7 +302,10 @@ extension HomeViewController: HomeViewProtocol {
 extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         if listRecord.count == 0 {
-            showNoData()
+//            showNoData()
+            lbNoData.removeFromSuperview()
+            self.cvHome.addSubview(lbNoData)
+            lbNoData.centerSuperview()
             return 0
         } else {
             hideNoData()
@@ -415,6 +429,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             btnHideDropdown.isHidden = true
             lbCategory.text = menu[index].name
             paramFilter.categoryId = [menu[index].id&]
+            paramFilter.isParent = "1"
             presenter?.filterRecord(param: paramFilter)
         case tbRight:
             if indexPath.row == menu[index].cateChild.count {

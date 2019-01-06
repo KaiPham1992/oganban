@@ -105,7 +105,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WLL-hc-apq">
                                             <rect key="frame" x="108" y="670" width="129" height="42"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rectangle_11" translatesAutoresizingMaskIntoConstraints="NO" id="UuW-fp-tpS">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeHolderImage" translatesAutoresizingMaskIntoConstraints="NO" id="UuW-fp-tpS">
                                                     <rect key="frame" x="0.0" y="0.0" width="97" height="42"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </imageView>
@@ -280,7 +280,7 @@
     </objects>
     <resources>
         <image name="logo" width="203" height="106"/>
-        <image name="rectangle_11" width="85" height="36"/>
+        <image name="placeHolderImage" width="250" height="250"/>
         <image name="rectangle_12" width="33" height="36"/>
         <image name="rectangle_13" width="25" height="25"/>
     </resources>
