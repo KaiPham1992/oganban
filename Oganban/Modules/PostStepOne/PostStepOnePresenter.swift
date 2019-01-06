@@ -11,11 +11,6 @@
 import UIKit
 
 class PostStepOnePresenter: PostStepOnePresenterProtocol {
-    func getCategoryMerge() {
-        interactor?.getCategoryMerge()
-    }
-    
-
     weak private var view: PostStepOneViewProtocol?
     var interactor: PostStepOneInteractorInputProtocol?
     private let router: PostStepOneWireframeProtocol
@@ -24,6 +19,14 @@ class PostStepOnePresenter: PostStepOnePresenterProtocol {
         self.view = interface
         self.interactor = interactor
         self.router = router
+    }
+    
+    func getCategoryMerge() {
+        interactor?.getCategoryMerge()
+    }
+    
+    func getExpireDate() {
+        interactor?.getExpireDate()
     }
     
 }

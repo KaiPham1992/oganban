@@ -19,6 +19,7 @@ protocol PostStepOnePresenterProtocol: class {
 
     var interactor: PostStepOneInteractorInputProtocol? { get set }
     func getCategoryMerge()
+    func getExpireDate()
 }
 
 //MARK: Interactor -
@@ -32,6 +33,7 @@ protocol PostStepOneInteractorInputProtocol: class {
 
     var presenter: PostStepOneInteractorOutputProtocol?  { get set }
     func getCategoryMerge()
+    func getExpireDate()
     /* Presenter -> Interactor */
 }
 

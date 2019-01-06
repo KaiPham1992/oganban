@@ -35,9 +35,43 @@ enum AppDateFormat: String {
 }
 
 extension Date {
+    func isSmaller(date: Date) -> Bool {
+        let order = self.compare(date)
+        return order == .orderedAscending
+    }
+    
     var isInThePast: Bool {
         let now = Date()
         return self.compare(now) == ComparisonResult.orderedAscending
+    }
+    
+    func isSame(date: Date) -> Bool {
+        let time1 = self.toBeginDay()
+        let time2 = date.toBeginDay()
+        let order = time1.compare(time2)
+        
+        return order == .orderedSame
+    }
+    
+    func toMonthYear() -> (Int, Int) {
+        var calendar        = Calendar.current
+        let month   = calendar.component(.month, from: self)
+        let year    = calendar.component(.year, from: self)
+        
+        return (month, year)
+    }
+    
+    // 12/12/2017 12:12 -> 12/12/2017 00:01
+    func toBeginDay() -> Date {
+        let (month, year)       = self.toMonthYear()
+        let day                 = Calendar.current.component(.day, from: self)
+        let formmatter          = DateFormatter()
+        formmatter.timeZone     = TimeZone(abbreviation: "UTC")
+        formmatter.dateFormat   = AppDateFormat.ddMMyyyyhhmmma.rawValue
+        
+        guard let beginDate = formmatter.date(from: "\(day) \(month) \(year) 00:01") else { return Date()}
+        
+        return beginDate
     }
     
     /// SwifterSwift: ISO8601 string of format (yyyy-MM-dd'T'HH:mm:ss.SSS) from date.

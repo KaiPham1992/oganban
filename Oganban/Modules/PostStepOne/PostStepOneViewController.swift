@@ -66,6 +66,7 @@ class PostStepOneViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        presenter?.getExpireDate()
         hideTabbar()
     }
     
@@ -171,7 +172,8 @@ extension PostStepOneViewController: AppCollectionPhotoDelegate {
 
 extension PostStepOneViewController: FTextFieldChooseDelegate {
     func btnChooseTapped(sender: FTextFieldChoose) {
-        PopUpHelper.shared.showDateFollowWeekPopup { date in
+        
+        PopUpHelper.shared.showDateFollowWeekPopup(maxDate: DataManager.shared.maxDate) { date in
             self.dateSeleted = date
             self.vChooseDate.textField.text = date?.toString(dateFormat: AppDateFormat.ddMMYYYY_VN)
         }

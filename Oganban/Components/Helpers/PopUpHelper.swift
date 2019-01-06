@@ -36,8 +36,9 @@ class PopUpHelper {
         popUp.showPopUp()
     }
     
-    func showDateFollowWeekPopup(completionDate: @escaping CompletionDate){
+    func showDateFollowWeekPopup(maxDate: Date, completionDate: @escaping CompletionDate){
         let popupView = DateFollowWeekPopup()
+        popupView.maxDate = maxDate
         popupView.showPopUp(completionDate: completionDate)
     }
 }

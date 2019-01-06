@@ -15,10 +15,13 @@ class DateFollowWeekPopup: BaseViewXib  {
     @IBOutlet weak var vContent: UIView!
     @IBOutlet weak var vBackground: UIView!
     
+    @IBOutlet weak var lbError: UILabel!
+    
     let dateFormatter = DateFormatter()
     var dateList = [Date]()
     var completionDate : CompletionDate?
     var selectedDate: Date?
+    var maxDate: Date = Date()
     
     private var widthContent: CGFloat = 0
     private var heightContent: CGFloat = 0
@@ -170,9 +173,31 @@ extension DateFollowWeekPopup: UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) as? DateFollowWeekCell else { return }
-        cell.setColorSelectedDate(isSelected: true, date: self.dateList[indexPath.item])
-        selectedDate = self.dateList[indexPath.item]
-        cvDate.reloadData()
+        let _dateSelected = self.dateList[indexPath.item]
+        if isOkDate(_dateSelected: _dateSelected) {
+            cell.setColorSelectedDate(isSelected: true, date: self.dateList[indexPath.item])
+            selectedDate = self.dateList[indexPath.item]
+            cvDate.reloadData()
+        }
+    }
+    
+    func isOkDate(_dateSelected: Date) -> Bool {
+        if _dateSelected.isSame(date: Date()) || _dateSelected.isSame(date: maxDate) {
+            lbError.text = ""
+            return true
+        }
+        
+        if _dateSelected.isSmaller(date: Date()) {
+            lbError.text = "Ngày chọn phải lớn hơn hoặc bằng ngày hiện tại"
+            return false
+        }
+        
+        if maxDate.isSmaller(date: _dateSelected) {
+            lbError.text = "Ngày chọn phải nhỏ hơn hoặc bằng ngày \(maxDate.toString(dateFormat: AppDateFormat.ddMMYYYY_VN))"
+            return false
+        }
+        lbError.text = ""
+        return true
     }
 }
 
