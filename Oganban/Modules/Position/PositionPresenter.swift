@@ -11,7 +11,7 @@
 import UIKit
 
 class PositionPresenter: PositionPresenterProtocol {
-    func getCountRecord(long: CGFloat, lat: CGFloat, radius: Int) {
+    func getCountRecord(long: CGFloat, lat: CGFloat, radius: Int?) {
         interactor?.getCountRecord(long: long, lat: lat, radius: radius)
     }
     

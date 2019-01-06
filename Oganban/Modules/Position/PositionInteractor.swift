@@ -11,7 +11,7 @@
 import UIKit
 
 class PositionInteractor: PositionInteractorInputProtocol {
-    func getCountRecord(long: CGFloat, lat: CGFloat, radius: Int) {
+    func getCountRecord(long: CGFloat, lat: CGFloat, radius: Int?) {
         Provider.shared.categoryAPIService.getCountRecordPosition(long: long, lat: lat, radius: radius, success: { (result) in
             guard let data = result?.data, let count = data as? Int else { return }
             self.presenter?.didGetCountRecord(count: count)

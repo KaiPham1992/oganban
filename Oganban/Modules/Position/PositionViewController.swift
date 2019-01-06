@@ -19,12 +19,12 @@ protocol PositionViewControllerDelegate: class {
 
 class PositionViewController: BaseViewController {
     
-    @IBOutlet weak var mapView: GMSMapView!
-    @IBOutlet weak var lbTitleMarker: UILabel!
-    @IBOutlet weak var vTitleMarker: UIView!
-    @IBOutlet weak var tfAddress: UITextField!
-    @IBOutlet weak var vDropdown: UIView!
-    @IBOutlet weak var lbScale: UILabel!
+    @IBOutlet weak var mapView          : GMSMapView!
+    @IBOutlet weak var lbTitleMarker    : UILabel!
+    @IBOutlet weak var vTitleMarker     : UIView!
+    @IBOutlet weak var tfAddress        : UITextField!
+    @IBOutlet weak var vDropdown        : UIView!
+    @IBOutlet weak var lbScale          : UILabel!
     
     var presenter: PositionPresenterProtocol?
     var locationManager = CLLocationManager()
@@ -82,6 +82,10 @@ class PositionViewController: BaseViewController {
             //                self.paramFilter.radius = self.dataSource[index].title&
             //            }
             //            self.presenter?.filterRecord(param: self.paramFilter)
+            let long = CGFloat(self.centerMapCoordinate.longitude)
+            let lat = CGFloat(self.centerMapCoordinate.latitude)
+            guard let distance = self.distance else { return }
+            self.presenter?.getCountRecord(long: long, lat: lat, radius: Int(distance.value&))
         }
         scaleDropdown.dataSource = dataSource.map({$0.title&})
     }
@@ -149,8 +153,8 @@ extension PositionViewController: GMSMapViewDelegate {
         getAddressFromLocation(pdblLatitude: lat, withLongitude: long)
 
         
-        guard let distance = self.distance, let radius = Int(distance.value&) else { return }
-        presenter?.getCountRecord(long: long, lat: lat, radius: radius)
+        guard let distance = self.distance else { return }
+        presenter?.getCountRecord(long: long, lat: lat, radius: Int(distance.value&))
     }
     
     func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
@@ -190,14 +194,6 @@ extension PositionViewController: GMSMapViewDelegate {
                 
                 if pm.count > 0 {
                     let pm = placemarks![0]
-                    print(pm.country)
-                    print(pm.locality)
-                    print(pm.subLocality)
-                    print(pm.thoroughfare)
-                    print(pm.postalCode)
-                    print(pm.subThoroughfare)
-                    
-                    
                     if pm.thoroughfare != nil {
                         addressString = addressString + pm.thoroughfare! + ", "
                     }

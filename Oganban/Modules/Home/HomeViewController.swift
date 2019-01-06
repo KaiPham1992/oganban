@@ -215,8 +215,8 @@ class HomeViewController: BaseViewController {
     }
     
     @IBAction func btnGotoFavoriteTapped() {
-//        let vc = SignUpRouter.createModule()
-//        self.push(controller: vc)
+        let vc = FavouriteRouter.createModule()
+        self.push(controller: vc)
     }
     
     @IBAction func btnSearchTapped() {
@@ -262,7 +262,7 @@ class HomeViewController: BaseViewController {
 extension HomeViewController: HomeViewProtocol {
     func didGetPositionRange(list: [PositionRangeEntity]) {
         self.dataSource = list
-        if let last = PositionRangeEntity(JSON: ["_id": "8", "_value": "Không giới hạn"]) {
+        if let last = PositionRangeEntity(JSON: ["_id": "8", "_value": ""]) {
             self.dataSource.append(last)
         }
         scaleDropdown.dataSource = dataSource.map({$0.title&})
