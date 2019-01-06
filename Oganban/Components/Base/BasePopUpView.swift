@@ -12,6 +12,7 @@ typealias CompletionClosure = (() -> Void)
 typealias CompletionMessage = ((_ message: String?) -> Void)
 typealias CompletionAny = ((_ item: Any?) -> Void)
 typealias CompletionDate = ((_ item: Date?) -> Void)
+typealias CompletionUIImage = ((_ image: UIImage?) -> Void)
 
 enum BasePopUpViewType {
     case fromLeftToCenter

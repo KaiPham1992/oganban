@@ -353,6 +353,7 @@
 		DEB8550221E0B42D007479A7 /* NotificationDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB854FC21E0B42D007479A7 /* NotificationDetailProtocols.swift */; };
 		DEB8550321E0B42D007479A7 /* NotificationDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB854FD21E0B42D007479A7 /* NotificationDetailInteractor.swift */; };
 		DEB8550421E0B42D007479A7 /* NotificationDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEB854FE21E0B42D007479A7 /* NotificationDetailViewController.xib */; };
+		DEB8550621E0BF07007479A7 /* SelectPhotoCanCropPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB8550521E0BF07007479A7 /* SelectPhotoCanCropPopUp.swift */; };
 		DEBEE7F421D73443004B8D88 /* MoreEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBEE7F321D73443004B8D88 /* MoreEntity.swift */; };
 		DEBEE7F821D74041004B8D88 /* AppPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBEE7F621D74041004B8D88 /* AppPageView.swift */; };
 		DEBEE7F921D74041004B8D88 /* AppPageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBEE7F721D74041004B8D88 /* AppPageMenu.swift */; };
@@ -759,6 +760,7 @@
 		DEB854FC21E0B42D007479A7 /* NotificationDetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetailProtocols.swift; sourceTree = "<group>"; };
 		DEB854FD21E0B42D007479A7 /* NotificationDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetailInteractor.swift; sourceTree = "<group>"; };
 		DEB854FE21E0B42D007479A7 /* NotificationDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationDetailViewController.xib; sourceTree = "<group>"; };
+		DEB8550521E0BF07007479A7 /* SelectPhotoCanCropPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoCanCropPopUp.swift; sourceTree = "<group>"; };
 		DEBEE7F321D73443004B8D88 /* MoreEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreEntity.swift; sourceTree = "<group>"; };
 		DEBEE7F621D74041004B8D88 /* AppPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppPageView.swift; sourceTree = "<group>"; };
 		DEBEE7F721D74041004B8D88 /* AppPageMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppPageMenu.swift; sourceTree = "<group>"; };
@@ -1303,6 +1305,7 @@
 				DE0E79D621D658080053786D /* SelectImageFromMobileHelper.swift */,
 				B329A49B21D78A59004BBEE6 /* PositionMapsHelper.swift */,
 				DEB854F621E0B0C8007479A7 /* ShareNativeHelper.swift */,
+				DEB8550521E0BF07007479A7 /* SelectPhotoCanCropPopUp.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -2364,6 +2367,7 @@
 				DE21828021CD473100FDD9F1 /* KActivityIndicatorAnimationBallRotate.swift in Sources */,
 				DEB8550121E0B42D007479A7 /* NotificationDetailViewController.swift in Sources */,
 				DE0E79D921D65F760053786D /* Connectivity.swift in Sources */,
+				DEB8550621E0BF07007479A7 /* SelectPhotoCanCropPopUp.swift in Sources */,
 				B36AEECE21CDF52B00BED43C /* HomeCell.swift in Sources */,
 				CBD1C2C121D76BEB006DB3FF /* RecordEndPoint.swift in Sources */,
 				DE21822E21CD44D600FDD9F1 /* BaseEntity.swift in Sources */,

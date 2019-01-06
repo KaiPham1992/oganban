@@ -65,11 +65,11 @@ class UpdateProfileViewController: BaseViewController {
     }
     
     @IBAction func btnAvatarTapped() {
-        SelectImageFromMobileHelper.shared.showSelectImage(limit: 1) { images in
-            if !images.isEmpty {
-                self.imgAvatar.image = images[0]
-                self.presenter?.updateAvatar(image: images[0])
-            }
+        let popUp = SelectPhotoCanCropPopUp()
+        popUp.showCropPicker(controller: self) { image in
+            guard let _iamge = image else { return }
+            self.imgAvatar.image = _iamge
+            self.presenter?.updateAvatar(image: _iamge)
         }
     }
     
