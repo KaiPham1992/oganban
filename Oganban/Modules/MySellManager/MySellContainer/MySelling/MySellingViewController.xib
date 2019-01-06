@@ -134,7 +134,7 @@
                         <constraint firstAttribute="bottom" secondItem="jfK-yG-mIs" secondAttribute="bottom" id="sKm-No-dG1"/>
                     </constraints>
                 </view>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YFz-C6-HqV">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YFz-C6-HqV">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7tU-6R-ZAv">
