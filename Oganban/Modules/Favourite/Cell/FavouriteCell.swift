@@ -35,7 +35,7 @@ class FavouriteCell: UITableViewCell {
         
         btnFavourite.tag = index
         
-        lbName.text = favourite.name
+        lbName.text = favourite.fullName
         
         if let date = favourite.createTime {
             lbDate.text = date.toString(dateFormat: AppDateFormat.ddMMYYYY_VNHHmm)
