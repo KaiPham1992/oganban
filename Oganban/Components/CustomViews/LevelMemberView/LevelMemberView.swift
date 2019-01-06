@@ -24,10 +24,17 @@ class LevelMemberView: BaseViewXib {
     override func setUpViews() {
         super.setUpViews()
         self.setFont()
+        self.setLevelBackgroundColor()
     }
     
     func setFont(levelFont: UIFont = AppFont.fontBoldRoboto15, proFont: UIFont = AppFont.fontBoldRoboto9 ){
         lbLevel.font = levelFont
         lbPro.font = proFont
+    }
+    
+    func setLevelBackgroundColor(backgroundColor: UIColor = .white) {
+        self.backgroundColor = backgroundColor
+        self.lbPro.backgroundColor = backgroundColor
+        self.lbLevel.backgroundColor = backgroundColor
     }
 }

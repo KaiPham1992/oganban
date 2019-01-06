@@ -18,12 +18,15 @@ protocol ProductListWireframeProtocol: class {
 protocol ProductListPresenterProtocol: class {
 
     var interactor: ProductListInteractorInputProtocol? { get set }
+    func getFavourite(offset: Int)
 }
 
 //MARK: Interactor -
 protocol ProductListInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    func getSucessFavourite(record: [RecordEntity])
+    func getErrorFavourite(error: APIError?)
 }
 
 protocol ProductListInteractorInputProtocol: class {
@@ -31,6 +34,7 @@ protocol ProductListInteractorInputProtocol: class {
     var presenter: ProductListInteractorOutputProtocol?  { get set }
 
     /* Presenter -> Interactor */
+    func getFavourite(offset: Int)
 }
 
 //MARK: View -
@@ -39,4 +43,6 @@ protocol ProductListViewProtocol: class {
     var presenter: ProductListPresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
+    func getSucessFavourite(record: [RecordEntity])
+    func getErrorFavourite(error: APIError?)
 }

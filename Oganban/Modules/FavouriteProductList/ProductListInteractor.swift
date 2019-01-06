@@ -13,4 +13,13 @@ import UIKit
 class ProductListInteractor: ProductListInteractorInputProtocol {
 
     weak var presenter: ProductListInteractorOutputProtocol?
+    
+    func getFavourite(offset: Int) {
+        Provider.shared.categoryAPIService.filterRecord(param: RecordParam(), success: { (result) in
+            self.presenter?.getSucessFavourite(record: result)
+        }) { (error) in
+            ProgressView.shared.hide()
+        }
+       
+    }
 }

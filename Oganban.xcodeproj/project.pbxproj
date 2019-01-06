@@ -987,7 +987,7 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		84329F5021DFE1E000047B5E /* ProductList */ = {
+		84329F5021DFE1E000047B5E /* FavouriteProductList */ = {
 			isa = PBXGroup;
 			children = (
 				84329F5D21DFE20600047B5E /* Cell */,
@@ -998,7 +998,7 @@
 				84329F5521DFE1FA00047B5E /* ProductListInteractor.swift */,
 				84329F5621DFE1FA00047B5E /* ProductListViewController.xib */,
 			);
-			path = ProductList;
+			path = FavouriteProductList;
 			sourceTree = "<group>";
 		};
 		84329F5D21DFE20600047B5E /* Cell */ = {
@@ -1310,7 +1310,7 @@
 		CB172B1821C6A1480068CF92 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				84329F5021DFE1E000047B5E /* ProductList */,
+				84329F5021DFE1E000047B5E /* FavouriteProductList */,
 				84329F3E21DFD82900047B5E /* Favourite */,
 				B3CC856821D72DB600ADBFD8 /* Position */,
 				B36AEE9721CDD8CD00BED43C /* Tabbar */,

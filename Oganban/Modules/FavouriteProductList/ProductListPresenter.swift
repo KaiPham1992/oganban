@@ -10,7 +10,7 @@
 
 import UIKit
 
-class ProductListPresenter: ProductListPresenterProtocol, ProductListInteractorOutputProtocol {
+class ProductListPresenter: ProductListPresenterProtocol {
 
     weak private var view: ProductListViewProtocol?
     var interactor: ProductListInteractorInputProtocol?
@@ -22,4 +22,17 @@ class ProductListPresenter: ProductListPresenterProtocol, ProductListInteractorO
         self.router = router
     }
 
+    func getFavourite(offset: Int) {
+        interactor?.getFavourite(offset: offset)
+    }
+}
+
+extension ProductListPresenter: ProductListInteractorOutputProtocol{
+    func getSucessFavourite(record: [RecordEntity]) {
+        view?.getSucessFavourite(record: record)
+    }
+    
+    func getErrorFavourite(error: APIError?) {
+        view?.getErrorFavourite(error: error)
+    }
 }
