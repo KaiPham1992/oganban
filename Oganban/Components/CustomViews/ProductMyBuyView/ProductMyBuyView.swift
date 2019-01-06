@@ -73,21 +73,21 @@ class ProductMyBuyView: BaseViewXib {
     func setStatusOrder() {
         if isAllOrder {
             lbStatus.isHidden = false
-            if let status = order?.status {
+            if let status = order?.getStatus() {
                 switch status {
-                case StatusType.new.rawValue:
+                case .new:
                     lbStatus.text = "Chờ duyệt"
                     lbStatus.backgroundColor = AppColor.yellow_228_251_30
                     lbStatus.textColor = AppColor.red_233_1_1
-                case StatusType.wait_delivery.rawValue:
+                case .waitDelivery:
                     lbStatus.text = "Đang giao"
                     lbStatus.backgroundColor = AppColor.yellow_228_251_30
                     lbStatus.textColor = AppColor.red_233_1_1
-                case StatusType.done.rawValue:
+                case .done:
                     lbStatus.text = "Hoàn tất"
                     lbStatus.backgroundColor = AppColor.green005800
                     lbStatus.textColor = AppColor.yellow_245_255_0
-                case StatusType.cancel.rawValue:
+                case .cancel:
                     lbStatus.text = "Đã huỷ "
                     lbStatus.backgroundColor = AppColor.gray_233_233_234
                     lbStatus.textColor = AppColor.gray_65_65_65

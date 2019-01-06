@@ -18,6 +18,7 @@
                 <outlet property="vDoneNotArrived" destination="OUa-tz-GMc" id="ClV-7f-A9a"/>
                 <outlet property="vRating" destination="KUj-ac-uzF" id="wd7-z9-HmO"/>
                 <outlet property="vRatingSaler" destination="rRg-bf-8vd" id="ey5-QL-Teg"/>
+                <outlet property="vReceivedMoney" destination="kdj-HZ-hSE" id="pd0-OO-Kvy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -218,15 +219,40 @@
                                 <constraint firstItem="rRg-bf-8vd" firstAttribute="centerY" secondItem="srX-ii-0vD" secondAttribute="centerY" id="p3a-SY-ULt"/>
                             </constraints>
                         </view>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kdj-HZ-hSE">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BEu-fJ-QqO">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                    <state key="normal" title="ĐÃ NHẬN TIỀN">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="btnSaleReceivedMoney" destination="-1" eventType="touchUpInside" id="16k-UM-NYe"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.0" green="0.34509803919999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="BEu-fJ-QqO" firstAttribute="top" secondItem="kdj-HZ-hSE" secondAttribute="top" id="1gp-fT-XXV"/>
+                                <constraint firstAttribute="bottom" secondItem="BEu-fJ-QqO" secondAttribute="bottom" id="Hy2-P2-1fc"/>
+                                <constraint firstAttribute="trailing" secondItem="BEu-fJ-QqO" secondAttribute="trailing" id="KLU-al-LpR"/>
+                                <constraint firstItem="BEu-fJ-QqO" firstAttribute="leading" secondItem="kdj-HZ-hSE" secondAttribute="leading" id="Qi3-8p-aw8"/>
+                                <constraint firstAttribute="height" constant="40" id="qzL-Ai-4QX"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="kdj-HZ-hSE" secondAttribute="trailing" id="5QN-sR-ASf"/>
                         <constraint firstItem="6lo-FX-GNa" firstAttribute="leading" secondItem="t6n-4K-EuN" secondAttribute="leading" id="DP4-CW-Xke"/>
                         <constraint firstAttribute="bottom" secondItem="srX-ii-0vD" secondAttribute="bottom" id="NQj-zY-dt3"/>
                         <constraint firstAttribute="trailing" secondItem="6lo-FX-GNa" secondAttribute="trailing" id="PAo-wc-pYp"/>
+                        <constraint firstAttribute="bottom" secondItem="kdj-HZ-hSE" secondAttribute="bottom" id="Wh3-Ui-gc0"/>
                         <constraint firstItem="srX-ii-0vD" firstAttribute="leading" secondItem="t6n-4K-EuN" secondAttribute="leading" id="Z4M-Of-8gi"/>
                         <constraint firstAttribute="height" constant="40" id="iA9-Ku-vAT"/>
                         <constraint firstItem="6lo-FX-GNa" firstAttribute="top" secondItem="t6n-4K-EuN" secondAttribute="top" id="lbg-jH-1OU"/>
+                        <constraint firstItem="kdj-HZ-hSE" firstAttribute="leading" secondItem="t6n-4K-EuN" secondAttribute="leading" id="pan-Vt-dwQ"/>
                         <constraint firstAttribute="bottom" secondItem="6lo-FX-GNa" secondAttribute="bottom" id="wNz-ca-CjT"/>
                         <constraint firstAttribute="trailing" secondItem="srX-ii-0vD" secondAttribute="trailing" id="zCt-4q-g81"/>
                     </constraints>
