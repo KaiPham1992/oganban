@@ -105,7 +105,7 @@ struct NavigationTitle {
     static let historyCoin = "Lịch sử Ơcoin"
     static let historyBuy = "Lịch sử mua tin"
     static let favourite = "Danh sách yêu thích"
-    static let productList = "Dsnh sách sản phẩm"
+    static let productList = "Danh sách sản phẩm"
     static let myBuy = "Tôi mua"
     static let mySell = "Tôi bán"
 }

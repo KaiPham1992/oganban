@@ -16,6 +16,7 @@ enum RecordEndPoint {
     case postRecord(param: PostRecordParam)
     case getExpirePostRecord()
     case deleteRecord(recordID: String)
+    case getFavouriteRecord()
 }
 
 extension RecordEndPoint: EndPointType {
@@ -33,6 +34,8 @@ extension RecordEndPoint: EndPointType {
             return "_api/record/expired_date_post_record"
         case .deleteRecord:
             return "_api/record/delete_record"
+        case .getFavouriteRecord:
+            return "_api/record/favourite"
         }
     }
     
@@ -40,7 +43,7 @@ extension RecordEndPoint: EndPointType {
         switch self {
         case .getRecordSellerPost, .postRecord, .getExpirePostRecord:
             return .post
-        case .getRecordDetail:
+        case .getRecordDetail, .getFavouriteRecord:
             return .get
         case .hideRecord, .deleteRecord:
             return .put
@@ -54,7 +57,7 @@ extension RecordEndPoint: EndPointType {
                          "offset": offset,
                          "limit": limit] as [String: Any]
             return param
-        case .getRecordDetail, .getExpirePostRecord:
+        case .getRecordDetail, .getExpirePostRecord, .getFavouriteRecord:
             return [:]
         case .hideRecord(let recordID):
             let param = ["record_id": recordID]
