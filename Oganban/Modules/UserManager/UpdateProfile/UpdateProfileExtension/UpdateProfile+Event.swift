@@ -33,6 +33,9 @@ extension UpdateProfileViewController {
     
     @IBAction func tapShareButton(_ sender: UIButton) {
         print("TAP SHARE BUTTON")
+        if let user = UserDefaultHelper.shared.loginUserInfo, let codeIntro = user.codeIntro{
+            ShareNativeHelper.shared.showShare(controller: self, items: [codeIntro])
+        }
     }
     
     func tapSaveButton(){
