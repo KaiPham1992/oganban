@@ -148,7 +148,7 @@ class MyBuyViewController: BaseViewController {
     }
     
     @IBAction func btnLoginTapped() {
-        
+        presenter?.gotoLogin()
     }
 }
 
