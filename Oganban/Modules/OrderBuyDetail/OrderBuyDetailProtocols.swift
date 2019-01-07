@@ -18,6 +18,8 @@ protocol OrderBuyDetailWireframeProtocol: class {
 protocol OrderBuyDetailPresenterProtocol: class {
 
     var interactor: OrderBuyDetailInteractorInputProtocol? { get set }
+    
+    func bookingOrder(recordID: String, price: Double, quantity: Int, paymentType: String, isService: Bool)
     func getDetail(id: String)
 }
 
@@ -26,6 +28,7 @@ protocol OrderBuyDetailInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
     func didGetDetail(record: RecordEntity?)
+    func didBooking(order: OrderEntity?)
 }
 
 protocol OrderBuyDetailInteractorInputProtocol: class {
@@ -34,6 +37,7 @@ protocol OrderBuyDetailInteractorInputProtocol: class {
 
     /* Presenter -> Interactor */
     func getDetail(id: String)
+    func bookingOrder(recordID: String, price: Double, quantity: Int, paymentType: String, isService: Bool)
 }
 
 //MARK: View -
@@ -43,4 +47,5 @@ protocol OrderBuyDetailViewProtocol: class {
 
     /* Presenter -> ViewController */
     func didGetDetail(record: RecordEntity?)
+    func didBooking(order: OrderEntity?)
 }

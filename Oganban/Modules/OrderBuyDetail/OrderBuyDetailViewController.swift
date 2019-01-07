@@ -65,13 +65,19 @@ class OrderBuyDetailViewController: BaseViewController {
     }
     
     @IBAction func btnOrderBuy() {
-        print("Mua mua")
+        PopUpHelper.shared.showUpdateQuantityBuy { (quantity) in
+            print(quantity)
+        }
     }
 }
 
 extension OrderBuyDetailViewController: OrderBuyDetailViewProtocol {
     func didGetDetail(record: RecordEntity?) {
         self.record = record
+    }
+    
+    func didBooking(order: OrderEntity?) {
+        //FIXME
     }
 }
 
