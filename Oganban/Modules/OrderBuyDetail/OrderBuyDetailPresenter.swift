@@ -28,10 +28,18 @@ class OrderBuyDetailPresenter: OrderBuyDetailPresenterProtocol {
         interactor?.getDetail(id: id)
     }
     
+    func bookingOrder(recordID: String, price: Double, quantity: Int, paymentType: String, isService: Bool) {
+        interactor?.bookingOrder(recordID: recordID, price: price, quantity: quantity, paymentType: paymentType, isService: isService)
+    }
+    
 }
 
 extension OrderBuyDetailPresenter: OrderBuyDetailInteractorOutputProtocol {
     func didGetDetail(record: RecordEntity?) {
         view?.didGetDetail(record: record)
+    }
+    
+    func didBooking(order: OrderEntity?) {
+        view?.didBooking(order: order)
     }
 }

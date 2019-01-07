@@ -23,4 +23,14 @@ class OrderBuyDetailInteractor: OrderBuyDetailInteractorInputProtocol {
             ProgressView.shared.hide()
         }
     }
+    
+    func bookingOrder(recordID: String, price: Double, quantity: Int, paymentType: String, isService: Bool) {
+        ProgressView.shared.show()
+        Provider.shared.orderAPIService.bookingOrder(recordID: recordID, price: price, quantity: quantity, paymentType: paymentType, isService: isService, success: { (order) in
+            ProgressView.shared.hide()
+            self.presenter?.didBooking(order: order)
+        }) { (_) in
+            ProgressView.shared.hide()
+        }
+    }
 }

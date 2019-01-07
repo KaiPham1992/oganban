@@ -18,7 +18,7 @@ protocol OrderAPIServiceProtocol {
     func changeStatusOrderBuyer(status: OrderStatusKey, id: String, success: @escaping SuccessHandler<OrderDetailEntity>.object, failure: @escaping RequestFailure)
     
    func changeStatusOrderSaler(status: OrderStatusKey, id: String, success: @escaping SuccessHandler<OrderDetailEntity>.object, failure: @escaping RequestFailure)
-    
+    func bookingOrder(recordID: String, price: Double, quantity: Int, paymentType: String, isService: Bool, success: @escaping SuccessHandler<OrderEntity>.object, failure: @escaping RequestFailure)
 }
 
 class OrderAPIService: OrderAPIServiceProtocol {
@@ -54,5 +54,10 @@ class OrderAPIService: OrderAPIServiceProtocol {
         let endPoint = OrderEndPoint.changeStatusOrderSaler(status: status, orderId: id)
         
         network.requestData(endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
+    }
+    
+    func bookingOrder(recordID: String, price: Double, quantity: Int, paymentType: String, isService: Bool, success: @escaping SuccessHandler<OrderEntity>.object, failure: @escaping RequestFailure) {
+        let endPoint = OrderEndPoint.bookingOrder(recordID: recordID, price: price, quantity: quantity, paymentType: paymentType, isService: isService)
+        network.requestData(endPoint: endPoint, success: MapperData.mapNoData(success), failure: failure)
     }
 }
