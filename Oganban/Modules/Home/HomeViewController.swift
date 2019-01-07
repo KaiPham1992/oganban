@@ -217,6 +217,8 @@ class HomeViewController: BaseViewController {
     @IBAction func btnGotoFavoriteTapped() {
 //        let vc = SignUpRouter.createModule()
 //        self.push(controller: vc)
+        let vc = FavouriteRouter.createModule()
+        self.push(controller: vc)
     }
     
     @IBAction func btnSearchTapped() {

@@ -43,7 +43,7 @@ class MoreRouter: MoreWireframeProtocol {
             print("Chọn Lịch sử mua tin")
             break
         case MoreEntityType.policy:
-            tapPolicy()
+//            tapPolicy()
             print("Chọn Điều khoản sử dụng")
             break
         case MoreEntityType.tutorial:

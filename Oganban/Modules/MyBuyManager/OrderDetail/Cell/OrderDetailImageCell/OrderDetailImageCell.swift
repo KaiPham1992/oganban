@@ -39,7 +39,7 @@ class OrderDetailImageCell: BaseTableCell {
             setDefautlMySell()
             
             //--
-            imageSlide.listItem = _record.imgSrc
+            imageSlide.listItem = _record.arrayImage
             lbNameRecord.text = _record.name
             if _record.expiredDate == nil {
                 lbExpireDate.text = Date().toString(dateFormat: AppDateFormat.ddMMYYYY_VN)

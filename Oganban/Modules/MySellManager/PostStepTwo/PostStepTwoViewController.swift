@@ -119,7 +119,8 @@ class PostStepTwoViewController: BaseViewController {
 
 extension PostStepTwoViewController: PostStepTwoViewProtocol {
     func didPostRecord(record: RecordEntity?) {
-        print(record.debugDescription)
+        PopUpHelper.shared.showMessageHaveAds(message: "Đăng bán thành công")
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     func didError(error: APIError?) {

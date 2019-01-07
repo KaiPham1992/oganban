@@ -59,7 +59,7 @@ class OrderDetailEntity: BaseEntity {
         self.salePrice <- map["sale_price"]
         self.quantity <- map["quantity"]
         self.name <- map["name"]
-        self.arrayImage <- map["img_src"]
+        self.arrayImage <- map["img_src_list"]
         self.recordId <- map["record_id"]
         self.creatTime <- (map["create_time_mi"], AppTimestampTransform())
         
