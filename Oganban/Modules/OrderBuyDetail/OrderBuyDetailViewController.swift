@@ -26,8 +26,10 @@ class OrderBuyDetailViewController: BaseViewController {
         }
     }
     
+    var price: Double = 0
+    var quantity: Int = 0
     var recordId: String?
-    
+    var paymentType: String = ""
     var listHeader = ["Chi tiết", "Giới thiệu","Thông tin người bán", "Địa chỉ đăng  ", "Bình Luận"]
     
     var listComment = [CommentEntity]()
@@ -66,7 +68,11 @@ class OrderBuyDetailViewController: BaseViewController {
     
     @IBAction func btnOrderBuy() {
         PopUpHelper.shared.showUpdateQuantityBuy { (quantity) in
-            print(quantity)
+            guard let qtyStr = quantity, let qty = Int(qtyStr) else { return }
+            if self.price != 0 || qty != 0 {
+                guard let _recordID = self.recordId else { return }
+                self.presenter?.bookingOrder(recordID: _recordID, price: self.price, quantity: qty, paymentType: self.paymentType, isService: false)
+            }
         }
     }
 }
@@ -77,7 +83,7 @@ extension OrderBuyDetailViewController: OrderBuyDetailViewProtocol {
     }
     
     func didBooking(order: OrderEntity?) {
-        //FIXME
+        
     }
 }
 
@@ -85,4 +91,19 @@ extension OrderBuyDetailViewController: OrderInfoUserCellDelegate {
     func btnPhoneTapped() {
         print("Alo ALo")
     }
+}
+
+extension OrderBuyDetailViewController: OrderBuyDetailImageCellDelegate {
+    func selectedMoney(money: Double) {
+        self.price = money
+        self.paymentType = "cash"
+        print(money)
+    }
+    
+    func selectedCoin(coin: Double) {
+        self.price = coin
+        self.paymentType = "coin"
+    }
+    
+    
 }

@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol OrderBuyDetailImageCellDelegate: class {
+    func selectedMoney(money: Double)
+    func selectedCoin(coin: Double)
+}
 
 class OrderBuyDetailImageCell: BaseTableCell {
     
@@ -21,6 +25,8 @@ class OrderBuyDetailImageCell: BaseTableCell {
     @IBOutlet weak var lbExpireDate: UILabel!
     @IBOutlet weak var lbQuantity: UILabel!
     
+    
+    weak var delegate: OrderBuyDetailImageCellDelegate?
     
     // My sell
     var record: RecordEntity? {
@@ -64,9 +70,13 @@ extension OrderBuyDetailImageCell: AppRadioButtonDelegate {
         if radioCoin ==  sender {
             radioCoin.isChecked = true
             radioMoney.isChecked = false
+            guard let _coin = record?.coin else {return}
+            delegate?.selectedCoin(coin: _coin)
         } else {
             radioMoney.isChecked = true
             radioCoin.isChecked = false
+            guard let _price = record?.price else {return}
+            delegate?.selectedMoney(money: _price)
         }
     }
     
