@@ -61,7 +61,13 @@ class OrderBuyDetailImageCell: BaseTableCell {
 }
 extension OrderBuyDetailImageCell: AppRadioButtonDelegate {
     func changedSelected(sender: AppRadioButton, isSelected: Bool) {
-        
+        if radioCoin ==  sender {
+            radioCoin.isChecked = true
+            radioMoney.isChecked = false
+        } else {
+            radioMoney.isChecked = true
+            radioCoin.isChecked = false
+        }
     }
     
 }
