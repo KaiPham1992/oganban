@@ -38,6 +38,11 @@ class MySellExpiredViewController: BaseViewController {
 	override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+//        getData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         getData()
     }
     
@@ -91,12 +96,7 @@ extension MySellExpiredViewController: UITableViewDataSource, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let record = listSellExpired?.dataRecord[indexPath.item]
-        let vc = OrderDetailRouter.createModule(recordId: record?.id)
-        if record?.status == "hide" {
-            vc.isMySellHide = true
-        } else if record?.status == "expired" {
-            vc.isMySellExpired = true
-        }
+        let vc = MySellExpiredDetailRouter.createModule(recordId: record?.id)
         
         self.navigationController?.pushViewController(vc, animated: true)
     }

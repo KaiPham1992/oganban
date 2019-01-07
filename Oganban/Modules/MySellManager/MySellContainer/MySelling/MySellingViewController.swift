@@ -56,13 +56,14 @@ class MySellingViewController: BaseViewController {
 	override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        getData()
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         checkLogin()
+        getData()
     }
     
     func setupView() {

@@ -31,7 +31,7 @@ class OrderInfoUserCell: BaseTableCell {
             guard let _record = record else { return }
             lbStar.text = _record.avgRating
             lbReview.text = _record.totalRating& + " đánh giá"
-            lbPhone.text = "+84" + _record.phone&
+            lbPhone.text =  _record.phone&
             lbName.text = _record.fullName
             vLevel.setLevel(level: _record.level&, isPro: _record.isPro)
             imgAvatar.sd_setImage(with: _record.urlAvatar, placeholderImage: AppImage.imgPlaceHolderImage)
