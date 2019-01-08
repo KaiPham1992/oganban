@@ -122,18 +122,18 @@ extension OrderDetailViewController: OrderDetailViewProtocol {
     }
     
     func didEditRecord(data: BaseResponse?) {
-        self.pop()
+        PopUpHelper.shared.showMessageHaveAds(message: "Bạn đã gia hạn tin thành công !") {
+            self.pop()
+        }
     }
 }
 
 extension OrderDetailViewController: OrderDetailImageCellDelegate {
     func btnEditTapped() {
         PopUpHelper.shared.showDateFollowWeekPopup(maxDate: DataManager.shared.maxDate) { date in
-//            self.dateSelected = date
             guard let id = self.recordId, let _date = date else { return }
             self.presenter?.editRecord(recordID: id, expiredDate: _date.toString(dateFormat: AppDateFormat.yyyyMMdd))
         }
-//        self.vChooseDate.textField.text = date?.toString(dateFormat: AppDateFormat.ddMMYYYY_VN)
        
     }
     
