@@ -93,7 +93,7 @@ class OrderDetailViewController: BaseViewController {
     }
     
     @objc func btnShareTapped() {
-        ShareNativeHelper.shared.showShare(controller: self, items: ["share content"])
+        ShareNativeHelper.shared.showShareLinkInstall(controller: self)
     }
     
 //    func testComment() {
@@ -127,7 +127,7 @@ extension OrderDetailViewController: OrderDetailViewProtocol {
 extension OrderDetailViewController: OrderDetailImageCellDelegate {
     func btnDeleteTapped() {
         PopUpHelper.shared.showYesNoQuestionHaveAds(question: "Bạn chắc chắn muốn xoá bài đăng này ?", completionYes: {
-            
+            //FIXME
         }) {
             
         }

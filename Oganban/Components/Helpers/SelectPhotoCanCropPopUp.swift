@@ -14,6 +14,8 @@ class SelectPhotoCanCropPopUp: NSObject {
     var imagePickerUIKit = UIImagePickerController()
     var completionImage: CompletionUIImage?
     
+    static let shared = SelectPhotoCanCropPopUp()
+    
     func showCropPicker(controller: UIViewController?, completion: @escaping CompletionUIImage) {
         self.controller = controller
         self.completionImage = completion

@@ -15,5 +15,7 @@ struct AppConstant {
     static let notiDidUpdateSocial = NSNotification.Name.init("didUpdateSocial")
     static let notiReloadMoreView = NSNotification.Name.init("notiReloadMoreView")
     
+    
+    
     static let moneyToCoint: Double = 100
 }

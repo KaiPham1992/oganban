@@ -66,8 +66,15 @@
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="03C-w9-KJb">
                         <rect key="frame" x="264.5" y="39.5" width="15" height="14"/>
                         <state key="normal" image="ic_heart"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0TF-zW-4fg">
+                        <rect key="frame" x="252" y="26.5" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="0TF-zW-4fg" secondAttribute="height" multiplier="1:1" id="j9K-Q1-mD2"/>
+                            <constraint firstAttribute="width" constant="40" id="z4M-Dl-SCe"/>
+                        </constraints>
                         <connections>
-                            <action selector="tapFavouriteButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Xf3-lt-jyn"/>
+                            <action selector="tapFavouriteButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="gzc-cP-WEH"/>
                         </connections>
                     </button>
                 </subviews>
@@ -83,8 +90,10 @@
                     <constraint firstItem="FQk-60-kV7" firstAttribute="leading" secondItem="7Aq-rc-akg" secondAttribute="trailing" constant="10" id="SkE-vT-QSd"/>
                     <constraint firstItem="gjP-fv-Wc4" firstAttribute="top" secondItem="OZi-QV-XNI" secondAttribute="top" id="UqX-4B-NJh"/>
                     <constraint firstItem="MJq-Z4-2rg" firstAttribute="top" secondItem="FQk-60-kV7" secondAttribute="bottom" id="V6D-g1-IDU"/>
+                    <constraint firstItem="0TF-zW-4fg" firstAttribute="centerX" secondItem="03C-w9-KJb" secondAttribute="centerX" id="Xo1-Fu-SZR"/>
                     <constraint firstItem="7Aq-rc-akg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="36" id="fkK-xO-Pdc"/>
                     <constraint firstItem="OZi-QV-XNI" firstAttribute="leading" secondItem="7Aq-rc-akg" secondAttribute="trailing" constant="8" id="g2o-sg-ZyG"/>
+                    <constraint firstItem="0TF-zW-4fg" firstAttribute="centerY" secondItem="03C-w9-KJb" secondAttribute="centerY" id="gU5-vz-g3x"/>
                     <constraint firstItem="03C-w9-KJb" firstAttribute="width" secondItem="b8t-AQ-2Lt" secondAttribute="width" id="ikn-i3-OxA"/>
                     <constraint firstItem="FQk-60-kV7" firstAttribute="top" secondItem="7Aq-rc-akg" secondAttribute="top" id="j7p-C8-hoj"/>
                     <constraint firstItem="FQk-60-kV7" firstAttribute="top" secondItem="OZi-QV-XNI" secondAttribute="bottom" constant="5" id="oY9-Sn-V6C"/>
@@ -92,7 +101,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="btnFavourite" destination="03C-w9-KJb" id="Sj8-Cy-DCO"/>
+                <outlet property="btnFavourite" destination="0TF-zW-4fg" id="iab-lE-6rb"/>
                 <outlet property="imgAvatar" destination="7Aq-rc-akg" id="tOO-eY-yVF"/>
                 <outlet property="lbDate" destination="OZi-QV-XNI" id="olw-2E-QhX"/>
                 <outlet property="lbName" destination="FQk-60-kV7" id="rD7-JL-7xk"/>

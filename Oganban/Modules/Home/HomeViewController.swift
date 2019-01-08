@@ -395,6 +395,12 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
         return 0
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //FIXME
+        let vc = OrderBuyDetailRouter.createModule(recordId: listRecord[indexPath.item - 1].id&)
+        self.push(controller: vc)
+    }
+    
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {

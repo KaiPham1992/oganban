@@ -64,7 +64,7 @@ class MyBuyViewController: BaseViewController {
     }
     
     func getData() {
-        presenter?.getHistoryOrder(status: StatusType.new.rawValue, offset: 0, limit: 10)
+        presenter?.getHistoryOrder(status: OrderStatusKey.new.rawValue, offset: 0, limit: 10)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -124,26 +124,26 @@ class MyBuyViewController: BaseViewController {
             
             switch item {
             case "Chờ duyệt":
-                self.presenter?.getHistoryOrder(status: StatusType.new.rawValue, offset: 0, limit: 10)
+                self.presenter?.getHistoryOrder(status: OrderStatusKey.new.rawValue, offset: 0, limit: 10)
                 
                 self.lbTextTotal.text = "Tổng đơn hàng đang chờ duyệt: "
                 
             case "Đang giao":
-                self.presenter?.getHistoryOrder(status: StatusType.wait_delivery.rawValue, offset: 0, limit: 10)
+                self.presenter?.getHistoryOrder(status: OrderStatusKey.waitDelivery.rawValue, offset: 0, limit: 10)
                 
                 self.lbTextTotal.text = "Tổng đơn hàng đang giao: "
                 
             case "Hoàn Tất":
-                self.presenter?.getHistoryOrder(status: StatusType.done.rawValue, offset: 0, limit: 10)
+                self.presenter?.getHistoryOrder(status: OrderStatusKey.done.rawValue, offset: 0, limit: 10)
                 
                 self.lbTextTotal.text = "Tổng đơn hàng đã hoàn tất: "
                 
             case "Đã huỷ":
-                self.presenter?.getHistoryOrder(status: StatusType.cancel.rawValue, offset: 0, limit: 10)
+                self.presenter?.getHistoryOrder(status: OrderStatusKey.cancel.rawValue, offset: 0, limit: 10)
                 
                 self.lbTextTotal.text = "Tổng đơn hàng đã huỷ: "
             case "Tất cả":
-                self.presenter?.getHistoryOrder(status: StatusType.all.rawValue, offset: 0, limit: 10)
+                self.presenter?.getHistoryOrder(status: OrderStatusKey.all.rawValue, offset: 0, limit: 10)
                 self.lbTextTotal.text = "Tổng tất cả các đơn hàng: "
                 self.isAllOrder = true
             default:
@@ -157,7 +157,7 @@ class MyBuyViewController: BaseViewController {
     }
     
     @IBAction func btnLoginTapped() {
-        
+        presenter?.gotoLogin()
     }
 }
 

@@ -26,7 +26,7 @@ enum UserEndPoint {
     case getIntroduceList()
     case getPointHistory()
     case addFavorite(type: String, projectId: String)
-    case addFavoriteStaff(type: String, staffID: String)
+    case addFavoriteStaff(isFavorite: Bool, accountID: String)
     
     case updateProfileSocial(param: UpdateProfileSocial)
     case uploadAvatar()
@@ -153,9 +153,9 @@ extension UserEndPoint: EndPointType {
             let param = ["type": type,
                          "project_id": projectId] as [String: Any]
             return param
-        case .addFavoriteStaff(let type, let staffID):
-            let param = ["type": type,
-                         "sale_id": staffID] as [String: Any]
+        case .addFavoriteStaff(let isFavorite, let accountID):
+            let param = ["is_favorite": isFavorite,
+                         "account_id": accountID] as [String: Any]
             return param
             
         case .updateProfileSocial(let param):

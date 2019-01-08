@@ -24,6 +24,10 @@ class FavouritePresenter: FavouritePresenterProtocol {
     func getFavourite(offset: Int) {
         interactor?.getFavourite(offset: offset)
     }
+    
+    func showProductList(item: FavouriteEntity) {
+        router.showProductList(item: item)
+    }
 }
 
 extension FavouritePresenter: FavouriteInteractorOutputProtocol{

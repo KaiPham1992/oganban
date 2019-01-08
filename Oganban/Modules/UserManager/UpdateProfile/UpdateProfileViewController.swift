@@ -65,8 +65,8 @@ class UpdateProfileViewController: BaseViewController {
     }
     
     @IBAction func btnAvatarTapped() {
-        let popUp = SelectPhotoCanCropPopUp()
-        popUp.showCropPicker(controller: self) { image in
+//        let popUp = SelectPhotoCanCropPopUp()
+        SelectPhotoCanCropPopUp.shared.showCropPicker(controller: self) { image in
             guard let _iamge = image else { return }
             self.imgAvatar.image = _iamge
             self.presenter?.updateAvatar(image: _iamge)

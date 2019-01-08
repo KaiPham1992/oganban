@@ -11,8 +11,16 @@ import UIKit
 class ShareNativeHelper: NSObject {
     static let shared = ShareNativeHelper()
     
-    func showShare(controller: UIViewController, items: [Any]) {
-        let activityController = UIActivityViewController(activityItems: items, applicationActivities: nil)
+    let linkShare = "https://engma.com.vn/"
+    
+    func showShare(controller: UIViewController, items: [String]) {
+        var share = ""
+        if !items.isEmpty {
+            share = "\(items[0])\n\(linkShare)"
+        } else {
+            share = "\(linkShare)"
+        }
+        let activityController = UIActivityViewController(activityItems: [share], applicationActivities: nil)
         activityController.completionWithItemsHandler = { (nil, completed, _, error) in
             if completed {
                 print("completion")
@@ -21,5 +29,9 @@ class ShareNativeHelper: NSObject {
             }
         }
         controller.present(controller: activityController)
+    }
+    
+    func showShareLinkInstall(controller: UIViewController) {
+        showShare(controller: controller, items: [])
     }
 }

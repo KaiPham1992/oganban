@@ -25,6 +25,10 @@ class MyBuyPresenter: MyBuyPresenterProtocol {
     func getHistoryOrder(status: String, offset: Int, limit: Int) {
         interactor?.getHistoryOrder(status: status, offset: offset, limit: limit)
     }
+    
+    func gotoLogin() {
+        router.gotoLogin()
+    }
 }
 
 extension MyBuyPresenter: MyBuyInteractorOutputProtocol {

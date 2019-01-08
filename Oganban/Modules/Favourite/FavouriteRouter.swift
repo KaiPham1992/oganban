@@ -27,4 +27,10 @@ class FavouriteRouter: FavouriteWireframeProtocol {
 
         return view
     }
+    
+    func showProductList(item: FavouriteEntity) {
+        let vc = ProductListRouter.createModule()
+        vc.favouriteUser = item
+        self.viewController?.push(controller: vc, animated: true)
+    }
 }

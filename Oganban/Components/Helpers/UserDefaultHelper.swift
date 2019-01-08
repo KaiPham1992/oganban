@@ -18,6 +18,7 @@ enum UserDefaultHelperKey: String {
     case userToken = "UserToken"
     case email = "email"
     case radius = "radius"
+    case coin = "coin"
 }
 
 class UserDefaultHelper {
@@ -50,6 +51,11 @@ class UserDefaultHelper {
         set(newToken) {
             save(value: newToken, key: .userToken)
         }
+    }
+    
+    var coin: Double? {
+       
+        return loginUserInfo?.coin
     }
     
     var emailUser: String? {

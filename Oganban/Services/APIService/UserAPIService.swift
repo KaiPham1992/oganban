@@ -34,6 +34,8 @@ protocol UserAPIServiceProtocol {
     func getHistoryCoin(success: @escaping SuccessHandler<HistoryCoinEntity>.array, failure: @escaping RequestFailure)
     
     func getFavourite(success: @escaping SuccessHandler<FavouriteEntity>.array, failure: @escaping RequestFailure)
+    
+    func addFavoriteStaff(isFavorite: Bool, accountID: String, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
 }
 
 class UserAPIService: UserAPIServiceProtocol {
@@ -120,6 +122,11 @@ class UserAPIService: UserAPIServiceProtocol {
     func getFavourite(success: @escaping SuccessHandler<FavouriteEntity>.array, failure: @escaping RequestFailure) {
         let endPoint = UserEndPoint.getFavourite()
         network.requestData(endPoint: endPoint, success: MapperData.mapArray(success), failure: failure)
+    }
+    
+    func addFavoriteStaff(isFavorite: Bool, accountID: String, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure) {
+        let endPoint = UserEndPoint.addFavoriteStaff(isFavorite: isFavorite, accountID: accountID)
+        network.requestData(endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
     }
 }
 

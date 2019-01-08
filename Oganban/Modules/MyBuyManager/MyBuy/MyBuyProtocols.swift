@@ -13,12 +13,15 @@ import Foundation
 //MARK: Wireframe -
 protocol MyBuyWireframeProtocol: class {
 
+    func gotoLogin()
 }
 //MARK: Presenter -
 protocol MyBuyPresenterProtocol: class {
 
     var interactor: MyBuyInteractorInputProtocol? { get set }
     func getHistoryOrder(status: String, offset: Int, limit: Int)
+    //--
+    func gotoLogin()
 }
 
 //MARK: Interactor -

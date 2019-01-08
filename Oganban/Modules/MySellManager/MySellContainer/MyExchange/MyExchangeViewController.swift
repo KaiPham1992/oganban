@@ -11,13 +11,13 @@
 import UIKit
 import DropDown
 
-enum StatusType: String {
-    case new = "new"
-    case wait_delivery = "wait_delivery"
-    case done = "done"
-    case cancel = "cancel"
-    case all = "all"
-}
+//enum StatusType: String {
+//    case new = "new"
+//    case wait_delivery = "wait_delivery"
+//    case done = "done"
+//    case cancel = "buyer_cancel"
+//    case all = "all"
+//}
 
 protocol MyExchangeViewControllerDelegate: class {
     func gotoLogin()
@@ -92,7 +92,7 @@ class MyExchangeViewController: BaseViewController {
     }
     
     func getData() {
-        self.presenter?.getTransactionSeller(status: StatusType.new.rawValue, limit: 10, offset: 0)
+        self.presenter?.getTransactionSeller(status: OrderStatusKey.new.rawValue, limit: 10, offset: 0)
         
     }
     
@@ -129,19 +129,19 @@ class MyExchangeViewController: BaseViewController {
             
             switch item {
             case "Chờ duyệt":
-                self.presenter?.getTransactionSeller(status: StatusType.new.rawValue, limit: 10, offset: 0)
+                self.presenter?.getTransactionSeller(status: OrderStatusKey.new.rawValue, limit: 10, offset: 0)
                 self.lbTextTotal.text = "Tổng đơn hàng đang chờ duyệt: "
             case "Đang giao":
-                self.presenter?.getTransactionSeller(status: StatusType.wait_delivery.rawValue, limit: 10, offset: 0)
+                self.presenter?.getTransactionSeller(status: OrderStatusKey.waitDelivery.rawValue, limit: 10, offset: 0)
                 self.lbTextTotal.text = "Tổng đơn hàng đang giao: "
             case "Hoàn Tất":
-                self.presenter?.getTransactionSeller(status: StatusType.done.rawValue, limit: 10, offset: 0)
+                self.presenter?.getTransactionSeller(status: OrderStatusKey.done.rawValue, limit: 10, offset: 0)
                 self.lbTextTotal.text = "Tổng đơn hàng đã hoàn tất: "
             case "Đã huỷ":
-                self.presenter?.getTransactionSeller(status: StatusType.cancel.rawValue, limit: 10, offset: 0)
+                self.presenter?.getTransactionSeller(status: OrderStatusKey.cancel.rawValue, limit: 10, offset: 0)
                 self.lbTextTotal.text = "Tổng đơn hàng đã huỷ: "
             case "Tất cả":
-                self.presenter?.getTransactionSeller(status: StatusType.all.rawValue, limit: 10, offset: 0)
+                self.presenter?.getTransactionSeller(status: OrderStatusKey.all.rawValue, limit: 10, offset: 0)
                 self.lbTextTotal.text = "Tổng tất cả đơn hàng: "
                 self.isAllOrder = true
             default:
@@ -178,17 +178,6 @@ extension MyExchangeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let order = listData?.dataOrder[indexPath.item] else { return }
-//        let vc = OrderDetailRouter.createModule(recordId: record?.id)
-//        if listData?.dataOrder[indexPath.item].status == StatusType.new.rawValue {
-//            vc.isNew = true
-//        } else if listData?.dataOrder[indexPath.item].status == StatusType.wait_delivery.rawValue {
-//            vc.isWait = true
-//        } else if listData?.dataOrder[indexPath.item].status == StatusType.done.rawValue {
-//            vc.isDone = true
-//        } else if listData?.dataOrder[indexPath.item].status == StatusType.cancel.rawValue {
-//            vc.isCancel = true
-//        }
-//        parrentNavigation?.pushViewController(vc, animated: true)
         
         let vc = MyBuyDetailRouter.createModule(orderId: order.id&, isSaler: true)
         self.parrentNavigation?.pushViewController(vc, animated: true)

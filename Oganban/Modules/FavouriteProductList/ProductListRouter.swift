@@ -14,7 +14,7 @@ class ProductListRouter: ProductListWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule() -> UIViewController {
+    static func createModule() -> ProductListViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = ProductListViewController(nibName: nil, bundle: nil)
         let interactor = ProductListInteractor()

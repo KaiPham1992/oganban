@@ -12,13 +12,14 @@ import Foundation
 
 //MARK: Wireframe -
 protocol FavouriteWireframeProtocol: class {
-
+    func showProductList(item: FavouriteEntity)
 }
 //MARK: Presenter -
 protocol FavouritePresenterProtocol: class {
 
     var interactor: FavouriteInteractorInputProtocol? { get set }
     func getFavourite(offset: Int)
+    func showProductList(item: FavouriteEntity)
 }
 
 //MARK: Interactor -

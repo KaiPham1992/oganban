@@ -38,12 +38,21 @@ class MyBuyDetailViewController: BaseViewController {
                 // SALER
             } else {
                 vControlSaler.isHidden = false
+                // accep
                 vAcceptCancel.isHidden = _order.getStatus() != .new
                 
+                // rating
                 if _order.getStatus() == .done || _order.getStatus() == .cancel {
                     vContainerRatingSaler.isHidden = false
                 } else {
                     vContainerRatingSaler.isHidden = true
+                }
+                
+                // receive money
+                if _order.paymentType == "cash" && _order.getStatus() == .waitDelivery {
+                    vReceivedMoney.isHidden = false
+                } else {
+                    vReceivedMoney.isHidden = true
                 }
                 
             }
@@ -65,6 +74,7 @@ class MyBuyDetailViewController: BaseViewController {
     @IBOutlet weak var vAcceptCancel: UIView!
     @IBOutlet weak var vRatingSaler: AppRatingView!
     @IBOutlet weak var vContainerRatingSaler: UIView!
+    @IBOutlet weak var vReceivedMoney: UIView!
     
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -155,11 +165,16 @@ extension MyBuyDetailViewController: UITableViewDelegate, UITableViewDataSource 
 
 extension MyBuyDetailViewController: MyBuyImageCellDelegate {
     func btnCancelTapped() {
-        PopUpHelper.shared.showYesNoQuestionHaveAds(question: "Bạn chắc chắn muốn huỷ giao dịch", completionYes: {
-            self.presenter?.changedStatusOrder(status: OrderStatusKey.buyerCancel, id: self.orderId)
-        }) {
-            print("No")
+        if isSaler {
+            btnSaleCancelBuy()
+        } else {
+            PopUpHelper.shared.showYesNoQuestionHaveAds(question: "Bạn chắc chắn muốn huỷ giao dịch", completionYes: {
+                self.presenter?.changedStatusOrder(status: OrderStatusKey.buyerCancel, id: self.orderId)
+            }) {
+                print("No")
+            }
         }
+        
     }
     
     @IBAction func btnDoneTapped() {
@@ -182,12 +197,21 @@ extension MyBuyDetailViewController: MyBuyImageCellDelegate {
     
     
     @IBAction func btnSaleAcceptBuy() {
+        PopUpHelper.shared.showMessageHaveAds(message: "Bạn đã đồng ý bán sản phẩm")
         self.presenter?.changedStatusOrderSaler(status: OrderStatusKey.waitDelivery, id: self.orderId)
     }
     
     @IBAction func btnSaleCancelBuy() {
-        // fix me
-        self.presenter?.changedStatusOrderSaler(status: OrderStatusKey.sellerCancel, id: self.orderId)
+        PopUpHelper.shared.showYesNoQuestionHaveAds(question: "Bạn có chắc chắn từ chối bán cho khách này không?", completionYes: {
+            self.presenter?.changedStatusOrderSaler(status: OrderStatusKey.sellerCancel, id: self.orderId)
+        }) {
+            
+        }
+        
+    }
+    
+    @IBAction func btnSaleReceivedMoney() {
+        self.presenter?.changedStatusOrderSaler(status: OrderStatusKey.done, id: self.orderId)
     }
     
 }

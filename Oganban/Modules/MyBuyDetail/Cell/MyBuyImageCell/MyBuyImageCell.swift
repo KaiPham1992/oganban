@@ -31,7 +31,7 @@ class MyBuyImageCell: BaseTableCell {
         guard let _order = order else { return }
         setDefautlMySell()
         if isSaler {
-            btnCancel.isHidden = true
+            btnCancel.isHidden = _order.getStatus() != .waitDelivery
         } else {
             if _order.getStatus() == .new || _order.getStatus() == .waitDelivery {
                 btnCancel.isHidden = false

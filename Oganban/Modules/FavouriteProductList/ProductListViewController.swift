@@ -18,6 +18,8 @@ class ProductListViewController: BaseViewController {
     @IBOutlet weak var imgAvatar: UIImageView!
     var presenter: ProductListPresenterProtocol?
     
+    var favouriteUser: FavouriteEntity?
+    
     @IBOutlet weak var cvProduct: UICollectionView!
     var recordList = [RecordEntity]() {
         didSet {
@@ -71,7 +73,8 @@ class ProductListViewController: BaseViewController {
     }
     
     func getDefaultData(){
-         if let user = UserDefaultHelper.shared.loginUserInfo {
+        
+        if let user = favouriteUser {//} UserDefaultHelper.shared.loginUserInfo {
             lbName.text = user.fullName
             
             if let pointRatingAvg = user.pointRatingAvg, let pointRating = Float(pointRatingAvg) {
@@ -86,7 +89,7 @@ class ProductListViewController: BaseViewController {
                 vLevel.lbLevel.text = user.level
                 if user.isPro == "1" {
                     vLevel.lbPro.isHidden = false
-                    vLevel.lbPro.text = " Pro"
+                    vLevel.lbPro.text = "Pro"
                 } else {
                     vLevel.lbPro.isHidden = true
                     vLevel.lbPro.text = ""

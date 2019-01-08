@@ -79,6 +79,10 @@ extension FavouriteViewController: UITableViewDelegate, UITableViewDataSource {
             presenter?.getFavourite(offset: self.favouriteList.count)
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.showProductList(item: self.favouriteList[indexPath.item])
+    }
 }
 
 extension FavouriteViewController: FavouriteViewProtocol{
@@ -103,6 +107,8 @@ extension FavouriteViewController: FavouriteViewProtocol{
 
 extension FavouriteViewController: FavouriteCellProtocol{
     func removeFavourite(index: Int) {
-        self.favouriteList.remove(at: index)
+        PopUpHelper.shared.showYesNoQuestionHaveAds(question: "Bạn thật sự muốn bỏ yêu thích?", completionYes: {
+            self.favouriteList.remove(at: index)
+        }) { }
     }
 }
