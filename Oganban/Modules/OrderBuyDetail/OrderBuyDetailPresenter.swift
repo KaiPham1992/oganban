@@ -32,6 +32,10 @@ class OrderBuyDetailPresenter: OrderBuyDetailPresenterProtocol {
         interactor?.bookingOrder(recordID: recordID, price: price, quantity: quantity, paymentType: paymentType, isService: isService)
     }
     
+    func AddFavorite(isFavorite: Bool, accountID: String) {
+        interactor?.AddFavorite(isFavorite: isFavorite, accountID: accountID)
+    }
+    
     //--
     func gotoLogin() {
         router.gotoLogin()
@@ -45,5 +49,9 @@ extension OrderBuyDetailPresenter: OrderBuyDetailInteractorOutputProtocol {
     
     func didBooking(order: OrderEntity?) {
         view?.didBooking(order: order)
+    }
+    
+    func didAddFavorite(data: BaseResponse?) {
+        view?.didAddFavorite(data: data)
     }
 }

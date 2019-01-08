@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0143F9C421E4606500D032B8 /* HeaderOrderBuyDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0143F9C221E4606500D032B8 /* HeaderOrderBuyDetail.swift */; };
+		0143F9C521E4606500D032B8 /* HeaderOrderBuyDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0143F9C321E4606500D032B8 /* HeaderOrderBuyDetail.xib */; };
 		84313CE721E0B74700218C63 /* ProductListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84313CE521E0B74700218C63 /* ProductListCell.swift */; };
 		84313CE821E0B74700218C63 /* ProductListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84313CE621E0B74700218C63 /* ProductListCell.xib */; };
 		8432074E21CF529D00A4F11E /* DateFollowWeekCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432074A21CF529D00A4F11E /* DateFollowWeekCell.swift */; };
@@ -474,6 +476,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0143F9C221E4606500D032B8 /* HeaderOrderBuyDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderOrderBuyDetail.swift; sourceTree = "<group>"; };
+		0143F9C321E4606500D032B8 /* HeaderOrderBuyDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderOrderBuyDetail.xib; sourceTree = "<group>"; };
 		44208549B4287C06B154C85E /* Pods-Oganban.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Oganban.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Oganban/Pods-Oganban.debug.xcconfig"; sourceTree = "<group>"; };
 		667005DBAD7815A5AA16289A /* Pods_Oganban.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Oganban.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D0CCCBE1CA6E502A84355A0 /* Pods-Oganban.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Oganban.release.xcconfig"; path = "Pods/Target Support Files/Pods-Oganban/Pods-Oganban.release.xcconfig"; sourceTree = "<group>"; };
@@ -966,6 +970,8 @@
 		0143F9C121E45FE000D032B8 /* HeaderOrderBuyDetail */ = {
 			isa = PBXGroup;
 			children = (
+				0143F9C221E4606500D032B8 /* HeaderOrderBuyDetail.swift */,
+				0143F9C321E4606500D032B8 /* HeaderOrderBuyDetail.xib */,
 			);
 			path = HeaderOrderBuyDetail;
 			sourceTree = "<group>";
@@ -2661,6 +2667,7 @@
 				B325C2F021CE05B20048A148 /* MenuCell.xib in Resources */,
 				B3A3237221DB332100E1AD4C /* LeftMenuCell.xib in Resources */,
 				B36A236021E1AEBA00AA20DF /* SettingViewController.xib in Resources */,
+				0143F9C521E4606500D032B8 /* HeaderOrderBuyDetail.xib in Resources */,
 				DE33036321DF5EDB00409F83 /* PostStepTwoViewController.xib in Resources */,
 				DEBEE81821D76C79004B8D88 /* LevelMemberView.xib in Resources */,
 				DEA3A08921D6738200643296 /* AppImageSlide.xib in Resources */,
@@ -3009,6 +3016,7 @@
 				CBD1C28E21D73096006DB3FF /* ProductMyBuyView.swift in Sources */,
 				B325C2EF21CE05B20048A148 /* MenuCell.swift in Sources */,
 				84C8543421CFEC8D00BDABE5 /* SupplementaryInfo+SetupUI.swift in Sources */,
+				0143F9C421E4606500D032B8 /* HeaderOrderBuyDetail.swift in Sources */,
 				DEBEE7F821D74041004B8D88 /* AppPageView.swift in Sources */,
 				CB172C9B21C6A2EF0068CF92 /* BaseViewXib.swift in Sources */,
 				CBE2186421E219B80035F00B /* OrderBuyDetail+Table.swift in Sources */,

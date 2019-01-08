@@ -107,11 +107,18 @@ extension OrderBuyDetailViewController: OrderBuyDetailViewProtocol {
     func didBooking(order: OrderEntity?) {
         self.pop()
     }
+    
+    func didAddFavorite(data: BaseResponse?) {
+        
+    }
 }
 
 extension OrderBuyDetailViewController: OrderInfoUserCellDelegate {
     func btnPhoneTapped() {
-        print("Alo ALo")
+        
+        if let phone = record?.phone, let url = URL(string: "tel://\(phone)") {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
     }
 }
 
@@ -119,14 +126,18 @@ extension OrderBuyDetailViewController: OrderBuyDetailImageCellDelegate {
     func selectedMoney(money: Double) {
         self.price = money
         self.paymentType = "cash"
-        print(money)
     }
     
     func selectedCoin(coin: Double) {
         self.price = coin
         self.paymentType = "coin"
-        print(coin)
     }
-    
+}
+
+extension OrderBuyDetailViewController: HeaderOrderBuyDetailDelegate {
+    func addFavorite(isFavorite: Bool) {
+        guard let _recordID = recordId else { return }
+        presenter?.AddFavorite(isFavorite: isFavorite, accountID: _recordID)
+    }
     
 }

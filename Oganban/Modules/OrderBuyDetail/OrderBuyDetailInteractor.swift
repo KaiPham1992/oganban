@@ -33,4 +33,12 @@ class OrderBuyDetailInteractor: OrderBuyDetailInteractorInputProtocol {
             ProgressView.shared.hide()
         }
     }
+    
+    func AddFavorite(isFavorite: Bool, accountID: String) {
+        Provider.shared.userAPIService.addFavoriteStaff(isFavorite: isFavorite, accountID: accountID, success: { (data) in
+            self.presenter?.didAddFavorite(data: data)
+        }) { (_) in
+            
+        }
+    }
 }

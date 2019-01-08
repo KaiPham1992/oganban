@@ -89,14 +89,18 @@ extension OrderBuyDetailViewController: UITableViewDelegate, UITableViewDataSour
     // Header
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let v = UIView()
-        let header = HeaderOrderDetail()
+        let header = HeaderOrderBuyDetail()
         v.addSubview(header)
         header.fillSuperview()
         if section < self.listHeader.count {
             header.lbTitle.text = self.listHeader[section].uppercased()
             v.backgroundColor = AppColor.gray_65_65_65
         }
-        
+        if section == 2 {
+            header.btnLike.isHidden = false
+            
+        }
+        header.delegate = self
         return v
     }
     
