@@ -59,7 +59,7 @@ class MySellExpiredDetailViewController: BaseViewController {
     
     
     @objc func btnShareTapped() {
-        ShareNativeHelper.shared.showShare(controller: self, items: ["share content"])
+        ShareNativeHelper.shared.showShareLinkInstall(controller: self)
     }
     
 }
