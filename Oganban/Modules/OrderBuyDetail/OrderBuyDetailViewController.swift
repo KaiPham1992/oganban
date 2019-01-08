@@ -140,4 +140,7 @@ extension OrderBuyDetailViewController: HeaderOrderBuyDetailDelegate {
         presenter?.AddFavorite(isFavorite: isFavorite, accountID: _recordID)
     }
     
+    func checkLogin() {
+        self.presenter?.gotoLogin()
+    }
 }

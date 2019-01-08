@@ -11,6 +11,7 @@ import UIKit
 
 protocol HeaderOrderBuyDetailDelegate: class {
     func addFavorite(isFavorite: Bool)
+    func checkLogin()
 }
 
 class HeaderOrderBuyDetail: BaseViewXib {
@@ -28,14 +29,21 @@ class HeaderOrderBuyDetail: BaseViewXib {
     }
 
     @IBAction func btnLikeTapped() {
-        isLiked = !isLiked
-        if isLiked {
-            btnLike.setImage(AppImage.imgLike, for: .normal)
-            delegate?.addFavorite(isFavorite: true)
+        
+        if UserDefaultHelper.shared.isLoggedIn {
+            isLiked = !isLiked
+            if isLiked {
+                btnLike.setImage(AppImage.imgLike, for: .normal)
+                delegate?.addFavorite(isFavorite: true)
+            } else {
+                btnLike.setImage(AppImage.imgUnLike, for: .normal)
+                btnLike.tintColor = AppColor.gray_65_65_65
+                delegate?.addFavorite(isFavorite: false)
+            }
         } else {
-            btnLike.setImage(AppImage.imgUnLike, for: .normal)
-            btnLike.tintColor = AppColor.gray_65_65_65
-            delegate?.addFavorite(isFavorite: false)
+            delegate?.checkLogin()
         }
+        
+        
     }
 }
