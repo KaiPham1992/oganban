@@ -157,8 +157,9 @@ class PostStepOneViewController: BaseViewController {
         postParam = PostRecordParam(categoryId: categoryId&, name: vTitleRecord.textField.text&, imgSrc: imgSrc, quantity: vQuantity.textField.text&, expireDate: expireDate&, aboutRecord: vAbout.tvInput.text&)
         if isCopyUpdate {
             let vc = PostStepTwoRouter.createModule(param: self.postParam)
-            vc.isCopyUpdate = isCopyUpdate
-            self.push(controller: vc)
+//            vc.isCopyUpdate = isCopyUpdate
+            self.navigationController?.pushViewController(vc, animated: true)
+            return
         }
         let vc = PostStepTwoRouter.createModule(param: self.postParam)
         self.push(controller: vc)

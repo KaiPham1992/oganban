@@ -31,8 +31,7 @@ class OrderDetailViewController: BaseViewController {
     @IBOutlet weak var btnDecline: UIButton!
     @IBOutlet weak var btnReceived: UIButton!
     
-    var isMySellHide: Bool = false
-    var isMySellExpired: Bool = false
+    var dateSelected: Date?
     
     var isNew: Bool = false
     var isWait: Bool = false
@@ -65,7 +64,6 @@ class OrderDetailViewController: BaseViewController {
 //        vPostCommentView.isHidden = true
 //        btnReceived.isHidden = true
         vSelect.isHidden = true
-        setupView()
     }
     
     override func setUpNavigation() {
@@ -76,21 +74,21 @@ class OrderDetailViewController: BaseViewController {
         self.tabBarController?.tabBar.isHidden = true
     }
     
-    func setupView() {
-        if isMySellHide || isMySellExpired {
-            vPostCommentView.isHidden = true
-        } else if isNew {
-            vSelect.isHidden = false
-            btnReceived.isHidden = true
-            vPostCommentView.isHidden = true
-        } else if isWait {
-            vSelect.isHidden = false
-            btnReceived.isHidden = false
-            btnAccept.isHidden = true
-            btnDecline.isHidden = true
-            vPostCommentView.isHidden = true
-        }
-    }
+//    func setupView() {
+//        if isMySellHide || isMySellExpired {
+//            vPostCommentView.isHidden = true
+//        } else if isNew {
+//            vSelect.isHidden = false
+//            btnReceived.isHidden = true
+//            vPostCommentView.isHidden = true
+//        } else if isWait {
+//            vSelect.isHidden = false
+//            btnReceived.isHidden = false
+//            btnAccept.isHidden = true
+//            btnDecline.isHidden = true
+//            vPostCommentView.isHidden = true
+//        }
+//    }
     
     @objc func btnShareTapped() {
         ShareNativeHelper.shared.showShareLinkInstall(controller: self)
@@ -122,15 +120,21 @@ extension OrderDetailViewController: OrderDetailViewProtocol {
             self.pop()
         }
     }
+    
+    func didEditRecord(data: BaseResponse?) {
+        self.pop()
+    }
 }
 
 extension OrderDetailViewController: OrderDetailImageCellDelegate {
-    func btnDeleteTapped() {
-        PopUpHelper.shared.showYesNoQuestionHaveAds(question: "Bạn chắc chắn muốn xoá bài đăng này ?", completionYes: {
-            //FIXME
-        }) {
-            
+    func btnEditTapped() {
+        PopUpHelper.shared.showDateFollowWeekPopup(maxDate: DataManager.shared.maxDate) { date in
+//            self.dateSelected = date
+            guard let id = self.recordId, let _date = date else { return }
+            self.presenter?.editRecord(recordID: id, expiredDate: _date.toString(dateFormat: AppDateFormat.yyyyMMdd))
         }
+//        self.vChooseDate.textField.text = date?.toString(dateFormat: AppDateFormat.ddMMYYYY_VN)
+       
     }
     
     func btnHideTapped() {

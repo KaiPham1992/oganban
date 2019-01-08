@@ -89,6 +89,6 @@ extension MySellExpiredDetailViewController: MySellExpiredDetailImageCellDelegat
     func btnCopyTapped() {
         let vc = PostStepOneRouter.createModule(record: record)
         vc.isCopyUpdate = true
-        self.navigationController?.push(controller: vc)
+        self.navigationController?.pushViewController(vc , animated: true)
     }
 }

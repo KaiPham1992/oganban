@@ -42,6 +42,8 @@ class RecordEntity: BaseEntity {
     var cropImage: String?
     
     var status: String?
+    var isTransaction: Bool?
+    var isFavorite: Bool?
     
     required init?(map: Map) {
         super.init()
@@ -87,6 +89,8 @@ class RecordEntity: BaseEntity {
         self.isActive <- map["is_active"]
         self.about <- map["about_record"]
         self.status <- map["status"]
+        self.isTransaction <- map["is_transaction"]
+        self.isFavorite <- map["is_favorite"]
     }
     
     var urlAvatar: URL? {

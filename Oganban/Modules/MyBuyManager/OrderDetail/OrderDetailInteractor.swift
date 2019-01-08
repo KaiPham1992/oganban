@@ -31,4 +31,12 @@ class OrderDetailInteractor: OrderDetailInteractorInputProtocol {
             
         }
     }
+    
+    func editRecord(recordID: String, expiredDate: String) {
+        Provider.shared.recordAPIService.updateRecord(recordID: recordID, expiredDate: expiredDate, success: { (data) in
+            self.presenter?.didEditRecord(data: data)
+        }) { (_) in
+            
+        }
+    }
 }

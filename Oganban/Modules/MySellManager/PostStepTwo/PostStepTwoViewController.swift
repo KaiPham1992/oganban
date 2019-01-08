@@ -28,8 +28,10 @@ class PostStepTwoViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUpdate()
+        
     }
+    
+    
     
     override func setUpViews() {
         super.setUpViews()
@@ -56,6 +58,7 @@ class PostStepTwoViewController: BaseViewController {
         vMoney.textField.isEnabled = false
         vCoin.textField.isEnabled = false
         showDataSaved()
+        setupUpdate()
     }
     
     func setupUpdate() {

@@ -31,6 +31,10 @@ class OrderDetailPresenter: OrderDetailPresenterProtocol {
     func hideRecord(recordID: String) {
         interactor?.hideRecord(recordID: recordID)
     }
+    
+    func editRecord(recordID: String, expiredDate: String) {
+        interactor?.editRecord(recordID: recordID, expiredDate: expiredDate)
+    }
 }
 
 extension OrderDetailPresenter: OrderDetailInteractorOutputProtocol {
@@ -40,5 +44,9 @@ extension OrderDetailPresenter: OrderDetailInteractorOutputProtocol {
     
     func didHideRecord(data: BaseResponse?) {
         view?.didHideRecord(data: data)
+    }
+    
+    func didEditRecord(data: BaseResponse?) {
+        view?.didEditRecord(data: data)
     }
 }

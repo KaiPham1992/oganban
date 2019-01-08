@@ -16,6 +16,8 @@ extension PostStepOneViewController {
         vQuantity.textField.text = "\(record?.quantity ?? 0)"
         vChooseDate.textField.text = ""
         vAbout.tvInput.text = record?.about
+        vAbout.lbPlaceHolder.text = ""
+    
     }
 }
 
