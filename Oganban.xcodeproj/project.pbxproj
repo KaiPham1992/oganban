@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0143F9C421E4606500D032B8 /* HeaderOrderBuyDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0143F9C221E4606500D032B8 /* HeaderOrderBuyDetail.swift */; };
 		0143F9C521E4606500D032B8 /* HeaderOrderBuyDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0143F9C321E4606500D032B8 /* HeaderOrderBuyDetail.xib */; };
+		0143F9C721E494CD00D032B8 /* Post+CopyRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0143F9C621E494CD00D032B8 /* Post+CopyRecord.swift */; };
+		0143F9CA21E4A2F800D032B8 /* PostStepTwo+Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0143F9C921E4A2F800D032B8 /* PostStepTwo+Update.swift */; };
 		84313CE721E0B74700218C63 /* ProductListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84313CE521E0B74700218C63 /* ProductListCell.swift */; };
 		84313CE821E0B74700218C63 /* ProductListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84313CE621E0B74700218C63 /* ProductListCell.xib */; };
 		8432074E21CF529D00A4F11E /* DateFollowWeekCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432074A21CF529D00A4F11E /* DateFollowWeekCell.swift */; };
@@ -478,6 +480,8 @@
 /* Begin PBXFileReference section */
 		0143F9C221E4606500D032B8 /* HeaderOrderBuyDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderOrderBuyDetail.swift; sourceTree = "<group>"; };
 		0143F9C321E4606500D032B8 /* HeaderOrderBuyDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderOrderBuyDetail.xib; sourceTree = "<group>"; };
+		0143F9C621E494CD00D032B8 /* Post+CopyRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+CopyRecord.swift"; sourceTree = "<group>"; };
+		0143F9C921E4A2F800D032B8 /* PostStepTwo+Update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostStepTwo+Update.swift"; sourceTree = "<group>"; };
 		44208549B4287C06B154C85E /* Pods-Oganban.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Oganban.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Oganban/Pods-Oganban.debug.xcconfig"; sourceTree = "<group>"; };
 		667005DBAD7815A5AA16289A /* Pods_Oganban.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Oganban.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D0CCCBE1CA6E502A84355A0 /* Pods-Oganban.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Oganban.release.xcconfig"; path = "Pods/Target Support Files/Pods-Oganban/Pods-Oganban.release.xcconfig"; sourceTree = "<group>"; };
@@ -974,6 +978,14 @@
 				0143F9C321E4606500D032B8 /* HeaderOrderBuyDetail.xib */,
 			);
 			path = HeaderOrderBuyDetail;
+			sourceTree = "<group>";
+		};
+		0143F9C821E4A2BE00D032B8 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				0143F9C921E4A2F800D032B8 /* PostStepTwo+Update.swift */,
+			);
+			path = extension;
 			sourceTree = "<group>";
 		};
 		2D4ADFC1DB1592F9F3095C4D /* Frameworks */ = {
@@ -2129,7 +2141,7 @@
 		DE33035721DF5ECB00409F83 /* PostStepTwo */ = {
 			isa = PBXGroup;
 			children = (
-				DEB854F321E093E0007479A7 /* Extension */,
+				0143F9C821E4A2BE00D032B8 /* extension */,
 				DE33035821DF5EDB00409F83 /* PostStepTwoPresenter.swift */,
 				DE33035921DF5EDB00409F83 /* PostStepTwoRouter.swift */,
 				DE33035A21DF5EDB00409F83 /* PostStepTwoViewController.swift */,
@@ -2315,15 +2327,9 @@
 			isa = PBXGroup;
 			children = (
 				DEB854F121E08BB9007479A7 /* Post+Valid.swift */,
+				0143F9C621E494CD00D032B8 /* Post+CopyRecord.swift */,
 			);
 			path = extension;
-			sourceTree = "<group>";
-		};
-		DEB854F321E093E0007479A7 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extension;
 			sourceTree = "<group>";
 		};
 		DEB854F821E0B418007479A7 /* NotificationDetail */ = {
@@ -2941,6 +2947,7 @@
 				CBD1C2CC21D78916006DB3FF /* MySellExpiredPresenter.swift in Sources */,
 				DE442C3421CF94600051C0B8 /* CommonEndPoint.swift in Sources */,
 				DE442C4021CFA2130051C0B8 /* OrderDetailProtocols.swift in Sources */,
+				0143F9CA21E4A2F800D032B8 /* PostStepTwo+Update.swift in Sources */,
 				DE21828521CD473100FDD9F1 /* FadeInOutAnimation.swift in Sources */,
 				DEE1DA7021CE1FFC0036FEB7 /* PopUpYesNoHaveAdmob.swift in Sources */,
 				DE21826A21CD473100FDD9F1 /* KActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
@@ -3142,6 +3149,7 @@
 				DEE1DA5821CDE6610036FEB7 /* PopUpSelectDateContent.swift in Sources */,
 				DE33034F21DF13EB00409F83 /* PostStepOneInteractor.swift in Sources */,
 				84A92BF621CA555900148191 /* LoginPresenter.swift in Sources */,
+				0143F9C721E494CD00D032B8 /* Post+CopyRecord.swift in Sources */,
 				CB379C1B21E39546005D7536 /* MySellExpiredDetailProtocols.swift in Sources */,
 				CB172C1021C6A2EF0068CF92 /* Int+extension.swift in Sources */,
 				8463FAF921E1CBCA00522D0C /* HistoryBuyEntity.swift in Sources */,
