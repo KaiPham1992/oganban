@@ -34,6 +34,7 @@ class RecordEntity: BaseEntity {
     var address1: String?
     var address2: String?
     var phone: String?
+    var accountCoin: Double?
     
     var quantity: Int?
     var expiredDate: Date?
@@ -70,6 +71,7 @@ class RecordEntity: BaseEntity {
         self.level <- map["level"]
         self.phone <- map["phone"]
         self.cropImage <- map["crop_img_src_account"]
+        self.accountCoin <- map["account_coin"]
         
         if let distance = self.distance, let dis = Double(distance) {
             let temp = dis * 1000

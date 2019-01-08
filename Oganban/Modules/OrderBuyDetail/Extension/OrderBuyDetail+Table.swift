@@ -36,6 +36,7 @@ extension OrderBuyDetailViewController: UITableViewDelegate, UITableViewDataSour
         case OrderDetailInfoType.infoProduct.rawValue:
             let cell = tbDetail.dequeueTableCell(OrderBuyDetailImageCell.self)
             cell.record = self.record
+            cell.delegate = self
             return cell
         case OrderDetailInfoType.intro.rawValue:
             let cell = tbDetail.dequeue(OrderIntroCell.self, for: indexPath)

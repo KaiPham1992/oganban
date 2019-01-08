@@ -32,6 +32,10 @@ class OrderBuyDetailPresenter: OrderBuyDetailPresenterProtocol {
         interactor?.bookingOrder(recordID: recordID, price: price, quantity: quantity, paymentType: paymentType, isService: isService)
     }
     
+    //--
+    func gotoLogin() {
+        router.gotoLogin()
+    }
 }
 
 extension OrderBuyDetailPresenter: OrderBuyDetailInteractorOutputProtocol {

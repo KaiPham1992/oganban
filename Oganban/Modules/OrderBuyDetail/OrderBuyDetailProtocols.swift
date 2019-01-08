@@ -12,7 +12,7 @@ import Foundation
 
 //MARK: Wireframe -
 protocol OrderBuyDetailWireframeProtocol: class {
-
+    func gotoLogin()
 }
 //MARK: Presenter -
 protocol OrderBuyDetailPresenterProtocol: class {
@@ -21,6 +21,9 @@ protocol OrderBuyDetailPresenterProtocol: class {
     
     func bookingOrder(recordID: String, price: Double, quantity: Int, paymentType: String, isService: Bool)
     func getDetail(id: String)
+    
+    //---
+    func gotoLogin()
 }
 
 //MARK: Interactor -

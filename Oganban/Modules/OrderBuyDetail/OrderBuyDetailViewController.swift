@@ -12,8 +12,8 @@ import UIKit
 
 
 class OrderBuyDetailViewController: BaseViewController {
-
-	var presenter: OrderBuyDetailPresenterProtocol?
+    
+    var presenter: OrderBuyDetailPresenterProtocol?
     
     @IBOutlet weak var vPostCommentView: PostCommentView!
     @IBOutlet weak var bottomConstant: NSLayoutConstraint!
@@ -37,8 +37,8 @@ class OrderBuyDetailViewController: BaseViewController {
     @IBOutlet weak var tbDetail: UITableView!
     
     var tapGesture: UITapGestureRecognizer!
-
-	override func viewDidLoad() {
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
         addKeyboardNotification()
         vPostCommentView.delegate = self
@@ -67,14 +67,36 @@ class OrderBuyDetailViewController: BaseViewController {
     }
     
     @IBAction func btnOrderBuy() {
-        PopUpHelper.shared.showUpdateQuantityBuy { (quantity) in
-            guard let qtyStr = quantity, let qty = Int(qtyStr) else { return }
-            if self.price != 0 || qty != 0 {
-                guard let _recordID = self.recordId else { return }
+        if UserDefaultHelper.shared.isLoggedIn {
+            PopUpHelper.shared.showUpdateQuantityBuy { (quantity) in
+                guard let qtyStr = quantity, let qty = Int(qtyStr) else { return }
+                guard let _recordID = self.recordId, let totalCoin = UserDefaultHelper.shared.coin, let totalQty = self.record?.quantity else { return }
+                
+                if self.price == 0.0 {
+                    PopUpHelper.shared.showMessageHaveAds(message: "Vui lòng chọn phương thức thanh toán")
+                    return
+                } else if qty == 0 {
+                    PopUpHelper.shared.showMessageHaveAds(message: "Số lượng mua phải lớn hơn 0")
+                    return
+                } else if qty > totalQty {
+                    PopUpHelper.shared.showMessageHaveAds(message: "Số lượng mua vượt quá số lượng sản phẩm")
+                    return
+                }
+                
+                if self.paymentType == "coin" {
+                    if totalCoin < self.price {
+                        PopUpHelper.shared.showMessageHaveAds(message: "Số lượng coin của bạn không đủ để thanh toán")
+                        return
+                    }
+                }
+                
                 self.presenter?.bookingOrder(recordID: _recordID, price: self.price, quantity: qty, paymentType: self.paymentType, isService: false)
             }
+        } else {
+            self.presenter?.gotoLogin()
         }
     }
+    
 }
 
 extension OrderBuyDetailViewController: OrderBuyDetailViewProtocol {
@@ -83,7 +105,7 @@ extension OrderBuyDetailViewController: OrderBuyDetailViewProtocol {
     }
     
     func didBooking(order: OrderEntity?) {
-        
+        self.pop()
     }
 }
 
@@ -103,6 +125,7 @@ extension OrderBuyDetailViewController: OrderBuyDetailImageCellDelegate {
     func selectedCoin(coin: Double) {
         self.price = coin
         self.paymentType = "coin"
+        print(coin)
     }
     
     
