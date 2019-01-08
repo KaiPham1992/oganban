@@ -25,6 +25,20 @@ class MoreViewController: BaseViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(btnReloadPage), name: AppConstant.notiReloadMoreView, object: nil)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        DataManager.shared.getNotificationCount { (count) in
+            if let tabItems = self.tabBarController?.tabBar.items {
+                let tabItem = tabItems[3]
+                if count == 0 {
+                    tabItem.badgeValue = nil
+                } else {
+                    tabItem.badgeValue = "\(count)"
+                }
+            }
+        }
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         btnReloadPage()
