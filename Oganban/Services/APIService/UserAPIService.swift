@@ -31,8 +31,6 @@ protocol UserAPIServiceProtocol {
     
     func getHistoryBuy(success: @escaping SuccessHandler<HistoryBuyEntity>.array, failure: @escaping RequestFailure)
     
-    func getHistoryCoin(success: @escaping SuccessHandler<HistoryCoinEntity>.array, failure: @escaping RequestFailure)
-    
     func getFavourite(success: @escaping SuccessHandler<FavouriteEntity>.array, failure: @escaping RequestFailure)
 }
 
@@ -109,11 +107,6 @@ class UserAPIService: UserAPIServiceProtocol {
     
     func getHistoryBuy(success: @escaping SuccessHandler<HistoryBuyEntity>.array, failure: @escaping RequestFailure) {
         let endPoint = UserEndPoint.getHistoryBuy()
-        network.requestData(endPoint: endPoint, success: MapperData.mapArray(success), failure: failure)
-    }
-    
-    func getHistoryCoin(success: @escaping SuccessHandler<HistoryCoinEntity>.array, failure: @escaping RequestFailure) {
-        let endPoint = UserEndPoint.getHistoryCoin()
         network.requestData(endPoint: endPoint, success: MapperData.mapArray(success), failure: failure)
     }
     

@@ -32,7 +32,6 @@ enum UserEndPoint {
     case uploadAvatar()
     
     case getHistoryBuy()
-    case getHistoryCoin()
     case getFavourite()
 }
 
@@ -73,8 +72,6 @@ extension UserEndPoint: EndPointType {
             return "_api/user/upload_avatar"
         case .getHistoryBuy:
             return "_api/user/history_buy"
-        case .getHistoryCoin:
-            return "_api/user/history_coin"
         case .getFavourite:
             return "_api/user/favourite"
         }
@@ -84,7 +81,7 @@ extension UserEndPoint: EndPointType {
     var httpMethod: HTTPMethod {
         switch self { case .login, .fogotPassword, .checkLogin, .logout, .loginGmail, .loginFacebook, .verifyPhone, .getPointHistory, .getListFavorite, .addFavorite, .addFavoriteStaff, .signUp, .uploadAvatar:
             return .post
-        case .getCaptcha, .getIntroduceList, .getHistoryBuy, .getHistoryCoin, .getFavourite:
+        case .getCaptcha, .getIntroduceList, .getHistoryBuy, .getFavourite:
             return .get
         case .changePassword, .updateProfile, .updateProfileSocial:
             return .put
@@ -163,8 +160,6 @@ extension UserEndPoint: EndPointType {
         case .uploadAvatar:
             return [:]
         case .getHistoryBuy:
-            return [:]
-        case .getHistoryCoin:
             return [:]
         case .getFavourite:
              return [:]

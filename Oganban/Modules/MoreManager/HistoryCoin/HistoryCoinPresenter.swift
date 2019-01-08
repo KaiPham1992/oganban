@@ -28,7 +28,7 @@ class HistoryCoinPresenter: HistoryCoinPresenterProtocol {
 }
 
 extension HistoryCoinPresenter: HistoryCoinInteractorOutputProtocol{
-    func getSucessHistoryCoin(history: [HistoryCoinEntity]) {
+    func getSucessHistoryCoin(history: BaseHistoryCoinEntity?) {
         view?.getSucessHistoryCoin(history: history)
     }
     func getErrorHistoryCoin(error: APIError?) {

@@ -11,47 +11,53 @@
 import UIKit
 
 class HistoryCoinInteractor: HistoryCoinInteractorInputProtocol {
-
+    
     weak var presenter: HistoryCoinInteractorOutputProtocol?
     
     func getHistoryCoin(offset: Int) {
         
-        if offset == 0 {
-            let historyList = [HistoryCoinEntity(_id: "0", _content: "A1", _createTime: Date(), _coin: 1.0),
-                               HistoryCoinEntity(_id: "1", _content: "Bạn đã đổi Ơcoin để lấy \nMáy hút bụi Panasonic 10kg.", _createTime: Date(), _coin: 2.0),
-                               HistoryCoinEntity(_id: "2", _content: "A3", _createTime: Date(), _coin: 3.0),
-                               HistoryCoinEntity(_id: "3", _content: "A4", _createTime: Date(), _coin: 4.0),
-                               HistoryCoinEntity(_id: "4", _content: "A5", _createTime: Date(), _coin: 5.0),
-                               HistoryCoinEntity(_id: "5", _content: "A6", _createTime: Date(), _coin: 6.0),
-                               HistoryCoinEntity(_id: "6", _content: "A7", _createTime: Date(), _coin: 7.0),
-                               HistoryCoinEntity(_id: "7", _content: "A8", _createTime: Date(), _coin: 8.0),
-                               HistoryCoinEntity(_id: "8", _content: "A9", _createTime: Date(), _coin: 9.0),
-                               HistoryCoinEntity(_id: "9", _content: "A10", _createTime: Date(), _coin: 10.0),
-                               HistoryCoinEntity(_id: "10", _content: "A11", _createTime: Date(), _coin: 11.0),
-                               HistoryCoinEntity(_id: "11", _content: "A12", _createTime: Date(), _coin: 12.0),
-                               HistoryCoinEntity(_id: "12", _content: "A13", _createTime: Date(), _coin: 13.0),
-                               HistoryCoinEntity(_id: "13", _content: "A14", _createTime: Date(), _coin: 14.0),
-                               HistoryCoinEntity(_id: "14", _content: "A15", _createTime: Date(), _coin: 15.0),
-                               HistoryCoinEntity(_id: "15", _content: "A16", _createTime: Date(), _coin: 16.0),
-                               HistoryCoinEntity(_id: "16", _content: "A17", _createTime: Date(), _coin: 17.0),
-                               HistoryCoinEntity(_id: "17", _content: "A18", _createTime: Date(), _coin: 18.0),
-                               HistoryCoinEntity(_id: "18", _content: "A19", _createTime: Date(), _coin: 19.0),
-                               HistoryCoinEntity(_id: "19", _content: "A20", _createTime: Date(), _coin: 20.0)]
-            presenter?.getSucessHistoryCoin(history: historyList)
-        } else {
-            let historyList = [HistoryCoinEntity(_id: "0", _content: "A21", _createTime: Date(), _coin: 21.0),
-                               HistoryCoinEntity(_id: "1", _content: "A22", _createTime: Date(), _coin: 22.0),
-                               HistoryCoinEntity(_id: "2", _content: "A23", _createTime: Date(), _coin: 23.0),
-                               HistoryCoinEntity(_id: "3", _content: "A24", _createTime: Date(), _coin: 24.0),
-                               HistoryCoinEntity(_id: "4", _content: "A25", _createTime: Date(), _coin: 25.0),
-                               HistoryCoinEntity(_id: "5", _content: "A26", _createTime: Date(), _coin: 26.0),
-                               HistoryCoinEntity(_id: "6", _content: "A27", _createTime: Date(), _coin: 27.0),
-                               HistoryCoinEntity(_id: "7", _content: "A28", _createTime: Date(), _coin: 28.0),
-                               HistoryCoinEntity(_id: "8", _content: "A29", _createTime: Date(), _coin: 29.0),
-                               HistoryCoinEntity(_id: "9", _content: "A30", _createTime: Date(), _coin: 30.0)]
-            presenter?.getSucessHistoryCoin(history: historyList)
+        ProgressView.shared.show()
+        Provider.shared.orderAPIService.getHistoryCoin(offset: offset, success: { (historyCoin) in
+            ProgressView.shared.hide()
+            self.presenter?.getSucessHistoryCoin(history: historyCoin)
+        }) { (error) in
+            ProgressView.shared.hide()
+            self.presenter?.getErrorHistoryCoin(error: error)
         }
-        
-        
     }
 }
+//        if offset == 0 {
+//            let historyList = [HistoryCoinEntity(_id: "0", _content: "A1", _createTime: Date(), _coin: 1.0),
+//                               HistoryCoinEntity(_id: "1", _content: "Bạn đã đổi Ơcoin để lấy \nMáy hút bụi Panasonic 10kg.", _createTime: Date(), _coin: 2.0),
+//                               HistoryCoinEntity(_id: "2", _content: "A3", _createTime: Date(), _coin: 3.0),
+//                               HistoryCoinEntity(_id: "3", _content: "A4", _createTime: Date(), _coin: 4.0),
+//                               HistoryCoinEntity(_id: "4", _content: "A5", _createTime: Date(), _coin: 5.0),
+//                               HistoryCoinEntity(_id: "5", _content: "A6", _createTime: Date(), _coin: 6.0),
+//                               HistoryCoinEntity(_id: "6", _content: "A7", _createTime: Date(), _coin: 7.0),
+//                               HistoryCoinEntity(_id: "7", _content: "A8", _createTime: Date(), _coin: 8.0),
+//                               HistoryCoinEntity(_id: "8", _content: "A9", _createTime: Date(), _coin: 9.0),
+//                               HistoryCoinEntity(_id: "9", _content: "A10", _createTime: Date(), _coin: 10.0),
+//                               HistoryCoinEntity(_id: "10", _content: "A11", _createTime: Date(), _coin: 11.0),
+//                               HistoryCoinEntity(_id: "11", _content: "A12", _createTime: Date(), _coin: 12.0),
+//                               HistoryCoinEntity(_id: "12", _content: "A13", _createTime: Date(), _coin: 13.0),
+//                               HistoryCoinEntity(_id: "13", _content: "A14", _createTime: Date(), _coin: 14.0),
+//                               HistoryCoinEntity(_id: "14", _content: "A15", _createTime: Date(), _coin: 15.0),
+//                               HistoryCoinEntity(_id: "15", _content: "A16", _createTime: Date(), _coin: 16.0),
+//                               HistoryCoinEntity(_id: "16", _content: "A17", _createTime: Date(), _coin: 17.0),
+//                               HistoryCoinEntity(_id: "17", _content: "A18", _createTime: Date(), _coin: 18.0),
+//                               HistoryCoinEntity(_id: "18", _content: "A19", _createTime: Date(), _coin: 19.0),
+//                               HistoryCoinEntity(_id: "19", _content: "A20", _createTime: Date(), _coin: 20.0)]
+//            presenter?.getSucessHistoryCoin(history: historyList)
+//        } else {
+//            let historyList = [HistoryCoinEntity(_id: "0", _content: "A21", _createTime: Date(), _coin: 21.0),
+//                               HistoryCoinEntity(_id: "1", _content: "A22", _createTime: Date(), _coin: 22.0),
+//                               HistoryCoinEntity(_id: "2", _content: "A23", _createTime: Date(), _coin: 23.0),
+//                               HistoryCoinEntity(_id: "3", _content: "A24", _createTime: Date(), _coin: 24.0),
+//                               HistoryCoinEntity(_id: "4", _content: "A25", _createTime: Date(), _coin: 25.0),
+//                               HistoryCoinEntity(_id: "5", _content: "A26", _createTime: Date(), _coin: 26.0),
+//                               HistoryCoinEntity(_id: "6", _content: "A27", _createTime: Date(), _coin: 27.0),
+//                               HistoryCoinEntity(_id: "7", _content: "A28", _createTime: Date(), _coin: 28.0),
+//                               HistoryCoinEntity(_id: "8", _content: "A29", _createTime: Date(), _coin: 29.0),
+//                               HistoryCoinEntity(_id: "9", _content: "A30", _createTime: Date(), _coin: 30.0)]
+        
+

@@ -93,19 +93,32 @@ extension HistoryCoinViewController: UITableViewDelegate, UITableViewDataSource 
 }
 
 extension HistoryCoinViewController: HistoryCoinViewProtocol{
-    func getSucessHistoryCoin(history: [HistoryCoinEntity]) {
+    
+    func getSucessHistoryCoin(history: BaseHistoryCoinEntity?) {
         canLoadMore = false
-        //guard let _history = history else { return }
-        canLoadMore = history.count == limitLoad
+        guard let historyCoin = history else { return }
+        canLoadMore = historyCoin.dataCoin.count == limitLoad
         
         if self.historyList.isEmpty || isRefresh {
             isRefresh = false
-            self.historyList = history
+            self.historyList = historyCoin.dataCoin
         } else {
-            self.historyList.append(contentsOf: history)
+            self.historyList.append(contentsOf: historyCoin.dataCoin)
         }
+        
+        self.showTotalCoin( historyCoin.accountCoin )
     }
     
+    func showTotalCoin(_ totalCoin: Double?) {
+        if let _coin = totalCoin, let coin = String(_coin).addComma() {
+            let attr = NSMutableAttributedString()
+            let attr1 = (coin + " ").toAttributedString(color: AppColor.black414141, font: AppFont.fontBoldRoboto15, isUnderLine: false)
+            let attr2 = "ơ".toAttributedString(color: AppColor.black414141, font: AppFont.fontBoldRoboto15, isUnderLine: true)
+            attr.append(attr1)
+            attr.append(attr2)
+            self.totalCoin.attributedText = attr
+        }
+    }
     func getErrorHistoryCoin(error: APIError?) {
         canLoadMore = false
         self.historyList = []
