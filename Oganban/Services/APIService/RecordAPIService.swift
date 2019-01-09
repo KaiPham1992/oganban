@@ -19,8 +19,9 @@ protocol RecordAPIServiceProtocol {
     func sendComment(recordId: String, comment: String, commentId: String, isReComment: String, success: @escaping SuccessHandler<CommentResponseEntity>.object, failure: @escaping RequestFailure)
     func getCommentList(recordId: String, offset: Int, limit: Int, success: @escaping SuccessHandler<CommentResponseEntity>.array, failure: @escaping RequestFailure)
     func deleteComment(commentID: String, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
-
     
+    func updateRecord(recordID: String, expiredDate: String, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
+
 }
 
 class RecordAPIService: RecordAPIServiceProtocol {
@@ -65,6 +66,7 @@ class RecordAPIService: RecordAPIServiceProtocol {
         let endPoint = RecordEndPoint.getFavouriteRecord()
         network.requestData(endPoint: endPoint, success: MapperData.mapArray(success), failure: failure)
     }
+
     //--Comment
     func sendComment(recordId: String, comment: String, commentId: String, isReComment: String, success: @escaping SuccessHandler<CommentResponseEntity>.object, failure: @escaping RequestFailure) {
         let endPoint = RecordEndPoint.sendComment(recordId: recordId, comment: comment, commentId: commentId, isReComment: isReComment)
@@ -72,12 +74,17 @@ class RecordAPIService: RecordAPIServiceProtocol {
     }
     
     func deleteComment(commentID: String, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure) {
-        let endPoint = RecordEndPoint.deleComent(commentId: commentID)
+        let endPoint = RecordEndPoint.deleteComment(commentId: commentID)
         network.requestData(endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
     }
     
     func getCommentList(recordId: String, offset: Int, limit: Int, success: @escaping SuccessHandler<CommentResponseEntity>.array, failure: @escaping RequestFailure) {
         let endPoint = RecordEndPoint.getCommentList(recordId: recordId, offset: offset, limit: limit)
         network.requestData(endPoint: endPoint, success: MapperData.mapArray(success), failure: failure)
+    }
+    
+    func updateRecord(recordID: String, expiredDate: String, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure) {
+        let endPoint = RecordEndPoint.updateRecord(recordID: recordID, expiredDate: expiredDate)
+        network.requestData(endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
     }
 }

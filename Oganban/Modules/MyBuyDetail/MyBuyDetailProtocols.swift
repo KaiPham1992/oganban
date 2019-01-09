@@ -21,6 +21,7 @@ protocol MyBuyDetailPresenterProtocol: class {
     func getDetailOrder(id: String)
     func changedStatusOrder(status: OrderStatusKey, id: String)
     func changedStatusOrderSaler(status: OrderStatusKey, id: String)
+    func postRating(point: Int, accountID: String, isBuyer: Bool, orderID: String)
 }
 
 //MARK: Interactor -
@@ -28,6 +29,7 @@ protocol MyBuyDetailInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
     func didGetOrder(order: OrderDetailEntity?)
+    func didPostRating(data: BaseResponse?)
     
 }
 
@@ -39,6 +41,7 @@ protocol MyBuyDetailInteractorInputProtocol: class {
     func getDetailOrder(id: String)
     func changedStatusOrder(status: OrderStatusKey, id: String)
     func changedStatusOrderSaler(status: OrderStatusKey, id: String)
+    func postRating(point: Int, accountID: String, isBuyer: Bool, orderID: String)
 }
 
 //MARK: View -
@@ -48,4 +51,5 @@ protocol MyBuyDetailViewProtocol: class {
 
     /* Presenter -> ViewController */
     func didGetOrder(order: OrderDetailEntity?)
+    func didPostRating(data: BaseResponse?)
 }

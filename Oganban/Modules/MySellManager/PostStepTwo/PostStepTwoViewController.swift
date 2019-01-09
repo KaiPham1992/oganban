@@ -28,8 +28,10 @@ class PostStepTwoViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUpdate()
+        
     }
+    
+    
     
     override func setUpViews() {
         super.setUpViews()
@@ -60,7 +62,7 @@ class PostStepTwoViewController: BaseViewController {
     
     func setupUpdate() {
         if isCopyUpdate {
-            setupUpdate()
+            CopyUpdate()
         }
     }
     
@@ -93,6 +95,7 @@ class PostStepTwoViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         hideTabbar()
+        setupUpdate()
     }
     
     @IBAction func btnPostTapped() {

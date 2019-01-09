@@ -14,7 +14,11 @@ class AppRatingView: BaseViewXib {
     
     @IBAction func btnActionTapped(sender: UIButton) {
         number = sender.tag
-       
+        setStar(number: number)
+    }
+    
+    func setStar(number: Int) {
+        self.number = number
         for subView  in vStackView.arrangedSubviews {
             if let btn = subView as? UIButton {
                 if btn.tag <= number {
@@ -24,7 +28,6 @@ class AppRatingView: BaseViewXib {
                 }
             }
         }
-        
     }
     
 }

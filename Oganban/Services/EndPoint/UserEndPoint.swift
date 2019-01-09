@@ -31,9 +31,14 @@ enum UserEndPoint {
     case updateProfileSocial(param: UpdateProfileSocial)
     case uploadAvatar()
     
-    case getHistoryBuy()
+    
     case getHistoryCoin()
-    case getFavourite()
+    case postRating(point: Int, accountID: String, isBuyer: Bool, orderID: String)
+    
+    case getHistoryBuy(offset: Int, limit: Int)
+    case getFavourite(offset: Int, limit: Int)
+    case removeFavourite(isFavorite: Int, accountId: Int)
+    case getRecordByFavoriteUser(offset: Int, limit: Int, accountId: Int)
 }
 
 extension UserEndPoint: EndPointType {
@@ -72,19 +77,28 @@ extension UserEndPoint: EndPointType {
         case .uploadAvatar:
             return "_api/user/upload_avatar"
         case .getHistoryBuy:
-            return "_api/user/history_buy"
-        case .getHistoryCoin:
-            return "_api/user/history_coin"
+            return "_api/user/get_history_buy_post"
         case .getFavourite:
-            return "_api/user/favourite"
+            return "_api/user/favorite_list"
+        case .removeFavourite:
+            return "_api/user/add_favorite"
+        case .getRecordByFavoriteUser:
+            return "_api/user/record_by_favorite_user_list"
+        case .postRating:
+            return "_api/user/post_rating"
+        case .getHistoryCoin:
+            return "_api/order/get_history_coin"
         }
         
     }
     
     var httpMethod: HTTPMethod {
-        switch self { case .login, .fogotPassword, .checkLogin, .logout, .loginGmail, .loginFacebook, .verifyPhone, .getPointHistory, .getListFavorite, .addFavorite, .addFavoriteStaff, .signUp, .uploadAvatar:
+        
+        switch self {
+            
+        case .login, .fogotPassword, .checkLogin, .logout, .loginGmail, .loginFacebook, .verifyPhone, .getPointHistory, .getListFavorite, .addFavorite, .addFavoriteStaff, .signUp, .uploadAvatar, .postRating, .getFavourite, .getHistoryBuy, .removeFavourite, .getHistoryCoin, .getRecordByFavoriteUser:
             return .post
-        case .getCaptcha, .getIntroduceList, .getHistoryBuy, .getHistoryCoin, .getFavourite:
+        case .getCaptcha, .getIntroduceList:
             return .get
         case .changePassword, .updateProfile, .updateProfileSocial:
             return .put
@@ -157,17 +171,31 @@ extension UserEndPoint: EndPointType {
             let param = ["is_favorite": isFavorite,
                          "account_id": accountID] as [String: Any]
             return param
-            
+        case .postRating(let point, let accountID, let isBuyer, let orderID):
+            let param = ["point": point,
+                         "account_id": accountID,
+                         "is_buyer": isBuyer,
+                         "order_id": orderID] as [String: Any]
+            return param
         case .updateProfileSocial(let param):
             return param.toJSON()
         case .uploadAvatar:
             return [:]
-        case .getHistoryBuy:
-            return [:]
         case .getHistoryCoin:
             return [:]
-        case .getFavourite:
-             return [:]
+        case .getHistoryBuy(let offset, let limit):
+            return ["offset": offset,
+                    "limit": limit]
+        case .getFavourite(let offset, let limit):
+            return  ["offset": offset,
+                     "limit": limit]
+        case .removeFavourite(let isFavorite, let accountId):
+            return ["is_favorite": isFavorite,
+                    "account_id": accountId]
+        case .getRecordByFavoriteUser(let offset, let limit, let accountId):
+            return   ["account_id":accountId,
+                      "offset":offset,
+                      "limit":limit]
         }
     }
     

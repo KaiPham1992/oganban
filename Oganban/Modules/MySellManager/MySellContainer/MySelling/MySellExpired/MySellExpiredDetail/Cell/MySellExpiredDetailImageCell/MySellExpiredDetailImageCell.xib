@@ -69,6 +69,17 @@
                                             <action selector="btnCopyTapped" destination="KGk-i7-Jjw" eventType="touchUpInside" id="He2-bD-1hy"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0DS-UE-a7a">
+                                        <rect key="frame" x="130.5" y="-2" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="LoO-Zz-6uu"/>
+                                            <constraint firstAttribute="width" constant="20" id="oZc-5Y-QeB"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="ic_edit_date"/>
+                                        <connections>
+                                            <action selector="btnUpdateTapped" destination="KGk-i7-Jjw" eventType="touchUpInside" id="7kg-HK-way"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -78,9 +89,11 @@
                                     <constraint firstItem="caS-wE-Zyb" firstAttribute="top" secondItem="Wpn-V1-34W" secondAttribute="bottom" constant="5" id="XLv-W9-FVW"/>
                                     <constraint firstItem="caS-wE-Zyb" firstAttribute="leading" secondItem="Wpn-V1-34W" secondAttribute="leading" id="bTe-iT-Lar"/>
                                     <constraint firstItem="Wpn-V1-34W" firstAttribute="top" secondItem="Dga-Lm-H4Q" secondAttribute="top" id="jgc-ga-sdp"/>
+                                    <constraint firstItem="0DS-UE-a7a" firstAttribute="centerY" secondItem="Wpn-V1-34W" secondAttribute="centerY" id="rp9-ad-cNI"/>
                                     <constraint firstAttribute="trailing" secondItem="0fD-fw-SZI" secondAttribute="trailing" id="tf2-wb-YAL"/>
                                     <constraint firstAttribute="height" constant="50" id="uDu-AR-vRj"/>
                                     <constraint firstItem="Wpn-V1-34W" firstAttribute="leading" secondItem="Dga-Lm-H4Q" secondAttribute="leading" id="xGH-V0-Jjy"/>
+                                    <constraint firstItem="0DS-UE-a7a" firstAttribute="leading" secondItem="Wpn-V1-34W" secondAttribute="trailing" constant="5" id="xzC-zU-o0b"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="CIB-uk-LIi">
@@ -136,6 +149,7 @@
             <connections>
                 <outlet property="btnCopy" destination="0fD-fw-SZI" id="Wig-wX-jYO"/>
                 <outlet property="btnDelete" destination="caS-wE-Zyb" id="WxO-kA-peF"/>
+                <outlet property="btnUpdate" destination="0DS-UE-a7a" id="4NV-3S-OGb"/>
                 <outlet property="heightMoneyCoin" destination="AqW-Ac-zk4" id="iMG-ce-CcC"/>
                 <outlet property="imageSlide" destination="9WM-0u-DCl" id="EQD-M1-gdy"/>
                 <outlet property="lbExpireDate" destination="Wpn-V1-34W" id="ScL-FL-3df"/>
@@ -148,4 +162,7 @@
             <point key="canvasLocation" x="137.59999999999999" y="36.881559220389811"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="ic_edit_date" width="15" height="14.5"/>
+    </resources>
 </document>

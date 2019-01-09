@@ -42,6 +42,10 @@ class RecordEntity: BaseEntity {
     var cropImage: String?
     
     var status: String?
+    var isTransaction: Bool?
+    var isFavorite: Int?
+    var categoryName: String?
+    var catrgotyID: String?
     
     required init?(map: Map) {
         super.init()
@@ -72,7 +76,8 @@ class RecordEntity: BaseEntity {
         self.phone <- map["phone"]
         self.cropImage <- map["crop_img_src_account"]
         self.accountCoin <- map["account_coin"]
-        
+        self.categoryName <- map["category_name"]
+        self.catrgotyID <- map["category_id"]
         if let distance = self.distance, let dis = Double(distance) {
             let temp = dis * 1000
             if temp > 1000 {
@@ -87,6 +92,8 @@ class RecordEntity: BaseEntity {
         self.isActive <- map["is_active"]
         self.about <- map["about_record"]
         self.status <- map["status"]
+        self.isTransaction <- map["is_transaction"]
+        self.isFavorite <- map["is_favorite"]
     }
     
     var urlAvatar: URL? {

@@ -10,7 +10,7 @@ import UIKit
 
 protocol OrderDetailImageCellDelegate: class {
     func btnHideTapped()
-    func btnDeleteTapped()
+    func btnEditTapped()
 }
 
 class OrderDetailImageCell: BaseTableCell {
@@ -26,11 +26,9 @@ class OrderDetailImageCell: BaseTableCell {
     @IBOutlet weak var lbNameRecord: UILabel!
     @IBOutlet weak var lbExpireDate: UILabel!
     @IBOutlet weak var lbQuantity: UILabel!
+    @IBOutlet weak var btnEdit: UIButton!
     
-    var isMySellHide: Bool = false
-    var isMySellExpired: Bool = false
-    
-    var isToOrderSellDetail: Bool = false
+    var dateSelected: Date?
     
     // My sell
     var record: RecordEntity? {
@@ -54,6 +52,13 @@ class OrderDetailImageCell: BaseTableCell {
             }
             
             radioCoin.setOCoin(coin: _record.coin)
+            if let transaction = _record.isTransaction  {
+                if transaction {
+                    btnEdit.isHidden = true
+                } else {
+                    btnEdit.isHidden = false
+                }
+            }
         }
     }
     
@@ -90,11 +95,12 @@ class OrderDetailImageCell: BaseTableCell {
     }
     
     @IBAction func btnHideTapped() {
-        if isMySellHide {
-            delegate?.btnDeleteTapped()
-        } else {
-            delegate?.btnHideTapped()
-        }
+        delegate?.btnHideTapped()
+    }
+    
+    @IBAction func btnEditTapped() {
+        
+        delegate?.btnEditTapped()
     }
     
 }

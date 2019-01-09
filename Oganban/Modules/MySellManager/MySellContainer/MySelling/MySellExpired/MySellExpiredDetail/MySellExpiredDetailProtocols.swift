@@ -21,6 +21,8 @@ protocol MySellExpiredDetailPresenterProtocol: class {
     
     func getDetail(id: String)
     func deleteRecord(recordID: String)
+    func getExpiredDay()
+    func editRecord(recordID: String, expiredDate: String)
 }
 
 //MARK: Interactor -
@@ -29,6 +31,7 @@ protocol MySellExpiredDetailInteractorOutputProtocol: class {
     /* Interactor -> Presenter */
     func didGetDetail(record: RecordEntity?)
     func didDeleteRecord(data: BaseResponse?)
+    func didEditRecord(data: BaseResponse?)
 }
 
 protocol MySellExpiredDetailInteractorInputProtocol: class {
@@ -38,6 +41,8 @@ protocol MySellExpiredDetailInteractorInputProtocol: class {
     /* Presenter -> Interactor */
     func getDetail(id: String)
     func deleteRecord(recordID: String)
+    func getExpiredDay()
+    func editRecord(recordID: String, expiredDate: String)
 }
 
 //MARK: View -
@@ -48,4 +53,5 @@ protocol MySellExpiredDetailViewProtocol: class {
     /* Presenter -> ViewController */
     func didGetDetail(record: RecordEntity?)
     func didDeleteRecord(data: BaseResponse?)
+    func didEditRecord(data: BaseResponse?)
 }

@@ -98,9 +98,16 @@ extension OrderBuyDetailViewController: UITableViewDelegate, UITableViewDataSour
         }
         if section == 2 {
             header.btnLike.isHidden = false
+            header.delegate = self
+            guard let _isFavorite = record?.isFavorite else { return v}
+            if _isFavorite == 1 {
+                header.isLiked = true
+            } else {
+                header.isLiked = false
+            }
             
         }
-        header.delegate = self
+        
         return v
     }
     
