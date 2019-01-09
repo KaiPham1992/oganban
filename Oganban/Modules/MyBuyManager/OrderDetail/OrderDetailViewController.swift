@@ -76,6 +76,12 @@ class OrderDetailViewController: BaseViewController {
 }
 
 extension OrderDetailViewController: OrderDetailViewProtocol {
+    func didSendComment(comment: CommentResponseEntity?) {
+        guard let _comment = comment else { return }
+        let commentAdd = CommentEntity(comment: _comment.comment&)
+        insertComment(comment: commentAdd)
+    }
+    
     func didGetDetail(record: RecordEntity?) {
         self.record = record
     }

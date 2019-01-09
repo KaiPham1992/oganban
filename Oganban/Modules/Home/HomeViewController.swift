@@ -48,6 +48,8 @@ class HomeViewController: BaseViewController {
     var index = 0
     var indexCategory = 0
     var listCategory: [CategoryEntity] = []
+    var oldParentSelected: Int?
+    var oldChildSelected: [Int] = []
     
     let scaleDropdown = DropDown()
     var paramFilter = RecordParam()
@@ -58,6 +60,13 @@ class HomeViewController: BaseViewController {
             self.lbDistance.text = distance?.title
         }
     }
+    
+    // number of items to be fetched each time (database LIMIT)
+    let itemsPerBatch = 20
+    // Where to start fetching items (database OFFSET)
+    var offset = 0
+    // a flag for when all database items have already been loaded
+    var reachedEndOfItems = false
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -167,6 +176,8 @@ class HomeViewController: BaseViewController {
     }
     
     func getParamDefault() {
+        offset = 0
+        reachedEndOfItems = false
         let radius = UserDefaultHelper.shared.radius?.value
         let long = UserDefaultHelper.shared.long
         let lat = UserDefaultHelper.shared.lat
@@ -280,7 +291,15 @@ extension HomeViewController: HomeViewProtocol {
     }
     
     func didFilterRecord(list: [RecordEntity]) {
-        listRecord = list
+        // update UITableView with new batch of items on main thread after query finishes
+        DispatchQueue.main.async {
+            self.listRecord.append(contentsOf: list)
+            if list.count < self.itemsPerBatch {
+                self.reachedEndOfItems = true
+                print("reached end of data. Batch count: \(list.count)")
+            }
+            self.offset += self.itemsPerBatch
+        }
     }
     
     func didGetCategoryMerge(list: [CategoryMergeEntity]) {
@@ -307,6 +326,23 @@ extension HomeViewController: HomeViewProtocol {
             if index == indexCategory {
                 self.presenter?.getCategoryChild(id: item.id&)
             }
+        }
+    }
+    
+    func loadMore() {
+        
+        // don't bother doing another db query if already have everything
+        guard !self.reachedEndOfItems else {
+            return
+        }
+        
+        // query the db on a background thread
+        DispatchQueue.global(qos: .background).async {
+            
+            self.paramFilter.offset = self.offset
+            self.paramFilter.limit = self.itemsPerBatch
+            self.presenter?.filterRecord(param: self.paramFilter)
+
         }
     }
 }
@@ -352,6 +388,11 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if ((indexPath.row) + (10 * indexPath.section)) == (self.listRecord.count - 1) {
+            self.loadMore()
+        }
+        
         if listRecord.count == 1 {
             if indexPath.row == 0 {
                 let cell = collectionView.dequeueCollectionCell(AdmobCell.self, indexPath: indexPath)
@@ -425,6 +466,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let heightMax = UIScreen.main.bounds.height - 300
         switch tableView {
         case tbLeft:
+            
             let cell = tableView.dequeueTableCell(LeftMenuCell.self)
             cell.lbTitle.text = menu[indexPath.row].name
             cell.lbTitle.textColor = menu[indexPath.row].isSelected ? .yellow : .white
@@ -451,29 +493,36 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         switch tableView {
         case tbLeft:
             index = indexPath.row
-            for (temp, _) in menu.enumerated() {
-                if temp != index {
-                    if menu[temp].isSelected == true {
-                        indexReload = temp
-                        menu[temp].isSelected = false
-                        self.tbLeft.reloadRows(at: [IndexPath(item: temp, section: indexPath.section)], with: .none)
-                    }
-                    
-                }
+            menu[oldParentSelected*].isSelected = false
+            for (tempInt, item) in oldChildSelected.enumerated() {
+                menu[oldParentSelected*].cateChild[item].isSelected = false
+                tbRight.reloadRows(at: [IndexPath(item: item, section: indexPath.section), indexPath], with: .none)
             }
             menu[index].isSelected = true
-            tbLeft.reloadRows(at: [indexPath], with: .none)
-            tbLeft.isHidden = true
-            btnHideDropdown.isHidden = true
+            indexReload = oldParentSelected
+            tbLeft.reloadRows(at: [IndexPath(item: oldParentSelected*, section: indexPath.section), indexPath], with: .none)
+            oldParentSelected = index
             lbCategory.text = menu[index].name
             paramFilter.categoryId = [menu[index].id&]
             paramFilter.isParent = "1"
             presenter?.filterRecord(param: paramFilter)
+            hideDropdown()
         case tbRight:
+            
             if indexPath.row == menu[index].cateChild.count {
                 
             } else {
                 menu[index].cateChild[indexPath.row].isSelected = !menu[index].cateChild[indexPath.row].isSelected
+                
+                if menu[index].cateChild[indexPath.row].isSelected {
+                    oldChildSelected.append(indexPath.row)
+                } else {
+                    for (tempInt, item) in oldChildSelected.enumerated() {
+                        if item == indexPath.row {
+                            oldChildSelected.remove(at: tempInt)
+                        }
+                    }
+                }
                 tbRight.reloadRows(at: [indexPath], with: .none)
             }
            
@@ -529,15 +578,15 @@ extension HomeViewController: PositionViewControllerDelegate {
 extension HomeViewController: LeftMenuCellDelegate {
     func openRightMenu(indexPath: IndexPath) {
         index = indexPath.row
-        for (temp, _) in menu.enumerated() {
-            if temp != index {
-                if menu[temp].isSelected == true {
-                    indexReload = temp
-                    menu[temp].isSelected = false
-                    self.tbLeft.reloadRows(at: [IndexPath(item: temp, section: indexPath.section)], with: .none)
-                }
-                
+        
+        if oldParentSelected != index {
+            menu[oldParentSelected*].isSelected = false
+            indexReload = oldParentSelected
+            tbLeft.reloadRows(at: [IndexPath(row: oldParentSelected*, section: indexPath.section)], with: .none)
+            for (tempInt, item) in oldChildSelected.enumerated() {
+                menu[oldParentSelected*].cateChild[item].isSelected = false
             }
+            oldParentSelected = index
         }
         menu[index].isSelected = true
         tbLeft.reloadRows(at: [indexPath], with: .none)

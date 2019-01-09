@@ -22,6 +22,7 @@ protocol OrderDetailPresenterProtocol: class {
     func hideRecord(recordID: String)
     func editRecord(recordID: String, expiredDate: String)
     func getExpiredDay()
+    func sendComment(param: SendCommentParam)
 }
 
 //MARK: Interactor -
@@ -31,6 +32,7 @@ protocol OrderDetailInteractorOutputProtocol: class {
     func didGetDetail(record: RecordEntity?)
     func didHideRecord(data: BaseResponse?)
     func didEditRecord(data: BaseResponse?)
+    func didSendComment(comment: CommentResponseEntity?)
 }
 
 protocol OrderDetailInteractorInputProtocol: class {
@@ -42,6 +44,7 @@ protocol OrderDetailInteractorInputProtocol: class {
     func hideRecord(recordID: String)
     func editRecord(recordID: String, expiredDate: String)
     func getExpiredDay()
+    func sendComment(param: SendCommentParam)
 }
 
 //MARK: View -
@@ -53,4 +56,5 @@ protocol OrderDetailViewProtocol: class {
     func didGetDetail(record: RecordEntity?)
     func didHideRecord(data: BaseResponse?)
     func didEditRecord(data: BaseResponse?)
+    func didSendComment(comment: CommentResponseEntity?)
 }

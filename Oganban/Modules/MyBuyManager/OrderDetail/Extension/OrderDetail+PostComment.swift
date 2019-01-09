@@ -16,8 +16,9 @@ extension OrderDetailViewController: PostCommentViewDelegate {
     
     func postCommentView(_ postCommentView: PostCommentView, sendComment comment: String) {
         if postCommentView == vPostCommentView {
-            let comment = CommentEntity(comment: comment)
-            insertComment(comment: comment)
+            let param = SendCommentParam(recordId: recordId&, comment: comment&, isReComment: "0")
+            presenter?.sendComment(param: param)
+            
         } else {
             let subComment = SubCommentEntity(comment: comment)
             insertSubComment(section: postCommentView.tag, subComment: subComment)
