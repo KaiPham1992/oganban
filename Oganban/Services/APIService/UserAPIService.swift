@@ -34,12 +34,11 @@ protocol UserAPIServiceProtocol {
     func getFavourite(offset: Int, success: @escaping SuccessHandler<FavouriteEntity>.array, failure: @escaping RequestFailure)
     
     func addFavoriteStaff(isFavorite: Bool, accountID: String, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
-
+    func postRating(point: Int, accountID: String, isBuyer: Bool, orderID: String, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
     func removeFavourite(isFavorite: Int, accountId: Int, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
-    
      func getRecordByFavoriteUser(accountId: Int, offset: Int, success: @escaping SuccessHandler<RecordEntity>.array, failure: @escaping RequestFailure)
-
 }
+
 
 class UserAPIService: UserAPIServiceProtocol {
    
@@ -132,10 +131,16 @@ class UserAPIService: UserAPIServiceProtocol {
         network.requestData(endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
     }
     
+
     func getRecordByFavoriteUser(accountId: Int, offset: Int, success: @escaping SuccessHandler<RecordEntity>.array, failure: @escaping RequestFailure) {
         let endPoint = UserEndPoint.getRecordByFavoriteUser(offset: offset, limit: limitLoad, accountId: accountId)
         network.requestData(endPoint: endPoint, success: MapperData.mapArray(success), failure: failure)
     }
+    
+    func postRating(point: Int, accountID: String, isBuyer: Bool, orderID: String, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping (APIError?) -> Void) {
+        let endPoint = UserEndPoint.postRating(point: point, accountID: accountID, isBuyer: isBuyer, orderID: orderID)
+        network.requestData(endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
+        }
 }
 
 

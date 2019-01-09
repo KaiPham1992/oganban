@@ -44,4 +44,12 @@ class MyBuyDetailInteractor: MyBuyDetailInteractorInputProtocol {
             PopUpHelper.shared.showMessageHaveAds(error: error)
         }
     }
+    
+    func postRating(point: Int, accountID: String, isBuyer: Bool, orderID: String) {
+        Provider.shared.userAPIService.postRating(point: point, accountID: accountID, isBuyer: isBuyer, orderID: orderID, success: { (data) in
+            self.presenter?.didPostRating(data: data)
+        }) { (_) in
+            
+        }
+    }
 }

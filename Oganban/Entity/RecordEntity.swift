@@ -43,7 +43,7 @@ class RecordEntity: BaseEntity {
     
     var status: String?
     var isTransaction: Bool?
-    var isFavorite: Bool?
+    var isFavorite: Int?
     
     required init?(map: Map) {
         super.init()

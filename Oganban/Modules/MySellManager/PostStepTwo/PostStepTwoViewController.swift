@@ -58,7 +58,7 @@ class PostStepTwoViewController: BaseViewController {
         vMoney.textField.isEnabled = false
         vCoin.textField.isEnabled = false
         showDataSaved()
-        setupUpdate()
+//        setupUpdate()
     }
     
     func setupUpdate() {
@@ -96,6 +96,7 @@ class PostStepTwoViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         hideTabbar()
+        setupUpdate()
     }
     
     @IBAction func btnPostTapped() {

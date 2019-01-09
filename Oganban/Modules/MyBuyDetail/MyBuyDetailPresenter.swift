@@ -11,6 +11,8 @@
 import UIKit
 
 class MyBuyDetailPresenter: MyBuyDetailPresenterProtocol, MyBuyDetailInteractorOutputProtocol {
+    
+    
 
     weak private var view: MyBuyDetailViewProtocol?
     var interactor: MyBuyDetailInteractorInputProtocol?
@@ -26,9 +28,6 @@ class MyBuyDetailPresenter: MyBuyDetailPresenterProtocol, MyBuyDetailInteractorO
         interactor?.getDetailOrder(id: id)
     }
     
-    func didGetOrder(order: OrderDetailEntity?) {
-        view?.didGetOrder(order: order)
-    }
     
     func changedStatusOrder(status: OrderStatusKey, id: String) {
         interactor?.changedStatusOrder(status: status, id: id)
@@ -36,5 +35,18 @@ class MyBuyDetailPresenter: MyBuyDetailPresenterProtocol, MyBuyDetailInteractorO
 
     func changedStatusOrderSaler(status: OrderStatusKey, id: String) {
         interactor?.changedStatusOrderSaler(status: status, id: id)
+    }
+    
+    func postRating(point: Int, accountID: String, isBuyer: Bool, orderID: String) {
+        interactor?.postRating(point: point, accountID: accountID, isBuyer: isBuyer, orderID: orderID)
+    }
+    
+    //-----
+    func didGetOrder(order: OrderDetailEntity?) {
+        view?.didGetOrder(order: order)
+    }
+    
+    func didPostRating(data: BaseResponse?) {
+        view?.didPostRating(data: data)
     }
 }
