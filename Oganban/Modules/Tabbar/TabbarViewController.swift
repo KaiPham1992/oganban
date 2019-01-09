@@ -83,11 +83,11 @@ class TabbarViewController: UITabBarController {
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: unselectedColor], for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: selectedColor], for: .selected)
         
-        if UIDevice.current.isIphoneXOrLater() == true {
-            UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 4)
-        } else {
-            UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 0)
-        }
+//        if UIDevice.current.isIphoneXOrLater() == true {
+//            UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 4)
+//        } else {
+//            UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -4)
+//        }
         
         self.tabBar.tintColor = UIColor.white
         addViewControllerToTabbar(listViewController: listViewController)
