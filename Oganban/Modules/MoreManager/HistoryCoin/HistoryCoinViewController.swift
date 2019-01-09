@@ -41,8 +41,7 @@ class HistoryCoinViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        presenter?.getHistoryCoin(offset: 0)
-        self.showTotalCoin(total: 10000.0)
+         pullToRefresh()
     }
     
     func configureTableView() {
@@ -61,7 +60,8 @@ class HistoryCoinViewController: BaseViewController {
     @objc func pullToRefresh() {
         isRefresh = true
         self.refreshControl.endRefreshing()
-        presenter?.getHistoryCoin(offset: 0)
+        self.presenter?.getHistoryCoin(offset: 0)
+        self.showTotalCoin(total: 10000.0)
     }
     
     func showTotalCoin(total: Double){

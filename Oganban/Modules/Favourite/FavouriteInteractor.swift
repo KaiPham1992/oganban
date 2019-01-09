@@ -11,34 +11,29 @@
 import UIKit
 
 class FavouriteInteractor: FavouriteInteractorInputProtocol {
-
+    
     weak var presenter: FavouriteInteractorOutputProtocol?
     
     func getFavourite(offset: Int) {
-        if offset == 0 {
-            let favouriteList = [FavouriteEntity(_id: "0", _name: "Dinh Van Tu", _createTime: Date(), _level: "Gold", _imgCropSrc: "link", _countRating: "1.0"),
-                                 FavouriteEntity(_id: "0", _name: "Dinh Van Tu", _createTime: Date(), _level: "Gold", _imgCropSrc: "link", _countRating: "2.0"),
-                                 FavouriteEntity(_id: "0", _name: "Dinh Van Tu", _createTime: Date(), _level: "Gold", _imgCropSrc: "link", _countRating: "3.0"),
-                                FavouriteEntity(_id: "0", _name: "Dinh Van Tu", _createTime: Date(), _level: "Gold", _imgCropSrc: "link", _countRating: "4.0"),
-                                FavouriteEntity(_id: "0", _name: "Dinh Van Tu", _createTime: Date(), _level: "Gold", _imgCropSrc: "link", _countRating: "5.0"),
-                                FavouriteEntity(_id: "0", _name: "Dinh Van Tu", _createTime: Date(), _level: "Gold", _imgCropSrc: "link", _countRating: "6.0"),
-                                FavouriteEntity(_id: "0", _name: "Dinh Van Tu", _createTime: Date(), _level: "Gold", _imgCropSrc: "link", _countRating: "7.0"),
-                                FavouriteEntity(_id: "0", _name: "Dinh Van Tu", _createTime: Date(), _level: "Gold", _imgCropSrc: "link", _countRating: "8.0"),
-                                FavouriteEntity(_id: "0", _name: "Dinh Van Tu", _createTime: Date(), _level: "Gold", _imgCropSrc: "link", _countRating: "9.0"),
-                                FavouriteEntity(_id: "0", _name: "Dinh Van Tu", _createTime: Date(), _level: "Gold", _imgCropSrc: "link", _countRating: "10.0"),
-                                FavouriteEntity(_id: "0", _name: "Dinh Van Tu", _createTime: Date(), _level: "Gold", _imgCropSrc: "link", _countRating: "11.0"),
-                                FavouriteEntity(_id: "0", _name: "Dinh Van Tu", _createTime: Date(), _level: "Gold", _imgCropSrc: "link", _countRating: "12.0"),
-                                FavouriteEntity(_id: "0", _name: "Dinh Van Tu", _createTime: Date(), _level: "Member", _imgCropSrc: "link", _countRating: "13.0"),
-                                FavouriteEntity(_id: "0", _name: "Dinh Van Tu", _createTime: Date(), _level: "Member", _imgCropSrc: "link", _countRating: "14.0"),
-                                FavouriteEntity(_id: "0", _name: "Dinh Van Tu", _createTime: Date(), _level: "Member", _imgCropSrc: "link", _countRating: "15.0"),
-                                FavouriteEntity(_id: "0", _name: "Dinh Van Tu", _createTime: Date(), _level: "Member", _imgCropSrc: "link", _countRating: "16.0"),
-                                FavouriteEntity(_id: "0", _name: "Dinh Van Tu", _createTime: Date(), _level: "Member", _imgCropSrc: "link", _countRating: "17.0"),
-                                FavouriteEntity(_id: "0", _name: "Dinh Van Tu", _createTime: Date(), _level: "Member", _imgCropSrc: "link", _countRating: "18.0"),
-                                FavouriteEntity(_id: "0", _name: "Dinh Van Tu", _createTime: Date(), _level: "Diamond", _imgCropSrc: "link", _countRating: "19.0"),
-                                FavouriteEntity(_id: "0", _name: "Dinh Van Tu", _createTime: Date(), _level: "Diamond", _imgCropSrc: "link", _countRating: "20.0"),
-                                 ]
-            presenter?.getSucessFavourite(favourite: favouriteList)
-        }
         
+        ProgressView.shared.show()
+        Provider.shared.userAPIService.getFavourite(offset: offset, success: { (favourites) in
+            ProgressView.shared.hide()
+             self.presenter?.getSucessFavourite(favourite: favourites)
+        }) { (error) in
+            ProgressView.shared.hide()
+            self.presenter?.getErrorFavourite(error: error)
+        }
+    }
+    
+    func addRemoveFavourite(isFavorite: Int, accountId: Int) {
+        ProgressView.shared.show()
+        Provider.shared.userAPIService.addRemoveFavourite(isFavorite: isFavorite, accountId: accountId, success: { (baseResponse) in
+            ProgressView.shared.hide()
+            self.presenter?.addRemoveSucessFavourite(baseResponse: baseResponse)
+        }) { (error) in
+            ProgressView.shared.hide()
+            self.presenter?.getErrorFavourite(error: error)
+        }
     }
 }

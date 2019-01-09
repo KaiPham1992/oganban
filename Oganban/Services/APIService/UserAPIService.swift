@@ -29,9 +29,11 @@ protocol UserAPIServiceProtocol {
     func updateProfileSocial(param: UpdateProfileSocial, success: @escaping SuccessHandler<UserEntity>.object, failure: @escaping RequestFailure)
     func uploadAvatar(image: UIImage, success: @escaping SuccessHandler<UserEntity>.object, failure: @escaping RequestFailure)
     
-    func getHistoryBuy(success: @escaping SuccessHandler<HistoryBuyEntity>.array, failure: @escaping RequestFailure)
+    func getHistoryBuy(offset: Int, success: @escaping SuccessHandler<HistoryBuyEntity>.array, failure: @escaping RequestFailure)
     
-    func getFavourite(success: @escaping SuccessHandler<FavouriteEntity>.array, failure: @escaping RequestFailure)
+    func getFavourite(offset: Int, success: @escaping SuccessHandler<FavouriteEntity>.array, failure: @escaping RequestFailure)
+    
+    func addRemoveFavourite(isFavorite: Int, accountId: Int, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
 }
 
 class UserAPIService: UserAPIServiceProtocol {
@@ -105,14 +107,19 @@ class UserAPIService: UserAPIServiceProtocol {
         network.uploadAvatar(image: image, endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
     }
     
-    func getHistoryBuy(success: @escaping SuccessHandler<HistoryBuyEntity>.array, failure: @escaping RequestFailure) {
-        let endPoint = UserEndPoint.getHistoryBuy()
+    func getHistoryBuy(offset: Int, success: @escaping SuccessHandler<HistoryBuyEntity>.array, failure: @escaping RequestFailure) {
+        let endPoint = UserEndPoint.getHistoryBuy(offset: offset, limit: limitLoad)
         network.requestData(endPoint: endPoint, success: MapperData.mapArray(success), failure: failure)
     }
     
-    func getFavourite(success: @escaping SuccessHandler<FavouriteEntity>.array, failure: @escaping RequestFailure) {
-        let endPoint = UserEndPoint.getFavourite()
+    func getFavourite(offset: Int, success: @escaping SuccessHandler<FavouriteEntity>.array, failure: @escaping RequestFailure) {
+        let endPoint = UserEndPoint.getFavourite(offset: offset, limit: limitLoad)
         network.requestData(endPoint: endPoint, success: MapperData.mapArray(success), failure: failure)
+    }
+    
+    func addRemoveFavourite(isFavorite: Int, accountId: Int, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure) {
+        let endPoint = UserEndPoint.addRemoveFavourite(isFavorite: isFavorite, accountId: accountId)
+        network.requestData(endPoint: endPoint, success: MapperData.mapNoData(success), failure: failure)
     }
 }
 

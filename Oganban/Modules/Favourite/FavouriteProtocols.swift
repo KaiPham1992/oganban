@@ -20,6 +20,7 @@ protocol FavouritePresenterProtocol: class {
     var interactor: FavouriteInteractorInputProtocol? { get set }
     func getFavourite(offset: Int)
     func showProductList(item: FavouriteEntity)
+    func addRemoveFavourite(isFavorite: Int, accountId: Int)
 }
 
 //MARK: Interactor -
@@ -28,6 +29,8 @@ protocol FavouriteInteractorOutputProtocol: class {
     /* Interactor -> Presenter */
     func getSucessFavourite(favourite: [FavouriteEntity])
     func getErrorFavourite(error: APIError?)
+    
+    func addRemoveSucessFavourite(baseResponse: BaseResponse?)
 }
 
 protocol FavouriteInteractorInputProtocol: class {
@@ -35,7 +38,8 @@ protocol FavouriteInteractorInputProtocol: class {
     var presenter: FavouriteInteractorOutputProtocol?  { get set }
 
     /* Presenter -> Interactor */
-     func getFavourite(offset: Int)
+    func getFavourite(offset: Int)
+    func addRemoveFavourite(isFavorite: Int, accountId: Int)
 }
 
 //MARK: View -
@@ -46,4 +50,6 @@ protocol FavouriteViewProtocol: class {
     /* Presenter -> ViewController */
     func getSucessFavourite(favourite: [FavouriteEntity])
     func getErrorFavourite(error: APIError?)
+    
+    func addRemoveSucessFavourite(baseResponse: BaseResponse?)
 }
