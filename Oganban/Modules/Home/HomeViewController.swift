@@ -48,6 +48,8 @@ class HomeViewController: BaseViewController {
     var index = 0
     var indexCategory = 0
     var listCategory: [CategoryEntity] = []
+    var oldParentSelected: Int?
+    var oldChildSelected: [Int] = []
     
     let scaleDropdown = DropDown()
     var paramFilter = RecordParam()
@@ -425,6 +427,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let heightMax = UIScreen.main.bounds.height - 300
         switch tableView {
         case tbLeft:
+            
             let cell = tableView.dequeueTableCell(LeftMenuCell.self)
             cell.lbTitle.text = menu[indexPath.row].name
             cell.lbTitle.textColor = menu[indexPath.row].isSelected ? .yellow : .white
@@ -451,29 +454,36 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         switch tableView {
         case tbLeft:
             index = indexPath.row
-            for (temp, _) in menu.enumerated() {
-                if temp != index {
-                    if menu[temp].isSelected == true {
-                        indexReload = temp
-                        menu[temp].isSelected = false
-                        self.tbLeft.reloadRows(at: [IndexPath(item: temp, section: indexPath.section)], with: .none)
-                    }
-                    
-                }
+            menu[oldParentSelected*].isSelected = false
+            for (tempInt, item) in oldChildSelected.enumerated() {
+                menu[oldParentSelected*].cateChild[item].isSelected = false
+                tbRight.reloadRows(at: [IndexPath(item: item, section: indexPath.section), indexPath], with: .none)
             }
             menu[index].isSelected = true
-            tbLeft.reloadRows(at: [indexPath], with: .none)
-            tbLeft.isHidden = true
-            btnHideDropdown.isHidden = true
+            indexReload = oldParentSelected
+            tbLeft.reloadRows(at: [IndexPath(item: oldParentSelected*, section: indexPath.section), indexPath], with: .none)
+            oldParentSelected = index
             lbCategory.text = menu[index].name
             paramFilter.categoryId = [menu[index].id&]
             paramFilter.isParent = "1"
             presenter?.filterRecord(param: paramFilter)
+            hideDropdown()
         case tbRight:
+            
             if indexPath.row == menu[index].cateChild.count {
                 
             } else {
                 menu[index].cateChild[indexPath.row].isSelected = !menu[index].cateChild[indexPath.row].isSelected
+                
+                if menu[index].cateChild[indexPath.row].isSelected {
+                    oldChildSelected.append(indexPath.row)
+                } else {
+                    for (tempInt, item) in oldChildSelected.enumerated() {
+                        if item == indexPath.row {
+                            oldChildSelected.remove(at: tempInt)
+                        }
+                    }
+                }
                 tbRight.reloadRows(at: [indexPath], with: .none)
             }
            
@@ -529,15 +539,15 @@ extension HomeViewController: PositionViewControllerDelegate {
 extension HomeViewController: LeftMenuCellDelegate {
     func openRightMenu(indexPath: IndexPath) {
         index = indexPath.row
-        for (temp, _) in menu.enumerated() {
-            if temp != index {
-                if menu[temp].isSelected == true {
-                    indexReload = temp
-                    menu[temp].isSelected = false
-                    self.tbLeft.reloadRows(at: [IndexPath(item: temp, section: indexPath.section)], with: .none)
-                }
-                
+        
+        if oldParentSelected != index {
+            menu[oldParentSelected*].isSelected = false
+            indexReload = oldParentSelected
+            tbLeft.reloadRows(at: [IndexPath(row: oldParentSelected*, section: indexPath.section)], with: .none)
+            for (tempInt, item) in oldChildSelected.enumerated() {
+                menu[oldParentSelected*].cateChild[item].isSelected = false
             }
+            oldParentSelected = index
         }
         menu[index].isSelected = true
         tbLeft.reloadRows(at: [indexPath], with: .none)
