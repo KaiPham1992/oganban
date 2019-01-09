@@ -29,14 +29,14 @@ class FavouritePresenter: FavouritePresenterProtocol {
         router.showProductList(item: item)
     }
     
-    func addRemoveFavourite(isFavorite: Int, accountId: Int) {
-        interactor?.addRemoveFavourite(isFavorite: isFavorite, accountId: accountId)
+    func removeFavourite(isFavorite: Int, accountId: Int) {
+        interactor?.removeFavourite(isFavorite: isFavorite, accountId: accountId)
     }
 }
 
 extension FavouritePresenter: FavouriteInteractorOutputProtocol{
-    func addRemoveSucessFavourite(baseResponse: BaseResponse?) {
-        view?.addRemoveSucessFavourite(baseResponse: baseResponse)
+    func removeSucessFavourite(baseResponse: BaseResponse?) {
+        view?.removeSucessFavourite(baseResponse: baseResponse)
     }
     
     func getSucessFavourite(favourite: [FavouriteEntity]) {

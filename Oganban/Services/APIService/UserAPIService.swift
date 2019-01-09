@@ -35,7 +35,7 @@ protocol UserAPIServiceProtocol {
     
     func addFavoriteStaff(isFavorite: Bool, accountID: String, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
 
-    func addRemoveFavourite(isFavorite: Int, accountId: Int, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
+    func removeFavourite(isFavorite: Int, accountId: Int, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
 
 }
 
@@ -120,7 +120,7 @@ class UserAPIService: UserAPIServiceProtocol {
         network.requestData(endPoint: endPoint, success: MapperData.mapArray(success), failure: failure)
     }
     
-    func addRemoveFavourite(isFavorite: Int, accountId: Int, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure) {
+    func removeFavourite(isFavorite: Int, accountId: Int, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure) {
         let endPoint = UserEndPoint.addRemoveFavourite(isFavorite: isFavorite, accountId: accountId)
         network.requestData(endPoint: endPoint, success: MapperData.mapNoData(success), failure: failure)
     }

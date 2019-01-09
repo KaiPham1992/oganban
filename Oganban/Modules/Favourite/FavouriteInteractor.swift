@@ -26,11 +26,11 @@ class FavouriteInteractor: FavouriteInteractorInputProtocol {
         }
     }
     
-    func addRemoveFavourite(isFavorite: Int, accountId: Int) {
+    func removeFavourite(isFavorite: Int, accountId: Int) {
         ProgressView.shared.show()
-        Provider.shared.userAPIService.addRemoveFavourite(isFavorite: isFavorite, accountId: accountId, success: { (baseResponse) in
+        Provider.shared.userAPIService.removeFavourite(isFavorite: isFavorite, accountId: accountId, success: { (baseResponse) in
             ProgressView.shared.hide()
-            self.presenter?.addRemoveSucessFavourite(baseResponse: baseResponse)
+            self.presenter?.removeSucessFavourite(baseResponse: baseResponse)
         }) { (error) in
             ProgressView.shared.hide()
             self.presenter?.getErrorFavourite(error: error)

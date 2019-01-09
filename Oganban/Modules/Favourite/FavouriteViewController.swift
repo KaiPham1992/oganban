@@ -88,7 +88,7 @@ extension FavouriteViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension FavouriteViewController: FavouriteViewProtocol{
     
-    func addRemoveSucessFavourite(baseResponse: BaseResponse?) {
+    func removeSucessFavourite(baseResponse: BaseResponse?) {
         if baseResponse?.status == 200, let index = removedItemIndex {
             self.favouriteList.remove(at: index)
         }
@@ -118,7 +118,7 @@ extension FavouriteViewController: FavouriteCellProtocol{
         if let id = self.favouriteList[index].id, let accountId = Int(id)  {
             PopUpHelper.shared.showYesNoQuestionHaveAds(question: "Bạn thật sự muốn bỏ yêu thích?", completionYes: {
                 self.removedItemIndex = index
-                self.presenter?.addRemoveFavourite(isFavorite: 0, accountId: accountId)
+                self.presenter?.removeFavourite(isFavorite: 0, accountId: accountId)
             }) { }
         }
     }
