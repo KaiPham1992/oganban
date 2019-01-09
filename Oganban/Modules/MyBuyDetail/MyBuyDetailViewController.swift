@@ -100,6 +100,10 @@ extension MyBuyDetailViewController: MyBuyDetailViewProtocol {
     func didGetOrder(order: OrderDetailEntity?) {
         self.order = order
     }
+    
+    func didPostRating(data: BaseResponse?) {
+        self.pop()
+    }
 }
 
 
@@ -187,12 +191,16 @@ extension MyBuyDetailViewController: MyBuyImageCellDelegate {
     
     @IBAction func btnRatingTapped() {
         // fix me
-        PopUpHelper.shared.showMessageHaveAds(message: "Đang đợi API")
+//        PopUpHelper.shared.showMessageHaveAds(message: "Đang đợi API")
+        guard let accountID = order?.accountIDSaler  else { return }
+        presenter?.postRating(point: vRating.number, accountID: accountID, isBuyer: false, orderID: orderId)
     }
     
     @IBAction func btnRatingSalerTapped() {
         // fix me
-        PopUpHelper.shared.showMessageHaveAds(message: "Đang đợi API")
+//        PopUpHelper.shared.showMessageHaveAds(message: "Đang đợi API 111")
+        guard let accountID = order?.accountIDBuyer  else {return }
+        presenter?.postRating(point: vRating.number, accountID: accountID, isBuyer: false, orderID: orderId)
     }
     
     

@@ -34,6 +34,8 @@ enum UserEndPoint {
     case getHistoryBuy()
     case getHistoryCoin()
     case getFavourite()
+    case postRating(point: Int, accountID: String, isBuyer: Bool, orderID: String)
+    
 }
 
 extension UserEndPoint: EndPointType {
@@ -77,12 +79,14 @@ extension UserEndPoint: EndPointType {
             return "_api/user/history_coin"
         case .getFavourite:
             return "_api/user/favourite"
+        case .postRating:
+            return "_api/user/post_rating"
         }
         
     }
     
     var httpMethod: HTTPMethod {
-        switch self { case .login, .fogotPassword, .checkLogin, .logout, .loginGmail, .loginFacebook, .verifyPhone, .getPointHistory, .getListFavorite, .addFavorite, .addFavoriteStaff, .signUp, .uploadAvatar:
+        switch self { case .login, .fogotPassword, .checkLogin, .logout, .loginGmail, .loginFacebook, .verifyPhone, .getPointHistory, .getListFavorite, .addFavorite, .addFavoriteStaff, .signUp, .uploadAvatar, .postRating:
             return .post
         case .getCaptcha, .getIntroduceList, .getHistoryBuy, .getHistoryCoin, .getFavourite:
             return .get
@@ -157,7 +161,12 @@ extension UserEndPoint: EndPointType {
             let param = ["is_favorite": isFavorite,
                          "account_id": accountID] as [String: Any]
             return param
-            
+        case .postRating(let point, let accountID, let isBuyer, let orderID):
+            let param = ["point": point,
+                         "account_id": accountID,
+                         "is_buyer": isBuyer,
+                         "order_id": orderID] as [String: Any]
+            return param
         case .updateProfileSocial(let param):
             return param.toJSON()
         case .uploadAvatar:
@@ -168,6 +177,7 @@ extension UserEndPoint: EndPointType {
             return [:]
         case .getFavourite:
              return [:]
+    
         }
     }
     
