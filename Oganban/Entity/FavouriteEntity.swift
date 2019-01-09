@@ -2,7 +2,7 @@
 //  FavouriteEntity.swift
 //  Oganban
 //
-//  Created by Admin on 1/6/19.
+//  Created by Kent on 1/6/19.
 //  Copyright © 2019 Coby. All rights reserved.
 //
 
@@ -32,9 +32,9 @@ class FavouriteEntity: BaseEntity {
         self.imgSrc <- map["img_src"]
         self.coin <- map["coin"]
         self.isPro <- map["is_pro"]
-        self.pointRatingAvg <- map["avg_rating"]
+        self.pointRatingAvg <- map["point_rating_avg"]
         self.level <- map["level"]
-        self.totalRating <- map["total_rating"]
+        self.totalRating <- map["count_rating"]
         self.socialImage <- map["social_img_src"]
     }
     

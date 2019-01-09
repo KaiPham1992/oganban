@@ -37,7 +37,8 @@ enum UserEndPoint {
     
     case getHistoryBuy(offset: Int, limit: Int)
     case getFavourite(offset: Int, limit: Int)
-    case addRemoveFavourite(isFavorite: Int, accountId: Int)
+    case removeFavourite(isFavorite: Int, accountId: Int)
+    case getRecordByFavoriteUser(offset: Int, limit: Int, accountId: Int)
 }
 
 extension UserEndPoint: EndPointType {
@@ -78,11 +79,13 @@ extension UserEndPoint: EndPointType {
         case .getHistoryBuy:
             return "_api/user/get_history_buy_post"
         case .getFavourite:
-            return "_api/user/favourite"
+            return "_api/user/favorite_list"
+        case .removeFavourite:
+            return "_api/user/add_favorite"
+        case .getRecordByFavoriteUser:
+            return "_api/user/record_by_favorite_user_list"
         case .postRating:
             return "_api/user/post_rating"
-        case .addRemoveFavourite:
-            return "_api/user/add_favorite"
         case .getHistoryCoin:
             return "_api/order/get_history_coin"
         }
@@ -90,7 +93,10 @@ extension UserEndPoint: EndPointType {
     }
     
     var httpMethod: HTTPMethod {
-        switch self { case .login, .fogotPassword, .checkLogin, .logout, .loginGmail, .loginFacebook, .verifyPhone, .getPointHistory, .getListFavorite, .addFavorite, .addFavoriteStaff, .signUp, .uploadAvatar, .postRating, .getFavourite, .getHistoryBuy, .addRemoveFavourite, .getHistoryCoin:
+
+        switch self {
+
+        case .login, .fogotPassword, .checkLogin, .logout, .loginGmail, .loginFacebook, .verifyPhone, .getPointHistory, .getListFavorite, .addFavorite, .addFavoriteStaff, .signUp, .uploadAvatar, .postRating, .getFavourite, .getHistoryBuy, .removeFavourite, .getHistoryCoin, .getRecordByFavoriteUser:
             return .post
         case .getCaptcha, .getIntroduceList:
             return .get
@@ -183,9 +189,13 @@ extension UserEndPoint: EndPointType {
         case .getFavourite(let offset, let limit):
             return  ["offset": offset,
                      "limit": limit]
-        case .addRemoveFavourite(let isFavorite, let accountId):
+        case .removeFavourite(let isFavorite, let accountId):
             return ["is_favorite": isFavorite,
                     "account_id": accountId]
+        case .getRecordByFavoriteUser(let offset, let limit, let accountId):
+            return   ["account_id":accountId,
+                      "offset":offset,
+                      "limit":limit]
         }
     }
     

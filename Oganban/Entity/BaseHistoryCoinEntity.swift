@@ -2,7 +2,7 @@
 //  BaseHistoryCoinEntity.swift
 //  Oganban
 //
-//  Created by Admin on 1/8/19.
+//  Created by Kent on 1/8/19.
 //  Copyright © 2019 Coby. All rights reserved.
 //
 

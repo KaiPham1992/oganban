@@ -41,7 +41,11 @@ class HistoryCoinViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-         pullToRefresh()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        pullToRefresh()
     }
     
     func configureTableView() {

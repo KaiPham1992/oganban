@@ -41,12 +41,12 @@
 		84329F4A21DFD92F00047B5E /* FavouriteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84329F4421DFD92F00047B5E /* FavouriteViewController.xib */; };
 		84329F4E21DFD98700047B5E /* FavouriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84329F4C21DFD98700047B5E /* FavouriteCell.swift */; };
 		84329F4F21DFD98700047B5E /* FavouriteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84329F4D21DFD98700047B5E /* FavouriteCell.xib */; };
-		84329F5721DFE1FA00047B5E /* ProductListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84329F5121DFE1FA00047B5E /* ProductListPresenter.swift */; };
-		84329F5821DFE1FA00047B5E /* ProductListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84329F5221DFE1FA00047B5E /* ProductListRouter.swift */; };
-		84329F5921DFE1FA00047B5E /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84329F5321DFE1FA00047B5E /* ProductListViewController.swift */; };
-		84329F5A21DFE1FA00047B5E /* ProductListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84329F5421DFE1FA00047B5E /* ProductListProtocols.swift */; };
-		84329F5B21DFE1FA00047B5E /* ProductListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84329F5521DFE1FA00047B5E /* ProductListInteractor.swift */; };
-		84329F5C21DFE1FA00047B5E /* ProductListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84329F5621DFE1FA00047B5E /* ProductListViewController.xib */; };
+		84329F5721DFE1FA00047B5E /* FavouriteProductListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84329F5121DFE1FA00047B5E /* FavouriteProductListPresenter.swift */; };
+		84329F5821DFE1FA00047B5E /* FavouriteProductListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84329F5221DFE1FA00047B5E /* FavouriteProductListRouter.swift */; };
+		84329F5921DFE1FA00047B5E /* FavouriteProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84329F5321DFE1FA00047B5E /* FavouriteProductListViewController.swift */; };
+		84329F5A21DFE1FA00047B5E /* FavouriteProductListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84329F5421DFE1FA00047B5E /* FavouriteProductListProtocols.swift */; };
+		84329F5B21DFE1FA00047B5E /* FavouriteProductListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84329F5521DFE1FA00047B5E /* FavouriteProductListInteractor.swift */; };
+		84329F5C21DFE1FA00047B5E /* FavouriteProductListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84329F5621DFE1FA00047B5E /* FavouriteProductListViewController.xib */; };
 		84396D3E21D1389B00818FAB /* UpdateProfile+Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84396D3D21D1389B00818FAB /* UpdateProfile+Event.swift */; };
 		843D18A621E451B800C5B8F7 /* BaseHistoryCoinEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D18A521E451B800C5B8F7 /* BaseHistoryCoinEntity.swift */; };
 		84421BED21CBEECF00F468F5 /* MorePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84421BE721CBEECF00F468F5 /* MorePresenter.swift */; };
@@ -516,12 +516,12 @@
 		84329F4421DFD92F00047B5E /* FavouriteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteViewController.xib; sourceTree = "<group>"; };
 		84329F4C21DFD98700047B5E /* FavouriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCell.swift; sourceTree = "<group>"; };
 		84329F4D21DFD98700047B5E /* FavouriteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteCell.xib; sourceTree = "<group>"; };
-		84329F5121DFE1FA00047B5E /* ProductListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListPresenter.swift; sourceTree = "<group>"; };
-		84329F5221DFE1FA00047B5E /* ProductListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListRouter.swift; sourceTree = "<group>"; };
-		84329F5321DFE1FA00047B5E /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
-		84329F5421DFE1FA00047B5E /* ProductListProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListProtocols.swift; sourceTree = "<group>"; };
-		84329F5521DFE1FA00047B5E /* ProductListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListInteractor.swift; sourceTree = "<group>"; };
-		84329F5621DFE1FA00047B5E /* ProductListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductListViewController.xib; sourceTree = "<group>"; };
+		84329F5121DFE1FA00047B5E /* FavouriteProductListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteProductListPresenter.swift; sourceTree = "<group>"; };
+		84329F5221DFE1FA00047B5E /* FavouriteProductListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteProductListRouter.swift; sourceTree = "<group>"; };
+		84329F5321DFE1FA00047B5E /* FavouriteProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteProductListViewController.swift; sourceTree = "<group>"; };
+		84329F5421DFE1FA00047B5E /* FavouriteProductListProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteProductListProtocols.swift; sourceTree = "<group>"; };
+		84329F5521DFE1FA00047B5E /* FavouriteProductListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteProductListInteractor.swift; sourceTree = "<group>"; };
+		84329F5621DFE1FA00047B5E /* FavouriteProductListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteProductListViewController.xib; sourceTree = "<group>"; };
 		84396D3D21D1389B00818FAB /* UpdateProfile+Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UpdateProfile+Event.swift"; sourceTree = "<group>"; };
 		843D18A521E451B800C5B8F7 /* BaseHistoryCoinEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHistoryCoinEntity.swift; sourceTree = "<group>"; };
 		84421BE721CBEECF00F468F5 /* MorePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorePresenter.swift; sourceTree = "<group>"; };
@@ -1055,7 +1055,7 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		84329F3E21DFD82900047B5E /* Favourite */ = {
+		84329F3E21DFD82900047B5E /* FavouriteUser */ = {
 			isa = PBXGroup;
 			children = (
 				84329F4B21DFD97200047B5E /* Cell */,
@@ -1066,7 +1066,7 @@
 				84329F4321DFD92F00047B5E /* FavouriteInteractor.swift */,
 				84329F4421DFD92F00047B5E /* FavouriteViewController.xib */,
 			);
-			path = Favourite;
+			path = FavouriteUser;
 			sourceTree = "<group>";
 		};
 		84329F4B21DFD97200047B5E /* Cell */ = {
@@ -1082,12 +1082,12 @@
 			isa = PBXGroup;
 			children = (
 				84329F5D21DFE20600047B5E /* Cell */,
-				84329F5121DFE1FA00047B5E /* ProductListPresenter.swift */,
-				84329F5221DFE1FA00047B5E /* ProductListRouter.swift */,
-				84329F5321DFE1FA00047B5E /* ProductListViewController.swift */,
-				84329F5421DFE1FA00047B5E /* ProductListProtocols.swift */,
-				84329F5521DFE1FA00047B5E /* ProductListInteractor.swift */,
-				84329F5621DFE1FA00047B5E /* ProductListViewController.xib */,
+				84329F5121DFE1FA00047B5E /* FavouriteProductListPresenter.swift */,
+				84329F5221DFE1FA00047B5E /* FavouriteProductListRouter.swift */,
+				84329F5321DFE1FA00047B5E /* FavouriteProductListViewController.swift */,
+				84329F5421DFE1FA00047B5E /* FavouriteProductListProtocols.swift */,
+				84329F5521DFE1FA00047B5E /* FavouriteProductListInteractor.swift */,
+				84329F5621DFE1FA00047B5E /* FavouriteProductListViewController.xib */,
 			);
 			path = FavouriteProductList;
 			sourceTree = "<group>";
@@ -1419,7 +1419,7 @@
 				CBE2183D21E219B70035F00B /* OrderBuyDetail */,
 				DE5E083A21E1C0E70053EC9D /* MyBuyDetail */,
 				84329F5021DFE1E000047B5E /* FavouriteProductList */,
-				84329F3E21DFD82900047B5E /* Favourite */,
+				84329F3E21DFD82900047B5E /* FavouriteUser */,
 				B3CC856821D72DB600ADBFD8 /* Position */,
 				B36AEE9721CDD8CD00BED43C /* Tabbar */,
 				B36A235321E1ACC600AA20DF /* MySellManager */,
@@ -2667,7 +2667,7 @@
 				DE33035021DF13EB00409F83 /* PostStepOneViewController.xib in Resources */,
 				CB379C0C21E388B0005D7536 /* OrderBuyDetailImageCell.xib in Resources */,
 				DE0DBAE721D3B6DA0097E38F /* NotificationCell.xib in Resources */,
-				84329F5C21DFE1FA00047B5E /* ProductListViewController.xib in Resources */,
+				84329F5C21DFE1FA00047B5E /* FavouriteProductListViewController.xib in Resources */,
 				CBE2186621E219B80035F00B /* OrderBuyDetailViewController.xib in Resources */,
 				CB3A8F1521C64FC1008144BD /* Assets.xcassets in Resources */,
 				B392FB3E21D3D6AE0076A7B5 /* AcceptCell.xib in Resources */,
@@ -2863,7 +2863,7 @@
 				DEC5166421CE8DCD00A17CBF /* PopUpSettingGPSContent.swift in Sources */,
 				DEB854F521E0A59C007479A7 /* ExpirePostEntity.swift in Sources */,
 				CB172C9521C6A2EF0068CF92 /* ConstantStoryboard.swift in Sources */,
-				84329F5721DFE1FA00047B5E /* ProductListPresenter.swift in Sources */,
+				84329F5721DFE1FA00047B5E /* FavouriteProductListPresenter.swift in Sources */,
 				CB172C9921C6A2EF0068CF92 /* BaseViewController.swift in Sources */,
 				DE5E084521E1C1020053EC9D /* MyBuyDetailInteractor.swift in Sources */,
 				CBD1C2AC21D74DA6006DB3FF /* MySellingInteractor.swift in Sources */,
@@ -2904,7 +2904,7 @@
 				CB379C1C21E39546005D7536 /* MySellExpiredDetailRouter.swift in Sources */,
 				CBD1C29621D732CB006DB3FF /* MyBuyPresenter.swift in Sources */,
 				DEBEE80421D740D7004B8D88 /* MySellContainerProtocols.swift in Sources */,
-				84329F5B21DFE1FA00047B5E /* ProductListInteractor.swift in Sources */,
+				84329F5B21DFE1FA00047B5E /* FavouriteProductListInteractor.swift in Sources */,
 				DE5E084121E1C1020053EC9D /* MyBuyDetailPresenter.swift in Sources */,
 				CB0C3A2721D3BECD0052DD91 /* ForgotPasswordInteractor.swift in Sources */,
 				DE21827121CD473100FDD9F1 /* KActivityIndicatorAnimationBlank.swift in Sources */,
@@ -2964,7 +2964,7 @@
 				DEBEE80221D740D7004B8D88 /* MySellContainerRouter.swift in Sources */,
 				84329F2121DFB5E100047B5E /* HistoryCoinInteractor.swift in Sources */,
 				DE21827F21CD473100FDD9F1 /* KActivityIndicatorAnimationBallPulseRise.swift in Sources */,
-				84329F5821DFE1FA00047B5E /* ProductListRouter.swift in Sources */,
+				84329F5821DFE1FA00047B5E /* FavouriteProductListRouter.swift in Sources */,
 				B355EF5121C8EB3F00379F57 /* HomeViewController.swift in Sources */,
 				CB172C2721C6A2EF0068CF92 /* UserUtils.swift in Sources */,
 				DEA3A08D21D674A200643296 /* PreviewPhotoViewController.swift in Sources */,
@@ -3042,7 +3042,7 @@
 				CB172C1B21C6A2EF0068CF92 /* Bool+extension.swift in Sources */,
 				DEE1DA7C21CE2E410036FEB7 /* PopUpUpdateQuantityBuyContent.swift in Sources */,
 				CB172C2921C6A2EF0068CF92 /* Utils.swift in Sources */,
-				84329F5921DFE1FA00047B5E /* ProductListViewController.swift in Sources */,
+				84329F5921DFE1FA00047B5E /* FavouriteProductListViewController.swift in Sources */,
 				DEBEE7F921D74041004B8D88 /* AppPageMenu.swift in Sources */,
 				CB172C1E21C6A2EF0068CF92 /* UISearchBar+extension.swift in Sources */,
 				84A92BFA21CA555900148191 /* LoginInteractor.swift in Sources */,
@@ -3138,7 +3138,7 @@
 				84329F1D21DFB5E100047B5E /* HistoryCoinPresenter.swift in Sources */,
 				CB172C1F21C6A2EF0068CF92 /* UITableView+extension.swift in Sources */,
 				DE21827721CD473100FDD9F1 /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
-				84329F5A21DFE1FA00047B5E /* ProductListProtocols.swift in Sources */,
+				84329F5A21DFE1FA00047B5E /* FavouriteProductListProtocols.swift in Sources */,
 				84421BFF21CBEF7600F468F5 /* MoreViewController.swift in Sources */,
 				DE21828721CD473100FDD9F1 /* ProgressView.swift in Sources */,
 				DE21828221CD473100FDD9F1 /* KActivityIndicatorView.swift in Sources */,

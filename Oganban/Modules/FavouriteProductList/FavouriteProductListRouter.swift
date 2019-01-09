@@ -10,16 +10,16 @@
 
 import UIKit
 
-class ProductListRouter: ProductListWireframeProtocol {
+class FavouriteProductListRouter: FavouriteProductListWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule() -> ProductListViewController {
+    static func createModule() -> FavouriteProductListViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = ProductListViewController(nibName: nil, bundle: nil)
-        let interactor = ProductListInteractor()
-        let router = ProductListRouter()
-        let presenter = ProductListPresenter(interface: view, interactor: interactor, router: router)
+        let view = FavouriteProductListViewController(nibName: nil, bundle: nil)
+        let interactor = FavouriteProductListInteractor()
+        let router = FavouriteProductListRouter()
+        let presenter = FavouriteProductListPresenter(interface: view, interactor: interactor, router: router)
 
         view.presenter = presenter
         interactor.presenter = presenter

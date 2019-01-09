@@ -14,7 +14,7 @@ class FavouriteRouter: FavouriteWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule() -> UIViewController {
+    static func createModule() -> FavouriteViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = FavouriteViewController(nibName: nil, bundle: nil)
         let interactor = FavouriteInteractor()
@@ -29,7 +29,7 @@ class FavouriteRouter: FavouriteWireframeProtocol {
     }
     
     func showProductList(item: FavouriteEntity) {
-        let vc = ProductListRouter.createModule()
+        let vc = FavouriteProductListRouter.createModule()
         vc.favouriteUser = item
         self.viewController?.push(controller: vc, animated: true)
     }

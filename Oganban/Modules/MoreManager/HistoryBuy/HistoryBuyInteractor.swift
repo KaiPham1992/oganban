@@ -15,9 +15,12 @@ class HistoryBuyInteractor: HistoryBuyInteractorInputProtocol {
     weak var presenter: HistoryBuyInteractorOutputProtocol?
     
     func getHistoryBuy(offset: Int) {
+        ProgressView.shared.show()
         Provider.shared.userAPIService.getHistoryBuy(offset: offset, success: { (histories) in
+            ProgressView.shared.hide()
             self.presenter?.getSucessHistoryBuy(history: histories)
         }) { (error) in
+            ProgressView.shared.hide()
             self.presenter?.getErrorHistoryBuy(error: error)
         }
     }
