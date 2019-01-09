@@ -11,7 +11,7 @@
 import UIKit
 
 class OrderDetailInteractor: OrderDetailInteractorInputProtocol {
-
+   
     weak var presenter: OrderDetailInteractorOutputProtocol?
     
     func getDetail(id: String) {
@@ -49,6 +49,16 @@ class OrderDetailInteractor: OrderDetailInteractorInputProtocol {
         }) { error in
             ProgressView.shared.hide()
             
+        }
+    }
+    
+    func sendComment(param: SendCommentParam) {
+        ProgressView.shared.show()
+        Provider.shared.recordAPIService.sendComment(param: param, success: { (comment) in
+            ProgressView.shared.hide()
+            self.presenter?.didSendComment(comment: comment)
+        }) { (error) in
+             ProgressView.shared.hide()
         }
     }
 }

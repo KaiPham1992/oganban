@@ -17,7 +17,7 @@ enum RecordEndPoint {
     case getExpirePostRecord()
     case deleteRecord(recordID: String)
     case getFavouriteRecord()
-    case sendComment(recordId: String, comment: String, commentId: String, isReComment: String)
+    case sendComment(param: SendCommentParam)
     case getCommentList(recordId: String, offset: Int, limit: Int)
     case deleteComment(commentId: String)
     case updateRecord(recordID: String, expiredDate: String)
@@ -90,12 +90,8 @@ extension RecordEndPoint: EndPointType {
         case .deleteComment(let commentId):
             let param = ["comment_id": commentId]
             return param
-        case .sendComment(let recordId, let comment, let commentId, let isReComment):
-            let param = ["record_id": recordId,
-                         "comment": comment,
-                         "comment_id": commentId,
-                         "is_re_cmt": isReComment] as [String: Any]
-            return param
+        case .sendComment(let param):
+            return param.toJSON()
         case .updateRecord(let recordID, let expiredDate):
             let param = ["record_id": recordID,
                          "expired_date": expiredDate] as [String: Any]

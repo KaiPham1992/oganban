@@ -16,7 +16,7 @@ protocol RecordAPIServiceProtocol {
     func getExpireDateRecord(success: @escaping SuccessHandler<ExpirePostEntity>.object, failure: @escaping RequestFailure)
     func deleteRecord(recordID: String, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
     //--Comment
-    func sendComment(recordId: String, comment: String, commentId: String, isReComment: String, success: @escaping SuccessHandler<CommentResponseEntity>.object, failure: @escaping RequestFailure)
+    func sendComment(param: SendCommentParam, success: @escaping SuccessHandler<CommentResponseEntity>.object, failure: @escaping RequestFailure)
     func getCommentList(recordId: String, offset: Int, limit: Int, success: @escaping SuccessHandler<CommentResponseEntity>.array, failure: @escaping RequestFailure)
     func deleteComment(commentID: String, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
     
@@ -68,8 +68,8 @@ class RecordAPIService: RecordAPIServiceProtocol {
     }
 
     //--Comment
-    func sendComment(recordId: String, comment: String, commentId: String, isReComment: String, success: @escaping SuccessHandler<CommentResponseEntity>.object, failure: @escaping RequestFailure) {
-        let endPoint = RecordEndPoint.sendComment(recordId: recordId, comment: comment, commentId: commentId, isReComment: isReComment)
+    func sendComment(param: SendCommentParam, success: @escaping SuccessHandler<CommentResponseEntity>.object, failure: @escaping RequestFailure) {
+        let endPoint = RecordEndPoint.sendComment(param: param)
         network.requestData(endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
     }
     
