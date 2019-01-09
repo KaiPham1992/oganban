@@ -94,6 +94,8 @@ class PostStepOneViewController: BaseViewController {
     private func checkCopyUpdate() {
         if isCopyUpdate {
             setupUpdate()
+            self.categoryId = record?.catrgotyID
+            self.dateSeleted = record?.createTime
         }
     }
     
@@ -154,9 +156,11 @@ class PostStepOneViewController: BaseViewController {
         let imgSrc = vPhoto.listImage.map {$0.url&}
         let expireDate = dateSeleted?.toString(dateFormat: AppDateFormat.yyyyMMdd)&
         
+        
         postParam = PostRecordParam(categoryId: categoryId&, name: vTitleRecord.textField.text&, imgSrc: imgSrc, quantity: vQuantity.textField.text&, expireDate: expireDate&, aboutRecord: vAbout.tvInput.text&)
         if isCopyUpdate {
-            let vc = PostStepTwoRouter.createModule(param: self.postParam, isUpdate: true)
+            
+            let vc = PostStepTwoRouter.createModule(param: self.postParam, isUpdate: true, record: self.record)
             self.push(controller: vc)
             return
         }

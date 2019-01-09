@@ -58,12 +58,11 @@ class PostStepTwoViewController: BaseViewController {
         vMoney.textField.isEnabled = false
         vCoin.textField.isEnabled = false
         showDataSaved()
-//        setupUpdate()
     }
     
     func setupUpdate() {
         if isCopyUpdate {
-            setupUpdate()
+            CopyUpdate()
         }
     }
     
