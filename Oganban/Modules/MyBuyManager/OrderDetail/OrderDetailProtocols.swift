@@ -21,6 +21,7 @@ protocol OrderDetailPresenterProtocol: class {
     func getDetail(id: String)
     func hideRecord(recordID: String)
     func editRecord(recordID: String, expiredDate: String)
+    func getExpiredDay()
 }
 
 //MARK: Interactor -
@@ -40,6 +41,7 @@ protocol OrderDetailInteractorInputProtocol: class {
     func getDetail(id: String)
     func hideRecord(recordID: String)
     func editRecord(recordID: String, expiredDate: String)
+    func getExpiredDay()
 }
 
 //MARK: View -

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,13 +12,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OrderDetailViewController">
             <connections>
                 <outlet property="bottomConstant" destination="PCJ-te-P2D" id="K1a-0q-ALi"/>
-                <outlet property="btnAccept" destination="txJ-2t-dsa" id="92I-JO-ohc"/>
-                <outlet property="btnDecline" destination="DA6-mU-7tl" id="d8T-HQ-Zvf"/>
-                <outlet property="btnReceived" destination="DjB-lK-eMZ" id="MaJ-yx-3kj"/>
                 <outlet property="heightConstant" destination="8J7-4i-yfy" id="ALL-cy-VEz"/>
                 <outlet property="tbDetail" destination="uvV-5g-9BQ" id="qEc-FW-VtS"/>
                 <outlet property="vPostCommentView" destination="min-6e-8xn" id="s0c-Sl-Lhy"/>
-                <outlet property="vSelect" destination="Ld9-Q2-1aD" id="KV7-Gy-NCK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -38,59 +34,14 @@
                         <constraint firstAttribute="height" constant="80" id="8J7-4i-yfy"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ld9-Q2-1aD">
-                    <rect key="frame" x="0.0" y="617" width="375" height="50"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txJ-2t-dsa">
-                            <rect key="frame" x="0.0" y="0.0" width="187.5" height="50"/>
-                            <color key="backgroundColor" red="0.0" green="0.34509019610000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <state key="normal" title="ĐỒNG Ý">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DA6-mU-7tl">
-                            <rect key="frame" x="187.5" y="0.5" width="187.5" height="49"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <state key="normal" title="TỪ CHỐI">
-                                <color key="titleColor" red="0.25490196078431371" green="0.25490196078431371" blue="0.25490196078431371" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DjB-lK-eMZ">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
-                            <color key="backgroundColor" red="0.0" green="0.34509019610000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <state key="normal" title="ĐÃ NHẬN TIỀN">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" red="0.0" green="0.34509019610000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="trailing" secondItem="DA6-mU-7tl" secondAttribute="trailing" id="1Pf-Az-e8R"/>
-                        <constraint firstAttribute="trailing" secondItem="DjB-lK-eMZ" secondAttribute="trailing" id="6MH-Cm-5EQ"/>
-                        <constraint firstItem="DjB-lK-eMZ" firstAttribute="top" secondItem="Ld9-Q2-1aD" secondAttribute="top" id="A3X-tx-jrc"/>
-                        <constraint firstAttribute="bottom" secondItem="txJ-2t-dsa" secondAttribute="bottom" id="GTn-PS-my6"/>
-                        <constraint firstItem="DA6-mU-7tl" firstAttribute="width" secondItem="txJ-2t-dsa" secondAttribute="width" id="GWL-IB-woo"/>
-                        <constraint firstAttribute="bottom" secondItem="DA6-mU-7tl" secondAttribute="bottom" constant="0.5" id="KyF-h0-m0F"/>
-                        <constraint firstItem="DjB-lK-eMZ" firstAttribute="leading" secondItem="Ld9-Q2-1aD" secondAttribute="leading" id="Ofa-uV-8O9"/>
-                        <constraint firstAttribute="height" constant="50" id="PdN-RZ-MBa"/>
-                        <constraint firstItem="DA6-mU-7tl" firstAttribute="top" secondItem="Ld9-Q2-1aD" secondAttribute="top" constant="0.5" id="XlU-wT-731"/>
-                        <constraint firstItem="txJ-2t-dsa" firstAttribute="leading" secondItem="Ld9-Q2-1aD" secondAttribute="leading" id="bPp-hz-Ew3"/>
-                        <constraint firstItem="txJ-2t-dsa" firstAttribute="top" secondItem="Ld9-Q2-1aD" secondAttribute="top" id="djk-tm-SDH"/>
-                        <constraint firstItem="txJ-2t-dsa" firstAttribute="width" secondItem="Ld9-Q2-1aD" secondAttribute="width" multiplier="1/2" id="gvM-jw-xP8"/>
-                        <constraint firstAttribute="bottom" secondItem="DjB-lK-eMZ" secondAttribute="bottom" id="rqB-et-aFr"/>
-                    </constraints>
-                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="uvV-5g-9BQ" firstAttribute="top" secondItem="IjS-rg-KBl" secondAttribute="top" id="3NX-Mm-D5e"/>
-                <constraint firstItem="Ld9-Q2-1aD" firstAttribute="leading" secondItem="IjS-rg-KBl" secondAttribute="leading" id="ES0-Gn-gVk"/>
                 <constraint firstItem="IjS-rg-KBl" firstAttribute="trailing" secondItem="min-6e-8xn" secondAttribute="trailing" id="EYt-Mw-201"/>
-                <constraint firstItem="IjS-rg-KBl" firstAttribute="bottom" secondItem="Ld9-Q2-1aD" secondAttribute="bottom" id="GBn-y2-nLC"/>
                 <constraint firstItem="min-6e-8xn" firstAttribute="leading" secondItem="IjS-rg-KBl" secondAttribute="leading" id="OgX-fu-wn9"/>
                 <constraint firstItem="IjS-rg-KBl" firstAttribute="bottom" secondItem="min-6e-8xn" secondAttribute="bottom" id="PCJ-te-P2D"/>
                 <constraint firstItem="IjS-rg-KBl" firstAttribute="trailing" secondItem="uvV-5g-9BQ" secondAttribute="trailing" id="ZBf-AI-j5f"/>
-                <constraint firstItem="IjS-rg-KBl" firstAttribute="trailing" secondItem="Ld9-Q2-1aD" secondAttribute="trailing" id="coe-5B-wLK"/>
                 <constraint firstItem="min-6e-8xn" firstAttribute="top" secondItem="uvV-5g-9BQ" secondAttribute="bottom" id="kOD-di-SVe"/>
                 <constraint firstItem="uvV-5g-9BQ" firstAttribute="leading" secondItem="IjS-rg-KBl" secondAttribute="leading" id="qes-Jh-PWd"/>
             </constraints>

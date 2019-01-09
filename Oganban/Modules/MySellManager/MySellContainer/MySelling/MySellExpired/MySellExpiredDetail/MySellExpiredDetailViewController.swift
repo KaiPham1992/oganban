@@ -41,6 +41,7 @@ class MySellExpiredDetailViewController: BaseViewController {
         configureTable()
         
         presenter?.getDetail(id: recordId&)
+        presenter?.getExpiredDay()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -73,9 +74,16 @@ extension MySellExpiredDetailViewController: MySellExpiredDetailViewProtocol {
         ProgressView.shared.hide()
         self.pop()
     }
+    
+    func didEditRecord(data: BaseResponse?) {
+        ProgressView.shared.hide()
+        self.pop()
+    }
 }
 
 extension MySellExpiredDetailViewController: MySellExpiredDetailImageCellDelegate {
+    
+    
     func btnDeleteTapped() {
         guard let recordID = record?.id else { return }
         PopUpHelper.shared.showYesNoQuestionHaveAds(question: "Bạn chắc chắn muốn xoá bài đăng này ?", completionYes: {
@@ -90,5 +98,12 @@ extension MySellExpiredDetailViewController: MySellExpiredDetailImageCellDelegat
         let vc = PostStepOneRouter.createModule(record: record)
         vc.isCopyUpdate = true
         self.navigationController?.pushViewController(vc , animated: true)
+    }
+    
+    func btnUpdateTapped() {
+        PopUpHelper.shared.showDateFollowWeekPopup(maxDate: DataManager.shared.maxDate) { date in
+            guard let id = self.recordId, let _date = date else { return }
+            self.presenter?.editRecord(recordID: id, expiredDate: _date.toString(dateFormat: AppDateFormat.yyyyMMdd))
+        }
     }
 }

@@ -31,7 +31,7 @@ enum UserEndPoint {
     case updateProfileSocial(param: UpdateProfileSocial)
     case uploadAvatar()
     
-
+    
     case getHistoryCoin()
     case postRating(point: Int, accountID: String, isBuyer: Bool, orderID: String)
     
@@ -93,9 +93,9 @@ extension UserEndPoint: EndPointType {
     }
     
     var httpMethod: HTTPMethod {
-
+        
         switch self {
-
+            
         case .login, .fogotPassword, .checkLogin, .logout, .loginGmail, .loginFacebook, .verifyPhone, .getPointHistory, .getListFavorite, .addFavorite, .addFavoriteStaff, .signUp, .uploadAvatar, .postRating, .getFavourite, .getHistoryBuy, .removeFavourite, .getHistoryCoin, .getRecordByFavoriteUser:
             return .post
         case .getCaptcha, .getIntroduceList:

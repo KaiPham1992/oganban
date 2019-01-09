@@ -35,6 +35,10 @@ class OrderDetailPresenter: OrderDetailPresenterProtocol {
     func editRecord(recordID: String, expiredDate: String) {
         interactor?.editRecord(recordID: recordID, expiredDate: expiredDate)
     }
+    
+    func getExpiredDay() {
+        interactor?.getExpiredDay()
+    }
 }
 
 extension OrderDetailPresenter: OrderDetailInteractorOutputProtocol {

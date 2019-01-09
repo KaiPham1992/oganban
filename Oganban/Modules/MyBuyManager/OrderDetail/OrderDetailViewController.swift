@@ -26,10 +26,6 @@ class OrderDetailViewController: BaseViewController {
     @IBOutlet weak var bottomConstant: NSLayoutConstraint!
     @IBOutlet weak var heightConstant: NSLayoutConstraint!
     
-    @IBOutlet weak var vSelect: UIView!
-    @IBOutlet weak var btnAccept: UIButton!
-    @IBOutlet weak var btnDecline: UIButton!
-    @IBOutlet weak var btnReceived: UIButton!
     
     var dateSelected: Date?
     
@@ -61,9 +57,7 @@ class OrderDetailViewController: BaseViewController {
         configureTable()
         
         presenter?.getDetail(id: recordId&)
-//        vPostCommentView.isHidden = true
-//        btnReceived.isHidden = true
-        vSelect.isHidden = true
+        presenter?.getExpiredDay()
     }
     
     override func setUpNavigation() {
@@ -74,40 +68,11 @@ class OrderDetailViewController: BaseViewController {
         self.tabBarController?.tabBar.isHidden = true
     }
     
-//    func setupView() {
-//        if isMySellHide || isMySellExpired {
-//            vPostCommentView.isHidden = true
-//        } else if isNew {
-//            vSelect.isHidden = false
-//            btnReceived.isHidden = true
-//            vPostCommentView.isHidden = true
-//        } else if isWait {
-//            vSelect.isHidden = false
-//            btnReceived.isHidden = false
-//            btnAccept.isHidden = true
-//            btnDecline.isHidden = true
-//            vPostCommentView.isHidden = true
-//        }
-//    }
     
     @objc func btnShareTapped() {
         ShareNativeHelper.shared.showShareLinkInstall(controller: self)
     }
     
-//    func testComment() {
-//        for i in 0...3 {
-//            let newComment = CommentEntity(comment: "Comment \(i)")
-//
-//            for j in 0...4 {
-//                let newSubComment = SubCommentEntity(comment: "Sub comment \(j)")
-//                newComment.subComment.append(newSubComment)
-//            }
-//
-//            listComment.append(newComment)
-//        }
-//
-//        tbDetail.reloadData()
-//    }
 }
 
 extension OrderDetailViewController: OrderDetailViewProtocol {
