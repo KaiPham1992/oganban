@@ -17,6 +17,9 @@ enum RecordEndPoint {
     case getExpirePostRecord()
     case deleteRecord(recordID: String)
     case getFavouriteRecord()
+    case sendComment(recordId: String, comment: String, commentId: String, isReComment: String)
+    case getCommentList(recordId: String, offset: Int, limit: Int)
+    case deleComent(commentId: String)
 }
 
 extension RecordEndPoint: EndPointType {
@@ -36,16 +39,23 @@ extension RecordEndPoint: EndPointType {
             return "_api/record/delete_record"
         case .getFavouriteRecord:
             return "_api/record/favourite"
+            //--Comment
+        case .getCommentList:
+            return "_api/comment/get_comment_list"
+        case .deleComent:
+            return "_api/comment/delete_comment"
+        case .sendComment:
+            return "_api/comment/send_comment"
         }
     }
     
     var httpMethod: HTTPMethod {
         switch self {
-        case .getRecordSellerPost, .postRecord, .getExpirePostRecord:
+        case .getRecordSellerPost, .postRecord, .getExpirePostRecord, .getCommentList, .sendComment:
             return .post
         case .getRecordDetail, .getFavouriteRecord:
             return .get
-        case .hideRecord, .deleteRecord:
+        case .hideRecord, .deleteRecord, .deleComent:
             return .put
         }
     }
@@ -66,6 +76,21 @@ extension RecordEndPoint: EndPointType {
             return param.toJSON()
         case .deleteRecord(let recordID):
             let param = ["record_id": recordID]
+            return param
+            //--Comment
+        case .getCommentList(let recordId, let offset, let limit):
+            let param = ["record_id": recordId,
+                         "offset": offset,
+                         "limit": limit] as [String: Any]
+            return param
+        case .deleComent(let commentId):
+            let param = ["comment_id": commentId]
+            return param
+        case .sendComment(let recordId, let comment, let commentId, let isReComment):
+            let param = ["record_id": recordId,
+                         "comment": comment,
+                         "comment_id": commentId,
+                         "is_re_cmt": isReComment] as [String: Any]
             return param
         }
     }

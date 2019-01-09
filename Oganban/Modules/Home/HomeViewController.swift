@@ -60,6 +60,13 @@ class HomeViewController: BaseViewController {
             self.lbDistance.text = distance?.title
         }
     }
+    
+    // number of items to be fetched each time (database LIMIT)
+    let itemsPerBatch = 20
+    // Where to start fetching items (database OFFSET)
+    var offset = 0
+    // a flag for when all database items have already been loaded
+    var reachedEndOfItems = false
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -169,6 +176,8 @@ class HomeViewController: BaseViewController {
     }
     
     func getParamDefault() {
+        offset = 0
+        reachedEndOfItems = false
         let radius = UserDefaultHelper.shared.radius?.value
         let long = UserDefaultHelper.shared.long
         let lat = UserDefaultHelper.shared.lat
@@ -282,7 +291,15 @@ extension HomeViewController: HomeViewProtocol {
     }
     
     func didFilterRecord(list: [RecordEntity]) {
-        listRecord = list
+        // update UITableView with new batch of items on main thread after query finishes
+        DispatchQueue.main.async {
+            self.listRecord.append(contentsOf: list)
+            if list.count < self.itemsPerBatch {
+                self.reachedEndOfItems = true
+                print("reached end of data. Batch count: \(list.count)")
+            }
+            self.offset += self.itemsPerBatch
+        }
     }
     
     func didGetCategoryMerge(list: [CategoryMergeEntity]) {
@@ -309,6 +326,23 @@ extension HomeViewController: HomeViewProtocol {
             if index == indexCategory {
                 self.presenter?.getCategoryChild(id: item.id&)
             }
+        }
+    }
+    
+    func loadMore() {
+        
+        // don't bother doing another db query if already have everything
+        guard !self.reachedEndOfItems else {
+            return
+        }
+        
+        // query the db on a background thread
+        DispatchQueue.global(qos: .background).async {
+            
+            self.paramFilter.offset = self.offset
+            self.paramFilter.limit = self.itemsPerBatch
+            self.presenter?.filterRecord(param: self.paramFilter)
+
         }
     }
 }
@@ -354,6 +388,11 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if ((indexPath.row) + (10 * indexPath.section)) == (self.listRecord.count - 1) {
+            self.loadMore()
+        }
+        
         if listRecord.count == 1 {
             if indexPath.row == 0 {
                 let cell = collectionView.dequeueCollectionCell(AdmobCell.self, indexPath: indexPath)
