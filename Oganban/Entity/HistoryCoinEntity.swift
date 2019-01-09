@@ -13,13 +13,15 @@ class HistoryCoinEntity: BaseEntity {
     var content: String?
     var createTime: Date?
     var coin: Double?
-    
+    var type: String?
+   
     override func mapping(map: Map) {
         super.mapping(map: map)
-        self.id <- map["id"]
-        self.content <- map["content"]
-        self.createTime <- (map["create_time"], yyyyMMddHHmmssTransform())
+        self.id <- map["order_id"]
+        self.content <- map["description"]
+        self.createTime <- (map["create_time_mi"], AppTimestampTransform())
         self.coin <- map["coin"]
+        self.type <- map["type"]
     }
     
     required init?(map: Map) {
