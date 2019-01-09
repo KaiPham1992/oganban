@@ -60,6 +60,12 @@ class AppCollectionPhotoCell: BaseCollectionCell {
     
     func loadImage(photo: AppPhoto?) {
         guard let _photo = photo else { return }
+        var urlStr = ""
+        if _photo.url&.contains("http"){
+             urlStr = "\(_photo.url&)"
+        } else {
+             urlStr = "\(BASE_URL_IMAGE)\(_photo.url&)"
+        }
         
         switch _photo.status {
         case .new:
@@ -67,7 +73,7 @@ class AppCollectionPhotoCell: BaseCollectionCell {
         case .uploaded:
             if let image = _photo.image {
                 imgPhoto.image = image
-            } else if let url = URL(string: _photo.url&) {
+            } else if let url = URL(string: urlStr) {
                 imgPhoto.sd_setImage(with: url, placeholderImage: AppImage.imgPlaceHolderImage)
             } else {
                  imgPhoto.image = AppImage.imgErrorUpLoadPhoto

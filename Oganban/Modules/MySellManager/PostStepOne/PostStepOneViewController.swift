@@ -56,6 +56,7 @@ class PostStepOneViewController: BaseViewController {
         super.viewDidLoad()
         presenter?.getCategoryMerge()
         configureTableView()
+        checkCopyUpdate()
     }
     
     override func setUpNavigation() {
@@ -70,7 +71,6 @@ class PostStepOneViewController: BaseViewController {
         super.viewWillAppear(animated)
         presenter?.getExpireDate()
         hideTabbar()
-        checkCopyUpdate()
     }
     
     override func setUpViews() {
