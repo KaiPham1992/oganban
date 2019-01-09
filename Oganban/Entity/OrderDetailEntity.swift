@@ -34,7 +34,7 @@ class OrderDetailEntity: BaseEntity {
     var imgSrcSaler: String?
     var imgCropSaler: String?
     var levelSaler: String?
-    
+    var avg_rating_seller: String?
     // buyer
     var accountIDBuyer: String?
     var fullNameBuyer: String?
@@ -47,6 +47,7 @@ class OrderDetailEntity: BaseEntity {
     var imgSrcBuyer: String?
     var imgCropBuyer: String?
     var levelBuyer: String?
+    var ratingBuyerOrder: String?
     
     override func mapping(map: Map) {
         super.mapping(map: map)
@@ -75,6 +76,7 @@ class OrderDetailEntity: BaseEntity {
         self.imgSrcSaler <- map["img_src_seller"]
         self.imgCropSaler <- map["crop_img_src_seller"]
         self.levelSaler <- map["level_seller"]
+        self.avg_rating_seller <- map["avg_rating_seller"]
         
         // buyer
         self.accountIDBuyer <- map["account_id_buyer"]
