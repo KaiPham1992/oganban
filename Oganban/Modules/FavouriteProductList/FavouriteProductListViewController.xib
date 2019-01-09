@@ -13,7 +13,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductListViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FavouriteProductListViewController">
             <connections>
                 <outlet property="cvProduct" destination="19p-Ro-boZ" id="YS0-QK-Wzs"/>
                 <outlet property="imgAvatar" destination="MTm-Au-ens" id="pxC-dQ-XBO"/>

@@ -36,6 +36,8 @@ protocol UserAPIServiceProtocol {
     func addFavoriteStaff(isFavorite: Bool, accountID: String, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
 
     func removeFavourite(isFavorite: Int, accountId: Int, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
+    
+     func getRecordByFavoriteUser(accountId: Int, offset: Int, success: @escaping SuccessHandler<RecordEntity>.array, failure: @escaping RequestFailure)
 
 }
 
@@ -121,13 +123,18 @@ class UserAPIService: UserAPIServiceProtocol {
     }
     
     func removeFavourite(isFavorite: Int, accountId: Int, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure) {
-        let endPoint = UserEndPoint.addRemoveFavourite(isFavorite: isFavorite, accountId: accountId)
+        let endPoint = UserEndPoint.removeFavourite(isFavorite: isFavorite, accountId: accountId)
         network.requestData(endPoint: endPoint, success: MapperData.mapNoData(success), failure: failure)
     }
     
     func addFavoriteStaff(isFavorite: Bool, accountID: String, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure) {
         let endPoint = UserEndPoint.addFavoriteStaff(isFavorite: isFavorite, accountID: accountID)
         network.requestData(endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
+    }
+    
+    func getRecordByFavoriteUser(accountId: Int, offset: Int, success: @escaping SuccessHandler<RecordEntity>.array, failure: @escaping RequestFailure) {
+        let endPoint = UserEndPoint.getRecordByFavoriteUser(offset: offset, limit: limitLoad, accountId: accountId)
+        network.requestData(endPoint: endPoint, success: MapperData.mapArray(success), failure: failure)
     }
 }
 
