@@ -40,6 +40,7 @@ class TabbarViewController: UITabBarController {
         newFrame.origin.y = view.frame.size.height - newTabBarHeight
         tabBar.barTintColor = UIColor.white
         tabBar.frame = newFrame
+       
     }
     
     func setUpTabbar() {

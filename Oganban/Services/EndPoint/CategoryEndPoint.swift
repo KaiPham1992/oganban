@@ -14,7 +14,7 @@ enum CategoryEndPoint {
     case getCategoryMerge()
     case filterRecord(param: RecordParam)
     case getPositionRange()
-    case getCountRecordPosition(long: CGFloat, lat: CGFloat, radius: Int)
+    case getCountRecordPosition(long: CGFloat, lat: CGFloat, radius: Int?)
 }
 
 extension CategoryEndPoint: EndPointType {

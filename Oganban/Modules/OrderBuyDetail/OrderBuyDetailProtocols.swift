@@ -12,7 +12,7 @@ import Foundation
 
 //MARK: Wireframe -
 protocol OrderBuyDetailWireframeProtocol: class {
-
+    func gotoLogin()
 }
 //MARK: Presenter -
 protocol OrderBuyDetailPresenterProtocol: class {
@@ -21,6 +21,11 @@ protocol OrderBuyDetailPresenterProtocol: class {
     
     func bookingOrder(recordID: String, price: Double, quantity: Int, paymentType: String, isService: Bool)
     func getDetail(id: String)
+    func AddFavorite(isFavorite: Bool, accountID: String)
+    
+    
+    //---
+    func gotoLogin()
 }
 
 //MARK: Interactor -
@@ -29,6 +34,7 @@ protocol OrderBuyDetailInteractorOutputProtocol: class {
     /* Interactor -> Presenter */
     func didGetDetail(record: RecordEntity?)
     func didBooking(order: OrderEntity?)
+    func didAddFavorite(data: BaseResponse?)
 }
 
 protocol OrderBuyDetailInteractorInputProtocol: class {
@@ -38,6 +44,7 @@ protocol OrderBuyDetailInteractorInputProtocol: class {
     /* Presenter -> Interactor */
     func getDetail(id: String)
     func bookingOrder(recordID: String, price: Double, quantity: Int, paymentType: String, isService: Bool)
+    func AddFavorite(isFavorite: Bool, accountID: String)
 }
 
 //MARK: View -
@@ -48,4 +55,5 @@ protocol OrderBuyDetailViewProtocol: class {
     /* Presenter -> ViewController */
     func didGetDetail(record: RecordEntity?)
     func didBooking(order: OrderEntity?)
+    func didAddFavorite(data: BaseResponse?)
 }

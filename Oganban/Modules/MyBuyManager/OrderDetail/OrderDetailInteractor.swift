@@ -11,7 +11,7 @@
 import UIKit
 
 class OrderDetailInteractor: OrderDetailInteractorInputProtocol {
-
+   
     weak var presenter: OrderDetailInteractorOutputProtocol?
     
     func getDetail(id: String) {
@@ -29,6 +29,36 @@ class OrderDetailInteractor: OrderDetailInteractorInputProtocol {
             self.presenter?.didHideRecord(data: data)
         }) { (_) in
             
+        }
+    }
+    
+    func editRecord(recordID: String, expiredDate: String) {
+        Provider.shared.recordAPIService.updateRecord(recordID: recordID, expiredDate: expiredDate, success: { (data) in
+            self.presenter?.didEditRecord(data: data)
+        }) { (_) in
+            
+        }
+    }
+    
+    func getExpiredDay() {
+        ProgressView.shared.show()
+        Provider.shared.recordAPIService.getExpireDateRecord(success: { expireEntity in
+            guard let date = expireEntity?.expiredDate else { return }
+            DataManager.shared.maxDate = date
+            ProgressView.shared.hide()
+        }) { error in
+            ProgressView.shared.hide()
+            
+        }
+    }
+    
+    func sendComment(param: SendCommentParam) {
+        ProgressView.shared.show()
+        Provider.shared.recordAPIService.sendComment(param: param, success: { (comment) in
+            ProgressView.shared.hide()
+            self.presenter?.didSendComment(comment: comment)
+        }) { (error) in
+             ProgressView.shared.hide()
         }
     }
 }

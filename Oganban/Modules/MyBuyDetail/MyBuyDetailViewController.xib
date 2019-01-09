@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyBuyDetailViewController">
             <connections>
+                <outlet property="btnBuyerSend" destination="b6i-jn-GYC" id="wu7-4d-kgY"/>
+                <outlet property="btnSaleSend" destination="E5f-Y6-kUK" id="cpc-Gh-iWV"/>
                 <outlet property="tbDetail" destination="dv7-bA-7X7" id="gfN-Tb-AJ1"/>
                 <outlet property="vAcceptCancel" destination="6lo-FX-GNa" id="Yec-UB-U28"/>
                 <outlet property="vContainerRating" destination="WmU-Da-ADC" id="kz9-1L-lr8"/>

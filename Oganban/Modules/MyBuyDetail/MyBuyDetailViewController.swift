@@ -35,6 +35,14 @@ class MyBuyDetailViewController: BaseViewController {
                 } else {
                     vContainerRating.isHidden = true
                 }
+                
+                // get rating buyer
+                if let salerRating = _order.avg_rating_seller, let salerRatingInt =  Int(salerRating) {
+                    vRating.number = salerRatingInt
+                    vRating.setStar(number: salerRatingInt)
+                    btnBuyerSend.isHidden = true
+                    
+                }
                 // SALER
             } else {
                 vControlSaler.isHidden = false
@@ -55,6 +63,12 @@ class MyBuyDetailViewController: BaseViewController {
                     vReceivedMoney.isHidden = true
                 }
                 
+                
+                if let buyerRating = _order.avgRatingBuyer, let buyerRatingInt =  Int(buyerRating) {
+                    vRatingSaler.number = buyerRatingInt
+                    vRatingSaler.setStar(number: buyerRatingInt)
+                    btnSaleSend.isHidden = true
+                }
             }
             
         }
@@ -64,10 +78,12 @@ class MyBuyDetailViewController: BaseViewController {
     var isSaler = true
 
      @IBOutlet weak var tbDetail: UITableView!
+    
     // buyer
     @IBOutlet weak var vDoneNotArrived: UIView!
     @IBOutlet weak var vRating: AppRatingView!
     @IBOutlet weak var vContainerRating: UIView!
+    @IBOutlet weak var btnBuyerSend: UIButton!
     
     // saller
     @IBOutlet weak var vControlSaler: UIView!
@@ -75,6 +91,7 @@ class MyBuyDetailViewController: BaseViewController {
     @IBOutlet weak var vRatingSaler: AppRatingView!
     @IBOutlet weak var vContainerRatingSaler: UIView!
     @IBOutlet weak var vReceivedMoney: UIView!
+    @IBOutlet weak var btnSaleSend: UIButton!
     
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,6 +116,10 @@ class MyBuyDetailViewController: BaseViewController {
 extension MyBuyDetailViewController: MyBuyDetailViewProtocol {
     func didGetOrder(order: OrderDetailEntity?) {
         self.order = order
+    }
+    
+    func didPostRating(data: BaseResponse?) {
+        self.pop()
     }
 }
 
@@ -187,12 +208,16 @@ extension MyBuyDetailViewController: MyBuyImageCellDelegate {
     
     @IBAction func btnRatingTapped() {
         // fix me
-        PopUpHelper.shared.showMessageHaveAds(message: "Đang đợi API")
+//        PopUpHelper.shared.showMessageHaveAds(message: "Đang đợi API")
+        guard let accountID = order?.accountIDSaler  else { return }
+        presenter?.postRating(point: vRating.number, accountID: accountID, isBuyer: false, orderID: orderId)
     }
     
     @IBAction func btnRatingSalerTapped() {
         // fix me
-        PopUpHelper.shared.showMessageHaveAds(message: "Đang đợi API")
+//        PopUpHelper.shared.showMessageHaveAds(message: "Đang đợi API 111")
+        guard let accountID = order?.accountIDBuyer  else {return }
+        presenter?.postRating(point: vRating.number, accountID: accountID, isBuyer: false, orderID: orderId)
     }
     
     

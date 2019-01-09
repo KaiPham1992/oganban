@@ -36,6 +36,8 @@ class PostStepOneViewController: BaseViewController {
         }
     }
     
+    var record: RecordEntity?
+    var isCopyUpdate: Bool = false
     //--Menu
     var menu: [CategoryMergeEntity] = [] {
         didSet {
@@ -54,6 +56,7 @@ class PostStepOneViewController: BaseViewController {
         super.viewDidLoad()
         presenter?.getCategoryMerge()
         configureTableView()
+        checkCopyUpdate()
     }
     
     override func setUpNavigation() {
@@ -86,6 +89,14 @@ class PostStepOneViewController: BaseViewController {
         
         //--
         vQuantity.textField.keyboardType = UIKeyboardType.numberPad
+    }
+    
+    private func checkCopyUpdate() {
+        if isCopyUpdate {
+            setupUpdate()
+            self.categoryId = record?.catrgotyID
+            self.dateSeleted = record?.createTime
+        }
     }
     
     private func configureTableView() {
@@ -145,8 +156,14 @@ class PostStepOneViewController: BaseViewController {
         let imgSrc = vPhoto.listImage.map {$0.url&}
         let expireDate = dateSeleted?.toString(dateFormat: AppDateFormat.yyyyMMdd)&
         
-        postParam = PostRecordParam(categoryId: categoryId&, name: vTitleRecord.textField.text&, imgSrc: imgSrc, quantity: vQuantity.textField.text&, expireDate: expireDate&, aboutRecord: vAbout.tvInput.text&)
         
+        postParam = PostRecordParam(categoryId: categoryId&, name: vTitleRecord.textField.text&, imgSrc: imgSrc, quantity: vQuantity.textField.text&, expireDate: expireDate&, aboutRecord: vAbout.tvInput.text&)
+        if isCopyUpdate {
+            
+            let vc = PostStepTwoRouter.createModule(param: self.postParam, isUpdate: true, record: self.record)
+            self.push(controller: vc)
+            return
+        }
         let vc = PostStepTwoRouter.createModule(param: self.postParam)
         self.push(controller: vc)
     }
@@ -294,3 +311,4 @@ extension PostStepOneViewController: LeftMenuCellDelegate {
         }
     }
 }
+

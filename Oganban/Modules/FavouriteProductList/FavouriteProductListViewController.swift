@@ -10,13 +10,13 @@
 
 import UIKit
 
-class ProductListViewController: BaseViewController {
+class FavouriteProductListViewController: BaseViewController {
 
     @IBOutlet weak var vLevel: LevelMemberView!
     @IBOutlet weak var lbRating: UILabel!
     @IBOutlet weak var lbName: UILabel!
     @IBOutlet weak var imgAvatar: UIImageView!
-    var presenter: ProductListPresenterProtocol?
+    var presenter: FavouriteProductListPresenterProtocol?
     
     var favouriteUser: FavouriteEntity?
     
@@ -48,7 +48,11 @@ class ProductListViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        presenter?.getFavourite(offset: 0)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        pullToRefresh()
     }
     
     func setupView(){
@@ -69,7 +73,10 @@ class ProductListViewController: BaseViewController {
     @objc func pullToRefresh() {
         isRefresh = true
         self.refreshControl.endRefreshing()
-        presenter?.getFavourite(offset: 0)
+        
+        if let id = favouriteUser?.id, let accountId = Int(id) {
+            presenter?.getFavourite(accountId: accountId, offset: 0)
+        }
     }
     
     func getDefaultData(){
@@ -98,7 +105,7 @@ class ProductListViewController: BaseViewController {
         }
     }
 }
-extension ProductListViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension FavouriteProductListViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
          return recordList.count
@@ -121,11 +128,13 @@ extension ProductListViewController: UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if canLoadMore && indexPath.item == self.recordList.count - 5 {
-            presenter?.getFavourite(offset: self.recordList.count)
+            if let id = favouriteUser?.id, let accountId = Int(id) {
+                presenter?.getFavourite(accountId: accountId, offset: self.recordList.count)
+            }
         }
     }
 }
-extension ProductListViewController: ProductListViewProtocol {
+extension FavouriteProductListViewController: FavouriteProductListViewProtocol {
     func getSucessFavourite(record: [RecordEntity]) {
         canLoadMore = false
         canLoadMore = record.count == limitLoad

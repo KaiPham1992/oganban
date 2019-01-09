@@ -25,7 +25,7 @@ protocol HistoryCoinPresenterProtocol: class {
 protocol HistoryCoinInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
-    func getSucessHistoryCoin(history: [HistoryCoinEntity])
+    func getSucessHistoryCoin(history: BaseHistoryCoinEntity?)
     func getErrorHistoryCoin(error: APIError?)
 }
 
@@ -43,6 +43,6 @@ protocol HistoryCoinViewProtocol: class {
     var presenter: HistoryCoinPresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
-    func getSucessHistoryCoin(history: [HistoryCoinEntity])
+    func getSucessHistoryCoin(history: BaseHistoryCoinEntity?)
     func getErrorHistoryCoin(error: APIError?)
 }

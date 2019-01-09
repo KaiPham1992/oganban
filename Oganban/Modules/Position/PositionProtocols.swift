@@ -19,7 +19,7 @@ protocol PositionPresenterProtocol: class {
     
     var interactor: PositionInteractorInputProtocol? { get set }
     func dismiss()
-    func getCountRecord(long: CGFloat, lat: CGFloat, radius: Int)
+    func getCountRecord(long: CGFloat, lat: CGFloat, radius: Int?)
 }
 
 //MARK: Interactor -
@@ -32,7 +32,7 @@ protocol PositionInteractorOutputProtocol: class {
 protocol PositionInteractorInputProtocol: class {
 
     var presenter: PositionInteractorOutputProtocol?  { get set }
-    func getCountRecord(long: CGFloat, lat: CGFloat, radius: Int)
+    func getCountRecord(long: CGFloat, lat: CGFloat, radius: Int?)
 
     /* Presenter -> Interactor */
 }

@@ -23,9 +23,15 @@ class PostStepTwoViewController: BaseViewController {
     var param = PostRecordParam()
     var errorMessage: String = ""
     
+    var record: RecordEntity?
+    var isCopyUpdate: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
+    
+    
     
     override func setUpViews() {
         super.setUpViews()
@@ -52,6 +58,12 @@ class PostStepTwoViewController: BaseViewController {
         vMoney.textField.isEnabled = false
         vCoin.textField.isEnabled = false
         showDataSaved()
+    }
+    
+    func setupUpdate() {
+        if isCopyUpdate {
+            CopyUpdate()
+        }
     }
     
     override func setUpNavigation() {
@@ -83,6 +95,7 @@ class PostStepTwoViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         hideTabbar()
+        setupUpdate()
     }
     
     @IBAction func btnPostTapped() {

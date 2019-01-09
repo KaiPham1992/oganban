@@ -11,6 +11,7 @@
 import UIKit
 
 class MySellExpiredDetailPresenter: MySellExpiredDetailPresenterProtocol {
+    
 
     weak private var view: MySellExpiredDetailViewProtocol?
     var interactor: MySellExpiredDetailInteractorInputProtocol?
@@ -31,6 +32,14 @@ class MySellExpiredDetailPresenter: MySellExpiredDetailPresenterProtocol {
     func deleteRecord(recordID: String) {
         interactor?.deleteRecord(recordID: recordID)
     }
+    
+    func getExpiredDay() {
+        interactor?.getExpiredDay()
+    }
+    
+    func editRecord(recordID: String, expiredDate: String) {
+        interactor?.editRecord(recordID: recordID, expiredDate: expiredDate)
+    }
 }
 
 extension MySellExpiredDetailPresenter: MySellExpiredDetailInteractorOutputProtocol {
@@ -40,5 +49,9 @@ extension MySellExpiredDetailPresenter: MySellExpiredDetailInteractorOutputProto
     
     func didDeleteRecord(data: BaseResponse?) {
         view?.didDeleteRecord(data: data)
+    }
+    
+    func didEditRecord(data: BaseResponse?) {
+        view?.didEditRecord(data: data)
     }
 }

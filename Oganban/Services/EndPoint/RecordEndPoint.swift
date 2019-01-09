@@ -17,6 +17,10 @@ enum RecordEndPoint {
     case getExpirePostRecord()
     case deleteRecord(recordID: String)
     case getFavouriteRecord()
+    case sendComment(param: SendCommentParam)
+    case getCommentList(recordId: String, offset: Int, limit: Int)
+    case deleteComment(commentId: String)
+    case updateRecord(recordID: String, expiredDate: String)
 }
 
 extension RecordEndPoint: EndPointType {
@@ -36,16 +40,26 @@ extension RecordEndPoint: EndPointType {
             return "_api/record/delete_record"
         case .getFavouriteRecord:
             return "_api/record/favourite"
+            //--Comment
+        case .getCommentList:
+            return "_api/comment/get_comment_list"
+        case .deleteComment:
+            return "_api/comment/delete_comment"
+        case .sendComment:
+            return "_api/comment/send_comment"
+
+        case .updateRecord:
+            return "_api/record/update_record"
         }
     }
     
     var httpMethod: HTTPMethod {
         switch self {
-        case .getRecordSellerPost, .postRecord, .getExpirePostRecord:
+        case .getRecordSellerPost, .postRecord, .getExpirePostRecord, .getCommentList, .sendComment, .updateRecord:
             return .post
         case .getRecordDetail, .getFavouriteRecord:
             return .get
-        case .hideRecord, .deleteRecord:
+        case .hideRecord, .deleteRecord, .deleteComment:
             return .put
         }
     }
@@ -66,6 +80,21 @@ extension RecordEndPoint: EndPointType {
             return param.toJSON()
         case .deleteRecord(let recordID):
             let param = ["record_id": recordID]
+            return param
+            //--Comment
+        case .getCommentList(let recordId, let offset, let limit):
+            let param = ["record_id": recordId,
+                         "offset": offset,
+                         "limit": limit] as [String: Any]
+            return param
+        case .deleteComment(let commentId):
+            let param = ["comment_id": commentId]
+            return param
+        case .sendComment(let param):
+            return param.toJSON()
+        case .updateRecord(let recordID, let expiredDate):
+            let param = ["record_id": recordID,
+                         "expired_date": expiredDate] as [String: Any]
             return param
         }
     }

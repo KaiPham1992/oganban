@@ -40,7 +40,11 @@ class HistoryBuyViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        presenter?.getHistoryBuy(offset: 0)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        pullToRefresh()
     }
     
     func configureTableView() {

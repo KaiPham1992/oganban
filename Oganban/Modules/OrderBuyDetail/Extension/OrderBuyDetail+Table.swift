@@ -36,6 +36,7 @@ extension OrderBuyDetailViewController: UITableViewDelegate, UITableViewDataSour
         case OrderDetailInfoType.infoProduct.rawValue:
             let cell = tbDetail.dequeueTableCell(OrderBuyDetailImageCell.self)
             cell.record = self.record
+            cell.delegate = self
             return cell
         case OrderDetailInfoType.intro.rawValue:
             let cell = tbDetail.dequeue(OrderIntroCell.self, for: indexPath)
@@ -88,12 +89,23 @@ extension OrderBuyDetailViewController: UITableViewDelegate, UITableViewDataSour
     // Header
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let v = UIView()
-        let header = HeaderOrderDetail()
+        let header = HeaderOrderBuyDetail()
         v.addSubview(header)
         header.fillSuperview()
         if section < self.listHeader.count {
             header.lbTitle.text = self.listHeader[section].uppercased()
             v.backgroundColor = AppColor.gray_65_65_65
+        }
+        if section == 2 {
+            header.btnLike.isHidden = false
+            header.delegate = self
+            guard let _isFavorite = record?.isFavorite else { return v}
+            if _isFavorite == 1 {
+                header.isLiked = true
+            } else {
+                header.isLiked = false
+            }
+            
         }
         
         return v

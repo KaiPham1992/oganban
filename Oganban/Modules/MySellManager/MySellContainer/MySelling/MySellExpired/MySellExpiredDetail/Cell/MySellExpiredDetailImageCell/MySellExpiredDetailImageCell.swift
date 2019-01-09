@@ -11,6 +11,7 @@ import UIKit
 protocol MySellExpiredDetailImageCellDelegate: class {
     func btnCopyTapped()
     func btnDeleteTapped()
+    func btnUpdateTapped()
 }
 
 class MySellExpiredDetailImageCell: BaseTableCell {
@@ -26,6 +27,7 @@ class MySellExpiredDetailImageCell: BaseTableCell {
     @IBOutlet weak var lbNameRecord: UILabel!
     @IBOutlet weak var lbExpireDate: UILabel!
     @IBOutlet weak var lbQuantity: UILabel!
+    @IBOutlet weak var btnUpdate: UIButton!
     
     // My sell
     var record: RecordEntity? {
@@ -45,10 +47,17 @@ class MySellExpiredDetailImageCell: BaseTableCell {
             lbQuantity.text = "Số lượng: \(_record.quantity&)"
             
             if let price = _record.price {
-                 radioMoney.setMoney(money: price)
+                radioMoney.setMoney(money: price)
             }
             
             radioCoin.setOCoin(coin: _record.coin)
+            if let status = record?.status {
+                if status == "expired" {
+                    btnUpdate.isHidden = false
+                } else {
+                    btnUpdate.isHidden = true
+                }
+            }
         }
     }
     
@@ -62,7 +71,7 @@ class MySellExpiredDetailImageCell: BaseTableCell {
         radioCoin.setOneImage(image: AppImage.imgCoin)
         
     }
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -80,5 +89,9 @@ class MySellExpiredDetailImageCell: BaseTableCell {
     
     @IBAction func btnCopyTapped() {
         delegate?.btnCopyTapped()
+    }
+    
+    @IBAction func btnUpdateTapped() {
+        delegate?.btnUpdateTapped()
     }
 }

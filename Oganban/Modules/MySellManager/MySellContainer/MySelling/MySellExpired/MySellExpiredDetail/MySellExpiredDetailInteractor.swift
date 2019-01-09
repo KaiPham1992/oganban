@@ -31,4 +31,26 @@ class MySellExpiredDetailInteractor: MySellExpiredDetailInteractorInputProtocol 
             ProgressView.shared.hide()
         }
     }
+    
+    func getExpiredDay() {
+        ProgressView.shared.show()
+        Provider.shared.recordAPIService.getExpireDateRecord(success: { expireEntity in
+            guard let date = expireEntity?.expiredDate else { return }
+            DataManager.shared.maxDate = date
+            ProgressView.shared.hide()
+        }) { error in
+            ProgressView.shared.hide()
+            
+        }
+    }
+    
+    func editRecord(recordID: String, expiredDate: String) {
+        ProgressView.shared.show()
+        Provider.shared.recordAPIService.updateRecord(recordID: recordID, expiredDate: expiredDate, success: { (data) in
+            self.presenter?.didEditRecord(data: data)
+            ProgressView.shared.hide()
+        }) { (_) in
+            ProgressView.shared.hide()
+        }
+    }
 }

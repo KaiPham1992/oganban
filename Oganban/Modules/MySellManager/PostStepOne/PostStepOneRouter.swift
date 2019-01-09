@@ -27,4 +27,19 @@ class PostStepOneRouter: PostStepOneWireframeProtocol {
 
         return view
     }
+    
+    static func createModule(record: RecordEntity?) -> PostStepOneViewController {
+        // Change to get view from storyboard if not using progammatic UI
+        let view = PostStepOneViewController(nibName: nil, bundle: nil)
+        let interactor = PostStepOneInteractor()
+        let router = PostStepOneRouter()
+        let presenter = PostStepOnePresenter(interface: view, interactor: interactor, router: router)
+        
+        view.record = record
+        view.presenter = presenter
+        interactor.presenter = presenter
+        router.viewController = view
+        
+        return view
+    }
 }

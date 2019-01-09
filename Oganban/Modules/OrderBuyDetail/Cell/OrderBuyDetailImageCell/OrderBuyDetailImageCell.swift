@@ -57,12 +57,12 @@ class OrderBuyDetailImageCell: BaseTableCell {
         super.awakeFromNib()
         radioMoney.delegate = self
         radioCoin.delegate = self
-       
     }
     
     func hideMoneyCoin() {
         heightMoneyCoin.constant = 0 // 0 25 50 
     }
+    
     
 }
 extension OrderBuyDetailImageCell: AppRadioButtonDelegate {
@@ -70,13 +70,18 @@ extension OrderBuyDetailImageCell: AppRadioButtonDelegate {
         if radioCoin ==  sender {
             radioCoin.isChecked = true
             radioMoney.isChecked = false
-            guard let _coin = record?.coin else {return}
-            delegate?.selectedCoin(coin: _coin)
+            if radioCoin.isChecked {
+                guard let _coin = record?.coin else {return}
+                delegate?.selectedCoin(coin: _coin)
+            }
+            
         } else {
             radioMoney.isChecked = true
             radioCoin.isChecked = false
-            guard let _price = record?.price else {return}
-            delegate?.selectedMoney(money: _price)
+            if radioMoney.isChecked {
+                guard let _price = record?.price else {return}
+                delegate?.selectedMoney(money: _price)
+            }
         }
     }
     

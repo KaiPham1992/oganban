@@ -11,7 +11,7 @@
 import UIKit
 
 class OrderDetailPresenter: OrderDetailPresenterProtocol {
-
+    
     weak private var view: OrderDetailViewProtocol?
     var interactor: OrderDetailInteractorInputProtocol?
     private let router: OrderDetailWireframeProtocol
@@ -31,14 +31,35 @@ class OrderDetailPresenter: OrderDetailPresenterProtocol {
     func hideRecord(recordID: String) {
         interactor?.hideRecord(recordID: recordID)
     }
+    
+    func editRecord(recordID: String, expiredDate: String) {
+        interactor?.editRecord(recordID: recordID, expiredDate: expiredDate)
+    }
+    
+    func getExpiredDay() {
+        interactor?.getExpiredDay()
+    }
+    
+    func sendComment(param: SendCommentParam) {
+        interactor?.sendComment(param: param)
+    }
+    
 }
 
 extension OrderDetailPresenter: OrderDetailInteractorOutputProtocol {
+    func didSendComment(comment: CommentResponseEntity?) {
+        view?.didSendComment(comment: comment)
+    }
+    
     func didGetDetail(record: RecordEntity?) {
         view?.didGetDetail(record: record)
     }
     
     func didHideRecord(data: BaseResponse?) {
         view?.didHideRecord(data: data)
+    }
+    
+    func didEditRecord(data: BaseResponse?) {
+        view?.didEditRecord(data: data)
     }
 }

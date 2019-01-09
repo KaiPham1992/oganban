@@ -26,13 +26,8 @@ class OrderDetailViewController: BaseViewController {
     @IBOutlet weak var bottomConstant: NSLayoutConstraint!
     @IBOutlet weak var heightConstant: NSLayoutConstraint!
     
-    @IBOutlet weak var vSelect: UIView!
-    @IBOutlet weak var btnAccept: UIButton!
-    @IBOutlet weak var btnDecline: UIButton!
-    @IBOutlet weak var btnReceived: UIButton!
     
-    var isMySellHide: Bool = false
-    var isMySellExpired: Bool = false
+    var dateSelected: Date?
     
     var isNew: Bool = false
     var isWait: Bool = false
@@ -62,10 +57,7 @@ class OrderDetailViewController: BaseViewController {
         configureTable()
         
         presenter?.getDetail(id: recordId&)
-//        vPostCommentView.isHidden = true
-//        btnReceived.isHidden = true
-        vSelect.isHidden = true
-        setupView()
+        presenter?.getExpiredDay()
     }
     
     override func setUpNavigation() {
@@ -76,43 +68,20 @@ class OrderDetailViewController: BaseViewController {
         self.tabBarController?.tabBar.isHidden = true
     }
     
-    func setupView() {
-        if isMySellHide || isMySellExpired {
-            vPostCommentView.isHidden = true
-        } else if isNew {
-            vSelect.isHidden = false
-            btnReceived.isHidden = true
-            vPostCommentView.isHidden = true
-        } else if isWait {
-            vSelect.isHidden = false
-            btnReceived.isHidden = false
-            btnAccept.isHidden = true
-            btnDecline.isHidden = true
-            vPostCommentView.isHidden = true
-        }
-    }
     
     @objc func btnShareTapped() {
         ShareNativeHelper.shared.showShareLinkInstall(controller: self)
     }
     
-//    func testComment() {
-//        for i in 0...3 {
-//            let newComment = CommentEntity(comment: "Comment \(i)")
-//
-//            for j in 0...4 {
-//                let newSubComment = SubCommentEntity(comment: "Sub comment \(j)")
-//                newComment.subComment.append(newSubComment)
-//            }
-//
-//            listComment.append(newComment)
-//        }
-//
-//        tbDetail.reloadData()
-//    }
 }
 
 extension OrderDetailViewController: OrderDetailViewProtocol {
+    func didSendComment(comment: CommentResponseEntity?) {
+        guard let _comment = comment else { return }
+        let commentAdd = CommentEntity(comment: _comment.comment&)
+        insertComment(comment: commentAdd)
+    }
+    
     func didGetDetail(record: RecordEntity?) {
         self.record = record
     }
@@ -122,15 +91,21 @@ extension OrderDetailViewController: OrderDetailViewProtocol {
             self.pop()
         }
     }
+    
+    func didEditRecord(data: BaseResponse?) {
+        PopUpHelper.shared.showMessageHaveAds(message: "Bạn đã gia hạn tin thành công !") {
+            self.pop()
+        }
+    }
 }
 
 extension OrderDetailViewController: OrderDetailImageCellDelegate {
-    func btnDeleteTapped() {
-        PopUpHelper.shared.showYesNoQuestionHaveAds(question: "Bạn chắc chắn muốn xoá bài đăng này ?", completionYes: {
-            //FIXME
-        }) {
-            
+    func btnEditTapped() {
+        PopUpHelper.shared.showDateFollowWeekPopup(maxDate: DataManager.shared.maxDate) { date in
+            guard let id = self.recordId, let _date = date else { return }
+            self.presenter?.editRecord(recordID: id, expiredDate: _date.toString(dateFormat: AppDateFormat.yyyyMMdd))
         }
+       
     }
     
     func btnHideTapped() {
