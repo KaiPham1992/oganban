@@ -31,11 +31,13 @@ enum UserEndPoint {
     case updateProfileSocial(param: UpdateProfileSocial)
     case uploadAvatar()
     
-    case getHistoryBuy()
+
     case getHistoryCoin()
-    case getFavourite()
     case postRating(point: Int, accountID: String, isBuyer: Bool, orderID: String)
     
+    case getHistoryBuy(offset: Int, limit: Int)
+    case getFavourite(offset: Int, limit: Int)
+    case addRemoveFavourite(isFavorite: Int, accountId: Int)
 }
 
 extension UserEndPoint: EndPointType {
@@ -74,21 +76,23 @@ extension UserEndPoint: EndPointType {
         case .uploadAvatar:
             return "_api/user/upload_avatar"
         case .getHistoryBuy:
-            return "_api/user/history_buy"
-        case .getHistoryCoin:
-            return "_api/user/history_coin"
+            return "_api/user/get_history_buy_post"
         case .getFavourite:
             return "_api/user/favourite"
         case .postRating:
             return "_api/user/post_rating"
+        case .addRemoveFavourite:
+            return "_api/user/add_favorite"
+        case .getHistoryCoin:
+            return "_api/order/get_history_coin"
         }
         
     }
     
     var httpMethod: HTTPMethod {
-        switch self { case .login, .fogotPassword, .checkLogin, .logout, .loginGmail, .loginFacebook, .verifyPhone, .getPointHistory, .getListFavorite, .addFavorite, .addFavoriteStaff, .signUp, .uploadAvatar, .postRating:
+        switch self { case .login, .fogotPassword, .checkLogin, .logout, .loginGmail, .loginFacebook, .verifyPhone, .getPointHistory, .getListFavorite, .addFavorite, .addFavoriteStaff, .signUp, .uploadAvatar, .postRating, .getFavourite, .getHistoryBuy, .addRemoveFavourite, .getHistoryCoin:
             return .post
-        case .getCaptcha, .getIntroduceList, .getHistoryBuy, .getHistoryCoin, .getFavourite:
+        case .getCaptcha, .getIntroduceList:
             return .get
         case .changePassword, .updateProfile, .updateProfileSocial:
             return .put
@@ -171,13 +175,17 @@ extension UserEndPoint: EndPointType {
             return param.toJSON()
         case .uploadAvatar:
             return [:]
-        case .getHistoryBuy:
-            return [:]
         case .getHistoryCoin:
             return [:]
-        case .getFavourite:
-             return [:]
-    
+        case .getHistoryBuy(let offset, let limit):
+            return ["offset": offset,
+                    "limit": limit]
+        case .getFavourite(let offset, let limit):
+            return  ["offset": offset,
+                     "limit": limit]
+        case .addRemoveFavourite(let isFavorite, let accountId):
+            return ["is_favorite": isFavorite,
+                    "account_id": accountId]
         }
     }
     

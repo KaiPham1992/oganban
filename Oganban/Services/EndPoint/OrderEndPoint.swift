@@ -15,6 +15,7 @@ enum OrderEndPoint {
     case changeStatusOrderBuyer(status: OrderStatusKey, orderId: String)
     case changeStatusOrderSaler(status: OrderStatusKey, orderId: String)
     case bookingOrder(recordID: String, price: Double, quantity: Int, paymentType: String, isService: Bool)
+    case getHistoryCoin(offset: Int, limit: Int)
 }
 
 extension OrderEndPoint: EndPointType {
@@ -32,12 +33,14 @@ extension OrderEndPoint: EndPointType {
             return "_api/order/post_confirm_order_seller"
         case .bookingOrder:
             return "_api/order/booking_order"
+        case .getHistoryCoin:
+            return "/_api/order/get_history_coin"
         }
     }
     
     var httpMethod: HTTPMethod {
         switch self {
-        case .getTransactionSeller, .getHistoryOrder, .changeStatusOrderBuyer, .changeStatusOrderSaler, .bookingOrder:
+        case .getTransactionSeller, .getHistoryOrder, .changeStatusOrderBuyer, .changeStatusOrderSaler, .bookingOrder, .getHistoryCoin:
             return .post
         case .getDetailOrder:
             return .get
@@ -77,6 +80,11 @@ extension OrderEndPoint: EndPointType {
                 "is_service": isService
             ] as [String: Any]
             return param
+        case .getHistoryCoin(let offset, let limit):
+            return [
+                "offset": offset,
+                "limit": limit
+            ]
         }
         
     }

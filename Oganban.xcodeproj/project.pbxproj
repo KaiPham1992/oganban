@@ -48,6 +48,7 @@
 		84329F5B21DFE1FA00047B5E /* ProductListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84329F5521DFE1FA00047B5E /* ProductListInteractor.swift */; };
 		84329F5C21DFE1FA00047B5E /* ProductListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84329F5621DFE1FA00047B5E /* ProductListViewController.xib */; };
 		84396D3E21D1389B00818FAB /* UpdateProfile+Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84396D3D21D1389B00818FAB /* UpdateProfile+Event.swift */; };
+		843D18A621E451B800C5B8F7 /* BaseHistoryCoinEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D18A521E451B800C5B8F7 /* BaseHistoryCoinEntity.swift */; };
 		84421BED21CBEECF00F468F5 /* MorePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84421BE721CBEECF00F468F5 /* MorePresenter.swift */; };
 		84421BEE21CBEECF00F468F5 /* MoreRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84421BE821CBEECF00F468F5 /* MoreRouter.swift */; };
 		84421BF021CBEECF00F468F5 /* MoreProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84421BEA21CBEECF00F468F5 /* MoreProtocols.swift */; };
@@ -522,6 +523,7 @@
 		84329F5521DFE1FA00047B5E /* ProductListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListInteractor.swift; sourceTree = "<group>"; };
 		84329F5621DFE1FA00047B5E /* ProductListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductListViewController.xib; sourceTree = "<group>"; };
 		84396D3D21D1389B00818FAB /* UpdateProfile+Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UpdateProfile+Event.swift"; sourceTree = "<group>"; };
+		843D18A521E451B800C5B8F7 /* BaseHistoryCoinEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHistoryCoinEntity.swift; sourceTree = "<group>"; };
 		84421BE721CBEECF00F468F5 /* MorePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorePresenter.swift; sourceTree = "<group>"; };
 		84421BE821CBEECF00F468F5 /* MoreRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreRouter.swift; sourceTree = "<group>"; };
 		84421BEA21CBEECF00F468F5 /* MoreProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreProtocols.swift; sourceTree = "<group>"; };
@@ -1997,6 +1999,7 @@
 				DE5E085221E1DF000053EC9D /* OrderDetailEntity.swift */,
 				8463FAF821E1CBCA00522D0C /* HistoryBuyEntity.swift */,
 				8463FAFA21E1E1D900522D0C /* HistoryCoinEntity.swift */,
+				843D18A521E451B800C5B8F7 /* BaseHistoryCoinEntity.swift */,
 				8463FAFC21E1F06000522D0C /* FavouriteEntity.swift */,
 			);
 			path = Entity;
@@ -2995,6 +2998,7 @@
 				DE33035421DF1D7B00409F83 /* AppTextView.swift in Sources */,
 				B355EF5221C8EB3F00379F57 /* HomeProtocols.swift in Sources */,
 				CB379C2321E39A14005D7536 /* MySellExpiredDetailImageCell.swift in Sources */,
+				843D18A621E451B800C5B8F7 /* BaseHistoryCoinEntity.swift in Sources */,
 				B36A235F21E1AEBA00AA20DF /* SettingInteractor.swift in Sources */,
 				DE442C3F21CFA2130051C0B8 /* OrderDetailViewController.swift in Sources */,
 				CB172C2521C6A2EF0068CF92 /* PopUpHelper.swift in Sources */,

@@ -11,47 +11,15 @@
 import UIKit
 
 class HistoryBuyInteractor: HistoryBuyInteractorInputProtocol {
-
+    
     weak var presenter: HistoryBuyInteractorOutputProtocol?
     
     func getHistoryBuy(offset: Int) {
-        
-        if offset == 0 {
-            let historyList = [HistoryBuyEntity(_id: "0", _content: "A1", _createTime: Date()),
-                               HistoryBuyEntity(_id: "1", _content: "A2", _createTime: Date()),
-                               HistoryBuyEntity(_id: "2", _content: "A3", _createTime: Date()),
-                               HistoryBuyEntity(_id: "3", _content: "A4", _createTime: Date()),
-                               HistoryBuyEntity(_id: "4", _content: "A5", _createTime: Date()),
-                               HistoryBuyEntity(_id: "5", _content: "A6", _createTime: Date()),
-                               HistoryBuyEntity(_id: "6", _content: "A7", _createTime: Date()),
-                               HistoryBuyEntity(_id: "7", _content: "A8", _createTime: Date()),
-                               HistoryBuyEntity(_id: "8", _content: "A9", _createTime: Date()),
-                               HistoryBuyEntity(_id: "9", _content: "A10", _createTime: Date()),
-                               HistoryBuyEntity(_id: "10", _content: "A11", _createTime: Date()),
-                               HistoryBuyEntity(_id: "11", _content: "A12", _createTime: Date()),
-                               HistoryBuyEntity(_id: "12", _content: "A13", _createTime: Date()),
-                               HistoryBuyEntity(_id: "13", _content: "A14", _createTime: Date()),
-                               HistoryBuyEntity(_id: "14", _content: "A15", _createTime: Date()),
-                               HistoryBuyEntity(_id: "15", _content: "A16", _createTime: Date()),
-                               HistoryBuyEntity(_id: "16", _content: "A17", _createTime: Date()),
-                               HistoryBuyEntity(_id: "17", _content: "A18", _createTime: Date()),
-                               HistoryBuyEntity(_id: "18", _content: "A19", _createTime: Date()),
-                               HistoryBuyEntity(_id: "19", _content: "A20", _createTime: Date())]
-            presenter?.getSucessHistoryBuy(history: historyList)
-        } else {
-            let historyList = [HistoryBuyEntity(_id: "0", _content: "A21", _createTime: Date()),
-                               HistoryBuyEntity(_id: "1", _content: "A22", _createTime: Date()),
-                               HistoryBuyEntity(_id: "2", _content: "A23", _createTime: Date()),
-                               HistoryBuyEntity(_id: "3", _content: "A24", _createTime: Date()),
-                               HistoryBuyEntity(_id: "4", _content: "A25", _createTime: Date()),
-                               HistoryBuyEntity(_id: "5", _content: "A26", _createTime: Date()),
-                               HistoryBuyEntity(_id: "6", _content: "A27", _createTime: Date()),
-                               HistoryBuyEntity(_id: "7", _content: "A28", _createTime: Date()),
-                               HistoryBuyEntity(_id: "8", _content: "A29", _createTime: Date()),
-                               HistoryBuyEntity(_id: "9", _content: "A30", _createTime: Date())]
-            presenter?.getSucessHistoryBuy(history: historyList)
+        Provider.shared.userAPIService.getHistoryBuy(offset: offset, success: { (histories) in
+            self.presenter?.getSucessHistoryBuy(history: histories)
+        }) { (error) in
+            self.presenter?.getErrorHistoryBuy(error: error)
         }
-        
-        
     }
 }
+

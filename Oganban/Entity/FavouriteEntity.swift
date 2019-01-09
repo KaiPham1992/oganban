@@ -9,24 +9,32 @@
 import ObjectMapper
 
 class FavouriteEntity: BaseEntity {
+    
+    var createTime: Date?
     var id: String?
     var fullName: String?
-    var createTime: Date?
-    var level: String?
     var imgCropSrc: String?
-    var pointRatingAvg: String?
+    var imgSrc: String?
+    var coin: Double?
     var isPro: String?
+    var pointRatingAvg: String?
+    var level: String?
+    var totalRating: String?
     var socialImage: String?
-    
+
     override func mapping(map: Map) {
         super.mapping(map: map)
-        self.id <- map["id"]
+        
+        self.createTime <- (map["create_time_mi"], AppTimestampTransform())
+        self.id <- map["account_id"]
         self.fullName <- map["fullname"]
-        self.createTime <- (map["create_time"], yyyyMMddHHmmssTransform())
-        self.level <- map["level"]
         self.imgCropSrc <- map["crop_img_src"]
-        self.pointRatingAvg <- map["point_rating_avg"]
+        self.imgSrc <- map["img_src"]
+        self.coin <- map["coin"]
         self.isPro <- map["is_pro"]
+        self.pointRatingAvg <- map["avg_rating"]
+        self.level <- map["level"]
+        self.totalRating <- map["total_rating"]
         self.socialImage <- map["social_img_src"]
     }
     

@@ -19,6 +19,7 @@ class FavouriteViewController: BaseViewController {
     var refreshControl:  UIRefreshControl!
     var canLoadMore = false
     var isRefresh = false
+    var removedItemIndex: Int? = nil
     
     var favouriteList = [FavouriteEntity]() {
         didSet {
@@ -41,7 +42,7 @@ class FavouriteViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        presenter?.getFavourite(offset: 0)
+        pullToRefresh()
     }
     
     func configureTableView() {
@@ -86,6 +87,13 @@ extension FavouriteViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension FavouriteViewController: FavouriteViewProtocol{
+    
+    func removeSucessFavourite(baseResponse: BaseResponse?) {
+        if baseResponse?.status == 200, let index = removedItemIndex {
+            self.favouriteList.remove(at: index)
+        }
+    }
+    
     func getSucessFavourite(favourite: [FavouriteEntity]) {
         canLoadMore = false
         //guard let _favourite = favourite else { return }
@@ -107,8 +115,11 @@ extension FavouriteViewController: FavouriteViewProtocol{
 
 extension FavouriteViewController: FavouriteCellProtocol{
     func removeFavourite(index: Int) {
-        PopUpHelper.shared.showYesNoQuestionHaveAds(question: "Bạn thật sự muốn bỏ yêu thích?", completionYes: {
-            self.favouriteList.remove(at: index)
-        }) { }
+        if let id = self.favouriteList[index].id, let accountId = Int(id)  {
+            PopUpHelper.shared.showYesNoQuestionHaveAds(question: "Bạn thật sự muốn bỏ yêu thích?", completionYes: {
+                self.removedItemIndex = index
+                self.presenter?.removeFavourite(isFavorite: 0, accountId: accountId)
+            }) { }
+        }
     }
 }
