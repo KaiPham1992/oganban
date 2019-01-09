@@ -44,6 +44,7 @@ class RecordEntity: BaseEntity {
     var status: String?
     var isTransaction: Bool?
     var isFavorite: Int?
+    var categoryName: String?
     
     required init?(map: Map) {
         super.init()
@@ -74,6 +75,7 @@ class RecordEntity: BaseEntity {
         self.phone <- map["phone"]
         self.cropImage <- map["crop_img_src_account"]
         self.accountCoin <- map["account_coin"]
+        self.categoryName <- map["category_name"]
         
         if let distance = self.distance, let dis = Double(distance) {
             let temp = dis * 1000
