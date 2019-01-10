@@ -75,7 +75,7 @@ class HomeViewController: BaseViewController {
         configureTableView()
         presenter?.getCategoryMerge()
         
-//        getParamDefault()
+        getParamDefault()
         ProgressView.shared.show()
         presenter?.filterRecord(param: paramFilter)
         presenter?.getPositionRange()
