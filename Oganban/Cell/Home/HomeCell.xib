@@ -251,11 +251,11 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="avatar" width="22.5" height="22.5"/>
-        <image name="ic_coin" width="14.5" height="20"/>
+        <image name="avatar" width="22" height="22"/>
+        <image name="ic_coin" width="14" height="20"/>
         <image name="ic_money" width="17" height="20"/>
         <image name="new_label" width="49" height="48"/>
-        <image name="rectangle_560271_copy" width="157.5" height="105"/>
+        <image name="rectangle_560271_copy" width="157" height="105"/>
         <image name="star" width="25" height="25"/>
     </resources>
 </document>
