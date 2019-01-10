@@ -8,6 +8,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PostStepOneViewController">
             <connections>
@@ -16,6 +21,7 @@
                 <outlet property="heightPhoto" destination="MeM-Rf-Rfm" id="wLJ-EN-IeG"/>
                 <outlet property="heightRight" destination="yci-XM-EmN" id="4ao-Ir-XU7"/>
                 <outlet property="lbCategory" destination="fPM-iF-OJq" id="pKr-af-TGn"/>
+                <outlet property="lbNotice" destination="odW-M5-55N" id="YEw-1H-lBV"/>
                 <outlet property="tbLeft" destination="Hxj-9o-lVH" id="9fn-4l-3gT"/>
                 <outlet property="tbRight" destination="Q4M-Wt-MfT" id="i4j-zk-S3o"/>
                 <outlet property="vAbout" destination="7R4-lu-VSb" id="4sx-cK-PBC"/>
@@ -200,6 +206,12 @@
                                         <constraint firstAttribute="height" constant="150" id="yci-XM-EmN"/>
                                     </constraints>
                                 </tableView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odW-M5-55N">
+                                    <rect key="frame" x="187.5" y="597" width="0.0" height="0.0"/>
+                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
@@ -226,6 +238,7 @@
                                 <constraint firstItem="Q4M-Wt-MfT" firstAttribute="leading" secondItem="Hxj-9o-lVH" secondAttribute="trailing" constant="1" id="VZl-2t-WVn"/>
                                 <constraint firstItem="u79-ON-gUr" firstAttribute="trailing" secondItem="aqQ-fI-StW" secondAttribute="trailing" id="WcI-Ef-YVb"/>
                                 <constraint firstItem="ler-iX-knC" firstAttribute="trailing" secondItem="u79-ON-gUr" secondAttribute="trailing" id="WiF-5R-6yO"/>
+                                <constraint firstItem="odW-M5-55N" firstAttribute="centerX" secondItem="MLx-ZJ-aJ2" secondAttribute="centerX" id="YTP-yQ-Q6G"/>
                                 <constraint firstItem="sNM-RU-i01" firstAttribute="leading" secondItem="MLx-ZJ-aJ2" secondAttribute="leading" id="Zsf-ah-WLe"/>
                                 <constraint firstAttribute="trailing" secondItem="Aoq-Et-pfq" secondAttribute="trailing" id="a61-Z5-AUf"/>
                                 <constraint firstItem="ler-iX-knC" firstAttribute="leading" secondItem="u79-ON-gUr" secondAttribute="leading" id="b8j-EL-ntw"/>
@@ -274,6 +287,7 @@
                 <constraint firstItem="Ael-3c-yqH" firstAttribute="leading" secondItem="yyA-FK-nPg" secondAttribute="leading" id="DuX-o5-HkN"/>
                 <constraint firstItem="yyA-FK-nPg" firstAttribute="trailing" secondItem="Ael-3c-yqH" secondAttribute="trailing" id="FcY-6Y-ZGd"/>
                 <constraint firstItem="Ael-3c-yqH" firstAttribute="top" secondItem="yyA-FK-nPg" secondAttribute="top" id="ZxZ-GD-r0n"/>
+                <constraint firstItem="odW-M5-55N" firstAttribute="bottom" secondItem="Iyr-cy-KcB" secondAttribute="top" constant="-10" id="kQN-JI-wsF"/>
                 <constraint firstItem="Iyr-cy-KcB" firstAttribute="leading" secondItem="yyA-FK-nPg" secondAttribute="leading" id="lsM-pk-axS"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="yyA-FK-nPg"/>

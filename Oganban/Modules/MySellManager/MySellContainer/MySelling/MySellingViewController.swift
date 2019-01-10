@@ -148,19 +148,26 @@ extension MySellingViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard let count = listRecord?.dataRecord.count else { return }
         
-        if isCanLoadMore &&  count >= 20 {
-            if indexPath.item == count - 10 {
-                isCanLoadMore = false
-                presenter?.getRecordSellerPost(status: "show", offset: count, limit: 20)
+//        if isCanLoadMore &&  count >= 10 {
+            if indexPath.item == count - 5 {
+                print("load more")
+                presenter?.getRecordSellerPost(status: "show", offset: count, limit: limitLoad)
             }
-        }
+//        }
     }
 }
 
 extension MySellingViewController: MySellingViewProtocol {
     
     func didGetRecordSellerPost(listRecord: BaseRecordEntity?) {
-        self.listRecord = listRecord
+        // nil or count = 0
+        if self.listRecord == nil || self.listRecord?.dataRecord.count == 0 {
+            self.listRecord = listRecord
+        } else {
+            guard let data = listRecord?.dataRecord else { return }
+            self.listRecord?.dataRecord.append(contentsOf: data)
+        }
+       
     }
     
     func didGetRecordSellerPost(error: APIError?) {

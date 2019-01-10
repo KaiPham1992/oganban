@@ -20,6 +20,7 @@ class PostStepOneViewController: BaseViewController {
     @IBOutlet weak var lbCategory       : UILabel!
     @IBOutlet weak var vPhoto           : AppCollectionPhoto!
     @IBOutlet weak var heightPhoto      : NSLayoutConstraint!
+    @IBOutlet weak var lbNotice         : UILabel!
     //--MENU
     @IBOutlet weak var tbLeft           : UITableView!
     @IBOutlet weak var tbRight          : UITableView!
@@ -89,6 +90,7 @@ class PostStepOneViewController: BaseViewController {
         
         //--
         vQuantity.textField.keyboardType = UIKeyboardType.numberPad
+        lbNotice.textColor = AppColor.red
     }
     
     private func checkCopyUpdate() {
@@ -156,6 +158,13 @@ class PostStepOneViewController: BaseViewController {
         let imgSrc = vPhoto.listImage.map {$0.url&}
         let expireDate = dateSeleted?.toString(dateFormat: AppDateFormat.yyyyMMdd)&
         
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = AppDateFormat.yyyyMMdd.formatString
+        if expireDate& < formatter.string(from: date) {
+            lbNotice.text = "Thời hạn đăng phải lớn hơn hoặc bằng ngày hiện tại"
+            return
+        }
         
         postParam = PostRecordParam(categoryId: categoryId&, name: vTitleRecord.textField.text&, imgSrc: imgSrc, quantity: vQuantity.textField.text&, expireDate: expireDate&, aboutRecord: vAbout.tvInput.text&)
         if isCopyUpdate {

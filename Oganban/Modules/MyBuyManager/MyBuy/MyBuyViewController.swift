@@ -185,6 +185,7 @@ extension MyBuyViewController: UITableViewDataSource, UITableViewDelegate {
         
         self.push(controller: vc)
     }
+    
 }
 
 extension MyBuyViewController: MyBuyViewProtocol {
