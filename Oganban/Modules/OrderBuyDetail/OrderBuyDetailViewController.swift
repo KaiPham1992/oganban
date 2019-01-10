@@ -135,9 +135,9 @@ extension OrderBuyDetailViewController: OrderBuyDetailImageCellDelegate {
 }
 
 extension OrderBuyDetailViewController: HeaderOrderBuyDetailDelegate {
-    func addFavorite(isFavorite: Bool) {
-        guard let _recordID = recordId else { return }
-        presenter?.AddFavorite(isFavorite: isFavorite, accountID: _recordID)
+    func addFavorite(isFavorite: Int) {
+        guard let _accountID = record?.accountId else { return }
+        presenter?.AddFavorite(isFavorite: isFavorite, accountID: Int(_accountID)!)
     }
     
     func checkLogin() {

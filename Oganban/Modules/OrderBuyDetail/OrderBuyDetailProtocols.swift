@@ -21,7 +21,7 @@ protocol OrderBuyDetailPresenterProtocol: class {
     
     func bookingOrder(recordID: String, price: Double, quantity: Int, paymentType: String, isService: Bool)
     func getDetail(id: String)
-    func AddFavorite(isFavorite: Bool, accountID: String)
+    func AddFavorite(isFavorite: Int, accountID: Int)
     
     
     //---
@@ -44,7 +44,7 @@ protocol OrderBuyDetailInteractorInputProtocol: class {
     /* Presenter -> Interactor */
     func getDetail(id: String)
     func bookingOrder(recordID: String, price: Double, quantity: Int, paymentType: String, isService: Bool)
-    func AddFavorite(isFavorite: Bool, accountID: String)
+    func AddFavorite(isFavorite: Int, accountID: Int)
 }
 
 //MARK: View -

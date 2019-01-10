@@ -32,7 +32,7 @@ class OrderBuyDetailPresenter: OrderBuyDetailPresenterProtocol {
         interactor?.bookingOrder(recordID: recordID, price: price, quantity: quantity, paymentType: paymentType, isService: isService)
     }
     
-    func AddFavorite(isFavorite: Bool, accountID: String) {
+    func AddFavorite(isFavorite: Int, accountID: Int) {
         interactor?.AddFavorite(isFavorite: isFavorite, accountID: accountID)
     }
     
