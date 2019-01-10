@@ -18,6 +18,11 @@ extension PostStepOneViewController {
         vAbout.tvInput.text = record?.about
         vAbout.lbPlaceHolder.text = ""
     
+        guard let arrayImage = record?.arrayImage else { return }
+        let listImage = arrayImage.map({ (string) -> AppPhoto in
+            return AppPhoto(status: AppPhotoStatus.uploaded, image: nil, url: string)
+        })
+        vPhoto.listImage = listImage
     }
 }
 
