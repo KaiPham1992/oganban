@@ -20,9 +20,9 @@ class HomeInteractor: HomeInteractorInputProtocol {
     }
     
     func filterRecord(param: RecordParam) {
-        ProgressView.shared.show()
+        
         Provider.shared.categoryAPIService.filterRecord(param: param, success: { (result) in
-            ProgressView.shared.hide()
+//            ProgressView.shared.hide()
             self.presenter?.didFilterRecord(list: result)
         }) { (error) in
             ProgressView.shared.hide()

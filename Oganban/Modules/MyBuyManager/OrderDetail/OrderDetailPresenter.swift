@@ -44,9 +44,17 @@ class OrderDetailPresenter: OrderDetailPresenterProtocol {
         interactor?.sendComment(param: param)
     }
     
+    func getCommentList(recordId: String, offset: Int, limit: Int) {
+        interactor?.getCommentList(recordId: recordId, offset: offset, limit: limit)
+    }
+    
 }
 
 extension OrderDetailPresenter: OrderDetailInteractorOutputProtocol {
+    func didGetCommentList(list: [CommentResponseEntity]) {
+        view?.didGetCommentList(list: list)
+    }
+    
     func didSendComment(comment: CommentResponseEntity?) {
         view?.didSendComment(comment: comment)
     }
