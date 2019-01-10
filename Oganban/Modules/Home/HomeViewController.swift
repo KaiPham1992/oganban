@@ -62,7 +62,7 @@ class HomeViewController: BaseViewController {
     }
     
     // number of items to be fetched each time (database LIMIT)
-    let itemsPerBatch = 20
+    let itemsPerBatch = 40
     // Where to start fetching items (database OFFSET)
     var offset = 0
     // a flag for when all database items have already been loaded
@@ -75,7 +75,8 @@ class HomeViewController: BaseViewController {
         configureTableView()
         presenter?.getCategoryMerge()
         
-        getParamDefault()
+//        getParamDefault()
+        ProgressView.shared.show()
         presenter?.filterRecord(param: paramFilter)
         presenter?.getPositionRange()
         
@@ -292,6 +293,7 @@ extension HomeViewController: HomeViewProtocol {
     
     func didFilterRecord(list: [RecordEntity]) {
         // update UITableView with new batch of items on main thread after query finishes
+        ProgressView.shared.hide()
         DispatchQueue.main.async {
             self.listRecord.append(contentsOf: list)
             if list.count < self.itemsPerBatch {
@@ -389,7 +391,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if ((indexPath.row) + (10 * indexPath.section)) == (self.listRecord.count - 1) {
+        if ((indexPath.row) + (10 * indexPath.section)) == (self.listRecord.count - 10) {
             self.loadMore()
         }
         

@@ -61,4 +61,15 @@ class OrderDetailInteractor: OrderDetailInteractorInputProtocol {
              ProgressView.shared.hide()
         }
     }
+    
+    func getCommentList(recordId: String, offset: Int, limit: Int) {
+        ProgressView.shared.show()
+        Provider.shared.recordAPIService.getCommentList(recordId: recordId, offset: offset, limit: limit, success: { (list) in
+            ProgressView.shared.hide()
+            self.presenter?.didGetCommentList(list: list)
+        }) { (error) in
+            ProgressView.shared.hide()
+        }
+    }
+    
 }
