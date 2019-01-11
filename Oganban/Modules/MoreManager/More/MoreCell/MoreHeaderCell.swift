@@ -31,7 +31,7 @@ class MoreHeaderCell: UITableViewCell {
             lbPhone.isHidden = false
             vLevel.isHidden = false
             lbName.font = AppFont.fontRegularRoboto15
-            lbName.textColor = AppColor.black
+            lbName.textColor = AppColor.black414141
             self.showData(user: user)
         } else {
 
@@ -54,10 +54,18 @@ class MoreHeaderCell: UITableViewCell {
         
         vLevel.setLevel(level: user.level&, isPro: user.isPro)
         ivAvatar.sd_setImage(with: user.urlAvatar , placeholderImage: AppImage.imgDefaultUser)
-        if let _coin = user.coin, let coin = String(_coin).addComma() {
-            lbCoinTotal.text = "Tổng ƠCoin tích luỹ: " + coin  + " ơ"
-        } else {
-            lbCoinTotal.text = "Tổng ƠCoin tích luỹ: 0 ơ"
+        
+        self.showTotalCoin(user.coin)
+    }
+    
+    func showTotalCoin(_ totalCoin: Double?) {
+        if let coin = totalCoin {
+            let attr = NSMutableAttributedString()
+            let attr1 = ("Tổng ƠCoin tích luỹ: " + coin.toCurrency + " ").toAttributedString(color: AppColor.black414141, font: AppFont.fontRegularRoboto15, isUnderLine: false)
+            let attr2 = "ơ".toAttributedString(color: AppColor.black414141, font: AppFont.fontRegularRoboto15, isUnderLine: true)
+            attr.append(attr1)
+            attr.append(attr2)
+            self.lbCoinTotal.attributedText = attr
         }
     }
 }
