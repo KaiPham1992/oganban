@@ -52,21 +52,34 @@ extension OrderDetailViewController: UITableViewDelegate, UITableViewDataSource 
             return cell
         default:
             let indexComment = getIndexSectionComment(sectionTable: indexPath.section)
-            
-            if indexPath.item == 0 {
-                let cell = tbDetail.dequeue(CommentCell.self, for: indexPath)
-                cell.comment = getComment(section: indexPath.section)
-                return cell
-            } else if indexPath.item == self.listComment[indexComment].subComment.count {
-                let cell = tbDetail.dequeue(ReplyCommentCell.self, for: indexPath)
-                cell.vPostCommentView.tag = indexPath.section
-                cell.vPostCommentView.delegate = self 
-                return cell
-            }
-            else {
-                let cell = tbDetail.dequeue(SubCommentCell.self, for: indexPath)
-                 cell.subComment = getSubComment(indexPath: indexPath)
-                return cell
+            let countSubcomment = self.listComment[indexComment].subComment.count
+            if countSubcomment == 0 {
+                if indexPath.item == 0 {
+                    let cell = tbDetail.dequeue(CommentCell.self, for: indexPath)
+                    cell.comment = getComment(section: indexPath.section)
+                    return cell
+                } else {
+                    let cell = tbDetail.dequeue(ReplyCommentCell.self, for: indexPath)
+                    cell.vPostCommentView.tag = indexPath.section
+                    cell.vPostCommentView.delegate = self
+                    return cell
+                }
+            } else {
+                if indexPath.item == 0 {
+                    let cell = tbDetail.dequeue(CommentCell.self, for: indexPath)
+                    cell.comment = getComment(section: indexPath.section)
+                    return cell
+                } else if indexPath.item == self.listComment[indexComment].subComment.count {
+                    let cell = tbDetail.dequeue(ReplyCommentCell.self, for: indexPath)
+                    cell.vPostCommentView.tag = indexPath.section
+                    cell.vPostCommentView.delegate = self
+                    return cell
+                }
+                else {
+                    let cell = tbDetail.dequeue(SubCommentCell.self, for: indexPath)
+                    cell.subComment = getSubComment(indexPath: indexPath)
+                    return cell
+                }
             }
         }
     }
@@ -79,7 +92,7 @@ extension OrderDetailViewController: UITableViewDelegate, UITableViewDataSource 
             return 1
         default:
             let indexComment = section - (self.listHeader.count - 1)
-            return self.listComment[indexComment].subComment.count + 1
+            return self.listComment[indexComment].subComment.count + 2
         }
     }
     
@@ -125,7 +138,7 @@ extension OrderDetailViewController {
     
     func getSubComment(indexPath: IndexPath) -> SubCommentEntity {
         let indexSection = getIndexSectionComment(sectionTable: indexPath.section)
-        return self.listComment[indexSection].subComment[indexPath.item]
+        return self.listComment[indexSection].subComment[indexPath.item - 1]
     }
     
     func insertSubComment(section: Int, subComment: SubCommentEntity) {
