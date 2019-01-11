@@ -39,6 +39,7 @@ class FavouriteProductListViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.addBackToNavigation(icon: AppImage.imgWhiteBack)
         self.setTitleNavigation(title: NavigationTitle.productList)
         registerCollectionView()
@@ -48,6 +49,7 @@ class FavouriteProductListViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.hideTabbar()
     }
     
     override func viewDidAppear(_ animated: Bool) {

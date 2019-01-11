@@ -52,6 +52,7 @@ class UpdateProfileViewController: BaseViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        hideTabbar()
         self.fbAccountKit = FBAccountKit(_controller: self)
         super.viewWillAppear(animated)
         if fbAccountKit.isLogged {

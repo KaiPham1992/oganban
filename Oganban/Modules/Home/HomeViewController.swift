@@ -91,6 +91,7 @@ class HomeViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
+        showTabbar()
         setRedStatusBar()
         if isSetting {
             self.distance = UserDefaultHelper.shared.radius
