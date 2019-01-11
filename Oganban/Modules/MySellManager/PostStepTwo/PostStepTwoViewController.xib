@@ -8,9 +8,15 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PostStepTwoViewController">
             <connections>
+                <outlet property="lbNotice" destination="bbG-QH-oNo" id="Vuc-9J-1to"/>
                 <outlet property="vAddress1" destination="Tkc-Iz-hA2" id="F35-5j-SV3"/>
                 <outlet property="vAddress2" destination="79N-fG-2Uk" id="MyJ-ny-0SY"/>
                 <outlet property="vCheckGPS" destination="QIc-ll-uzD" id="DHE-KJ-eIJ"/>
@@ -95,6 +101,12 @@
                                     <rect key="frame" x="16" y="379" width="343" height="65"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbG-QH-oNo">
+                                    <rect key="frame" x="15" y="597" width="345" height="0.0"/>
+                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
@@ -103,6 +115,7 @@
                                 <constraint firstItem="QIc-ll-uzD" firstAttribute="top" secondItem="79N-fG-2Uk" secondAttribute="bottom" constant="10" id="4Id-1n-aKQ"/>
                                 <constraint firstAttribute="trailing" secondItem="t7N-e2-hs0" secondAttribute="trailing" constant="16" id="9Dv-7k-fpz"/>
                                 <constraint firstItem="Xdl-qh-iS5" firstAttribute="leading" secondItem="BxU-mn-zD5" secondAttribute="leading" id="AMw-FS-u4E"/>
+                                <constraint firstItem="bbG-QH-oNo" firstAttribute="leading" secondItem="BxU-mn-zD5" secondAttribute="leading" constant="15" id="Bi3-ky-ASS"/>
                                 <constraint firstItem="7wr-kH-loR" firstAttribute="leading" secondItem="BxU-mn-zD5" secondAttribute="leading" id="Byy-9y-Lzf"/>
                                 <constraint firstItem="t7N-e2-hs0" firstAttribute="leading" secondItem="BxU-mn-zD5" secondAttribute="leading" constant="16" id="Ese-Ku-iZp"/>
                                 <constraint firstAttribute="trailing" secondItem="7wr-kH-loR" secondAttribute="trailing" id="Gv1-cL-e5b"/>
@@ -117,7 +130,9 @@
                                 <constraint firstItem="79N-fG-2Uk" firstAttribute="trailing" secondItem="Tkc-Iz-hA2" secondAttribute="trailing" id="gPK-bO-WlD"/>
                                 <constraint firstItem="79N-fG-2Uk" firstAttribute="top" secondItem="Tkc-Iz-hA2" secondAttribute="bottom" constant="10" id="gPq-ey-lTV"/>
                                 <constraint firstItem="NKF-Xa-GMM" firstAttribute="trailing" secondItem="t7N-e2-hs0" secondAttribute="trailing" id="lFl-Sb-QPe"/>
+                                <constraint firstItem="bbG-QH-oNo" firstAttribute="centerX" secondItem="BxU-mn-zD5" secondAttribute="centerX" id="nAz-2C-NuD"/>
                                 <constraint firstItem="NKF-Xa-GMM" firstAttribute="leading" secondItem="t7N-e2-hs0" secondAttribute="leading" id="nJX-aI-R3x"/>
+                                <constraint firstAttribute="trailing" secondItem="bbG-QH-oNo" secondAttribute="trailing" constant="15" id="pUH-Ms-a1h"/>
                                 <constraint firstItem="QIc-ll-uzD" firstAttribute="trailing" secondItem="79N-fG-2Uk" secondAttribute="trailing" id="tAJ-cu-O9H"/>
                                 <constraint firstItem="QIc-ll-uzD" firstAttribute="leading" secondItem="79N-fG-2Uk" secondAttribute="leading" id="umi-cP-Xzo"/>
                                 <constraint firstItem="NKF-Xa-GMM" firstAttribute="top" secondItem="t7N-e2-hs0" secondAttribute="bottom" constant="10" id="vQc-gN-DoU"/>
@@ -157,6 +172,7 @@
                 <constraint firstItem="DQd-ct-NCp" firstAttribute="leading" secondItem="i1e-mi-9Tw" secondAttribute="leading" id="T2D-1K-8tb"/>
                 <constraint firstItem="i1e-mi-9Tw" firstAttribute="trailing" secondItem="DQd-ct-NCp" secondAttribute="trailing" id="pQN-b4-Pif"/>
                 <constraint firstItem="i1e-mi-9Tw" firstAttribute="bottom" secondItem="jfO-BH-uHA" secondAttribute="bottom" id="rUk-ia-uBd"/>
+                <constraint firstItem="bbG-QH-oNo" firstAttribute="bottom" secondItem="jfO-BH-uHA" secondAttribute="top" constant="-10" id="rcE-cW-sbC"/>
                 <constraint firstItem="DQd-ct-NCp" firstAttribute="top" secondItem="i1e-mi-9Tw" secondAttribute="top" id="soZ-vq-o8j"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="i1e-mi-9Tw"/>

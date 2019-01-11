@@ -172,6 +172,11 @@ class PostStepOneViewController: BaseViewController {
             return
         }
         
+        if imgSrc.count > 5 {
+            lbNotice.text = "Vui lòng chọn tối đa 5 hình ảnh sản phẩm"
+            return
+        }
+        
         if vTitleRecord.textField.text == "" || vTitleRecord.textField.text == nil {
             lbNotice.text = "Vui lòng nhập tiêu đề tin"
             return

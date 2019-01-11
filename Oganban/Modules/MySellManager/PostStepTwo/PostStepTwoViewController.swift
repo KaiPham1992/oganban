@@ -19,6 +19,7 @@ class PostStepTwoViewController: BaseViewController {
     
     @IBOutlet weak var vMoney: CheckBoxTextField!
     @IBOutlet weak var vCoin: CheckBoxTextField!
+    @IBOutlet weak var lbNotice: UILabel!
     
     var param = PostRecordParam()
     var errorMessage: String = ""
@@ -46,7 +47,7 @@ class PostStepTwoViewController: BaseViewController {
         vMoney.textField.addTarget(self, action: #selector(editingChanged), for: UIControl.Event.editingChanged)
         vCoin.setTextField(title: "Trao đổi Ơcoin", placeHolder: "Nhập số Ơcoin sẽ bán")
         vCoin.textField.keyboardType = UIKeyboardType.numberPad
-        
+        lbNotice.textColor = AppColor.red
         
         vCoin.delegate = self
         vMoney.delegate = self
@@ -99,9 +100,12 @@ class PostStepTwoViewController: BaseViewController {
     }
     
     @IBAction func btnPostTapped() {
-        param.updateInfoStepTwo(address1: vAddress1.textField.text&, address2: vAddress2.textField.text&, isLatlong: vCheckGPS.isChecked, price: vMoney.textField.text&, coin: vCoin.textField.text&)
         
-        presenter?.postRecord(param: param)
+        if validInput() {
+            param.updateInfoStepTwo(address1: vAddress1.textField.text&, address2: vAddress2.textField.text&, isLatlong: vCheckGPS.isChecked, price: vMoney.textField.text&, coin: vCoin.textField.text&)
+            
+            presenter?.postRecord(param: param)
+        }        
     }
     
     func validInput() -> Bool {
