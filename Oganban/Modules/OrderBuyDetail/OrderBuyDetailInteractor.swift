@@ -34,8 +34,13 @@ class OrderBuyDetailInteractor: OrderBuyDetailInteractorInputProtocol {
         }
     }
     
-    func AddFavorite(isFavorite: Bool, accountID: String) {
-        Provider.shared.userAPIService.addFavoriteStaff(isFavorite: isFavorite, accountID: accountID, success: { (data) in
+    func AddFavorite(isFavorite: Int, accountID: Int) {
+//        Provider.shared.userAPIService.addFavoriteStaff(isFavorite: isFavorite, accountID: accountID, success: { (data) in
+//            self.presenter?.didAddFavorite(data: data)
+//        }) { (_) in
+//
+//        }
+        Provider.shared.userAPIService.removeFavourite(isFavorite: isFavorite, accountId: accountID, success: { (data) in
             self.presenter?.didAddFavorite(data: data)
         }) { (_) in
             

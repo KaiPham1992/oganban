@@ -102,8 +102,10 @@ extension OrderBuyDetailViewController: UITableViewDelegate, UITableViewDataSour
             guard let _isFavorite = record?.isFavorite else { return v}
             if _isFavorite == 1 {
                 header.isLiked = true
+                header.setLiked()
             } else {
                 header.isLiked = false
+                header.setLiked()
             }
             
         }
