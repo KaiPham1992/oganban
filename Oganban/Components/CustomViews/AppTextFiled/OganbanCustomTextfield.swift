@@ -95,8 +95,8 @@ import UIKit
         
         ivRightIcon.centerYAnchor.constraint(equalTo: tfContent.centerYAnchor).isActive = true
         ivRightIcon.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0).isActive = true
-        ivRightIcon.heightAnchor.constraint(equalToConstant: 11.5).isActive = true
-        ivRightIcon.widthAnchor.constraint(equalToConstant: 15).isActive = true
+        ivRightIcon.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        ivRightIcon.widthAnchor.constraint(equalToConstant: 30).isActive = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapRightIcon(_:)))
         self.ivRightIcon.addGestureRecognizer(tapGesture)
         
@@ -121,7 +121,7 @@ import UIKit
        
     }
     
-    func showRightIcon(isHidden: Bool = false, sỉze: CGSize = CGSize(width: 15, height: 11.5), icon: UIImage? = nil, paddingRight: CGFloat = 0) {
+    func showRightIcon(isHidden: Bool = false, sỉze: CGSize = CGSize(width: 30, height: 30), icon: UIImage? = nil, paddingRight: CGFloat = 0) {
         ivRightIcon.rightAnchor.constraint(equalTo: self.rightAnchor, constant: paddingRight).isActive = true
         ivRightIcon.heightAnchor.constraint(equalToConstant: sỉze.height).isActive = true
         ivRightIcon.widthAnchor.constraint(equalToConstant: sỉze.width).isActive = true
