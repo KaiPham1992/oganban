@@ -18,6 +18,9 @@ extension UpdateProfileViewController: UITextFieldDelegate {
         imgAvatar.layer.cornerRadius = imgAvatar.frame.width / 2.0
         imgAvatar.layer.masksToBounds = true
         
+        tvCodeIntro.textContainerInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        tvCodeIntro.isEditable = false
+        
         tfUsername.setupLayoutTextfield(placeholderText: TitleString.placeHolderLoginName, titleText: TitleString.loginName, placeholderColor: AppColor.black414141, contentColor: AppColor.grey9E9E9E)
         tfUsername.tfContent.isEnabled = false
             

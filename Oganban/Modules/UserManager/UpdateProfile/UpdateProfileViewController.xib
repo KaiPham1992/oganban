@@ -21,7 +21,6 @@
             <connections>
                 <outlet property="btnSave" destination="qaW-Pg-lnD" id="ecf-O6-RJ8"/>
                 <outlet property="imgAvatar" destination="WyW-Jd-GCd" id="bLZ-uT-6Eg"/>
-                <outlet property="lbCodeIntro" destination="kF8-76-oxN" id="bNO-eP-BgU"/>
                 <outlet property="lbError" destination="PFo-Od-SwZ" id="Bqp-Un-GsJ"/>
                 <outlet property="lbLevel" destination="b3n-Ez-YFR" id="XQi-bT-2CD"/>
                 <outlet property="lbPro" destination="mFY-wl-KVj" id="GMX-Lq-n0L"/>
@@ -34,6 +33,7 @@
                 <outlet property="tfDisplayName" destination="Apa-51-Mt2" id="C1r-J9-ZME"/>
                 <outlet property="tfGender" destination="HYQ-b6-cUi" id="MCx-ZK-zNH"/>
                 <outlet property="tfUsername" destination="ebE-Mb-1by" id="86s-x1-mLp"/>
+                <outlet property="tvCodeIntro" destination="K2j-Kt-jNt" id="FUK-7W-ctV"/>
                 <outlet property="tvPhone" destination="8u3-D6-J0l" id="slI-BM-i0g"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -91,12 +91,6 @@
                                     <rect key="frame" x="15" y="167" width="257" height="20"/>
                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                     <color key="textColor" red="0.25490196078431371" green="0.25490196078431371" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="77084" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kF8-76-oxN">
-                                    <rect key="frame" x="169" y="137" width="44" height="20"/>
-                                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="15"/>
-                                    <color key="textColor" red="0.43137254901960786" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ebE-Mb-1by" customClass="OganbanCustomTextfield" customModule="Oganban" customModuleProvider="target">
@@ -166,13 +160,23 @@
                                     <color key="textColor" red="0.0" green="0.53333333329999999" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="1234567890" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="K2j-Kt-jNt">
+                                    <rect key="frame" x="169" y="137" width="100" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="100" id="8dR-KF-9QH"/>
+                                        <constraint firstAttribute="height" constant="20" id="SKK-ja-dA3"/>
+                                    </constraints>
+                                    <color key="textColor" red="0.43137254899999999" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="15"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="WyW-Jd-GCd" firstAttribute="leading" secondItem="gwz-Mi-dgC" secondAttribute="leading" constant="15" id="1OW-4e-XRE"/>
                                 <constraint firstItem="jDd-eY-Ped" firstAttribute="leading" secondItem="bWY-Kw-W06" secondAttribute="leading" id="1zS-Wr-06u"/>
                                 <constraint firstItem="dFh-wI-5nZ" firstAttribute="height" secondItem="HYQ-b6-cUi" secondAttribute="height" id="3FB-ti-wVt"/>
-                                <constraint firstItem="kF8-76-oxN" firstAttribute="leading" secondItem="bWY-Kw-W06" secondAttribute="trailing" constant="5" id="5Mv-jh-SPL"/>
+                                <constraint firstItem="7Tx-uT-gT7" firstAttribute="top" secondItem="bWY-Kw-W06" secondAttribute="top" constant="10" id="3w3-Qx-PKq"/>
                                 <constraint firstItem="Cqq-Ly-Pja" firstAttribute="top" secondItem="Apa-51-Mt2" secondAttribute="bottom" constant="15" id="5Vi-pz-kKG"/>
                                 <constraint firstItem="9TT-kN-jk8" firstAttribute="leading" secondItem="WyW-Jd-GCd" secondAttribute="leading" id="5xp-rr-G2c"/>
                                 <constraint firstAttribute="trailing" secondItem="qaW-Pg-lnD" secondAttribute="trailing" constant="110" id="6B2-hi-m4e"/>
@@ -190,7 +194,6 @@
                                 <constraint firstItem="Apa-51-Mt2" firstAttribute="leading" secondItem="ebE-Mb-1by" secondAttribute="leading" id="Gk5-yP-jQn"/>
                                 <constraint firstItem="BjH-Bd-0zE" firstAttribute="height" secondItem="dFh-wI-5nZ" secondAttribute="height" id="KaK-BW-eIr"/>
                                 <constraint firstItem="HYQ-b6-cUi" firstAttribute="leading" secondItem="Cqq-Ly-Pja" secondAttribute="leading" id="Nxu-q3-McM"/>
-                                <constraint firstItem="kF8-76-oxN" firstAttribute="top" secondItem="bWY-Kw-W06" secondAttribute="top" id="OrX-2Y-K4K"/>
                                 <constraint firstItem="PFo-Od-SwZ" firstAttribute="centerX" secondItem="gwz-Mi-dgC" secondAttribute="centerX" id="PLZ-be-dcp"/>
                                 <constraint firstItem="HYQ-b6-cUi" firstAttribute="trailing" secondItem="Cqq-Ly-Pja" secondAttribute="trailing" id="PMe-lz-1Aj"/>
                                 <constraint firstItem="BjH-Bd-0zE" firstAttribute="top" secondItem="dFh-wI-5nZ" secondAttribute="bottom" constant="15" id="Pmo-eZ-svB"/>
@@ -208,10 +211,11 @@
                                 <constraint firstItem="ebE-Mb-1by" firstAttribute="leading" secondItem="gwz-Mi-dgC" secondAttribute="leading" constant="15" id="cnt-Sb-PBZ"/>
                                 <constraint firstItem="wEs-mh-9f4" firstAttribute="centerY" secondItem="t62-tj-AIM" secondAttribute="centerY" id="dAo-tx-hlF"/>
                                 <constraint firstAttribute="trailing" secondItem="t62-tj-AIM" secondAttribute="trailing" constant="17.5" id="deF-lV-FxT"/>
-                                <constraint firstItem="7Tx-uT-gT7" firstAttribute="top" secondItem="kF8-76-oxN" secondAttribute="top" constant="10" id="fAh-m0-cSq"/>
+                                <constraint firstItem="K2j-Kt-jNt" firstAttribute="top" secondItem="bWY-Kw-W06" secondAttribute="top" id="fH4-ie-PqE"/>
                                 <constraint firstItem="8u3-D6-J0l" firstAttribute="top" secondItem="HYQ-b6-cUi" secondAttribute="bottom" constant="15" id="fI7-EV-ie1"/>
                                 <constraint firstItem="8u3-D6-J0l" firstAttribute="leading" secondItem="HYQ-b6-cUi" secondAttribute="leading" id="g2F-4N-9t9"/>
                                 <constraint firstItem="t62-tj-AIM" firstAttribute="top" secondItem="mFY-wl-KVj" secondAttribute="bottom" constant="16" id="g6p-Q2-IL3"/>
+                                <constraint firstItem="K2j-Kt-jNt" firstAttribute="leading" secondItem="bWY-Kw-W06" secondAttribute="trailing" constant="5" id="kMn-hX-jti"/>
                                 <constraint firstItem="HYQ-b6-cUi" firstAttribute="height" secondItem="Cqq-Ly-Pja" secondAttribute="height" id="l53-07-nY5"/>
                                 <constraint firstItem="dFh-wI-5nZ" firstAttribute="leading" secondItem="HYQ-b6-cUi" secondAttribute="leading" id="oZW-o0-9Rs"/>
                                 <constraint firstItem="ebE-Mb-1by" firstAttribute="top" secondItem="jDd-eY-Ped" secondAttribute="bottom" constant="40" id="pgg-LZ-Z6i"/>

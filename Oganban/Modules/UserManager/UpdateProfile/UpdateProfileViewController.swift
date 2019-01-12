@@ -14,7 +14,7 @@ class UpdateProfileViewController: BaseViewController {
 
 	var presenter: UpdateProfilePresenterProtocol?
     
-    @IBOutlet weak var lbCodeIntro: UILabel!
+    @IBOutlet weak var tvCodeIntro: UITextView!
     @IBOutlet weak var lbRateCount: UILabel!
     @IBOutlet weak var lbRating: UILabel!
     @IBOutlet weak var lbLevel: UILabel!
@@ -102,7 +102,7 @@ class UpdateProfileViewController: BaseViewController {
             }
             
             if user.codeIntro != nil {
-                lbCodeIntro.text = user.codeIntro
+                tvCodeIntro.text = user.codeIntro
             }
             if user.level != nil {
                 self.lbLevel.text = user.level
