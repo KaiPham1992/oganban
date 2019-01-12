@@ -85,6 +85,7 @@ struct MessageString {
     static let emptyUsername = "Vui lòng nhập tên đăng nhập"
     static let checkedUsername =  "Vui lòng kiểm tra lại tên đăng nhập"
     static let emptyDisplayName = "Vui lòng nhập tên hiển thị"
+    static let invalidDisplayNameLength = "Tên hiển thị dài không quá 18 kí tự"
     static let emptyBirthday = "Vui lòng chọn ngày tháng năm sinh"
     static let checkedAge = "Vui lòng kiểm tra lại tuổi phải trên 15"
     static let emptyPhone = "Vui lòng nhập số điện thoại"

@@ -224,6 +224,11 @@ extension UpdateProfileViewController {
             return false
         }
         
+        if displayName.count > 18 {
+            hideError(isHidden: false, message: MessageString.invalidDisplayNameLength)
+            return false
+        }
+        
         guard let birthDay =  self.birthDay else {
             hideError(isHidden: false, message: MessageString.emptyBirthday)
             return false
