@@ -41,6 +41,21 @@ class PopUpSelectGenderContent: BaseViewXib  {
         vPicker.delegate = self
         vPicker.dataSource = self
     }
+    
+    func showSelectRow(currentGender: Gender?){
+        if currentGender?.title == "Chọn giới tính" {
+            self.vPicker.selectRow(0, inComponent: 0, animated: true)
+        }
+        else if currentGender?.title == "Nam" {
+            self.vPicker.selectRow(1, inComponent: 0, animated: true)
+        }
+        else if currentGender?.title == "Nữ" {
+            self.vPicker.selectRow(2, inComponent: 0, animated: true)
+        }
+        else {
+            self.vPicker.selectRow(3, inComponent: 0, animated: true)
+        }
+    }
 }
 
 extension PopUpSelectGenderContent: UIPickerViewDelegate, UIPickerViewDataSource {

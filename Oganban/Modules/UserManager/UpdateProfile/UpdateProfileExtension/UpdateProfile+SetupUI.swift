@@ -40,11 +40,14 @@ extension UpdateProfileViewController: UITextFieldDelegate {
         tfAddress1.setupLayoutTextfield(placeholderText: TitleString.placeHolderHouseAddress, titleText: TitleString.houseAddress, placeholderColor: AppColor.black414141)
         tfAddress2.setupLayoutTextfield(placeholderText: TitleString.placeHolderCompanyAddress, titleText: TitleString.companyAddress, placeholderColor: AppColor.black414141)
         
-        btnSave.setupLayoutButton(backgroundColor: AppColor.green005800, titleColor: AppColor.white, text: ButtonName.saveProfile)
+        self.isEnabledSaveButton(isEnabled: false)
+        
         scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
         tfAddress1.tfContent.delegate = self
+        tfAddress1.tfContent.tag = 1
         tfAddress2.tfContent.delegate = self
+        tfAddress2.tfContent.tag = 2
     }
     
     func addGesture() {
@@ -58,6 +61,26 @@ extension UpdateProfileViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         PositionMapsHelper.shared.showSearch(controller: self) { address in
             textField.text = address
+            
+            if textField.tag == 1
+            {
+                if let user = UserDefaultHelper.shared.loginUserInfo, user.houseAddress != address
+                {
+                    self.isEnabledSaveButton(isEnabled: true)
+                }
+                else {
+                    self.isEnabledSaveButton(isEnabled: false)
+                }
+            } else {
+                if let user = UserDefaultHelper.shared.loginUserInfo, user.companyAddress != address
+                {
+                    self.isEnabledSaveButton(isEnabled: true)
+                }
+                else {
+                    self.isEnabledSaveButton(isEnabled: false)
+                }
+            }
+            
         }
     }
 }

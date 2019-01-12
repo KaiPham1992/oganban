@@ -53,6 +53,7 @@ import UIKit
     }()
     
     var textFieldDidBeginEditing : (() -> Void)?
+    var textFieldDidChange : (() -> Void)?
     var completeTapRightIcon : ((Bool) -> Void)?
     var istapRightIcon: Bool = false
     
@@ -104,6 +105,8 @@ import UIKit
         vLine.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0).isActive = true
         vLine.topAnchor.constraint(equalTo: tfContent.bottomAnchor, constant: 10).isActive = true
         vLine.heightAnchor.constraint(equalToConstant: 0.5).isActive = true
+        
+        tfContent.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
     }
     
     func setupLayoutTextfield(placeholderText: String = "", titleText: String = "Title", backgroundColor: UIColor = AppColor.white, titleColor: UIColor = AppColor.grey9E9E9E, placeholderColor: UIColor = AppColor.grey9E9E9E, contentColor: UIColor = AppColor.black414141, isHiddenBottomLine: Bool = false) {
@@ -148,6 +151,11 @@ import UIKit
 extension OganbanCustomTextfield: UITextFieldDelegate{
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if let complete = self.textFieldDidBeginEditing {
+            complete()
+        }
+    }
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        if let complete = self.textFieldDidChange {
             complete()
         }
     }

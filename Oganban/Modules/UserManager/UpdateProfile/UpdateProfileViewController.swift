@@ -185,6 +185,15 @@ class UpdateProfileViewController: BaseViewController {
         self.birthDay = sDate
         return sDate?.toString(dateFormat: AppDateFormat.ddMMYYYY_VN)
     }
+    
+    func isEnabledSaveButton(isEnabled: Bool = true) {
+        self.btnSave.isEnabledButton = isEnabled
+        if isEnabled {
+        self.btnSave.setupLayoutButton(backgroundColor: AppColor.green005800, titleColor: AppColor.white, text: ButtonName.saveProfile)
+        } else {
+            self.btnSave.setupLayoutButton(backgroundColor: AppColor.greyC8C8C8, titleColor: AppColor.white, text: ButtonName.saveProfile)
+        }
+    }
 }
 
 extension UpdateProfileViewController {
@@ -256,5 +265,13 @@ extension UpdateProfileViewController {
 extension UpdateProfileViewController: PhoneNumberDelegate {
     func phoneCodeChoose(info: CountryCodeEntity) {
         self.countryPhoneCode = info
+        
+        if let user = UserDefaultHelper.shared.loginUserInfo, user.phoneCode != info.dialCode
+        {
+            self.isEnabledSaveButton(isEnabled: true)
+        }
+        else {
+            self.isEnabledSaveButton(isEnabled: false)
+        }
     }
 }
