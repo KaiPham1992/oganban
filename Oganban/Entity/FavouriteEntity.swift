@@ -26,7 +26,7 @@ class FavouriteEntity: BaseEntity {
         super.mapping(map: map)
         
         self.createTime <- (map["create_time_mi"], AppTimestampTransform())
-        self.id <- map["account_id"]
+        self.id <- map["_id"]
         self.fullName <- map["fullname"]
         self.imgCropSrc <- map["crop_img_src"]
         self.imgSrc <- map["img_src"]
