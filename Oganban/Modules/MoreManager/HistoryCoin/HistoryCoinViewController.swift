@@ -34,6 +34,7 @@ class HistoryCoinViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.addBackToNavigation(icon: AppImage.imgWhiteBack)
         self.setTitleNavigation(title: NavigationTitle.historyCoin)
         configureTableView()
@@ -41,6 +42,7 @@ class HistoryCoinViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+         self.hideTabbar()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -65,17 +67,9 @@ class HistoryCoinViewController: BaseViewController {
         isRefresh = true
         self.refreshControl.endRefreshing()
         self.presenter?.getHistoryCoin(offset: 0)
-        self.showTotalCoin(total: 10000.0)
-    }
-    
-    func showTotalCoin(total: Double){
-        if let coin = String(total).addComma() {
-            totalCoin.text = coin  + " ơ"
-        } else {
-            totalCoin.text = "0 ơ"
-        }
     }
 }
+
 extension HistoryCoinViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return historyList.count
@@ -114,15 +108,16 @@ extension HistoryCoinViewController: HistoryCoinViewProtocol{
     }
     
     func showTotalCoin(_ totalCoin: Double?) {
-        if let _coin = totalCoin, let coin = String(_coin).addComma() {
+        if let coin = totalCoin {
             let attr = NSMutableAttributedString()
-            let attr1 = (coin + " ").toAttributedString(color: AppColor.black414141, font: AppFont.fontBoldRoboto15, isUnderLine: false)
+            let attr1 = (coin.toCurrency + " ").toAttributedString(color: AppColor.black414141, font: AppFont.fontBoldRoboto15, isUnderLine: false)
             let attr2 = "ơ".toAttributedString(color: AppColor.black414141, font: AppFont.fontBoldRoboto15, isUnderLine: true)
             attr.append(attr1)
             attr.append(attr2)
             self.totalCoin.attributedText = attr
         }
     }
+    
     func getErrorHistoryCoin(error: APIError?) {
         canLoadMore = false
         self.historyList = []

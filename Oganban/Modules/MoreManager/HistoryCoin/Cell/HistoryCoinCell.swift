@@ -39,14 +39,14 @@ class HistoryCoinCell: UITableViewCell {
             lbDate.text = ""
         }
         
-        if let _coin = history.coin, let coin = String(_coin).addComma() {
-            if _coin >= 0 {
-                lbCoin.attributedText = self.getAttributedCoin(coin: ("+" + coin + " ") ,color: AppColor.green005800)
+        if let coin = history.coin {
+            if coin >= 0 {
+                lbCoin.attributedText = self.getAttributedCoin(coin: ("+" + coin.toCurrency + " ") ,color: AppColor.green005800)
             } else {
-                lbCoin.attributedText = self.getAttributedCoin(coin: (coin + " ") ,color: AppColor.red_210_2_2)
+                lbCoin.attributedText = self.getAttributedCoin(coin: (coin.toCurrency + " ") ,color: AppColor.red_210_2_2)
             }
         } else {
-            lbCoin.attributedText = self.getAttributedCoin(coin: "0 " ,color: AppColor.green005800)
+            lbCoin.attributedText = self.getAttributedCoin(coin: "0.00 " ,color: AppColor.green005800)
         }
         
         

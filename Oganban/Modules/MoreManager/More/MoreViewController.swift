@@ -27,6 +27,8 @@ class MoreViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        self.showTabbar()
         DataManager.shared.getNotificationCount { (count) in
             if let tabItems = self.tabBarController?.tabBar.items {
                 let tabItem = tabItems[3]
