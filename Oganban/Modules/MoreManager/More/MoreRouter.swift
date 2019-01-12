@@ -69,8 +69,7 @@ class MoreRouter: MoreWireframeProtocol {
     }
     
     private func tapTutorial(){
-        let vc = FavouriteProductListRouter.createModule()
-        viewController?.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     private func tapHeader(){
