@@ -1293,6 +1293,7 @@
 		B36A235221E1ACB200AA20DF /* MyBuyManager */ = {
 			isa = PBXGroup;
 			children = (
+				B32604D121E9C83F00E4BC14 /* CommentDetail */,
 				DE442C3621CFA1FE0051C0B8 /* OrderDetail */,
 				CBD1C28421D73087006DB3FF /* MyBuy */,
 			);
@@ -1918,7 +1919,6 @@
 		CBE2183D21E219B70035F00B /* OrderBuyDetail */ = {
 			isa = PBXGroup;
 			children = (
-				B32604D121E9C83F00E4BC14 /* CommentDetail */,
 				CB379C0721E38849005D7536 /* Cell */,
 				CBE2184021E219B70035F00B /* Extension */,
 				CBE2183E21E219B70035F00B /* OrderBuyDetailProtocols.swift */,

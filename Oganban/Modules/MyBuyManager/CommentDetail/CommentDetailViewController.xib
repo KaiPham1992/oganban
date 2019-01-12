@@ -11,6 +11,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CommentDetailViewController">
             <connections>
+                <outlet property="bottomConstant" destination="ekj-yh-sCn" id="REO-1P-Sfo"/>
+                <outlet property="heightConstant" destination="7zh-md-Mku" id="Fon-y1-5nK"/>
+                <outlet property="tbDetail" destination="7PK-Vl-eJD" id="0Nm-C9-jV7"/>
+                <outlet property="vPostCommentView" destination="KNf-P7-u5f" id="og6-FG-2IW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

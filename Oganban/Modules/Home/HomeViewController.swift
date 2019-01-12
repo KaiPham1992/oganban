@@ -233,6 +233,8 @@ class HomeViewController: BaseViewController {
     }
     
     @IBAction func btnGotoPositionTapped() {
+//        let vc = CommentDetailRouter.createModule()
+//        self.push(controller: vc)
         guard let distance = distance else { return }
         presenter?.gotoPositionMaps(delegate: self, address: lbPosition.text&, dataSource: self.dataSource, distance: distance)
     }
