@@ -18,7 +18,7 @@ class OrderBuyDetailViewController: BaseViewController {
     @IBOutlet weak var vPostCommentView: PostCommentView!
     @IBOutlet weak var bottomConstant: NSLayoutConstraint!
     @IBOutlet weak var heightConstant: NSLayoutConstraint!
-    
+    @IBOutlet weak var tbDetail: UITableView!
     
     var record: RecordEntity? {
         didSet {
@@ -33,8 +33,6 @@ class OrderBuyDetailViewController: BaseViewController {
     var listHeader = ["Chi tiết", "Giới thiệu","Thông tin người bán", "Địa chỉ đăng  ", "Bình Luận"]
     
     var listComment = [CommentEntity]()
-    
-    @IBOutlet weak var tbDetail: UITableView!
     
     var tapGesture: UITapGestureRecognizer!
     

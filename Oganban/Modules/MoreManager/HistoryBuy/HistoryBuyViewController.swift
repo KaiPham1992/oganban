@@ -40,6 +40,7 @@ class HistoryBuyViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        hideTabbar()
     }
     
     override func viewDidAppear(_ animated: Bool) {

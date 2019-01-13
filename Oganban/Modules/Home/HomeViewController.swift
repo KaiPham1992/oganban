@@ -91,6 +91,7 @@ class HomeViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
+        showTabbar()
         setRedStatusBar()
         if isSetting {
             self.distance = UserDefaultHelper.shared.radius
@@ -232,6 +233,8 @@ class HomeViewController: BaseViewController {
     }
     
     @IBAction func btnGotoPositionTapped() {
+//        let vc = CommentDetailRouter.createModule()
+//        self.push(controller: vc)
         guard let distance = distance else { return }
         presenter?.gotoPositionMaps(delegate: self, address: lbPosition.text&, dataSource: self.dataSource, distance: distance)
     }

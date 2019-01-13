@@ -26,6 +26,31 @@ extension UpdateProfileViewController {
         tfAddress2.textFieldDidBeginEditing = {
             self.hideError()
         }
+        
+        tvPhone.textFieldDidBeginEditing = {
+            self.hideError()
+        }
+        
+        tfDisplayName.textFieldDidChange = {
+            if let user = UserDefaultHelper.shared.loginUserInfo, self.tfDisplayName.tfContent.text != user.fullName
+            {
+                self.isEnabledSaveButton(isEnabled: true)
+            }
+            else {
+                self.isEnabledSaveButton(isEnabled: false)
+            }
+        }
+        
+        tvPhone.textFieldDidChange = {
+            if let user = UserDefaultHelper.shared.loginUserInfo, self.tvPhone.tfPhone.text != user.phone
+            {
+                self.isEnabledSaveButton(isEnabled: true)
+            }
+            else {
+                self.isEnabledSaveButton(isEnabled: false)
+            }
+        }
+        
     }
 }
 
@@ -85,6 +110,14 @@ extension UpdateProfileViewController {
             if let date = date {
                 self.birthDay = date
                 self.tfBirthday.tfContent.text =  date.toString(dateFormat: AppDateFormat.ddMMYYYY_VN)
+                
+                if let user = UserDefaultHelper.shared.loginUserInfo, user.birthday != date.toString(dateFormat: AppDateFormat.yyyyMMdd)
+                {
+                    self.isEnabledSaveButton(isEnabled: true)
+                }
+                else {
+                    self.isEnabledSaveButton(isEnabled: false)
+                }
             }
         }
     }
@@ -96,6 +129,14 @@ extension UpdateProfileViewController {
             if let sex: Gender = gender as? Gender {
                 self.gender = sex
                 self.tfGender.tfContent.text = sex.title
+                
+                if let user = UserDefaultHelper.shared.loginUserInfo, user.gender != sex.keyParam
+                {
+                    self.isEnabledSaveButton(isEnabled: true)
+                }
+                else {
+                    self.isEnabledSaveButton(isEnabled: false)
+                }
             }
         }
     }

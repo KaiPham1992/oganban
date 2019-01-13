@@ -28,6 +28,8 @@ class PopUpSelectGender: BasePopUpView, PopUpSelectGenderContentDelegate {
         self.completionGender = completionGender
         vGenderContent.genderSelected = currentGender
         showPopUp(width: 0, height: 220, type: .showFromBottom)
+        vGenderContent.showSelectRow(currentGender: currentGender)
+       
     }
     
     func genderSelected(gender: Gender?) {

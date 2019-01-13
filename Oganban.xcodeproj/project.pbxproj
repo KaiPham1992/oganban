@@ -103,6 +103,12 @@
 		B325C2EF21CE05B20048A148 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B325C2ED21CE05B20048A148 /* MenuCell.swift */; };
 		B325C2F021CE05B20048A148 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B325C2EE21CE05B20048A148 /* MenuCell.xib */; };
 		B325C2F221CE26900048A148 /* FTextFieldChoose.swift in Sources */ = {isa = PBXBuildFile; fileRef = B325C2F121CE26900048A148 /* FTextFieldChoose.swift */; };
+		B32604D821E9C85F00E4BC14 /* CommentDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32604D221E9C85F00E4BC14 /* CommentDetailPresenter.swift */; };
+		B32604D921E9C85F00E4BC14 /* CommentDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32604D321E9C85F00E4BC14 /* CommentDetailRouter.swift */; };
+		B32604DA21E9C85F00E4BC14 /* CommentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32604D421E9C85F00E4BC14 /* CommentDetailViewController.swift */; };
+		B32604DB21E9C85F00E4BC14 /* CommentDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32604D521E9C85F00E4BC14 /* CommentDetailProtocols.swift */; };
+		B32604DC21E9C85F00E4BC14 /* CommentDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32604D621E9C85F00E4BC14 /* CommentDetailInteractor.swift */; };
+		B32604DD21E9C85F00E4BC14 /* CommentDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B32604D721E9C85F00E4BC14 /* CommentDetailViewController.xib */; };
 		B329A49C21D78A59004BBEE6 /* PositionMapsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B329A49B21D78A59004BBEE6 /* PositionMapsHelper.swift */; };
 		B355EF4F21C8EB3F00379F57 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B355EF4921C8EB3F00379F57 /* HomePresenter.swift */; };
 		B355EF5021C8EB3F00379F57 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B355EF4A21C8EB3F00379F57 /* HomeRouter.swift */; };
@@ -579,6 +585,12 @@
 		B325C2ED21CE05B20048A148 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		B325C2EE21CE05B20048A148 /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		B325C2F121CE26900048A148 /* FTextFieldChoose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTextFieldChoose.swift; sourceTree = "<group>"; };
+		B32604D221E9C85F00E4BC14 /* CommentDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentDetailPresenter.swift; sourceTree = "<group>"; };
+		B32604D321E9C85F00E4BC14 /* CommentDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentDetailRouter.swift; sourceTree = "<group>"; };
+		B32604D421E9C85F00E4BC14 /* CommentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentDetailViewController.swift; sourceTree = "<group>"; };
+		B32604D521E9C85F00E4BC14 /* CommentDetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentDetailProtocols.swift; sourceTree = "<group>"; };
+		B32604D621E9C85F00E4BC14 /* CommentDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentDetailInteractor.swift; sourceTree = "<group>"; };
+		B32604D721E9C85F00E4BC14 /* CommentDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentDetailViewController.xib; sourceTree = "<group>"; };
 		B329A49B21D78A59004BBEE6 /* PositionMapsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionMapsHelper.swift; sourceTree = "<group>"; };
 		B355EF4921C8EB3F00379F57 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		B355EF4A21C8EB3F00379F57 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
@@ -1219,6 +1231,19 @@
 			path = Menu;
 			sourceTree = "<group>";
 		};
+		B32604D121E9C83F00E4BC14 /* CommentDetail */ = {
+			isa = PBXGroup;
+			children = (
+				B32604D221E9C85F00E4BC14 /* CommentDetailPresenter.swift */,
+				B32604D321E9C85F00E4BC14 /* CommentDetailRouter.swift */,
+				B32604D421E9C85F00E4BC14 /* CommentDetailViewController.swift */,
+				B32604D521E9C85F00E4BC14 /* CommentDetailProtocols.swift */,
+				B32604D621E9C85F00E4BC14 /* CommentDetailInteractor.swift */,
+				B32604D721E9C85F00E4BC14 /* CommentDetailViewController.xib */,
+			);
+			path = CommentDetail;
+			sourceTree = "<group>";
+		};
 		B355EF4821C8EB2E00379F57 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -1268,6 +1293,7 @@
 		B36A235221E1ACB200AA20DF /* MyBuyManager */ = {
 			isa = PBXGroup;
 			children = (
+				B32604D121E9C83F00E4BC14 /* CommentDetail */,
 				DE442C3621CFA1FE0051C0B8 /* OrderDetail */,
 				CBD1C28421D73087006DB3FF /* MyBuy */,
 			);
@@ -2688,6 +2714,7 @@
 				84487C8921CB7EA4008B25B2 /* Roboto-BoldItalic.ttf in Resources */,
 				DE21821321CD403100FDD9F1 /* AccountKitStrings.bundle in Resources */,
 				CBD1C2AD21D74DA6006DB3FF /* MySellingViewController.xib in Resources */,
+				B32604DD21E9C85F00E4BC14 /* CommentDetailViewController.xib in Resources */,
 				DE2181FA21CD3AD300FDD9F1 /* GoogleService-Info.plist in Resources */,
 				B3E67EAE21CF75A90012546F /* PhoneNumber.xib in Resources */,
 				DEE1DA6B21CDF5D60036FEB7 /* PopUpSelectGenderContent.xib in Resources */,
@@ -2829,6 +2856,7 @@
 				CB379C1721E39546005D7536 /* MySellExpiredDetailInteractor.swift in Sources */,
 				84329F4821DFD92F00047B5E /* FavouriteProtocols.swift in Sources */,
 				84C8542C21CFD72900BDABE5 /* Login+SetupUI.swift in Sources */,
+				B32604DB21E9C85F00E4BC14 /* CommentDetailProtocols.swift in Sources */,
 				B392FB3921D3B13E0076A7B5 /* CategoryAPIService.swift in Sources */,
 				CB172C9321C6A2EF0068CF92 /* AppString.swift in Sources */,
 				DE21828021CD473100FDD9F1 /* KActivityIndicatorAnimationBallRotate.swift in Sources */,
@@ -2838,6 +2866,7 @@
 				DE5E085621E206D90053EC9D /* AppRatingView.swift in Sources */,
 				B36A235D21E1AEBA00AA20DF /* SettingViewController.swift in Sources */,
 				DEB8550621E0BF07007479A7 /* SelectPhotoCanCropPopUp.swift in Sources */,
+				B32604D821E9C85F00E4BC14 /* CommentDetailPresenter.swift in Sources */,
 				B36AEECE21CDF52B00BED43C /* HomeCell.swift in Sources */,
 				CBD1C2C121D76BEB006DB3FF /* RecordEndPoint.swift in Sources */,
 				84329F3621DFC95600047B5E /* HistoryBuyProtocols.swift in Sources */,
@@ -2879,6 +2908,7 @@
 				CB172C1621C6A2EF0068CF92 /* Bundle+extension.swift in Sources */,
 				DE21826C21CD473100FDD9F1 /* KActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
 				DEE1DA7221CE20130036FEB7 /* PopUpYesNoHaveAdmobContent.swift in Sources */,
+				B32604D921E9C85F00E4BC14 /* CommentDetailRouter.swift in Sources */,
 				DE442C6021CFB9790051C0B8 /* CommentEntity.swift in Sources */,
 				DE33034E21DF13EB00409F83 /* PostStepOneProtocols.swift in Sources */,
 				DEC5166221CE8DB600A17CBF /* PopUpSettingGPS.swift in Sources */,
@@ -2919,6 +2949,7 @@
 				84421C0B21CBF52900F468F5 /* SupplementaryInfoInteractor.swift in Sources */,
 				CB172C0D21C6A2EF0068CF92 /* UIApplication+extension.swift in Sources */,
 				B3CC857321D72DD200ADBFD8 /* PositionInteractor.swift in Sources */,
+				B32604DC21E9C85F00E4BC14 /* CommentDetailInteractor.swift in Sources */,
 				CB379C1E21E39546005D7536 /* MySellExpiredDetail+Table.swift in Sources */,
 				84ABC68921CFF06700E0D202 /* UpdateProfile+SetupUI.swift in Sources */,
 				84329F3721DFC95600047B5E /* HistoryBuyInteractor.swift in Sources */,
@@ -3096,6 +3127,7 @@
 				DE0DBAF121D3BA460097E38F /* NotificationEndPoint.swift in Sources */,
 				CB172C9C21C6A2EF0068CF92 /* BaseTableCell.swift in Sources */,
 				84ABC68D21CFF06700E0D202 /* UpdateProfileInteractor.swift in Sources */,
+				B32604DA21E9C85F00E4BC14 /* CommentDetailViewController.swift in Sources */,
 				CB172C9E21C6A2EF0068CF92 /* BaseView.swift in Sources */,
 				B392FB3721D3B0170076A7B5 /* CategoryEndPoint.swift in Sources */,
 				CBBB3DF721D5C74400281ABB /* ChangePasswordProtocols.swift in Sources */,

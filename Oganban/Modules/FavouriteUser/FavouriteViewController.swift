@@ -42,7 +42,7 @@ class FavouriteViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        self.hideTabbar()
     }
     
     override func viewDidAppear(_ animated: Bool) {
