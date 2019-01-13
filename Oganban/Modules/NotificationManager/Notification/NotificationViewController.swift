@@ -25,6 +25,7 @@ class NotificationViewController: BaseViewController {
                 tbNotification.isHidden = true
                 showNoData()
             } else {
+                tbNotification.isHidden = false
                 hideNoData()
             }
             

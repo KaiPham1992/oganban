@@ -10,7 +10,8 @@
 
 import UIKit
 
-class CommentDetailPresenter: CommentDetailPresenterProtocol, CommentDetailInteractorOutputProtocol {
+class CommentDetailPresenter: CommentDetailPresenterProtocol {
+    
 
     weak private var view: CommentDetailViewProtocol?
     var interactor: CommentDetailInteractorInputProtocol?
@@ -21,5 +22,31 @@ class CommentDetailPresenter: CommentDetailPresenterProtocol, CommentDetailInter
         self.interactor = interactor
         self.router = router
     }
+    
+    func sendSubComment(param: SendCommentParam) {
+        interactor?.sendComment(param: param)
+    }
+    
+    func sendComment(param: SendCommentParam) {
+        interactor?.sendComment(param: param)
+    }
+    
+    func getCommentList(recordId: String, offset: Int) {
+        interactor?.getCommentList(recordId: recordId, offset: offset)
+    }
 
+}
+
+extension CommentDetailPresenter: CommentDetailInteractorOutputProtocol {
+    func didGetComment(commentResponseEntity: CommentResponseEntity?) {
+        view?.didGetComment(commentResponseEntity: commentResponseEntity)
+    }
+    
+    func didSendComment(comment: CommentEntity?) {
+        view?.didSendComment(comment: comment)
+    }
+    
+    func didSubSendComment(comment: SubCommentEntity?) {
+        view?.didSendSubComment(comment: comment)
+    }
 }

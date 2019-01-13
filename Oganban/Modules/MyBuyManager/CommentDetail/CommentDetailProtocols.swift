@@ -18,12 +18,20 @@ protocol CommentDetailWireframeProtocol: class {
 protocol CommentDetailPresenterProtocol: class {
 
     var interactor: CommentDetailInteractorInputProtocol? { get set }
+    
+    func sendComment(param: SendCommentParam)
+    func sendSubComment(param: SendCommentParam)
+    func getCommentList(recordId: String, offset: Int)
 }
 
 //MARK: Interactor -
 protocol CommentDetailInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    func didSendComment(comment: CommentEntity?)
+    func didSubSendComment(comment: SubCommentEntity?)
+    func didGetComment(commentResponseEntity: CommentResponseEntity?)
+    
 }
 
 protocol CommentDetailInteractorInputProtocol: class {
@@ -31,6 +39,8 @@ protocol CommentDetailInteractorInputProtocol: class {
     var presenter: CommentDetailInteractorOutputProtocol?  { get set }
 
     /* Presenter -> Interactor */
+    func sendComment(param: SendCommentParam)
+    func getCommentList(recordId: String, offset: Int)
 }
 
 //MARK: View -
@@ -39,4 +49,7 @@ protocol CommentDetailViewProtocol: class {
     var presenter: CommentDetailPresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
+    func didSendComment(comment: CommentEntity?)
+    func didSendSubComment(comment: SubCommentEntity?)
+    func didGetComment(commentResponseEntity: CommentResponseEntity?)
 }

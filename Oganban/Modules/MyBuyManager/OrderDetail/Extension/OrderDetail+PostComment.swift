@@ -18,16 +18,19 @@ extension OrderDetailViewController: PostCommentViewDelegate {
         if postCommentView == vPostCommentView {
             let param = SendCommentParam(recordId: recordId&, comment: comment&, isReComment: "0")
             presenter?.sendComment(param: param)
-            
         } else {
-            let subComment = SubCommentEntity(comment: comment)
-            insertSubComment(section: postCommentView.tag, subComment: subComment)
+            let index = getIndexSectionComment(sectionTable: postCommentView.tag)
+            self.sectionSentSubComment = postCommentView.tag
+            if index < self.listComment.count {
+                let commentId = self.listComment[index].id&
+                let param = SendCommentParam(recordId: self.recordId&, comment: comment, commentId: commentId, isReComment: "1")
+                presenter?.sendSubComment(param: param)
+            }
         }
         
     }
     
     override func keyboardWillShow(_ notification: Notification) {
-        print("addGesture")
         addGesture()
     }
     

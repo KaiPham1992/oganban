@@ -19,8 +19,8 @@ enum OrderDetailInfoType: Int {
 }
 
 class OrderDetailViewController: BaseViewController {
-
-	var presenter: OrderDetailPresenterProtocol?
+    
+    var presenter: OrderDetailPresenterProtocol?
     
     @IBOutlet weak var vPostCommentView: PostCommentView!
     @IBOutlet weak var bottomConstant: NSLayoutConstraint!
@@ -34,6 +34,8 @@ class OrderDetailViewController: BaseViewController {
     var isDone: Bool = false
     var isCancel: Bool = false
     
+    var sectionSentSubComment: Int?
+    
     var record: RecordEntity? {
         didSet {
             tbDetail.reloadData()
@@ -44,13 +46,17 @@ class OrderDetailViewController: BaseViewController {
     
     var listHeader = ["Chi tiết", "Giới thiệu","Thông tin người bán", "Địa chỉ gợi ý để giao dịch", "Bình Luận"]
     
-    var listComment = [CommentEntity]()
+    var listComment = [CommentEntity]() {
+        didSet {
+            tbDetail.reloadData()
+        }
+    }
     
     @IBOutlet weak var tbDetail: UITableView!
     
     var tapGesture: UITapGestureRecognizer!
-
-	override func viewDidLoad() {
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
         addKeyboardNotification()
         vPostCommentView.delegate = self
@@ -58,6 +64,7 @@ class OrderDetailViewController: BaseViewController {
         
         presenter?.getDetail(id: recordId&)
         presenter?.getExpiredDay()
+        presenter?.getCommentList(recordId: recordId&, offset: 0, limit: limitLoad)
     }
     
     override func setUpNavigation() {
@@ -76,14 +83,23 @@ class OrderDetailViewController: BaseViewController {
 }
 
 extension OrderDetailViewController: OrderDetailViewProtocol {
-    func didGetCommentList(list: [CommentResponseEntity]) {
+    
+    func didGetComment(commentResponseEntity: CommentResponseEntity?) {
+        guard let _listComment = commentResponseEntity?.listComment else { return }
         
+        self.listComment = _listComment
     }
     
-    func didSendComment(comment: CommentResponseEntity?) {
+    func didSendComment(comment: CommentEntity?) {
         guard let _comment = comment else { return }
-        let commentAdd = CommentEntity(comment: _comment.comment&)
-        insertComment(comment: commentAdd)
+        
+        insertComment(comment: _comment)
+    }
+    
+    func didSendSubComment(comment: SubCommentEntity?) {
+        guard let _comment = comment else { return }
+        guard let section = sectionSentSubComment else { return }
+        insertSubComment(section: section, subComment: _comment)
     }
     
     func didGetDetail(record: RecordEntity?) {
@@ -109,7 +125,7 @@ extension OrderDetailViewController: OrderDetailImageCellDelegate {
             guard let id = self.recordId, let _date = date else { return }
             self.presenter?.editRecord(recordID: id, expiredDate: _date.toString(dateFormat: AppDateFormat.yyyyMMdd))
         }
-       
+        
     }
     
     func btnHideTapped() {

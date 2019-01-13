@@ -11,6 +11,8 @@
 import UIKit
 
 class OrderBuyDetailPresenter: OrderBuyDetailPresenterProtocol {
+   
+    
 
     weak private var view: OrderBuyDetailViewProtocol?
     var interactor: OrderBuyDetailInteractorInputProtocol?
@@ -22,7 +24,17 @@ class OrderBuyDetailPresenter: OrderBuyDetailPresenterProtocol {
         self.router = router
     }
     
+    func sendSubComment(param: SendCommentParam) {
+        interactor?.sendComment(param: param)
+    }
     
+    func sendComment(param: SendCommentParam) {
+        interactor?.sendComment(param: param)
+    }
+    
+    func getCommentList(recordId: String, offset: Int, limit: Int) {
+        interactor?.getCommentList(recordId: recordId, offset: offset)
+    }
 
     func getDetail(id: String) {
         interactor?.getDetail(id: id)
@@ -40,6 +52,11 @@ class OrderBuyDetailPresenter: OrderBuyDetailPresenterProtocol {
     func gotoLogin() {
         router.gotoLogin()
     }
+    
+    
+    func getCommentList(recordId: String, offset: Int) {
+        interactor?.getCommentList(recordId: recordId, offset: offset)
+    }
 }
 
 extension OrderBuyDetailPresenter: OrderBuyDetailInteractorOutputProtocol {
@@ -53,5 +70,17 @@ extension OrderBuyDetailPresenter: OrderBuyDetailInteractorOutputProtocol {
     
     func didAddFavorite(data: BaseResponse?) {
         view?.didAddFavorite(data: data)
+    }
+    
+    func didGetComment(commentResponseEntity: CommentResponseEntity?) {
+        view?.didGetComment(commentResponseEntity: commentResponseEntity)
+    }
+    
+    func didSendComment(comment: CommentEntity?) {
+        view?.didSendComment(comment: comment)
+    }
+    
+    func didSubSendComment(comment: SubCommentEntity?) {
+        view?.didSendSubComment(comment: comment)
     }
 }

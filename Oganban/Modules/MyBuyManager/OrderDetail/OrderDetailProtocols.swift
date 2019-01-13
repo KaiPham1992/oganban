@@ -12,53 +12,56 @@ import Foundation
 
 //MARK: Wireframe -
 protocol OrderDetailWireframeProtocol: class {
-
+    
 }
 //MARK: Presenter -
 protocol OrderDetailPresenterProtocol: class {
-
+    
     var interactor: OrderDetailInteractorInputProtocol? { get set }
     func getDetail(id: String)
     func hideRecord(recordID: String)
     func editRecord(recordID: String, expiredDate: String)
     func getExpiredDay()
     func sendComment(param: SendCommentParam)
+    func sendSubComment(param: SendCommentParam)
     func getCommentList(recordId: String, offset: Int, limit: Int)
 }
 
 //MARK: Interactor -
 protocol OrderDetailInteractorOutputProtocol: class {
-
+    
     /* Interactor -> Presenter */
     func didGetDetail(record: RecordEntity?)
     func didHideRecord(data: BaseResponse?)
     func didEditRecord(data: BaseResponse?)
-    func didSendComment(comment: CommentResponseEntity?)
-    func didGetCommentList(list: [CommentResponseEntity])
+    func didSendComment(comment: CommentEntity?)
+    func didSubSendComment(comment: SubCommentEntity?)
+    func didGetComment(commentResponseEntity: CommentResponseEntity?)
 }
 
 protocol OrderDetailInteractorInputProtocol: class {
-
+    
     var presenter: OrderDetailInteractorOutputProtocol?  { get set }
-
+    
     /* Presenter -> Interactor */
     func getDetail(id: String)
     func hideRecord(recordID: String)
     func editRecord(recordID: String, expiredDate: String)
     func getExpiredDay()
     func sendComment(param: SendCommentParam)
-    func getCommentList(recordId: String, offset: Int, limit: Int)
+    func getCommentList(recordId: String, offset: Int)
 }
 
 //MARK: View -
 protocol OrderDetailViewProtocol: class {
-
+    
     var presenter: OrderDetailPresenterProtocol?  { get set }
-
+    
     /* Presenter -> ViewController */
     func didGetDetail(record: RecordEntity?)
     func didHideRecord(data: BaseResponse?)
     func didEditRecord(data: BaseResponse?)
-    func didSendComment(comment: CommentResponseEntity?)
-    func didGetCommentList(list: [CommentResponseEntity])
+    func didSendComment(comment: CommentEntity?)
+    func didSendSubComment(comment: SubCommentEntity?)
+    func didGetComment(commentResponseEntity: CommentResponseEntity?)
 }
