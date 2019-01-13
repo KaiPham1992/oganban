@@ -10,8 +10,20 @@
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PostCommentView" customModule="Oganban" customModuleProvider="target">
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="15"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                    <real key="value" value="1"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                    <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="btnPost" destination="qoP-K9-xvZ" id="lop-U5-JSs"/>
+                <outlet property="imgAvatar" destination="lqD-uZ-uqc" id="8CW-ih-mnV"/>
                 <outlet property="lbPlaceHolder" destination="pXI-h4-Wvb" id="nlZ-Sd-iil"/>
                 <outlet property="tvInput" destination="W5r-ww-Q3a" id="dcD-w0-XFk"/>
             </connections>
@@ -61,15 +73,14 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qoP-K9-xvZ">
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qoP-K9-xvZ">
                     <rect key="frame" x="315" y="13" width="60" height="40"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="60" id="jdU-fc-hdI"/>
                         <constraint firstAttribute="height" constant="40" id="saE-XH-eRV"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <state key="normal" title="send">
+                    <state key="normal" image="ic_sent_active">
                         <color key="titleColor" red="0.57647058823529407" green="0.23921568627450979" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
@@ -108,5 +119,6 @@
     </objects>
     <resources>
         <image name="ic_avatar" width="22" height="22"/>
+        <image name="ic_sent_active" width="17" height="16"/>
     </resources>
 </document>

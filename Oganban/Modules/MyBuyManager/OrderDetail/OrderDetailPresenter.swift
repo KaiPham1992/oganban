@@ -22,7 +22,9 @@ class OrderDetailPresenter: OrderDetailPresenterProtocol {
         self.router = router
     }
     
-    
+    func sendSubComment(param: SendCommentParam) {
+        interactor?.sendComment(param: param)
+    }
 
     func getDetail(id: String) {
         interactor?.getDetail(id: id)
@@ -45,18 +47,22 @@ class OrderDetailPresenter: OrderDetailPresenterProtocol {
     }
     
     func getCommentList(recordId: String, offset: Int, limit: Int) {
-        interactor?.getCommentList(recordId: recordId, offset: offset, limit: limit)
+        interactor?.getCommentList(recordId: recordId, offset: offset)
     }
     
 }
 
 extension OrderDetailPresenter: OrderDetailInteractorOutputProtocol {
-    func didGetCommentList(list: [CommentResponseEntity]) {
-        view?.didGetCommentList(list: list)
+    func didGetComment(commentResponseEntity: CommentResponseEntity?) {
+        view?.didGetComment(commentResponseEntity: commentResponseEntity)
     }
     
-    func didSendComment(comment: CommentResponseEntity?) {
+    func didSendComment(comment: CommentEntity?) {
         view?.didSendComment(comment: comment)
+    }
+    
+    func didSubSendComment(comment: SubCommentEntity?) {
+         view?.didSendSubComment(comment: comment)
     }
     
     func didGetDetail(record: RecordEntity?) {
@@ -69,5 +75,9 @@ extension OrderDetailPresenter: OrderDetailInteractorOutputProtocol {
     
     func didEditRecord(data: BaseResponse?) {
         view?.didEditRecord(data: data)
+    }
+    
+    func didSendSubComment(comment: SubCommentEntity?) {
+        view?.didSendSubComment(comment: comment)
     }
 }

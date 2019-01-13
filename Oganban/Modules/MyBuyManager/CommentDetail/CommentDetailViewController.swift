@@ -31,7 +31,6 @@ class CommentDetailViewController: BaseViewController {
         addKeyboardNotification()
         vPostCommentView.delegate = self
         configureTable()
-        listComment = [CommentEntity(comment: "test")]
     }
     
     override func setUpNavigation() {
@@ -55,12 +54,12 @@ extension CommentDetailViewController: PostCommentViewDelegate {
         if postCommentView == vPostCommentView {
 //            let param = SendCommentParam(recordId: recordId&, comment: comment&, isReComment: "0")
 //            presenter?.sendComment(param: param)
-            let commentAdd = CommentEntity(comment: comment)
-            insertComment(comment: commentAdd)
+//            let commentAdd = CommentEntity(comment: comment)
+//            insertComment(comment: commentAdd)
             
         } else {
-            let subComment = SubCommentEntity(comment: comment)
-            insertSubComment(section: postCommentView.tag, subComment: subComment)
+//            let subComment = SubCommentEntity(comment: comment)
+//            insertSubComment(section: postCommentView.tag, subComment: subComment)
         }
         
     }

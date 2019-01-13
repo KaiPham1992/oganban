@@ -11,4 +11,5 @@ import Foundation
 class BaseCommentCell: BaseTableCell {
     @IBOutlet weak var lbComment: CommentLabel!
     @IBOutlet weak var lbTime: UILabel!
+    @IBOutlet weak var imgAvatar: UIImageView!
 }

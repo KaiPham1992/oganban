@@ -16,11 +16,11 @@ extension OrderBuyDetailViewController: PostCommentViewDelegate {
     
     func postCommentView(_ postCommentView: PostCommentView, sendComment comment: String) {
         if postCommentView == vPostCommentView {
-            let comment = CommentEntity(comment: comment)
-            insertComment(comment: comment)
+//            let comment = CommentEntity(comment: comment)
+//            insertComment(comment: comment)
         } else {
-            let subComment = SubCommentEntity(comment: comment)
-            insertSubComment(section: postCommentView.tag, subComment: subComment)
+//            let subComment = SubCommentEntity(comment: comment)
+//            insertSubComment(section: postCommentView.tag, subComment: subComment)
         }
         
     }
