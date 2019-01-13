@@ -15,9 +15,9 @@ class HistoryBuyEntity: BaseEntity {
     
     override func mapping(map: Map) {
         super.mapping(map: map)
-        self.id <- map["id"]
-        self.content <- map["content"]
-        self.createTime <- (map["create_time"], yyyyMMddHHmmssTransform())
+        self.id <- map["_id"]
+        self.content <- map["description"]
+        self.createTime <- (map["create_time_mi"], AppTimestampTransform())
     }
     
     required init?(map: Map) {
