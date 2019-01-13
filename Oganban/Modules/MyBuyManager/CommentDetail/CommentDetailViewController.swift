@@ -26,11 +26,16 @@ class CommentDetailViewController: BaseViewController {
         }
     }
 
+    var recordId: String?
+    var sectionSentSubComment: Int?
+    
 	override func viewDidLoad() {
         super.viewDidLoad()
         addKeyboardNotification()
         vPostCommentView.delegate = self
         configureTable()
+        
+        self.presenter?.getCommentList(recordId: self.recordId&, offset: 0)
     }
     
     override func setUpNavigation() {
@@ -41,6 +46,22 @@ class CommentDetailViewController: BaseViewController {
 }
 
 extension CommentDetailViewController: CommentDetailViewProtocol {
+    func didGetComment(commentResponseEntity: CommentResponseEntity?) {
+        guard let _listComment = commentResponseEntity?.listComment else { return }
+        
+        self.listComment = _listComment
+    }
+    
+    func didSendComment(comment: CommentEntity?) {
+        guard let _comment = comment else { return }
+        insertComment(comment: _comment)
+    }
+    
+    func didSendSubComment(comment: SubCommentEntity?) {
+        guard let _comment = comment else { return }
+        guard let section = sectionSentSubComment else { return }
+        insertSubComment(section: section, subComment: _comment)
+    }
     
 }
 
@@ -52,14 +73,16 @@ extension CommentDetailViewController: PostCommentViewDelegate {
     
     func postCommentView(_ postCommentView: PostCommentView, sendComment comment: String) {
         if postCommentView == vPostCommentView {
-//            let param = SendCommentParam(recordId: recordId&, comment: comment&, isReComment: "0")
-//            presenter?.sendComment(param: param)
-//            let commentAdd = CommentEntity(comment: comment)
-//            insertComment(comment: commentAdd)
-            
+            let param = SendCommentParam(recordId: recordId&, comment: comment&, isReComment: "0")
+            presenter?.sendComment(param: param)
         } else {
-//            let subComment = SubCommentEntity(comment: comment)
-//            insertSubComment(section: postCommentView.tag, subComment: subComment)
+            let indexSection = postCommentView.tag
+            sectionSentSubComment = indexSection
+            if indexSection < self.listComment.count {
+                let commentId = self.listComment[indexSection].id&
+                let param = SendCommentParam(recordId: self.recordId&, comment: comment, commentId: commentId, isReComment: "1")
+                presenter?.sendSubComment(param: param)
+            }
         }
         
     }

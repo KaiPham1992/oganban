@@ -8,11 +8,20 @@
 
 import UIKit
 
-class OrderMoreCell: BaseTableCell {
+protocol OrderMoreCellDelegate: class {
+    func orderMoreCell(_ orderMoreCell: OrderMoreCell, section: Int)
+}
 
+class OrderMoreCell: BaseTableCell {
+    weak var delegate: OrderMoreCellDelegate?
+    @IBOutlet weak var btnMore: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+    }
+    
+    @IBAction func btnMoreTapped() {
+        delegate?.orderMoreCell(self, section: self.btnMore.tag)
     }
     
 }

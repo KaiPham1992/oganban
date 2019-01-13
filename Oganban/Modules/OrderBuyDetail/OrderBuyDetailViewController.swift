@@ -26,14 +26,14 @@ class OrderBuyDetailViewController: BaseViewController {
         }
     }
     
-    var sectionSentSubComment: Int?
+    
     
     var price: Double = 0
     var quantity: Int = 0
     var recordId: String?
     var paymentType: String = ""
     var listHeader = ["Chi tiết", "Giới thiệu","Thông tin người bán", "Địa chỉ đăng  ", "Bình Luận"]
-    
+    var sectionSentSubComment: Int?
     var listComment = [CommentEntity]() {
         didSet {
             tbDetail.reloadData()

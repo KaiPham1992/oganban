@@ -93,7 +93,7 @@ extension OrderDetailViewController: UITableViewDelegate, UITableViewDataSource 
                     return cell
                 } else if indexPath.item == 2 {
                     let cell = tbDetail.dequeue(OrderMoreCell.self, for: indexPath)
-                   
+                    cell.delegate = self
                     return cell
                 } else {
                     let cell = tbDetail.dequeue(ReplyCommentCell.self, for: indexPath)
@@ -152,7 +152,13 @@ extension OrderDetailViewController: UITableViewDelegate, UITableViewDataSource 
 }
 
 // MARK: helper
-extension OrderDetailViewController {
+extension OrderDetailViewController:  OrderMoreCellDelegate {
+    
+    func orderMoreCell(_ orderMoreCell: OrderMoreCell, section: Int) {
+        let vc = CommentDetailRouter.createModule(recordId: self.recordId&)
+        self.push(controller: vc)
+    }
+    
     func getIndexSectionComment(sectionTable: Int) -> Int {
         let indexComment = sectionTable - (self.listHeader.count - 1)
         

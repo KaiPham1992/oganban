@@ -96,7 +96,7 @@ extension OrderBuyDetailViewController: UITableViewDelegate, UITableViewDataSour
                     return cell
                 } else if indexPath.item == 2 {
                     let cell = tbDetail.dequeue(OrderMoreCell.self, for: indexPath)
-                    
+                    cell.delegate = self
                     return cell
                 } else {
                     let cell = tbDetail.dequeue(ReplyCommentCell.self, for: indexPath)
@@ -167,7 +167,12 @@ extension OrderBuyDetailViewController: UITableViewDelegate, UITableViewDataSour
 }
 
 // MARK: helper
-extension OrderBuyDetailViewController {
+extension OrderBuyDetailViewController: OrderMoreCellDelegate {
+    func orderMoreCell(_ orderMoreCell: OrderMoreCell, section: Int) {
+        let vc = CommentDetailRouter.createModule(recordId: self.recordId&)
+        self.push(controller: vc)
+    }
+    
     func getIndexSectionComment(sectionTable: Int) -> Int {
         let indexComment = sectionTable - (self.listHeader.count - 1)
         
