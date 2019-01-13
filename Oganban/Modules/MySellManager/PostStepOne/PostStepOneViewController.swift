@@ -161,8 +161,54 @@ class PostStepOneViewController: BaseViewController {
         let date = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = AppDateFormat.yyyyMMdd.formatString
+        
+        if categoryId == nil {
+            lbNotice.text = "Vui lòng chọn danh mục sản phẩm"
+            return
+        }
+        
+        if imgSrc == [] {
+            lbNotice.text = "Vui lòng thêm hình ảnh sản phẩm"
+            return
+        }
+        
+        if imgSrc.count > 5 {
+            lbNotice.text = "Vui lòng chọn tối đa 5 hình ảnh sản phẩm"
+            return
+        }
+        
+        if vTitleRecord.textField.text == "" || vTitleRecord.textField.text == nil {
+            lbNotice.text = "Vui lòng nhập tiêu đề tin"
+            return
+        }
+        
+        if let count =  (vTitleRecord.textField.text?.count), count > 60 {
+            lbNotice.text = "Tiêu đề chỉ được tối đa 60 ký tự"
+            return
+        }
+        
+        if vQuantity.textField.text == "0" || vQuantity.textField.text == nil {
+            lbNotice.text = "Số lượng phải tối thiểu bẳng 1"
+            return
+        }
+        
+        if expireDate == nil  {
+            lbNotice.text = "Vui lòng chọn thời hạn đăng bán"
+            return
+        }
+        
         if expireDate& < formatter.string(from: date) {
             lbNotice.text = "Thời hạn đăng phải lớn hơn hoặc bằng ngày hiện tại"
+            return
+        }
+        
+        if vAbout.tvInput.text == "" || vAbout.tvInput.text == nil {
+            lbNotice.text = "Vui lòng nhập giới thiệu sản phẩm"
+            return
+        }
+        
+        if let count = vAbout.tvInput.text?.count, count > 1500 {
+            lbNotice.text = "Giới thiệu sản phẩm chỉ được tối đa 1,500 ký tự"
             return
         }
         
