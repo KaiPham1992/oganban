@@ -192,6 +192,11 @@ class PostStepOneViewController: BaseViewController {
             return
         }
         
+        if expireDate == nil  {
+            lbNotice.text = "Vui lòng chọn thời hạn đăng bán"
+            return
+        }
+        
         if expireDate& < formatter.string(from: date) {
             lbNotice.text = "Thời hạn đăng phải lớn hơn hoặc bằng ngày hiện tại"
             return
