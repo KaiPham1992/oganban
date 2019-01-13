@@ -22,9 +22,7 @@ class OrderDetailPresenter: OrderDetailPresenterProtocol {
         self.router = router
     }
     
-    func sendSubComment(param: SendCommentParam) {
-        interactor?.sendComment(param: param)
-    }
+   
 
     func getDetail(id: String) {
         interactor?.getDetail(id: id)
@@ -40,6 +38,10 @@ class OrderDetailPresenter: OrderDetailPresenterProtocol {
     
     func getExpiredDay() {
         interactor?.getExpiredDay()
+    }
+    
+    func sendSubComment(param: SendCommentParam) {
+        interactor?.sendComment(param: param)
     }
     
     func sendComment(param: SendCommentParam) {

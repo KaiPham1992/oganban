@@ -179,20 +179,18 @@ extension OrderDetailViewController {
     }
     
     // Subcomment
-    func getLastSubComment(indexPath: IndexPath) -> SubCommentEntity {
+    func getLastSubComment(indexPath: IndexPath) -> SubCommentEntity? {
         let indexSection = getIndexSectionComment(sectionTable: indexPath.section)
-        let count = self.listComment[indexSection].subComment.count - 1
-        return self.listComment[indexSection].subComment[count]
+        //        let count = self.listComment[indexSection].subComment.count - 1
+        if self.listComment[indexSection].subComment.count > 0 {
+            return self.listComment[indexSection].subComment[0]
+        }
+        return nil
     }
-    
-//    func getSubComment(indexPath: IndexPath) -> SubCommentEntity {
-//        let indexSection = getIndexSectionComment(sectionTable: indexPath.section)
-//        return self.listComment[indexSection].subComment[indexPath.item - 1]
-//    }
     
     func insertSubComment(section: Int, subComment: SubCommentEntity) {
         let indexComment = section - (self.listHeader.count - 1)
-        self.listComment[indexComment].subComment.append(subComment)
+        self.listComment[indexComment].subComment.insert((subComment), at: 0)
         let section = IndexSet(integer: section)
         self.tbDetail.reloadSections(section, with: .automatic)
         

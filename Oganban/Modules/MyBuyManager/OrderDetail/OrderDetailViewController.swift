@@ -19,8 +19,8 @@ enum OrderDetailInfoType: Int {
 }
 
 class OrderDetailViewController: BaseViewController {
-
-	var presenter: OrderDetailPresenterProtocol?
+    
+    var presenter: OrderDetailPresenterProtocol?
     
     @IBOutlet weak var vPostCommentView: PostCommentView!
     @IBOutlet weak var bottomConstant: NSLayoutConstraint!
@@ -55,8 +55,8 @@ class OrderDetailViewController: BaseViewController {
     @IBOutlet weak var tbDetail: UITableView!
     
     var tapGesture: UITapGestureRecognizer!
-
-	override func viewDidLoad() {
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
         addKeyboardNotification()
         vPostCommentView.delegate = self
@@ -83,7 +83,7 @@ class OrderDetailViewController: BaseViewController {
 }
 
 extension OrderDetailViewController: OrderDetailViewProtocol {
-   
+    
     func didGetComment(commentResponseEntity: CommentResponseEntity?) {
         guard let _listComment = commentResponseEntity?.listComment else { return }
         
@@ -93,7 +93,7 @@ extension OrderDetailViewController: OrderDetailViewProtocol {
     func didSendComment(comment: CommentEntity?) {
         guard let _comment = comment else { return }
         
-         insertComment(comment: _comment)
+        insertComment(comment: _comment)
     }
     
     func didSendSubComment(comment: SubCommentEntity?) {
@@ -125,7 +125,7 @@ extension OrderDetailViewController: OrderDetailImageCellDelegate {
             guard let id = self.recordId, let _date = date else { return }
             self.presenter?.editRecord(recordID: id, expiredDate: _date.toString(dateFormat: AppDateFormat.yyyyMMdd))
         }
-       
+        
     }
     
     func btnHideTapped() {

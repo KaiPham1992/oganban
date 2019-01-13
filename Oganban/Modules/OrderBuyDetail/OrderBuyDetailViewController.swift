@@ -26,13 +26,19 @@ class OrderBuyDetailViewController: BaseViewController {
         }
     }
     
+    var sectionSentSubComment: Int?
+    
     var price: Double = 0
     var quantity: Int = 0
     var recordId: String?
     var paymentType: String = ""
     var listHeader = ["Chi tiết", "Giới thiệu","Thông tin người bán", "Địa chỉ đăng  ", "Bình Luận"]
     
-    var listComment = [CommentEntity]()
+    var listComment = [CommentEntity]() {
+        didSet {
+            tbDetail.reloadData()
+        }
+    }
     
     var tapGesture: UITapGestureRecognizer!
     
@@ -98,8 +104,27 @@ class OrderBuyDetailViewController: BaseViewController {
 }
 
 extension OrderBuyDetailViewController: OrderBuyDetailViewProtocol {
+    func didGetComment(commentResponseEntity: CommentResponseEntity?) {
+        guard let _listComment = commentResponseEntity?.listComment else { return }
+        
+        self.listComment = _listComment
+    }
+    
+    func didSendComment(comment: CommentEntity?) {
+        guard let _comment = comment else { return }
+        
+        insertComment(comment: _comment)
+    }
+    
+    func didSendSubComment(comment: SubCommentEntity?) {
+        guard let _comment = comment else { return }
+        guard let section = sectionSentSubComment else { return }
+        insertSubComment(section: section, subComment: _comment)
+    }
+    
     func didGetDetail(record: RecordEntity?) {
         self.record = record
+        self.presenter?.getCommentList(recordId: self.recordId&, offset: 0)
     }
     
     func didBooking(order: OrderEntity?) {
@@ -113,7 +138,6 @@ extension OrderBuyDetailViewController: OrderBuyDetailViewProtocol {
 
 extension OrderBuyDetailViewController: OrderInfoUserCellDelegate {
     func btnPhoneTapped() {
-        
         if let phone = record?.phone, let url = URL(string: "tel://\(phone)") {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }

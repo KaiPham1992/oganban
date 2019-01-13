@@ -20,6 +20,7 @@ extension OrderBuyDetailViewController: UITableViewDelegate, UITableViewDataSour
         tbDetail.registerXibFile(OrderBuyDetailImageCell.self)
         tbDetail.registerXibFile(OrderInfoUserCell.self)
         tbDetail.registerXibFile(OrderIntroCell.self)
+        tbDetail.registerXibFile(OrderMoreCell.self)
         tbDetail.separatorStyle = .none
         
         tbDetail.rowHeight = UITableView.automaticDimension
@@ -55,21 +56,54 @@ extension OrderBuyDetailViewController: UITableViewDelegate, UITableViewDataSour
             return cell
         default:
             let indexComment = getIndexSectionComment(sectionTable: indexPath.section)
+            let countSubcomment = self.listComment[indexComment].subComment.count
             
-            if indexPath.item == 0 {
-                let cell = tbDetail.dequeue(CommentCell.self, for: indexPath)
-                cell.comment = getComment(section: indexPath.section)
-                return cell
-            } else if indexPath.item == self.listComment[indexComment].subComment.count {
-                let cell = tbDetail.dequeue(ReplyCommentCell.self, for: indexPath)
-                cell.vPostCommentView.tag = indexPath.section
-                cell.vPostCommentView.delegate = self 
-                return cell
-            }
-            else {
-                let cell = tbDetail.dequeue(SubCommentCell.self, for: indexPath)
-                 cell.subComment = getSubComment(indexPath: indexPath)
-                return cell
+            switch countSubcomment {
+            case 0:
+                if indexPath.item == 0 {
+                    let cell = tbDetail.dequeue(CommentCell.self, for: indexPath)
+                    cell.comment = getComment(section: indexPath.section)
+                    return cell
+                } else {
+                    let cell = tbDetail.dequeue(ReplyCommentCell.self, for: indexPath)
+                    cell.vPostCommentView.tag = indexPath.section
+                    cell.vPostCommentView.delegate = self
+                    return cell
+                }
+            case 1:
+                if indexPath.item == 0 {
+                    let cell = tbDetail.dequeue(CommentCell.self, for: indexPath)
+                    cell.comment = getComment(section: indexPath.section)
+                    return cell
+                } else if indexPath.item == 1 {
+                    let cell = tbDetail.dequeue(SubCommentCell.self, for: indexPath)
+                    cell.subComment = getLastSubComment(indexPath: indexPath)
+                    return cell
+                } else {
+                    let cell = tbDetail.dequeue(ReplyCommentCell.self, for: indexPath)
+                    cell.vPostCommentView.tag = indexPath.section
+                    cell.vPostCommentView.delegate = self
+                    return cell
+                }
+            default:
+                if indexPath.item == 0 {
+                    let cell = tbDetail.dequeue(CommentCell.self, for: indexPath)
+                    cell.comment = getComment(section: indexPath.section)
+                    return cell
+                } else if indexPath.item == 1 {
+                    let cell = tbDetail.dequeue(SubCommentCell.self, for: indexPath)
+                    cell.subComment = getLastSubComment(indexPath: indexPath)
+                    return cell
+                } else if indexPath.item == 2 {
+                    let cell = tbDetail.dequeue(OrderMoreCell.self, for: indexPath)
+                    
+                    return cell
+                } else {
+                    let cell = tbDetail.dequeue(ReplyCommentCell.self, for: indexPath)
+                    cell.vPostCommentView.tag = indexPath.section
+                    cell.vPostCommentView.delegate = self
+                    return cell
+                }
             }
         }
     }
@@ -82,7 +116,17 @@ extension OrderBuyDetailViewController: UITableViewDelegate, UITableViewDataSour
             return 1
         default:
             let indexComment = section - (self.listHeader.count - 1)
-            return self.listComment[indexComment].subComment.count + 1
+            
+            let countSubComment = self.listComment[indexComment].subComment.count
+            
+            switch countSubComment {
+            case 0:
+                return 2
+            case 1:
+                return 3
+            default:
+                return 4
+            }
         }
     }
     
@@ -139,25 +183,6 @@ extension OrderBuyDetailViewController {
         return self.listComment[indexSection]
     }
     
-    func getSubComment(indexPath: IndexPath) -> SubCommentEntity {
-        let indexSection = getIndexSectionComment(sectionTable: indexPath.section)
-        return self.listComment[indexSection].subComment[indexPath.item]
-    }
-    
-    func insertSubComment(section: Int, subComment: SubCommentEntity) {
-        let indexComment = section - (self.listHeader.count - 1)
-        self.listComment[indexComment].subComment.append(subComment)
-        
-        tbDetail.beginUpdates()
-        let indexPath = IndexPath(item: self.listComment[indexComment].subComment.count - 1, section: section)
-        tbDetail.insertRows(at: [indexPath], with: .none)
-        tbDetail.endUpdates()
-        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
-            self.tbDetail.scrollToBottom(section: section)
-        }
-    }
-    
     func insertComment(comment: CommentEntity) {
         self.listComment.append(comment)
         tbDetail.reloadData()
@@ -167,4 +192,23 @@ extension OrderBuyDetailViewController {
         }
         
     }
+    
+    // Subcomment
+    func getLastSubComment(indexPath: IndexPath) -> SubCommentEntity? {
+        let indexSection = getIndexSectionComment(sectionTable: indexPath.section)
+//        let count = self.listComment[indexSection].subComment.count - 1
+        if self.listComment[indexSection].subComment.count > 0 {
+            return self.listComment[indexSection].subComment[0]
+        }
+        return nil
+    }
+    
+    func insertSubComment(section: Int, subComment: SubCommentEntity) {
+        let indexComment = section - (self.listHeader.count - 1)
+        self.listComment[indexComment].subComment.insert((subComment), at: 0)
+        let section = IndexSet(integer: section)
+        self.tbDetail.reloadSections(section, with: .automatic)
+    }
 }
+
+
