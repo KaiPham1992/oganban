@@ -36,12 +36,12 @@ class WebViewController: BaseViewController {
     
     private func loadWeb() {
         if isSignUp {
-            mainUrl = BASE_URL + termUrl
-        } else {
             mainUrl = BASE_URL + policyUrl
+        } else {
+            mainUrl = BASE_URL + termUrl
         }
         let url = URL(string: mainUrl)
-        var urlRequest = URLRequest(url: url!)
+        let urlRequest = URLRequest(url: url!)
         wbMain.loadRequest(urlRequest)
     }
 }

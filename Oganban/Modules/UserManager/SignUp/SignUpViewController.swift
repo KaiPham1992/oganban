@@ -32,8 +32,8 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
     @IBOutlet weak var imgCaptcha       : UIImageView!
     @IBOutlet weak var btnCheckTermOfPolicy: UIButton!
     @IBOutlet weak var vContainer       : UIView!
-
-	var presenter: SignUpPresenterProtocol?
+    
+    var presenter: SignUpPresenterProtocol?
     let popUpDate = PopUpSelectDate()
     let popUpGender = PopUpSelectGender()
     var termPolicy = false
@@ -93,6 +93,7 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
         vCaptcha.setTextField(title: TitleString.captcha, placeHolder: TitleString.placeHolderCaptcha)
         vBirthday.delegate = self
         vGender.delegate = self
+        
         btnTermOfPolicy.setTitle(text: "Đồng ý ", font: AppFont.fontRegular15, color: AppColor.textTextField, textUnderline: "Điều khoản sử dụng", fontLine: AppFont.fontRegular15, colorLine: AppColor.textTextField)
         vPassword.textField.isSecureTextEntry = true
         vPasswordReType.textField.isSecureTextEntry = true
@@ -113,7 +114,7 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
     @IBAction func btnTermOfPolicyTapped() {
         termPolicy = !termPolicy
         btnCheckTermOfPolicy.setImage(termPolicy ? AppImage.imgCheckedTerm : AppImage.imgCheckTerm, for: .normal )
-         presenter?.gotoTermOfPolicy()
+        presenter?.gotoTermOfPolicy()
     }
     
     @IBAction func btnCheckTermOfPolicyTapped() {
