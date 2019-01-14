@@ -152,6 +152,9 @@ class HomeViewController: BaseViewController {
         tfSearch.delegate = self
         lbDistance.text = UserDefaultHelper.shared.radius?.title
         self.distance = UserDefaultHelper.shared.radius
+        
+        btnClear.isHidden = false
+        tfSearch.addTarget(self, action: #selector(textFieldDidChanged), for: UIControl.Event.editingChanged)
     }
     
     private func setUpScaleDropdown() {
@@ -562,11 +565,6 @@ extension HomeViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         view.endEditing(true)
         paramFilter.keyword = textField.text&
-        if tfSearch.text&.isEmpty {
-            btnClear.isHidden = true
-        } else {
-            btnClear.isHidden = false
-        }
         presenter?.filterRecord(param: paramFilter)
         return true
     }
@@ -577,8 +575,13 @@ extension HomeViewController: UITextFieldDelegate {
         presenter?.filterRecord(param: paramFilter)
     }
     
-    
-    
+    @objc func textFieldDidChanged() {
+        if tfSearch.text&.isEmpty {
+            btnClear.isHidden = true
+        } else {
+            btnClear.isHidden = false
+        }
+    }
 }
 
 extension HomeViewController: PositionViewControllerDelegate {

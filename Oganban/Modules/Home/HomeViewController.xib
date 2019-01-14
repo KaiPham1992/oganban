@@ -115,6 +115,9 @@
                                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L84-BV-7n4">
                                             <rect key="frame" x="280" y="4" width="20" height="22"/>
                                             <state key="normal" image="ic_close"/>
+                                            <connections>
+                                                <action selector="btnClearTapped" destination="-1" eventType="touchUpInside" id="62f-RC-fyL"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Er-7c-h0a">
                                             <rect key="frame" x="2.5" y="0.0" width="30" height="30"/>
