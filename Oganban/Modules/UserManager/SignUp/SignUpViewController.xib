@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpViewController">
             <connections>
+                <outlet property="btnCheckTermOfPolicy" destination="JE3-GY-CuZ" id="L5g-bh-pSt"/>
                 <outlet property="btnTermOfPolicy" destination="dns-qf-4d1" id="EjM-oh-nTV"/>
                 <outlet property="imgCaptcha" destination="UuW-fp-tpS" id="kuQ-t5-Jhr"/>
                 <outlet property="lbStatus" destination="3wi-Ba-YmN" id="9Gf-pc-tGB"/>
@@ -36,7 +37,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="1100"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1MD-B1-JB2">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="1032"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="1037"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aHR-1q-wux">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="220"/>
@@ -57,7 +58,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XR9-Dm-m1s">
-                                    <rect key="frame" x="15" y="130" width="345" height="902"/>
+                                    <rect key="frame" x="15" y="130" width="345" height="907"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6dJ-bp-wT5" customClass="FTextField" customModule="Oganban" customModuleProvider="target">
                                             <rect key="frame" x="15" y="20" width="315" height="50"/>
@@ -145,10 +146,13 @@
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
                                         <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dns-qf-4d1">
-                                            <rect key="frame" x="15" y="792" width="315" height="25"/>
+                                            <rect key="frame" x="62.5" y="792" width="220" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="220" id="WxV-jR-GA4"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                            <state key="normal" title="Đồng ý Điều khoản sử dụng" image="rectangle_13">
+                                            <state key="normal" title="Đồng ý Điều khoản sử dụng">
                                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                             <connections>
@@ -156,7 +160,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y4x-86-krM">
-                                            <rect key="frame" x="97.5" y="842" width="150" height="40"/>
+                                            <rect key="frame" x="97.5" y="847" width="150" height="40"/>
                                             <color key="backgroundColor" red="0.0" green="0.34509803921568627" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="150" id="Cqp-Xt-pgQ"/>
@@ -175,11 +179,18 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3wi-Ba-YmN">
-                                            <rect key="frame" x="0.0" y="827" width="345" height="10"/>
+                                            <rect key="frame" x="0.0" y="832" width="345" height="10"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" red="0.43137254901960786" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JE3-GY-CuZ">
+                                            <rect key="frame" x="52.5" y="792" width="25" height="30"/>
+                                            <state key="normal" image="ic_check_term"/>
+                                            <connections>
+                                                <action selector="btnCheckTermOfPolicyTapped" destination="-1" eventType="touchUpInside" id="o2w-E2-gEZ"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
@@ -188,15 +199,16 @@
                                         <constraint firstAttribute="trailing" secondItem="6dJ-bp-wT5" secondAttribute="trailing" constant="15" id="53e-Wo-34f"/>
                                         <constraint firstItem="VqA-o7-Hhz" firstAttribute="top" secondItem="6dJ-bp-wT5" secondAttribute="bottom" constant="15" id="624-CS-C1s"/>
                                         <constraint firstItem="6gE-Aq-Q7k" firstAttribute="width" secondItem="AxV-Uu-5Gu" secondAttribute="width" id="705-rM-fw2"/>
-                                        <constraint firstItem="dns-qf-4d1" firstAttribute="leading" secondItem="g4v-AT-BYZ" secondAttribute="leading" id="7L2-Ja-tcD"/>
                                         <constraint firstItem="AxV-Uu-5Gu" firstAttribute="centerX" secondItem="VqA-o7-Hhz" secondAttribute="centerX" id="7xV-9n-lWk"/>
                                         <constraint firstItem="UvT-A3-mKL" firstAttribute="centerX" secondItem="lIY-v7-PWa" secondAttribute="centerX" id="8d4-Yd-rCv"/>
                                         <constraint firstItem="dDJ-dt-QHx" firstAttribute="width" secondItem="Kl4-vO-biv" secondAttribute="width" id="8q3-44-Z8E"/>
+                                        <constraint firstItem="JE3-GY-CuZ" firstAttribute="top" secondItem="dns-qf-4d1" secondAttribute="top" id="90C-GJ-dpt"/>
                                         <constraint firstItem="Kl4-vO-biv" firstAttribute="height" secondItem="hfd-Ia-WFH" secondAttribute="height" id="BnO-ew-9KK"/>
                                         <constraint firstItem="AxV-Uu-5Gu" firstAttribute="top" secondItem="VqA-o7-Hhz" secondAttribute="bottom" constant="15" id="CgV-Jg-pYd"/>
                                         <constraint firstItem="dns-qf-4d1" firstAttribute="top" secondItem="g4v-AT-BYZ" secondAttribute="bottom" constant="15" id="Cq1-sO-6kd"/>
                                         <constraint firstItem="3wi-Ba-YmN" firstAttribute="top" secondItem="dns-qf-4d1" secondAttribute="bottom" constant="10" id="FSU-lJ-nw5"/>
                                         <constraint firstItem="y4x-86-krM" firstAttribute="top" secondItem="dns-qf-4d1" secondAttribute="bottom" constant="25" id="GQw-HK-Hag"/>
+                                        <constraint firstItem="JE3-GY-CuZ" firstAttribute="bottom" secondItem="dns-qf-4d1" secondAttribute="bottom" id="Gdp-Uk-ZHB"/>
                                         <constraint firstItem="WLL-hc-apq" firstAttribute="top" secondItem="dDJ-dt-QHx" secondAttribute="bottom" constant="15" id="KNk-L9-ooZ"/>
                                         <constraint firstItem="Er5-8R-PYv" firstAttribute="height" secondItem="UvT-A3-mKL" secondAttribute="height" id="L7r-OG-aRV"/>
                                         <constraint firstItem="VqA-o7-Hhz" firstAttribute="width" secondItem="6dJ-bp-wT5" secondAttribute="width" id="LUe-3e-OvH"/>
@@ -213,14 +225,14 @@
                                         <constraint firstItem="Kl4-vO-biv" firstAttribute="width" secondItem="hfd-Ia-WFH" secondAttribute="width" id="cLT-yc-ss8"/>
                                         <constraint firstItem="UvT-A3-mKL" firstAttribute="top" secondItem="lIY-v7-PWa" secondAttribute="bottom" constant="15" id="eHo-7e-CNS"/>
                                         <constraint firstItem="hfd-Ia-WFH" firstAttribute="width" secondItem="Er5-8R-PYv" secondAttribute="width" id="eUa-fd-9TN"/>
+                                        <constraint firstItem="y4x-86-krM" firstAttribute="centerX" secondItem="XR9-Dm-m1s" secondAttribute="centerX" id="fSw-0z-mhU"/>
                                         <constraint firstItem="VqA-o7-Hhz" firstAttribute="centerX" secondItem="6dJ-bp-wT5" secondAttribute="centerX" id="fXh-Ak-fNv"/>
                                         <constraint firstItem="6gE-Aq-Q7k" firstAttribute="height" secondItem="AxV-Uu-5Gu" secondAttribute="height" id="gJf-7w-EPf"/>
+                                        <constraint firstItem="dns-qf-4d1" firstAttribute="centerX" secondItem="g4v-AT-BYZ" secondAttribute="centerX" id="gRl-4f-134"/>
                                         <constraint firstItem="AxV-Uu-5Gu" firstAttribute="height" secondItem="VqA-o7-Hhz" secondAttribute="height" id="gtQ-0m-MmH"/>
                                         <constraint firstItem="AxV-Uu-5Gu" firstAttribute="width" secondItem="VqA-o7-Hhz" secondAttribute="width" id="hne-Rf-geB"/>
-                                        <constraint firstItem="dns-qf-4d1" firstAttribute="width" secondItem="g4v-AT-BYZ" secondAttribute="width" id="iyc-Uf-kJK"/>
                                         <constraint firstItem="Kl4-vO-biv" firstAttribute="centerX" secondItem="hfd-Ia-WFH" secondAttribute="centerX" id="joP-rv-YtB"/>
                                         <constraint firstItem="6dJ-bp-wT5" firstAttribute="top" secondItem="XR9-Dm-m1s" secondAttribute="top" constant="20" id="jvg-yQ-8bz"/>
-                                        <constraint firstItem="y4x-86-krM" firstAttribute="centerX" secondItem="dns-qf-4d1" secondAttribute="centerX" id="pA5-H5-PYa"/>
                                         <constraint firstItem="dDJ-dt-QHx" firstAttribute="top" secondItem="Kl4-vO-biv" secondAttribute="bottom" constant="15" id="qV0-IX-Jrr"/>
                                         <constraint firstItem="Er5-8R-PYv" firstAttribute="width" secondItem="UvT-A3-mKL" secondAttribute="width" id="suJ-45-xwB"/>
                                         <constraint firstItem="Er5-8R-PYv" firstAttribute="top" secondItem="UvT-A3-mKL" secondAttribute="bottom" constant="15" id="t2j-Ha-ZXj"/>
@@ -233,7 +245,9 @@
                                         <constraint firstItem="lIY-v7-PWa" firstAttribute="top" secondItem="6gE-Aq-Q7k" secondAttribute="bottom" constant="15" id="v9Y-JM-SC3"/>
                                         <constraint firstItem="Kl4-vO-biv" firstAttribute="top" secondItem="hfd-Ia-WFH" secondAttribute="bottom" constant="15" id="vNT-T9-TaE"/>
                                         <constraint firstItem="UvT-A3-mKL" firstAttribute="width" secondItem="lIY-v7-PWa" secondAttribute="width" id="vjH-b4-O0F"/>
+                                        <constraint firstItem="JE3-GY-CuZ" firstAttribute="centerY" secondItem="dns-qf-4d1" secondAttribute="centerY" id="vru-47-Jcx"/>
                                         <constraint firstItem="g4v-AT-BYZ" firstAttribute="height" secondItem="dDJ-dt-QHx" secondAttribute="height" id="wDr-0g-vH1"/>
+                                        <constraint firstItem="JE3-GY-CuZ" firstAttribute="trailing" secondItem="dns-qf-4d1" secondAttribute="leading" constant="15" id="y5d-d3-Mqz"/>
                                         <constraint firstItem="UvT-A3-mKL" firstAttribute="height" secondItem="lIY-v7-PWa" secondAttribute="height" id="z1V-QX-2Na"/>
                                         <constraint firstItem="hfd-Ia-WFH" firstAttribute="height" secondItem="Er5-8R-PYv" secondAttribute="height" id="ziY-ch-hd7"/>
                                         <constraint firstItem="g4v-AT-BYZ" firstAttribute="top" secondItem="WLL-hc-apq" secondAttribute="bottom" constant="15" id="zrv-72-eEZ"/>
@@ -279,9 +293,9 @@
         </view>
     </objects>
     <resources>
+        <image name="ic_check_term" width="25" height="25"/>
         <image name="logo" width="203" height="106"/>
         <image name="placeHolderImage" width="250" height="250"/>
         <image name="rectangle_12" width="33" height="36"/>
-        <image name="rectangle_13" width="25" height="25"/>
     </resources>
 </document>

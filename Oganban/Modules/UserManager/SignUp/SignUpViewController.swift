@@ -26,6 +26,7 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
     @IBOutlet weak var btnTermOfPolicy  : UIButton!
     @IBOutlet weak var lbStatus         : UILabel!
     @IBOutlet weak var imgCaptcha       : UIImageView!
+    @IBOutlet weak var btnCheckTermOfPolicy: UIButton!
 
 	var presenter: SignUpPresenterProtocol?
     let popUpDate = PopUpSelectDate()
@@ -98,7 +99,13 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
     
     @IBAction func btnTermOfPolicyTapped() {
         termPolicy = !termPolicy
-        btnTermOfPolicy.setImage(termPolicy ? AppImage.imgCheckedTerm : AppImage.imgCheckTerm, for: .normal )
+        btnCheckTermOfPolicy.setImage(termPolicy ? AppImage.imgCheckedTerm : AppImage.imgCheckTerm, for: .normal )
+         presenter?.gotoTermOfPolicy()
+    }
+    
+    @IBAction func btnCheckTermOfPolicyTapped() {
+        termPolicy = !termPolicy
+        btnCheckTermOfPolicy.setImage(termPolicy ? AppImage.imgCheckedTerm : AppImage.imgCheckTerm, for: .normal )
     }
     
     @IBAction func btnSignUpTapped() {

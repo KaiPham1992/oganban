@@ -27,4 +27,10 @@ class SignUpRouter: SignUpWireframeProtocol {
 
         return view
     }
+    
+    func gotoTermOfPolicy() {
+        let vc =  WebViewController.initFromNib()
+        vc.isSignUp = true
+        viewController?.navigationController?.pushViewController(vc, animated: true)
+    }
 }
