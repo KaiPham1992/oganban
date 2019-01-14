@@ -22,6 +22,7 @@ class ForgotPasswordViewController: BaseViewController {
         super.viewDidLoad()
         addBackToNavigation()
         setupView()
+        setTitleNavigation(title: "Quên mật khẩu")
     }
     
     func setupView() {
