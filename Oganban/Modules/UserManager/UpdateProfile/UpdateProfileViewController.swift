@@ -136,27 +136,42 @@ class UpdateProfileViewController: BaseViewController {
                 tvPhone.lbCountryCode.text = dialCode
             }
             
-            if let birthday = user.birthday {
-                tfBirthday.tfContent.text = getBirthday(birthDay: birthday)
+            if let _birthday = user.birthday, let birthday = getBirthday(birthDay: _birthday) {
+                tfBirthday.tfContent.text = birthday.toString(dateFormat: AppDateFormat.ddMMYYYY_VN)
+                self.birthDay = birthday
             }
             
             if let gender = user.gender {
-                tfGender.tfContent.text = convertGender(gender: gender)
+                tfGender.tfContent.text = convertGenderTitle(gender: gender)
+                self.gender = convertStringToGender(title: gender)
             }
            
         }
     }
     
-    func convertGender(gender: String) -> String {
+    func convertGenderTitle(gender: String) -> String {
         if gender == "male" {
-            self.gender = Gender(title: "Nam", keyParam: "male")
             return "Nam"
         } else if gender == "female" {
-            self.gender = Gender(title: "Nữ", keyParam: "female")
             return "Nữ"
-        } else {
-            self.gender = Gender(title: "Khác", keyParam: "other")
+        } else if gender == "other" {
             return "Khác"
+        } else {
+            return "Chọn giới tính"
+        }
+    }
+    
+    func convertStringToGender(title: String) -> Gender {
+        if title == "male" {
+            return Gender(title: "Nam", keyParam: "male")
+           
+        } else if title == "female" {
+            return Gender(title: "Nữ", keyParam: "female")
+            
+        } else if title == "other" {
+            return Gender(title: "Khác", keyParam: "other")
+        } else {
+            return Gender(title: "Chọn giới tính", keyParam: nil)
         }
     }
     
@@ -178,12 +193,14 @@ class UpdateProfileViewController: BaseViewController {
         return nil
     }
     
-    func getBirthday(birthDay: String) -> String? {
+    func getBirthday(birthDay: String?) -> Date? {
+        guard let birthDay = birthDay else {
+            return nil
+        }
         let date = DateFormatter()
         date.dateFormat = AppDateFormat.yyyyMMdd.formatString
         let sDate = date.date(from: birthDay)
-        self.birthDay = sDate
-        return sDate?.toString(dateFormat: AppDateFormat.ddMMYYYY_VN)
+        return sDate
     }
     
     func isEnabledSaveButton(isEnabled: Bool = true) {
@@ -193,6 +210,45 @@ class UpdateProfileViewController: BaseViewController {
         } else {
             self.btnSave.setupLayoutButton(backgroundColor: AppColor.greyC8C8C8, titleColor: AppColor.white, text: ButtonName.saveProfile)
         }
+    }
+    
+    func checkHideShowSaveButton(){
+       
+        var isEnabled = false
+        if let user = UserDefaultHelper.shared.loginUserInfo {
+            if  self.tfDisplayName.tfContent.text != user.fullName
+            {
+                isEnabled = true
+            }
+           
+            if let oldDate = getBirthday(birthDay: user.birthday), let newDate = tfBirthday.tfContent.text, newDate != oldDate.toString(dateFormat: AppDateFormat.ddMMYYYY_VN) {
+                isEnabled = true
+            }
+            
+            if let gender = user.gender, convertGenderTitle(gender: gender) != tfGender.tfContent.text {
+                isEnabled = true
+            }
+            
+            if let oldCode = user.phoneCode, let newCode = countryPhoneCode.dialCode, oldCode.replacingOccurrences(of: "+", with: "") != newCode.replacingOccurrences(of: "+", with: "")
+            {
+                isEnabled = true
+            }
+            
+            if self.tvPhone.tfPhone.text != user.phone
+            {
+               isEnabled = true
+            }
+            
+            if user.houseAddress != tfAddress1.tfContent.text {
+                isEnabled = true
+            }
+            
+            if user.companyAddress != tfAddress2.tfContent.text {
+                isEnabled = true
+            }
+        }
+        
+        self.isEnabledSaveButton(isEnabled: isEnabled)
     }
 }
 
@@ -229,6 +285,14 @@ extension UpdateProfileViewController {
             return false
         }
         
+        
+        let notDiacriticString = displayName.folding(options: .diacriticInsensitive, locale: .current)
+        let notSpacingString = notDiacriticString.replacingOccurrences(of: " ", with: "")
+        if notSpacingString.isValidLatterAndNumber() == false {
+            hideError(isHidden: false, message: MessageString.specialCharacterDisplayName)
+            return false
+        }
+        
         guard let birthDay =  self.birthDay else {
             hideError(isHidden: false, message: MessageString.emptyBirthday)
             return false
@@ -251,7 +315,7 @@ extension UpdateProfileViewController {
         }
         
         if phone.isValidPhone2() == false {
-            hideError(isHidden: false, message: MessageString.checkedPhone)
+            hideError(isHidden: false, message: MessageString.emptyPhone)
             return false
         }
         
@@ -270,13 +334,6 @@ extension UpdateProfileViewController {
 extension UpdateProfileViewController: PhoneNumberDelegate {
     func phoneCodeChoose(info: CountryCodeEntity) {
         self.countryPhoneCode = info
-        
-        if let user = UserDefaultHelper.shared.loginUserInfo, user.phoneCode != info.dialCode
-        {
-            self.isEnabledSaveButton(isEnabled: true)
-        }
-        else {
-            self.isEnabledSaveButton(isEnabled: false)
-        }
+        self.checkHideShowSaveButton()
     }
 }

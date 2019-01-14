@@ -42,14 +42,14 @@ class PopUpSelectGenderContent: BaseViewXib  {
         vPicker.dataSource = self
     }
     
-    func showSelectRow(currentGender: Gender?){
-        if currentGender?.title == "Chọn giới tính" {
+    func showSelectRow(){
+        if genderSelected?.title == "Chọn giới tính" {
             self.vPicker.selectRow(0, inComponent: 0, animated: true)
         }
-        else if currentGender?.title == "Nam" {
+        else if genderSelected?.title == "Nam" {
             self.vPicker.selectRow(1, inComponent: 0, animated: true)
         }
-        else if currentGender?.title == "Nữ" {
+        else if genderSelected?.title == "Nữ" {
             self.vPicker.selectRow(2, inComponent: 0, animated: true)
         }
         else {

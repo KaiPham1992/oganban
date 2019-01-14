@@ -163,14 +163,13 @@ extension String {
     }
     
     func isValidPhone2() -> Bool {
-        let phoneRegEx = "^[+]?[0-9]{9,13}$"
+        let phoneRegEx = "^[+]?[0-9]{10,14}$"
         let phoneTest = NSPredicate(format:"SELF MATCHES %@", phoneRegEx)
         return phoneTest.evaluate(with: self)
     }
     
     func isValidLatterAndNumber() -> Bool {
-        let tatterAndNumberRegEx = "^[a-zA-Z0-9]+([_ .]?[a-zA-Z0-9])*$"
-        //"^[a-zA-Z0-9]*$"
+        let tatterAndNumberRegEx = "^[a-zA-Z0-9]*$" // "^[a-zA-Z0-9]+([_ .]?[a-zA-Z0-9])*$"
         let ltatterAndNumberTest = NSPredicate(format:"SELF MATCHES %@", tatterAndNumberRegEx)
         
         return ltatterAndNumberTest.evaluate(with: self)
