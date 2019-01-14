@@ -379,7 +379,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if listRecord.count == 0 {
-            showNoData()
+//            showNoData()
             return 0
         } else {
             hideNoData()
