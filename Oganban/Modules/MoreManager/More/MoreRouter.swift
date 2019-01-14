@@ -43,7 +43,7 @@ class MoreRouter: MoreWireframeProtocol {
             print("Chọn Lịch sử mua tin")
             break
         case MoreEntityType.policy:
-//            tapPolicy()
+            tapPolicy()
             print("Chọn Điều khoản sử dụng")
             break
         case MoreEntityType.tutorial:
@@ -73,36 +73,47 @@ class MoreRouter: MoreWireframeProtocol {
     }
     
     private func tapHeader(){
-        if UserDefaultHelper.shared.loginUserInfo != nil {
-            let vc = UpdateProfileRouter.createModule()
-            viewController?.navigationController?.pushViewController(vc, animated: true)
-        } else {
+        if UserDefaultHelper.shared.loginUserInfo == nil {
             let vc = LoginRouter.createModule()
             let nc = UINavigationController(rootViewController: vc)
             viewController?.present(controller: nc, animated: true)
+        } else {
+            let vc = UpdateProfileRouter.createModule()
+            viewController?.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
     private func tapHistoryCoin(){
-        let vc = HistoryCoinRouter.createModule()
-        viewController?.navigationController?.pushViewController(vc, animated: true)
-//        if UserDefaultHelper.shared.loginUserInfo != nil {
-//            //Goto histotyCoin
-//        } else {
-//            let vc = LoginRouter.createModule()
-//            let nc = UINavigationController(rootViewController: vc)
-//            viewController?.present(controller: nc, animated: true)
-//        }
+       
+        if UserDefaultHelper.shared.loginUserInfo == nil {
+            let vc = LoginRouter.createModule()
+            let nc = UINavigationController(rootViewController: vc)
+            viewController?.present(controller: nc, animated: true)
+        } else {
+            let vc = HistoryCoinRouter.createModule()
+            viewController?.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     private func tapHistoryBuy(){
-        let vc = HistoryBuyRouter.createModule()
-        viewController?.navigationController?.pushViewController(vc, animated: true)
+        if UserDefaultHelper.shared.loginUserInfo == nil {
+            let vc = LoginRouter.createModule()
+            let nc = UINavigationController(rootViewController: vc)
+            viewController?.present(controller: nc, animated: true)
+        } else {
+            let vc = HistoryBuyRouter.createModule()
+            viewController?.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     private func tapPolicy(){
-        let vc = FavouriteRouter.createModule()
-        viewController?.navigationController?.pushViewController(vc, animated: true)
+        if UserDefaultHelper.shared.loginUserInfo == nil {
+            let vc = LoginRouter.createModule()
+            let nc = UINavigationController(rootViewController: vc)
+            viewController?.present(controller: nc, animated: true)
+        } else {
+            // OPEN POLICY PAGE
+        }
     }
     
     private func tapChangePassword() {

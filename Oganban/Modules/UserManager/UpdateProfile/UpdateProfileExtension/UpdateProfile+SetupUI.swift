@@ -60,25 +60,15 @@ extension UpdateProfileViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         PositionMapsHelper.shared.showSearch(controller: self) { address in
-            textField.text = address
+            //textField.text = address
             
             if textField.tag == 1
             {
-                if let user = UserDefaultHelper.shared.loginUserInfo, user.houseAddress != address
-                {
-                    self.isEnabledSaveButton(isEnabled: true)
-                }
-                else {
-                    self.isEnabledSaveButton(isEnabled: false)
-                }
+                self.tfAddress1.tfContent.text = address
+                self.checkHideShowSaveButton()
             } else {
-                if let user = UserDefaultHelper.shared.loginUserInfo, user.companyAddress != address
-                {
-                    self.isEnabledSaveButton(isEnabled: true)
-                }
-                else {
-                    self.isEnabledSaveButton(isEnabled: false)
-                }
+                self.tfAddress2.tfContent.text = address
+                self.checkHideShowSaveButton()
             }
             
         }

@@ -87,13 +87,25 @@ extension SupplementaryInfoViewController: SupplementaryInfoViewProtocol {
 extension SupplementaryInfoViewController {
     func validateInputData() -> Bool {
         
-        guard let name = self.tfName.tfContent.text else {
+        guard let displayName = self.tfName.tfContent.text else {
             hideError(isHidden: false, message: MessageString.emptyDisplayName)
             return false
         }
         
-        if name == ""  {
+        if displayName == ""  {
             hideError(isHidden: false, message: MessageString.emptyDisplayName)
+            return false
+        }
+        
+        if displayName.count > 18 {
+            hideError(isHidden: false, message: MessageString.invalidDisplayNameLength)
+            return false
+        }
+        
+        let notDiacriticString = displayName.folding(options: .diacriticInsensitive, locale: .current)
+        let notSpacingString = notDiacriticString.replacingOccurrences(of: " ", with: "")
+        if notSpacingString.isValidLatterAndNumber() == false {
+            hideError(isHidden: false, message: MessageString.specialCharacterDisplayName)
             return false
         }
         
