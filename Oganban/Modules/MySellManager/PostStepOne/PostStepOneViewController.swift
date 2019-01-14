@@ -162,33 +162,34 @@ class PostStepOneViewController: BaseViewController {
         let formatter = DateFormatter()
         formatter.dateFormat = AppDateFormat.yyyyMMdd.formatString
         
+        
         if categoryId == nil {
-            lbNotice.text = "Vui lòng chọn danh mục sản phẩm"
+            lbNotice.text = "Vui lòng chọn danh mục"
             return
         }
         
         if imgSrc == [] {
-            lbNotice.text = "Vui lòng thêm hình ảnh sản phẩm"
+            lbNotice.text = "Vui lòng chọn hình ảnh sản phẩm"
             return
         }
         
         if imgSrc.count > 5 {
-            lbNotice.text = "Vui lòng chọn tối đa 5 hình ảnh sản phẩm"
+            lbNotice.text = "Chỉ được chọn tối đa 5 tấm ảnh"
             return
         }
         
         if vTitleRecord.textField.text == "" || vTitleRecord.textField.text == nil {
-            lbNotice.text = "Vui lòng nhập tiêu đề tin"
+            lbNotice.text = "vui lòng nhập tiêu đề tin"
             return
         }
         
         if let count =  (vTitleRecord.textField.text?.count), count > 60 {
-            lbNotice.text = "Tiêu đề chỉ được tối đa 60 ký tự"
+            lbNotice.text = "Tiêu đề tin không dài quá 60 ký tự"
             return
         }
         
         if vQuantity.textField.text == "0" || vQuantity.textField.text == nil {
-            lbNotice.text = "Số lượng phải tối thiểu bẳng 1"
+            lbNotice.text = "Nhập số lượng đăng bán"
             return
         }
         
@@ -208,7 +209,7 @@ class PostStepOneViewController: BaseViewController {
         }
         
         if let count = vAbout.tvInput.text?.count, count > 1500 {
-            lbNotice.text = "Giới thiệu sản phẩm chỉ được tối đa 1,500 ký tự"
+            lbNotice.text = "Giới thiệu sản phẩm không vượt quá 1500 ký tự "
             return
         }
         
