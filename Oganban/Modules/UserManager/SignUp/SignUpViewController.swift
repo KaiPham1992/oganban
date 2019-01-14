@@ -38,10 +38,13 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
     let popUpGender = PopUpSelectGender()
     var termPolicy = false
     
+    
     var user: UserEntity?
     var fbAccountKit: FBAccountKit!
     let limitPhone = 15
     let limitName = 45
+    
+    var dateSelected: Date?
     
     weak var delegate: SignUpViewControllerDelegate?
     
@@ -123,7 +126,7 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
         if Utils.isConnectedToInternet() {
             if validate() {
                 let email = vLoginName.textField.text
-                let birthday = vBirthday.textField.text
+                let birthday = dateSelected?.toString(dateFormat: AppDateFormat.yyyyMMdd)
                 let password = vPassword.textField.text&.sha256()
                 let captcha = vCaptcha.textField.text
                 let fullName = vLoginDisplay.textField.text
@@ -131,7 +134,7 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
                 let gender = vGender.textField.text
                 let address1 = vHouseAddress.textField.text
                 let address2 = vCompanyAddress.textField.text
-                let param = SignUpParam(email: email, password: password, birthday: birthday, captcha: captcha, fullName: fullName, gender: gender, address1: address1, address2: address2, codeIntroduce: codeIntroduce)
+                let param = SignUpParam(email: email, password: password, birthday: birthday&, captcha: captcha, fullName: fullName, gender: gender, address1: address1, address2: address2, codeIntroduce: codeIntroduce)
                 presenter?.signUp(param: param)
             }
         } else {
@@ -233,6 +236,7 @@ extension SignUpViewController: FTextFieldChooseDelegate {
         switch sender {
         case vBirthday:
             popUpDate.showPopUp(currentDate: nil) { (date) in
+                self.dateSelected = date
                 self.vBirthday.textField.text = date?.toString(dateFormat: AppDateFormat.ddMMYYYY)
             }
         case vGender:

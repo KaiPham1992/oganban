@@ -98,7 +98,7 @@ class UserAPIService: UserAPIServiceProtocol {
     
     func verifyPhone(code: String, phone: String, phonCode: String, success: @escaping SuccessHandler<UserEntity>.object, failure: @escaping RequestFailure) {
         let endPoint = UserEndPoint.verifyPhone(code: code, phone: phone, phoneCode: phonCode)
-        network.requestData(endPoint: endPoint, success: MapperData.mapNoData(success), failure: failure)
+        network.requestData(endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
     }
     
     func updateProfileSocial(param: UpdateProfileSocial, success: @escaping SuccessHandler<UserEntity>.object, failure: @escaping RequestFailure) {
