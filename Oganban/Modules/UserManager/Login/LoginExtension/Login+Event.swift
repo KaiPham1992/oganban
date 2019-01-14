@@ -84,12 +84,17 @@ extension LoginViewController {
     func tapButtons(){
         self.btnLogin.tapButton = {
             self.view.endEditing(true)
-            if self.validateInputData() {
-                let email = self.tfEmail.tfContent.text ?? ""
-                let password = self.tfPassword.tfContent.text&.sha256()
-                self.presenter?.login(email: email, password: password)
+            
+            if Utils.isConnectedToInternet() {
+                if self.validateInputData() {
+                    let email = self.tfEmail.tfContent.text ?? ""
+                    let password = self.tfPassword.tfContent.text&.sha256()
+                    self.presenter?.login(email: email, password: password)
+                } else {
+                    print("Login: Something is wrong")
+                }
             } else {
-                print("Login: Something is wrong")
+                PopUpHelper.shared.showMessageHaveAds(message: MessageString.notInternet)
             }
         }
         

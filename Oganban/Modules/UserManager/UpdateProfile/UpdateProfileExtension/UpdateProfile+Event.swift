@@ -32,23 +32,11 @@ extension UpdateProfileViewController {
         }
         
         tfDisplayName.textFieldDidChange = {
-            if let user = UserDefaultHelper.shared.loginUserInfo, self.tfDisplayName.tfContent.text != user.fullName
-            {
-                self.isEnabledSaveButton(isEnabled: true)
-            }
-            else {
-                self.isEnabledSaveButton(isEnabled: false)
-            }
+           self.checkHideShowSaveButton()
         }
         
         tvPhone.textFieldDidChange = {
-            if let user = UserDefaultHelper.shared.loginUserInfo, self.tvPhone.tfPhone.text != user.phone
-            {
-                self.isEnabledSaveButton(isEnabled: true)
-            }
-            else {
-                self.isEnabledSaveButton(isEnabled: false)
-            }
+            self.checkHideShowSaveButton()
         }
         
     }
@@ -111,13 +99,7 @@ extension UpdateProfileViewController {
                 self.birthDay = date
                 self.tfBirthday.tfContent.text =  date.toString(dateFormat: AppDateFormat.ddMMYYYY_VN)
                 
-                if let user = UserDefaultHelper.shared.loginUserInfo, user.birthday != date.toString(dateFormat: AppDateFormat.yyyyMMdd)
-                {
-                    self.isEnabledSaveButton(isEnabled: true)
-                }
-                else {
-                    self.isEnabledSaveButton(isEnabled: false)
-                }
+                self.checkHideShowSaveButton()
             }
         }
     }
@@ -130,13 +112,7 @@ extension UpdateProfileViewController {
                 self.gender = sex
                 self.tfGender.tfContent.text = sex.title
                 
-                if let user = UserDefaultHelper.shared.loginUserInfo, user.gender != sex.keyParam
-                {
-                    self.isEnabledSaveButton(isEnabled: true)
-                }
-                else {
-                    self.isEnabledSaveButton(isEnabled: false)
-                }
+                self.checkHideShowSaveButton()
             }
         }
     }

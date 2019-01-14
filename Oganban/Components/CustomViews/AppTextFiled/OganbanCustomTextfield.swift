@@ -45,6 +45,15 @@ import UIKit
         return view
     }()
     
+    var tappedIconView: UIButton = {
+        let view = UIButton()
+        view.isUserInteractionEnabled = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = UIColor.clear
+        view.isHidden = true
+        return view
+    }()
+    
     var vLine: UIView = {
         let view = UIView()
         view.backgroundColor = AppColor.greyC8C8C8
@@ -76,6 +85,7 @@ import UIKit
         self.addSubview(lbTitle)
         self.addSubview(vLine)
         self.addSubview(ivRightIcon)
+        self.addSubview(tappedIconView)
         self.addSubview(lbRightText)
         
         self.frame.size = CGSize(width: self.frame.size.width, height: 50)
@@ -96,10 +106,14 @@ import UIKit
         
         ivRightIcon.centerYAnchor.constraint(equalTo: tfContent.centerYAnchor).isActive = true
         ivRightIcon.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0).isActive = true
-        ivRightIcon.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        ivRightIcon.widthAnchor.constraint(equalToConstant: 30).isActive = true
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapRightIcon(_:)))
-        self.ivRightIcon.addGestureRecognizer(tapGesture)
+        ivRightIcon.heightAnchor.constraint(equalToConstant: 11.5).isActive = true
+        ivRightIcon.widthAnchor.constraint(equalToConstant: 15).isActive = true
+        
+        tappedIconView.centerYAnchor.constraint(equalTo: ivRightIcon.centerYAnchor).isActive = true
+        tappedIconView.centerXAnchor.constraint(equalTo: ivRightIcon.centerXAnchor, constant: 0).isActive = true
+        tappedIconView.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        tappedIconView.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        tappedIconView.addTarget(self, action: #selector(self.tapRightIcon(_:)), for: .touchUpInside)
         
         vLine.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0).isActive = true
         vLine.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0).isActive = true
@@ -124,11 +138,12 @@ import UIKit
        
     }
     
-    func showRightIcon(isHidden: Bool = false, sỉze: CGSize = CGSize(width: 30, height: 30), icon: UIImage? = nil, paddingRight: CGFloat = 0) {
+    func showRightIcon(isHidden: Bool = false, sỉze: CGSize = CGSize(width: 20, height: 20), icon: UIImage? = nil, paddingRight: CGFloat = 0) {
         ivRightIcon.rightAnchor.constraint(equalTo: self.rightAnchor, constant: paddingRight).isActive = true
         ivRightIcon.heightAnchor.constraint(equalToConstant: sỉze.height).isActive = true
         ivRightIcon.widthAnchor.constraint(equalToConstant: sỉze.width).isActive = true
         ivRightIcon.isHidden = isHidden
+        tappedIconView.isHidden = isHidden
         if let icon = icon {
             ivRightIcon.image = icon
         }
@@ -141,7 +156,7 @@ import UIKit
         lbRightText.textColor = textColor
     }
     
-     @objc private func tapRightIcon(_ sender: UITapGestureRecognizer) {
+    @objc private func tapRightIcon(_ sender: UIButton) {
         istapRightIcon = !istapRightIcon
         if let complete = self.completeTapRightIcon {
             complete(istapRightIcon)
