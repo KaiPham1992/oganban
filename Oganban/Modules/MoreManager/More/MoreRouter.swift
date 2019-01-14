@@ -43,12 +43,11 @@ class MoreRouter: MoreWireframeProtocol {
             print("Chọn Lịch sử mua tin")
             break
         case MoreEntityType.policy:
-//            tapPolicy()
+            tapPolicy()
             print("Chọn Điều khoản sử dụng")
             break
         case MoreEntityType.tutorial:
             tapTutorial()
-            print("Chọn Hướng dẫn")
             break
         case MoreEntityType.setting:
             tapSetting()
@@ -69,7 +68,9 @@ class MoreRouter: MoreWireframeProtocol {
     }
     
     private func tapTutorial(){
-        
+        let vc =  WebViewController.initFromNib()
+        vc.isSignUp = true 
+        viewController?.navigationController?.pushViewController(vc, animated: true)
     }
     
     private func tapHeader(){
@@ -100,8 +101,8 @@ class MoreRouter: MoreWireframeProtocol {
         viewController?.navigationController?.pushViewController(vc, animated: true)
     }
     
-    private func tapPolicy(){
-        let vc = FavouriteRouter.createModule()
+    private func tapPolicy() {
+        let vc =  WebViewController.initFromNib()
         viewController?.navigationController?.pushViewController(vc, animated: true)
     }
     

@@ -429,6 +429,8 @@
 		DEA3A09321D679A000643296 /* OrderDetailImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEA3A09121D679A000643296 /* OrderDetailImageCell.xib */; };
 		DEA3A09521D67B1300643296 /* BannerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3A09421D67B1300643296 /* BannerEntity.swift */; };
 		DEA3A09821D67ECE00643296 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3A09721D67ECE00643296 /* PaddingLabel.swift */; };
+		DEADC97F21EC127000696959 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEADC97D21EC126F00696959 /* WebViewController.swift */; };
+		DEADC98021EC127000696959 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEADC97E21EC126F00696959 /* WebViewController.xib */; };
 		DEB854F221E08BB9007479A7 /* Post+Valid.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB854F121E08BB9007479A7 /* Post+Valid.swift */; };
 		DEB854F521E0A59C007479A7 /* ExpirePostEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB854F421E0A59C007479A7 /* ExpirePostEntity.swift */; };
 		DEB854F721E0B0C8007479A7 /* ShareNativeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB854F621E0B0C8007479A7 /* ShareNativeHelper.swift */; };
@@ -921,6 +923,8 @@
 		DEA3A09121D679A000643296 /* OrderDetailImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderDetailImageCell.xib; sourceTree = "<group>"; };
 		DEA3A09421D67B1300643296 /* BannerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerEntity.swift; sourceTree = "<group>"; };
 		DEA3A09721D67ECE00643296 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		DEADC97D21EC126F00696959 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		DEADC97E21EC126F00696959 /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
 		DEB854F121E08BB9007479A7 /* Post+Valid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+Valid.swift"; sourceTree = "<group>"; };
 		DEB854F421E0A59C007479A7 /* ExpirePostEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpirePostEntity.swift; sourceTree = "<group>"; };
 		DEB854F621E0B0C8007479A7 /* ShareNativeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareNativeHelper.swift; sourceTree = "<group>"; };
@@ -1449,6 +1453,7 @@
 		CB172B1821C6A1480068CF92 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				DEADC97C21EC126F00696959 /* WebView */,
 				CBE2183D21E219B70035F00B /* OrderBuyDetail */,
 				DE5E083A21E1C0E70053EC9D /* MyBuyDetail */,
 				84329F5021DFE1E000047B5E /* FavouriteProductList */,
@@ -2369,6 +2374,15 @@
 			path = PaddingLabel;
 			sourceTree = "<group>";
 		};
+		DEADC97C21EC126F00696959 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				DEADC97D21EC126F00696959 /* WebViewController.swift */,
+				DEADC97E21EC126F00696959 /* WebViewController.xib */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
 		DEB854F021E08B8E007479A7 /* extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -2698,6 +2712,7 @@
 				84487C8B21CB80D5008B25B2 /* Roboto-Light.ttf in Resources */,
 				B3E67EB121CF77AB0012546F /* countryCodes.json in Resources */,
 				84329F3D21DFC9E400047B5E /* HistoryBuyCell.xib in Resources */,
+				DEADC98021EC127000696959 /* WebViewController.xib in Resources */,
 				CB0C3A2821D3BECD0052DD91 /* ForgotPasswordViewController.xib in Resources */,
 				CB172C8921C6A2EF0068CF92 /* OpenSans-ExtraBold.ttf in Resources */,
 				84487C8A21CB80D2008B25B2 /* Roboto-Italic.ttf in Resources */,
@@ -3172,6 +3187,7 @@
 				DE21827C21CD473100FDD9F1 /* KActivityIndicatorAnimationBallPulseSync.swift in Sources */,
 				CBD1C29E21D74B79006DB3FF /* RecordSellingView.swift in Sources */,
 				DEBEE80121D740D7004B8D88 /* MySellContainerPresenter.swift in Sources */,
+				DEADC97F21EC127000696959 /* WebViewController.swift in Sources */,
 				B36A235E21E1AEBA00AA20DF /* SettingProtocols.swift in Sources */,
 				DE21827521CD473100FDD9F1 /* KActivityIndicatorAnimationLineScale.swift in Sources */,
 				84A92BED21CA518200148191 /* OganbanCustomTextfield.swift in Sources */,

@@ -111,6 +111,10 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L84-BV-7n4">
+                                            <rect key="frame" x="280" y="4" width="20" height="22"/>
+                                            <state key="normal" image="ic_close"/>
+                                        </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Er-7c-h0a">
                                             <rect key="frame" x="2.5" y="0.0" width="30" height="30"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -126,10 +130,12 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="CjW-FX-T8r" secondAttribute="bottom" id="4DR-Qm-3Xg"/>
+                                        <constraint firstItem="L84-BV-7n4" firstAttribute="centerY" secondItem="CjW-FX-T8r" secondAttribute="centerY" id="AET-EX-TNU"/>
                                         <constraint firstItem="2Er-7c-h0a" firstAttribute="centerY" secondItem="Wgu-Kr-Psm" secondAttribute="centerY" id="K2x-50-AZk"/>
                                         <constraint firstItem="CjW-FX-T8r" firstAttribute="top" secondItem="Htc-Pe-K79" secondAttribute="top" id="NKj-kz-MDB"/>
                                         <constraint firstItem="2Er-7c-h0a" firstAttribute="centerX" secondItem="Wgu-Kr-Psm" secondAttribute="centerX" id="VDB-Vk-uhm"/>
                                         <constraint firstAttribute="trailing" secondItem="CjW-FX-T8r" secondAttribute="trailing" constant="10" id="Yza-M6-y4M"/>
+                                        <constraint firstAttribute="trailing" secondItem="L84-BV-7n4" secondAttribute="trailing" constant="8" id="amH-yT-hlX"/>
                                         <constraint firstItem="CjW-FX-T8r" firstAttribute="leading" secondItem="Wgu-Kr-Psm" secondAttribute="trailing" constant="10" id="jrS-zK-pa3"/>
                                         <constraint firstItem="Wgu-Kr-Psm" firstAttribute="leading" secondItem="Htc-Pe-K79" secondAttribute="leading" constant="10" id="kjk-wl-URP"/>
                                         <constraint firstItem="Wgu-Kr-Psm" firstAttribute="centerY" secondItem="Htc-Pe-K79" secondAttribute="centerY" id="wRN-FY-jCa"/>
@@ -419,10 +425,11 @@
         </view>
     </objects>
     <resources>
-        <image name="ic_arrowdown" width="10" height="5.5"/>
-        <image name="ic_arrowdown-1" width="10" height="5.5"/>
-        <image name="ic_heart" width="25" height="23.5"/>
-        <image name="ic_location" width="10.5" height="14"/>
+        <image name="ic_arrowdown" width="10" height="5"/>
+        <image name="ic_arrowdown-1" width="10" height="5"/>
+        <image name="ic_close" width="20" height="20"/>
+        <image name="ic_heart" width="25" height="23"/>
+        <image name="ic_location" width="10" height="14"/>
         <image name="ic_menu" width="12" height="11"/>
         <image name="ic_search" width="12" height="12"/>
     </resources>
