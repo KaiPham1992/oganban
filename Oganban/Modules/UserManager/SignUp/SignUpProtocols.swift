@@ -13,6 +13,7 @@ import Foundation
 //MARK: Wireframe -
 protocol SignUpWireframeProtocol: class {
 
+    func gotoTermOfPolicy()
 }
 //MARK: Presenter -
 protocol SignUpPresenterProtocol: class {
@@ -21,6 +22,8 @@ protocol SignUpPresenterProtocol: class {
     func getCaptcha()
     func signUp(param: SignUpParam)
     func verifyPhone(verifyCode: String, phoneCode: String, phoneNum: String)
+    //--
+    func gotoTermOfPolicy()
 }
 
 //MARK: Interactor -

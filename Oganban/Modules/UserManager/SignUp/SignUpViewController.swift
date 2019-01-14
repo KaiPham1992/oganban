@@ -30,8 +30,10 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
     @IBOutlet weak var btnTermOfPolicy  : UIButton!
     @IBOutlet weak var lbStatus         : UILabel!
     @IBOutlet weak var imgCaptcha       : UIImageView!
-    
-    var presenter: SignUpPresenterProtocol?
+    @IBOutlet weak var btnCheckTermOfPolicy: UIButton!
+    @IBOutlet weak var vContainer       : UIView!
+
+	var presenter: SignUpPresenterProtocol?
     let popUpDate = PopUpSelectDate()
     let popUpGender = PopUpSelectGender()
     var termPolicy = false
@@ -50,7 +52,13 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
         super.viewDidLoad()
         presenter?.getCaptcha()
         fbAccountKit = FBAccountKit(_controller: self)
+        
+        vContainer.setShadow(color: AppColor.black.withAlphaComponent(0.7), offSet: CGSize(width: -2, height: 2))
+        vContainer.setBorderWithCornerRadius(borderWidth: 0.5, borderColor: AppColor.black.withAlphaComponent(0.5), cornerRadius: 5)
+        
     }
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -104,7 +112,13 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
     
     @IBAction func btnTermOfPolicyTapped() {
         termPolicy = !termPolicy
-        btnTermOfPolicy.setImage(termPolicy ? AppImage.imgCheckedTerm : AppImage.imgCheckTerm, for: .normal )
+        btnCheckTermOfPolicy.setImage(termPolicy ? AppImage.imgCheckedTerm : AppImage.imgCheckTerm, for: .normal )
+         presenter?.gotoTermOfPolicy()
+    }
+    
+    @IBAction func btnCheckTermOfPolicyTapped() {
+        termPolicy = !termPolicy
+        btnCheckTermOfPolicy.setImage(termPolicy ? AppImage.imgCheckedTerm : AppImage.imgCheckTerm, for: .normal )
     }
     
     @IBAction func btnSignUpTapped() {
@@ -241,6 +255,7 @@ extension SignUpViewController: SignUpViewProtocol {
         guard let _user = response else { return }
         UserUtils.saveUser(user: _user)
         NotificationCenter.default.post(name: AppConstant.notiReloadMoreView, object: nil)
+        
         self.navigationController?.dismiss()
     }
     

@@ -15,7 +15,7 @@ import SystemConfiguration
 
 extension LoginViewController: SignUpViewControllerDelegate {
     func didSignUpSuccess() {
-        self.dismiss()
+//        self.dismiss()
     }
     
     func addDelegate() {
