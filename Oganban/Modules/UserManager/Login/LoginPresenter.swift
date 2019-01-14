@@ -22,9 +22,9 @@ class LoginPresenter: LoginPresenterProtocol {
         self.router = router
     }
     
-    func gotoSignUp() {
-        router.gotoSignUp()
-    }
+//    func gotoSignUp(delegate: SignUpViewControllerDelegate) {
+//        router.gotoSignUp(delegate: delegate)
+//    }
     
     func gotoHome() {
         router.gotoHome()

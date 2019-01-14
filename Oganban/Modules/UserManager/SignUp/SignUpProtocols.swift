@@ -30,7 +30,7 @@ protocol SignUpInteractorOutputProtocol: class {
     func successCaptcha(image: UIImage)
     func signUpSuccess(user: UserEntity?)
     func signUpError(error: APIError)
-    func didVerifyPhone(response: BaseResponse?)
+    func didVerifyPhone(response: UserEntity?)
     func didVerifyPhone(error: APIError?)
 }
 
@@ -52,6 +52,6 @@ protocol SignUpViewProtocol: class {
     func successCaptcha(image: UIImage)
     func signUpSuccess(user: UserEntity?)
     func signUpError(error: APIError)
-    func didVerifyPhone(response: BaseResponse?)
+    func didVerifyPhone(response: UserEntity?)
     func didVerifyPhone(error: APIError?)
 }

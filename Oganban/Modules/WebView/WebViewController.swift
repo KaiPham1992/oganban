@@ -42,8 +42,6 @@ class WebViewController: BaseViewController {
         }
         let url = URL(string: mainUrl)
         var urlRequest = URLRequest(url: url!)
-        guard let token = UserDefaultHelper.shared.userToken else { return }
-        urlRequest.setValue("Bearer " + token, forHTTPHeaderField: "Authorization")
         wbMain.loadRequest(urlRequest)
     }
 }
@@ -55,11 +53,11 @@ extension WebViewController: UIWebViewDelegate {
     }
     
     func webViewDidStartLoad(_ webView: UIWebView) {
-        //        UIUtils.showLoading()
+        ProgressView.shared.show()
     }
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
-        //        UIUtils.hideLoading()
+        ProgressView.shared.hide()
     }
     
 }

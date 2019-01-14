@@ -13,9 +13,12 @@ import FBSDKLoginKit
 import FBSDKCoreKit
 import SystemConfiguration
 
-extension LoginViewController {
+extension LoginViewController: SignUpViewControllerDelegate {
+    func didSignUpSuccess() {
+        self.dismiss()
+    }
     
-    func addDelegate(){
+    func addDelegate() {
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
     }
@@ -112,7 +115,9 @@ extension LoginViewController {
         
         self.btnSignUp.tapButton = {
             self.view.endEditing(true)
-            self.presenter?.gotoSignUp()
+            let vc = SignUpRouter.createModule()
+            vc.delegate = self
+            self.push(controller: vc)
         }
         
         self.tfPassword.completeTapRightIcon = { (success) in

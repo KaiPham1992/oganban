@@ -152,8 +152,6 @@ class HomeViewController: BaseViewController {
         tfSearch.delegate = self
         lbDistance.text = UserDefaultHelper.shared.radius?.title
         self.distance = UserDefaultHelper.shared.radius
-        
-        btnClear.isHidden = false
         tfSearch.addTarget(self, action: #selector(textFieldDidChanged), for: UIControl.Event.editingChanged)
     }
     
