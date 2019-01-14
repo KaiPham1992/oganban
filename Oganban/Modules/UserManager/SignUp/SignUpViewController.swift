@@ -196,6 +196,11 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
             return false
         }
         
+        if vBirthday.textField.text&.isEmpty {
+            lbStatus.text = "Vui lòng nhập ngày tháng năm sinh"
+            return false
+        }
+        
         if termPolicy == false {
             lbStatus.text = "Vui lòng đồng ý điều khoản sử dụng"
             return false
