@@ -34,9 +34,9 @@ class ChangePasswordViewController: BaseViewController {
         tfPassword.setupLayoutTextfield(placeholderText: "", titleText: "Nhập mật khẩu cũ *", backgroundColor: .clear, titleColor: AppColor.textTextField, placeholderColor: .clear, contentColor: AppColor.black, isHiddenBottomLine: false)
         tfNewPassword.setupLayoutTextfield(placeholderText: "", titleText: "Nhập mật khẩu mới *", backgroundColor: .clear, titleColor: AppColor.textTextField, placeholderColor: .clear, contentColor: AppColor.black, isHiddenBottomLine: false)
         tfConfirmNewPassword.setupLayoutTextfield(placeholderText: "", titleText: "Nhập lại mật khẩu mới *", backgroundColor: .clear, titleColor: AppColor.textTextField, placeholderColor: .clear, contentColor: AppColor.black, isHiddenBottomLine: false)
-        tfPassword.showRightIcon(isHidden: false, sỉze: CGSize(width: 15, height: 15), icon: AppImage.imgOpenEye, paddingRight: 0)
-        tfNewPassword.showRightIcon(isHidden: false, sỉze: CGSize(width: 15, height: 15), icon: AppImage.imgOpenEye, paddingRight: 0)
-        tfConfirmNewPassword.showRightIcon(isHidden: false, sỉze: CGSize(width: 15, height: 15), icon: AppImage.imgOpenEye, paddingRight: 0)
+        tfPassword.showRightIcon(isHidden: false, sỉze: CGSize(width: 20, height: 20), icon: AppImage.imgOpenEye, paddingRight: 0)
+        tfNewPassword.showRightIcon(isHidden: false, sỉze: CGSize(width: 20, height: 20), icon: AppImage.imgOpenEye, paddingRight: 0)
+        tfConfirmNewPassword.showRightIcon(isHidden: false, sỉze: CGSize(width: 20, height: 20), icon: AppImage.imgOpenEye, paddingRight: 0)
         btnSave.setBorderWithCornerRadius(cornerRadius: 20)
         lbStatus.text = ""
         
