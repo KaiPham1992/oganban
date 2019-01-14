@@ -14,7 +14,7 @@ import GoogleSignIn
 
 //MARK: Wireframe -
 protocol LoginWireframeProtocol: class {
-    func gotoSignUp()
+//    func gotoSignUp(delegate: SignUpViewControllerDelegate)
     func gotoHome()
     func gotoForgotPassword()
     func showSupplementaryInfoPage()
@@ -23,7 +23,7 @@ protocol LoginWireframeProtocol: class {
 protocol LoginPresenterProtocol: class {
     
     var interactor: LoginInteractorInputProtocol? { get set }
-    func gotoSignUp()
+//    func gotoSignUp(delegate: SignUpViewControllerDelegate)
     func gotoHome()
     func gotoForgotPassword()
     func showSupplementaryInfoPage()
@@ -39,8 +39,6 @@ protocol LoginInteractorOutputProtocol: class {
     /* Interactor -> Presenter */
     func didLogin(user: UserEntity?)
     func didLogin(error: APIError?)
-    
-//    func didUpdateProfile(response: BaseResponse?)
 }
 
 protocol LoginInteractorInputProtocol: class {

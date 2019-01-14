@@ -10,6 +10,10 @@
 
 import UIKit
 
+protocol SignUpViewControllerDelegate: class {
+    func didSignUpSuccess()
+}
+
 class SignUpViewController: BaseViewController, UITextFieldDelegate {
     
     @IBOutlet weak var vLoginName       : FTextField!
@@ -27,6 +31,7 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
     @IBOutlet weak var lbStatus         : UILabel!
     @IBOutlet weak var imgCaptcha       : UIImageView!
     @IBOutlet weak var btnCheckTermOfPolicy: UIButton!
+    @IBOutlet weak var vContainer       : UIView!
 
 	var presenter: SignUpPresenterProtocol?
     let popUpDate = PopUpSelectDate()
@@ -37,12 +42,20 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
     var fbAccountKit: FBAccountKit!
     let limitPhone = 15
     let limitName = 45
-
-	override func viewDidLoad() {
+    
+    weak var delegate: SignUpViewControllerDelegate?
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.getCaptcha()
         fbAccountKit = FBAccountKit(_controller: self)
+        
+        vContainer.setShadow(color: AppColor.black.withAlphaComponent(0.7), offSet: CGSize(width: -2, height: 2))
+        vContainer.setBorderWithCornerRadius(borderWidth: 0.5, borderColor: AppColor.black.withAlphaComponent(0.5), cornerRadius: 5)
+        
     }
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -50,9 +63,6 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
             DispatchQueue.main.async(execute: {
                 self.fbAccountKit.getCountryCodeAndPhoneNumber(completion: { phone in
                     guard let _phone = phone as? PhoneEntity, let verifyCode = self.user?.codeVerify else { return }
-                    //                    print(_phone.phoneCode&)
-                    //                    print(_phone.phoneNumber&)
-                    //                    print(_phone.phoneFullCodeAndNumber&)
                     self.presenter?.verifyPhone(verifyCode: verifyCode, phoneCode: _phone.phoneCode&, phoneNum: _phone.phoneNumber&)
                     
                 })
@@ -212,10 +222,10 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
             lbStatus.text = "Vui lòng đồng ý điều khoản sử dụng"
             return false
         }
-       
+        
         return true
     }
-
+    
 }
 
 extension SignUpViewController: FTextFieldChooseDelegate {
@@ -229,7 +239,6 @@ extension SignUpViewController: FTextFieldChooseDelegate {
             popUpGender.showPopUp(currentGender: nil) { (gender) in
                 guard let genderString = gender as? Gender else { return }
                 self.vGender.textField.text = genderString.title
-                
             }
         default:
             break
@@ -238,15 +247,18 @@ extension SignUpViewController: FTextFieldChooseDelegate {
 }
 
 extension SignUpViewController: SignUpViewProtocol {
-    func didVerifyPhone(response: BaseResponse?) {
+    func didVerifyPhone(response: UserEntity?) {
+        guard let _user = response else { return }
+        UserUtils.saveUser(user: _user)
+        NotificationCenter.default.post(name: AppConstant.notiReloadMoreView, object: nil)
+        
         self.navigationController?.dismiss()
     }
     
     func didVerifyPhone(error: APIError?) {
-        
+        PopUpHelper.shared.showMessageHaveAds(error: error)
     }
     
-
     func successCaptcha(image: UIImage) {
         imgCaptcha.image = image
     }

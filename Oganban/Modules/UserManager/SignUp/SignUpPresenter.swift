@@ -40,7 +40,7 @@ class SignUpPresenter: SignUpPresenterProtocol {
 }
 
 extension SignUpPresenter: SignUpInteractorOutputProtocol {
-    func didVerifyPhone(response: BaseResponse?) {
+    func didVerifyPhone(response: UserEntity?) {
         view?.didVerifyPhone(response: response)
     }
     
