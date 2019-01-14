@@ -70,15 +70,17 @@ class LoginViewController: BaseViewController {
 
 extension LoginViewController {
     func validateInputData() -> Bool {
-        guard let email = self.tfEmail.tfContent.text,  let password = self.tfPassword.tfContent.text else {
-            hideError(isHidden: false, message: MessageString.invalidLoginEmailPassword)
+        
+        if self.tfEmail.tfContent.text == "" && self.tfPassword.tfContent.text == "" {
+            hideError(isHidden: false, message: MessageString.emptyLoginEmailPassword)
             return false
         }
-        if email.isValidEmail() == false {
+    
+        if let email = self.tfEmail.tfContent.text, email.isValidEmail() == false {
             hideError(isHidden: false, message:  MessageString.invalidLoginEmailPassword)
             return false
         }
-        if password.count < 6 {
+        if let password = self.tfPassword.tfContent.text, password.count < 6 {
             hideError(isHidden: false, message:  MessageString.invalidLoginEmailPassword)
             return false
         }
