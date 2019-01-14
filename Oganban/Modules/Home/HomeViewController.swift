@@ -25,6 +25,7 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var btnHideDropdown  : UIButton!
     @IBOutlet weak var vScaleDropdown   : UIView!
     @IBOutlet weak var btnFavorite      : UIButton!
+    @IBOutlet weak var btnClear         : UIButton!
     @IBOutlet weak var lbCategory       : UILabel!
     @IBOutlet weak var lbDistance       : UILabel!
     @IBOutlet weak var tfSearch         : UITextField!
@@ -209,6 +210,11 @@ class HomeViewController: BaseViewController {
         hideDropdown()
         tbLeft.reloadData()
         tbRight.reloadData()
+    }
+    
+    @IBAction func btnClearTapped() {
+       tfSearch.text = ""
+        btnClear.isHidden = true
     }
     
     @IBAction func hideDropdownTapped() {
@@ -556,6 +562,11 @@ extension HomeViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         view.endEditing(true)
         paramFilter.keyword = textField.text&
+        if tfSearch.text&.isEmpty {
+            btnClear.isHidden = true
+        } else {
+            btnClear.isHidden = false
+        }
         presenter?.filterRecord(param: paramFilter)
         return true
     }
@@ -565,6 +576,9 @@ extension HomeViewController: UITextFieldDelegate {
         paramFilter.keyword = textField.text&
         presenter?.filterRecord(param: paramFilter)
     }
+    
+    
+    
 }
 
 extension HomeViewController: PositionViewControllerDelegate {

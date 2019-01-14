@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController">
             <connections>
+                <outlet property="btnClear" destination="L84-BV-7n4" id="gQH-oQ-O5t"/>
                 <outlet property="btnHideDropdown" destination="Tzb-Rw-GPi" id="vpm-9q-5Ri"/>
                 <outlet property="cvHome" destination="QVD-c8-nVF" id="qmp-gG-d4T"/>
                 <outlet property="heightLeft" destination="EzM-op-E78" id="FUN-BA-jVt"/>
@@ -111,7 +112,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L84-BV-7n4">
+                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L84-BV-7n4">
                                             <rect key="frame" x="280" y="4" width="20" height="22"/>
                                             <state key="normal" image="ic_close"/>
                                         </button>
