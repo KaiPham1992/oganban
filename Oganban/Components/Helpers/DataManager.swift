@@ -23,8 +23,8 @@ class DataManager {
         ProgressView.shared.show()
         Provider.shared.notificationAPIService.getNotification(offset: 0, limit: 1000, success: { notifications in
             ProgressView.shared.hide()
-            guard let noti = notifications else { return}
-            done(noti.notifications.count)
+            guard let count = notifications?.totalUnread else { return}
+            done(count)
         }) {  error in
             ProgressView.shared.hide()
             done(0)
