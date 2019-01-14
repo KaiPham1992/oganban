@@ -21,6 +21,7 @@ class PostCommentView: BaseViewXib {
     @IBOutlet weak var lbPlaceHolder: UILabel!
     weak var delegate: PostCommentViewDelegate?
     @IBOutlet weak var btnPost: UIButton!
+    @IBOutlet weak var imgAvatar: UIImageView!
     
     override func setUpViews() {
         super.setUpViews()
@@ -30,6 +31,12 @@ class PostCommentView: BaseViewXib {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
             self.delegate?.postCommentView(self, changeHeight: self.frame.height)
         }
+        
+        if let url = UserDefaultHelper.shared.loginUserInfo?.urlAvatar {
+            imgAvatar.sd_setImage(with: url, placeholderImage: AppImage.imgDefaultUser)
+            imgAvatar.setBorderWithCornerRadius(borderWidth: 0, borderColor: .clear, cornerRadius: 15)
+        }
+        
     }
     
     override func layoutSubviews() {
@@ -41,13 +48,13 @@ class PostCommentView: BaseViewXib {
         self.lbPlaceHolder.text = placeHolder
     }
     
-    
 }
 
 extension PostCommentView {
     @IBAction func btnPostTapped() {
         self.delegate?.postCommentView(self, sendComment: tvInput.text&)
         tvInput.text = ""
+        tvInput.endEditing(true)
         calculateHeight()
     }
 }

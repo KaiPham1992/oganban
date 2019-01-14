@@ -26,6 +26,9 @@ protocol OrderBuyDetailPresenterProtocol: class {
     
     //---
     func gotoLogin()
+    func sendComment(param: SendCommentParam)
+    func sendSubComment(param: SendCommentParam)
+    func getCommentList(recordId: String, offset: Int)
 }
 
 //MARK: Interactor -
@@ -35,6 +38,10 @@ protocol OrderBuyDetailInteractorOutputProtocol: class {
     func didGetDetail(record: RecordEntity?)
     func didBooking(order: OrderEntity?)
     func didAddFavorite(data: BaseResponse?)
+    
+    func didSendComment(comment: CommentEntity?)
+    func didSubSendComment(comment: SubCommentEntity?)
+    func didGetComment(commentResponseEntity: CommentResponseEntity?)
 }
 
 protocol OrderBuyDetailInteractorInputProtocol: class {
@@ -45,6 +52,9 @@ protocol OrderBuyDetailInteractorInputProtocol: class {
     func getDetail(id: String)
     func bookingOrder(recordID: String, price: Double, quantity: Int, paymentType: String, isService: Bool)
     func AddFavorite(isFavorite: Int, accountID: Int)
+    
+    func sendComment(param: SendCommentParam)
+    func getCommentList(recordId: String, offset: Int)
 }
 
 //MARK: View -
@@ -56,4 +66,8 @@ protocol OrderBuyDetailViewProtocol: class {
     func didGetDetail(record: RecordEntity?)
     func didBooking(order: OrderEntity?)
     func didAddFavorite(data: BaseResponse?)
+    
+    func didSendComment(comment: CommentEntity?)
+    func didSendSubComment(comment: SubCommentEntity?)
+    func didGetComment(commentResponseEntity: CommentResponseEntity?)
 }

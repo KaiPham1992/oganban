@@ -35,6 +35,7 @@ class MySellingViewController: BaseViewController {
     weak var delegate: MySellingViewControllerDelegate?
     var refeshControl: UIRefreshControl?
     var isCanLoadMore: Bool = false
+    var isRefresh = false
     
     var listRecord: BaseRecordEntity? {
         didSet {
@@ -98,10 +99,11 @@ class MySellingViewController: BaseViewController {
     }
     
     func getData() {
-        presenter?.getRecordSellerPost(status: "show", offset: 0, limit: 10)
+        presenter?.getRecordSellerPost(status: "show", offset: 0, limit: limitLoad)
     }
     
     @objc private func refeshData() {
+        isRefresh = true
         getData()
         refeshControl?.endRefreshing()
     }
@@ -146,14 +148,12 @@ extension MySellingViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard let count = listRecord?.dataRecord.count else { return }
+        guard let count = self.listRecord?.dataRecord.count else { return }
         
-//        if isCanLoadMore &&  count >= 10 {
-            if indexPath.item == count - 5 {
+            if indexPath.item == count - 5 && isCanLoadMore {
                 print("load more")
                 presenter?.getRecordSellerPost(status: "show", offset: count, limit: limitLoad)
             }
-//        }
     }
 }
 
@@ -161,7 +161,10 @@ extension MySellingViewController: MySellingViewProtocol {
     
     func didGetRecordSellerPost(listRecord: BaseRecordEntity?) {
         // nil or count = 0
-        if self.listRecord == nil || self.listRecord?.dataRecord.count == 0 {
+        isCanLoadMore = false
+        isCanLoadMore = listRecord?.dataRecord.count == limitLoad
+        if self.listRecord == nil || self.listRecord?.dataRecord.count == 0 || isRefresh {
+            isRefresh = false
             self.listRecord = listRecord
         } else {
             guard let data = listRecord?.dataRecord else { return }

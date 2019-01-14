@@ -73,7 +73,7 @@ extension HistoryBuyViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(HistoryBuyCell.self, for: indexPath) as HistoryBuyCell
-        cell.showData(history: historyList[indexPath.row])
+        cell.showData(history: self.historyList[indexPath.row])
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

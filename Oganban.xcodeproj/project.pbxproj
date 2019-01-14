@@ -419,6 +419,8 @@
 		DE5E085321E1DF000053EC9D /* OrderDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5E085221E1DF000053EC9D /* OrderDetailEntity.swift */; };
 		DE5E085621E206D90053EC9D /* AppRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5E085521E206D90053EC9D /* AppRatingView.swift */; };
 		DE5E085821E206FF0053EC9D /* AppRatingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE5E085721E206FF0053EC9D /* AppRatingView.xib */; };
+		DE8B57D421EB1B9900C72D6A /* OrderMoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8B57D221EB1B9900C72D6A /* OrderMoreCell.swift */; };
+		DE8B57D521EB1B9900C72D6A /* OrderMoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE8B57D321EB1B9900C72D6A /* OrderMoreCell.xib */; };
 		DEA3A08821D6738200643296 /* AppImageSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3A08621D6738100643296 /* AppImageSlide.swift */; };
 		DEA3A08921D6738200643296 /* AppImageSlide.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEA3A08721D6738100643296 /* AppImageSlide.xib */; };
 		DEA3A08D21D674A200643296 /* PreviewPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3A08B21D674A200643296 /* PreviewPhotoViewController.swift */; };
@@ -909,6 +911,8 @@
 		DE5E085221E1DF000053EC9D /* OrderDetailEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailEntity.swift; sourceTree = "<group>"; };
 		DE5E085521E206D90053EC9D /* AppRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRatingView.swift; sourceTree = "<group>"; };
 		DE5E085721E206FF0053EC9D /* AppRatingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppRatingView.xib; sourceTree = "<group>"; };
+		DE8B57D221EB1B9900C72D6A /* OrderMoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderMoreCell.swift; sourceTree = "<group>"; };
+		DE8B57D321EB1B9900C72D6A /* OrderMoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderMoreCell.xib; sourceTree = "<group>"; };
 		DEA3A08621D6738100643296 /* AppImageSlide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppImageSlide.swift; sourceTree = "<group>"; };
 		DEA3A08721D6738100643296 /* AppImageSlide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppImageSlide.xib; sourceTree = "<group>"; };
 		DEA3A08B21D674A200643296 /* PreviewPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewPhotoViewController.swift; sourceTree = "<group>"; };
@@ -2211,6 +2215,7 @@
 		DE442C4821CFAAA90051C0B8 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				DE8B57D121EB1B8300C72D6A /* OrderMoreCell */,
 				DEBEE80F21D76B5C004B8D88 /* OrderIntroCell */,
 				DEBEE80A21D76515004B8D88 /* OrderInfoUserCell */,
 				DEA3A08F21D6797D00643296 /* OrderDetailImageCell */,
@@ -2317,6 +2322,15 @@
 				DE5E085721E206FF0053EC9D /* AppRatingView.xib */,
 			);
 			path = AppRatingView;
+			sourceTree = "<group>";
+		};
+		DE8B57D121EB1B8300C72D6A /* OrderMoreCell */ = {
+			isa = PBXGroup;
+			children = (
+				DE8B57D221EB1B9900C72D6A /* OrderMoreCell.swift */,
+				DE8B57D321EB1B9900C72D6A /* OrderMoreCell.xib */,
+			);
+			path = OrderMoreCell;
 			sourceTree = "<group>";
 		};
 		DEA3A08521D6738100643296 /* AppImageSlide */ = {
@@ -2705,6 +2719,7 @@
 				B325C2F021CE05B20048A148 /* MenuCell.xib in Resources */,
 				B3A3237221DB332100E1AD4C /* LeftMenuCell.xib in Resources */,
 				B36A236021E1AEBA00AA20DF /* SettingViewController.xib in Resources */,
+				DE8B57D521EB1B9900C72D6A /* OrderMoreCell.xib in Resources */,
 				0143F9C521E4606500D032B8 /* HeaderOrderBuyDetail.xib in Resources */,
 				DE33036321DF5EDB00409F83 /* PostStepTwoViewController.xib in Resources */,
 				DEBEE81821D76C79004B8D88 /* LevelMemberView.xib in Resources */,
@@ -2926,6 +2941,7 @@
 				CBD1C2D021D78916006DB3FF /* MySellExpiredInteractor.swift in Sources */,
 				CB172C1221C6A2EF0068CF92 /* Date+extension.swift in Sources */,
 				DE21827321CD473100FDD9F1 /* KActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
+				DE8B57D421EB1B9900C72D6A /* OrderMoreCell.swift in Sources */,
 				B355EF6021C8FB1400379F57 /* SignUpInteractor.swift in Sources */,
 				CB172B3B21C6A26F0068CF92 /* Network.swift in Sources */,
 				DE0DBAEF21D3B8BF0097E38F /* Date+Transform.swift in Sources */,

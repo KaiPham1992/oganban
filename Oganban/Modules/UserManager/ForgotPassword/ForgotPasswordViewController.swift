@@ -47,6 +47,7 @@ class ForgotPasswordViewController: BaseViewController {
 
 extension ForgotPasswordViewController: ForgotPasswordViewProtocol {
     func didForgotPassword(data: BaseResponse?) {
+        PopUpHelper.shared.showMessageHaveAds(message: "Đã Email thành công !")
         self.navigationController?.popViewController(animated: true)
     }
     

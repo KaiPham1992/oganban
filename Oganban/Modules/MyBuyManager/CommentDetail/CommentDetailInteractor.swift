@@ -13,4 +13,36 @@ import UIKit
 class CommentDetailInteractor: CommentDetailInteractorInputProtocol {
 
     weak var presenter: CommentDetailInteractorOutputProtocol?
+    
+    
+    func sendComment(param: SendCommentParam) {
+        ProgressView.shared.show()
+        if param.isReComment == "1" {
+            Provider.shared.recordAPIService.sendSubComment(param: param, success: { (comment) in
+                ProgressView.shared.hide()
+                self.presenter?.didSubSendComment(comment: comment)
+            }) { (error) in
+                ProgressView.shared.hide()
+            }
+        } else {
+            Provider.shared.recordAPIService.sendComment(param: param, success: { (comment) in
+                ProgressView.shared.hide()
+                self.presenter?.didSendComment(comment: comment)
+                
+            }) { (error) in
+                ProgressView.shared.hide()
+            }
+        }
+    }
+    
+    func getCommentList(recordId: String, offset: Int) {
+        ProgressView.shared.show()
+        Provider.shared.recordAPIService.getCommentResponse(recordId: recordId, offset: offset, success: { _commentReponse in
+            ProgressView.shared.hide()
+            self.presenter?.didGetComment(commentResponseEntity: _commentReponse)
+        }) { _ in
+            ProgressView.shared.hide()
+        }
+        
+    }
 }

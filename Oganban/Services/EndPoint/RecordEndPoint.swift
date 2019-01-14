@@ -18,7 +18,7 @@ enum RecordEndPoint {
     case deleteRecord(recordID: String)
     case getFavouriteRecord()
     case sendComment(param: SendCommentParam)
-    case getCommentList(recordId: String, offset: Int, limit: Int)
+    case getCommentResponse(recordId: String, offset: Int)
     case deleteComment(commentId: String)
     case updateRecord(recordID: String, expiredDate: String)
     case getChildCommentList(comentID: String, offset: Int, limit: Int)
@@ -41,8 +41,8 @@ extension RecordEndPoint: EndPointType {
             return "_api/record/delete_record"
         case .getFavouriteRecord:
             return "_api/record/favourite"
-            //--Comment
-        case .getCommentList:
+        //--Comment
+        case .getCommentResponse:
             return "_api/comment/get_comment_list"
         case .deleteComment:
             return "_api/comment/delete_comment"
@@ -57,7 +57,7 @@ extension RecordEndPoint: EndPointType {
     
     var httpMethod: HTTPMethod {
         switch self {
-        case .getRecordSellerPost, .postRecord, .getExpirePostRecord, .getCommentList, .sendComment, .updateRecord, .getChildCommentList:
+        case .getRecordSellerPost, .postRecord, .getExpirePostRecord, .getCommentResponse, .sendComment, .updateRecord, .getChildCommentList:
             return .post
         case .getRecordDetail, .getFavouriteRecord:
             return .get
@@ -83,11 +83,11 @@ extension RecordEndPoint: EndPointType {
         case .deleteRecord(let recordID):
             let param = ["record_id": recordID]
             return param
-            //--Comment
-        case .getCommentList(let recordId, let offset, let limit):
+        //--Comment
+        case .getCommentResponse(let recordId, let offset):
             let param = ["record_id": recordId,
                          "offset": offset,
-                         "limit": limit] as [String: Any]
+                         "limit": limitLoad] as [String : Any]
             return param
         case .deleteComment(let commentId):
             let param = ["comment_id": commentId]

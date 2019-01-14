@@ -14,6 +14,12 @@ class SubCommentCell: BaseCommentCell {
         didSet {
             guard let _comment = subComment else { return }
             lbComment.text = _comment.comment
+            lbTime.text = _comment.createTime?.toString(dateFormat: AppDateFormat.ddMMYYYY_VN)
+            
+            if let url = _comment.user?.urlAvatar {
+                imgAvatar.sd_setImage(with: url, placeholderImage: AppImage.imgPlaceHolderImage)
+                imgAvatar.setBorderWithCornerRadius(borderWidth: 1, borderColor: .clear, cornerRadius: 15)
+            }
         }
     }
     override func awakeFromNib() {
