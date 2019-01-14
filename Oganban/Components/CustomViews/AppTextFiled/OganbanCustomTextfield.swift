@@ -111,8 +111,8 @@ import UIKit
         
         tappedIconView.centerYAnchor.constraint(equalTo: ivRightIcon.centerYAnchor).isActive = true
         tappedIconView.centerXAnchor.constraint(equalTo: ivRightIcon.centerXAnchor, constant: 0).isActive = true
-        tappedIconView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        tappedIconView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        tappedIconView.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        tappedIconView.widthAnchor.constraint(equalToConstant: 60).isActive = true
         tappedIconView.addTarget(self, action: #selector(self.tapRightIcon(_:)), for: .touchUpInside)
         
         vLine.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0).isActive = true
