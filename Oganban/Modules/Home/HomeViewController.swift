@@ -247,6 +247,7 @@ class HomeViewController: BaseViewController {
     }
     
     @IBAction func btnGotoFavoriteTapped() {
+        
         let vc = FavouriteRouter.createModule()
         self.push(controller: vc)
     }

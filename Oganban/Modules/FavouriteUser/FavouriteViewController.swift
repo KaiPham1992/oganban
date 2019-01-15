@@ -15,6 +15,8 @@ class FavouriteViewController: BaseViewController {
     var presenter: FavouritePresenterProtocol?
     
     @IBOutlet weak var tvFavourite: UITableView!
+    @IBOutlet weak var vCheckLogin: UIView!
+    @IBOutlet weak var btnLogin: UIButton!
     
     var refreshControl:  UIRefreshControl!
     var canLoadMore = false
@@ -38,16 +40,21 @@ class FavouriteViewController: BaseViewController {
         self.addBackToNavigation(icon: AppImage.imgWhiteBack)
         self.setTitleNavigation(title: NavigationTitle.favourite)
         configureTableView()
+        btnLogin.setBorderWithCornerRadius(borderWidth: 0, borderColor: .clear, cornerRadius: 20)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.hideTabbar()
+        checkLogin()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        pullToRefresh()
+        if vCheckLogin.isHidden == true {
+            pullToRefresh()
+        }
+        
     }
     
     func configureTableView() {
@@ -60,10 +67,22 @@ class FavouriteViewController: BaseViewController {
         tvFavourite.addSubview(refreshControl)
     }
     
+    func checkLogin() {
+        if UserDefaultHelper.shared.isLoggedIn {
+            vCheckLogin.isHidden = true
+        } else {
+            vCheckLogin.isHidden = false
+        }
+    }
+    
     @objc func pullToRefresh() {
         isRefresh = true
         self.refreshControl.endRefreshing()
         presenter?.getFavourite(offset: 0)
+    }
+    
+    @IBAction func btnLoginTapped() {
+        presenter?.gotoLogin()
     }
 }
 extension FavouriteViewController: UITableViewDelegate, UITableViewDataSource {

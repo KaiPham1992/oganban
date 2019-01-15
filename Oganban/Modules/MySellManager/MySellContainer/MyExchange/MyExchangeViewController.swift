@@ -92,8 +92,9 @@ class MyExchangeViewController: BaseViewController {
     }
     
     func getData() {
-        self.presenter?.getTransactionSeller(status: OrderStatusKey.new.rawValue, limit: 10, offset: 0)
-        
+        if vCheckLogin.isHidden == true {
+            self.presenter?.getTransactionSeller(status: OrderStatusKey.new.rawValue, limit: 10, offset: 0)
+        }
     }
     
     func setStatusType() {

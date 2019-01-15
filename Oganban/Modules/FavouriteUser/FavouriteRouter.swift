@@ -33,4 +33,10 @@ class FavouriteRouter: FavouriteWireframeProtocol {
         vc.favouriteUser = item
         self.viewController?.push(controller: vc, animated: true)
     }
+    
+    func gotoLogin() {
+        let vc = LoginRouter.createModule()
+        let nc = UINavigationController(rootViewController: vc)
+        viewController?.present(controller: nc, animated: true)
+    }
 }

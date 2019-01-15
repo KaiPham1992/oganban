@@ -13,6 +13,7 @@ import Foundation
 //MARK: Wireframe -
 protocol FavouriteWireframeProtocol: class {
     func showProductList(item: FavouriteEntity)
+    func gotoLogin()
 }
 //MARK: Presenter -
 protocol FavouritePresenterProtocol: class {
@@ -21,6 +22,8 @@ protocol FavouritePresenterProtocol: class {
     func getFavourite(offset: Int)
     func showProductList(item: FavouriteEntity)
     func removeFavourite(isFavorite: Int, accountId: Int)
+    
+    func gotoLogin()
 }
 
 //MARK: Interactor -

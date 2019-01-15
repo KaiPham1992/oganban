@@ -64,7 +64,9 @@ class MyBuyViewController: BaseViewController {
     }
     
     func getData() {
-        presenter?.getHistoryOrder(status: OrderStatusKey.new.rawValue, offset: 0, limit: 10)
+        if vCheckLogin.isHidden == true {
+            presenter?.getHistoryOrder(status: OrderStatusKey.new.rawValue, offset: 0, limit: 10)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

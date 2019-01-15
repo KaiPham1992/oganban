@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FavouriteViewController">
             <connections>
+                <outlet property="btnLogin" destination="F98-dg-9Ic" id="kh4-es-bSD"/>
                 <outlet property="tvFavourite" destination="UjP-9T-6ZM" id="I3O-NC-JaL"/>
+                <outlet property="vCheckLogin" destination="6BN-h5-scH" id="ePN-6n-6x1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,10 +31,40 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6BN-h5-scH">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F98-dg-9Ic">
+                            <rect key="frame" x="30" y="313.5" width="315" height="40"/>
+                            <color key="backgroundColor" red="0.0" green="0.34509803919999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="dqY-ch-U2s"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                            <state key="normal" title="Đăng nhập">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="btnLoginTapped" destination="-1" eventType="touchUpInside" id="kxk-TV-vMw"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="F98-dg-9Ic" firstAttribute="leading" secondItem="6BN-h5-scH" secondAttribute="leading" constant="30" id="8jk-xp-qhK"/>
+                        <constraint firstItem="F98-dg-9Ic" firstAttribute="centerY" secondItem="6BN-h5-scH" secondAttribute="centerY" id="QTA-HN-wNX"/>
+                        <constraint firstAttribute="trailing" secondItem="F98-dg-9Ic" secondAttribute="trailing" constant="30" id="ZaO-fY-fnb"/>
+                        <constraint firstItem="F98-dg-9Ic" firstAttribute="centerX" secondItem="6BN-h5-scH" secondAttribute="centerX" id="jHv-Ro-ZrT"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="6BN-h5-scH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="8Ke-f6-PwB"/>
+                <constraint firstAttribute="trailing" secondItem="6BN-h5-scH" secondAttribute="trailing" id="BIO-5x-KWc"/>
                 <constraint firstItem="UjP-9T-6ZM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="P5a-ik-lOg"/>
+                <constraint firstAttribute="bottom" secondItem="6BN-h5-scH" secondAttribute="bottom" id="Tp5-6e-45L"/>
+                <constraint firstItem="6BN-h5-scH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="XIM-RN-cv8"/>
                 <constraint firstItem="UjP-9T-6ZM" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="cup-ze-ce0"/>
                 <constraint firstAttribute="bottom" secondItem="UjP-9T-6ZM" secondAttribute="bottom" id="gtJ-YN-wDk"/>
                 <constraint firstAttribute="trailing" secondItem="UjP-9T-6ZM" secondAttribute="trailing" id="uHk-by-J2u"/>
