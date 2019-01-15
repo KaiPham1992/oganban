@@ -379,7 +379,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if listRecord.count == 0 {
-            showNoData()
+//            showNoData()
             return 0
         } else {
             hideNoData()
@@ -544,19 +544,19 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row != indexReload {
-            cell.transform = CGAffineTransform(rotationAngle: (-.pi))
-            
-            UIView.animate(
-                withDuration: 0.3,
-                delay: 0,
-                options: [.curveEaseInOut],
-                animations: {
-                    cell.transform = CGAffineTransform(translationX: 0, y: 0)
-            })
-        }
-    }
+//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        if indexPath.row != indexReload {
+//            cell.transform = CGAffineTransform(rotationAngle: (-.pi))
+//            
+//            UIView.animate(
+//                withDuration: 0.3,
+//                delay: 0,
+//                options: [.curveEaseInOut],
+//                animations: {
+//                    cell.transform = CGAffineTransform(translationX: 0, y: 0)
+//            })
+//        }
+//    }
 }
 
 extension HomeViewController: UITextFieldDelegate {

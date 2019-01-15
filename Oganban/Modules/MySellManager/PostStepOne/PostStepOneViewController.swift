@@ -332,19 +332,19 @@ extension PostStepOneViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row != indexReload {
-            cell.transform = CGAffineTransform(rotationAngle: (-.pi))
-            
-            UIView.animate(
-                withDuration: 0.3,
-                delay: 0,
-                options: [.curveEaseInOut],
-                animations: {
-                    cell.transform = CGAffineTransform(translationX: 0, y: 0)
-            })
-        }
-    }
+//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        if indexPath.row != indexReload {
+//            cell.transform = CGAffineTransform(rotationAngle: (-.pi))
+//            
+//            UIView.animate(
+//                withDuration: 0.3,
+//                delay: 0,
+//                options: [.curveEaseInOut],
+//                animations: {
+//                    cell.transform = CGAffineTransform(translationX: 0, y: 0)
+//            })
+//        }
+//    }
 }
 
 extension PostStepOneViewController: LeftMenuCellDelegate {
