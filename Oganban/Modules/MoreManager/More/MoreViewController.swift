@@ -49,9 +49,6 @@ class MoreViewController: BaseViewController {
     func getMenuNotLogin() {
         rowList.removeAll()
         rowList.append(.header)
-        rowList.append(.historyCoin)
-        rowList.append(.historyBuy)
-        rowList.append(.policy)
         rowList.append(.tutorial)
         rowList.append(.setting)
         rowList.append(.version)
@@ -65,9 +62,7 @@ class MoreViewController: BaseViewController {
         rowList.append(.policy)
         rowList.append(.tutorial)
         rowList.append(.setting)
-        if !UserDefaultHelper.shared.isSocialLogin {
-            rowList.append(.changePassword)
-        }
+        rowList.append(.changePassword)
         rowList.append(.logout)
         rowList.append(.version)
     }
