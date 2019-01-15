@@ -21,6 +21,9 @@ extension Double {
     }
     
     func toUInt64() -> UInt64 {
+        if self < 0 {
+            return 0
+        }
         let number = UInt64(self)
         
         return number
