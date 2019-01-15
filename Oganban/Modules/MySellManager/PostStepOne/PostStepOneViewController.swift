@@ -292,6 +292,7 @@ extension PostStepOneViewController: UITableViewDelegate, UITableViewDataSource 
             self.heightRight.constant = heightContent < heightMax ? tableView.contentSize.height : (heightMax)
             self.heightTableRight = heightContent < heightMax ? tableView.contentSize.height : (heightMax)
             cell.isSelect = menu[index].cateChild[indexPath.row].isSelected
+            cell.imgCheck.isHidden = true
             return cell
             
         default:
@@ -304,18 +305,19 @@ extension PostStepOneViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch tableView {
         case tbLeft:
-            index = indexPath.row
-            menu[oldParentSelected*].isSelected = false
-            menu[oldParentSelected*].cateChild[oldChildSelected*].isSelected = false
-            menu[index].isSelected = true
-            tbLeft.reloadRows(at: [IndexPath(item: oldParentSelected*, section: indexPath.section), indexPath], with: .none)
-            oldParentSelected = index
-            lbCategory.text = menu[index].name
-//            paramFilter.categoryId = [menu[index].id&]
-            categoryId = menu[index].id&
-            hideDropdown()
+//            index = indexPath.row
+//            menu[oldParentSelected*].isSelected = false
+//            menu[oldParentSelected*].cateChild[oldChildSelected*].isSelected = false
+//            menu[index].isSelected = true
+//            tbLeft.reloadRows(at: [IndexPath(item: oldParentSelected*, section: indexPath.section), indexPath], with: .none)
+//            oldParentSelected = index
+//            lbCategory.text = menu[index].name
+////            paramFilter.categoryId = [menu[index].id&]
+//            categoryId = menu[index].id&
+//            hideDropdown()
             //--ID category parent
 //            presenter?.filterRecord(param: paramFilter)
+            openRightMenu(indexPath: indexPath)
             
         case tbRight:
             menu[oldParentSelected*].cateChild[oldChildSelected*].isSelected = false

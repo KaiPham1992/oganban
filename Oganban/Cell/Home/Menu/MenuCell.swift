@@ -38,9 +38,12 @@ class MenuCell: UITableViewCell {
         if isSelect {
             lbTitle.textColor = UIColor.yellow
             imgCheck.image = AppImage.imgChecked
+            
         } else {
             lbTitle.textColor = .white
             imgCheck.image = AppImage.imgCheckMenu
+            
         }
+        
     }
 }
