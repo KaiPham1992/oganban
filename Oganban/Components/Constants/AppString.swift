@@ -93,7 +93,7 @@ struct MessageString {
     static let emptyBirthday = "Vui lòng chọn ngày tháng năm sinh"
     static let checkedAge = "Vui lòng kiểm tra lại tuổi phải trên 15"
     static let emptyPhone = "Vui lòng nhập số điện thoại"
-    static let checkedPhone =  "Vui lòng kiểm tra lại số điện thoại"
+    static let invalidPhone = "Số điện thoại không đúng"
     static let notTickPolicy = "Vui lòng chọn điều khoản sử dụng"
     static let messageEmptyEmail = "Vui lòng nhập email"
     static let messageInvalidEmailFormat = "Email không đúng format"

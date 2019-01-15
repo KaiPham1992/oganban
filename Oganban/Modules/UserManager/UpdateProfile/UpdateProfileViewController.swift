@@ -314,7 +314,7 @@ extension UpdateProfileViewController {
         }
         
         if phone.isValidPhone2() == false {
-            hideError(isHidden: false, message: MessageString.emptyPhone)
+            hideError(isHidden: false, message: MessageString.invalidPhone)
             return false
         }
         
