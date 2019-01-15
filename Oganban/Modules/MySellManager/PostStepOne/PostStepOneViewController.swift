@@ -58,6 +58,7 @@ class PostStepOneViewController: BaseViewController {
         presenter?.getCategoryMerge()
         configureTableView()
         checkCopyUpdate()
+        hideKeyboard()
     }
     
     override func setUpNavigation() {

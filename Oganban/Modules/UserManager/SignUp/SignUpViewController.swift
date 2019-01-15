@@ -55,7 +55,7 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
         
         vContainer.setShadow(color: AppColor.black.withAlphaComponent(0.7), offSet: CGSize(width: -2, height: 2))
         vContainer.setBorderWithCornerRadius(borderWidth: 0.5, borderColor: AppColor.black.withAlphaComponent(0.5), cornerRadius: 5)
-        
+        hideKeyboard()
     }
     
     
@@ -236,6 +236,7 @@ extension SignUpViewController: FTextFieldChooseDelegate {
     func btnChooseTapped(sender: FTextFieldChoose) {
         switch sender {
         case vBirthday:
+            
             popUpDate.showPopUp(currentDate: nil) { (date) in
                 self.dateSelected = date
                 self.vBirthday.textField.text = date?.toString(dateFormat: AppDateFormat.ddMMYYYY)
