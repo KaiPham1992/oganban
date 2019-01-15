@@ -151,7 +151,7 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
         if vLoginName.textField.text&.isEmpty && vLoginEmail.textField.text&.isEmpty
             && vPassword.textField.text&.isEmpty && vPasswordReType.textField.text&.isEmpty
             && vCaptcha.textField.text&.isEmpty && vLoginDisplay.textField.text&.isEmpty {
-            lbStatus.text = "Vui lòng nhập thông tin đăng ký"
+            lbStatus.text = "Vui lòng  nhập đầy đủ thông tin bắt buộc"
             return false
         }
         
@@ -202,7 +202,7 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
         }
         
         if vPassword.textField.text != vPasswordReType.textField.text {
-            lbStatus.text = "Vui lòng nhập lại mật khẩu"
+            lbStatus.text = "Mật khẩu không trùng khớp"
             return false
         }
         
@@ -268,8 +268,10 @@ extension SignUpViewController: SignUpViewProtocol {
     }
     
     func signUpSuccess(user: UserEntity?) {
-        self.user = user
-        fbAccountKit.verifyPhone()
+            PopUpHelper.shared.showMessageHaveAds(message: "Bạn đã đăng kí thành công với tên đăng   \(self.vLoginName.textField.text&)")
+            self.user = user
+            self.fbAccountKit.verifyPhone()
+        
     }
     
     func signUpError(error: APIError) {
@@ -278,7 +280,7 @@ extension SignUpViewController: SignUpViewProtocol {
         case "USER_IS_EXISTED":
             lbStatus.text = "Tên đăng nhập đã tồn tại"
         case "WRONG_CAPTCHA":
-            lbStatus.text = "Sai mã captcha"
+            lbStatus.text = "Mã captcha không trùng khớp"
         case "EMAIL_IS_EXISTED":
             lbStatus.text = "Email đã tồn tại"
         case "CODE_INTRODUCTION_IS_NOT_EXISTED":
