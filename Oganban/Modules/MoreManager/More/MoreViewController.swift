@@ -49,6 +49,9 @@ class MoreViewController: BaseViewController {
     func getMenuNotLogin() {
         rowList.removeAll()
         rowList.append(.header)
+        rowList.append(.historyCoin)
+        rowList.append(.historyBuy)
+        rowList.append(.policy)
         rowList.append(.tutorial)
         rowList.append(.setting)
         rowList.append(.version)
