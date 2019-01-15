@@ -109,7 +109,13 @@ class MySellingViewController: BaseViewController {
     }
     
     @IBAction func btnPostRecordTapped() {
-        delegate?.gotoPostRecord()
+        guard let allowNews = listRecord?.allowNews else { return }
+        if allowNews > 0 {
+            delegate?.gotoPostRecord()
+        } else {
+            PopUpHelper.shared.showMessageHaveAds(message: "Bạn đã hết tin được phép đăng")
+        }
+        
         
     }
     
