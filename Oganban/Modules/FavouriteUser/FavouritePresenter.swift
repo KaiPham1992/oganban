@@ -32,6 +32,12 @@ class FavouritePresenter: FavouritePresenterProtocol {
     func removeFavourite(isFavorite: Int, accountId: Int) {
         interactor?.removeFavourite(isFavorite: isFavorite, accountId: accountId)
     }
+    
+    //---
+    
+    func gotoLogin() {
+        router.gotoLogin()
+    }
 }
 
 extension FavouritePresenter: FavouriteInteractorOutputProtocol{

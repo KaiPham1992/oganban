@@ -21,6 +21,7 @@ class ShareNativeHelper: NSObject {
             share = "\(linkShare)"
         }
         let activityController = UIActivityViewController(activityItems: [share], applicationActivities: nil)
+        activityController.popoverPresentationController?.sourceView = controller.view
         activityController.completionWithItemsHandler = { (nil, completed, _, error) in
             if completed {
                 print("completion")

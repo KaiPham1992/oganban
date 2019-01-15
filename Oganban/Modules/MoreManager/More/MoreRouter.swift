@@ -48,7 +48,6 @@ class MoreRouter: MoreWireframeProtocol {
             break
         case MoreEntityType.tutorial:
             tapTutorial()
-            print("Chọn Hướng dẫn")
             break
         case MoreEntityType.setting:
             tapSetting()
@@ -69,7 +68,9 @@ class MoreRouter: MoreWireframeProtocol {
     }
     
     private func tapTutorial(){
-        
+        let vc =  WebViewController.initFromNib()
+        vc.isSignUp = true 
+        viewController?.navigationController?.pushViewController(vc, animated: true)
     }
     
     private func tapHeader(){
@@ -106,14 +107,10 @@ class MoreRouter: MoreWireframeProtocol {
         }
     }
     
-    private func tapPolicy(){
-        if UserDefaultHelper.shared.loginUserInfo == nil {
-            let vc = LoginRouter.createModule()
-            let nc = UINavigationController(rootViewController: vc)
-            viewController?.present(controller: nc, animated: true)
-        } else {
-            // OPEN POLICY PAGE
-        }
+
+    private func tapPolicy() {
+        let vc =  WebViewController.initFromNib()
+        viewController?.navigationController?.pushViewController(vc, animated: true)
     }
     
     private func tapChangePassword() {

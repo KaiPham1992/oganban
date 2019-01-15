@@ -109,24 +109,28 @@ class PostStepTwoViewController: BaseViewController {
     }
     
     func validInput() -> Bool {
-        if vAddress1.textField.text& == "" && vAddress1.isCheck {
-            errorMessage = "Nhập địa chỉ 1"
+        if !vAddress1.isCheck && !vAddress2.isCheck && !vCheckGPS.isChecked {
+            lbNotice.text = "Vui lòng chọn địa chỉ đăng bán"
             return false
         }
         
-        if vAddress2.textField.text& == "" &&  vAddress2.isCheck {
-            errorMessage = "Nhập địa chỉ 2"
+        if   !vCoin.isCheck && !vMoney.isCheck {
+            lbNotice.text = "Vui lòng chọn phương thức thanh toán"
             return false
         }
         
-        if vMoney.textField.text& == "" && vMoney.isCheck {
-            errorMessage = "Nhập số tiền cần bán"
+        if vCoin.textField.text& == "" || vMoney.textField.text& == "" {
+            lbNotice.text = "Vui lòng nhập số tiền hoặc số coin"
             return false
         }
         
-        if vCoin.textField.text& == "" && vCoin.isCheck {
-            errorMessage = "Nhập số coin"
+        if vMoney.isCheck && vMoney.textField.text& == "" {
+            lbNotice.text = "Vui lòng nhập số tiền"
             return false
+        }
+
+        if vCoin.isCheck && vCoin.textField.text& == "" {
+            lbNotice.text = "Vui lòng nhập số coin"
         }
         
         return true

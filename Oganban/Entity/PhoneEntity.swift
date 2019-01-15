@@ -14,7 +14,7 @@ class PhoneEntity {
     var phoneFullCodeAndNumber: String?
     
     init(phoneNumber: String?, phoneCode: String?) {
-        self.phoneCode = phoneCode
+        self.phoneCode = "+\(phoneCode&)"
         self.phoneNumber = phoneNumber
         
         self.phoneFullCodeAndNumber = "\(self.phoneCode&)\(self.phoneNumber&)"

@@ -25,6 +25,7 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var btnHideDropdown  : UIButton!
     @IBOutlet weak var vScaleDropdown   : UIView!
     @IBOutlet weak var btnFavorite      : UIButton!
+    @IBOutlet weak var btnClear         : UIButton!
     @IBOutlet weak var lbCategory       : UILabel!
     @IBOutlet weak var lbDistance       : UILabel!
     @IBOutlet weak var tfSearch         : UITextField!
@@ -151,6 +152,7 @@ class HomeViewController: BaseViewController {
         tfSearch.delegate = self
         lbDistance.text = UserDefaultHelper.shared.radius?.title
         self.distance = UserDefaultHelper.shared.radius
+        tfSearch.addTarget(self, action: #selector(textFieldDidChanged), for: UIControl.Event.editingChanged)
     }
     
     private func setUpScaleDropdown() {
@@ -211,6 +213,11 @@ class HomeViewController: BaseViewController {
         tbRight.reloadData()
     }
     
+    @IBAction func btnClearTapped() {
+       tfSearch.text = ""
+        btnClear.isHidden = true
+    }
+    
     @IBAction func hideDropdownTapped() {
         hideDropdown()
     }
@@ -240,6 +247,7 @@ class HomeViewController: BaseViewController {
     }
     
     @IBAction func btnGotoFavoriteTapped() {
+
         if UserDefaultHelper.shared.loginUserInfo == nil {
             let vc = LoginRouter.createModule()
             let nc = UINavigationController(rootViewController: vc)
@@ -378,7 +386,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if listRecord.count == 0 {
-            showNoData()
+//            showNoData()
             return 0
         } else {
             hideNoData()
@@ -543,19 +551,19 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row != indexReload {
-            cell.transform = CGAffineTransform(rotationAngle: (-.pi))
-            
-            UIView.animate(
-                withDuration: 0.3,
-                delay: 0,
-                options: [.curveEaseInOut],
-                animations: {
-                    cell.transform = CGAffineTransform(translationX: 0, y: 0)
-            })
-        }
-    }
+//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        if indexPath.row != indexReload {
+//            cell.transform = CGAffineTransform(rotationAngle: (-.pi))
+//            
+//            UIView.animate(
+//                withDuration: 0.3,
+//                delay: 0,
+//                options: [.curveEaseInOut],
+//                animations: {
+//                    cell.transform = CGAffineTransform(translationX: 0, y: 0)
+//            })
+//        }
+//    }
 }
 
 extension HomeViewController: UITextFieldDelegate {
@@ -570,6 +578,14 @@ extension HomeViewController: UITextFieldDelegate {
         view.endEditing(true)
         paramFilter.keyword = textField.text&
         presenter?.filterRecord(param: paramFilter)
+    }
+    
+    @objc func textFieldDidChanged() {
+        if tfSearch.text&.isEmpty {
+            btnClear.isHidden = true
+        } else {
+            btnClear.isHidden = false
+        }
     }
 }
 

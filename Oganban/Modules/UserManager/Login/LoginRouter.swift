@@ -11,7 +11,6 @@
 import UIKit
 
 class LoginRouter: LoginWireframeProtocol {
-    
     weak var viewController: LoginViewController?
     
     static func createModule() -> LoginViewController {
@@ -29,11 +28,12 @@ class LoginRouter: LoginWireframeProtocol {
         return view
     }
     
-    func gotoSignUp() {
-        let signUpVC = SignUpRouter.createModule()
-        viewController?.navigationController?
-            .pushViewController(signUpVC, animated: true)
-    }
+//    func gotoSignUp(delegate: SignUpViewControllerDelegate) {
+//        let signUpVC = SignUpRouter.createModule()
+//        signUpVC.delegate = self
+//        viewController?.navigationController?
+//            .pushViewController(signUpVC, animated: true)
+//    }
     
     func gotoHome() {
         let HomeVC = HomeRouter.createModule()

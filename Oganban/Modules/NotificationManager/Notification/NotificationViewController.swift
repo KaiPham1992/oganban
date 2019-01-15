@@ -39,6 +39,7 @@ class NotificationViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.listNotification = []
         presenter?.getNotification(offset: 0)
         DataManager.shared.getNotificationCount { (count) in
             if let tabItems = self.tabBarController?.tabBar.items {

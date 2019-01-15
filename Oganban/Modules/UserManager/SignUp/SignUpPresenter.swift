@@ -33,10 +33,14 @@ class SignUpPresenter: SignUpPresenterProtocol {
     func signUp(param: SignUpParam) {
         interactor?.signUp(param: param)
     }
+    
+    func gotoTermOfPolicy() {
+        router.gotoTermOfPolicy()
+    }
 }
 
 extension SignUpPresenter: SignUpInteractorOutputProtocol {
-    func didVerifyPhone(response: BaseResponse?) {
+    func didVerifyPhone(response: UserEntity?) {
         view?.didVerifyPhone(response: response)
     }
     

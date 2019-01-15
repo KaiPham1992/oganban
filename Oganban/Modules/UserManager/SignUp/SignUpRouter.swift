@@ -14,9 +14,9 @@ class SignUpRouter: SignUpWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule() -> UIViewController {
+    static func createModule() -> SignUpViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = SignUpViewController(nibName: nil, bundle: nil)
+        let view = SignUpViewController.initFromNib()
         let interactor = SignUpInteractor()
         let router = SignUpRouter()
         let presenter = SignUpPresenter(interface: view, interactor: interactor, router: router)
@@ -26,5 +26,11 @@ class SignUpRouter: SignUpWireframeProtocol {
         router.viewController = view
 
         return view
+    }
+    
+    func gotoTermOfPolicy() {
+        let vc =  WebViewController.initFromNib()
+        vc.isSignUp = true
+        viewController?.navigationController?.pushViewController(vc, animated: true)
     }
 }

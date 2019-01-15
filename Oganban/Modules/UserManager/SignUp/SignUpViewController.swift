@@ -10,6 +10,10 @@
 
 import UIKit
 
+protocol SignUpViewControllerDelegate: class {
+    func didSignUpSuccess()
+}
+
 class SignUpViewController: BaseViewController, UITextFieldDelegate {
     
     @IBOutlet weak var vLoginName       : FTextField!
@@ -26,22 +30,35 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
     @IBOutlet weak var btnTermOfPolicy  : UIButton!
     @IBOutlet weak var lbStatus         : UILabel!
     @IBOutlet weak var imgCaptcha       : UIImageView!
-
-	var presenter: SignUpPresenterProtocol?
+    @IBOutlet weak var btnCheckTermOfPolicy: UIButton!
+    @IBOutlet weak var vContainer       : UIView!
+    
+    var presenter: SignUpPresenterProtocol?
     let popUpDate = PopUpSelectDate()
     let popUpGender = PopUpSelectGender()
     var termPolicy = false
+    
     
     var user: UserEntity?
     var fbAccountKit: FBAccountKit!
     let limitPhone = 15
     let limitName = 45
-
-	override func viewDidLoad() {
+    
+    var dateSelected: Date?
+    
+    weak var delegate: SignUpViewControllerDelegate?
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.getCaptcha()
         fbAccountKit = FBAccountKit(_controller: self)
+        
+        vContainer.setShadow(color: AppColor.black.withAlphaComponent(0.7), offSet: CGSize(width: -2, height: 2))
+        vContainer.setBorderWithCornerRadius(borderWidth: 0.5, borderColor: AppColor.black.withAlphaComponent(0.5), cornerRadius: 5)
+        hideKeyboard()
     }
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -49,9 +66,6 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
             DispatchQueue.main.async(execute: {
                 self.fbAccountKit.getCountryCodeAndPhoneNumber(completion: { phone in
                     guard let _phone = phone as? PhoneEntity, let verifyCode = self.user?.codeVerify else { return }
-                    //                    print(_phone.phoneCode&)
-                    //                    print(_phone.phoneNumber&)
-                    //                    print(_phone.phoneFullCodeAndNumber&)
                     self.presenter?.verifyPhone(verifyCode: verifyCode, phoneCode: _phone.phoneCode&, phoneNum: _phone.phoneNumber&)
                     
                 })
@@ -79,6 +93,7 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
         vCaptcha.setTextField(title: TitleString.captcha, placeHolder: TitleString.placeHolderCaptcha)
         vBirthday.delegate = self
         vGender.delegate = self
+        
         btnTermOfPolicy.setTitle(text: "Đồng ý ", font: AppFont.fontRegular15, color: AppColor.textTextField, textUnderline: "Điều khoản sử dụng", fontLine: AppFont.fontRegular15, colorLine: AppColor.textTextField)
         vPassword.textField.isSecureTextEntry = true
         vPasswordReType.textField.isSecureTextEntry = true
@@ -98,7 +113,13 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
     
     @IBAction func btnTermOfPolicyTapped() {
         termPolicy = !termPolicy
-        btnTermOfPolicy.setImage(termPolicy ? AppImage.imgCheckedTerm : AppImage.imgCheckTerm, for: .normal )
+        btnCheckTermOfPolicy.setImage(termPolicy ? AppImage.imgCheckedTerm : AppImage.imgCheckTerm, for: .normal )
+        presenter?.gotoTermOfPolicy()
+    }
+    
+    @IBAction func btnCheckTermOfPolicyTapped() {
+        termPolicy = !termPolicy
+        btnCheckTermOfPolicy.setImage(termPolicy ? AppImage.imgCheckedTerm : AppImage.imgCheckTerm, for: .normal )
     }
     
     @IBAction func btnSignUpTapped() {
@@ -106,7 +127,7 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
         if Utils.isConnectedToInternet() {
             if validate() {
                 let email = vLoginName.textField.text
-                let birthday = vBirthday.textField.text
+                let birthday = dateSelected?.toString(dateFormat: AppDateFormat.yyyyMMdd)
                 let password = vPassword.textField.text&.sha256()
                 let captcha = vCaptcha.textField.text
                 let fullName = vLoginDisplay.textField.text
@@ -114,7 +135,7 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
                 let gender = vGender.textField.text
                 let address1 = vHouseAddress.textField.text
                 let address2 = vCompanyAddress.textField.text
-                let param = SignUpParam(email: email, password: password, birthday: birthday, captcha: captcha, fullName: fullName, gender: gender, address1: address1, address2: address2, codeIntroduce: codeIntroduce)
+                let param = SignUpParam(email: email, password: password, birthday: birthday&, captcha: captcha, fullName: fullName, gender: gender, address1: address1, address2: address2, codeIntroduce: codeIntroduce)
                 presenter?.signUp(param: param)
             }
         } else {
@@ -131,7 +152,7 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
         if vLoginName.textField.text&.isEmpty && vLoginEmail.textField.text&.isEmpty
             && vPassword.textField.text&.isEmpty && vPasswordReType.textField.text&.isEmpty
             && vCaptcha.textField.text&.isEmpty && vLoginDisplay.textField.text&.isEmpty {
-            lbStatus.text = "Vui lòng nhập thông tin đăng ký"
+            lbStatus.text = "Vui lòng  nhập đầy đủ thông tin bắt buộc"
             return false
         }
         
@@ -182,7 +203,7 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
         }
         
         if vPassword.textField.text != vPasswordReType.textField.text {
-            lbStatus.text = "Vui lòng nhập lại mật khẩu"
+            lbStatus.text = "Mật khẩu không trùng khớp"
             return false
         }
         
@@ -205,24 +226,25 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
             lbStatus.text = "Vui lòng đồng ý điều khoản sử dụng"
             return false
         }
-       
+        
         return true
     }
-
+    
 }
 
 extension SignUpViewController: FTextFieldChooseDelegate {
     func btnChooseTapped(sender: FTextFieldChoose) {
         switch sender {
         case vBirthday:
+            
             popUpDate.showPopUp(currentDate: nil) { (date) in
+                self.dateSelected = date
                 self.vBirthday.textField.text = date?.toString(dateFormat: AppDateFormat.ddMMYYYY)
             }
         case vGender:
             popUpGender.showPopUp(currentGender: nil) { (gender) in
                 guard let genderString = gender as? Gender else { return }
                 self.vGender.textField.text = genderString.title
-                
             }
         default:
             break
@@ -231,22 +253,27 @@ extension SignUpViewController: FTextFieldChooseDelegate {
 }
 
 extension SignUpViewController: SignUpViewProtocol {
-    func didVerifyPhone(response: BaseResponse?) {
+    func didVerifyPhone(response: UserEntity?) {
+        guard let _user = response else { return }
+        UserUtils.saveUser(user: _user)
+        NotificationCenter.default.post(name: AppConstant.notiReloadMoreView, object: nil)
+        
         self.navigationController?.dismiss()
     }
     
     func didVerifyPhone(error: APIError?) {
-        
+        PopUpHelper.shared.showMessageHaveAds(error: error)
     }
     
-
     func successCaptcha(image: UIImage) {
         imgCaptcha.image = image
     }
     
     func signUpSuccess(user: UserEntity?) {
-        self.user = user
-        fbAccountKit.verifyPhone()
+            PopUpHelper.shared.showMessageHaveAds(message: "Bạn đã đăng kí thành công với tên đăng   \(self.vLoginName.textField.text&)")
+            self.user = user
+            self.fbAccountKit.verifyPhone()
+        
     }
     
     func signUpError(error: APIError) {
@@ -255,7 +282,7 @@ extension SignUpViewController: SignUpViewProtocol {
         case "USER_IS_EXISTED":
             lbStatus.text = "Tên đăng nhập đã tồn tại"
         case "WRONG_CAPTCHA":
-            lbStatus.text = "Sai mã captcha"
+            lbStatus.text = "Mã captcha không trùng khớp"
         case "EMAIL_IS_EXISTED":
             lbStatus.text = "Email đã tồn tại"
         case "CODE_INTRODUCTION_IS_NOT_EXISTED":
