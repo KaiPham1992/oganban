@@ -33,7 +33,7 @@ class PopUpNotificationHaveAdmob: BasePopUpView, AdmobNativeViewDelegate {
         let width = UIScreen.main.bounds.width - 30
         let attr1 = "Số tin cho phép đăng đã hết.\nVui lòng ".toAttributedString(color: AppColor.gray_65_65_65, font: vHaveAdmob.lbMessage.font, isUnderLine: false)
         
-        let attr2 = "Liên hệ".toAttributedString(color: AppColor.red_110_0_0, font: vHaveAdmob.lbMessage.font, isUnderLine: false)
+        let attr2 = "liên hệ".toAttributedString(color: AppColor.red_110_0_0, font: vHaveAdmob.lbMessage.font, isUnderLine: false)
         
         let attr3 = " với chúng tôi để được hỗ trợ!".toAttributedString(color: AppColor.gray_65_65_65, font: vHaveAdmob.lbMessage.font, isUnderLine: false)
         

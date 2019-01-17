@@ -88,6 +88,17 @@ extension HistoryCoinViewController: UITableViewDelegate, UITableViewDataSource 
             presenter?.getHistoryCoin(offset: self.historyList.count)
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let coin = self.historyList[indexPath.item]
+        if coin.type == "order_buyer" {
+            let vc = OrderBuyDetailRouter.createModule(recordId: coin.id&)
+            self.push(controller: vc)
+        } else if coin.type == "order_seller" {
+            let vc = OrderDetailRouter.createModule(recordId: coin.id&)
+            self.push(controller: vc)
+        }
+    }
 }
 
 extension HistoryCoinViewController: HistoryCoinViewProtocol{

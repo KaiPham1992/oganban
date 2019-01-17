@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopUpNotificationHaveAdmobContent" customModule="Oganban" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopUpNotificationHaveAdmobContent" customModule="Oganban_AppStore" customModuleProvider="target">
             <connections>
                 <outlet property="admobNativeView" destination="Iwr-CM-eWB" id="Br7-mH-SLE"/>
                 <outlet property="btnClose" destination="cOr-Jr-t7F" id="MoP-Jn-yCw"/>
@@ -29,7 +29,7 @@
                     </constraints>
                     <state key="normal" image="ic_close"/>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iwr-CM-eWB" customClass="AdmobNativeView" customModule="Oganban" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iwr-CM-eWB" customClass="AdmobNativeView" customModule="Oganban_AppStore" customModuleProvider="target">
                     <rect key="frame" x="20" y="45" width="335" height="140"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -37,7 +37,7 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iVT-E5-KHb">
-                    <rect key="frame" x="20" y="201" width="335" height="36"/>
+                    <rect key="frame" x="5" y="201" width="365" height="36"/>
                     <string key="text">Số Ơcoin tích lũy của bạn không đủ để 
 đổi sản phẩm. Vui lòng kiểm tra lại !</string>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -47,14 +47,14 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="iVT-E5-KHb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="5" id="54v-eM-2u2"/>
                 <constraint firstItem="Iwr-CM-eWB" firstAttribute="top" secondItem="cOr-Jr-t7F" secondAttribute="bottom" constant="5" id="9Ef-Vi-vuz"/>
                 <constraint firstAttribute="trailing" secondItem="Iwr-CM-eWB" secondAttribute="trailing" constant="20" id="9vF-gR-1Dr"/>
                 <constraint firstItem="cOr-Jr-t7F" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Dpd-w9-8mM"/>
                 <constraint firstItem="Iwr-CM-eWB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="Iog-9S-WVJ"/>
                 <constraint firstItem="iVT-E5-KHb" firstAttribute="top" secondItem="Iwr-CM-eWB" secondAttribute="bottom" constant="16" id="UdP-eA-8Va"/>
-                <constraint firstItem="iVT-E5-KHb" firstAttribute="trailing" secondItem="Iwr-CM-eWB" secondAttribute="trailing" id="Uyf-1h-bbX"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="cOr-Jr-t7F" secondAttribute="trailing" id="bXa-3U-hY6"/>
-                <constraint firstItem="iVT-E5-KHb" firstAttribute="leading" secondItem="Iwr-CM-eWB" secondAttribute="leading" id="sQL-5i-Jb4"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="iVT-E5-KHb" secondAttribute="trailing" constant="5" id="whf-Cy-1X8"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

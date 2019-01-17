@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HistoryCoinCell: UITableViewCell {
+class HistoryCoinCell: BaseTableCell {
 
     @IBOutlet weak var lbCoin: UILabel!
     @IBOutlet weak var lbContent: UILabel!

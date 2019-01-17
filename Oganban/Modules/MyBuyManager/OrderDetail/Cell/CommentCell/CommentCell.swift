@@ -27,6 +27,7 @@ class CommentCell: BaseCommentCell {
     var comment: CommentEntity? {
         didSet {
             guard let _comment = comment else { return }
+            
             lbComment.text = _comment.comment
             lbTime.text = _comment.createTime?.toString(dateFormat: AppDateFormat.ddMMYYYY_VN)
             
@@ -35,11 +36,26 @@ class CommentCell: BaseCommentCell {
                 imgAvatar.setBorderWithCornerRadius(borderWidth: 1, borderColor: .clear, cornerRadius: 15)
             }
             
+            btnDelete.isHidden = comment?.user?.id != UserDefaultHelper.shared.loginUserInfo?.id
+            
         }
     }
+    
+    @IBOutlet weak var btnDelete: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         lbComment.setBorderWithCornerRadius(borderWidth: 0, borderColor: .clear, cornerRadius: 10)
+    }
+    
+    @IBAction func btnDeleteTapped() {
+        let id = comment?.id&
+        ProgressView.shared.show()
+        Provider.shared.recordAPIService.deleteComment(commentID: id&, success: { _ in
+            ProgressView.shared.hide()
+            NotificationCenter.default.post(name: AppConstant.deleteComment, object: id&)
+        }) { _error in
+            PopUpHelper.shared.showMessageHaveAds(error: _error)
+        }
     }
 }
