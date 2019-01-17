@@ -87,7 +87,7 @@
                         <action selector="btnPostTapped" destination="-1" eventType="touchUpInside" id="c2a-UV-Ab0"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="lqD-uZ-uqc">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="lqD-uZ-uqc">
                     <rect key="frame" x="16" y="20" width="28" height="28"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -118,7 +118,7 @@
         </view>
     </objects>
     <resources>
-        <image name="ic_avatar" width="22" height="22"/>
+        <image name="ic_avatar" width="22.5" height="22.5"/>
         <image name="ic_sent_active" width="17" height="16"/>
     </resources>
 </document>

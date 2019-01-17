@@ -47,7 +47,6 @@ class LoginViewController: BaseViewController {
         super.viewDidLoad()
         
         self.setupView()
-        self.addGestures()
         self.tapButtons()
         self.textFieldDidBeginEditing()
         self.addDelegate()
@@ -61,10 +60,6 @@ class LoginViewController: BaseViewController {
         super.setUpNavigation()
         addCloseToNavigation()
         showNavigation()
-    }
-    
-    @IBAction func btnForgotPasswordTapped() {
-        presenter?.gotoForgotPassword()
     }
 }
 

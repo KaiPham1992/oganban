@@ -45,12 +45,4 @@ extension LoginViewController {
         attributed.append(signupAttributes)
         btnSignUp.lbTitle.attributedText = attributed
     }
-    
-    func addGestures() {
-        let tapForgetPasswordGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapForgetPassword(sender:)))
-        lbForgetPassword.addGestureRecognizer(tapForgetPasswordGesture)
-        
-        let tapTutorialGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapTutorial(sender:)))
-        lbTutorial.addGestureRecognizer(tapTutorialGesture)
-    }
 }

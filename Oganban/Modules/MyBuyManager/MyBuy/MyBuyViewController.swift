@@ -64,9 +64,7 @@ class MyBuyViewController: BaseViewController {
     }
     
     func getData() {
-        if vCheckLogin.isHidden == true {
             presenter?.getHistoryOrder(status: OrderStatusKey.new.rawValue, offset: 0, limit: 10)
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -90,6 +88,7 @@ class MyBuyViewController: BaseViewController {
             vCheckLogin.isHidden = true
         } else {
             vCheckLogin.isHidden = false
+            hideNoData()
         }
     }
     
@@ -106,7 +105,7 @@ class MyBuyViewController: BaseViewController {
     
     func setStatusType() {
         guard let countOrder = dataOrder?.countOrder else { return }
-                lbTotal.text = "\(countOrder)"
+            lbTotal.text = "\(countOrder)"
     }
     
     private func setupDropDownStatus() {

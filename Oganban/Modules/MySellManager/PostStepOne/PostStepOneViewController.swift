@@ -206,6 +206,11 @@ class PostStepOneViewController: BaseViewController {
                 lbNotice.text = "Vui lòng nhập số lượng"
                 return
             }
+            
+            if intQuality > 99000 {
+                lbNotice.text = "Số lượng đăng bán không vượt quá 99000 sản phẩm"
+                return
+            }
         } else {
             lbNotice.text = "Vui lòng nhập số lượng"
             return

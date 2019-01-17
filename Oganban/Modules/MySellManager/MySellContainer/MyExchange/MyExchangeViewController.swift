@@ -88,13 +88,12 @@ class MyExchangeViewController: BaseViewController {
 //            getData()
         } else {
             vCheckLogin.isHidden = false
+            hideNoData()
         }
     }
     
     func getData() {
-        if vCheckLogin.isHidden == true {
             self.presenter?.getTransactionSeller(status: OrderStatusKey.new.rawValue, limit: 10, offset: 0)
-        }
     }
     
     func setStatusType() {

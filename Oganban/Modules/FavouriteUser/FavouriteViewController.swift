@@ -51,9 +51,7 @@ class FavouriteViewController: BaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if vCheckLogin.isHidden == true {
             pullToRefresh()
-        }
         
     }
     
@@ -72,6 +70,7 @@ class FavouriteViewController: BaseViewController {
             vCheckLogin.isHidden = true
         } else {
             vCheckLogin.isHidden = false
+            hideNoData()
         }
     }
     

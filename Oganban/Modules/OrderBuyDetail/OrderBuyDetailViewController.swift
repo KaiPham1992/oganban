@@ -32,7 +32,7 @@ class OrderBuyDetailViewController: BaseViewController {
     var quantity: Int = 0
     var recordId: String?
     var paymentType: String = ""
-    var listHeader = ["Chi tiết", "Giới thiệu","Thông tin người bán", "Địa chỉ đăng  ", "Bình Luận"]
+    var listHeader = ["Chi tiết", "Giới thiệu","Thông tin người bán", "Địa chỉ đăng bán  ", "Bình Luận"]
     var sectionSentSubComment: Int?
     var listComment = [CommentEntity]() {
         didSet {
@@ -89,7 +89,7 @@ class OrderBuyDetailViewController: BaseViewController {
                 
                 if self.paymentType == "coin" {
                     if totalCoin < self.price {
-                        PopUpHelper.shared.showMessageHaveAds(message: "Số lượng coin của bạn không đủ để thanh toán")
+                        PopUpHelper.shared.showMessageHaveAds(message: "Số Ơcoin tích luỹ của bạn không đủ để đổi sản phẩm. Vui lòng kiểm tra lại")
                         return
                     }
                 }
@@ -128,6 +128,7 @@ extension OrderBuyDetailViewController: OrderBuyDetailViewProtocol {
     }
     
     func didBooking(order: OrderEntity?) {
+        PopUpHelper.shared.showMessageHaveAds(message: " Bạn đã đặt mua sản phẩm. Vui lòng chờ phê duyệt của người bán")
         self.pop()
     }
     

@@ -92,15 +92,15 @@ struct MessageString {
     static let invalidDisplayNameLength = "Tên hiển thị dài không quá 18 kí tự"
     static let specialCharacterDisplayName = "Tên hiển thị không được chứa kí tự đặc biệt"
     static let emptyBirthday = "Vui lòng chọn ngày tháng năm sinh"
-    static let checkedAge = "Vui lòng kiểm tra lại tuổi phải trên 15"
+    static let checkedAge = "Người sử dụng phải trên 15 tuổi"
     static let emptyPhone = "Vui lòng nhập số điện thoại"
     static let invalidPhone = "Số điện thoại không đúng"
-    static let notTickPolicy = "Vui lòng chọn điều khoản sử dụng"
+    static let notTickPolicy = "Vui lòng chọn \"Đồng ý điều khoản sử dụng\""
     static let messageEmptyEmail = "Vui lòng nhập email"
     static let messageInvalidEmailFormat = "Email không đúng format"
     static let messageEmailNoHave = "Email này không tồn tại trong hệ thống"
     static let invalidInput = "Vui lòng nhập đầy đủ thông tin"
-    static let limitCount = "Mật khẩu phải có 6 kí tự"
+    static let limitCount = "Mật khẩu ít nhất phải 6 ký tự"
     static let invalidConfirmPassword = "Nhập lại mật khẩu không đúng"
     static let invalidCurentPassword = "Mật khẩu không chính xác"
 }
@@ -160,4 +160,6 @@ struct LoadMore {
     static let limit = 20
 }
 
-
+struct Link {
+    static let tutorial = "https://www.facebook.com/HuongDanSuDungAppOganban/"
+}

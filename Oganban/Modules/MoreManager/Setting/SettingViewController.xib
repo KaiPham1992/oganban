@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingViewController">
             <connections>
+                <outlet property="btnSave" destination="0mO-a7-cpD" id="3my-ZT-O1h"/>
                 <outlet property="lbRadius" destination="tNg-Cl-TOT" id="Etd-Xk-W5q"/>
                 <outlet property="vDropdowRadius" destination="iXJ-8n-3fF" id="33A-kY-rKD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

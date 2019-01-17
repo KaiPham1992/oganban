@@ -34,7 +34,7 @@ class OrderDetailEntity: BaseEntity {
     var imgSrcSaler: String?
     var imgCropSaler: String?
     var levelSaler: String?
-    var avg_rating_seller: String?
+    var ratingSellerOrder: String?
     // buyer
     var accountIDBuyer: String?
     var fullNameBuyer: String?
@@ -65,7 +65,7 @@ class OrderDetailEntity: BaseEntity {
         self.creatTime <- (map["create_time_mi"], AppTimestampTransform())
         
         // saler
-        self.accountIDSaler <- map["account_id_saler"]
+        self.accountIDSaler <- map["account_id_seller"]
         self.fullNameSaler <- map["fullname_seller"]
         self.countCoinSaler <- map["account_coin_saler"]
         self.isProSaler <- map["is_pro_seller"]
@@ -76,8 +76,7 @@ class OrderDetailEntity: BaseEntity {
         self.imgSrcSaler <- map["img_src_seller"]
         self.imgCropSaler <- map["crop_img_src_seller"]
         self.levelSaler <- map["level_seller"]
-        self.avg_rating_seller <- map["avg_rating_seller"]
-        
+        self.ratingSellerOrder <- map["rating_seller_order"]
         // buyer
         self.accountIDBuyer <- map["account_id_buyer"]
         self.fullNameBuyer <- map["fullname_buyer"]
@@ -90,6 +89,7 @@ class OrderDetailEntity: BaseEntity {
         self.imgSrcBuyer <- map["img_src_buyer"]
         self.imgCropBuyer <- map["crop_img_src_buyer"]
         self.levelBuyer <- map["level_buyer"]
+        self.ratingBuyerOrder <- map["rating_buyer_order"]
         
     }
     
