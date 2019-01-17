@@ -91,6 +91,8 @@ class HomeViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        checkGPS()
         self.navigationController?.navigationBar.isHidden = true
         showTabbar()
         setRedStatusBar()
@@ -600,6 +602,14 @@ extension HomeViewController: PositionViewControllerDelegate {
         self.paramFilter.radius = distance.value&
         presenter?.filterRecord(param: paramFilter)
     }
+    
+    func checkGPS() {
+        if CLLocationManager.authorizationStatus() != .authorizedAlways && CLLocationManager.authorizationStatus() != .authorizedWhenInUse {
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
+               self.present(controller: CheckGPSViewController.initFromNib())
+            }
+        }
+    }
 }
 
 extension HomeViewController: LeftMenuCellDelegate {
@@ -622,3 +632,4 @@ extension HomeViewController: LeftMenuCellDelegate {
         vAccept.isHidden = false
     }
 }
+

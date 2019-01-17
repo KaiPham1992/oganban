@@ -32,7 +32,7 @@ class PopUpSettingGPS: BasePopUpView {
     }
     
     @objc func btnSettingTapped() {
-        hidePopUp()
+//        hidePopUp()
         if !CLLocationManager.locationServicesEnabled() {
             if let url = URL(string: "App-Prefs:root=Privacy&path=LOCATION") {
                 // If general location settings are disabled then open general location settings

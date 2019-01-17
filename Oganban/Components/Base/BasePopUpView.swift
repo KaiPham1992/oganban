@@ -110,6 +110,11 @@ class BasePopUpView: UIView {
             self.type = type
             
             //---
+            for sub in window.subviews {
+                if sub is BasePopUpView {
+                    sub.removeFromSuperview()
+                }
+            }
             window.addSubview(self)
             self.fillSuperview()
             self.vBackGround.alpha = 0

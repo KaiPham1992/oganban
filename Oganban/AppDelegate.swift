@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.shared.statusBarStyle = .lightContent
         configureGoogle()
         
-        checkGPS()
+//        checkGPS()
         
         checkLogin()
         AppRouter.shared.openTabbar()
@@ -64,7 +64,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
         checkLogin()
-        checkGPS()
+        
+        guard let topView = UIApplication.topViewController() else { return }
+        if topView is CheckGPSViewController {
+            topView.viewWillAppear(true)
+        }
+//        checkGPS()
     }
     
     func checkGPS() {
