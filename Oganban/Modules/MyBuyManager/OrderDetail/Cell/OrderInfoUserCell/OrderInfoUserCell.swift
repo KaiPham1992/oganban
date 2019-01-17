@@ -29,7 +29,7 @@ class OrderInfoUserCell: BaseTableCell {
     var record: RecordEntity? {
         didSet {
             guard let _record = record else { return }
-            lbStar.text = _record.avgRating
+            lbStar.text = _record.avgRating?.roundedDemical()
             lbReview.text = _record.totalRating& + " đánh giá"
             lbPhone.text =  _record.phone&
             lbName.text = _record.fullName
@@ -46,6 +46,7 @@ class OrderInfoUserCell: BaseTableCell {
         super.awakeFromNib()
         btnPhone.isHidden = true
         lcsWidthImgPhone.constant = 0
+        imgAvatar.setBorderWithCornerRadius(borderWidth: 0, borderColor: .clear, cornerRadius: imgAvatar.frame.width / 2)
     }
     
 }

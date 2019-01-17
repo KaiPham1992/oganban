@@ -29,8 +29,12 @@ class OrderBuyDetailInteractor: OrderBuyDetailInteractorInputProtocol {
         Provider.shared.orderAPIService.bookingOrder(recordID: recordID, price: price, quantity: quantity, paymentType: paymentType, isService: isService, success: { (order) in
             ProgressView.shared.hide()
             self.presenter?.didBooking(order: order)
-        }) { (_) in
+        }) { (error) in
             ProgressView.shared.hide()
+            if error?.message == "NOT_BUY_PRODUCT_ME" {
+                PopUpHelper.shared.showMessageHaveAds(message: "Bạn không thể mua hàng của chính mình")
+            }
+            
         }
     }
     

@@ -355,4 +355,17 @@ extension String {
         }
         return nil
     }
+    
+}
+
+extension String {
+    /// Rounds the double to decimal places value
+    func roundedDemical() -> String {
+        if let float = Float(self) {
+            return String(format: "%.1f", float)
+        } else {
+            return "0"
+        }
+        
+    }
 }

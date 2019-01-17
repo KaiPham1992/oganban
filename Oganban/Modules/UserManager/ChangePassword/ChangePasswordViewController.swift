@@ -24,6 +24,7 @@ class ChangePasswordViewController: BaseViewController {
         super.viewDidLoad()
         setNav()
         setupView()
+        self.setTitleNavigation(title: "Đổi mật khẩu")
     }
     
     func setNav() {
@@ -32,8 +33,11 @@ class ChangePasswordViewController: BaseViewController {
     
     func setupView() {
         tfPassword.setupLayoutTextfield(placeholderText: "", titleText: "Nhập mật khẩu cũ *", backgroundColor: .clear, titleColor: AppColor.textTextField, placeholderColor: .clear, contentColor: AppColor.black, isHiddenBottomLine: false)
+        tfPassword.lbTitle.textColor = AppColor.gray
         tfNewPassword.setupLayoutTextfield(placeholderText: "", titleText: "Nhập mật khẩu mới *", backgroundColor: .clear, titleColor: AppColor.textTextField, placeholderColor: .clear, contentColor: AppColor.black, isHiddenBottomLine: false)
+        tfNewPassword.lbTitle.textColor = AppColor.gray
         tfConfirmNewPassword.setupLayoutTextfield(placeholderText: "", titleText: "Nhập lại mật khẩu mới *", backgroundColor: .clear, titleColor: AppColor.textTextField, placeholderColor: .clear, contentColor: AppColor.black, isHiddenBottomLine: false)
+         tfConfirmNewPassword.lbTitle.textColor = AppColor.gray
         tfPassword.showRightIcon(isHidden: false, sỉze: CGSize(width: 20, height: 20), icon: AppImage.imgOpenEye, paddingRight: 0)
         tfNewPassword.showRightIcon(isHidden: false, sỉze: CGSize(width: 20, height: 20), icon: AppImage.imgOpenEye, paddingRight: 0)
         tfConfirmNewPassword.showRightIcon(isHidden: false, sỉze: CGSize(width: 20, height: 20), icon: AppImage.imgOpenEye, paddingRight: 0)

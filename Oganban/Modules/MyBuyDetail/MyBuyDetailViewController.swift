@@ -18,7 +18,7 @@ enum MyBuyType: Int {
 class MyBuyDetailViewController: BaseViewController {
 
 	var presenter: MyBuyDetailPresenterProtocol?
-    var listHeader = ["Chi tiết", "Thông tin người bán"]
+    var listHeader : [String] = []
     
     var order: OrderDetailEntity? {
         didSet {
@@ -36,13 +36,14 @@ class MyBuyDetailViewController: BaseViewController {
                     vContainerRating.isHidden = true
                 }
                 
-                // get rating buyer
-                if let salerRating = _order.avg_rating_seller, let salerRatingInt =  Int(salerRating) {
+                if let salerRating = _order.ratingSellerOrder, let salerRatingInt =  Int(salerRating) {
                     vRating.number = salerRatingInt
                     vRating.setStar(number: salerRatingInt)
+                    vRating.vStackView.isUserInteractionEnabled = false
                     btnBuyerSend.isHidden = true
                     
                 }
+                
                 // SALER
             } else {
                 vControlSaler.isHidden = false
@@ -64,11 +65,13 @@ class MyBuyDetailViewController: BaseViewController {
                 }
                 
                 
-                if let buyerRating = _order.avgRatingBuyer, let buyerRatingInt =  Int(buyerRating) {
+                if let buyerRating = _order.ratingBuyerOrder, let buyerRatingInt =  Int(buyerRating) {
                     vRatingSaler.number = buyerRatingInt
                     vRatingSaler.setStar(number: buyerRatingInt)
                     btnSaleSend.isHidden = true
+                    vRatingSaler.vStackView.isUserInteractionEnabled = false
                 }
+                
             }
             
         }
@@ -98,6 +101,12 @@ class MyBuyDetailViewController: BaseViewController {
         
         presenter?.getDetailOrder(id: orderId)
         configureTable()
+        
+        if !isSaler {
+            listHeader = ["Chi tiết", "Thông tin người bán"]
+        } else {
+            listHeader = ["Chi tiết", "Thông tin khách hàng"]
+        }
     }
     
     override func setUpNavigation() {
@@ -151,7 +160,8 @@ extension MyBuyDetailViewController: UITableViewDelegate, UITableViewDataSource 
             return cell
         default:
             let cell = tbDetail.dequeue(MyBuyInfoUserCell.self, for: indexPath)
-            cell.recordMyBuy = self.order
+            cell.setData(orderDetail: self.order, isSaler: self.isSaler)
+            cell.delegate = self
             return cell
         }
     }
@@ -217,7 +227,7 @@ extension MyBuyDetailViewController: MyBuyImageCellDelegate {
         // fix me
 //        PopUpHelper.shared.showMessageHaveAds(message: "Đang đợi API 111")
         guard let accountID = order?.accountIDBuyer  else {return }
-        presenter?.postRating(point: vRating.number, accountID: accountID, isBuyer: false, orderID: orderId)
+        presenter?.postRating(point: vRating.number, accountID: accountID, isBuyer: true, orderID: orderId)
     }
     
     
@@ -239,4 +249,12 @@ extension MyBuyDetailViewController: MyBuyImageCellDelegate {
         self.presenter?.changedStatusOrderSaler(status: OrderStatusKey.done, id: self.orderId)
     }
     
+}
+
+extension MyBuyDetailViewController: MyBuyInfoUserCellDelegate {
+    func btnPhoneTapped() {
+        if let url = URL(string: "tel://\(order?.showFullPhoneSaler() ?? "")") {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
 }
