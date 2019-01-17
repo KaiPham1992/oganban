@@ -109,5 +109,14 @@ extension SettingViewController: SettingViewProtocol {
             self.dataSource.append(last)
         }
         radiusDropdown.dataSource = dataSource.map({$0.title&})
+        
+        // Set selected current item to set color for this item
+        for (index, item) in dataSource.enumerated() {
+            if let currentItem = (UserDefaultHelper.shared.radius)?.title, let _item = item.title, currentItem == _item {
+                radiusDropdown.selectRow(index, scrollPosition: .bottom)
+                break
+            }
+        }
+        
     }
 }
