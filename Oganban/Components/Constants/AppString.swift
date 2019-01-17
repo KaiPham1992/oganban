@@ -159,4 +159,6 @@ struct LoadMore {
     static let limit = 20
 }
 
-
+struct Link {
+    static let tutorial = "https://www.facebook.com/HuongDanSuDungAppOganban/"
+}

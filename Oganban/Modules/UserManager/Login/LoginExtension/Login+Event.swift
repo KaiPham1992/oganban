@@ -72,16 +72,20 @@ extension LoginViewController: LoginViewProtocol {
 
 extension LoginViewController {
     
-    @IBAction func close(_ sender: UIButton) {
-        self.dismiss(animated: true)
+    @IBAction func btnForgotPasswordTapped() {
+        presenter?.gotoForgotPassword()
     }
     
-    @objc func tapForgetPassword(sender: UITapGestureRecognizer){
-        print("Tap Forget Password")
-    }
-    
-    @objc func tapTutorial(sender: UITapGestureRecognizer){
-        print("Tap Tutorial")
+    @IBAction func tapTutorialButton(_ sender: UIButton) {
+        guard let url = URL(string: Link.tutorial) else {
+            return 
+        }
+        
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
     }
     
     func tapButtons(){
