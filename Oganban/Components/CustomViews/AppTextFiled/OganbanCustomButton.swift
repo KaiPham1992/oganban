@@ -52,10 +52,15 @@ import UIKit
         self.addSubview(lbTitle)
         
         lbTitle.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 10).isActive = true
-        //constraint(equalTo: self.centerXAnchor).isActive = true
         lbTitle.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         
-        ivIcon.rightAnchor.constraint(equalTo: lbTitle.leftAnchor, constant: -10).isActive = true
+        if UIScreen.main.nativeBounds.height == 1136 { // iPhone 5 or 5S or 5C
+            ivIcon.rightAnchor.constraint(equalTo: lbTitle.leftAnchor, constant: -6).isActive = true
+        } else {
+            ivIcon.rightAnchor.constraint(equalTo: lbTitle.leftAnchor, constant: -10).isActive = true
+        }
+        
+        
         ivIcon.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         ivIcon.frame.size = CGSize(width: 24, height: 24)
         
