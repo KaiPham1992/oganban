@@ -81,7 +81,7 @@ extension LoginViewController {
             return false
         }
         if let password = self.tfPassword.tfContent.text, password.count < 6 {
-            hideError(isHidden: false, message:  MessageString.limitCount)
+            hideError(isHidden: false, message:  MessageString.invalidLoginPassword)
             return false
         }
         hideError()
