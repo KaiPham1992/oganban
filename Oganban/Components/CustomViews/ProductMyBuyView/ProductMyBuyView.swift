@@ -39,7 +39,7 @@ class ProductMyBuyView: BaseViewXib {
             lbRank.text = _order.level
             lbNote.isHidden = _order.isPro == "1" ? false : true
             lbStatus.text = _order.status
-            lbAvgRating.text = _order.avgRating
+            lbAvgRating.text = _order.avgRating?.roundedDemical()
             
             if _order.paymentType == "cash" {
                 lbPrice.text = _order.showMoney()
@@ -64,7 +64,7 @@ class ProductMyBuyView: BaseViewXib {
     }
     
     override func setUpViews() {
-        imgAvatar.setBorderWithCornerRadius()
+        imgAvatar.setBorderWithCornerRadius(borderWidth: 0, borderColor: .clear, cornerRadius: imgAvatar.frame.width / 2)
         lbStatus.isHidden = true
         lbPrice.underlineLastCharacter()
         setStatusOrder()

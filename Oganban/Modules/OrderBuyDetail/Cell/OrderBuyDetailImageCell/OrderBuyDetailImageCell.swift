@@ -39,7 +39,7 @@ class OrderBuyDetailImageCell: BaseTableCell {
             if _record.expiredDate == nil {
                 lbExpireDate.text = Date().toString(dateFormat: AppDateFormat.ddMMYYYY_VN)
             } else {
-                lbExpireDate.text = _record.expiredDate?.toString(dateFormat: AppDateFormat.ddMMYYYY_VN)
+                lbExpireDate.text = "Hết hạn: \(_record.expiredDate?.toString(dateFormat: AppDateFormat.ddMMYYYY_VN) ?? "")"
             }
             
             lbQuantity.text = "Số lượng: \(_record.quantity&)"
