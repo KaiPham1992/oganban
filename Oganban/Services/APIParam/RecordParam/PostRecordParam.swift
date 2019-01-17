@@ -17,7 +17,12 @@ class PostRecordParam: BaseParam {
     var aboutRecord      : String?
     
     var address1      : String?
+    var long1      : String?
+    var lat1      : String?
+    
     var address2      : String?
+    var long2      : String?
+    var lat2      : String?
     
     var long      : String?
     var lat      : String?
@@ -37,6 +42,12 @@ class PostRecordParam: BaseParam {
         self.lat         <- map["latitude"]
         self.long          <- map["longitude"]
         
+        self.lat2         <- map["latitude_2"]
+        self.long2          <- map["longitude_2"]
+        
+        self.lat1         <- map["latitude_1"]
+        self.long1          <- map["longitude_1"]
+        
         self.address2         <- map["address_2"]
         self.address1          <- map["address_1"]
         self.price         <- map["price"]
@@ -53,9 +64,15 @@ class PostRecordParam: BaseParam {
         self.aboutRecord = aboutRecord
     }
     
-    func updateInfoStepTwo(address1: String, address2: String, isLatlong: Bool, price: String, coin: String) {
+    func updateInfoStepTwo(address1: String, lat1: String, long1: String, address2: String, lat2: String, long2: String, isLatlong: Bool, price: String, coin: String) {
         self.address1 = address1
+        self.lat1 = lat1
+        self.lat2 = lat2
+        self.long1 = long1
+        self.long2 = long2
+        
         self.address2 = address2
+        
         self.price = price
         self.coin = coin
         if isLatlong {

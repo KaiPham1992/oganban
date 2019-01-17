@@ -83,6 +83,7 @@ struct MessageString {
     static let notEnoughCoin = "Số Ơcoin tích lũy của bạn không đủ để đổi sản phẩm. Vui lòng kiểm tra lại !"
     static let invalidLoginEmail = "Email không chính xác"
     static let invalidLoginPassword  = "Mật khẩu không chính xác"
+    static let invalidLoginEmailPassword = "Tài khoản hoặc mật khẩu không đúng."
     static let emptyLoginEmailPassword  = "Vui lòng nhập đầy đủ thông tin bắt buộc"
     static let notVerifyUser  = "Tài khoản chưa được kích hoạt"
     static let emptyUsername = "Vui lòng nhập tên đăng nhập"

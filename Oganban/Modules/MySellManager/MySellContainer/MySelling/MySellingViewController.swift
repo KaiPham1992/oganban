@@ -113,7 +113,7 @@ class MySellingViewController: BaseViewController {
         if allowNews > 0 {
             delegate?.gotoPostRecord()
         } else {
-            PopUpHelper.shared.showMessageHaveAds(message: "Bạn đã hết tin được phép đăng")
+            PopUpHelper.shared.showPopUpCanPost()
         }
         
         

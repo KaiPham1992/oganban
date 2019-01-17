@@ -22,6 +22,10 @@ class AddressCell: BaseTableCell {
             if let _address2 = _record.address2 {
                 str = "\(str)\n- \(_address2)"
             }
+            
+            if let _address3 = _record.address {
+                str = "\(str)\n- \(_address3)"
+            }
             lbAddress.text = str
         }
     }

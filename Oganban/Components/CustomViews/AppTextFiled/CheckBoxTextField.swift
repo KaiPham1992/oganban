@@ -31,13 +31,19 @@ class CheckBoxTextField: BaseView {
     
     let btnCheckBox: AppRadioButton = {
         let btn = AppRadioButton()
-        btn.setTwoImage(imgCheck: AppImage.imgCheckedTerm, imgUnCheck: AppImage.imgCheckTerm)
+        btn.setTwoImage(imgCheck: AppImage.imgChecked, imgUnCheck: AppImage.imgUnCheck)
         btn.lbTitle.textColor = AppColor.textLabel
         btn.lbTitle.font = AppFont.fontRegularRoboto12
         
         return btn
     }()
     
+    let lbUint: UILabel = {
+       let lb = UILabel()
+        lb.textColor = AppColor.gray_65_65_65
+        
+        return lb
+    }()
     
     let vLine: UIView = {
         let view = UIView()
@@ -56,6 +62,7 @@ class CheckBoxTextField: BaseView {
         vContent.addSubview(btnCheckBox)
         vContent.addSubview(vLine)
         vContent.addSubview(textField)
+        vContent.addSubview(lbUint)
         
         vContent.fillSuperview()
         btnCheckBox.anchor(vContent.topAnchor,
@@ -65,7 +72,7 @@ class CheckBoxTextField: BaseView {
                            leftConstant : 0,
                            rightConstant: 0,
                            heightConstant: 20)
-        textField.anchor(btnCheckBox.bottomAnchor, left: btnCheckBox.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0)
+        textField.anchor(btnCheckBox.bottomAnchor, left: btnCheckBox.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 30)
         
         vLine.anchor(left           : vContent.leftAnchor,
                      bottom         : vContent.bottomAnchor,
@@ -74,8 +81,14 @@ class CheckBoxTextField: BaseView {
                      bottomConstant : 0,
                      rightConstant  : 0,
                      heightConstant : 1)
+        lbUint.anchor(right: vContent.rightAnchor, rightConstant: 5, heightConstant: 20)
+        lbUint.centerToView(view: textField)
         textField.delegate = self
         btnCheckBox.delegate = self
+    }
+    
+    func setUint(unit: String) {
+        self.lbUint.attributedText = "\(unit)".toAttributedString(color: self.lbUint.textColor, font: self.lbUint.font, isUnderLine: true)
     }
     
     func setTitleTextField(text: String) {

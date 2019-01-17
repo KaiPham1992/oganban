@@ -17,5 +17,5 @@ struct AppConstant {
     
     
     
-    static let moneyToCoint: Double = 100
+    static let moneyToCoint: Double = 20000
 }

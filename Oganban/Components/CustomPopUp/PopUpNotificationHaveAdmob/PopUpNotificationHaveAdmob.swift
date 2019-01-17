@@ -29,6 +29,21 @@ class PopUpNotificationHaveAdmob: BasePopUpView, AdmobNativeViewDelegate {
         super.showPopUp(width: width, height: 256, type: .zoomOut)
     }
     
+    func showPopUpCanPost() {
+        let width = UIScreen.main.bounds.width - 30
+        let attr1 = "Số tin cho phép đăng đã hết.\nVui lòng ".toAttributedString(color: AppColor.gray_65_65_65, font: vHaveAdmob.lbMessage.font, isUnderLine: false)
+        
+        let attr2 = "Liên hệ".toAttributedString(color: AppColor.red_110_0_0, font: vHaveAdmob.lbMessage.font, isUnderLine: false)
+        
+        let attr3 = " với chúng tôi để được hỗ trợ!".toAttributedString(color: AppColor.gray_65_65_65, font: vHaveAdmob.lbMessage.font, isUnderLine: false)
+        
+        let attr = NSMutableAttributedString()
+        attr.append(attr1)
+        attr.append(attr2)
+        attr.append(attr3)
+        vHaveAdmob.lbMessage.attributedText = attr
+        super.showPopUp(width: width, height: 256, type: .zoomOut)
+    }
 
     func admobNativeView(_ admobNativeView: AdmobNativeView) {
         hidePopUp()

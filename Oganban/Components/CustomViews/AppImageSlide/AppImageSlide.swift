@@ -46,7 +46,7 @@ class AppImageSlide: BaseViewXib {
         super.setUpViews()
         imageSlideShow.pageIndicator = nil
         imageSlideShow.slideshowInterval = 5
-        imageSlideShow.contentScaleMode = .scaleAspectFill
+        imageSlideShow.contentScaleMode = .scaleAspectFit
         imageSlideShow.backgroundColor = UIColor.black
         
         imageSlideShow.activityIndicator = DefaultActivityIndicator()
@@ -56,7 +56,7 @@ class AppImageSlide: BaseViewXib {
             strongSelf.lbIndex.text = "\(page + 1)/\(strongSelf.listItem.count)"
         }
         lbIndex.textColor = .white
-        
+        lbIndex.setBorderWithCornerRadius(borderWidth: 0, borderColor: .clear, cornerRadius: 10)
         self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(btnImageTapped)))
     }
     
