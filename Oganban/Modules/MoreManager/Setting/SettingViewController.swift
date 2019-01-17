@@ -15,6 +15,7 @@ class SettingViewController: BaseViewController {
 
 	var presenter: SettingPresenterProtocol?
     
+    @IBOutlet weak var btnSave: UIButton!
     @IBOutlet weak var lbRadius: UILabel!
     @IBOutlet weak var vDropdowRadius: UIView!
     
@@ -35,6 +36,7 @@ class SettingViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.distance = UserDefaultHelper.shared.radius
+        self.isEnabledSaveButton(isEnabled: false)
         self.tabBarController?.tabBar.isHidden = true
     }
     
@@ -68,6 +70,12 @@ class SettingViewController: BaseViewController {
 //            } else {
 //                self.paramFilter.radius = self.dataSource[index].title&
 //            }
+            
+            if let oldRadius = (UserDefaultHelper.shared.radius)?.title, let newRadius = self.dataSource[index].title, oldRadius != newRadius {
+                self.isEnabledSaveButton()
+            } else {
+                self.isEnabledSaveButton(isEnabled: false)
+            }
             self.distance = self.dataSource[index]
             
 //            self.presenter?.filterRecord(param: self.paramFilter)
@@ -82,6 +90,15 @@ class SettingViewController: BaseViewController {
         UserDefaultHelper.shared.radius = self.distance
         isSetting = true
         self.pop()
+    }
+    
+    func isEnabledSaveButton(isEnabled: Bool = true) {
+        self.btnSave.isEnabled = isEnabled
+        if isEnabled {
+            self.btnSave.backgroundColor = AppColor.green005800
+        } else {
+            self.btnSave.backgroundColor = AppColor.greyC8C8C8
+        }
     }
 }
 
