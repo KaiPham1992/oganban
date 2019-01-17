@@ -35,11 +35,11 @@ class RecordSellingView: BaseViewXib {
             lbPrice.underlineLastCharacter()
             if _record.status == "expired" {
                 lbTotal.text = "Tin hết hạn"
-                lbTotal.backgroundColor = AppColor.gray_233_233_234
+                lbTotal.backgroundColor = AppColor.yellow_228_251_30
                 lbTotal.textColor = AppColor.red_233_1_1
             } else if _record.status == "hide" {
                 lbTotal.text = "Tin đã ẩn"
-                lbTotal.backgroundColor = AppColor.yellow_228_251_30
+                lbTotal.backgroundColor = AppColor.gray_233_233_234
                 lbTotal.textColor = AppColor.red_233_1_1
             } else {
                 let qty = _record.quantity
