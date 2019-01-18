@@ -12,7 +12,7 @@ import Foundation
 
 //MARK: Wireframe -
 protocol NotificationWireframeProtocol: class {
-
+    func gotoLogin()
 }
 //MARK: Presenter -
 protocol NotificationPresenterProtocol: class {
@@ -21,7 +21,7 @@ protocol NotificationPresenterProtocol: class {
     
     func getNotification(offset: Int)
     func readNotification(id: String)
-    
+    func gotoLogin()
 }
 
 //MARK: Interactor -

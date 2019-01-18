@@ -138,5 +138,15 @@ extension MoreViewController: MoreViewProtocol {
     func logoutSuccess() {
         getMenuNotLogin()
         tvMore.reloadData()
+        DataManager.shared.getNotificationCount { (count) in
+            if let tabItems = self.tabBarController?.tabBar.items {
+                let tabItem = tabItems[3]
+                if count == 0 {
+                    tabItem.badgeValue = nil
+                } else {
+                    tabItem.badgeValue = "\(count)"
+                }
+            }
+        }
     }
 }

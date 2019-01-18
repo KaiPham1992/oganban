@@ -30,6 +30,9 @@ class NotificationPresenter: NotificationPresenterProtocol {
         interactor?.readNotification(id: id)
     }
 
+    func gotoLogin() {
+        router.gotoLogin()
+    }
 }
 
 extension NotificationPresenter: NotificationInteractorOutputProtocol {
