@@ -148,5 +148,8 @@ extension MoreViewController: MoreViewProtocol {
                 }
             }
         }
+        
+        // come back to home page
+        self.tabBarController?.selectedIndex = 0
     }
 }
