@@ -72,6 +72,7 @@ class HomeViewController: BaseViewController {
 	override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
+        tfSearch.text = "Tìm bài đăng"
         configureCollectionView()
         configureTableView()
         presenter?.getCategoryMerge()
@@ -567,6 +568,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension HomeViewController: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        tfSearch.text = ""
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         view.endEditing(true)
         paramFilter.keyword = textField.text&
@@ -622,3 +628,4 @@ extension HomeViewController: LeftMenuCellDelegate {
         vAccept.isHidden = false
     }
 }
+

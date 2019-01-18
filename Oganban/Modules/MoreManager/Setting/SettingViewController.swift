@@ -63,6 +63,7 @@ class SettingViewController: BaseViewController {
         radiusDropdown.selectionBackgroundColor = AppColor.main
         radiusDropdown.selectedTextColor = .yellow
         radiusDropdown.downScaleTransform = CGAffineTransform(rotationAngle: (-.pi))
+    
         radiusDropdown.selectionAction = { [weak self](index, item) in
             guard let `self` = self else { return }
 //            if  self.dataSource[index].title& == "Không giới hạn" {
@@ -110,7 +111,7 @@ extension SettingViewController: SettingViewProtocol {
         }
         radiusDropdown.dataSource = dataSource.map({$0.title&})
         
-        // Set selected current item to set color for this item
+        // Set selected current item to set color for this
         for (index, item) in dataSource.enumerated() {
             if let currentItem = (UserDefaultHelper.shared.radius)?.title, let _item = item.title, currentItem == _item {
                 radiusDropdown.selectRow(index, scrollPosition: .bottom)
