@@ -46,11 +46,15 @@ class FavouriteViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.hideTabbar()
+        checkLogin()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        checkLogin()
+        
+        if vCheckLogin.isHidden {
+            pullToRefresh()
+        }
     }
     
     func configureTableView() {
@@ -69,7 +73,7 @@ class FavouriteViewController: BaseViewController {
         
         if UserDefaultHelper.shared.isLoggedIn {
             vCheckLogin.isHidden = true
-            pullToRefresh()
+            
         } else {
             vCheckLogin.isHidden = false
         }

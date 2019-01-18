@@ -65,12 +65,19 @@ class MyExchangeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        getData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         checkLogin()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if vCheckLogin.isHidden { // if login
+            getData()
+        }
     }
     
     func setupView() {
@@ -83,9 +90,9 @@ class MyExchangeViewController: BaseViewController {
     }
     
     func checkLogin() {
+        hideNoData()
         if UserDefaultHelper.shared.isLoggedIn {
             vCheckLogin.isHidden = true
-//            getData()
         } else {
             vCheckLogin.isHidden = false
             hideNoData()
