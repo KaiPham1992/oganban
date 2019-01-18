@@ -39,7 +39,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7wr-kH-loR">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="47"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Danh mục *" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HBx-mH-uwC">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Địa chỉ đăng bán *" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HBx-mH-uwC">
                                             <rect key="frame" x="16" y="14.5" width="343" height="18"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                             <color key="textColor" red="0.43137254899999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -54,18 +54,18 @@
                                         <constraint firstAttribute="trailing" secondItem="HBx-mH-uwC" secondAttribute="trailing" constant="16" id="zTt-LJ-jCF"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tkc-Iz-hA2" customClass="CheckBoxTextField" customModule="Oganban" customModuleProvider="target">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tkc-Iz-hA2" customClass="CheckBoxTextField" customModule="Oganban_AppStore" customModuleProvider="target">
                                     <rect key="frame" x="16" y="57" width="343" height="65"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="65" id="wTv-w4-zRR"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="79N-fG-2Uk" customClass="CheckBoxTextField" customModule="Oganban" customModuleProvider="target">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="79N-fG-2Uk" customClass="CheckBoxTextField" customModule="Oganban_AppStore" customModuleProvider="target">
                                     <rect key="frame" x="16" y="132" width="343" height="65"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QIc-ll-uzD" customClass="AppRadioButton" customModule="Oganban" customModuleProvider="target">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QIc-ll-uzD" customClass="AppRadioButton" customModule="Oganban_AppStore" customModuleProvider="target">
                                     <rect key="frame" x="16" y="207" width="343" height="30"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
@@ -90,14 +90,14 @@
                                         <constraint firstItem="liA-QU-mpj" firstAttribute="centerY" secondItem="Xdl-qh-iS5" secondAttribute="centerY" id="r9y-ui-Wwu"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t7N-e2-hs0" customClass="CheckBoxTextField" customModule="Oganban" customModuleProvider="target">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t7N-e2-hs0" customClass="CheckBoxTextField" customModule="Oganban_AppStore" customModuleProvider="target">
                                     <rect key="frame" x="16" y="304" width="343" height="65"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="65" id="1cc-b3-sFo"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NKF-Xa-GMM" customClass="CheckBoxTextField" customModule="Oganban" customModuleProvider="target">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NKF-Xa-GMM" customClass="CheckBoxTextField" customModule="Oganban_AppStore" customModuleProvider="target">
                                     <rect key="frame" x="16" y="379" width="343" height="65"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
@@ -156,7 +156,7 @@
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Fwo-cc-Auk"/>
                         <constraint firstAttribute="height" constant="40" id="Scv-E1-tyT"/>
                     </constraints>
-                    <state key="normal" title="Đăng sản phẩm">
+                    <state key="normal" title="Đăng bán">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>

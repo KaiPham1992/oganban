@@ -35,6 +35,20 @@ enum AppDateFormat: String {
 }
 
 extension Date {
+    func getNextMonth() -> Date? {
+        return Calendar.current.date(byAdding: .month, value: 1, to: self)
+    }
+    
+    func getNext30Day() -> Date? {
+        return Calendar.current.date(byAdding: .day, value: 30, to: self)
+    }
+    
+    func getPreviousMonth() -> Date? {
+        return Calendar.current.date(byAdding: .month, value: -1, to: self)
+    }
+}
+
+extension Date {
     func isSmaller(date: Date) -> Bool {
         let order = self.compare(date)
         return order == .orderedAscending

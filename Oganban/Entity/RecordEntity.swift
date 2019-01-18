@@ -32,6 +32,7 @@ class RecordEntity: BaseEntity {
     var distanceConvert: String?
     var about: String?
     var address1: String?
+    var address: String?
     var address2: String?
     var phone: String?
     var accountCoin: Double?
@@ -71,6 +72,7 @@ class RecordEntity: BaseEntity {
         self.arrayImage <- map["img_src_list"]
         self.imgHome <- map["img_src"]
         self.address1 <- map["address_1"]
+        self.address <- map["address"]
         self.address2 <- map["address_2"]
         self.level <- map["level"]
         self.phone <- map["phone"]

@@ -26,8 +26,6 @@ class OrderBuyDetailViewController: BaseViewController {
         }
     }
     
-    
-    
     var price: Double = 0
     var quantity: Int = 0
     var recordId: String?
@@ -49,7 +47,40 @@ class OrderBuyDetailViewController: BaseViewController {
         configureTable()
         
         presenter?.getDetail(id: recordId&)
+        
+        NotificationCenter.default.removeObserver(self)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(didDeleteSubcomment), name: AppConstant.deleteSubComment, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(didDeleteComment), name: AppConstant.deleteComment, object: nil)
     }
+    
+    @objc func didDeleteSubcomment(notification: Notification) {
+        guard let id = notification.object as? String else { return }
+        for comment in listComment {
+            for i in 0..<comment.subComment.count {
+                if comment.subComment[i].id == id {
+                    comment.subComment.remove(at: i)
+                    break
+                }
+            }
+        }
+        
+        tbDetail.reloadData()
+    }
+    
+    @objc func didDeleteComment(notification: Notification) {
+        guard let id = notification.object as? String else { return }
+        for i in 0..<listComment.count {
+            if listComment[i].id == id {
+                listComment.remove(at: i)
+                break
+            }
+        }
+        
+        tbDetail.reloadData()
+    }
+    
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)

@@ -31,11 +31,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.shared.statusBarStyle = .lightContent
         configureGoogle()
         
+//        checkGPS()
+        
         checkLogin()
         AppRouter.shared.openTabbar()
-//        let vcLogin = OrderDetailRouter.createModule()
-//        let nc = UINavigationController(rootViewController: vcLogin)
-//        window?.rootViewController = nc
+        //        let vcLogin = OrderDetailRouter.createModule()
+        //        let nc = UINavigationController(rootViewController: vcLogin)
+        //        window?.rootViewController = nc
         UserDefaultHelper.shared.saveLocation(lat: CLLocationDegrees(10.737938), long: CLLocationDegrees(106.677911), address: "180 Đường Cao Lỗ, Phường 4, Quận 8, Hồ Chí Minh, Vietnam")
         return true
     }
@@ -62,8 +64,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
         checkLogin()
-        if CLLocationManager.authorizationStatus() == .denied {
-            PopUpHelper.shared.showNoGPS()
+        
+        guard let topView = UIApplication.topViewController() else { return }
+        if topView is CheckGPSViewController {
+            topView.viewWillAppear(true)
+        }
+//        checkGPS()
+    }
+    
+    func checkGPS() {
+        if CLLocationManager.authorizationStatus() != .authorizedAlways && CLLocationManager.authorizationStatus() != .authorizedWhenInUse {
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
+                PopUpHelper.shared.showNoGPS()
+            }
         }
     }
     

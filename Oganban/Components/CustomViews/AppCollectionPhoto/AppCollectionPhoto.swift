@@ -52,7 +52,7 @@ class AppCollectionPhoto: UIView {
     var addIcon: UIImage = AppImage.imgCamera
     var cellBorderColor: UIColor = AppColor.line
     var borderAll: Bool = true
-    var ratioCell: CGFloat = 1
+    var ratioCell: CGFloat = 9/16
     
     override init(frame: CGRect) {
         super.init(frame: frame)

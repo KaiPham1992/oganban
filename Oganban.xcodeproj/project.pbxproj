@@ -310,6 +310,12 @@
 		DE0DBAF521D3BC590097E38F /* ParentNotificationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0DBAF421D3BC590097E38F /* ParentNotificationEntity.swift */; };
 		DE0E79D721D658080053786D /* SelectImageFromMobileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0E79D621D658080053786D /* SelectImageFromMobileHelper.swift */; };
 		DE0E79D921D65F760053786D /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0E79D821D65F760053786D /* Connectivity.swift */; };
+		DE146E9221F0B8AF00FD0887 /* CheckGPSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE146E9021F0B8AF00FD0887 /* CheckGPSViewController.swift */; };
+		DE146E9321F0B8AF00FD0887 /* CheckGPSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE146E9021F0B8AF00FD0887 /* CheckGPSViewController.swift */; };
+		DE146E9421F0B8AF00FD0887 /* CheckGPSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE146E9021F0B8AF00FD0887 /* CheckGPSViewController.swift */; };
+		DE146E9521F0B8AF00FD0887 /* CheckGPSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE146E9121F0B8AF00FD0887 /* CheckGPSViewController.xib */; };
+		DE146E9621F0B8AF00FD0887 /* CheckGPSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE146E9121F0B8AF00FD0887 /* CheckGPSViewController.xib */; };
+		DE146E9721F0B8AF00FD0887 /* CheckGPSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE146E9121F0B8AF00FD0887 /* CheckGPSViewController.xib */; };
 		DE2181FA21CD3AD300FDD9F1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE2181F921CD3AD300FDD9F1 /* GoogleService-Info.plist */; };
 		DE2181FC21CD3C1400FDD9F1 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2181FB21CD3C1400FDD9F1 /* AppRouter.swift */; };
 		DE2181FE21CD3DC300FDD9F1 /* AppDelegate+Push.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2181FD21CD3DC300FDD9F1 /* AppDelegate+Push.swift */; };
@@ -1768,6 +1774,8 @@
 		DE0DBAF421D3BC590097E38F /* ParentNotificationEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentNotificationEntity.swift; sourceTree = "<group>"; };
 		DE0E79D621D658080053786D /* SelectImageFromMobileHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectImageFromMobileHelper.swift; sourceTree = "<group>"; };
 		DE0E79D821D65F760053786D /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
+		DE146E9021F0B8AF00FD0887 /* CheckGPSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckGPSViewController.swift; sourceTree = "<group>"; };
+		DE146E9121F0B8AF00FD0887 /* CheckGPSViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckGPSViewController.xib; sourceTree = "<group>"; };
 		DE2181F921CD3AD300FDD9F1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DE2181FB21CD3C1400FDD9F1 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		DE2181FD21CD3DC300FDD9F1 /* AppDelegate+Push.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Push.swift"; sourceTree = "<group>"; };
@@ -2441,6 +2449,7 @@
 		CB172B1821C6A1480068CF92 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				DE146E8F21F0B72000FD0887 /* CheckGPS */,
 				DEADC97C21EC126F00696959 /* WebView */,
 				CBE2183D21E219B70035F00B /* OrderBuyDetail */,
 				DE5E083A21E1C0E70053EC9D /* MyBuyDetail */,
@@ -2959,6 +2968,15 @@
 				DE0DBAE021D3B6DA0097E38F /* NotificationCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		DE146E8F21F0B72000FD0887 /* CheckGPS */ = {
+			isa = PBXGroup;
+			children = (
+				DE146E9021F0B8AF00FD0887 /* CheckGPSViewController.swift */,
+				DE146E9121F0B8AF00FD0887 /* CheckGPSViewController.xib */,
+			);
+			path = CheckGPS;
 			sourceTree = "<group>";
 		};
 		DE2181F821CD3AC500FDD9F1 /* SupportFile */ = {
@@ -3776,6 +3794,7 @@
 				84329F2221DFB5E100047B5E /* HistoryCoinViewController.xib in Resources */,
 				84421BFA21CBEF1E00F468F5 /* MoreHeaderCell.xib in Resources */,
 				B325C2F021CE05B20048A148 /* MenuCell.xib in Resources */,
+				DE146E9521F0B8AF00FD0887 /* CheckGPSViewController.xib in Resources */,
 				B3A3237221DB332100E1AD4C /* LeftMenuCell.xib in Resources */,
 				B36A236021E1AEBA00AA20DF /* SettingViewController.xib in Resources */,
 				DE8B57D521EB1B9900C72D6A /* OrderMoreCell.xib in Resources */,
@@ -3891,6 +3910,7 @@
 				DE68D20421F0122C00A3A7BE /* HistoryCoinViewController.xib in Resources */,
 				DE68D20521F0122C00A3A7BE /* MoreHeaderCell.xib in Resources */,
 				DE68D20621F0122C00A3A7BE /* MenuCell.xib in Resources */,
+				DE146E9621F0B8AF00FD0887 /* CheckGPSViewController.xib in Resources */,
 				DE68D20721F0122C00A3A7BE /* LeftMenuCell.xib in Resources */,
 				DE68D20821F0122C00A3A7BE /* SettingViewController.xib in Resources */,
 				DE68D20921F0122C00A3A7BE /* OrderMoreCell.xib in Resources */,
@@ -4006,6 +4026,7 @@
 				DE68D3F021F0123A00A3A7BE /* HistoryCoinViewController.xib in Resources */,
 				DE68D3F121F0123A00A3A7BE /* MoreHeaderCell.xib in Resources */,
 				DE68D3F221F0123A00A3A7BE /* MenuCell.xib in Resources */,
+				DE146E9721F0B8AF00FD0887 /* CheckGPSViewController.xib in Resources */,
 				DE68D3F321F0123A00A3A7BE /* LeftMenuCell.xib in Resources */,
 				DE68D3F421F0123A00A3A7BE /* SettingViewController.xib in Resources */,
 				DE68D3F521F0123A00A3A7BE /* OrderMoreCell.xib in Resources */,
@@ -4677,6 +4698,7 @@
 				CB172C9D21C6A2EF0068CF92 /* BasePopUpView.swift in Sources */,
 				DE442C4721CFA33D0051C0B8 /* PostCommentView.swift in Sources */,
 				CB172C1821C6A2EF0068CF92 /* UIViewController+extension.swift in Sources */,
+				DE146E9221F0B8AF00FD0887 /* CheckGPSViewController.swift in Sources */,
 				DE07F56921CF539D00DE2032 /* AppCollectionPhoto.swift in Sources */,
 				DEA3A08821D6738200643296 /* AppImageSlide.swift in Sources */,
 				CBD1C29821D732CB006DB3FF /* MyBuyViewController.swift in Sources */,
@@ -5056,6 +5078,7 @@
 				DE68D17C21F0122C00A3A7BE /* BasePopUpView.swift in Sources */,
 				DE68D17D21F0122C00A3A7BE /* PostCommentView.swift in Sources */,
 				DE68D17E21F0122C00A3A7BE /* UIViewController+extension.swift in Sources */,
+				DE146E9321F0B8AF00FD0887 /* CheckGPSViewController.swift in Sources */,
 				DE68D17F21F0122C00A3A7BE /* AppCollectionPhoto.swift in Sources */,
 				DE68D18021F0122C00A3A7BE /* AppImageSlide.swift in Sources */,
 				DE68D18121F0122C00A3A7BE /* MyBuyViewController.swift in Sources */,
@@ -5435,6 +5458,7 @@
 				DE68D36821F0123A00A3A7BE /* BasePopUpView.swift in Sources */,
 				DE68D36921F0123A00A3A7BE /* PostCommentView.swift in Sources */,
 				DE68D36A21F0123A00A3A7BE /* UIViewController+extension.swift in Sources */,
+				DE146E9421F0B8AF00FD0887 /* CheckGPSViewController.swift in Sources */,
 				DE68D36B21F0123A00A3A7BE /* AppCollectionPhoto.swift in Sources */,
 				DE68D36C21F0123A00A3A7BE /* AppImageSlide.swift in Sources */,
 				DE68D36D21F0123A00A3A7BE /* MyBuyViewController.swift in Sources */,
@@ -5759,9 +5783,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Oganban/Oganban.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = Q3TBY53XUC;
+				DEVELOPMENT_TEAM = Y79MW4TYLW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Oganban/SupportFile",
@@ -5774,7 +5798,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.oganban.oganban;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development com.engma.oganban";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.oganban.oganban";
 				SWIFT_OBJC_BRIDGING_HEADER = "Oganban/SupportFile/Oganban-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -5791,7 +5815,7 @@
 				CODE_SIGN_ENTITLEMENTS = Oganban/Oganban.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = Q3TBY53XUC;
+				DEVELOPMENT_TEAM = Y79MW4TYLW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Oganban/SupportFile",
@@ -5804,7 +5828,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.oganban.oganban;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.engma.oganban";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.oganban.oganban";
 				SWIFT_OBJC_BRIDGING_HEADER = "Oganban/SupportFile/Oganban-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

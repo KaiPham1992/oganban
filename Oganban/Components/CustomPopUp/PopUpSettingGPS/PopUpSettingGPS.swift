@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import GooglePlaces
+import GoogleMaps
 
 class PopUpSettingGPS: BasePopUpView {
     lazy var vSetting: PopUpSettingGPSContent = {
@@ -30,13 +32,24 @@ class PopUpSettingGPS: BasePopUpView {
     }
     
     @objc func btnSettingTapped() {
-        hidePopUp()
+//        hidePopUp()
+        if !CLLocationManager.locationServicesEnabled() {
+            if let url = URL(string: "App-Prefs:root=Privacy&path=LOCATION") {
+                // If general location settings are disabled then open general location settings
+                UIApplication.shared.open(url)
+            }
+        } else {
+            if let url = URL(string: UIApplication.openSettingsURLString) {
+                // If general location settings are enabled then open location settings for the app
+                UIApplication.shared.open(url)
+            }
+        }
         
-        guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
-            return
-        }
-        if UIApplication.shared.canOpenURL(settingsUrl) {
-            UIApplication.shared.open(settingsUrl)
-        }
+//        if let bundleId = Bundle.main.bundleIdentifier,
+//            let url = URL(string: "\(UIApplication.openSettingsURLString)&path=LOCATION/\(bundleId)")
+//        {
+//            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+//        }
+       
     }
 }

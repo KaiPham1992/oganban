@@ -17,5 +17,6 @@ class PopUpNotificationHaveAdmobContent: BaseViewXib {
     
     override func setUpViews() {
         super.setUpViews()
+        lbMessage.numberOfLines = 0
     }
 }

@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Oganban muốn sử dụng vị trí để tải dữ liệu</string>
 	<key>AccountKitClientToken</key>
 	<string>195782fa5d85685a90d770734824afb3</string>
 	<key>CFBundleDevelopmentRegion</key>
@@ -36,6 +38,14 @@
 				<string>fb225241758398999</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>prefs</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>201901160143</string>
@@ -59,8 +69,10 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Oganban cần sử dụng camera để đăng hình</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Oganban muốn sử dụng vị trí để tải dữ liệu</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Oganban muốn sử dụng vị trí</string>
+	<string>Oganban muốn sử dụng vị trí để tải dữ liệu</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Oganban cần sử dụng thư viện ảnh để đăng hình</string>
 	<key>UIAppFonts</key>

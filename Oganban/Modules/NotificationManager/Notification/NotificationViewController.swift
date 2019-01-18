@@ -126,8 +126,23 @@ extension NotificationViewController: UITableViewDelegate, UITableViewDataSource
         noti.isReadString = "1"
         presenter?.readNotification(id: noti.id&)
         
-        let vc = NotificationDetailRouter.createModule(notification: noti)
-        self.push(controller: vc)
+        switch noti.screen& {
+        case "ORDER_BUYER":
+            let vc = OrderBuyDetailRouter.createModule(recordId: noti.objectId&)
+            self.push(controller: vc)
+        case "ORDER_SELLER":
+            let vc = OrderDetailRouter.createModule(recordId: noti.objectId&)
+            self.push(controller: vc)
+        case "RE_COMMENT":
+            let vc = CommentDetailRouter.createModule(recordId: noti.objectId&)
+            self.push(controller: vc)
+        case "COMMENT":
+            let vc = CommentDetailRouter.createModule(recordId: noti.objectId&)
+            self.push(controller: vc)
+        default:
+            let vc = NotificationDetailRouter.createModule(notification: noti)
+            self.push(controller: vc)
+        }
     }
     
     @objc func pullToRefresh() {

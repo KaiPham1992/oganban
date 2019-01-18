@@ -16,6 +16,12 @@ class PopUpHelper {
         popUp.showPopUp(message: message)
     }
     
+    
+    func showPopUpCanPost() {
+        let popUp = PopUpNotificationHaveAdmob()
+        popUp.showPopUpCanPost()
+    }
+    
     func showMessageHaveAds(error: APIError?) {
         guard let _error = error else { return }
         let popUp = PopUpNotificationHaveAdmob()

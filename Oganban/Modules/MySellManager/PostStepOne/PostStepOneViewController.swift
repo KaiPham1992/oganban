@@ -30,7 +30,11 @@ class PostStepOneViewController: BaseViewController {
     
     var postParam = PostRecordParam()
     var categoryId: String?
-    var dateSeleted: Date?
+    var dateSeleted: Date? {
+        didSet {
+            vChooseDate.textField.text = dateSeleted?.toString(dateFormat: AppDateFormat.yyyyMMdd)&
+        }
+    }
     var errorMessage: String = "" {
         didSet {
             print(errorMessage)
@@ -92,6 +96,9 @@ class PostStepOneViewController: BaseViewController {
         //--
         vQuantity.textField.keyboardType = UIKeyboardType.numberPad
         lbNotice.textColor = AppColor.red
+        
+        //--
+        dateSeleted = Date().getNext30Day()
     }
     
     private func checkCopyUpdate() {
@@ -190,7 +197,22 @@ class PostStepOneViewController: BaseViewController {
         }
         
         if vQuantity.textField.text == "0" || vQuantity.textField.text == nil {
-            lbNotice.text = "Nhập số lượng đăng bán"
+            lbNotice.text = "Vui lòng nhập số lượng"
+            return
+        }
+        
+        if let intQuality = Int(vQuantity.textField.text&) {
+            if intQuality < 0 {
+                lbNotice.text = "Vui lòng nhập số lượng"
+                return
+            }
+            
+            if intQuality > 99000 {
+                lbNotice.text = "Số lượng đăng bán không vượt quá 99000 sản phẩm"
+                return
+            }
+        } else {
+            lbNotice.text = "Vui lòng nhập số lượng"
             return
         }
         

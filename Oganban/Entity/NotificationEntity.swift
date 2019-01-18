@@ -19,6 +19,8 @@ class NotificationEntity: BaseEntity {
     var createTime: Date?
     var createFromTimestamp: Date?
     var actionKey: String?
+    var screen: String?
+    var objectId: String?
     
     override func mapping(map: Map) {
         super.mapping(map: map)
@@ -32,6 +34,8 @@ class NotificationEntity: BaseEntity {
         self.isReadString <- map["is_read"]
         self.isRead =  self.isReadString == "1"
         self.actionKey <- map["action_key"]
+        self.screen <- map["screen"]
+        self.objectId <- map["obj_id"]
     }
     
     required init?(map: Map) {
