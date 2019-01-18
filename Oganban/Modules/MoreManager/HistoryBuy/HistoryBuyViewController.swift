@@ -12,6 +12,9 @@ import UIKit
 
 class HistoryBuyViewController: BaseViewController {
 
+    
+    @IBOutlet weak var btnLogin: UIButton!
+    @IBOutlet weak var vCheckLogin: UIView!
     var presenter: HistoryBuyPresenterProtocol?
     @IBOutlet weak var tvHistory: UITableView!
     
@@ -36,16 +39,20 @@ class HistoryBuyViewController: BaseViewController {
         self.addBackToNavigation(icon: AppImage.imgWhiteBack)
         self.setTitleNavigation(title: NavigationTitle.historyBuy)
         configureTableView()
+        btnLogin.setBorderWithCornerRadius(borderWidth: 0, borderColor: .clear, cornerRadius: 20)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         hideTabbar()
+        checkLogin()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        pullToRefresh()
+        if vCheckLogin.isHidden {
+            pullToRefresh()
+        }
     }
     
     func configureTableView() {
@@ -66,6 +73,23 @@ class HistoryBuyViewController: BaseViewController {
         self.refreshControl.endRefreshing()
         presenter?.getHistoryBuy(offset: 0)
     }
+    
+    func checkLogin() {
+        
+        hideNoData()
+        
+        if UserDefaultHelper.shared.isLoggedIn {
+            vCheckLogin.isHidden = true
+            
+        } else {
+            vCheckLogin.isHidden = false
+        }
+    }
+    
+    @IBAction func tapLoginButton(_ sender: UIButton) {
+        presenter?.gotoLogin()
+    }
+    
 }
 extension HistoryBuyViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

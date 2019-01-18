@@ -25,6 +25,10 @@ class HistoryCoinPresenter: HistoryCoinPresenterProtocol {
     func getHistoryCoin(offset: Int) {
         interactor?.getHistoryCoin(offset: offset)
     }
+    
+    func gotoLogin() {
+        router.gotoLogin()
+    }
 }
 
 extension HistoryCoinPresenter: HistoryCoinInteractorOutputProtocol{

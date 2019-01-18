@@ -14,6 +14,8 @@ class HistoryCoinViewController: BaseViewController {
     
     var presenter: HistoryCoinPresenterProtocol?
     
+    @IBOutlet weak var btnLogin: UIButton!
+    @IBOutlet weak var vLogin: UIView!
     @IBOutlet weak var tvHistory: UITableView!
     @IBOutlet weak var totalCoin: UILabel!
     var refreshControl:  UIRefreshControl!
@@ -38,16 +40,20 @@ class HistoryCoinViewController: BaseViewController {
         self.addBackToNavigation(icon: AppImage.imgWhiteBack)
         self.setTitleNavigation(title: NavigationTitle.historyCoin)
         configureTableView()
+        btnLogin.setBorderWithCornerRadius(borderWidth: 0, borderColor: .clear, cornerRadius: 20)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
          self.hideTabbar()
+        self.checkLogin()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        pullToRefresh()
+        if vLogin.isHidden {
+            pullToRefresh()
+        }
     }
     
     func configureTableView() {
@@ -68,6 +74,23 @@ class HistoryCoinViewController: BaseViewController {
         self.refreshControl.endRefreshing()
         self.presenter?.getHistoryCoin(offset: 0)
     }
+    
+    func checkLogin() {
+        
+        hideNoData()
+        
+        if UserDefaultHelper.shared.isLoggedIn {
+            vLogin.isHidden = true
+            
+        } else {
+            vLogin.isHidden = false
+        }
+    }
+
+    @IBAction func tapLoginButton(_ sender: UIButton) {
+         presenter?.gotoLogin()
+    }
+    
 }
 
 extension HistoryCoinViewController: UITableViewDelegate, UITableViewDataSource {

@@ -25,6 +25,10 @@ class HistoryBuyPresenter: HistoryBuyPresenterProtocol {
     func getHistoryBuy(offset: Int) {
         interactor?.getHistoryBuy(offset: offset)
     }
+    
+    func gotoLogin() {
+        router.gotoLogin()
+    }
 }
 
 extension HistoryBuyPresenter: HistoryBuyInteractorOutputProtocol {

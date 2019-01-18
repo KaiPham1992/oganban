@@ -85,26 +85,13 @@ class MoreRouter: MoreWireframeProtocol {
     }
     
     private func tapHistoryCoin(){
-       
-        if UserDefaultHelper.shared.loginUserInfo == nil {
-            let vc = LoginRouter.createModule()
-            let nc = UINavigationController(rootViewController: vc)
-            viewController?.present(controller: nc, animated: true)
-        } else {
-            let vc = HistoryCoinRouter.createModule()
-            viewController?.navigationController?.pushViewController(vc, animated: true)
-        }
+        let vc = HistoryCoinRouter.createModule()
+        viewController?.navigationController?.pushViewController(vc, animated: true)
     }
     
     private func tapHistoryBuy(){
-        if UserDefaultHelper.shared.loginUserInfo == nil {
-            let vc = LoginRouter.createModule()
-            let nc = UINavigationController(rootViewController: vc)
-            viewController?.present(controller: nc, animated: true)
-        } else {
-            let vc = HistoryBuyRouter.createModule()
-            viewController?.navigationController?.pushViewController(vc, animated: true)
-        }
+        let vc = HistoryBuyRouter.createModule()
+        viewController?.navigationController?.pushViewController(vc, animated: true)
     }
     
 
