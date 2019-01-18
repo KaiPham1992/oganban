@@ -26,6 +26,9 @@ class SupplementaryInfoPresenter: SupplementaryInfoPresenterProtocol  {
         interactor?.updateLoginSocial(socialParam: socialParam)
     }
 
+    func showPolicy() {
+        router.showPolicy()
+    }
 }
 
 extension SupplementaryInfoPresenter: SupplementaryInfoInteractorOutputProtocol {

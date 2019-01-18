@@ -12,13 +12,14 @@ import Foundation
 
 //MARK: Wireframe -
 protocol SupplementaryInfoWireframeProtocol: class {
-    
+    func showPolicy()
 }
 //MARK: Presenter -
 protocol SupplementaryInfoPresenterProtocol: class {
     
     var interactor: SupplementaryInfoInteractorInputProtocol? { get set }
     func updateLoginSocial(socialParam: UpdateProfileSocial)
+    func showPolicy()
 }
 
 //MARK: Interactor -

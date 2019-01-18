@@ -69,8 +69,15 @@ class MoreRouter: MoreWireframeProtocol {
     
     private func tapTutorial(){
         let vc =  WebViewController.initFromNib()
-        vc.isSignUp = true 
-        viewController?.navigationController?.pushViewController(vc, animated: true)
+        guard let url = URL(string: Link.tutorial) else {
+            return
+        }
+        
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
     }
     
     private func tapHeader(){
