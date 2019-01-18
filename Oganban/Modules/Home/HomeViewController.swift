@@ -250,15 +250,8 @@ class HomeViewController: BaseViewController {
     }
     
     @IBAction func btnGotoFavoriteTapped() {
-
-        if UserDefaultHelper.shared.loginUserInfo == nil {
-            let vc = LoginRouter.createModule()
-            let nc = UINavigationController(rootViewController: vc)
-            self.present(controller: nc, animated: true)
-        } else {
-            let vc = FavouriteRouter.createModule()
-            self.push(controller: vc)
-        }
+        let vc = FavouriteRouter.createModule()
+        self.push(controller: vc)
     }
     
     @IBAction func btnSearchTapped() {
