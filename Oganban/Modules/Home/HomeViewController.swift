@@ -143,11 +143,14 @@ class HomeViewController: BaseViewController {
         tbRight.rowHeight = UITableView.automaticDimension
         tbLeft.rowHeight = UITableView.automaticDimension
         hideDropdown()
+        tbLeft.backgroundColor = AppColor.main
+        tbRight.backgroundColor = AppColor.main
         tbLeft.layer.cornerRadius = 10
         tbRight.layer.cornerRadius = 10
         tbRight.allowsMultipleSelection = true
         tbLeft.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: tbLeft.bounds.size.width - 10)
         tbRight.contentInset.bottom = 40
+        vAccept.backgroundColor = AppColor.main
     }
     
     override func setUpViews() {

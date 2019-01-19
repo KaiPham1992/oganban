@@ -399,12 +399,17 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" red="0.43137254899999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="9P5-Es-Pmw"/>
                         <constraint firstItem="qgm-cE-6aw" firstAttribute="centerX" secondItem="xyt-pj-ypa" secondAttribute="centerX" id="YoE-Dx-92u"/>
                         <constraint firstItem="qgm-cE-6aw" firstAttribute="centerY" secondItem="xyt-pj-ypa" secondAttribute="centerY" id="e0B-dJ-Hin"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
