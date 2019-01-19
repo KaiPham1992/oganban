@@ -27,6 +27,7 @@ class MyBuyViewController: BaseViewController {
     let dropDownStatus = DropDown()
     
     var isAllOrder: Bool = false
+    var key = OrderStatusKey.new.rawValue
     
     var dataOrder: BaseOrderEntity? {
         didSet {
@@ -50,8 +51,8 @@ class MyBuyViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        presenter?.getHistoryOrder(status: key, offset: 0, limit: 10)
     }
-    
     
     
     func setupView() {
@@ -63,7 +64,7 @@ class MyBuyViewController: BaseViewController {
     }
     
     func getData() {
-            presenter?.getHistoryOrder(status: OrderStatusKey.new.rawValue, offset: 0, limit: 10)
+        presenter?.getHistoryOrder(status: key, offset: 0, limit: 10)
     }
     
     
@@ -71,7 +72,7 @@ class MyBuyViewController: BaseViewController {
         super.viewWillAppear(animated)
         showTabbar()
         checkLogin()
-        
+        getData()
         if vCheckLogin.isHidden { // if login
             DataManager.shared.getNotificationCount { (count) in
                 if let tabItems = self.tabBarController?.tabBar.items {
@@ -83,12 +84,6 @@ class MyBuyViewController: BaseViewController {
                     }
                 }
             }
-        }
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        if vCheckLogin.isHidden { // if login
-            getData()
         }
     }
     
@@ -126,7 +121,6 @@ class MyBuyViewController: BaseViewController {
         dropDownStatus.separatorColor = .gray
         dropDownStatus.selectionBackgroundColor = AppColor.main
         dropDownStatus.selectedTextColor = .yellow
-        dropDownStatus.downScaleTransform = CGAffineTransform(rotationAngle: (-.pi))
         dropDownStatus.dataSource = ["Chờ duyệt", "Đang giao", "Hoàn Tất", "Đã huỷ", "Tất cả"]
         dropDownStatus.selectionAction = { [weak self](index, item) in
             guard let `self` = self else { return }
@@ -134,26 +128,31 @@ class MyBuyViewController: BaseViewController {
             
             switch item {
             case "Chờ duyệt":
-                self.presenter?.getHistoryOrder(status: OrderStatusKey.new.rawValue, offset: 0, limit: 10)
+                self.key = OrderStatusKey.new.rawValue
+                self.presenter?.getHistoryOrder(status: self.key, offset: 0, limit: 10)
                 
                 self.lbTextTotal.text = "Tổng đơn hàng đang chờ duyệt: "
                 
             case "Đang giao":
-                self.presenter?.getHistoryOrder(status: OrderStatusKey.waitDelivery.rawValue, offset: 0, limit: 10)
+                self.key = OrderStatusKey.waitDelivery.rawValue
+                self.presenter?.getHistoryOrder(status: self.key, offset: 0, limit: 10)
                 
                 self.lbTextTotal.text = "Tổng đơn hàng đang giao: "
                 
             case "Hoàn Tất":
-                self.presenter?.getHistoryOrder(status: OrderStatusKey.done.rawValue, offset: 0, limit: 10)
+                self.key = OrderStatusKey.done.rawValue
+                self.presenter?.getHistoryOrder(status: self.key, offset: 0, limit: 10)
                 
                 self.lbTextTotal.text = "Tổng đơn hàng đã hoàn tất: "
                 
             case "Đã huỷ":
-                self.presenter?.getHistoryOrder(status: OrderStatusKey.cancel.rawValue, offset: 0, limit: 10)
+                self.key = OrderStatusKey.cancel.rawValue
+                self.presenter?.getHistoryOrder(status: self.key, offset: 0, limit: 10)
                 
                 self.lbTextTotal.text = "Tổng đơn hàng đã huỷ: "
             case "Tất cả":
-                self.presenter?.getHistoryOrder(status: OrderStatusKey.all.rawValue, offset: 0, limit: 10)
+                self.key = OrderStatusKey.all.rawValue
+                self.presenter?.getHistoryOrder(status: self.key, offset: 0, limit: 10)
                 self.lbTextTotal.text = "Tổng tất cả các đơn hàng: "
                 self.isAllOrder = true
             default:

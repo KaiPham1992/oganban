@@ -128,6 +128,7 @@ extension MyBuyDetailViewController: MyBuyDetailViewProtocol {
     }
     
     func didPostRating(data: BaseResponse?) {
+        PopUpHelper.shared.showMessageHaveAds(message: "Đánh giá đơn hàng thành công !")
         self.pop()
     }
 }
@@ -218,14 +219,20 @@ extension MyBuyDetailViewController: MyBuyImageCellDelegate {
     
     @IBAction func btnRatingTapped() {
         // fix me
-//        PopUpHelper.shared.showMessageHaveAds(message: "Đang đợi API")
+        if vRating.number <= 0 {
+            PopUpHelper.shared.showMessageHaveAds(message: "Vui lòng chọn số sao muốn đánh giá !")
+            return
+        }
         guard let accountID = order?.accountIDSaler  else { return }
         presenter?.postRating(point: vRating.number, accountID: accountID, isBuyer: false, orderID: orderId)
     }
     
     @IBAction func btnRatingSalerTapped() {
         // fix me
-//        PopUpHelper.shared.showMessageHaveAds(message: "Đang đợi API 111")
+        if vRating.number <= 0 {
+            PopUpHelper.shared.showMessageHaveAds(message: "Vui lòng chọn số sao muốn đánh giá !")
+            return
+        }
         guard let accountID = order?.accountIDBuyer  else {return }
         presenter?.postRating(point: vRating.number, accountID: accountID, isBuyer: true, orderID: orderId)
     }

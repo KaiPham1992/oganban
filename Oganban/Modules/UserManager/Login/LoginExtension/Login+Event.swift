@@ -45,6 +45,7 @@ extension LoginViewController: LoginViewProtocol {
         } else {
             UserUtils.saveUser(user: _user)
             NotificationCenter.default.post(name: AppConstant.notiReloadMoreView, object: nil)
+//            NotificationCenter.default.post(name: AppConstant.loadDataLogin, object: nil)
             self.dismiss(animated: true)
         }
     }

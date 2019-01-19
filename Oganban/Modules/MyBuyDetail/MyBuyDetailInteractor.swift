@@ -46,10 +46,13 @@ class MyBuyDetailInteractor: MyBuyDetailInteractorInputProtocol {
     }
     
     func postRating(point: Int, accountID: String, isBuyer: Bool, orderID: String) {
+        ProgressView.shared.show()
         Provider.shared.userAPIService.postRating(point: point, accountID: accountID, isBuyer: isBuyer, orderID: orderID, success: { (data) in
-            self.presenter?.didPostRating(data: data)
-        }) { (_) in
             
+            self.presenter?.didPostRating(data: data)
+            ProgressView.shared.hide()
+        }) { (_) in
+            ProgressView.shared.hide()
         }
     }
 }
