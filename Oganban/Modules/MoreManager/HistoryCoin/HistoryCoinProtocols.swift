@@ -12,13 +12,14 @@ import Foundation
 
 //MARK: Wireframe -
 protocol HistoryCoinWireframeProtocol: class {
-
+    func gotoLogin()
 }
 //MARK: Presenter -
 protocol HistoryCoinPresenterProtocol: class {
 
     var interactor: HistoryCoinInteractorInputProtocol? { get set }
     func getHistoryCoin(offset: Int)
+    func gotoLogin()
 }
 
 //MARK: Interactor -

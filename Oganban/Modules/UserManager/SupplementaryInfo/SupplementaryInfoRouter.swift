@@ -27,4 +27,11 @@ class SupplementaryInfoRouter: SupplementaryInfoWireframeProtocol {
 
         return view
     }
+    
+    func showPolicy() {
+        let vc =  WebViewController.initFromNib()
+        vc.isPush = false
+        let nv = UINavigationController(rootViewController: vc)
+        self.viewController?.present(controller: nv, animated: true)
+    }
 }

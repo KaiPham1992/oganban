@@ -7,11 +7,18 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HistoryCoinViewController">
             <connections>
+                <outlet property="btnLogin" destination="nLo-SI-9OX" id="eLB-Lj-Zq5"/>
                 <outlet property="totalCoin" destination="thU-a8-tcK" id="InY-Yc-rDg"/>
                 <outlet property="tvHistory" destination="KOy-jM-Vm2" id="ugM-b8-cnc"/>
+                <outlet property="vLogin" destination="OP6-Dj-3pr" id="vAX-XW-aKF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -50,18 +57,48 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OP6-Dj-3pr">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nLo-SI-9OX">
+                            <rect key="frame" x="30" y="313.5" width="315" height="40"/>
+                            <color key="backgroundColor" red="0.0" green="0.34509803919999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="oK6-n0-ubu"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                            <state key="normal" title="Đăng nhập">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="tapLoginButton:" destination="-1" eventType="touchUpInside" id="2tf-BH-sSI"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="nLo-SI-9OX" secondAttribute="trailing" constant="30" id="CI8-Lc-eCA"/>
+                        <constraint firstItem="nLo-SI-9OX" firstAttribute="leading" secondItem="OP6-Dj-3pr" secondAttribute="leading" constant="30" id="IaV-Gd-uID"/>
+                        <constraint firstItem="nLo-SI-9OX" firstAttribute="centerX" secondItem="OP6-Dj-3pr" secondAttribute="centerX" id="bV0-a6-Vgc"/>
+                        <constraint firstItem="nLo-SI-9OX" firstAttribute="centerY" secondItem="OP6-Dj-3pr" secondAttribute="centerY" id="rId-3m-RgY"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="OP6-Dj-3pr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="2wq-pY-VK1"/>
                 <constraint firstItem="C1z-KN-ylC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3qw-aO-zDX"/>
                 <constraint firstItem="KOy-jM-Vm2" firstAttribute="top" secondItem="C1z-KN-ylC" secondAttribute="bottom" id="6ar-sF-eVR"/>
+                <constraint firstAttribute="bottom" secondItem="OP6-Dj-3pr" secondAttribute="bottom" id="9Hz-8T-rAp"/>
+                <constraint firstItem="OP6-Dj-3pr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="K8H-J2-o6B"/>
                 <constraint firstAttribute="trailing" secondItem="KOy-jM-Vm2" secondAttribute="trailing" id="Ox7-w0-ZkN"/>
                 <constraint firstAttribute="trailing" secondItem="C1z-KN-ylC" secondAttribute="trailing" id="QnE-MX-M4e"/>
                 <constraint firstItem="C1z-KN-ylC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="V1V-ff-cxh"/>
                 <constraint firstItem="KOy-jM-Vm2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="mtj-qf-L9B"/>
+                <constraint firstAttribute="trailing" secondItem="OP6-Dj-3pr" secondAttribute="trailing" id="rnN-pI-XyV"/>
                 <constraint firstAttribute="bottom" secondItem="KOy-jM-Vm2" secondAttribute="bottom" id="wvs-ul-Zxf"/>
             </constraints>
-            <point key="canvasLocation" x="135" y="144"/>
+            <point key="canvasLocation" x="133.59999999999999" y="143.47826086956522"/>
         </view>
     </objects>
 </document>

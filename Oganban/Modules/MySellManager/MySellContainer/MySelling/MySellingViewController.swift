@@ -64,7 +64,14 @@ class MySellingViewController: BaseViewController {
         super.viewWillAppear(animated)
         
         checkLogin()
-        getData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if vCheckLogin.isHidden { // if login
+             getData()
+        }
     }
     
     func setupView() {
@@ -80,9 +87,9 @@ class MySellingViewController: BaseViewController {
     }
     
     func checkLogin() {
+        hideNoData()
         if UserDefaultHelper.shared.isLoggedIn {
             vCheckLogin.isHidden = true
-//            getData()
         } else {
             vCheckLogin.isHidden = false
         }

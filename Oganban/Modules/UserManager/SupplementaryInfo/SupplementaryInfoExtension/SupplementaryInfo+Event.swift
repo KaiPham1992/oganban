@@ -87,6 +87,7 @@ extension SupplementaryInfoViewController {
             
             if ((termsConditionsValue) != nil) {
                 print("click Điều khoản sử dụng")
+                presenter?.showPolicy()
             }
             
         }

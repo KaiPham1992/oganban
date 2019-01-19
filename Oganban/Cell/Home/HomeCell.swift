@@ -49,7 +49,7 @@ class HomeCell: UICollectionViewCell {
         lbCoin.text = record.showCoin()
         lbCoin.underlineLastCharacter()
         lbName.text = record.fullName
-        lbStar.text = record.avgRating
+        lbStar.text = record.ratingFormat
         lbLevel.text = record.level
         
         if record.isNew != nil {

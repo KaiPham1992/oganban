@@ -27,4 +27,10 @@ class HistoryBuyRouter: HistoryBuyWireframeProtocol {
 
         return view
     }
+    
+    func gotoLogin() {
+        let vc = LoginRouter.createModule()
+        let nc = UINavigationController(rootViewController: vc)
+        viewController?.present(controller: nc, animated: true)
+    }
 }

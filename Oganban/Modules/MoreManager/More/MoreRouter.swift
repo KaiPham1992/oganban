@@ -69,8 +69,15 @@ class MoreRouter: MoreWireframeProtocol {
     
     private func tapTutorial(){
         let vc =  WebViewController.initFromNib()
-        vc.isSignUp = true 
-        viewController?.navigationController?.pushViewController(vc, animated: true)
+        guard let url = URL(string: Link.tutorial) else {
+            return
+        }
+        
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
     }
     
     private func tapHeader(){
@@ -85,26 +92,13 @@ class MoreRouter: MoreWireframeProtocol {
     }
     
     private func tapHistoryCoin(){
-       
-        if UserDefaultHelper.shared.loginUserInfo == nil {
-            let vc = LoginRouter.createModule()
-            let nc = UINavigationController(rootViewController: vc)
-            viewController?.present(controller: nc, animated: true)
-        } else {
-            let vc = HistoryCoinRouter.createModule()
-            viewController?.navigationController?.pushViewController(vc, animated: true)
-        }
+        let vc = HistoryCoinRouter.createModule()
+        viewController?.navigationController?.pushViewController(vc, animated: true)
     }
     
     private func tapHistoryBuy(){
-        if UserDefaultHelper.shared.loginUserInfo == nil {
-            let vc = LoginRouter.createModule()
-            let nc = UINavigationController(rootViewController: vc)
-            viewController?.present(controller: nc, animated: true)
-        } else {
-            let vc = HistoryBuyRouter.createModule()
-            viewController?.navigationController?.pushViewController(vc, animated: true)
-        }
+        let vc = HistoryBuyRouter.createModule()
+        viewController?.navigationController?.pushViewController(vc, animated: true)
     }
     
 

@@ -7,9 +7,15 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NotificationViewController">
             <connections>
+                <outlet property="btnLogin" destination="zbh-KY-kgj" id="vtx-OF-RBS"/>
                 <outlet property="tbNotification" destination="1Tq-E2-pTI" id="bDa-15-HxK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -19,6 +25,20 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbh-KY-kgj">
+                    <rect key="frame" x="30" y="313.5" width="315" height="40"/>
+                    <color key="backgroundColor" red="0.0" green="0.34509803919999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="rIK-dh-0oa"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                    <state key="normal" title="Đăng nhập">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="tapLoginButton:" destination="-1" eventType="touchUpInside" id="HdO-LB-Jst"/>
+                    </connections>
+                </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1Tq-E2-pTI">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -28,8 +48,12 @@
             <constraints>
                 <constraint firstItem="1Tq-E2-pTI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Gik-Z6-Mq4"/>
                 <constraint firstAttribute="bottom" secondItem="1Tq-E2-pTI" secondAttribute="bottom" id="HVj-Kd-ibm"/>
+                <constraint firstItem="zbh-KY-kgj" firstAttribute="centerY" secondItem="1Tq-E2-pTI" secondAttribute="centerY" id="Mcy-SS-woW"/>
+                <constraint firstAttribute="trailing" secondItem="zbh-KY-kgj" secondAttribute="trailing" constant="30" id="OZj-sy-Abf"/>
                 <constraint firstAttribute="trailing" secondItem="1Tq-E2-pTI" secondAttribute="trailing" id="PtU-qk-dPp"/>
+                <constraint firstItem="zbh-KY-kgj" firstAttribute="centerX" secondItem="1Tq-E2-pTI" secondAttribute="centerX" id="UuB-Z3-jyH"/>
                 <constraint firstItem="1Tq-E2-pTI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="cAW-bq-n5H"/>
+                <constraint firstItem="zbh-KY-kgj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="wTi-1a-cPY"/>
             </constraints>
         </view>
     </objects>

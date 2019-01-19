@@ -122,6 +122,12 @@
 		B355EF5F21C8FB1400379F57 /* SignUpProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B355EF5921C8FB1400379F57 /* SignUpProtocols.swift */; };
 		B355EF6021C8FB1400379F57 /* SignUpInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B355EF5A21C8FB1400379F57 /* SignUpInteractor.swift */; };
 		B355EF6121C8FB1400379F57 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B355EF5B21C8FB1400379F57 /* SignUpViewController.xib */; };
+		B35D156721F2E71600C6D2D7 /* RangeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35D156521F2E71600C6D2D7 /* RangeCell.swift */; };
+		B35D156821F2E71600C6D2D7 /* RangeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35D156521F2E71600C6D2D7 /* RangeCell.swift */; };
+		B35D156921F2E71600C6D2D7 /* RangeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35D156521F2E71600C6D2D7 /* RangeCell.swift */; };
+		B35D156A21F2E71600C6D2D7 /* RangeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B35D156621F2E71600C6D2D7 /* RangeCell.xib */; };
+		B35D156B21F2E71600C6D2D7 /* RangeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B35D156621F2E71600C6D2D7 /* RangeCell.xib */; };
+		B35D156C21F2E71600C6D2D7 /* RangeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B35D156621F2E71600C6D2D7 /* RangeCell.xib */; };
 		B35F529821D276A000D3FA30 /* SignUpParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35F529721D276A000D3FA30 /* SignUpParam.swift */; };
 		B36A235B21E1AEBA00AA20DF /* SettingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36A235521E1AEBA00AA20DF /* SettingPresenter.swift */; };
 		B36A235C21E1AEBA00AA20DF /* SettingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36A235621E1AEBA00AA20DF /* SettingRouter.swift */; };
@@ -1582,6 +1588,8 @@
 		B355EF5B21C8FB1400379F57 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		B355EF6321C8FBE300379F57 /* FTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTextField.swift; sourceTree = "<group>"; };
 		B355EF6421C8FBE300379F57 /* AppTextFiled.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTextFiled.swift; sourceTree = "<group>"; };
+		B35D156521F2E71600C6D2D7 /* RangeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeCell.swift; sourceTree = "<group>"; };
+		B35D156621F2E71600C6D2D7 /* RangeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RangeCell.xib; sourceTree = "<group>"; };
 		B35F529721D276A000D3FA30 /* SignUpParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpParam.swift; sourceTree = "<group>"; };
 		B36A235521E1AEBA00AA20DF /* SettingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPresenter.swift; sourceTree = "<group>"; };
 		B36A235621E1AEBA00AA20DF /* SettingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRouter.swift; sourceTree = "<group>"; };
@@ -2274,6 +2282,15 @@
 			path = SignUp;
 			sourceTree = "<group>";
 		};
+		B35D156421F2E6F600C6D2D7 /* Range */ = {
+			isa = PBXGroup;
+			children = (
+				B35D156521F2E71600C6D2D7 /* RangeCell.swift */,
+				B35D156621F2E71600C6D2D7 /* RangeCell.xib */,
+			);
+			path = Range;
+			sourceTree = "<group>";
+		};
 		B36A235021E1ABE900AA20DF /* MoreManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -2419,6 +2436,7 @@
 		B3E67E9921CF41260012546F /* DropDown */ = {
 			isa = PBXGroup;
 			children = (
+				B35D156421F2E6F600C6D2D7 /* Range */,
 				B3E67E9A21CF41260012546F /* DropdownPhoneCell.swift */,
 				B3E67E9B21CF41260012546F /* DropdownPhoneCell.xib */,
 			);
@@ -3798,6 +3816,7 @@
 				B3A3237221DB332100E1AD4C /* LeftMenuCell.xib in Resources */,
 				B36A236021E1AEBA00AA20DF /* SettingViewController.xib in Resources */,
 				DE8B57D521EB1B9900C72D6A /* OrderMoreCell.xib in Resources */,
+				B35D156A21F2E71600C6D2D7 /* RangeCell.xib in Resources */,
 				0143F9C521E4606500D032B8 /* HeaderOrderBuyDetail.xib in Resources */,
 				DE33036321DF5EDB00409F83 /* PostStepTwoViewController.xib in Resources */,
 				DEBEE81821D76C79004B8D88 /* LevelMemberView.xib in Resources */,
@@ -3914,6 +3933,7 @@
 				DE68D20721F0122C00A3A7BE /* LeftMenuCell.xib in Resources */,
 				DE68D20821F0122C00A3A7BE /* SettingViewController.xib in Resources */,
 				DE68D20921F0122C00A3A7BE /* OrderMoreCell.xib in Resources */,
+				B35D156B21F2E71600C6D2D7 /* RangeCell.xib in Resources */,
 				DE68D20A21F0122C00A3A7BE /* HeaderOrderBuyDetail.xib in Resources */,
 				DE68D20B21F0122C00A3A7BE /* PostStepTwoViewController.xib in Resources */,
 				DE68D20C21F0122C00A3A7BE /* LevelMemberView.xib in Resources */,
@@ -4030,6 +4050,7 @@
 				DE68D3F321F0123A00A3A7BE /* LeftMenuCell.xib in Resources */,
 				DE68D3F421F0123A00A3A7BE /* SettingViewController.xib in Resources */,
 				DE68D3F521F0123A00A3A7BE /* OrderMoreCell.xib in Resources */,
+				B35D156C21F2E71600C6D2D7 /* RangeCell.xib in Resources */,
 				DE68D3F621F0123A00A3A7BE /* HeaderOrderBuyDetail.xib in Resources */,
 				DE68D3F721F0123A00A3A7BE /* PostStepTwoViewController.xib in Resources */,
 				DE68D3F821F0123A00A3A7BE /* LevelMemberView.xib in Resources */,
@@ -4730,6 +4751,7 @@
 				CB172C1021C6A2EF0068CF92 /* Int+extension.swift in Sources */,
 				8463FAF921E1CBCA00522D0C /* HistoryBuyEntity.swift in Sources */,
 				CB172C1121C6A2EF0068CF92 /* UIWindow+extension.swift in Sources */,
+				B35D156721F2E71600C6D2D7 /* RangeCell.swift in Sources */,
 				B3E67E9C21CF41260012546F /* DropdownPhoneCell.swift in Sources */,
 				CB172C9621C6A2EF0068CF92 /* AppColor.swift in Sources */,
 				84ABC68B21CFF06700E0D202 /* UpdateProfileProtocols.swift in Sources */,
@@ -5110,6 +5132,7 @@
 				DE68D19B21F0122C00A3A7BE /* Int+extension.swift in Sources */,
 				DE68D19C21F0122C00A3A7BE /* HistoryBuyEntity.swift in Sources */,
 				DE68D19D21F0122C00A3A7BE /* UIWindow+extension.swift in Sources */,
+				B35D156821F2E71600C6D2D7 /* RangeCell.swift in Sources */,
 				DE68D19E21F0122C00A3A7BE /* DropdownPhoneCell.swift in Sources */,
 				DE68D19F21F0122C00A3A7BE /* AppColor.swift in Sources */,
 				DE68D1A021F0122C00A3A7BE /* UpdateProfileProtocols.swift in Sources */,
@@ -5490,6 +5513,7 @@
 				DE68D38721F0123A00A3A7BE /* Int+extension.swift in Sources */,
 				DE68D38821F0123A00A3A7BE /* HistoryBuyEntity.swift in Sources */,
 				DE68D38921F0123A00A3A7BE /* UIWindow+extension.swift in Sources */,
+				B35D156921F2E71600C6D2D7 /* RangeCell.swift in Sources */,
 				DE68D38A21F0123A00A3A7BE /* DropdownPhoneCell.swift in Sources */,
 				DE68D38B21F0123A00A3A7BE /* AppColor.swift in Sources */,
 				DE68D38C21F0123A00A3A7BE /* UpdateProfileProtocols.swift in Sources */,
@@ -5695,7 +5719,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Oganban/Oganban.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = Q3TBY53XUC;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -5710,7 +5734,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.engma.oganban;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.engma.oganban";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.engma.oganban";
 				SWIFT_OBJC_BRIDGING_HEADER = "Oganban/SupportFile/Oganban-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
