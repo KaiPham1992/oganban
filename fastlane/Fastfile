@@ -23,8 +23,8 @@ lane :init_apns_prod_dev do
 end
 
 desc "Init APNs for Production server with Release mode"
-desc "=> fastlane init_apns_pro_release --env prod"
-lane :init_apns_pro_release do
+desc "=> fastlane init_apns_prod_release --env prod"
+lane :init_apns_prod_release do
   pem(development: true)
 end
 
@@ -38,6 +38,14 @@ end
 desc "Sync certificates for Production"
 desc "=> fastlane sync_cert_prod --env prod"
 lane :sync_cert_prod do
+  match(type: "development")
+  match(type: "adhoc")
+end
+
+
+desc "Sync certificates for Production Appstore"
+desc "=> fastlane sync_cert_appstore --env appstore"
+lane :sync_cert_appstore do
   match(type: "development")
   match(type: "appstore")
 end

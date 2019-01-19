@@ -322,7 +322,6 @@
 		DE146E9521F0B8AF00FD0887 /* CheckGPSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE146E9121F0B8AF00FD0887 /* CheckGPSViewController.xib */; };
 		DE146E9621F0B8AF00FD0887 /* CheckGPSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE146E9121F0B8AF00FD0887 /* CheckGPSViewController.xib */; };
 		DE146E9721F0B8AF00FD0887 /* CheckGPSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE146E9121F0B8AF00FD0887 /* CheckGPSViewController.xib */; };
-		DE2181FA21CD3AD300FDD9F1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE2181F921CD3AD300FDD9F1 /* GoogleService-Info.plist */; };
 		DE2181FC21CD3C1400FDD9F1 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2181FB21CD3C1400FDD9F1 /* AppRouter.swift */; };
 		DE2181FE21CD3DC300FDD9F1 /* AppDelegate+Push.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2181FD21CD3DC300FDD9F1 /* AppDelegate+Push.swift */; };
 		DE21820021CD3DE800FDD9F1 /* AppDelegate+GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2181FF21CD3DE800FDD9F1 /* AppDelegate+GoogleSignIn.swift */; };
@@ -893,7 +892,6 @@
 		DE68D21121F0122C00A3A7BE /* AccountKitStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE21821121CD403100FDD9F1 /* AccountKitStrings.bundle */; };
 		DE68D21221F0122C00A3A7BE /* MySellingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD1C2A721D74DA6006DB3FF /* MySellingViewController.xib */; };
 		DE68D21321F0122C00A3A7BE /* CommentDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B32604D721E9C85F00E4BC14 /* CommentDetailViewController.xib */; };
-		DE68D21421F0122C00A3A7BE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE2181F921CD3AD300FDD9F1 /* GoogleService-Info.plist */; };
 		DE68D21521F0122C00A3A7BE /* PhoneNumber.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3E67EAD21CF75A90012546F /* PhoneNumber.xib */; };
 		DE68D21621F0122C00A3A7BE /* PopUpSelectGenderContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE1DA6A21CDF5D60036FEB7 /* PopUpSelectGenderContent.xib */; };
 		DE68D21721F0122C00A3A7BE /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB172BEE21C6A2EF0068CF92 /* OpenSans-SemiBold.ttf */; };
@@ -1373,7 +1371,6 @@
 		DE68D3FD21F0123A00A3A7BE /* AccountKitStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE21821121CD403100FDD9F1 /* AccountKitStrings.bundle */; };
 		DE68D3FE21F0123A00A3A7BE /* MySellingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD1C2A721D74DA6006DB3FF /* MySellingViewController.xib */; };
 		DE68D3FF21F0123A00A3A7BE /* CommentDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B32604D721E9C85F00E4BC14 /* CommentDetailViewController.xib */; };
-		DE68D40021F0123A00A3A7BE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE2181F921CD3AD300FDD9F1 /* GoogleService-Info.plist */; };
 		DE68D40121F0123A00A3A7BE /* PhoneNumber.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3E67EAD21CF75A90012546F /* PhoneNumber.xib */; };
 		DE68D40221F0123A00A3A7BE /* PopUpSelectGenderContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE1DA6A21CDF5D60036FEB7 /* PopUpSelectGenderContent.xib */; };
 		DE68D40321F0123A00A3A7BE /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB172BEE21C6A2EF0068CF92 /* OpenSans-SemiBold.ttf */; };
@@ -1463,6 +1460,12 @@
 		DEE1DA8021CE39180036FEB7 /* GADBannerView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1DA7F21CE39180036FEB7 /* GADBannerView+extension.swift */; };
 		DEE7306D21CFDA1700F20D68 /* OrderDetail+PostComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE7306C21CFDA1700F20D68 /* OrderDetail+PostComment.swift */; };
 		DEE7306F21CFDAA300F20D68 /* OrderDetail+Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE7306E21CFDAA300F20D68 /* OrderDetail+Table.swift */; };
+		DEF793F721F301DD00CE5CB3 /* GoogleService-Prod-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEF793F621F301DD00CE5CB3 /* GoogleService-Prod-Info.plist */; };
+		DEF793F821F301DD00CE5CB3 /* GoogleService-Prod-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEF793F621F301DD00CE5CB3 /* GoogleService-Prod-Info.plist */; };
+		DEF793F921F301DD00CE5CB3 /* GoogleService-Prod-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEF793F621F301DD00CE5CB3 /* GoogleService-Prod-Info.plist */; };
+		DEF793FB21F3047000CE5CB3 /* GoogleService-Dev-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEF793FA21F3047000CE5CB3 /* GoogleService-Dev-Info.plist */; };
+		DEF793FC21F3047000CE5CB3 /* GoogleService-Dev-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEF793FA21F3047000CE5CB3 /* GoogleService-Dev-Info.plist */; };
+		DEF793FD21F3047000CE5CB3 /* GoogleService-Dev-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEF793FA21F3047000CE5CB3 /* GoogleService-Dev-Info.plist */; };
 		DEF9AA3821D501CE001334EB /* UpdateProfileSocial.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF9AA3721D501CE001334EB /* UpdateProfileSocial.swift */; };
 		ECFA8430691B731FD6198935 /* Pods_Oganban.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667005DBAD7815A5AA16289A /* Pods_Oganban.framework */; };
 /* End PBXBuildFile section */
@@ -1784,7 +1787,6 @@
 		DE0E79D821D65F760053786D /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
 		DE146E9021F0B8AF00FD0887 /* CheckGPSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckGPSViewController.swift; sourceTree = "<group>"; };
 		DE146E9121F0B8AF00FD0887 /* CheckGPSViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckGPSViewController.xib; sourceTree = "<group>"; };
-		DE2181F921CD3AD300FDD9F1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DE2181FB21CD3C1400FDD9F1 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		DE2181FD21CD3DC300FDD9F1 /* AppDelegate+Push.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Push.swift"; sourceTree = "<group>"; };
 		DE2181FF21CD3DE800FDD9F1 /* AppDelegate+GoogleSignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+GoogleSignIn.swift"; sourceTree = "<group>"; };
@@ -1965,6 +1967,8 @@
 		DEE1DA7F21CE39180036FEB7 /* GADBannerView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GADBannerView+extension.swift"; sourceTree = "<group>"; };
 		DEE7306C21CFDA1700F20D68 /* OrderDetail+PostComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrderDetail+PostComment.swift"; sourceTree = "<group>"; };
 		DEE7306E21CFDAA300F20D68 /* OrderDetail+Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrderDetail+Table.swift"; sourceTree = "<group>"; };
+		DEF793F621F301DD00CE5CB3 /* GoogleService-Prod-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Prod-Info.plist"; sourceTree = "<group>"; };
+		DEF793FA21F3047000CE5CB3 /* GoogleService-Dev-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Dev-Info.plist"; sourceTree = "<group>"; };
 		DEF9AA3721D501CE001334EB /* UpdateProfileSocial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileSocial.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -3000,10 +3004,10 @@
 		DE2181F821CD3AC500FDD9F1 /* SupportFile */ = {
 			isa = PBXGroup;
 			children = (
+				DEF793F521F301D000CE5CB3 /* GoogleInfo */,
 				DE68D41921F0124C00A3A7BE /* Info */,
 				B3E67EAF21CF77AB0012546F /* JSON */,
 				DE21820921CD3F0700FDD9F1 /* AcountKit */,
-				DE2181F921CD3AD300FDD9F1 /* GoogleService-Info.plist */,
 				DE2181FD21CD3DC300FDD9F1 /* AppDelegate+Push.swift */,
 				DE2181FF21CD3DE800FDD9F1 /* AppDelegate+GoogleSignIn.swift */,
 				DE21820F21CD401500FDD9F1 /* Oganban-Bridging-Header.h */,
@@ -3613,6 +3617,15 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		DEF793F521F301D000CE5CB3 /* GoogleInfo */ = {
+			isa = PBXGroup;
+			children = (
+				DEF793FA21F3047000CE5CB3 /* GoogleService-Dev-Info.plist */,
+				DEF793F621F301DD00CE5CB3 /* GoogleService-Prod-Info.plist */,
+			);
+			path = GoogleInfo;
+			sourceTree = "<group>";
+		};
 		E2AA633E107A6A39005CFD05 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -3818,6 +3831,7 @@
 				DE8B57D521EB1B9900C72D6A /* OrderMoreCell.xib in Resources */,
 				B35D156A21F2E71600C6D2D7 /* RangeCell.xib in Resources */,
 				0143F9C521E4606500D032B8 /* HeaderOrderBuyDetail.xib in Resources */,
+				DEF793F721F301DD00CE5CB3 /* GoogleService-Prod-Info.plist in Resources */,
 				DE33036321DF5EDB00409F83 /* PostStepTwoViewController.xib in Resources */,
 				DEBEE81821D76C79004B8D88 /* LevelMemberView.xib in Resources */,
 				DEA3A08921D6738200643296 /* AppImageSlide.xib in Resources */,
@@ -3827,7 +3841,6 @@
 				DE21821321CD403100FDD9F1 /* AccountKitStrings.bundle in Resources */,
 				CBD1C2AD21D74DA6006DB3FF /* MySellingViewController.xib in Resources */,
 				B32604DD21E9C85F00E4BC14 /* CommentDetailViewController.xib in Resources */,
-				DE2181FA21CD3AD300FDD9F1 /* GoogleService-Info.plist in Resources */,
 				B3E67EAE21CF75A90012546F /* PhoneNumber.xib in Resources */,
 				DEE1DA6B21CDF5D60036FEB7 /* PopUpSelectGenderContent.xib in Resources */,
 				CB172C8621C6A2EF0068CF92 /* OpenSans-SemiBold.ttf in Resources */,
@@ -3843,6 +3856,7 @@
 				B36AEECF21CDF52B00BED43C /* HomeCell.xib in Resources */,
 				84487C8D21CB80DB008B25B2 /* Roboto-Medium.ttf in Resources */,
 				DEBEE81321D76B6F004B8D88 /* OrderIntroCell.xib in Resources */,
+				DEF793FB21F3047000CE5CB3 /* GoogleService-Dev-Info.plist in Resources */,
 				DEBEE80621D740D7004B8D88 /* MySellContainerViewController.xib in Resources */,
 				84329F4F21DFD98700047B5E /* FavouriteCell.xib in Resources */,
 			);
@@ -3935,6 +3949,7 @@
 				DE68D20921F0122C00A3A7BE /* OrderMoreCell.xib in Resources */,
 				B35D156B21F2E71600C6D2D7 /* RangeCell.xib in Resources */,
 				DE68D20A21F0122C00A3A7BE /* HeaderOrderBuyDetail.xib in Resources */,
+				DEF793F821F301DD00CE5CB3 /* GoogleService-Prod-Info.plist in Resources */,
 				DE68D20B21F0122C00A3A7BE /* PostStepTwoViewController.xib in Resources */,
 				DE68D20C21F0122C00A3A7BE /* LevelMemberView.xib in Resources */,
 				DE68D20D21F0122C00A3A7BE /* AppImageSlide.xib in Resources */,
@@ -3944,7 +3959,6 @@
 				DE68D21121F0122C00A3A7BE /* AccountKitStrings.bundle in Resources */,
 				DE68D21221F0122C00A3A7BE /* MySellingViewController.xib in Resources */,
 				DE68D21321F0122C00A3A7BE /* CommentDetailViewController.xib in Resources */,
-				DE68D21421F0122C00A3A7BE /* GoogleService-Info.plist in Resources */,
 				DE68D21521F0122C00A3A7BE /* PhoneNumber.xib in Resources */,
 				DE68D21621F0122C00A3A7BE /* PopUpSelectGenderContent.xib in Resources */,
 				DE68D21721F0122C00A3A7BE /* OpenSans-SemiBold.ttf in Resources */,
@@ -3960,6 +3974,7 @@
 				DE68D22121F0122C00A3A7BE /* HomeCell.xib in Resources */,
 				DE68D22221F0122C00A3A7BE /* Roboto-Medium.ttf in Resources */,
 				DE68D22321F0122C00A3A7BE /* OrderIntroCell.xib in Resources */,
+				DEF793FC21F3047000CE5CB3 /* GoogleService-Dev-Info.plist in Resources */,
 				DE68D22421F0122C00A3A7BE /* MySellContainerViewController.xib in Resources */,
 				DE68D22521F0122C00A3A7BE /* FavouriteCell.xib in Resources */,
 			);
@@ -4052,6 +4067,7 @@
 				DE68D3F521F0123A00A3A7BE /* OrderMoreCell.xib in Resources */,
 				B35D156C21F2E71600C6D2D7 /* RangeCell.xib in Resources */,
 				DE68D3F621F0123A00A3A7BE /* HeaderOrderBuyDetail.xib in Resources */,
+				DEF793F921F301DD00CE5CB3 /* GoogleService-Prod-Info.plist in Resources */,
 				DE68D3F721F0123A00A3A7BE /* PostStepTwoViewController.xib in Resources */,
 				DE68D3F821F0123A00A3A7BE /* LevelMemberView.xib in Resources */,
 				DE68D3F921F0123A00A3A7BE /* AppImageSlide.xib in Resources */,
@@ -4061,7 +4077,6 @@
 				DE68D3FD21F0123A00A3A7BE /* AccountKitStrings.bundle in Resources */,
 				DE68D3FE21F0123A00A3A7BE /* MySellingViewController.xib in Resources */,
 				DE68D3FF21F0123A00A3A7BE /* CommentDetailViewController.xib in Resources */,
-				DE68D40021F0123A00A3A7BE /* GoogleService-Info.plist in Resources */,
 				DE68D40121F0123A00A3A7BE /* PhoneNumber.xib in Resources */,
 				DE68D40221F0123A00A3A7BE /* PopUpSelectGenderContent.xib in Resources */,
 				DE68D40321F0123A00A3A7BE /* OpenSans-SemiBold.ttf in Resources */,
@@ -4077,6 +4092,7 @@
 				DE68D40D21F0123A00A3A7BE /* HomeCell.xib in Resources */,
 				DE68D40E21F0123A00A3A7BE /* Roboto-Medium.ttf in Resources */,
 				DE68D40F21F0123A00A3A7BE /* OrderIntroCell.xib in Resources */,
+				DEF793FD21F3047000CE5CB3 /* GoogleService-Dev-Info.plist in Resources */,
 				DE68D41021F0123A00A3A7BE /* MySellContainerViewController.xib in Resources */,
 				DE68D41121F0123A00A3A7BE /* FavouriteCell.xib in Resources */,
 			);
@@ -5764,6 +5780,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.engma.oganban;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.engma.oganban";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG PROD";
 				SWIFT_OBJC_BRIDGING_HEADER = "Oganban/SupportFile/Oganban-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -5794,6 +5811,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.engma.oganban;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.engma.oganban";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = PROD;
 				SWIFT_OBJC_BRIDGING_HEADER = "Oganban/SupportFile/Oganban-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -5807,7 +5825,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Oganban/Oganban.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = Y79MW4TYLW;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -5822,7 +5840,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.oganban.oganban;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.oganban.oganban";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.oganban.oganban";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG APPSTORE";
 				SWIFT_OBJC_BRIDGING_HEADER = "Oganban/SupportFile/Oganban-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -5853,6 +5872,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.oganban.oganban;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.oganban.oganban";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = APPSTORE;
 				SWIFT_OBJC_BRIDGING_HEADER = "Oganban/SupportFile/Oganban-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
