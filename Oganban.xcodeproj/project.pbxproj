@@ -11,6 +11,7 @@
 		0143F9C521E4606500D032B8 /* HeaderOrderBuyDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0143F9C321E4606500D032B8 /* HeaderOrderBuyDetail.xib */; };
 		0143F9C721E494CD00D032B8 /* Post+CopyRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0143F9C621E494CD00D032B8 /* Post+CopyRecord.swift */; };
 		0143F9CA21E4A2F800D032B8 /* PostStepTwo+Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0143F9C921E4A2F800D032B8 /* PostStepTwo+Update.swift */; };
+		72A7648E105450FB08D03105 /* Pods_Oganban_AppStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBE37F23E11449815F958472 /* Pods_Oganban_AppStore.framework */; };
 		84313CE721E0B74700218C63 /* ProductListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84313CE521E0B74700218C63 /* ProductListCell.swift */; };
 		84313CE821E0B74700218C63 /* ProductListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84313CE621E0B74700218C63 /* ProductListCell.xib */; };
 		8432074E21CF529D00A4F11E /* DateFollowWeekCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432074A21CF529D00A4F11E /* DateFollowWeekCell.swift */; };
@@ -99,6 +100,7 @@
 		84C8542E21CFDB6600BDABE5 /* Login+Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8542D21CFDB6600BDABE5 /* Login+Event.swift */; };
 		84C8543421CFEC8D00BDABE5 /* SupplementaryInfo+SetupUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8543321CFEC8D00BDABE5 /* SupplementaryInfo+SetupUI.swift */; };
 		84C8543621CFEE7300BDABE5 /* SupplementaryInfo+Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C8543521CFEE7300BDABE5 /* SupplementaryInfo+Event.swift */; };
+		A9D18A16335852CBD8A4CCF4 /* Pods_Oganban_Prod.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F12D704223D7E3497CBD99B7 /* Pods_Oganban_Prod.framework */; };
 		B3092D9821D676C800494CC4 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3092D9721D676C800494CC4 /* UILabel+Extension.swift */; };
 		B325C2EF21CE05B20048A148 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B325C2ED21CE05B20048A148 /* MenuCell.swift */; };
 		B325C2F021CE05B20048A148 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B325C2EE21CE05B20048A148 /* MenuCell.xib */; };
@@ -162,6 +164,7 @@
 		B3E67EAC21CF756E0012546F /* PhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E67EAB21CF756E0012546F /* PhoneNumber.swift */; };
 		B3E67EAE21CF75A90012546F /* PhoneNumber.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3E67EAD21CF75A90012546F /* PhoneNumber.xib */; };
 		B3E67EB121CF77AB0012546F /* countryCodes.json in Resources */ = {isa = PBXBuildFile; fileRef = B3E67EB021CF77AB0012546F /* countryCodes.json */; };
+		B74A5FA3BAE8DBAEE7DF8541 /* Pods_Oganban_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 752E4E8C0E6884275A3ABF9A /* Pods_Oganban_Dev.framework */; };
 		CB0C3A2321D3BECD0052DD91 /* ForgotPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0C3A1D21D3BECD0052DD91 /* ForgotPasswordPresenter.swift */; };
 		CB0C3A2421D3BECD0052DD91 /* ForgotPasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0C3A1E21D3BECD0052DD91 /* ForgotPasswordRouter.swift */; };
 		CB0C3A2521D3BECD0052DD91 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0C3A1F21D3BECD0052DD91 /* ForgotPasswordViewController.swift */; };
@@ -802,7 +805,6 @@
 		DE68D1B521F0122C00A3A7BE /* OrderBuyDetailImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB379C0921E388B0005D7536 /* OrderBuyDetailImageCell.swift */; };
 		DE68D1B621F0122C00A3A7BE /* PopUpNotificationContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B4721C6A2EE0068CF92 /* PopUpNotificationContent.swift */; };
 		DE68D1B721F0122C00A3A7BE /* LeftMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A3236F21DB332100E1AD4C /* LeftMenuCell.swift */; };
-		DE68D1B921F0122C00A3A7BE /* Pods_Oganban.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667005DBAD7815A5AA16289A /* Pods_Oganban.framework */; };
 		DE68D1BA21F0122C00A3A7BE /* AccountKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE21821021CD403100FDD9F1 /* AccountKit.framework */; };
 		DE68D1BC21F0122C00A3A7BE /* HistoryBuyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84329F3221DFC95600047B5E /* HistoryBuyViewController.xib */; };
 		DE68D1BD21F0122C00A3A7BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB172B4A21C6A2EE0068CF92 /* Localizable.strings */; };
@@ -1281,7 +1283,6 @@
 		DE68D3A121F0123A00A3A7BE /* OrderBuyDetailImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB379C0921E388B0005D7536 /* OrderBuyDetailImageCell.swift */; };
 		DE68D3A221F0123A00A3A7BE /* PopUpNotificationContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B4721C6A2EE0068CF92 /* PopUpNotificationContent.swift */; };
 		DE68D3A321F0123A00A3A7BE /* LeftMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A3236F21DB332100E1AD4C /* LeftMenuCell.swift */; };
-		DE68D3A521F0123A00A3A7BE /* Pods_Oganban.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667005DBAD7815A5AA16289A /* Pods_Oganban.framework */; };
 		DE68D3A621F0123A00A3A7BE /* AccountKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE21821021CD403100FDD9F1 /* AccountKit.framework */; };
 		DE68D3A821F0123A00A3A7BE /* HistoryBuyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84329F3221DFC95600047B5E /* HistoryBuyViewController.xib */; };
 		DE68D3A921F0123A00A3A7BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB172B4A21C6A2EE0068CF92 /* Localizable.strings */; };
@@ -1467,7 +1468,6 @@
 		DEF793FC21F3047000CE5CB3 /* GoogleService-Dev-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEF793FA21F3047000CE5CB3 /* GoogleService-Dev-Info.plist */; };
 		DEF793FD21F3047000CE5CB3 /* GoogleService-Dev-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEF793FA21F3047000CE5CB3 /* GoogleService-Dev-Info.plist */; };
 		DEF9AA3821D501CE001334EB /* UpdateProfileSocial.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF9AA3721D501CE001334EB /* UpdateProfileSocial.swift */; };
-		ECFA8430691B731FD6198935 /* Pods_Oganban.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667005DBAD7815A5AA16289A /* Pods_Oganban.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1475,8 +1475,12 @@
 		0143F9C321E4606500D032B8 /* HeaderOrderBuyDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderOrderBuyDetail.xib; sourceTree = "<group>"; };
 		0143F9C621E494CD00D032B8 /* Post+CopyRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+CopyRecord.swift"; sourceTree = "<group>"; };
 		0143F9C921E4A2F800D032B8 /* PostStepTwo+Update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostStepTwo+Update.swift"; sourceTree = "<group>"; };
+		062729158B1ACD91E48F8C99 /* Pods-Oganban-AppStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Oganban-AppStore.release.xcconfig"; path = "Pods/Target Support Files/Pods-Oganban-AppStore/Pods-Oganban-AppStore.release.xcconfig"; sourceTree = "<group>"; };
+		163A96822B181BB99C57F398 /* Pods-Oganban-Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Oganban-Dev.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Oganban-Dev/Pods-Oganban-Dev.debug.xcconfig"; sourceTree = "<group>"; };
+		39D34701F8258B61FC975AD0 /* Pods-Oganban-Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Oganban-Dev.release.xcconfig"; path = "Pods/Target Support Files/Pods-Oganban-Dev/Pods-Oganban-Dev.release.xcconfig"; sourceTree = "<group>"; };
 		44208549B4287C06B154C85E /* Pods-Oganban.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Oganban.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Oganban/Pods-Oganban.debug.xcconfig"; sourceTree = "<group>"; };
 		667005DBAD7815A5AA16289A /* Pods_Oganban.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Oganban.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		752E4E8C0E6884275A3ABF9A /* Pods_Oganban_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Oganban_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D0CCCBE1CA6E502A84355A0 /* Pods-Oganban.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Oganban.release.xcconfig"; path = "Pods/Target Support Files/Pods-Oganban/Pods-Oganban.release.xcconfig"; sourceTree = "<group>"; };
 		84313CE521E0B74700218C63 /* ProductListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListCell.swift; sourceTree = "<group>"; };
 		84313CE621E0B74700218C63 /* ProductListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductListCell.xib; sourceTree = "<group>"; };
@@ -1566,6 +1570,8 @@
 		84C8542D21CFDB6600BDABE5 /* Login+Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Login+Event.swift"; sourceTree = "<group>"; };
 		84C8543321CFEC8D00BDABE5 /* SupplementaryInfo+SetupUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SupplementaryInfo+SetupUI.swift"; sourceTree = "<group>"; };
 		84C8543521CFEE7300BDABE5 /* SupplementaryInfo+Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SupplementaryInfo+Event.swift"; sourceTree = "<group>"; };
+		98401A0716DAB17A2D42F4DC /* Pods-Oganban-AppStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Oganban-AppStore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Oganban-AppStore/Pods-Oganban-AppStore.debug.xcconfig"; sourceTree = "<group>"; };
+		9C6CE80A8689A46E063AC7C0 /* Pods-Oganban-Prod.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Oganban-Prod.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Oganban-Prod/Pods-Oganban-Prod.debug.xcconfig"; sourceTree = "<group>"; };
 		B3092D9721D676C800494CC4 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		B325C2ED21CE05B20048A148 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		B325C2EE21CE05B20048A148 /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
@@ -1627,6 +1633,7 @@
 		B3E67EAB21CF756E0012546F /* PhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumber.swift; sourceTree = "<group>"; };
 		B3E67EAD21CF75A90012546F /* PhoneNumber.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneNumber.xib; sourceTree = "<group>"; };
 		B3E67EB021CF77AB0012546F /* countryCodes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countryCodes.json; sourceTree = "<group>"; };
+		BBE37F23E11449815F958472 /* Pods_Oganban_AppStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Oganban_AppStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB0C3A1D21D3BECD0052DD91 /* ForgotPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordPresenter.swift; sourceTree = "<group>"; };
 		CB0C3A1E21D3BECD0052DD91 /* ForgotPasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordRouter.swift; sourceTree = "<group>"; };
 		CB0C3A1F21D3BECD0052DD91 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
@@ -1972,6 +1979,8 @@
 		DEF7940221F3127700CE5CB3 /* Oganban-Prod.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Oganban-Prod.entitlements"; sourceTree = "<group>"; };
 		DEF7940321F3128200CE5CB3 /* Oganban-Dev.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Oganban-Dev.entitlements"; sourceTree = "<group>"; };
 		DEF9AA3721D501CE001334EB /* UpdateProfileSocial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileSocial.swift; sourceTree = "<group>"; };
+		E4E73B98A1EBD8B50817F50F /* Pods-Oganban-Prod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Oganban-Prod.release.xcconfig"; path = "Pods/Target Support Files/Pods-Oganban-Prod/Pods-Oganban-Prod.release.xcconfig"; sourceTree = "<group>"; };
+		F12D704223D7E3497CBD99B7 /* Pods_Oganban_Prod.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Oganban_Prod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1979,8 +1988,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECFA8430691B731FD6198935 /* Pods_Oganban.framework in Frameworks */,
 				DE21821221CD403100FDD9F1 /* AccountKit.framework in Frameworks */,
+				B74A5FA3BAE8DBAEE7DF8541 /* Pods_Oganban_Dev.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1988,8 +1997,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE68D1B921F0122C00A3A7BE /* Pods_Oganban.framework in Frameworks */,
 				DE68D1BA21F0122C00A3A7BE /* AccountKit.framework in Frameworks */,
+				A9D18A16335852CBD8A4CCF4 /* Pods_Oganban_Prod.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1997,8 +2006,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE68D3A521F0123A00A3A7BE /* Pods_Oganban.framework in Frameworks */,
 				DE68D3A621F0123A00A3A7BE /* AccountKit.framework in Frameworks */,
+				72A7648E105450FB08D03105 /* Pods_Oganban_AppStore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2026,6 +2035,9 @@
 			isa = PBXGroup;
 			children = (
 				667005DBAD7815A5AA16289A /* Pods_Oganban.framework */,
+				BBE37F23E11449815F958472 /* Pods_Oganban_AppStore.framework */,
+				752E4E8C0E6884275A3ABF9A /* Pods_Oganban_Dev.framework */,
+				F12D704223D7E3497CBD99B7 /* Pods_Oganban_Prod.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -3635,6 +3647,12 @@
 			children = (
 				44208549B4287C06B154C85E /* Pods-Oganban.debug.xcconfig */,
 				7D0CCCBE1CA6E502A84355A0 /* Pods-Oganban.release.xcconfig */,
+				98401A0716DAB17A2D42F4DC /* Pods-Oganban-AppStore.debug.xcconfig */,
+				062729158B1ACD91E48F8C99 /* Pods-Oganban-AppStore.release.xcconfig */,
+				163A96822B181BB99C57F398 /* Pods-Oganban-Dev.debug.xcconfig */,
+				39D34701F8258B61FC975AD0 /* Pods-Oganban-Dev.release.xcconfig */,
+				9C6CE80A8689A46E063AC7C0 /* Pods-Oganban-Prod.debug.xcconfig */,
+				E4E73B98A1EBD8B50817F50F /* Pods-Oganban-Prod.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -4130,7 +4148,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Oganban/Pods-Oganban-resources.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Oganban-Dev/Pods-Oganban-Dev-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
@@ -4145,7 +4163,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Oganban/Pods-Oganban-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Oganban-Dev/Pods-Oganban-Dev-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B6EC9D722D0D1330FF69EF3E /* [CP] Embed Pods Frameworks */ = {
@@ -4156,14 +4174,13 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Oganban/Pods-Oganban-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Oganban-Dev/Pods-Oganban-Dev-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
@@ -4186,7 +4203,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
@@ -4201,7 +4217,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Oganban/Pods-Oganban-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Oganban-Dev/Pods-Oganban-Dev-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CB70D6125B59F98858A450E9 /* [CP] Check Pods Manifest.lock */ = {
@@ -4219,7 +4235,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Oganban-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Oganban-Dev-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -4241,7 +4257,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Oganban-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Oganban-Prod-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -4256,14 +4272,13 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Oganban/Pods-Oganban-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Oganban-Prod/Pods-Oganban-Prod-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
@@ -4286,7 +4301,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
@@ -4301,7 +4315,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Oganban/Pods-Oganban-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Oganban-Prod/Pods-Oganban-Prod-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DE68D22721F0122C00A3A7BE /* [CP] Copy Pods Resources */ = {
@@ -4312,7 +4326,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Oganban/Pods-Oganban-resources.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Oganban-Prod/Pods-Oganban-Prod-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
@@ -4327,7 +4341,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Oganban/Pods-Oganban-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Oganban-Prod/Pods-Oganban-Prod-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DE68D22E21F0123A00A3A7BE /* [CP] Check Pods Manifest.lock */ = {
@@ -4345,7 +4359,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Oganban-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Oganban-AppStore-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -4360,14 +4374,13 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Oganban/Pods-Oganban-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Oganban-AppStore/Pods-Oganban-AppStore-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
@@ -4390,7 +4403,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
@@ -4405,7 +4417,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Oganban/Pods-Oganban-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Oganban-AppStore/Pods-Oganban-AppStore-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DE68D41321F0123A00A3A7BE /* [CP] Copy Pods Resources */ = {
@@ -4416,7 +4428,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Oganban/Pods-Oganban-resources.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Oganban-AppStore/Pods-Oganban-AppStore-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
@@ -4431,7 +4443,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Oganban/Pods-Oganban-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Oganban-AppStore/Pods-Oganban-AppStore-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -5721,7 +5733,7 @@
 		};
 		CB3A8F1D21C64FC1008144BD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 44208549B4287C06B154C85E /* Pods-Oganban.debug.xcconfig */;
+			baseConfigurationReference = 163A96822B181BB99C57F398 /* Pods-Oganban-Dev.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -5751,7 +5763,7 @@
 		};
 		CB3A8F1E21C64FC1008144BD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7D0CCCBE1CA6E502A84355A0 /* Pods-Oganban.release.xcconfig */;
+			baseConfigurationReference = 39D34701F8258B61FC975AD0 /* Pods-Oganban-Dev.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -5780,7 +5792,7 @@
 		};
 		DE68D22921F0122C00A3A7BE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 44208549B4287C06B154C85E /* Pods-Oganban.debug.xcconfig */;
+			baseConfigurationReference = 9C6CE80A8689A46E063AC7C0 /* Pods-Oganban-Prod.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -5811,7 +5823,7 @@
 		};
 		DE68D22A21F0122C00A3A7BE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7D0CCCBE1CA6E502A84355A0 /* Pods-Oganban.release.xcconfig */;
+			baseConfigurationReference = E4E73B98A1EBD8B50817F50F /* Pods-Oganban-Prod.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -5841,7 +5853,7 @@
 		};
 		DE68D41521F0123A00A3A7BE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 44208549B4287C06B154C85E /* Pods-Oganban.debug.xcconfig */;
+			baseConfigurationReference = 98401A0716DAB17A2D42F4DC /* Pods-Oganban-AppStore.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -5872,7 +5884,7 @@
 		};
 		DE68D41621F0123A00A3A7BE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7D0CCCBE1CA6E502A84355A0 /* Pods-Oganban.release.xcconfig */;
+			baseConfigurationReference = 062729158B1ACD91E48F8C99 /* Pods-Oganban-AppStore.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
