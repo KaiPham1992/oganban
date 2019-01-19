@@ -453,7 +453,8 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //FIXME
-        let vc = OrderBuyDetailRouter.createModule(recordId: listRecord[indexPath.item - 1].id&)
+        let temp = (indexPath.row - 1) + indexPath.section * 10
+        let vc = OrderBuyDetailRouter.createModule(recordId: listRecord[temp].id&)
         self.push(controller: vc)
     }
     
