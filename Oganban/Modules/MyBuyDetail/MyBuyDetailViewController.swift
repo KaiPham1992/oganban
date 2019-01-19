@@ -119,7 +119,6 @@ class MyBuyDetailViewController: BaseViewController {
         super.viewWillAppear(animated)
         hideTabbar()
     }
-
 }
 
 extension MyBuyDetailViewController: MyBuyDetailViewProtocol {
@@ -143,8 +142,9 @@ extension MyBuyDetailViewController: UITableViewDelegate, UITableViewDataSource 
         tbDetail.registerXibFile(MyBuyInfoUserCell.self)
         
         tbDetail.separatorStyle = .none
-        tbDetail.rowHeight = UITableView.automaticDimension
         tbDetail.estimatedRowHeight = 150
+        tbDetail.rowHeight = UITableView.automaticDimension
+        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
