@@ -33,7 +33,7 @@ class ProductMyBuyView: BaseViewXib {
         didSet {
             guard let _order = order else  { return }
             lbProductName.text = _order.name
-            lbTime.text = _order.createTimeMi?.timeAgo()
+            lbTime.text = _order.updatedTime?.timeAgo()
             
             lbName.text = _order.fullName
             lbRank.text = _order.level
@@ -57,7 +57,7 @@ class ProductMyBuyView: BaseViewXib {
             }
             
             if let url = URL(string: "\(BASE_URL_IMAGE)\(_order.imgSrcAccount ?? "")") {
-                imgAvatar.sd_setImage(with: url, placeholderImage: AppImage.imgLogo)
+                imgAvatar.sd_setImage(with: url, placeholderImage: AppImage.imgDefaultUser)
             }
 
         }

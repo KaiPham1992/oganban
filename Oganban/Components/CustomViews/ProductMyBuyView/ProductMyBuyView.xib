@@ -17,7 +17,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductMyBuyView" customModule="Oganban" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductMyBuyView" customModule="Oganban_AppStore" customModuleProvider="target">
             <connections>
                 <outlet property="imgAvatar" destination="adx-uU-G7W" id="BeL-rN-dLR"/>
                 <outlet property="imgIconMoney" destination="H09-Ok-Cdj" id="Fb7-NM-8A2"/>
@@ -98,13 +98,13 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.1" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t81-9E-sw6">
-                    <rect key="frame" x="362" y="99.5" width="17" height="16"/>
+                    <rect key="frame" x="362.5" y="99.5" width="17" height="16"/>
                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                     <color key="textColor" red="0.25491019607843135" green="0.25491019607843135" blue="0.25491019607843135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_star" translatesAutoresizingMaskIntoConstraints="NO" id="GU5-oD-pZA">
-                    <rect key="frame" x="364.5" y="120.5" width="12" height="12"/>
+                    <rect key="frame" x="365" y="120.5" width="12" height="12"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="12" id="GN8-Rr-8ej"/>
@@ -136,17 +136,17 @@
                 <constraint firstItem="v6f-fo-vwj" firstAttribute="leading" secondItem="adx-uU-G7W" secondAttribute="trailing" constant="8" id="Nwa-YW-e95"/>
                 <constraint firstItem="2fE-gj-DI8" firstAttribute="leading" secondItem="v6f-fo-vwj" secondAttribute="leading" id="OUW-di-iiw"/>
                 <constraint firstItem="11A-xD-PfX" firstAttribute="top" secondItem="2fE-gj-DI8" secondAttribute="top" id="PpV-sb-LhI"/>
+                <constraint firstItem="t81-9E-sw6" firstAttribute="centerX" secondItem="GU5-oD-pZA" secondAttribute="centerX" id="QaD-v3-ocE"/>
                 <constraint firstItem="H09-Ok-Cdj" firstAttribute="leading" secondItem="czf-M1-zco" secondAttribute="leading" id="Rrr-3S-X2k"/>
                 <constraint firstItem="H09-Ok-Cdj" firstAttribute="top" secondItem="czf-M1-zco" secondAttribute="bottom" constant="8" id="S4w-im-6Ea"/>
                 <constraint firstItem="v6f-fo-vwj" firstAttribute="top" secondItem="adx-uU-G7W" secondAttribute="top" id="TiI-Qp-4fc"/>
                 <constraint firstItem="czf-M1-zco" firstAttribute="leading" secondItem="DjJ-GN-kAh" secondAttribute="leading" id="dHt-Dt-A9K"/>
                 <constraint firstItem="adx-uU-G7W" firstAttribute="leading" secondItem="H09-Ok-Cdj" secondAttribute="leading" id="elH-Sv-ml6"/>
                 <constraint firstItem="eYL-YP-jcQ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="h8t-mO-flA"/>
-                <constraint firstItem="GU5-oD-pZA" firstAttribute="centerX" secondItem="t81-9E-sw6" secondAttribute="centerX" id="ibk-Yn-aWf"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="GU5-oD-pZA" secondAttribute="trailing" constant="10" id="jxo-cm-cGC"/>
                 <constraint firstItem="DjJ-GN-kAh" firstAttribute="leading" secondItem="eYL-YP-jcQ" secondAttribute="trailing" constant="20" id="lld-Rd-iVv"/>
                 <constraint firstItem="aIn-Z7-lmP" firstAttribute="top" secondItem="eYL-YP-jcQ" secondAttribute="bottom" constant="5" id="lqi-Oq-Oc0"/>
                 <constraint firstItem="adx-uU-G7W" firstAttribute="top" secondItem="MVw-gC-3ME" secondAttribute="bottom" constant="8" id="nlo-r1-bd8"/>
-                <constraint firstItem="t81-9E-sw6" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="-8" id="rjC-o6-fej"/>
                 <constraint firstItem="DjJ-GN-kAh" firstAttribute="top" secondItem="eYL-YP-jcQ" secondAttribute="top" id="tzh-CF-s0p"/>
                 <constraint firstItem="czf-M1-zco" firstAttribute="top" secondItem="DjJ-GN-kAh" secondAttribute="bottom" constant="5" id="uPr-Yi-bQE"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="DjJ-GN-kAh" secondAttribute="trailing" constant="10" id="zvz-PG-a7Y"/>
