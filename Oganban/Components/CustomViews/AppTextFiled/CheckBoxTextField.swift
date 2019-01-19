@@ -52,8 +52,26 @@ class CheckBoxTextField: BaseView {
     }()
     
     var isCheck: Bool {
-        return btnCheckBox.isChecked
+        
+        set (newValue) {
+            if isCheck {
+                textField.isEnabled = true
+            }
+            isCheck = newValue
+        }
+        get {
+            return btnCheckBox.isChecked
+        }
+        
     }
+    
+    let lbType: UILabel = {
+        let lb = UILabel()
+        lb.font = AppFont.fontRegularRoboto15
+        lb.text = ""
+        lb.textColor = AppColor.gray_65_65_65
+        return lb
+    }()
     
     weak var delegate: CheckBoxTextFieldDelegate?
     
@@ -63,6 +81,7 @@ class CheckBoxTextField: BaseView {
         vContent.addSubview(vLine)
         vContent.addSubview(textField)
         vContent.addSubview(lbUint)
+        vContent.addSubview(lbType)
         
         vContent.fillSuperview()
         btnCheckBox.anchor(vContent.topAnchor,
@@ -82,7 +101,12 @@ class CheckBoxTextField: BaseView {
                      rightConstant  : 0,
                      heightConstant : 1)
         lbUint.anchor(right: vContent.rightAnchor, rightConstant: 5, heightConstant: 20)
+
         lbUint.centerYToView(view: textField)
+        
+        lbType.anchor(right: vLine.rightAnchor, rightConstant: 0)
+        lbType.centerYToView(view: textField)
+
         textField.delegate = self
         btnCheckBox.delegate = self
     }

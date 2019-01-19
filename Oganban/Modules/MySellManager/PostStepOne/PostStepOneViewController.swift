@@ -32,7 +32,7 @@ class PostStepOneViewController: BaseViewController {
     var categoryId: String?
     var dateSeleted: Date? {
         didSet {
-            vChooseDate.textField.text = dateSeleted?.toString(dateFormat: AppDateFormat.yyyyMMdd)&
+            vChooseDate.textField.text = dateSeleted?.toString(dateFormat: AppDateFormat.ddMMYYYY_VN)&
         }
     }
     var errorMessage: String = "" {
@@ -83,7 +83,9 @@ class PostStepOneViewController: BaseViewController {
         super.setUpViews()
         vTitleRecord.setTextField(title: TitleString.titleRecord, placeHolder: TitleString.placeTitleRecord)
         
-        vQuantity.setTextField(title: TitleString.titleQuantity, placeHolder: TitleString.placeTitleQuantity)
+//        vQuantity.setTextField(title: TitleString.titleQuantity, placeHolder: TitleString.placeTitleQuantity)
+        vQuantity.setTitleTextField(text: TitleString.titleQuantity)
+        vQuantity.textField.text = "1"
         
         vChooseDate.setTextField(title: TitleString.titleExpireSell, placeHolder: TitleString.placeTitleExpireSell)
         
@@ -105,7 +107,7 @@ class PostStepOneViewController: BaseViewController {
         if isCopyUpdate {
             setupUpdate()
             self.categoryId = record?.catrgotyID
-            self.dateSeleted = record?.createTime
+//            self.dateSeleted = record?.createTime
         }
     }
     
