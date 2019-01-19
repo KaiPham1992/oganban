@@ -447,7 +447,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
         if indexPath.row == 0 {
             return CGSize(width: collectionView.frame.width, height: 125)
         } else {
-            return CGSize(width: collectionView.frame.width/2, height: 260)
+            return CGSize(width: collectionView.frame.width/2, height: 270)
         }
     }
     
