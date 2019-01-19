@@ -63,6 +63,9 @@ class HomeViewController: BaseViewController {
         }
     }
     
+    var isFilterTextfield = false
+    var isFilter = false
+    
     //------database LIMIT
     let itemsPerBatch = 40
     //-------database OFFSET)
@@ -219,6 +222,7 @@ class HomeViewController: BaseViewController {
         tfSearch.text = ""
         self.distance = UserDefaultHelper.shared.radius
         scaleDropdown.clearSelection()
+        listRecord.removeAll()
         for (temp, item) in menu.enumerated() {
             menu[temp].isSelected = false
             for (indexChild, _) in item.cateChild.enumerated() {
@@ -270,6 +274,8 @@ class HomeViewController: BaseViewController {
     @IBAction func btnSearchTapped() {
         view.endEditing(true)
         paramFilter.keyword = tfSearch.text&
+        isFilterTextfield = true
+        isFilter = true
         presenter?.filterRecord(param: paramFilter)
     }
     
@@ -299,6 +305,7 @@ class HomeViewController: BaseViewController {
         }
         
         paramFilter.categoryId = listCate
+        isFilter = true
         presenter?.filterRecord(param: paramFilter)
     }
 }
@@ -317,13 +324,23 @@ extension HomeViewController: HomeViewProtocol {
     func didFilterRecord(list: [RecordEntity]) {
         // update UITableView with new batch of items on main thread after query finishes
         ProgressView.shared.hide()
-        DispatchQueue.main.async {
-            self.listRecord.append(contentsOf: list)
-            if list.count < self.itemsPerBatch {
-                self.reachedEndOfItems = true
-                print("reached end of data. Batch count: \(list.count)")
+        if isFilterTextfield && list.count == 0 {
+            isFilterTextfield = false
+            PopUpHelper.shared.showMessageHaveAds(message: "Không tìm thấy kết quả")
+        } else {
+            DispatchQueue.main.async {
+                if self.isFilter {
+                    self.isFilter = false
+                    self.listRecord = list
+                } else {
+                    self.listRecord.append(contentsOf: list)
+                    if list.count < self.itemsPerBatch {
+                        self.reachedEndOfItems = true
+                        print("reached end of data. Batch count: \(list.count)")
+                    }
+                    self.offset += self.itemsPerBatch
+                }
             }
-            self.offset += self.itemsPerBatch
         }
     }
     
@@ -531,6 +548,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             lbCategory.text = menu[index].name
             paramFilter.categoryId = [menu[index].id&]
             paramFilter.isParent = "1"
+            isFilter = true
             presenter?.filterRecord(param: paramFilter)
             hideDropdown()
         case tbRight:
@@ -581,6 +599,8 @@ extension HomeViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         view.endEditing(true)
         paramFilter.keyword = textField.text&
+        isFilterTextfield = true
+        isFilter = true
         presenter?.filterRecord(param: paramFilter)
         return true
     }
@@ -588,6 +608,8 @@ extension HomeViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         view.endEditing(true)
         paramFilter.keyword = textField.text&
+        isFilterTextfield = true
+        isFilter = true
         presenter?.filterRecord(param: paramFilter)
     }
     
@@ -610,6 +632,7 @@ extension HomeViewController: PositionViewControllerDelegate {
         lbPosition.text = address
         self.distance = distance
         self.paramFilter.radius = distance.value&
+        isFilter = true
         presenter?.filterRecord(param: paramFilter)
     }
     
