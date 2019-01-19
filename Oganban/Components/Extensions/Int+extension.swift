@@ -20,6 +20,10 @@ extension Double {
         return String(format: "%.2f", self)
     }
     
+    func roundedOneDemical() -> String {
+        return String(format: "%.1f", self)
+    }
+    
     func toUInt64() -> UInt64 {
         if self < 0 {
             return 0

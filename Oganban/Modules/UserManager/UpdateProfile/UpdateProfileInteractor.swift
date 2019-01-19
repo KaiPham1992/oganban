@@ -37,7 +37,8 @@ class UpdateProfileInteractor: UpdateProfileInteractorInputProtocol {
             user.imgSRC = _user?.imgSRC
             user.imgCropSrc = _user?.imgCropSrc
             UserDefaultHelper.shared.loginUserInfo = user
-            self.presenter?.didSuccessUpdateProfile(user: user)
+//            self.presenter?.didSuccessUpdateProfile(user: user)
+            
         }, failure: { error in
             ProgressView.shared.hide()
             self.presenter?.didErrorUpdateProfile(error: error)

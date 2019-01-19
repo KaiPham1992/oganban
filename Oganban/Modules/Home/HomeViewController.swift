@@ -143,11 +143,14 @@ class HomeViewController: BaseViewController {
         tbRight.rowHeight = UITableView.automaticDimension
         tbLeft.rowHeight = UITableView.automaticDimension
         hideDropdown()
+        tbLeft.backgroundColor = AppColor.main
+        tbRight.backgroundColor = AppColor.main
         tbLeft.layer.cornerRadius = 10
         tbRight.layer.cornerRadius = 10
         tbRight.allowsMultipleSelection = true
         tbLeft.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: tbLeft.bounds.size.width - 10)
         tbRight.contentInset.bottom = 40
+        vAccept.backgroundColor = AppColor.main
     }
     
     override func setUpViews() {
@@ -163,12 +166,17 @@ class HomeViewController: BaseViewController {
         scaleDropdown.anchorView = vScaleDropdown
         scaleDropdown.backgroundColor = AppColor.main
         DropDown.appearance().setupCornerRadius(10)
-        scaleDropdown.textColor = .white
-        scaleDropdown.textFont = AppFont.fontRegular11
-        scaleDropdown.separatorColor = .gray
         scaleDropdown.selectionBackgroundColor = AppColor.main
         scaleDropdown.selectedTextColor = .yellow
         scaleDropdown.downScaleTransform = CGAffineTransform(rotationAngle: (-.pi))
+        scaleDropdown.textColor = .white
+        scaleDropdown.separatorColor = AppColor.main
+        scaleDropdown.textFont = AppFont.fontRegular11
+        scaleDropdown.cellNib = UINib(nibName: "RangeCell", bundle:  nil)
+        scaleDropdown.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
+            guard let _ = cell as? RangeCell else { return }
+        }
+        
         scaleDropdown.selectionAction = { [weak self](index, item) in
             guard let `self` = self else { return }
             self.lbDistance.text = item
@@ -453,7 +461,8 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //FIXME
-        let vc = OrderBuyDetailRouter.createModule(recordId: listRecord[indexPath.item - 1].id&)
+        let temp = (indexPath.row - 1) + indexPath.section * 10
+        let vc = OrderBuyDetailRouter.createModule(recordId: listRecord[temp].id&)
         self.push(controller: vc)
     }
     

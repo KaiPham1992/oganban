@@ -313,7 +313,7 @@ extension UpdateProfileViewController {
             return false
         }
         
-        if phone.isValidPhone2() == false {
+        if self.tvPhone.fullPhone.isValidPhone2() == false {
             hideError(isHidden: false, message: MessageString.invalidPhone)
             return false
         }

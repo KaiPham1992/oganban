@@ -98,6 +98,14 @@ class RecordEntity: BaseEntity {
         self.isFavorite <- map["is_favorite"]
     }
     
+    var ratingFormat: String? {
+        if let rating = Double(self.avgRating&) {
+            return rating.roundedOneDemical()
+        } else {
+            return ""
+        }
+    }
+    
     var urlAvatar: URL? {
         //
         return URL(string: "\(BASE_URL)\(self.cropImage&)")
