@@ -39,18 +39,18 @@ class MyBuyInfoUserCell: BaseTableCell {
             lbPhone.text = _record.showFullPhoneSaler()
             lbName.text = _record.fullNameSaler
             vLevel.setLevel(level: _record.levelSaler&, isPro: _record.isProSaler)
-            imgAvatar.sd_setImage(with: _record.urlAvatarSaler, placeholderImage: AppImage.imgPlaceHolderImage)
-            lcsWithImgPhone.constant = 20
-            btnPhone.isEnabled = true
+            imgAvatar.sd_setImage(with: _record.urlAvatarSaler, placeholderImage: AppImage.imgDefaultUser)
+            lcsWithImgPhone.constant = 0
+            btnPhone.isEnabled = false
         } else {
             lbStar.text = _record.avgRatingBuyer?.roundedDemical()
             lbReview.text = _record.showTotolRatingBuyer()
             lbPhone.text = _record.showFullPhoneBuyer()
             lbName.text = _record.fullNameBuyer
             vLevel.setLevel(level: _record.levelBuyer&, isPro: _record.isProBuyer)
-            imgAvatar.sd_setImage(with: _record.urlAvatarBuyer, placeholderImage: AppImage.imgPlaceHolderImage)
-            lcsWithImgPhone.constant = 0
-            btnPhone.isEnabled = false
+            imgAvatar.sd_setImage(with: _record.urlAvatarBuyer, placeholderImage: AppImage.imgDefaultUser)
+            lcsWithImgPhone.constant = 20
+            btnPhone.isEnabled = true
         }
     }
     

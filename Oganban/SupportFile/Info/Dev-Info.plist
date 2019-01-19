@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Oganban muốn sử dụng vị trí để tải dữ liệu</string>
 	<key>AccountKitClientToken</key>
 	<string>195782fa5d85685a90d770734824afb3</string>
 	<key>CFBundleDevelopmentRegion</key>
@@ -27,7 +25,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.1004012986328-dasmg85c0k91bvs6v6s4r3inb7lh5q5d</string>
+				<string>com.googleusercontent.apps.184896964264-hasu05ond65e5am0u9oev8vbqffk3e0o</string>
 			</array>
 		</dict>
 		<dict>
@@ -48,7 +46,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>201901160143</string>
+	<string>201901171718</string>
 	<key>FacebookAppID</key>
 	<string>225241758398999</string>
 	<key>FacebookDisplayName</key>
@@ -69,6 +67,8 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Oganban cần sử dụng camera để đăng hình</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Oganban muốn sử dụng vị trí để tải dữ liệu</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Oganban muốn sử dụng vị trí để tải dữ liệu</string>
 	<key>NSLocationWhenInUseUsageDescription</key>

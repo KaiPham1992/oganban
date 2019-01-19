@@ -17,6 +17,6 @@ struct AppConstant {
     
     static let deleteSubComment = NSNotification.Name.init("deleteSubComment")
     static let deleteComment = NSNotification.Name.init("deleteComment")
-    
+    static let loadDataLogin = NSNotification.Name.init("loadDataLogin")
     static let moneyToCoint: Double = 20000
 }

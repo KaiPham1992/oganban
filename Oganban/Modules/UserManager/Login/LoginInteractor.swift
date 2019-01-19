@@ -43,7 +43,9 @@ class LoginInteractor: LoginInteractorInputProtocol {
     
     func updateProfile(codeVerify: String, phoneCode: String, phoneNumber: String) {
         Provider.shared.userAPIService.verifyPhone(code: codeVerify, phone: phoneNumber, phonCode: phoneCode, success: { (user) in
-            self.presenter?.didLogin(user: user)
+            guard let _user = user else { return }
+            UserUtils.saveUser(user: _user)
+            AppRouter.shared.openTabbar()
         }) { (error) in
             self.presenter?.didLogin(error: error)
         }

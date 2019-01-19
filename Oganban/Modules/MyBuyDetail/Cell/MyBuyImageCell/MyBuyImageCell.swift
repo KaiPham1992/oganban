@@ -43,7 +43,7 @@ class MyBuyImageCell: BaseTableCell {
         imageSlide.listItem = _order.arrayImage
         lbName.text = _order.name
         lbStatus.text = _order.getStatus().rawValue
-        btnTime.setTitle(_order.creatTime?.timeAgo(), for: .normal)
+        btnTime.setTitle(_order.updateTime?.timeAgo(), for: .normal)
         lbQuantity.text = "SL đặt mua: \(_order.quantity&)"
         
         if _order.paymentType == "cash" {

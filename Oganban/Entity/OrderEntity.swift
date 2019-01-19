@@ -47,6 +47,7 @@ struct OrderEntity: Mappable {
     var recordID: String?
     var name: String?
     var createTimeMi: Date?
+    var updatedTime: Date?
     var totalRating: String?
     var avgRating: String?
     var level: String?
@@ -74,6 +75,7 @@ struct OrderEntity: Mappable {
         self.recordID <- map["record_id"]
         self.name <- map["name"]
         self.createTimeMi <- (map["create_time_mi"], AppTimestampTransform())
+        self.updatedTime <- (map["update_time_mi"], AppTimestampTransform())
         self.totalRating <- map["total_rating"]
         self.avgRating <- map["avg_rating"]
         self.level <- map["level"]

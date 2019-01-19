@@ -5,37 +5,22 @@
     
     
       
-<<<<<<< HEAD
-      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.004765">
+      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.005474">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: default_platform" time="0.003847">
-=======
-
-      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.003826">
-      </testcase>
-    
-      
-
-      <testcase classname="fastlane.lanes" name="1: default_platform" time="0.003757">
->>>>>>> d9a7c3c2dd158d85355b43f86dcc573f417f6e80
+      <testcase classname="fastlane.lanes" name="1: default_platform" time="0.003597">
         
       </testcase>
     
       
-<<<<<<< HEAD
-      <testcase classname="fastlane.lanes" name="2: pem" time="10.312051">
-=======
-
-      <testcase classname="fastlane.lanes" name="2: match" time="13.974884">
+      <testcase classname="fastlane.lanes" name="2: match" time="47.398051">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="3: match" time="42.677701">
->>>>>>> d9a7c3c2dd158d85355b43f86dcc573f417f6e80
+      <testcase classname="fastlane.lanes" name="3: match" time="46.294854">
         
       </testcase>
     

@@ -42,13 +42,13 @@ fastlane ios init_apns_prod_dev
 Init APNs for Production server with Development mode
 
 => fastlane init_apns_prod_dev --env dev
-### ios init_apns_pro_release
+### ios init_apns_prod_release
 ```
-fastlane ios init_apns_pro_release
+fastlane ios init_apns_prod_release
 ```
 Init APNs for Production server with Release mode
 
-=> fastlane init_apns_pro_release --env prod
+=> fastlane init_apns_prod_release --env prod
 ### ios sync_cert_dev
 ```
 fastlane ios sync_cert_dev
@@ -63,6 +63,13 @@ fastlane ios sync_cert_prod
 Sync certificates for Production
 
 => fastlane sync_cert_prod --env prod
+### ios sync_cert_appstore
+```
+fastlane ios sync_cert_appstore
+```
+Sync certificates for Production Appstore
+
+=> fastlane sync_cert_appstore --env appstore
 ### ios beta
 ```
 fastlane ios beta

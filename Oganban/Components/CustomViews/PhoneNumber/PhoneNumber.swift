@@ -27,6 +27,10 @@ class PhoneNumber: BaseViewXib {
     var phoneCode = ""
     weak var delegate: PhoneNumberDelegate?
     
+    var fullPhone: String {
+        return "\(lbCountryCode.text&)\(tfPhone.text&)"
+    }
+    
     override func setUpViews() {
         super.setUpViews()
         setUpDropDown()
