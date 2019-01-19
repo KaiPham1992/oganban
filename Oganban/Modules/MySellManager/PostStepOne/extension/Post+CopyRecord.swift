@@ -11,10 +11,11 @@ import UIKit
 extension PostStepOneViewController {
     
     func setupUpdate() {
+        self.dateSeleted?.getNext30Day()
         lbCategory.text = record?.categoryName
         vTitleRecord.textField.text = record?.name
         vQuantity.textField.text = "\(record?.quantity ?? 0)"
-        vChooseDate.textField.text = record?.createTime?.toString(dateFormat: AppDateFormat.ddMMMyyyy)
+//        vChooseDate.textField.text = record?.createTime?.toString(dateFormat: AppDateFormat.ddMMMyyyy)
         vAbout.tvInput.text = record?.about
         vAbout.lbPlaceHolder.text = ""
     

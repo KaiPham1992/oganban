@@ -52,7 +52,17 @@ class CheckBoxTextField: BaseView {
     }()
     
     var isCheck: Bool {
-        return btnCheckBox.isChecked
+        
+        set (newValue) {
+            if isCheck {
+                textField.isEnabled = true
+            }
+            isCheck = newValue
+        }
+        get {
+            return btnCheckBox.isChecked
+        }
+        
     }
     
     let lbType: UILabel = {
