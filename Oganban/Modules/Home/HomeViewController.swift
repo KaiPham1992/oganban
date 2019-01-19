@@ -72,7 +72,6 @@ class HomeViewController: BaseViewController {
 	override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
-        tfSearch.text = "Tìm bài đăng"
         configureCollectionView()
         configureTableView()
         presenter?.getCategoryMerge()
@@ -159,6 +158,8 @@ class HomeViewController: BaseViewController {
         lbDistance.text = UserDefaultHelper.shared.radius?.title
         self.distance = UserDefaultHelper.shared.radius
         tfSearch.addTarget(self, action: #selector(textFieldDidChanged), for: UIControl.Event.editingChanged)
+        tfSearch.attributedPlaceholder = NSAttributedString(string: "Tìm bài đăng",
+                                                               attributes: [NSAttributedString.Key.foregroundColor: AppColor.main])
     }
     
     private func setUpScaleDropdown() {
