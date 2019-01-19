@@ -114,6 +114,8 @@ class HomeViewController: BaseViewController {
                 }
             }
         }
+        
+        lbPosition.text = UserDefaultHelper.shared.address
     }
     
     override func viewWillDisappear(_ animated: Bool) {

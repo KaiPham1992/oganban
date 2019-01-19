@@ -62,16 +62,9 @@ class MySellingViewController: BaseViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        isRefresh = true
         checkLogin()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        if vCheckLogin.isHidden { // if login
-             getData()
-        }
+        getData()
     }
     
     func setupView() {
@@ -174,7 +167,7 @@ extension MySellingViewController: MySellingViewProtocol {
     
     func didGetRecordSellerPost(listRecord: BaseRecordEntity?) {
         // nil or count = 0
-        isCanLoadMore = false
+//        isCanLoadMore = false
         isCanLoadMore = listRecord?.dataRecord.count == limitLoad
         if self.listRecord == nil || self.listRecord?.dataRecord.count == 0 || isRefresh {
             isRefresh = false

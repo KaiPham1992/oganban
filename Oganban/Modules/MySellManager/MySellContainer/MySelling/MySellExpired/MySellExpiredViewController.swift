@@ -18,6 +18,8 @@ class MySellExpiredViewController: BaseViewController {
     
 	var presenter: MySellExpiredPresenterProtocol?
     var refeshControl: UIRefreshControl?
+    var isCanLoadMore: Bool = false
+    var isRefresh: Bool = false
     
     var listSellExpired: BaseRecordEntity? {
         didSet {
@@ -43,6 +45,7 @@ class MySellExpiredViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        isRefresh = true
         getData()
     }
     
@@ -69,10 +72,11 @@ class MySellExpiredViewController: BaseViewController {
     }
     
     func getData() {
-        presenter?.getSellExpired(status: "hide", limit: 10, offset: 0)
+        presenter?.getSellExpired(status: "hide", limit: limitLoad, offset: 0)
     }
     
     @objc private func refeshData() {
+        isRefresh = true
         getData()
         refeshControl?.endRefreshing()
     }
@@ -100,12 +104,29 @@ extension MySellExpiredViewController: UITableViewDataSource, UITableViewDelegat
         
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let count = self.listSellExpired?.dataRecord.count else { return }
+        
+        if indexPath.item == count - 5 && isCanLoadMore {
+            print("load more")
+            presenter?.getSellExpired(status: "hide", limit: limitLoad, offset: count)
+        }
+    }
 }
 
 extension MySellExpiredViewController: MySellExpiredViewProtocol {
     
     func didGetSellPired(data: BaseRecordEntity?) {
-        self.listSellExpired = data
+        isCanLoadMore = data?.dataRecord.count == limitLoad
+        
+        if self.listSellExpired == nil || self.listSellExpired?.dataRecord.count == 0 || isRefresh {
+            isRefresh = false
+            self.listSellExpired = data
+        } else {
+            guard let data = data?.dataRecord else { return }
+            self.listSellExpired?.dataRecord.append(contentsOf: data)
+        }
     }
     
     func didGetSellPired(error: APIError?) {

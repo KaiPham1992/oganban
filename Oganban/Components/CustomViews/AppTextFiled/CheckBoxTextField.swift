@@ -52,7 +52,17 @@ class CheckBoxTextField: BaseView {
     }()
     
     var isCheck: Bool {
-        return btnCheckBox.isChecked
+        
+        set (newValue) {
+            if isCheck {
+                textField.isEnabled = true
+            }
+            isCheck = newValue
+        }
+        get {
+            return btnCheckBox.isChecked
+        }
+        
     }
     
     let lbType: UILabel = {
@@ -91,17 +101,19 @@ class CheckBoxTextField: BaseView {
                      rightConstant  : 0,
                      heightConstant : 1)
         lbUint.anchor(right: vContent.rightAnchor, rightConstant: 5, heightConstant: 20)
-        lbUint.centerToView(view: textField)
+
+        lbUint.centerYToView(view: textField)
         
         lbType.anchor(right: vLine.rightAnchor, rightConstant: 0)
         lbType.centerYToView(view: textField)
-        
+
         textField.delegate = self
         btnCheckBox.delegate = self
     }
     
     func setUint(unit: String) {
         self.lbUint.attributedText = "\(unit)".toAttributedString(color: self.lbUint.textColor, font: self.lbUint.font, isUnderLine: true)
+        self.lbUint.isHidden = false
     }
     
     func setTitleTextField(text: String) {

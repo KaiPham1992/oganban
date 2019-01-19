@@ -28,12 +28,23 @@ class CommentCell: BaseCommentCell {
         didSet {
             guard let _comment = comment else { return }
             
-            lbComment.text = _comment.comment
+            let attr = NSMutableAttributedString()
+            let fullName = _comment.user?.fullName&
+            let attr1 = "\(fullName&) ".toAttributedString(color: .black, font: AppFont.fontBold15, isUnderLine: false)
+            let attr2 = _comment.comment&.toAttributedString(color: lbComment.textColor, font: AppFont.fontRegular15, isUnderLine: false)
+            
+            attr.append(attr1)
+            attr.append(attr2)
+            lbComment.attributedText = attr
+            
+            
             lbTime.text = _comment.createTime?.toString(dateFormat: AppDateFormat.ddMMYYYY_VN)
             
             if let url = _comment.user?.urlAvatar {
-                imgAvatar.sd_setImage(with: url, placeholderImage: AppImage.imgPlaceHolderImage)
+                imgAvatar.sd_setImage(with: url, placeholderImage: AppImage.imgDefaultUser)
                 imgAvatar.setBorderWithCornerRadius(borderWidth: 1, borderColor: .clear, cornerRadius: 15)
+            } else {
+                imgAvatar.image = AppImage.imgDefaultUser
             }
             
             btnDelete.isHidden = comment?.user?.id != UserDefaultHelper.shared.loginUserInfo?.id
