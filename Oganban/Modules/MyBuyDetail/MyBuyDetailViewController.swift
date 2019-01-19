@@ -24,54 +24,54 @@ class MyBuyDetailViewController: BaseViewController {
         didSet {
             guard let _order = order else { return }
             tbDetail.reloadData()
-            
+
             // BUYER
             if !isSaler {
                 vControlSaler.isHidden = true
                 vDoneNotArrived.isHidden = _order.getStatus() != .waitDelivery
-                
+
                 if _order.getStatus() == .done || _order.getStatus() == .cancel {
                     vContainerRating.isHidden = false
                 } else {
                     vContainerRating.isHidden = true
                 }
-                
+
                 if let salerRating = _order.ratingSellerOrder, let salerRatingInt =  Int(salerRating) {
                     vRating.number = salerRatingInt
                     vRating.setStar(number: salerRatingInt)
                     vRating.vStackView.isUserInteractionEnabled = false
                     btnBuyerSend.isHidden = true
-                    
+
                 }
-                
+
                 // SALER
             } else {
                 vControlSaler.isHidden = false
                 // accep
                 vAcceptCancel.isHidden = _order.getStatus() != .new
-                
+
                 // rating
                 if _order.getStatus() == .done || _order.getStatus() == .cancel || _order.getStatus() == .orderNotYetArrived {
                     vContainerRatingSaler.isHidden = false
                 } else {
                     vContainerRatingSaler.isHidden = true
                 }
-                
+
                 // receive money
                 if _order.paymentType == "cash" && _order.getStatus() == .waitDelivery {
                     vReceivedMoney.isHidden = false
                 } else {
                     vReceivedMoney.isHidden = true
                 }
-                
-                
+
+
                 if let buyerRating = _order.ratingBuyerOrder, let buyerRatingInt =  Int(buyerRating) {
                     vRatingSaler.number = buyerRatingInt
                     vRatingSaler.setStar(number: buyerRatingInt)
                     btnSaleSend.isHidden = true
                     vRatingSaler.vStackView.isUserInteractionEnabled = false
                 }
-                
+
             }
             
         }

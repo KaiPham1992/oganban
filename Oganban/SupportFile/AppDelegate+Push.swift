@@ -13,6 +13,8 @@ import FirebaseMessaging
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
     func configurePushNotification(application: UIApplication) {
+        Messaging.messaging().delegate = self
+        
         //Register for remote notification
         if #available(iOS 10.0, *) {
             // For iOS 10 display notification (sent via APNS)
@@ -29,8 +31,6 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         }
         
         application.registerForRemoteNotifications()
-        
-        Messaging.messaging().delegate = self
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
@@ -50,6 +50,10 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 }
 
 extension AppDelegate: MessagingDelegate {
+    func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
+        print(messaging)
+    }
+    
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
         print("\n\n🚀 Firebase registration token\n\(fcmToken)\n\n")
         UserDefaultHelper.shared.fcmToken = fcmToken
