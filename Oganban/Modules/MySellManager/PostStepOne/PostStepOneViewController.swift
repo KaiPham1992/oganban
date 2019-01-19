@@ -83,7 +83,9 @@ class PostStepOneViewController: BaseViewController {
         super.setUpViews()
         vTitleRecord.setTextField(title: TitleString.titleRecord, placeHolder: TitleString.placeTitleRecord)
         
-        vQuantity.setTextField(title: TitleString.titleQuantity, placeHolder: TitleString.placeTitleQuantity)
+//        vQuantity.setTextField(title: TitleString.titleQuantity, placeHolder: TitleString.placeTitleQuantity)
+        vQuantity.setTitleTextField(text: TitleString.titleQuantity)
+        vQuantity.textField.text = "1"
         
         vChooseDate.setTextField(title: TitleString.titleExpireSell, placeHolder: TitleString.placeTitleExpireSell)
         

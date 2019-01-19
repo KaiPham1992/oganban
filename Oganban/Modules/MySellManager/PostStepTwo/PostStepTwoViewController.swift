@@ -51,10 +51,17 @@ class PostStepTwoViewController: BaseViewController {
         vMoney.btnCheckBox.lbTitle.textColor = AppColor.gray_65_65_65
         vMoney.textField.keyboardType = UIKeyboardType.numberPad
         vMoney.textField.addTarget(self, action: #selector(editingChanged), for: UIControl.Event.editingChanged)
+        vMoney.lbType.text = "đ"
+        vMoney.lbType.underlineLastCharacter()
+        
         vCoin.setTextField(title: "Trao đổi Ơcoin", placeHolder: "Nhập số Ơcoin sẽ bán")
         vCoin.btnCheckBox.lbTitle.textColor = AppColor.gray_65_65_65
         vCoin.textField.keyboardType = UIKeyboardType.numberPad
+        vCoin.lbType.text = "ơ"
+        vCoin.lbType.underlineLastCharacter()
+        
         lbNotice.textColor = AppColor.red
+        
         
         vCoin.delegate = self
         vMoney.delegate = self
