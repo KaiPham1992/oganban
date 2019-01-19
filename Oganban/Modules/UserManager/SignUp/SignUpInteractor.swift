@@ -12,13 +12,14 @@ import UIKit
 
 class SignUpInteractor: SignUpInteractorInputProtocol {
     func verifyPhone(verifyCode: String, phoneCode: String, phoneNum: String) {
-        Provider.shared.userAPIService.verifyPhone(code: verifyCode, phone: phoneNum, phonCode: phoneCode, success: { (response) in
-            self.presenter?.didVerifyPhone(response: response)
+        Provider.shared.userAPIService.verifyPhone(code: verifyCode, phone: phoneNum, phonCode: phoneCode, success: { user in
+            guard let _user = user else { return }
+            UserUtils.saveUser(user: _user)
+            AppRouter.shared.openTabbar()
         }) { (error) in
             self.presenter?.didVerifyPhone(error: error)
         }
     }
-    
 
     weak var presenter: SignUpInteractorOutputProtocol?
     
