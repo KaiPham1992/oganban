@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //        let vcLogin = OrderDetailRouter.createModule()
         //        let nc = UINavigationController(rootViewController: vcLogin)
         //        window?.rootViewController = nc
-        UserDefaultHelper.shared.saveLocation(lat: CLLocationDegrees(10.737938), long: CLLocationDegrees(106.677911), address: "180 Đường Cao Lỗ, Phường 4, Quận 8, Hồ Chí Minh, Vietnam")
+//        UserDefaultHelper.shared.saveLocation(lat: CLLocationDegrees(10.737938), long: CLLocationDegrees(106.677911), address: "180 Đường Cao Lỗ, Phường 4, Quận 8, Hồ Chí Minh, Vietnam")
         return true
     }
     

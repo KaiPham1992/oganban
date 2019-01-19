@@ -39,8 +39,8 @@ struct AppImage {
     static let imgUnCheck = UIImage(named: "ic_check")!
     static let imgCheck = UIImage(named: "ic_checked")!
     static let imgDown = UIImage(named: "down")!
-    static let imgCheckTerm = UIImage(named: "ic_check_term")!
-    static let imgCheckedTerm = UIImage(named: "ic_checked_term")!
+    static let imgCheckTerm = UIImage(named: "ic_check")!
+    static let imgCheckedTerm = UIImage(named: "ic_checked")!
     
     // Photo
     static let imgErrorUpLoadPhoto = UIImage(named: "ic_warning")!

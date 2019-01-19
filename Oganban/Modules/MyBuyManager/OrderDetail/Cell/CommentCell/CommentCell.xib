@@ -28,7 +28,7 @@
                         <color key="textColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="BEf-qi-h9c">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultUser" translatesAutoresizingMaskIntoConstraints="NO" id="BEf-qi-h9c">
                         <rect key="frame" x="8" y="50" width="30" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="bqQ-nt-sSV"/>
@@ -102,6 +102,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="ic_avatar" width="22" height="22"/>
+        <image name="defaultUser" width="100" height="100"/>
     </resources>
 </document>

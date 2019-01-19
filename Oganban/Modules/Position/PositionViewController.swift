@@ -104,6 +104,7 @@ class PositionViewController: BaseViewController {
     @objc func btnDoneTapped() {
         guard let distance = distance else { return }
         delegate?.positionSelected(location: centerMapCoordinate, address: tfAddress.text&, distance: distance)
+        UserDefaultHelper.shared.saveLocation(lat: centerMapCoordinate.latitude, long: centerMapCoordinate.longitude, address: tfAddress.text&)
         presenter?.dismiss()
     }
     
