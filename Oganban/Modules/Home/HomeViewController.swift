@@ -13,7 +13,7 @@ import DropDown
 import GoogleMaps
 
 class HomeViewController: BaseViewController {
-    
+    //MARK:- IBOUTLET VARIABLE
     @IBOutlet weak var cvHome           : UICollectionView!
     @IBOutlet weak var lbPosition       : UILabel!
     @IBOutlet weak var vScale           : UIView!
@@ -31,12 +31,13 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var tfSearch         : UITextField!
     @IBOutlet weak var vAccept          : UIView!
     
+    //MARK: - VARIABLE
     private let refreshControl = UIRefreshControl()
-	var presenter: HomePresenterProtocol?
+    var presenter: HomePresenterProtocol?
     
     var menu: [CategoryMergeEntity] = [] {
         didSet {
-//            self.tbLeft.reloadData()
+            //            self.tbLeft.reloadData()
         }
     }
     
@@ -62,16 +63,18 @@ class HomeViewController: BaseViewController {
         }
     }
     
-    // number of items to be fetched each time (database LIMIT)
+    //------database LIMIT
     let itemsPerBatch = 40
-    // Where to start fetching items (database OFFSET)
+    //-------database OFFSET)
     var offset = 0
     // a flag for when all database items have already been loaded
     var reachedEndOfItems = false
-
-	override func viewDidLoad() {
+    
+    //MARK:- FUNCTION
+    override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
+        
         configureCollectionView()
         configureTableView()
         presenter?.getCategoryMerge()
@@ -124,7 +127,7 @@ class HomeViewController: BaseViewController {
         cvHome.registerCollectionCell(AdmobCell.self)
         cvHome.registerCollectionCell(HomeCell.self)
         cvHome.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
-//        cvHome.registerCollectionCell(UICollectionViewCell.self)
+        //        cvHome.registerCollectionCell(UICollectionViewCell.self)
         cvHome.delegate = self
         cvHome.dataSource = self
         cvHome.alwaysBounceVertical = true
@@ -161,11 +164,11 @@ class HomeViewController: BaseViewController {
         self.distance = UserDefaultHelper.shared.radius
         tfSearch.addTarget(self, action: #selector(textFieldDidChanged), for: UIControl.Event.editingChanged)
         tfSearch.attributedPlaceholder = NSAttributedString(string: "Tìm bài đăng",
-                                                               attributes: [NSAttributedString.Key.foregroundColor: AppColor.main])
+                                                            attributes: [NSAttributedString.Key.foregroundColor: AppColor.main])
     }
     
     private func setUpScaleDropdown() {
-      
+        
         scaleDropdown.anchorView = vScaleDropdown
         scaleDropdown.backgroundColor = AppColor.main
         DropDown.appearance().setupCornerRadius(10)
@@ -227,8 +230,9 @@ class HomeViewController: BaseViewController {
         tbRight.reloadData()
     }
     
+    //MARK: - IBACTION BUTTON
     @IBAction func btnClearTapped() {
-       tfSearch.text = ""
+        tfSearch.text = ""
         btnClear.isHidden = true
     }
     
@@ -254,8 +258,6 @@ class HomeViewController: BaseViewController {
     }
     
     @IBAction func btnGotoPositionTapped() {
-//        let vc = CommentDetailRouter.createModule()
-//        self.push(controller: vc)
         guard let distance = distance else { return }
         presenter?.gotoPositionMaps(delegate: self, address: lbPosition.text&, dataSource: self.dataSource, distance: distance)
     }
@@ -289,12 +291,8 @@ class HomeViewController: BaseViewController {
         for choose in listChoose {
             category += "\(choose.name&), "
         }
-        if category != "" {
-            lbCategory.text = category
-        } else {
-            lbCategory.text = "Tất cả danh mục"
-        }
         
+        lbCategory.text = category != "" ? category : "Tất cả danh mục"
         
         let listCate = listChoose.map { (item) -> String in
             return item.id&
@@ -305,6 +303,7 @@ class HomeViewController: BaseViewController {
     }
 }
 
+//--MARK: - Home view protocol
 extension HomeViewController: HomeViewProtocol {
     func didGetPositionRange(list: [PositionRangeEntity]) {
         self.dataSource = list
@@ -312,7 +311,7 @@ extension HomeViewController: HomeViewProtocol {
             self.dataSource.append(last)
         }
         scaleDropdown.dataSource = dataSource.map({$0.title&})
-//        distance = dataSource[3]
+        //        distance = dataSource[3]
     }
     
     func didFilterRecord(list: [RecordEntity]) {
@@ -334,17 +333,17 @@ extension HomeViewController: HomeViewProtocol {
     }
     
     func getCategoryChildSuccess(list: [CategoryEntity]) {
-//        menu[indexCategory].listChild = list
-//        indexCategory += 1
-//        self.getChild()
+        //        menu[indexCategory].listChild = list
+        //        indexCategory += 1
+        //        self.getChild()
     }
     
     func getCategorySuccess(list: [CategoryEntity]) {
-//        listCategory = list
-//        menu = list.map({ (item) -> Menu in
-//            return Menu(parent: item)
-//        })
-//        getChild()
+        //        listCategory = list
+        //        menu = list.map({ (item) -> Menu in
+        //            return Menu(parent: item)
+        //        })
+        //        getChild()
     }
     
     func getChild() {
@@ -368,15 +367,16 @@ extension HomeViewController: HomeViewProtocol {
             self.paramFilter.offset = self.offset
             self.paramFilter.limit = self.itemsPerBatch
             self.presenter?.filterRecord(param: self.paramFilter)
-
+            
         }
     }
 }
 
+//--MARK: - Show list record collection view
 extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         if listRecord.count == 0 {
-//            showNoData()
+            //            showNoData()
             lbNoData.removeFromSuperview()
             self.cvHome.addSubview(lbNoData)
             lbNoData.centerSuperview()
@@ -393,21 +393,20 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if listRecord.count == 0 {
-//            showNoData()
+            //            showNoData()
             return 0
+        } else if listRecord.count == 1 {
+            hideNoData()
+            return 3
         } else {
             hideNoData()
-            if listRecord.count == 1 {
-                return 3
+            if listRecord.count%10 == 0 {
+                return 11
             } else {
-                if listRecord.count%10 == 0 {
-                    return 11
+                if section == listRecord.count/10 {
+                    return listRecord.count%10 + 1
                 } else {
-                    if section == listRecord.count/10 {
-                        return listRecord.count%10 + 1
-                    } else {
-                        return 11
-                    }
+                    return 11
                 }
             }
         }
@@ -468,9 +467,9 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
         let vc = OrderBuyDetailRouter.createModule(recordId: listRecord[temp].id&)
         self.push(controller: vc)
     }
-    
 }
 
+//MARK: - CONFIG DROPDOWN MENU CATEGORY
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch tableView {
@@ -536,9 +535,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             hideDropdown()
         case tbRight:
             
-            if indexPath.row == menu[index].cateChild.count {
-                
-            } else {
+            if indexPath.row != menu[index].cateChild.count {
                 menu[index].cateChild[indexPath.row].isSelected = !menu[index].cateChild[indexPath.row].isSelected
                 
                 if menu[index].cateChild[indexPath.row].isSelected {
@@ -552,28 +549,29 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 }
                 tbRight.reloadRows(at: [indexPath], with: .none)
             }
-           
+            
         default:
             break
         }
     }
     
     
-//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        if indexPath.row != indexReload {
-//            cell.transform = CGAffineTransform(rotationAngle: (-.pi))
-//            
-//            UIView.animate(
-//                withDuration: 0.3,
-//                delay: 0,
-//                options: [.curveEaseInOut],
-//                animations: {
-//                    cell.transform = CGAffineTransform(translationX: 0, y: 0)
-//            })
-//        }
-//    }
+    //    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    //        if indexPath.row != indexReload {
+    //            cell.transform = CGAffineTransform(rotationAngle: (-.pi))
+    //
+    //            UIView.animate(
+    //                withDuration: 0.3,
+    //                delay: 0,
+    //                options: [.curveEaseInOut],
+    //                animations: {
+    //                    cell.transform = CGAffineTransform(translationX: 0, y: 0)
+    //            })
+    //        }
+    //    }
 }
 
+//MARK: - TEXTFIELD DELEGATE
 extension HomeViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -602,6 +600,7 @@ extension HomeViewController: UITextFieldDelegate {
     }
 }
 
+//MARK: - DELEGATE POSITION
 extension HomeViewController: PositionViewControllerDelegate {
     func positionSelected(location: CLLocationCoordinate2D, address: String, distance: PositionRangeEntity) {
         let long = String(location.longitude)
@@ -617,12 +616,13 @@ extension HomeViewController: PositionViewControllerDelegate {
     func checkGPS() {
         if CLLocationManager.authorizationStatus() != .authorizedAlways && CLLocationManager.authorizationStatus() != .authorizedWhenInUse {
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
-               self.present(controller: CheckGPSViewController.initFromNib())
+                self.present(controller: CheckGPSViewController.initFromNib())
             }
         }
     }
 }
 
+//MARK: - DELEGATE HOME CELL
 extension HomeViewController: LeftMenuCellDelegate {
     func openRightMenu(indexPath: IndexPath) {
         index = indexPath.row
