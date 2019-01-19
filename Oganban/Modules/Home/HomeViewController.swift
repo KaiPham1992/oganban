@@ -163,12 +163,17 @@ class HomeViewController: BaseViewController {
         scaleDropdown.anchorView = vScaleDropdown
         scaleDropdown.backgroundColor = AppColor.main
         DropDown.appearance().setupCornerRadius(10)
-        scaleDropdown.textColor = .white
-        scaleDropdown.textFont = AppFont.fontRegular11
-        scaleDropdown.separatorColor = .gray
         scaleDropdown.selectionBackgroundColor = AppColor.main
         scaleDropdown.selectedTextColor = .yellow
         scaleDropdown.downScaleTransform = CGAffineTransform(rotationAngle: (-.pi))
+        scaleDropdown.textColor = .white
+        scaleDropdown.separatorColor = AppColor.main
+        scaleDropdown.textFont = AppFont.fontRegular11
+        scaleDropdown.cellNib = UINib(nibName: "RangeCell", bundle:  nil)
+        scaleDropdown.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
+            guard let _ = cell as? RangeCell else { return }
+        }
+        
         scaleDropdown.selectionAction = { [weak self](index, item) in
             guard let `self` = self else { return }
             self.lbDistance.text = item
