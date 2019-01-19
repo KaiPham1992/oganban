@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        configureGoogle()
         //---
         IQKeyboardManager.shared.enable = true
         configurePushNotification(application: application)
@@ -28,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FBSDKApplicationDelegate.sharedInstance()?.application(application, didFinishLaunchingWithOptions: launchOptions)
         window?.frame = UIScreen.main.bounds
         UIApplication.shared.statusBarStyle = .lightContent
-        configureGoogle()
+        
         
 //        checkGPS()
         
