@@ -37,7 +37,7 @@ class BaseParam: NSObject, Mappable {
         }
         
         params[Params.deviceId] =  UIDevice.current.identifierForVendor!.uuidString
-        params[Params.phonecode] = "VN"
+        params[Params.phonecode] = "+84"
         params[Params.timezone] = Utils.getTimeZone()
         
         params[Params.deviceName] =  UIDevice.current.model

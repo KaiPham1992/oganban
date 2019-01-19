@@ -55,6 +55,14 @@ class CheckBoxTextField: BaseView {
         return btnCheckBox.isChecked
     }
     
+    let lbType: UILabel = {
+        let lb = UILabel()
+        lb.font = AppFont.fontRegularRoboto15
+        lb.text = ""
+        lb.textColor = AppColor.gray_65_65_65
+        return lb
+    }()
+    
     weak var delegate: CheckBoxTextFieldDelegate?
     
     override func setUpViews() {
@@ -63,6 +71,7 @@ class CheckBoxTextField: BaseView {
         vContent.addSubview(vLine)
         vContent.addSubview(textField)
         vContent.addSubview(lbUint)
+        vContent.addSubview(lbType)
         
         vContent.fillSuperview()
         btnCheckBox.anchor(vContent.topAnchor,
@@ -83,6 +92,10 @@ class CheckBoxTextField: BaseView {
                      heightConstant : 1)
         lbUint.anchor(right: vContent.rightAnchor, rightConstant: 5, heightConstant: 20)
         lbUint.centerToView(view: textField)
+        
+        lbType.anchor(right: vLine.rightAnchor, rightConstant: 0)
+        lbType.centerYToView(view: textField)
+        
         textField.delegate = self
         btnCheckBox.delegate = self
     }
