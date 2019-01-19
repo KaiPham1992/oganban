@@ -41,6 +41,7 @@ class MyExchangeViewController: BaseViewController {
     var parrentNavigation: UINavigationController?
     
     var isAllOrder: Bool = false
+    var key = OrderStatusKey.new.rawValue
     
     var listData: BaseOrderEntity? {
         didSet {
@@ -69,15 +70,8 @@ class MyExchangeViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        getData()
         checkLogin()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        if vCheckLogin.isHidden { // if login
-            getData()
-        }
     }
     
     func setupView() {
@@ -100,7 +94,7 @@ class MyExchangeViewController: BaseViewController {
     }
     
     func getData() {
-            self.presenter?.getTransactionSeller(status: OrderStatusKey.new.rawValue, limit: 10, offset: 0)
+            self.presenter?.getTransactionSeller(status: key, limit: 10, offset: 0)
     }
     
     func setStatusType() {
@@ -128,7 +122,6 @@ class MyExchangeViewController: BaseViewController {
         dropDownStatus.separatorColor = .gray
         dropDownStatus.selectionBackgroundColor = AppColor.main
         dropDownStatus.selectedTextColor = .yellow
-        dropDownStatus.downScaleTransform = CGAffineTransform(rotationAngle: (-.pi))
         dropDownStatus.dataSource = ["Chờ duyệt", "Đang giao", "Hoàn Tất", "Đã huỷ", "Tất cả"]
         dropDownStatus.selectionAction = { [weak self](index, item) in
             guard let `self` = self else { return }
@@ -136,19 +129,24 @@ class MyExchangeViewController: BaseViewController {
             
             switch item {
             case "Chờ duyệt":
-                self.presenter?.getTransactionSeller(status: OrderStatusKey.new.rawValue, limit: 10, offset: 0)
+                self.key = OrderStatusKey.new.rawValue
+                self.presenter?.getTransactionSeller(status: self.key, limit: 10, offset: 0)
                 self.lbTextTotal.text = "Tổng đơn hàng đang chờ duyệt: "
             case "Đang giao":
-                self.presenter?.getTransactionSeller(status: OrderStatusKey.waitDelivery.rawValue, limit: 10, offset: 0)
+                self.key = OrderStatusKey.waitDelivery.rawValue
+                self.presenter?.getTransactionSeller(status: self.key, limit: 10, offset: 0)
                 self.lbTextTotal.text = "Tổng đơn hàng đang giao: "
             case "Hoàn Tất":
-                self.presenter?.getTransactionSeller(status: OrderStatusKey.done.rawValue, limit: 10, offset: 0)
+                self.key = OrderStatusKey.done.rawValue
+                self.presenter?.getTransactionSeller(status: self.key, limit: 10, offset: 0)
                 self.lbTextTotal.text = "Tổng đơn hàng đã hoàn tất: "
             case "Đã huỷ":
-                self.presenter?.getTransactionSeller(status: OrderStatusKey.cancel.rawValue, limit: 10, offset: 0)
+                self.key = OrderStatusKey.cancel.rawValue
+                self.presenter?.getTransactionSeller(status: self.key, limit: 10, offset: 0)
                 self.lbTextTotal.text = "Tổng đơn hàng đã huỷ: "
             case "Tất cả":
-                self.presenter?.getTransactionSeller(status: OrderStatusKey.all.rawValue, limit: 10, offset: 0)
+                self.key = OrderStatusKey.all.rawValue
+                self.presenter?.getTransactionSeller(status: self.key, limit: 10, offset: 0)
                 self.lbTextTotal.text = "Tổng tất cả đơn hàng: "
                 self.isAllOrder = true
             default:

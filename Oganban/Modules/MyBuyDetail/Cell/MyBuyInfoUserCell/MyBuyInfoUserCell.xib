@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="128" id="KGk-i7-Jjw" customClass="MyBuyInfoUserCell" customModule="Oganban" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="128" id="KGk-i7-Jjw" customClass="MyBuyInfoUserCell" customModule="Oganban_AppStore" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="128"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -69,7 +69,7 @@
                         <color key="textColor" red="0.72549019607843135" green="0.72549019607843135" blue="0.72549019607843135" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OBY-VX-nar" customClass="LevelMemberView" customModule="Oganban" customModuleProvider="target">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OBY-VX-nar" customClass="LevelMemberView" customModule="Oganban_AppStore" customModuleProvider="target">
                         <rect key="frame" x="16" y="84" width="185" height="20"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -79,11 +79,11 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="JUa-LR-K90" firstAttribute="centerX" secondItem="4Gy-wq-TDx" secondAttribute="centerX" id="18V-HJ-NDw"/>
                     <constraint firstItem="PdA-ro-Y1R" firstAttribute="leading" secondItem="FAD-gA-w9E" secondAttribute="trailing" constant="8" id="1Pd-nT-DKR"/>
                     <constraint firstItem="UYT-5D-seh" firstAttribute="centerY" secondItem="OBY-VX-nar" secondAttribute="centerY" id="7en-s7-QPS"/>
                     <constraint firstItem="OBY-VX-nar" firstAttribute="leading" secondItem="FAD-gA-w9E" secondAttribute="leading" id="9WP-fK-6w2"/>
                     <constraint firstItem="JUa-LR-K90" firstAttribute="top" secondItem="4Gy-wq-TDx" secondAttribute="bottom" constant="8" id="9vy-dq-yhc"/>
+                    <constraint firstAttribute="trailing" secondItem="JUa-LR-K90" secondAttribute="trailing" constant="14" id="AMg-EA-s9A"/>
                     <constraint firstItem="OBY-VX-nar" firstAttribute="top" secondItem="FAD-gA-w9E" secondAttribute="bottom" constant="8" id="Cq9-gl-Ttj"/>
                     <constraint firstItem="aLR-UB-mme" firstAttribute="leading" secondItem="rpW-uF-Mcm" secondAttribute="trailing" constant="5" id="LGd-r6-oyt"/>
                     <constraint firstItem="PdA-ro-Y1R" firstAttribute="top" secondItem="FAD-gA-w9E" secondAttribute="top" constant="8" id="QUs-iI-9BJ"/>

@@ -21,7 +21,7 @@ class OrderDetailEntity: BaseEntity {
     var name: String?
     var arrayImage = [String]()
     var creatTime: Date?
-    
+    var updateTime: Date?
     // saler
     var accountIDSaler: String?
     var fullNameSaler: String?
@@ -63,7 +63,7 @@ class OrderDetailEntity: BaseEntity {
         self.arrayImage <- map["img_src_list"]
         self.recordId <- map["record_id"]
         self.creatTime <- (map["create_time_mi"], AppTimestampTransform())
-        
+        self.updateTime <- (map["update_time_mi"], AppTimestampTransform())
         // saler
         self.accountIDSaler <- map["account_id_seller"]
         self.fullNameSaler <- map["fullname_seller"]
