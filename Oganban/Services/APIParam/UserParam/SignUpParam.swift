@@ -19,6 +19,12 @@ class SignUpParam: BaseParam {
     var address1        : String?
     var address2        : String?
     
+    var long1      : String?
+    var lat1      : String?
+    
+    var long2      : String?
+    var lat2      : String?
+    
     override func mapping(map: Map) {
         super.mapping(map: map)
         
@@ -31,6 +37,13 @@ class SignUpParam: BaseParam {
         self.gender         <- map["gender"]
         self.address1       <- map["address_1"]
         self.address2       <- map["address_2"]
+        
+        self.lat2         <- map["latitude_2"]
+        self.long2          <- map["longitude_2"]
+        
+        self.lat1         <- map["latitude_1"]
+        self.long1          <- map["longitude_1"]
+        
     }
     
     init(email      : String?,
@@ -41,7 +54,11 @@ class SignUpParam: BaseParam {
          gender     : String? = nil,
          address1   : String? = nil,
          address2   : String? = nil,
-         codeIntroduce: String? = nil) {
+         codeIntroduce: String? = nil,
+         lat1       : String? = nil,
+         long1      : String? = nil,
+         lat2       : String? = nil,
+         long2      : String? = nil) {
         super.init()
         self.email          = email
         self.password       = password
@@ -52,6 +69,10 @@ class SignUpParam: BaseParam {
         self.gender         = gender
         self.address1       = address1
         self.address2       = address2
+        self.lat1           = lat1
+        self.lat2           = lat2
+        self.long1          = long1
+        self.long2          = long2
     }
     
     required init?(map: Map) {
