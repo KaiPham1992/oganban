@@ -30,6 +30,8 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var lbDistance       : UILabel!
     @IBOutlet weak var tfSearch         : UITextField!
     @IBOutlet weak var vAccept          : UIView!
+    @IBOutlet weak var btnCancel        : UIButton!
+    
     
     //MARK: - VARIABLE
     private let refreshControl = UIRefreshControl()
@@ -238,6 +240,11 @@ class HomeViewController: BaseViewController {
     @IBAction func btnClearTapped() {
         tfSearch.text = ""
         btnClear.isHidden = true
+    }
+    
+    @IBAction func btnCancelTapped() {
+        tfSearch.text = ""
+        view.endEditing(true)
     }
     
     @IBAction func hideDropdownTapped() {
@@ -594,6 +601,8 @@ extension HomeViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         tfSearch.text = ""
+        btnCancel.isHidden = false
+        btnFavorite.isHidden = true
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -601,16 +610,23 @@ extension HomeViewController: UITextFieldDelegate {
         paramFilter.keyword = textField.text&
         isFilterTextfield = true
         isFilter = true
+        btnCancel.isHidden = true
+        btnFavorite.isHidden = false
         presenter?.filterRecord(param: paramFilter)
         return true
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         view.endEditing(true)
-        paramFilter.keyword = textField.text&
-        isFilterTextfield = true
-        isFilter = true
-        presenter?.filterRecord(param: paramFilter)
+        guard let text = textField.text else { return }
+        if !text.isEmpty {
+            paramFilter.keyword = textField.text&
+            isFilterTextfield = true
+            isFilter = true
+            btnCancel.isHidden = true
+            btnFavorite.isHidden = false
+            presenter?.filterRecord(param: paramFilter)
+        }
     }
     
     @objc func textFieldDidChanged() {
