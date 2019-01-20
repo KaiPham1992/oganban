@@ -59,10 +59,13 @@ class SettingViewController: BaseViewController {
         radiusDropdown.width = 150
         radiusDropdown.textColor = .white
         radiusDropdown.textFont = AppFont.fontRegular11
-        radiusDropdown.separatorColor = .gray
         radiusDropdown.selectionBackgroundColor = AppColor.main
         radiusDropdown.selectedTextColor = .yellow
         radiusDropdown.downScaleTransform = CGAffineTransform(rotationAngle: (-.pi))
+        radiusDropdown.cellNib = UINib(nibName: "RangeCell", bundle:  nil)
+        radiusDropdown.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
+            guard let _ = cell as? RangeCell else { return }
+        }
     
         radiusDropdown.selectionAction = { [weak self](index, item) in
             guard let `self` = self else { return }
