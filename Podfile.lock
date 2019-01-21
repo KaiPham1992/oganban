@@ -8,9 +8,9 @@ PODS:
   - Bolts/Tasks (1.9.0)
   - CryptoSwift (0.13.1)
   - DropDown (2.3.12)
-  - FBSDKCoreKit (4.39.0):
+  - FBSDKCoreKit (4.39.1):
     - Bolts (~> 1.9)
-  - FBSDKLoginKit (4.39.0):
+  - FBSDKLoginKit (4.39.1):
     - FBSDKCoreKit
   - Firebase/Core (5.15.0):
     - Firebase/CoreOnly
@@ -57,10 +57,9 @@ PODS:
     - GoogleMaps/Base
   - GooglePlaces (2.7.0):
     - GoogleMaps/Base (= 2.7.0)
-  - GoogleSignIn (4.3.0):
+  - GoogleSignIn (4.4.0):
     - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
     - "GoogleToolboxForMac/NSString+URLArguments (~> 2.1)"
-    - GTMOAuth2 (~> 1.0)
     - GTMSessionFetcher/Core (~> 1.1)
   - GoogleToolboxForMac/DebugUtils (2.2.0):
     - GoogleToolboxForMac/Defines (= 2.2.0)
@@ -70,31 +69,25 @@ PODS:
     - GoogleToolboxForMac/Defines (= 2.2.0)
     - "GoogleToolboxForMac/NSString+URLArguments (= 2.2.0)"
   - "GoogleToolboxForMac/NSString+URLArguments (2.2.0)"
-  - GoogleUtilities/AppDelegateSwizzler (5.3.6):
+  - GoogleUtilities/AppDelegateSwizzler (5.3.7):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
     - GoogleUtilities/Network
-  - GoogleUtilities/Environment (5.3.6)
-  - GoogleUtilities/Logger (5.3.6):
+  - GoogleUtilities/Environment (5.3.7)
+  - GoogleUtilities/Logger (5.3.7):
     - GoogleUtilities/Environment
-  - GoogleUtilities/MethodSwizzler (5.3.6):
+  - GoogleUtilities/MethodSwizzler (5.3.7):
     - GoogleUtilities/Logger
-  - GoogleUtilities/Network (5.3.6):
+  - GoogleUtilities/Network (5.3.7):
     - GoogleUtilities/Logger
     - "GoogleUtilities/NSData+zlib"
     - GoogleUtilities/Reachability
-  - "GoogleUtilities/NSData+zlib (5.3.6)"
-  - GoogleUtilities/Reachability (5.3.6):
+  - "GoogleUtilities/NSData+zlib (5.3.7)"
+  - GoogleUtilities/Reachability (5.3.7):
     - GoogleUtilities/Logger
-  - GoogleUtilities/UserDefaults (5.3.6):
+  - GoogleUtilities/UserDefaults (5.3.7):
     - GoogleUtilities/Logger
-  - GTMOAuth2 (1.1.6):
-    - GTMSessionFetcher (~> 1.1)
-  - GTMSessionFetcher (1.2.1):
-    - GTMSessionFetcher/Full (= 1.2.1)
   - GTMSessionFetcher/Core (1.2.1)
-  - GTMSessionFetcher/Full (1.2.1):
-    - GTMSessionFetcher/Core (= 1.2.1)
   - ImagePicker (3.2.0)
   - ImageSlideshow (1.7.0):
     - ImageSlideshow/Core (= 1.7.0)
@@ -119,14 +112,13 @@ DEPENDENCIES:
   - Alamofire (= 4.7.3)
   - CryptoSwift (from `https://github.com/krzyzanowskim/CryptoSwift`, branch `master`)
   - DropDown
-  - FBSDKCoreKit (from `https://github.com/facebook/facebook-objc-sdk.git`, branch `master`)
-  - FBSDKLoginKit (= 4.39.0)
+  - FBSDKLoginKit
   - Firebase/Core
   - Firebase/Messaging
   - Google-Mobile-Ads-SDK
   - GoogleMaps (= 2.7.0)
   - GooglePlaces (= 2.7.0)
-  - GoogleSignIn (= 4.3.0)
+  - GoogleSignIn
   - ImagePicker (from `https://github.com/appsailor/ImagePicker.git`, branch `feature/Swift-4.2`)
   - ImageSlideshow
   - ImageSlideshow/SDWebImage
@@ -140,6 +132,7 @@ SPEC REPOS:
     - Alamofire
     - Bolts
     - DropDown
+    - FBSDKCoreKit
     - FBSDKLoginKit
     - Firebase
     - FirebaseAnalytics
@@ -154,7 +147,6 @@ SPEC REPOS:
     - GoogleSignIn
     - GoogleToolboxForMac
     - GoogleUtilities
-    - GTMOAuth2
     - GTMSessionFetcher
     - ImageSlideshow
     - IQKeyboardManagerSwift
@@ -168,9 +160,6 @@ EXTERNAL SOURCES:
   CryptoSwift:
     :branch: master
     :git: https://github.com/krzyzanowskim/CryptoSwift
-  FBSDKCoreKit:
-    :branch: master
-    :git: https://github.com/facebook/facebook-objc-sdk.git
   ImagePicker:
     :branch: feature/Swift-4.2
     :git: https://github.com/appsailor/ImagePicker.git
@@ -179,9 +168,6 @@ CHECKOUT OPTIONS:
   CryptoSwift:
     :commit: 288692d159d1babc245a031dc59be759efd531bc
     :git: https://github.com/krzyzanowskim/CryptoSwift
-  FBSDKCoreKit:
-    :commit: c270e6cb7c1aa43c6e74c3b27c1357d1f743d895
-    :git: https://github.com/facebook/facebook-objc-sdk.git
   ImagePicker:
     :commit: aa0e56d613dd15067ded53a5cab9bf46d46fe113
     :git: https://github.com/appsailor/ImagePicker.git
@@ -191,8 +177,8 @@ SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   CryptoSwift: ff68c35a53e03177d31aaa2c1e8b3e010aeed6cb
   DropDown: 0bcc278799ec11a3d34ce1aac9367fbbaf5423d9
-  FBSDKCoreKit: 5aa4a666fe80c12621fb8d6214bfdbd18d3b5a88
-  FBSDKLoginKit: 30ba5039a2c53d65a75103889bc2deebdacd5a1f
+  FBSDKCoreKit: f442aa96179cc9b382bb4abeb7e340a47cca8f91
+  FBSDKLoginKit: c3079d9a4db27c492287b1eed7a4272b28cf8a59
   Firebase: 8bb9268bff82374f2cbaaabb143e725743c316ae
   FirebaseAnalytics: c06f9d70577d79074214700a71fd5d39de5550fb
   FirebaseAnalyticsInterop: e5f21be9af6548372e2f0815834ff909bff395a2
@@ -203,10 +189,9 @@ SPEC CHECKSUMS:
   GoogleAppMeasurement: 98b71f5e04142793729a5ef23e5b96651ff4b70f
   GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
   GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
-  GoogleSignIn: 11183592dc63e105475c7305a325045ff95e02b7
+  GoogleSignIn: 7ff245e1a7b26d379099d3243a562f5747e23d39
   GoogleToolboxForMac: ff31605b7d66400dcec09bed5861689aebadda4d
-  GoogleUtilities: 95996bea7c7d9b8fb811b7507669a4a8762f80c7
-  GTMOAuth2: e8b6512c896235149df975c41d9a36c868ab7fba
+  GoogleUtilities: 111a012f4c3a29c9e7c954c082fafd6ee3c999c0
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   ImagePicker: 456b7fab7022f1f7d8adad42b43d20963c9b5cea
   ImageSlideshow: f8eec5e37a980f60923b585ff23b0e140fd24018
@@ -217,6 +202,6 @@ SPEC CHECKSUMS:
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 8c9584cca9342e2ded664ed785af195f6a5a5aa3
+PODFILE CHECKSUM: 44a44aaa85f8160adee5fe15a10050eba4b7dccd
 
 COCOAPODS: 1.5.3

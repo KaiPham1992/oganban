@@ -25,7 +25,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.184896964264-b63cc2k5vflfup3jfr2moi1j3tb7r705</string>
+				<string>com.googleusercontent.apps.75482666365-hu68btcpb6hks79npv4npjad2t4rla0o</string>
 			</array>
 		</dict>
 		<dict>
@@ -46,7 +46,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>201901171718</string>
+	<string>201901210128</string>
 	<key>FacebookAppID</key>
 	<string>225241758398999</string>
 	<key>FacebookDisplayName</key>
