@@ -9,11 +9,15 @@
 import UIKit
 
 class AppRatingView: BaseViewXib {
-    var number: Int = 0
+    var number: Int = 1
     @IBOutlet weak var vStackView: UIStackView!
     
     @IBAction func btnActionTapped(sender: UIButton) {
         number = sender.tag
+        setStar(number: number)
+    }
+    
+    override func setUpViews() {
         setStar(number: number)
     }
     

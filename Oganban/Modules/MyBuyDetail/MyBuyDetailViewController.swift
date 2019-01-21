@@ -107,6 +107,7 @@ class MyBuyDetailViewController: BaseViewController {
         } else {
             listHeader = ["Chi tiết", "Thông tin khách hàng"]
         }
+        
     }
     
     override func setUpNavigation() {
