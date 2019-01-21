@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import GoogleMaps
+import GooglePlaces
 
 extension UpdateProfileViewController: UITextFieldDelegate {
     
@@ -45,9 +47,7 @@ extension UpdateProfileViewController: UITextFieldDelegate {
         scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
         tfAddress1.tfContent.delegate = self
-        tfAddress1.tfContent.tag = 1
         tfAddress2.tfContent.delegate = self
-        tfAddress2.tfContent.tag = 2
     }
     
     func addGesture() {
@@ -59,18 +59,21 @@ extension UpdateProfileViewController: UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        PositionMapsHelper.shared.showSearch(controller: self) { address in
-            //textField.text = address
-            
-            if textField.tag == 1
-            {
-                self.tfAddress1.tfContent.text = address
+        PositionMapsHelper.shared.showSearchPlace(controller: self) { place in
+            guard let _place = place as? GMSPlace else { return }
+    
+            switch textField {
+            case self.tfAddress1.tfContent:
+                self.tfAddress1.tfContent.text = _place.formattedAddress&
+                self.locationAddress1 = _place.coordinate
                 self.checkHideShowSaveButton()
-            } else {
-                self.tfAddress2.tfContent.text = address
+            case self.tfAddress2.tfContent:
+                self.tfAddress2.tfContent.text = _place.formattedAddress&
+                self.locationAddress2 = _place.coordinate
                 self.checkHideShowSaveButton()
+            default:
+                break
             }
-            
         }
     }
 }
