@@ -51,14 +51,14 @@ class PostStepTwoViewController: BaseViewController {
         vMoney.btnCheckBox.lbTitle.textColor = AppColor.gray_65_65_65
         vMoney.textField.keyboardType = UIKeyboardType.numberPad
         vMoney.textField.addTarget(self, action: #selector(editingChanged), for: UIControl.Event.editingChanged)
-        vMoney.lbType.text = "đ"
-        vMoney.lbType.underlineLastCharacter()
+//        vMoney.lbType.text = "đ"
+//        vMoney.lbType.underlineLastCharacter()
         
         vCoin.setTextField(title: "Trao đổi Ơcoin", placeHolder: "Nhập số Ơcoin sẽ bán")
         vCoin.btnCheckBox.lbTitle.textColor = AppColor.gray_65_65_65
         vCoin.textField.keyboardType = UIKeyboardType.numberPad
-        vCoin.lbType.text = "ơ"
-        vCoin.lbType.underlineLastCharacter()
+//        vCoin.lbType.text = "ơ"
+//        vCoin.lbType.underlineLastCharacter()
         
         lbNotice.textColor = AppColor.red
         
@@ -167,7 +167,7 @@ class PostStepTwoViewController: BaseViewController {
         }
         
         if vMoney.isCheck {
-            if let intQuality = Int(vMoney.textField.text&) {
+            if let intQuality = Double(vMoney.textField.text&) {
                 if intQuality < 0 {
                     lbNotice.text = "Vui lòng nhập giá tiền"
                     return false
@@ -184,7 +184,7 @@ class PostStepTwoViewController: BaseViewController {
         }
         
         if vCoin.isCheck && vCoin.textField.text& == "" {
-            if let intQuality = Int(vCoin.textField.text&) {
+            if let intQuality = Double(vCoin.textField.text&) {
                 if intQuality < 0 {
                     lbNotice.text = "Vui lòng nhập Ơ coin"
                     return false
