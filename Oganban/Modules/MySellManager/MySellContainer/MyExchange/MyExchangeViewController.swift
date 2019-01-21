@@ -119,10 +119,15 @@ class MyExchangeViewController: BaseViewController {
         DropDown.appearance().setupCornerRadius(10)
         dropDownStatus.textColor = .white
         dropDownStatus.textFont = AppFont.fontRegular11
-        dropDownStatus.separatorColor = .gray
         dropDownStatus.selectionBackgroundColor = AppColor.main
         dropDownStatus.selectedTextColor = .yellow
         dropDownStatus.dataSource = ["Chờ duyệt", "Đang giao", "Hoàn Tất", "Đã huỷ", "Tất cả"]
+        dropDownStatus.cellNib = UINib(nibName: "RangeCell", bundle:  nil)
+        dropDownStatus.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
+            guard let cell = cell as? RangeCell else { return }
+            cell.optionLabel.textAlignment = .center
+            cell.rightAnchorLabel.constant = 0
+        }
         dropDownStatus.selectionAction = { [weak self](index, item) in
             guard let `self` = self else { return }
             self.lbStatusExchange.text = item

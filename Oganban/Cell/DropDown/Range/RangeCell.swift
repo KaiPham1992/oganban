@@ -12,6 +12,7 @@ import DropDown
 class RangeCell: DropDownCell {
     
     @IBOutlet weak var vContent: UIView!
+    @IBOutlet weak var rightAnchorLabel: NSLayoutConstraint!
 
     override func awakeFromNib() {
         super.awakeFromNib()
