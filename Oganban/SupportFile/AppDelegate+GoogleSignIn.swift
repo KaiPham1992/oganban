@@ -24,7 +24,7 @@ extension AppDelegate {
         #else
         GMSServices.provideAPIKey("AIzaSyCaOVKfotVN6tQ4sUbv8ssND-4zmssrdPk")
         GMSPlacesClient.provideAPIKey("AIzaSyCaOVKfotVN6tQ4sUbv8ssND-4zmssrdPk")
-        GIDSignIn.sharedInstance().clientID = "184896964264-b63cc2k5vflfup3jfr2moi1j3tb7r705.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().clientID = "75482666365-hu68btcpb6hks79npv4npjad2t4rla0o.apps.googleusercontent.com"
         #endif
         
         configureFirebase()

@@ -22,7 +22,7 @@ class UpdateProfilePresenter: UpdateProfilePresenterProtocol {
         self.router = router
     }
     
-    func updateProfile(userInfo: UserEntity) {
+    func updateProfile(userInfo: UpdateProfileParam) {
         interactor?.updateProfile(userInfo: userInfo)
     }
     

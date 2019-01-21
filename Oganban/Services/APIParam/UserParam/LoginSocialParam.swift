@@ -14,7 +14,7 @@ import GoogleSignIn
 
 enum SocialType: String {
     case faceBook = "facebook"
-    case gmail = "gmail"
+    case gmail = "google"
 }
 
 class LoginSocialParam: BaseParam {

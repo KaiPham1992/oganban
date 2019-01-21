@@ -57,6 +57,9 @@ class OrderBuyDetailImageCell: BaseTableCell {
         super.awakeFromNib()
         radioMoney.delegate = self
         radioCoin.delegate = self
+        
+        radioMoney.setTwoImage(imgCheck: AppImage.imgCheckedCircle, imgUnCheck: AppImage.imgCheckCircle)
+        radioCoin.setTwoImage(imgCheck: AppImage.imgCheckedCircle, imgUnCheck: AppImage.imgCheckCircle)
     }
     
     func hideMoneyCoin() {

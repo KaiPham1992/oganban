@@ -14,7 +14,7 @@ class UpdateProfileInteractor: UpdateProfileInteractorInputProtocol {
     
     weak var presenter: UpdateProfileInteractorOutputProtocol?
     
-    func updateProfile(userInfo: UserEntity) {
+    func updateProfile(userInfo: UpdateProfileParam) {
         ProgressView.shared.show()
         Provider.shared.userAPIService.updateProfile(param: userInfo, success: { (user) in
             ProgressView.shared.hide()

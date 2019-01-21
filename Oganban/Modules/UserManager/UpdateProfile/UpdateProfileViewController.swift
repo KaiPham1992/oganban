@@ -9,6 +9,8 @@
 //
 
 import UIKit
+import GoogleMaps
+import GooglePlaces
 
 class UpdateProfileViewController: BaseViewController {
 
@@ -30,6 +32,9 @@ class UpdateProfileViewController: BaseViewController {
     @IBOutlet weak var tfBirthday: OganbanCustomTextfield!
     @IBOutlet weak var tfDisplayName: OganbanCustomTextfield!
     @IBOutlet weak var tfUsername: OganbanCustomTextfield!
+    
+    var locationAddress1: CLLocationCoordinate2D?
+    var locationAddress2: CLLocationCoordinate2D?
     
     var birthDay: Date? = nil
     var gender: Gender? = nil
@@ -58,8 +63,10 @@ class UpdateProfileViewController: BaseViewController {
         if fbAccountKit.isLogged {
             DispatchQueue.main.async(execute: {
                 self.fbAccountKit.getCountryCodeAndPhoneNumber(completion: { phone in
-                    guard let _user = self.user else { return }
-                    self.presenter?.updateProfile(userInfo: _user)
+                    guard let _user = self.user, let phone = _user.phone, let phoneCode = _user.phoneCode, let birthDay = _user.birthday, let fullName = _user.fullName else { return }
+                
+                    let param = UpdateProfileParam(phoneNumber: phone, phoneCode: phoneCode, birthday: birthDay, fullName: fullName, gender: _user.gender, houseAddress: _user.houseAddress, companyAddress: _user.companyAddress, lat1: _user.latAddress1, long1: _user.longAddress1, lat2: _user.latAddress2, long2: _user.longAddress2)
+                    self.presenter?.updateProfile(userInfo: param)
                 })
             })
         }
