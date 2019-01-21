@@ -54,38 +54,47 @@ extension UpdateProfileViewController {
     func tapSaveButton(){
         btnSave.tapButton = {
             self.view.endEditing(true)
-            if self.validateInputData() {
-                guard let _ = self.tfUsername.tfContent.text,
-                    let displayName = self.tfDisplayName.tfContent.text,
-                    let phone =  self.tvPhone.tfPhone.text,
-                    let dialCode = self.countryPhoneCode.dialCode,
-                    let birthDay =  self.birthDay?.toString(dateFormat: AppDateFormat.yyyyMMdd) else {
-                    return
-                }
-                
-                var gender = ""
-                if self.tfGender.tfContent.text == "Nữ" {
-                    gender = "female"
-                }
-                else if self.tfGender.tfContent.text == "Nam" {
-                    gender = "male"
-                }
-                else if self.tfGender.tfContent.text == "Khác" {
-                    gender = "other"
-                }
-                
-                self.user = UserEntity(displayName: displayName, phoneNumber: phone, phoneCode: dialCode, birthday: birthDay, gender: gender, houseAddress: self.tfAddress1.tfContent.text, companyAddress: self.tfAddress2.tfContent.text)
-                
-                if let oldUserInfo = UserDefaultHelper.shared.loginUserInfo, let newUserInfo = self.user {
-                    if phone != oldUserInfo.phone || dialCode.range(of:oldUserInfo.phoneCode ?? "nil") == nil {
-                        self.fbAccountKit.verifyPhone()
-                    } else {
-                         self.presenter?.updateProfile(userInfo: newUserInfo)
+            if Utils.isConnectedToInternet() {
+                if self.validateInputData() {
+                    guard let _ = self.tfUsername.tfContent.text,
+                        let displayName = self.tfDisplayName.tfContent.text,
+                        let phone =  self.tvPhone.tfPhone.text,
+                        let dialCode = self.countryPhoneCode.dialCode,
+                        let birthDay =  self.birthDay?.toString(dateFormat: AppDateFormat.yyyyMMdd) else {
+                            return
                     }
+                    
+                    var gender = ""
+                    if self.tfGender.tfContent.text == "Nữ" {
+                        gender = "female"
+                    }
+                    else if self.tfGender.tfContent.text == "Nam" {
+                        gender = "male"
+                    }
+                    else if self.tfGender.tfContent.text == "Khác" {
+                        gender = "other"
+                    }
+                    
+                    let lat1 = self.locationAddress1?.latitude.description
+                    let long1 = self.locationAddress1?.longitude.description
+                    let lat2 = self.locationAddress2?.latitude.description
+                    let long2 = self.locationAddress2?.longitude.description
+                    
+                    let param = UpdateProfileParam(phoneNumber: phone, phoneCode: dialCode, birthday: birthDay, fullName: displayName, gender: gender, houseAddress: self.tfAddress1.tfContent.text, companyAddress: self.tfAddress2.tfContent.text, lat1: lat1, long1: long1, lat2: lat2, long2: long2)
+                    
+                    //self.user = UserEntity(displayName: displayName, phoneNumber: phone, phoneCode: dialCode, birthday: birthDay, gender: gender, houseAddress: self.tfAddress1.tfContent.text, companyAddress: self.tfAddress2.tfContent.text, lat1: lat1, long1: long1 ,lat2: lat2, long2: long2)
+                    
+                    if let oldUserInfo = UserDefaultHelper.shared.loginUserInfo {
+                        if phone != oldUserInfo.phone || dialCode.range(of:oldUserInfo.phoneCode ?? "nil") == nil {
+                            self.fbAccountKit.verifyPhone()
+                        } else {
+                            self.presenter?.updateProfile(userInfo: param)
+                        }
+                    }
+                    
                 }
-                
             } else {
-                print("Update Error")
+                self.lbError.text = "Vui lòng kiểm tra kết nối mạng"
             }
         }
     }

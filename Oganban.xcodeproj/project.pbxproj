@@ -77,6 +77,9 @@
 		84487C8F21CB80E1008B25B2 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84487C8321CB7890008B25B2 /* Roboto-Regular.ttf */; };
 		84487C9021CB80F2008B25B2 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84487C8121CB788F008B25B2 /* Roboto-Thin.ttf */; };
 		84487C9121CB80F5008B25B2 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84487C8521CB7890008B25B2 /* Roboto-ThinItalic.ttf */; };
+		844EED7821F5A0CE0078DDA8 /* UpdateProfileParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EED7721F5A0CE0078DDA8 /* UpdateProfileParam.swift */; };
+		844EED7921F5A0CE0078DDA8 /* UpdateProfileParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EED7721F5A0CE0078DDA8 /* UpdateProfileParam.swift */; };
+		844EED7A21F5A0CE0078DDA8 /* UpdateProfileParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844EED7721F5A0CE0078DDA8 /* UpdateProfileParam.swift */; };
 		8463FAF921E1CBCA00522D0C /* HistoryBuyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8463FAF821E1CBCA00522D0C /* HistoryBuyEntity.swift */; };
 		8463FAFB21E1E1D900522D0C /* HistoryCoinEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8463FAFA21E1E1D900522D0C /* HistoryCoinEntity.swift */; };
 		8463FAFD21E1F06000522D0C /* FavouriteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8463FAFC21E1F06000522D0C /* FavouriteEntity.swift */; };
@@ -1544,6 +1547,7 @@
 		84487C8321CB7890008B25B2 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		84487C8421CB7890008B25B2 /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
 		84487C8521CB7890008B25B2 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
+		844EED7721F5A0CE0078DDA8 /* UpdateProfileParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileParam.swift; sourceTree = "<group>"; };
 		8463FAF821E1CBCA00522D0C /* HistoryBuyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryBuyEntity.swift; sourceTree = "<group>"; };
 		8463FAFA21E1E1D900522D0C /* HistoryCoinEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCoinEntity.swift; sourceTree = "<group>"; };
 		8463FAFC21E1F06000522D0C /* FavouriteEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteEntity.swift; sourceTree = "<group>"; };
@@ -3095,6 +3099,7 @@
 				DE21823221CD45F300FDD9F1 /* LoginSocialParam.swift */,
 				B35F529721D276A000D3FA30 /* SignUpParam.swift */,
 				DEF9AA3721D501CE001334EB /* UpdateProfileSocial.swift */,
+				844EED7721F5A0CE0078DDA8 /* UpdateProfileParam.swift */,
 			);
 			path = UserParam;
 			sourceTree = "<group>";
@@ -4542,6 +4547,7 @@
 				CB172C0D21C6A2EF0068CF92 /* UIApplication+extension.swift in Sources */,
 				B3CC857321D72DD200ADBFD8 /* PositionInteractor.swift in Sources */,
 				B32604DC21E9C85F00E4BC14 /* CommentDetailInteractor.swift in Sources */,
+				844EED7821F5A0CE0078DDA8 /* UpdateProfileParam.swift in Sources */,
 				CB379C1E21E39546005D7536 /* MySellExpiredDetail+Table.swift in Sources */,
 				84ABC68921CFF06700E0D202 /* UpdateProfile+SetupUI.swift in Sources */,
 				84329F3721DFC95600047B5E /* HistoryBuyInteractor.swift in Sources */,
@@ -4923,6 +4929,7 @@
 				DE68D0A621F0122C00A3A7BE /* UIApplication+extension.swift in Sources */,
 				DE68D0A721F0122C00A3A7BE /* PositionInteractor.swift in Sources */,
 				DE68D0A821F0122C00A3A7BE /* CommentDetailInteractor.swift in Sources */,
+				844EED7921F5A0CE0078DDA8 /* UpdateProfileParam.swift in Sources */,
 				DE68D0A921F0122C00A3A7BE /* MySellExpiredDetail+Table.swift in Sources */,
 				DE68D0AA21F0122C00A3A7BE /* UpdateProfile+SetupUI.swift in Sources */,
 				DE68D0AB21F0122C00A3A7BE /* HistoryBuyInteractor.swift in Sources */,
@@ -5304,6 +5311,7 @@
 				DE68D29221F0123A00A3A7BE /* UIApplication+extension.swift in Sources */,
 				DE68D29321F0123A00A3A7BE /* PositionInteractor.swift in Sources */,
 				DE68D29421F0123A00A3A7BE /* CommentDetailInteractor.swift in Sources */,
+				844EED7A21F5A0CE0078DDA8 /* UpdateProfileParam.swift in Sources */,
 				DE68D29521F0123A00A3A7BE /* MySellExpiredDetail+Table.swift in Sources */,
 				DE68D29621F0123A00A3A7BE /* UpdateProfile+SetupUI.swift in Sources */,
 				DE68D29721F0123A00A3A7BE /* HistoryBuyInteractor.swift in Sources */,
