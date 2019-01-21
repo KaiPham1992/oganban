@@ -38,6 +38,8 @@ struct UserEntity: Mappable, Codable {
     var socialImage: String?
     var isPro: String?
     var coin: Double?
+    var socialType: String?
+    
     init?(map: Map) {
         
     }
@@ -70,6 +72,7 @@ struct UserEntity: Mappable, Codable {
         self.socialImage <- map["social_img_src"]
         self.isPro <- map["is_pro"]
         self.coin <- map["coin"]
+        self.socialType <- map["social_type"]
     }
     
     init (displayName: String, phoneNumber: String,phoneCode: String, birthday: String,gender: String?, houseAddress: String?, companyAddress: String?) {

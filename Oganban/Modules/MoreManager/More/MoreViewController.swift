@@ -69,6 +69,19 @@ class MoreViewController: BaseViewController {
         rowList.append(.logout)
         rowList.append(.version)
     }
+    
+    func getMenuLoggedSocial() {
+        rowList.removeAll()
+        rowList.append(.header)
+        rowList.append(.historyCoin)
+        rowList.append(.historyBuy)
+        rowList.append(.policy)
+        rowList.append(.tutorial)
+        rowList.append(.setting)
+        rowList.append(.logout)
+        rowList.append(.version)
+    }
+    
     func registerTableView(){
         tvMore.delegate = self
         tvMore.dataSource = self
@@ -79,11 +92,16 @@ class MoreViewController: BaseViewController {
     }
     
     @objc func btnReloadPage() {
-        if UserDefaultHelper.shared.isLoggedIn {
+        if UserDefaultHelper.shared.loginSocial == "facebook" || UserDefaultHelper.shared.loginSocial == "gmail" {
+            getMenuLoggedSocial()
+            return
+        } else if UserDefaultHelper.shared.isLoggedIn {
             getMenuLoggedIn()
+            return
         } else {
             getMenuNotLogin()
         }
+        
         tvMore.reloadData()
     }
 }

@@ -19,6 +19,7 @@ enum UserDefaultHelperKey: String {
     case email = "email"
     case radius = "radius"
     case coin = "coin"
+    case loginSocial = "loginSocial"
 }
 
 class UserDefaultHelper {
@@ -56,6 +57,11 @@ class UserDefaultHelper {
     var coin: Double? {
        
         return loginUserInfo?.coin
+    }
+    
+    var loginSocial: String? {
+        
+        return loginUserInfo?.socialType
     }
     
     var emailUser: String? {
