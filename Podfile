@@ -8,10 +8,10 @@ def main_pods
     pod 'Firebase/Core'
     pod 'GoogleMaps', '2.7.0'
     pod 'GooglePlaces', '2.7.0'
-    pod 'FBSDKLoginKit', '4.39.0'
+    pod 'FBSDKLoginKit'
     #pod 'FBSDKCoreKit', '4.38.1'
-    pod 'FBSDKCoreKit', :git => 'https://github.com/facebook/facebook-objc-sdk.git', :branch => 'master'
-    pod 'GoogleSignIn', '4.3.0'
+    #pod 'FBSDKCoreKit', :git => 'https://github.com/facebook/facebook-objc-sdk.git', :branch => 'master'
+    pod 'GoogleSignIn'
     pod 'DropDown'
     pod 'CryptoSwift', :git => "https://github.com/krzyzanowskim/CryptoSwift", :branch => "master"
     pod 'Firebase/Messaging'
@@ -21,7 +21,17 @@ def main_pods
     pod 'ImagePicker',:git => 'https://github.com/appsailor/ImagePicker.git', :branch => 'feature/Swift-4.2'
 end
 
-target 'Oganban' do
+target 'Oganban-Dev' do
+    use_frameworks!
+    main_pods
+end
+
+target 'Oganban-AppStore' do
+    use_frameworks!
+    main_pods
+end
+
+target 'Oganban-Prod' do
     use_frameworks!
     main_pods
 end
