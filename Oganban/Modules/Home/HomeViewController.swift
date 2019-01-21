@@ -30,6 +30,8 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var lbDistance       : UILabel!
     @IBOutlet weak var tfSearch         : UITextField!
     @IBOutlet weak var vAccept          : UIView!
+    @IBOutlet weak var btnCancel        : UIButton!
+    
     
     //MARK: - VARIABLE
     private let refreshControl = UIRefreshControl()
@@ -62,6 +64,9 @@ class HomeViewController: BaseViewController {
             self.lbDistance.text = distance?.title
         }
     }
+    
+    var isFilterTextfield = false
+    var isFilter = false
     
     //------database LIMIT
     let itemsPerBatch = 40
@@ -219,6 +224,7 @@ class HomeViewController: BaseViewController {
         tfSearch.text = ""
         self.distance = UserDefaultHelper.shared.radius
         scaleDropdown.clearSelection()
+        listRecord.removeAll()
         for (temp, item) in menu.enumerated() {
             menu[temp].isSelected = false
             for (indexChild, _) in item.cateChild.enumerated() {
@@ -234,6 +240,11 @@ class HomeViewController: BaseViewController {
     @IBAction func btnClearTapped() {
         tfSearch.text = ""
         btnClear.isHidden = true
+    }
+    
+    @IBAction func btnCancelTapped() {
+        tfSearch.text = ""
+        view.endEditing(true)
     }
     
     @IBAction func hideDropdownTapped() {
@@ -270,6 +281,8 @@ class HomeViewController: BaseViewController {
     @IBAction func btnSearchTapped() {
         view.endEditing(true)
         paramFilter.keyword = tfSearch.text&
+        isFilterTextfield = true
+        isFilter = true
         presenter?.filterRecord(param: paramFilter)
     }
     
@@ -299,6 +312,7 @@ class HomeViewController: BaseViewController {
         }
         
         paramFilter.categoryId = listCate
+        isFilter = true
         presenter?.filterRecord(param: paramFilter)
     }
 }
@@ -317,13 +331,23 @@ extension HomeViewController: HomeViewProtocol {
     func didFilterRecord(list: [RecordEntity]) {
         // update UITableView with new batch of items on main thread after query finishes
         ProgressView.shared.hide()
-        DispatchQueue.main.async {
-            self.listRecord.append(contentsOf: list)
-            if list.count < self.itemsPerBatch {
-                self.reachedEndOfItems = true
-                print("reached end of data. Batch count: \(list.count)")
+        if isFilterTextfield && list.count == 0 {
+            isFilterTextfield = false
+            PopUpHelper.shared.showMessageHaveAds(message: "Không tìm thấy kết quả")
+        } else {
+            DispatchQueue.main.async {
+                if self.isFilter {
+                    self.isFilter = false
+                    self.listRecord = list
+                } else {
+                    self.listRecord.append(contentsOf: list)
+                    if list.count < self.itemsPerBatch {
+                        self.reachedEndOfItems = true
+                        print("reached end of data. Batch count: \(list.count)")
+                    }
+                    self.offset += self.itemsPerBatch
+                }
             }
-            self.offset += self.itemsPerBatch
         }
     }
     
@@ -531,6 +555,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             lbCategory.text = menu[index].name
             paramFilter.categoryId = [menu[index].id&]
             paramFilter.isParent = "1"
+            isFilter = true
             presenter?.filterRecord(param: paramFilter)
             hideDropdown()
         case tbRight:
@@ -576,19 +601,32 @@ extension HomeViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         tfSearch.text = ""
+        btnCancel.isHidden = false
+        btnFavorite.isHidden = true
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         view.endEditing(true)
         paramFilter.keyword = textField.text&
+        isFilterTextfield = true
+        isFilter = true
+        btnCancel.isHidden = true
+        btnFavorite.isHidden = false
         presenter?.filterRecord(param: paramFilter)
         return true
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         view.endEditing(true)
-        paramFilter.keyword = textField.text&
-        presenter?.filterRecord(param: paramFilter)
+        guard let text = textField.text else { return }
+        if !text.isEmpty {
+            paramFilter.keyword = textField.text&
+            isFilterTextfield = true
+            isFilter = true
+            btnCancel.isHidden = true
+            btnFavorite.isHidden = false
+            presenter?.filterRecord(param: paramFilter)
+        }
     }
     
     @objc func textFieldDidChanged() {
@@ -610,6 +648,7 @@ extension HomeViewController: PositionViewControllerDelegate {
         lbPosition.text = address
         self.distance = distance
         self.paramFilter.radius = distance.value&
+        isFilter = true
         presenter?.filterRecord(param: paramFilter)
     }
     

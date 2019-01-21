@@ -16,7 +16,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController">
             <connections>
+                <outlet property="btnCancel" destination="IyX-EW-mBN" id="Q03-Pj-aTw"/>
                 <outlet property="btnClear" destination="L84-BV-7n4" id="gQH-oQ-O5t"/>
+                <outlet property="btnFavorite" destination="dTR-Wj-9Mf" id="J0a-MQ-iZX"/>
                 <outlet property="btnHideDropdown" destination="Tzb-Rw-GPi" id="vpm-9q-5Ri"/>
                 <outlet property="cvHome" destination="QVD-c8-nVF" id="qmp-gG-d4T"/>
                 <outlet property="heightLeft" destination="EzM-op-E78" id="FUN-BA-jVt"/>
@@ -178,18 +180,33 @@
                                         <action selector="btnGotoFavoriteTapped" destination="-1" eventType="touchUpInside" id="Yhz-vf-u5t"/>
                                     </connections>
                                 </button>
+                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IyX-EW-mBN">
+                                    <rect key="frame" x="310" y="-5" width="40" height="40"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <state key="normal" title="Huỷ">
+                                        <color key="titleColor" red="0.43137254901960786" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="btnCancelTapped" destination="-1" eventType="touchUpInside" id="Rph-vM-rA8"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
+                                <constraint firstItem="IyX-EW-mBN" firstAttribute="centerX" secondItem="dTR-Wj-9Mf" secondAttribute="centerX" id="3Pi-Rw-dhw"/>
                                 <constraint firstItem="dTR-Wj-9Mf" firstAttribute="centerX" secondItem="Uuz-Qm-Jc0" secondAttribute="centerX" id="3zP-lA-YtI"/>
                                 <constraint firstItem="Htc-Pe-K79" firstAttribute="leading" secondItem="RRK-G9-0uh" secondAttribute="leading" id="5To-kn-gqp"/>
                                 <constraint firstAttribute="bottom" secondItem="Uuz-Qm-Jc0" secondAttribute="bottom" id="873-fU-Vfd"/>
                                 <constraint firstItem="Uuz-Qm-Jc0" firstAttribute="top" secondItem="RRK-G9-0uh" secondAttribute="top" id="BtF-VD-SYo"/>
+                                <constraint firstItem="IyX-EW-mBN" firstAttribute="centerY" secondItem="dTR-Wj-9Mf" secondAttribute="centerY" id="DkL-Qr-Bs7"/>
                                 <constraint firstItem="Uuz-Qm-Jc0" firstAttribute="leading" secondItem="Htc-Pe-K79" secondAttribute="trailing" constant="7" id="GWP-pH-NHw"/>
+                                <constraint firstItem="IyX-EW-mBN" firstAttribute="width" secondItem="dTR-Wj-9Mf" secondAttribute="width" id="J97-MF-y3e"/>
                                 <constraint firstItem="dTR-Wj-9Mf" firstAttribute="centerY" secondItem="Uuz-Qm-Jc0" secondAttribute="centerY" id="Kp5-Zo-5ej"/>
                                 <constraint firstItem="Htc-Pe-K79" firstAttribute="top" secondItem="RRK-G9-0uh" secondAttribute="top" id="tFD-gw-YPS"/>
                                 <constraint firstAttribute="trailing" secondItem="Uuz-Qm-Jc0" secondAttribute="trailing" id="vT3-xv-ee6"/>
                                 <constraint firstAttribute="bottom" secondItem="Htc-Pe-K79" secondAttribute="bottom" id="wf0-m9-Hik"/>
+                                <constraint firstItem="IyX-EW-mBN" firstAttribute="height" secondItem="dTR-Wj-9Mf" secondAttribute="height" id="zoY-0M-3Mo"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d9e-Hh-d4D">

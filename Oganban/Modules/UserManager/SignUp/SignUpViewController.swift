@@ -9,6 +9,8 @@
 //
 
 import UIKit
+import GoogleMaps
+import GooglePlaces
 
 protocol SignUpViewControllerDelegate: class {
     func didSignUpSuccess()
@@ -45,6 +47,9 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
     let limitName = 45
     
     var dateSelected: Date?
+    
+    var locationAddress1: CLLocationCoordinate2D?
+    var locationAddress2: CLLocationCoordinate2D?
     
     weak var delegate: SignUpViewControllerDelegate?
     
@@ -106,8 +111,19 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        PositionMapsHelper.shared.showSearch(controller: self) { address in
-            textField.text = address
+        PositionMapsHelper.shared.showSearchPlace(controller: self) { place in
+            guard let _place = place as? GMSPlace else { return }
+            textField.text = _place.formattedAddress&
+            
+            // lat long
+            switch textField {
+            case self.vHouseAddress.textField:
+                self.locationAddress1 = _place.coordinate
+            case self.vCompanyAddress.textField:
+                self.locationAddress2 = _place.coordinate
+            default:
+                break
+            }
         }
     }
     
@@ -135,7 +151,11 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
                 let gender = vGender.textField.text
                 let address1 = vHouseAddress.textField.text
                 let address2 = vCompanyAddress.textField.text
-                let param = SignUpParam(email: email, password: password, birthday: birthday&, captcha: captcha, fullName: fullName, gender: gender, address1: address1, address2: address2, codeIntroduce: codeIntroduce)
+                let lat1 = self.locationAddress1?.latitude.description
+                let long1 = self.locationAddress1?.longitude.description
+                let lat2 = self.locationAddress2?.latitude.description
+                let long2 = self.locationAddress2?.longitude.description
+                let param = SignUpParam(email: email, password: password, birthday: birthday&, captcha: captcha, fullName: fullName, gender: gender, address1: address1, address2: address2, codeIntroduce: codeIntroduce, lat1: lat1, long1: long1, lat2: lat2, long2: long2)
                 presenter?.signUp(param: param)
             }
         } else {
@@ -236,7 +256,6 @@ extension SignUpViewController: FTextFieldChooseDelegate {
     func btnChooseTapped(sender: FTextFieldChoose) {
         switch sender {
         case vBirthday:
-            
             popUpDate.showPopUp(currentDate: nil) { (date) in
                 self.dateSelected = date
                 self.vBirthday.textField.text = date?.toString(dateFormat: AppDateFormat.ddMMYYYY)
