@@ -92,7 +92,7 @@ class MoreViewController: BaseViewController {
     }
     
     @objc func btnReloadPage() {
-        if UserDefaultHelper.shared.loginSocial == "facebook" || UserDefaultHelper.shared.loginSocial == "gmail" {
+        if UserDefaultHelper.shared.loginSocial == "facebook" || UserDefaultHelper.shared.loginSocial == "google" {
             getMenuLoggedSocial()
             return
         } else if UserDefaultHelper.shared.isLoggedIn {
