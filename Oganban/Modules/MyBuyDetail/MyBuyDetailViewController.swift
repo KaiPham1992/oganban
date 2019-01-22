@@ -30,7 +30,7 @@ class MyBuyDetailViewController: BaseViewController {
                 vControlSaler.isHidden = true
                 vDoneNotArrived.isHidden = _order.getStatus() != .waitDelivery
 
-                if _order.getStatus() == .done || _order.getStatus() == .cancel {
+                if _order.getStatus() == .done || _order.getStatus() == .cancel || _order.getStatus() == .orderNotYetArrived {
                     vContainerRating.isHidden = false
                 } else {
                     vContainerRating.isHidden = true
