@@ -68,7 +68,7 @@
 	<key>NSCameraUsageDescription</key>
 	<string>Oganban cần sử dụng camera để đăng hình</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Oganban muốn sử dụng vị trí</string>
+	<string>Oganban muốn sử dụng vị trí để tại dữ liệu</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Oganban cần sử dụng thư viện ảnh để đăng hình</string>
 	<key>UIAppFonts</key>
