@@ -46,9 +46,11 @@ class OrderBuyDetailImageCell: BaseTableCell {
             
             if let price = _record.price {
                  radioMoney.setMoney(money: price)
+            } else {
+                
             }
-            
             radioCoin.setOCoin(coin: _record.coin)
+            hideMoneyCoin()
         }
     }
     
@@ -63,7 +65,14 @@ class OrderBuyDetailImageCell: BaseTableCell {
     }
     
     func hideMoneyCoin() {
-        heightMoneyCoin.constant = 0 // 0 25 50 
+        if record?.price == nil && record?.coin == nil {
+            heightMoneyCoin.constant = 0
+        } else if record?.price == nil || record?.coin == nil {
+            heightMoneyCoin.constant = 25
+        } else {
+            heightMoneyCoin.constant =  50
+        }
+        
     }
     
     

@@ -35,7 +35,6 @@ class HeaderOrderBuyDetail: BaseViewXib {
             btnLike.setImage(AppImage.imgLike, for: .normal)
         } else {
             btnLike.setImage(AppImage.imgUnLike, for: .normal)
-            btnLike.tintColor = AppColor.gray_158_158_158
         }
     }
     
