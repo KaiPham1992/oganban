@@ -7,34 +7,34 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>184896964264-hasu05ond65e5am0u9oev8vbqffk3e0o.apps.googleusercontent.com</string>
+	<string>75482666365-r238vl3vtgahphqk7suf0o18j31b02ru.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.184896964264-hasu05ond65e5am0u9oev8vbqffk3e0o</string>
+	<string>com.googleusercontent.apps.75482666365-r238vl3vtgahphqk7suf0o18j31b02ru</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBeARoP4VkTpnkiTnjLwl327O4tKDxU8ok</string>
+	<string>AIzaSyB5SWRz9NmcGfr-i9cSZKZp5Qzc4uhC9EE</string>
 	<key>GCM_SENDER_ID</key>
-	<string>184896964264</string>
+	<string>75482666365</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.oganban.oganban</string>
 	<key>PROJECT_ID</key>
-	<string>oganban-f8018</string>
+	<string>oganban-228911</string>
 	<key>STORAGE_BUCKET</key>
-	<string>oganban-f8018.appspot.com</string>
+	<string>oganban-228911.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:184896964264:ios:49aa8ce74db304d1</string>
+	<string>1:75482666365:ios:49aa8ce74db304d1</string>
 	<key>DATABASE_URL</key>
-	<string>https://oganban-f8018.firebaseio.com</string>
+	<string>https://oganban-228911.firebaseio.com</string>
 </dict>
 </plist>

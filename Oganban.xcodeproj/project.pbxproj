@@ -807,7 +807,6 @@
 		DE68D1B521F0122C00A3A7BE /* OrderBuyDetailImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB379C0921E388B0005D7536 /* OrderBuyDetailImageCell.swift */; };
 		DE68D1B621F0122C00A3A7BE /* PopUpNotificationContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B4721C6A2EE0068CF92 /* PopUpNotificationContent.swift */; };
 		DE68D1B721F0122C00A3A7BE /* LeftMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A3236F21DB332100E1AD4C /* LeftMenuCell.swift */; };
-		DE68D1B921F0122C00A3A7BE /* Pods_Oganban.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667005DBAD7815A5AA16289A /* Pods_Oganban.framework */; };
 		DE68D1BA21F0122C00A3A7BE /* AccountKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE21821021CD403100FDD9F1 /* AccountKit.framework */; };
 		DE68D1BC21F0122C00A3A7BE /* HistoryBuyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84329F3221DFC95600047B5E /* HistoryBuyViewController.xib */; };
 		DE68D1BD21F0122C00A3A7BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB172B4A21C6A2EE0068CF92 /* Localizable.strings */; };
@@ -1286,7 +1285,6 @@
 		DE68D3A121F0123A00A3A7BE /* OrderBuyDetailImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB379C0921E388B0005D7536 /* OrderBuyDetailImageCell.swift */; };
 		DE68D3A221F0123A00A3A7BE /* PopUpNotificationContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172B4721C6A2EE0068CF92 /* PopUpNotificationContent.swift */; };
 		DE68D3A321F0123A00A3A7BE /* LeftMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A3236F21DB332100E1AD4C /* LeftMenuCell.swift */; };
-		DE68D3A521F0123A00A3A7BE /* Pods_Oganban.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667005DBAD7815A5AA16289A /* Pods_Oganban.framework */; };
 		DE68D3A621F0123A00A3A7BE /* AccountKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE21821021CD403100FDD9F1 /* AccountKit.framework */; };
 		DE68D3A821F0123A00A3A7BE /* HistoryBuyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84329F3221DFC95600047B5E /* HistoryBuyViewController.xib */; };
 		DE68D3A921F0123A00A3A7BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB172B4A21C6A2EE0068CF92 /* Localizable.strings */; };
@@ -2003,7 +2001,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE68D1B921F0122C00A3A7BE /* Pods_Oganban.framework in Frameworks */,
 				DE68D1BA21F0122C00A3A7BE /* AccountKit.framework in Frameworks */,
 				F1A20C3C60CEA2228633C5A0 /* Pods_Oganban_Prod.framework in Frameworks */,
 			);
@@ -2013,7 +2010,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE68D3A521F0123A00A3A7BE /* Pods_Oganban.framework in Frameworks */,
 				DE68D3A621F0123A00A3A7BE /* AccountKit.framework in Frameworks */,
 				500CE05E7A167E053B239CFE /* Pods_Oganban_AppStore.framework in Frameworks */,
 			);

@@ -9,8 +9,14 @@
 import UIKit
 
 struct AppConstant {
+    #if APPSTORE
+    static let admobNativeAds = "ca-app-pub-8064036299806325~8781055145"
+    static let admobBanner = "ca-app-pub-8064036299806325~8781055145"
+    #else
     static let admobNativeAds = "ca-app-pub-3940256099942544/3986624511"
     static let admobBanner = "ca-app-pub-3940256099942544/2934735716"
+    #endif
+    
     
     static let notiDidUpdateSocial = NSNotification.Name.init("didUpdateSocial")
     static let notiReloadMoreView = NSNotification.Name.init("notiReloadMoreView")
