@@ -18,9 +18,9 @@ extension AppDelegate {
         
         // get key from fire base : AIzaSyCaOVKfotVN6tQ4sUbv8ssND
         #if APPSTORE
-        GMSServices.provideAPIKey("AIzaSyCaOVKfotVN6tQ4sUbv8ssND-4zmssrdPk")
-        GMSPlacesClient.provideAPIKey("AIzaSyCaOVKfotVN6tQ4sUbv8ssND-4zmssrdPk")
-        GIDSignIn.sharedInstance().clientID = "184896964264-hasu05ond65e5am0u9oev8vbqffk3e0o.apps.googleusercontent.com"
+        GMSServices.provideAPIKey("AIzaSyB5SWRz9NmcGfr-i9cSZKZp5Qzc4uhC9EE")
+        GMSPlacesClient.provideAPIKey("AIzaSyB5SWRz9NmcGfr-i9cSZKZp5Qzc4uhC9EE")
+        GIDSignIn.sharedInstance().clientID = "75482666365-r238vl3vtgahphqk7suf0o18j31b02ru.apps.googleusercontent.com"
         #else
         GMSServices.provideAPIKey("AIzaSyCaOVKfotVN6tQ4sUbv8ssND-4zmssrdPk")
         GMSPlacesClient.provideAPIKey("AIzaSyCaOVKfotVN6tQ4sUbv8ssND-4zmssrdPk")
@@ -43,13 +43,13 @@ extension AppDelegate {
         #else
         let googleServiceFile = "GoogleService-Dev-Info"
         #endif
-
+        
         let filePath = Bundle.main.path(forResource: googleServiceFile, ofType: "plist")!
         guard let options = FirebaseOptions(contentsOfFile: filePath) else {
             print("There are some problems with GoogleService-Info file")
             return
         }
-
+        
         FirebaseApp.configure(options: options)
     }
 }
