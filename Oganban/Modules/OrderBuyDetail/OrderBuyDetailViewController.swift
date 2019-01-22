@@ -18,11 +18,18 @@ class OrderBuyDetailViewController: BaseViewController {
     @IBOutlet weak var vPostCommentView: PostCommentView!
     @IBOutlet weak var bottomConstant: NSLayoutConstraint!
     @IBOutlet weak var heightConstant: NSLayoutConstraint!
+    @IBOutlet weak var btnOrderBuy: UIButton!
+    @IBOutlet weak var heightBtnOrderBuyConstant: NSLayoutConstraint!
     @IBOutlet weak var tbDetail: UITableView!
     
     var record: RecordEntity? {
         didSet {
             tbDetail.reloadData()
+            if UserDefaultHelper.shared.loginUserInfo?.id == record?.accountId {
+                heightBtnOrderBuyConstant.constant = 0
+            } else {
+                heightBtnOrderBuyConstant.constant = 50
+            }
         }
     }
     
@@ -101,7 +108,7 @@ class OrderBuyDetailViewController: BaseViewController {
         ShareNativeHelper.shared.showShareLinkInstall(controller: self)
     }
     
-    @IBAction func btnOrderBuy() {
+    @IBAction func btnOrderBuyTapped() {
         if UserDefaultHelper.shared.isLoggedIn {
             PopUpHelper.shared.showUpdateQuantityBuy { (quantity) in
                 guard let qtyStr = quantity, let qty = Int(qtyStr) else { return }

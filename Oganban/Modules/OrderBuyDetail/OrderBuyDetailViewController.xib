@@ -14,8 +14,10 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OrderBuyDetailViewController" customModule="Oganban" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OrderBuyDetailViewController" customModule="Oganban_AppStore" customModuleProvider="target">
             <connections>
+                <outlet property="btnOrderBuy" destination="5Ft-ZB-eDE" id="abZ-HU-iLz"/>
+                <outlet property="heightBtnOrderBuyConstant" destination="XVO-kn-dUA" id="719-us-Eyx"/>
                 <outlet property="heightConstant" destination="8J7-4i-yfy" id="ALL-cy-VEz"/>
                 <outlet property="tbDetail" destination="uvV-5g-9BQ" id="qEc-FW-VtS"/>
                 <outlet property="vPostCommentView" destination="min-6e-8xn" id="s0c-Sl-Lhy"/>
@@ -31,7 +33,7 @@
                     <rect key="frame" x="0.0" y="20" width="375" height="517"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="min-6e-8xn" customClass="PostCommentView" customModule="Oganban" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="min-6e-8xn" customClass="PostCommentView" customModule="Oganban_AppStore" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="537" width="375" height="80"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -49,7 +51,7 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
-                        <action selector="btnOrderBuy" destination="-1" eventType="touchUpInside" id="kOe-lf-7AI"/>
+                        <action selector="btnOrderBuyTapped" destination="-1" eventType="touchUpInside" id="tJX-Kw-DkR"/>
                     </connections>
                 </button>
             </subviews>
