@@ -56,6 +56,7 @@ class SupplementaryInfoViewController: BaseViewController, UITextFieldDelegate {
         
         tfAddress1.tfContent.delegate = self
         tfAddress2.tfContent.delegate = self
+        hideKeyboard()
     }
     
     func hideError(isHidden: Bool = true, message: String? = nil){
