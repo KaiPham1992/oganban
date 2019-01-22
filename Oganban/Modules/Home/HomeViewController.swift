@@ -338,6 +338,7 @@ extension HomeViewController: HomeViewProtocol {
             DispatchQueue.main.async {
                 if self.isFilter {
                     self.isFilter = false
+//                    self.listRecord.append(RecordEntity(JSON: [:]))
                     self.listRecord = list
                 } else {
                     self.listRecord.append(contentsOf: list)
@@ -352,8 +353,11 @@ extension HomeViewController: HomeViewProtocol {
     }
     
     func didGetCategoryMerge(list: [CategoryMergeEntity]) {
-        menu = list
-        tbLeft.reloadData()
+        if let all = CategoryMergeEntity(JSON: ["name" : "Tất cả danh mục"]) {
+            menu = list
+            menu.insert(all, at: 0)
+            tbLeft.reloadData()
+        }
     }
     
     func getCategoryChildSuccess(list: [CategoryEntity]) {
@@ -553,8 +557,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             tbLeft.reloadRows(at: [IndexPath(item: oldParentSelected*, section: indexPath.section), indexPath], with: .none)
             oldParentSelected = index
             lbCategory.text = menu[index].name
-            paramFilter.categoryId = [menu[index].id&]
-            paramFilter.isParent = "1"
+            if indexPath.row == 0 {
+                paramFilter.categoryId = nil
+                paramFilter.isParent = nil
+            } else {
+                paramFilter.categoryId = [menu[index].id&]
+                paramFilter.isParent = "1"
+            }
             isFilter = true
             presenter?.filterRecord(param: paramFilter)
             hideDropdown()
@@ -665,21 +674,22 @@ extension HomeViewController: PositionViewControllerDelegate {
 extension HomeViewController: LeftMenuCellDelegate {
     func openRightMenu(indexPath: IndexPath) {
         index = indexPath.row
-        
-        if oldParentSelected != index {
-            menu[oldParentSelected*].isSelected = false
-            indexReload = oldParentSelected
-            tbLeft.reloadRows(at: [IndexPath(row: oldParentSelected*, section: indexPath.section)], with: .none)
-            for (tempInt, item) in oldChildSelected.enumerated() {
-                menu[oldParentSelected*].cateChild[item].isSelected = false
+        if index != 0 {
+            if oldParentSelected != index {
+                menu[oldParentSelected*].isSelected = false
+                indexReload = oldParentSelected
+                tbLeft.reloadRows(at: [IndexPath(row: oldParentSelected*, section: indexPath.section)], with: .none)
+                for (tempInt, item) in oldChildSelected.enumerated() {
+                    menu[oldParentSelected*].cateChild[item].isSelected = false
+                }
+                oldParentSelected = index
             }
-            oldParentSelected = index
+            menu[index].isSelected = true
+            tbLeft.reloadRows(at: [indexPath], with: .none)
+            tbRight.reloadData()
+            tbRight.isHidden = false
+            vAccept.isHidden = false
         }
-        menu[index].isSelected = true
-        tbLeft.reloadRows(at: [indexPath], with: .none)
-        tbRight.reloadData()
-        tbRight.isHidden = false
-        vAccept.isHidden = false
     }
 }
 
