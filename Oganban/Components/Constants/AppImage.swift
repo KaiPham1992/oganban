@@ -60,6 +60,6 @@ struct AppImage {
     static let imgStarYellow = UIImage(named: "star")!
     static let imgStarEmpty = UIImage(named: "ic_star_line")!
     static let imgLike = UIImage(named: "ic_heart")!
-    static let imgUnLike = UIImage(named: "ic_heart")!.withRenderingMode(.alwaysTemplate)
+    static let imgUnLike = UIImage(named: "ic_heart_line")!
 
 }

@@ -17,7 +17,6 @@ struct AppConstant {
     static let admobBanner = "ca-app-pub-3940256099942544/2934735716"
     #endif
     
-    
     static let notiDidUpdateSocial = NSNotification.Name.init("didUpdateSocial")
     static let notiReloadMoreView = NSNotification.Name.init("notiReloadMoreView")
     
