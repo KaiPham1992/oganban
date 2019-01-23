@@ -74,8 +74,14 @@ class TabbarViewController: UITabBarController {
         
         listViewController = [vcHome, vcMyBuy, vcMySell, vcNotification, vcMore]
         
-        for controller in listViewController {
-            controller.tabBarItem.imageInsets = tabIconInsets
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            for controller in listViewController {
+                controller.tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+            }
+        } else {
+            for controller in listViewController {
+                controller.tabBarItem.imageInsets = tabIconInsets
+            }
         }
         
         let selectedColor   = UIColor(red: 0/255.0, green: 88.0/255.0, blue: 0/255.0, alpha: 1.0)

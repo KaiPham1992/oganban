@@ -29,7 +29,7 @@ class Utils {
     }
     
     class func isIphoneXOrLater() -> Bool {
-        if UIDevice.current.isIphone4Inch() || UIDevice.current.isIphone4_7Inch() || UIDevice.current.isIphone5_5Inch() {
+        if UIDevice.current.isIphone4Inch() || UIDevice.current.isIphone4_7Inch() || UIDevice.current.isIphone5_5Inch() || UIDevice.current.userInterfaceIdiom == .pad {
             return false
         }
         
