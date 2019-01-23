@@ -295,7 +295,7 @@ class HomeViewController: BaseViewController {
         
         for temp in 0...menu.count - 1 {
             if temp != index {
-                for indexCate in 0...menu[temp].cateChild.count - 1 {
+                for (indexCate, _) in menu[temp].cateChild.enumerated() {
                     menu[temp].cateChild[indexCate].isSelected = false
                 }
             }
@@ -683,6 +683,7 @@ extension HomeViewController: LeftMenuCellDelegate {
                     menu[oldParentSelected*].cateChild[item].isSelected = false
                 }
                 oldParentSelected = index
+                oldChildSelected.removeAll()
             }
             menu[index].isSelected = true
             tbLeft.reloadRows(at: [indexPath], with: .none)
