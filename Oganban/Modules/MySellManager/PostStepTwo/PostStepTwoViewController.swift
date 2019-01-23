@@ -174,7 +174,7 @@ class PostStepTwoViewController: BaseViewController {
                 }
                 
                 if intQuality > 999999000 {
-                    lbNotice.text = "Vui lòng nhập tiền mặt không quá 999,000,000đ"
+                    lbNotice.text = "Vui lòng nhập tiền mặt không quá 999,000,000 đ"
                     return false
                 }
             } else {
@@ -183,18 +183,18 @@ class PostStepTwoViewController: BaseViewController {
             }
         }
         
-        if vCoin.isCheck && vCoin.textField.text& == "" {
+        if vCoin.isCheck {
             if let intQuality = Double(vCoin.textField.text&) {
                 if intQuality < 0 {
                     lbNotice.text = "Vui lòng nhập Ơ coin"
                     return false
                 }
-                if intQuality > 999999000 {
-                    lbNotice.text = "Vui lòng nhập ơ coin không quá 999,000,000đ"
+                if intQuality > 49950 {
+                    lbNotice.text = "Vui lòng nhập ơ coin không quá 49,950 ơ"
                     return false
                 }
             } else {
-                lbNotice.text = "Vui lòng nhập giá tiền"
+                lbNotice.text = "Vui lòng nhập Ơ coin"
                 return false
             }
         }
