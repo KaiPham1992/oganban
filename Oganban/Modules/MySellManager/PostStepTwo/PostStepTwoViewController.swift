@@ -149,7 +149,7 @@ class PostStepTwoViewController: BaseViewController {
                 long2 = self.locationAddress2?.longitude.description& ?? ""
             }
             
-            param.updateInfoStepTwo(address1: address1, lat1: lat1, long1: long1, address2: address2, lat2: lat2, long2: long2, isLatlong: vCheckGPS.isChecked, price: vMoney.textField.text&, coin: vCoin.textField.text&)
+            param.updateInfoStepTwo(address1: address1, lat1: lat1, long1: long1, address2: address2, lat2: lat2, long2: long2, isLatlong: vCheckGPS.isChecked, price: vMoney.textField.text&, coin: vCoin.textField.text&, isGpsCurrent: 1)
             
             presenter?.postRecord(param: param)
         }

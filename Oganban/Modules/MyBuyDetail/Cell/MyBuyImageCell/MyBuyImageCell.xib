@@ -25,6 +25,10 @@
                             <constraint firstAttribute="height" secondItem="9WM-0u-DCl" secondAttribute="width" multiplier="9:16" id="AqW-Ac-zk4"/>
                         </constraints>
                     </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w8k-Tu-6Le">
+                        <rect key="frame" x="0.0" y="180" width="320" height="347.5"/>
+                        <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AQW-m0-rY8">
                         <rect key="frame" x="16" y="160" width="288" height="362.5"/>
                         <subviews>
@@ -124,10 +128,14 @@
                 <constraints>
                     <constraint firstItem="AQW-m0-rY8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="4Sg-Rn-fnA"/>
                     <constraint firstItem="9WM-0u-DCl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="A9O-ek-SAA"/>
+                    <constraint firstAttribute="bottom" secondItem="w8k-Tu-6Le" secondAttribute="bottom" id="MLP-PP-EyG"/>
                     <constraint firstAttribute="trailing" secondItem="AQW-m0-rY8" secondAttribute="trailing" constant="16" id="Rt4-mV-UEW"/>
+                    <constraint firstItem="w8k-Tu-6Le" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="SjU-eM-bQ7"/>
                     <constraint firstAttribute="bottom" secondItem="AQW-m0-rY8" secondAttribute="bottom" constant="5" id="aNo-H0-9Hn"/>
                     <constraint firstAttribute="trailing" secondItem="9WM-0u-DCl" secondAttribute="trailing" id="oWT-zM-pf2"/>
+                    <constraint firstAttribute="trailing" secondItem="w8k-Tu-6Le" secondAttribute="trailing" id="oXP-b8-rBf"/>
                     <constraint firstItem="9WM-0u-DCl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="pw2-4z-Tht"/>
+                    <constraint firstItem="w8k-Tu-6Le" firstAttribute="top" secondItem="9WM-0u-DCl" secondAttribute="bottom" id="s0v-u3-oja"/>
                     <constraint firstItem="AQW-m0-rY8" firstAttribute="top" secondItem="9WM-0u-DCl" secondAttribute="bottom" constant="-20" id="yRF-5w-ToB"/>
                 </constraints>
             </tableViewCellContentView>
