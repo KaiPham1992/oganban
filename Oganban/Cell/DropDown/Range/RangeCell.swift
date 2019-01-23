@@ -13,6 +13,7 @@ class RangeCell: DropDownCell {
     
     @IBOutlet weak var vContent: UIView!
     @IBOutlet weak var rightAnchorLabel: NSLayoutConstraint!
+    @IBOutlet weak var leftAnchorLabel: NSLayoutConstraint!
 
     override func awakeFromNib() {
         super.awakeFromNib()

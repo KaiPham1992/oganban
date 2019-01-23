@@ -57,15 +57,15 @@
                             </constraints>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x9o-O5-SyW">
-                            <rect key="frame" x="90.5" y="29" width="100" height="1"/>
+                            <rect key="frame" x="90.5" y="29" width="130" height="1"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="100" id="JWy-xd-CsI"/>
+                                <constraint firstAttribute="width" constant="130" id="JWy-xd-CsI"/>
                                 <constraint firstAttribute="height" constant="1" id="SSr-u1-6Am"/>
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vV2-if-1zl">
-                            <rect key="frame" x="90.5" y="0.0" width="100" height="30"/>
+                            <rect key="frame" x="90.5" y="0.0" width="130" height="30"/>
                             <connections>
                                 <action selector="showDropdownTapped" destination="-1" eventType="touchUpInside" id="xQl-VU-FuO"/>
                             </connections>
