@@ -9,7 +9,7 @@ def main_pods
     pod 'GoogleMaps', '2.7.0'
     pod 'GooglePlaces', '2.7.0'
     pod 'FBSDKLoginKit'
-    #pod 'FBSDKCoreKit', '4.38.1'
+    pod 'FBSDKCoreKit'
     #pod 'FBSDKCoreKit', :git => 'https://github.com/facebook/facebook-objc-sdk.git', :branch => 'master'
     pod 'GoogleSignIn'
     pod 'DropDown'
