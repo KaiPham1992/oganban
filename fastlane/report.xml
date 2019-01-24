@@ -5,32 +5,32 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.006195">
+      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.003849">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: default_platform" time="0.003929">
+      <testcase classname="fastlane.lanes" name="1: default_platform" time="0.003776">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: Switch to ios preprocess lane" time="0.003859">
+      <testcase classname="fastlane.lanes" name="2: Switch to ios preprocess lane" time="0.003705">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="3: xcversion" time="1.145351">
+      <testcase classname="fastlane.lanes" name="3: xcversion" time="1.06938">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="4: /usr/libexec/PlistBuddy -c 'Set CFBundleVersion 201901221557' ../Oganban/SupportFile/Info/Dev-Info.plist" time="0.016218">
+      <testcase classname="fastlane.lanes" name="4: /usr/libexec/PlistBuddy -c 'Set CFBundleVersion 201901221624' ../Oganban/SupportFile/Info/Dev-Info.plist" time="0.01452">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="5: gym" time="561.64554">
+      <testcase classname="fastlane.lanes" name="5: gym" time="620.878988">
         
       </testcase>
     
