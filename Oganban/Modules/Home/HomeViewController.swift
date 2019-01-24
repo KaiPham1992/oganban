@@ -212,8 +212,13 @@ class HomeViewController: BaseViewController {
     
     @objc private func refreshData(_ sender: Any) {
         // Fetch Weather Data
-        refreshFilter()
-        getParamDefault()
+//        refreshFilter()
+//        getParamDefault()
+        self.refreshControl.endRefreshing()
+        offset = 0
+        paramFilter.offset = 0
+        isFilter = true
+        reachedEndOfItems = false
         presenter?.filterRecord(param: paramFilter)
     }
     
