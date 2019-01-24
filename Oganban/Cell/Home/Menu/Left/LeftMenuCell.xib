@@ -35,10 +35,10 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fnA-o4-Pgy">
-                                <rect key="frame" x="10" y="49.5" width="345" height="1"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="10" y="50" width="345" height="0.5"/>
+                                <color key="backgroundColor" red="0.23529411764705882" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="6qH-CM-0KV"/>
+                                    <constraint firstAttribute="height" constant="0.5" id="6qH-CM-0KV"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8S-rI-9AP">
@@ -81,6 +81,7 @@
             <connections>
                 <outlet property="imgCheck" destination="vV2-13-NAY" id="hth-eL-hHc"/>
                 <outlet property="lbTitle" destination="Yci-tD-hr9" id="Wse-yy-Z7g"/>
+                <outlet property="vBottomLine" destination="fnA-o4-Pgy" id="SaC-R1-4w2"/>
                 <outlet property="vContent" destination="4us-d8-7sC" id="fVd-6a-0VP"/>
             </connections>
             <point key="canvasLocation" x="212.80000000000001" y="124.58770614692655"/>

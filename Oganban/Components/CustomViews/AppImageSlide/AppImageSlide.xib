@@ -25,7 +25,7 @@
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FzH-X0-Avz" customClass="ImageSlideshow" customModule="ImageSlideshow">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="262"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10/12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x75-hU-yee" customClass="PaddingLabel" customModule="Oganban_AppStore" customModuleProvider="target">
                     <rect key="frame" x="169.5" y="202" width="36.5" height="25"/>

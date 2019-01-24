@@ -17,6 +17,7 @@ class LeftMenuCell: UITableViewCell {
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var imgCheck: UIImageView!
     @IBOutlet weak var vContent: UIView!
+    @IBOutlet weak var vBottomLine: UIView!
     
     var isSelect = false {
         didSet {
@@ -32,6 +33,7 @@ class LeftMenuCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         vContent.backgroundColor = AppColor.main
+        vBottomLine.backgroundColor = AppColor.line_60_0_0
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

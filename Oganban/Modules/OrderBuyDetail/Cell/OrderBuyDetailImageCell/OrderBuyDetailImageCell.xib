@@ -1,29 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="528" id="KGk-i7-Jjw" customClass="OrderBuyDetailImageCell" customModule="Oganban" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="528" id="KGk-i7-Jjw" customClass="OrderBuyDetailImageCell" customModule="Oganban_AppStore" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="527.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9WM-0u-DCl" customClass="AppImageSlide" customModule="Oganban" customModuleProvider="target">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9WM-0u-DCl" customClass="AppImageSlide" customModule="Oganban_AppStore" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" secondItem="9WM-0u-DCl" secondAttribute="width" multiplier="9:16" id="AqW-Ac-zk4"/>
                         </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BCb-cq-jRI">
+                        <rect key="frame" x="0.0" y="180" width="320" height="347.5"/>
+                        <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AQW-m0-rY8">
                         <rect key="frame" x="16" y="160" width="288" height="362.5"/>
@@ -62,11 +66,11 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="CIB-uk-LIi">
                                 <rect key="frame" x="16" y="292.5" width="256" height="50"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="umW-Kw-3DM" customClass="AppRadioButton" customModule="Oganban" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="umW-Kw-3DM" customClass="AppRadioButton" customModule="Oganban_AppStore" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="256" height="25"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zwV-uM-VZ8" customClass="AppRadioButton" customModule="Oganban" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zwV-uM-VZ8" customClass="AppRadioButton" customModule="Oganban_AppStore" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="25" width="256" height="25"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
@@ -98,12 +102,16 @@
                     </view>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="BCb-cq-jRI" secondAttribute="trailing" id="0nR-Qy-zeh"/>
+                    <constraint firstAttribute="bottom" secondItem="BCb-cq-jRI" secondAttribute="bottom" id="2uJ-oi-3ge"/>
                     <constraint firstItem="AQW-m0-rY8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="4Sg-Rn-fnA"/>
                     <constraint firstItem="9WM-0u-DCl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="A9O-ek-SAA"/>
+                    <constraint firstItem="BCb-cq-jRI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="DOC-Xm-7kZ"/>
                     <constraint firstAttribute="trailing" secondItem="AQW-m0-rY8" secondAttribute="trailing" constant="16" id="Rt4-mV-UEW"/>
                     <constraint firstAttribute="bottom" secondItem="AQW-m0-rY8" secondAttribute="bottom" constant="5" id="aNo-H0-9Hn"/>
                     <constraint firstAttribute="trailing" secondItem="9WM-0u-DCl" secondAttribute="trailing" id="oWT-zM-pf2"/>
                     <constraint firstItem="9WM-0u-DCl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="pw2-4z-Tht"/>
+                    <constraint firstItem="BCb-cq-jRI" firstAttribute="top" secondItem="9WM-0u-DCl" secondAttribute="bottom" id="vOc-fE-SeU"/>
                     <constraint firstItem="AQW-m0-rY8" firstAttribute="top" secondItem="9WM-0u-DCl" secondAttribute="bottom" constant="-20" id="yRF-5w-ToB"/>
                 </constraints>
             </tableViewCellContentView>

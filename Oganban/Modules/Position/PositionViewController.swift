@@ -68,10 +68,16 @@ class PositionViewController: BaseViewController {
         DropDown.appearance().setupCornerRadius(10)
         scaleDropdown.textColor = .white
         scaleDropdown.textFont = AppFont.fontRegular11
-        scaleDropdown.separatorColor = .gray
         scaleDropdown.selectionBackgroundColor = AppColor.main
         scaleDropdown.selectedTextColor = .yellow
         scaleDropdown.downScaleTransform = CGAffineTransform(rotationAngle: (-.pi))
+        scaleDropdown.cellNib = UINib(nibName: "RangeCell", bundle:  nil)
+        scaleDropdown.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
+            guard let cell = cell as? RangeCell else { return }
+            cell.optionLabel.textAlignment = .left
+            cell.rightAnchorLabel.constant = 0
+            cell.leftAnchorLabel.constant = 10
+        }
         scaleDropdown.selectionAction = { [weak self](index, item) in
             guard let `self` = self else { return }
             self.distance = self.dataSource[index]

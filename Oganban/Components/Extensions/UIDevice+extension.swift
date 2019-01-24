@@ -28,6 +28,13 @@ public extension UIDevice {
         case iphoneSE = "iPhone SE"
     }
     
+    enum UIUserInterfaceIdiom : Int {
+        case unspecified
+        
+        case phone // iPhone and iPod touch style UI
+        case pad // iPad style UI
+    }
+    
     /// pares the deveice name as the standard name
     var name: String {
         // UIDevice.current.name
@@ -105,6 +112,7 @@ public extension UIDevice {
     
     func isIphone5_8Inch() -> Bool {
         return (name == DeviceName.iphoneX.rawValue)
+        
     }
     
     func isIphoneXOrLater() -> Bool {

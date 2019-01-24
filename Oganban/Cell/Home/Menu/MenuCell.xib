@@ -32,10 +32,10 @@
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fag-MA-xeP">
-                        <rect key="frame" x="10" y="108.5" width="376" height="1"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <rect key="frame" x="10" y="109" width="376" height="0.5"/>
+                        <color key="backgroundColor" red="0.23529411764705882" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="1" id="8wM-J4-ebG"/>
+                            <constraint firstAttribute="height" constant="0.5" id="8wM-J4-ebG"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -58,6 +58,7 @@
             <connections>
                 <outlet property="imgCheck" destination="Y7G-2P-BMy" id="A2a-xD-ZiS"/>
                 <outlet property="lbTitle" destination="Dfs-er-mna" id="vC4-a9-CK1"/>
+                <outlet property="vBottomLine" destination="fag-MA-xeP" id="X2a-UT-ar1"/>
                 <outlet property="vContent" destination="H2p-sc-9uM" id="K80-kh-iXz"/>
             </connections>
             <point key="canvasLocation" x="109.59999999999999" y="18.890554722638683"/>
