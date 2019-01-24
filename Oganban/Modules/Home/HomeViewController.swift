@@ -197,6 +197,7 @@ class HomeViewController: BaseViewController {
                 self.paramFilter.radius = self.dataSource[index].title&
             }
             self.distance = self.dataSource[index]
+            self.isFilter = true
             self.presenter?.filterRecord(param: self.paramFilter)
         }
     }
