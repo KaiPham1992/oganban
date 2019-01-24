@@ -197,6 +197,7 @@ class HomeViewController: BaseViewController {
                 self.paramFilter.radius = self.dataSource[index].title&
             }
             self.distance = self.dataSource[index]
+            self.isFilter = true
             self.presenter?.filterRecord(param: self.paramFilter)
         }
     }
@@ -212,8 +213,13 @@ class HomeViewController: BaseViewController {
     
     @objc private func refreshData(_ sender: Any) {
         // Fetch Weather Data
-        refreshFilter()
-        getParamDefault()
+//        refreshFilter()
+//        getParamDefault()
+        self.refreshControl.endRefreshing()
+        offset = 0
+        paramFilter.offset = 0
+        isFilter = true
+        reachedEndOfItems = false
         presenter?.filterRecord(param: paramFilter)
     }
     
