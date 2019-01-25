@@ -559,7 +559,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             menu[oldParentSelected*].isSelected = false
             for (tempInt, item) in oldChildSelected.enumerated() {
                 menu[oldParentSelected*].cateChild[item].isSelected = false
-                tbRight.reloadRows(at: [IndexPath(item: item, section: indexPath.section), indexPath], with: .none)
+                tbRight.reloadRows(at: [IndexPath(item: item, section: indexPath.section)], with: .none)
             }
             if indexPath.row == 0 {
                 oldChildSelected.removeAll()
