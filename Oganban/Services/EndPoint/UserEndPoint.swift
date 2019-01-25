@@ -39,6 +39,8 @@ enum UserEndPoint {
     case getFavourite(offset: Int, limit: Int)
     case removeFavourite(isFavorite: Int, accountId: Int)
     case getRecordByFavoriteUser(offset: Int, limit: Int, accountId: Int)
+    
+    case getProfileUser()
 }
 
 extension UserEndPoint: EndPointType {
@@ -88,6 +90,8 @@ extension UserEndPoint: EndPointType {
             return "_api/user/post_rating"
         case .getHistoryCoin:
             return "_api/order/get_history_coin"
+        case .getProfileUser:
+            return "_api/user/get_profile_user"
         }
         
     }
@@ -98,7 +102,7 @@ extension UserEndPoint: EndPointType {
             
         case .login, .fogotPassword, .checkLogin, .logout, .loginGmail, .loginFacebook, .verifyPhone, .getPointHistory, .getListFavorite, .addFavorite, .addFavoriteStaff, .signUp, .uploadAvatar, .postRating, .getFavourite, .getHistoryBuy, .removeFavourite, .getHistoryCoin, .getRecordByFavoriteUser:
             return .post
-        case .getCaptcha, .getIntroduceList:
+        case .getCaptcha, .getIntroduceList, .getProfileUser:
             return .get
         case .changePassword, .updateProfile, .updateProfileSocial:
             return .put
@@ -199,6 +203,8 @@ extension UserEndPoint: EndPointType {
             return   ["account_id":accountId,
                       "offset":offset,
                       "limit":limit]
+        case .getProfileUser:
+            return [:]
         }
     }
     

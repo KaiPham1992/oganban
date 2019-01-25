@@ -15,6 +15,12 @@ class MoreViewController: BaseViewController {
     @IBOutlet weak var tvMore: UITableView!
     var rowList: [MoreEntityType] = [MoreEntityType]()
     
+    var user: UserEntity? {
+        didSet {
+            tvMore.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,6 +45,8 @@ class MoreViewController: BaseViewController {
                 }
             }
         }
+        
+        presenter?.getProfileUser()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -118,7 +126,7 @@ extension MoreViewController: UITableViewDelegate, UITableViewDataSource
         
         if type == MoreEntityType.header {
             let cell = tableView.dequeue(MoreHeaderCell.self, for: indexPath)
-            cell.setupView()
+            cell.setupView(user: self.user)
             cell.selectionStyle = .none
             return cell
         }
@@ -153,6 +161,11 @@ extension MoreViewController: UITableViewDelegate, UITableViewDataSource
 }
 
 extension MoreViewController: MoreViewProtocol {
+    
+    func didGetProfileUser(user: UserEntity?) {
+        self.user = user
+    }
+    
     func logoutSuccess() {
 //        getMenuNotLogin()
 //        tvMore.reloadData()
