@@ -33,7 +33,7 @@ class HomeInteractor: HomeInteractorInputProtocol {
         Provider.shared.categoryAPIService.getCategoryMerge(success: { (result) in
             self.presenter?.didGetCategoryMerge(list: result)
         }) { (error) in
-            
+           print(error)
         }
     }
     
