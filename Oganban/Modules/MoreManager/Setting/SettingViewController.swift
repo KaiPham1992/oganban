@@ -64,7 +64,9 @@ class SettingViewController: BaseViewController {
         radiusDropdown.downScaleTransform = CGAffineTransform(rotationAngle: (-.pi))
         radiusDropdown.cellNib = UINib(nibName: "RangeCell", bundle:  nil)
         radiusDropdown.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
-            guard let _ = cell as? RangeCell else { return }
+            guard let cell = cell as? RangeCell else { return }
+            cell.optionLabel.textAlignment = .left
+            cell.leftAnchorLabel.constant = 10
         }
     
         radiusDropdown.selectionAction = { [weak self](index, item) in

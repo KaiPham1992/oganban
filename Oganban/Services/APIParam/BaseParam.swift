@@ -43,9 +43,6 @@ class BaseParam: NSObject, Mappable {
         params[Params.deviceName] =  UIDevice.current.model
         params[Params.deviceVersion] =  UIDevice.current.systemName + " " + UIDevice.current.systemVersion
         
-        
-       
-        
         return params
     }
 }
