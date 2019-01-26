@@ -106,7 +106,7 @@ class CheckBoxTextField: BaseView {
         
         lbType.anchor(right: vLine.rightAnchor, rightConstant: 0)
         lbType.centerYToView(view: textField)
-
+        textField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         textField.delegate = self
         btnCheckBox.delegate = self
     }
@@ -140,9 +140,16 @@ extension CheckBoxTextField: UITextFieldDelegate,  AppRadioButtonDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         vLine.backgroundColor = AppColor.textLabel
+//        if let number = Double(textField.text&) {
+//            self.textField.text = number.formattedWithSeparator
+//        }
     }
     
     func changedSelected(sender: AppRadioButton, isSelected: Bool) {
         delegate?.checkBoxTextField(checkBoxTextField: self, isChecked: isSelected)
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+       
     }
 }

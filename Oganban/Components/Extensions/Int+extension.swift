@@ -90,6 +90,16 @@ public extension Double {
         return Double.random * (max - min) + min
     }
     
+    var formattedWithSeparator: String {
+        let price = self as NSNumber
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+//        formatter.locale = Locale(identifier: "fr_FR")
+        
+        guard let currency = formatter.string(from: price) else { return ""}
+        return currency
+    }
+    
     var toCurrency: String {
         let price = self as NSNumber
         let formatter = NumberFormatter()

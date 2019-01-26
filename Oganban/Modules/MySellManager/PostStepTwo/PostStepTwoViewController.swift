@@ -80,8 +80,25 @@ class PostStepTwoViewController: BaseViewController {
         
         vMoney.setUint(unit: "đ")
         vCoin.setUint(unit: "ơ")
+        vMoney.textField.addTarget(self, action: #selector(textFieldChange), for: .editingDidEnd)
+        vCoin.textField.addTarget(self, action: #selector(textFieldChange), for: .editingDidEnd)
         //        showDataSaved()
         
+    }
+    
+    @objc func textFieldChange(_ textField: UITextField) {
+        switch textField {
+        case vMoney.textField:
+            if let number = Double(textField.text&) {
+                self.vMoney.textField.text = number.formattedWithSeparator
+            }
+        case vCoin.textField:
+            if let number = Double(textField.text&) {
+                self.vCoin.textField.text = number.toCurrency
+            }
+        default:
+            break
+        }
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
