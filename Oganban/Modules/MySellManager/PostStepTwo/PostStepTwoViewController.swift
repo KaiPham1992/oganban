@@ -12,6 +12,8 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 
+
+
 class PostStepTwoViewController: BaseViewController {
     
     var presenter: PostStepTwoPresenterProtocol?
@@ -77,35 +79,28 @@ class PostStepTwoViewController: BaseViewController {
         vCoin.textField.isEnabled = false
         
         vMoney.textField.addTarget(self, action: #selector(textFieldDidChange), for: UIControl.Event.editingChanged)
+        vCoin.textField.addTarget(self, action: #selector(textFieldDidChange), for: UIControl.Event.editingChanged)
         
         vMoney.setUint(unit: "đ")
         vCoin.setUint(unit: "ơ")
-        vMoney.textField.addTarget(self, action: #selector(textFieldChange), for: .editingDidEnd)
-        vCoin.textField.addTarget(self, action: #selector(textFieldChange), for: .editingDidEnd)
         //        showDataSaved()
         
     }
     
-    @objc func textFieldChange(_ textField: UITextField) {
+    @objc func textFieldDidChange(_ textField: UITextField) {
         switch textField {
         case vMoney.textField:
-            if let number = Double(textField.text&) {
-                self.vMoney.textField.text = number.formattedWithSeparator
+            if let amountString = textField.text?.currencyInputFormatting(digit: 0) {
+                vMoney.textField.text = amountString
             }
         case vCoin.textField:
-            if let number = Double(textField.text&) {
-                self.vCoin.textField.text = number.toCurrency
+            if let amountString = textField.text?.currencyInputFormatting(digit: 2) {
+               vCoin.textField.text = amountString
             }
         default:
             break
         }
-    }
-    
-    @objc func textFieldDidChange(_ textField: UITextField) {
         
-        //        if let amountString = textField.text?.currencyInputFormatting() {
-        //            textField.text = amountString
-        //        }
     }
     
     func setupUpdate() {
@@ -135,7 +130,7 @@ class PostStepTwoViewController: BaseViewController {
     //    }
     
     @objc func editingChanged(textField: UITextField) {
-        let money = textField.text&.toDouble()
+        let money = textField.text&.formatToDouble(digit: 0)
         let coin = money / AppConstant.moneyToCoint
         vCoin.textField.text = coin.roundedTwoDemical()
     }
