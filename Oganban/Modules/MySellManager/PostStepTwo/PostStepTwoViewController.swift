@@ -22,6 +22,7 @@ class PostStepTwoViewController: BaseViewController {
     @IBOutlet weak var vMoney: CheckBoxTextField!
     @IBOutlet weak var vCoin: CheckBoxTextField!
     @IBOutlet weak var lbNotice: UILabel!
+    @IBOutlet weak var lbPayType: UILabel!
     
     var param = PostRecordParam()
     var errorMessage: String = ""
@@ -31,6 +32,7 @@ class PostStepTwoViewController: BaseViewController {
     
     var record: RecordEntity?
     var isCopyUpdate: Bool = false
+    var isService: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +41,7 @@ class PostStepTwoViewController: BaseViewController {
     
     override func setUpViews() {
         super.setUpViews()
+        lbPayType.text = isService ? "Phương thức thanh toán" : "Phương thức thanh toán*"
         vAddress1.setTextField(title: "Địa chỉ 1", placeHolder: "Bạn có thể nhập địa chỉ nhà")
         vAddress1.btnCheckBox.lbTitle.textColor = AppColor.gray_65_65_65
         vAddress2.btnCheckBox.lbTitle.textColor = AppColor.gray_65_65_65
@@ -161,7 +164,7 @@ class PostStepTwoViewController: BaseViewController {
             return false
         }
         
-        if  !vCoin.isCheck && !vMoney.isCheck {
+        if  !vCoin.isCheck && !vMoney.isCheck && !isService {
             lbNotice.text = "Vui lòng chọn phương thức thanh toán"
             return false
         }

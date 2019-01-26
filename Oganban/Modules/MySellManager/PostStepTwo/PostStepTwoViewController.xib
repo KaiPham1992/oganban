@@ -17,6 +17,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PostStepTwoViewController">
             <connections>
                 <outlet property="lbNotice" destination="bbG-QH-oNo" id="Vuc-9J-1to"/>
+                <outlet property="lbPayType" destination="liA-QU-mpj" id="rsn-5k-zYx"/>
                 <outlet property="vAddress1" destination="Tkc-Iz-hA2" id="F35-5j-SV3"/>
                 <outlet property="vAddress2" destination="79N-fG-2Uk" id="MyJ-ny-0SY"/>
                 <outlet property="vCheckGPS" destination="QIc-ll-uzD" id="DHE-KJ-eIJ"/>

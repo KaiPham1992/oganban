@@ -14,7 +14,7 @@ class PostStepTwoRouter: PostStepTwoWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule(param: PostRecordParam, isUpdate: Bool = false) -> PostStepTwoViewController {
+    static func createModule(param: PostRecordParam, isUpdate: Bool = false, isService: Bool) -> PostStepTwoViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = PostStepTwoViewController.initFromNib()
         let interactor = PostStepTwoInteractor()
@@ -23,6 +23,7 @@ class PostStepTwoRouter: PostStepTwoWireframeProtocol {
 
         view.presenter = presenter
         view.param = param
+        view.isService = isService
         view.isCopyUpdate = isUpdate
         interactor.presenter = presenter
         router.viewController = view
