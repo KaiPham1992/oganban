@@ -21,6 +21,7 @@ protocol MorePresenterProtocol: class {
     var interactor: MoreInteractorInputProtocol? { get set }
     func goToPage(name: MoreEntityType)
     func logout()
+    func getProfileUser()
 }
 
 //MARK: Interactor -
@@ -28,6 +29,7 @@ protocol MoreInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
     func logoutSuccess()
+    func didGetProfileUser(user: UserEntity?)
 }
 
 protocol MoreInteractorInputProtocol: class {
@@ -36,6 +38,7 @@ protocol MoreInteractorInputProtocol: class {
 
     /* Presenter -> Interactor */
     func logout()
+    func getProfileUser()
 }
 
 //MARK: View -
@@ -45,4 +48,5 @@ protocol MoreViewProtocol: class {
 
     /* Presenter -> ViewController */
     func logoutSuccess()
+    func didGetProfileUser(user: UserEntity?)
 }

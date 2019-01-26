@@ -23,9 +23,9 @@ class MoreHeaderCell: UITableViewCell {
         ivAvatar.layer.masksToBounds = true
     }
     
-    func setupView() {
+    func setupView(user: UserEntity?) {
         
-        if UserDefaultHelper.shared.loginUserInfo != nil, let user: UserEntity = UserDefaultHelper.shared.loginUserInfo {
+        if UserDefaultHelper.shared.loginUserInfo != nil{
             
             lbCoinTotal.isHidden = false
             lbPhone.isHidden = false
@@ -45,17 +45,17 @@ class MoreHeaderCell: UITableViewCell {
         }
     }
     
-    func showData(user: UserEntity) {
-        lbName.text = user.fullName
+    func showData(user: UserEntity?) {
+        lbName.text = user?.fullName
         
-        if let phoneCode = user.phoneCode, let phone = user.phone {
+        if let phoneCode = user?.phoneCode, let phone = user?.phone {
             lbPhone.text = phoneCode + phone
         }
         
-        vLevel.setLevel(level: user.level&, isPro: user.isPro)
-        ivAvatar.sd_setImage(with: user.urlAvatar , placeholderImage: AppImage.imgDefaultUser)
+        vLevel.setLevel(level: user?.level& ?? "", isPro: user?.isPro)
+        ivAvatar.sd_setImage(with: user?.urlAvatar , placeholderImage: AppImage.imgDefaultUser)
         
-        self.showTotalCoin(user.coin)
+        self.showTotalCoin(user?.coin)
     }
     
     func showTotalCoin(_ totalCoin: Double?) {

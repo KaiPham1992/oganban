@@ -43,6 +43,8 @@ class MyBuyDetailViewController: BaseViewController {
                     btnBuyerSend.isHidden = true
 
                 }
+                
+                
 
                 // SALER
             } else {

@@ -25,4 +25,14 @@ class MoreInteractor: MoreInteractorInputProtocol {
             ProgressView.shared.hide()
         }
     }
+    
+    func getProfileUser() {
+        ProgressView.shared.show()
+        Provider.shared.userAPIService.getProfileUser(success: { (user) in
+            self.presenter?.didGetProfileUser(user: user)
+            ProgressView.shared.hide()
+        }) { (_) in
+            ProgressView.shared.hide()
+        }
+    }
 }

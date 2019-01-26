@@ -38,10 +38,18 @@ class MorePresenter: MorePresenterProtocol {
     func logout() {
         interactor?.logout()
     }
+    
+    func getProfileUser() {
+        interactor?.getProfileUser()
+    }
 }
 
 extension MorePresenter: MoreInteractorOutputProtocol {
     func logoutSuccess() {
         view?.logoutSuccess()
+    }
+    
+    func didGetProfileUser(user: UserEntity?) {
+        view?.didGetProfileUser(user: user)
     }
 }
