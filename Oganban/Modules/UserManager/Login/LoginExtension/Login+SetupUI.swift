@@ -26,6 +26,7 @@ extension LoginViewController {
         
         tfEmail.setupLayoutTextfield(placeholderText: "", titleText: TitleString.loginName)
         tfPassword.setupLayoutTextfield(placeholderText: "", titleText: TitleString.password)
+        tfEmail.tfContent.keyboardType = .emailAddress
     }
     
     func setupButtons(){

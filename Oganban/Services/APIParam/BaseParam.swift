@@ -33,9 +33,9 @@ class BaseParam: NSObject, Mappable {
         }
         
         if let fcmToken = UserDefaultHelper.shared.fcmToken {
-             params[Params.firebaseToken]  = fcmToken
+             params[Params.appleToken]  = fcmToken
         }
-        
+        params[Params.firebaseToken] = ""
         params[Params.deviceId] =  UIDevice.current.identifierForVendor!.uuidString
         params[Params.phonecode] = "+84"
         params[Params.timezone] = Utils.getTimeZone()
