@@ -49,4 +49,9 @@ class MyBuyDetailPresenter: MyBuyDetailPresenterProtocol, MyBuyDetailInteractorO
     func didPostRating(data: BaseResponse?) {
         view?.didPostRating(data: data)
     }
+    
+    func didChangeStatusOrder() {
+        view?.didChangeStatusOrder()
+    }
+        
 }
