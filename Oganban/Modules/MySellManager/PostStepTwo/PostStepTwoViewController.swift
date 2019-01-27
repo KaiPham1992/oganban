@@ -105,6 +105,7 @@ class PostStepTwoViewController: BaseViewController {
     
     func setupUpdate() {
         if isCopyUpdate {
+            isCopyUpdate = false
             CopyUpdate()
         }
     }
