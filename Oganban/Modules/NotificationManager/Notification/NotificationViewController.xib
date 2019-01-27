@@ -48,10 +48,10 @@
             <constraints>
                 <constraint firstItem="1Tq-E2-pTI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Gik-Z6-Mq4"/>
                 <constraint firstAttribute="bottom" secondItem="1Tq-E2-pTI" secondAttribute="bottom" id="HVj-Kd-ibm"/>
-                <constraint firstItem="zbh-KY-kgj" firstAttribute="centerY" secondItem="1Tq-E2-pTI" secondAttribute="centerY" id="Mcy-SS-woW"/>
                 <constraint firstAttribute="trailing" secondItem="zbh-KY-kgj" secondAttribute="trailing" constant="30" id="OZj-sy-Abf"/>
                 <constraint firstAttribute="trailing" secondItem="1Tq-E2-pTI" secondAttribute="trailing" id="PtU-qk-dPp"/>
-                <constraint firstItem="zbh-KY-kgj" firstAttribute="centerX" secondItem="1Tq-E2-pTI" secondAttribute="centerX" id="UuB-Z3-jyH"/>
+                <constraint firstItem="zbh-KY-kgj" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="TTd-iT-6i8"/>
+                <constraint firstItem="zbh-KY-kgj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="V8b-is-9WU"/>
                 <constraint firstItem="1Tq-E2-pTI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="cAW-bq-n5H"/>
                 <constraint firstItem="zbh-KY-kgj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="wTi-1a-cPY"/>
             </constraints>

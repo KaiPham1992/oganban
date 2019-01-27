@@ -22,6 +22,8 @@ class HomeCell: UICollectionViewCell {
     @IBOutlet weak var imgRecord            : UIImageView!
     @IBOutlet weak var imgNew               : UIImageView!
     @IBOutlet weak var imgAvatar            : UIImageView!
+    @IBOutlet weak var imgMoney             : UIImageView!
+    @IBOutlet weak var imgcoin              : UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -70,6 +72,16 @@ class HomeCell: UICollectionViewCell {
         
         if let url = URL(string: "\(BASE_URL)\(record.imgSrcAccount&)") {
             imgAvatar.sd_setImage(with: url, placeholderImage: AppImage.imgPlaceHolderImage)
+        }
+        
+        if record.coin == nil && record.price == nil {
+            imgMoney.isHidden = true
+            imgcoin.isHidden = true
+        } else if record.coin == nil {
+            imgcoin.isHidden = true
+        } else if  record.price == nil {
+            imgMoney.isHidden = true
+            
         }
     }
 
