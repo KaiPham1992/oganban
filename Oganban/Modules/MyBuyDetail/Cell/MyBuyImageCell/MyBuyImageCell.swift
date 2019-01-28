@@ -52,7 +52,7 @@ class MyBuyImageCell: BaseTableCell {
             guard let price = _order.totalPrice, let quantity = _order.quantity else { return}
                 radioMoney.setMoney(money: price)
             
-            radioCoin.setOneImage(image: AppImage.imgMoney)
+            radioCoin.setOneImage(image: AppImage.imgMoneyTotal)
             radioCoin.setTotalMoney(money: price * Double(quantity))
         } else {
             radioMoney.setOneImage(image: AppImage.imgCoin)

@@ -28,7 +28,8 @@ class MyBuyDetailInteractor: MyBuyDetailInteractorInputProtocol {
     func changedStatusOrder(status: OrderStatusKey, id: String) {
         ProgressView.shared.show()
         Provider.shared.orderAPIService.changeStatusOrderBuyer(status: status, id: id, success: { _ in
-            self.getDetailOrder(id: id)
+//            self.getDetailOrder(id: id)
+            self.presenter?.didChangeStatusOrder()
         }) { error  in
             ProgressView.shared.hide()
             PopUpHelper.shared.showMessageHaveAds(error: error)
@@ -38,7 +39,8 @@ class MyBuyDetailInteractor: MyBuyDetailInteractorInputProtocol {
     func changedStatusOrderSaler(status: OrderStatusKey, id: String) {
         ProgressView.shared.show()
         Provider.shared.orderAPIService.changeStatusOrderSaler(status: status, id: id, success: { _ in
-            self.getDetailOrder(id: id)
+//            self.getDetailOrder(id: id)
+            self.presenter?.didChangeStatusOrder()
         }) { error  in
             ProgressView.shared.hide()
             PopUpHelper.shared.showMessageHaveAds(error: error)

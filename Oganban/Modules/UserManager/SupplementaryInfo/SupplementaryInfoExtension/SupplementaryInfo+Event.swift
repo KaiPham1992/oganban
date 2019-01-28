@@ -34,6 +34,7 @@ extension SupplementaryInfoViewController {
     }
     
     @IBAction func tapCheckButton(_ sender: UIButton) {
+        self.view.endEditing(true)
         self.isCheck = !self.isCheck
     }
     
@@ -43,6 +44,7 @@ extension SupplementaryInfoViewController {
     
     @objc func selectBirthday(_ sender: UITapGestureRecognizer) {
         hideError()
+        self.view.endEditing(true)
         let popUp = PopUpSelectDate()
         popUp.vDateContent.vPickerDate.maximumDate = Date()
         popUp.showPopUp(currentDate: birthDay) { (date) in
@@ -55,6 +57,7 @@ extension SupplementaryInfoViewController {
     
     @objc func selectSex(_ sender: UITapGestureRecognizer) {
         hideError()
+        self.view.endEditing(true)
         let popUp = PopUpSelectGender()
         popUp.showPopUp(currentGender: self.gender ) { (gender) in
             if let sex: Gender = gender as? Gender {
