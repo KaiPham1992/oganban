@@ -81,6 +81,10 @@ extension SupplementaryInfoViewController: SupplementaryInfoViewProtocol {
     }
     
     func didLogin(error: APIError?) {
+        if error?.message == "CODE_INTRODUCTION_IS_NOT_EXISTED" {
+            hideError(isHidden: false, message: "Mã người giới thiệu không tồn tại")
+            return
+        }
         self.lbError.text = error?.message
     }
 }

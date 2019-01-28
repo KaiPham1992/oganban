@@ -30,6 +30,7 @@ protocol MyBuyDetailInteractorOutputProtocol: class {
     /* Interactor -> Presenter */
     func didGetOrder(order: OrderDetailEntity?)
     func didPostRating(data: BaseResponse?)
+    func didChangeStatusOrder()
     
 }
 
@@ -52,4 +53,6 @@ protocol MyBuyDetailViewProtocol: class {
     /* Presenter -> ViewController */
     func didGetOrder(order: OrderDetailEntity?)
     func didPostRating(data: BaseResponse?)
+    
+    func didChangeStatusOrder()
 }

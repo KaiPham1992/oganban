@@ -14,6 +14,7 @@
                 <outlet property="btnSaleSend" destination="E5f-Y6-kUK" id="cpc-Gh-iWV"/>
                 <outlet property="tbDetail" destination="dv7-bA-7X7" id="gfN-Tb-AJ1"/>
                 <outlet property="vAcceptCancel" destination="6lo-FX-GNa" id="Yec-UB-U28"/>
+                <outlet property="vBuyerReceiveMoney" destination="uGM-6R-vnP" id="3cp-Fp-eEz"/>
                 <outlet property="vContainerRating" destination="WmU-Da-ADC" id="kz9-1L-lr8"/>
                 <outlet property="vContainerRatingSaler" destination="srX-ii-0vD" id="VQS-eg-gVp"/>
                 <outlet property="vControlSaler" destination="t6n-4K-EuN" id="whb-wY-WHJ"/>
@@ -33,6 +34,28 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </tableView>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uGM-6R-vnP">
+                    <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="By2-k0-n3h">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                            <state key="normal" title="ĐÃ NHẬN TIỀN">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="btnSaleReceivedMoney" destination="-1" eventType="touchUpInside" id="qzN-PZ-pyD"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.34509803919999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="By2-k0-n3h" firstAttribute="top" secondItem="uGM-6R-vnP" secondAttribute="top" id="FVg-f4-v8J"/>
+                        <constraint firstItem="By2-k0-n3h" firstAttribute="leading" secondItem="uGM-6R-vnP" secondAttribute="leading" id="Tz2-SY-Plp"/>
+                        <constraint firstAttribute="height" constant="40" id="Xs4-GO-2tG"/>
+                        <constraint firstAttribute="trailing" secondItem="By2-k0-n3h" secondAttribute="trailing" id="d4v-Bl-xb2"/>
+                        <constraint firstAttribute="bottom" secondItem="By2-k0-n3h" secondAttribute="bottom" id="eyt-vT-hpO"/>
+                    </constraints>
+                </view>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OUa-tz-GMc">
                     <rect key="frame" x="0.0" y="627" width="375" height="40"/>
                     <subviews>
@@ -267,9 +290,13 @@
                 <constraint firstAttribute="bottom" secondItem="WmU-Da-ADC" secondAttribute="bottom" id="A04-9e-RkM"/>
                 <constraint firstItem="OUa-tz-GMc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="BM7-Gs-qFG"/>
                 <constraint firstAttribute="bottom" secondItem="dv7-bA-7X7" secondAttribute="bottom" id="Cqx-Y7-hbD"/>
+                <constraint firstItem="uGM-6R-vnP" firstAttribute="bottom" secondItem="OUa-tz-GMc" secondAttribute="bottom" id="EK9-Qc-ktY"/>
                 <constraint firstItem="dv7-bA-7X7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Glv-m2-oO7"/>
+                <constraint firstItem="uGM-6R-vnP" firstAttribute="leading" secondItem="OUa-tz-GMc" secondAttribute="leading" id="LTK-g1-pRH"/>
                 <constraint firstAttribute="trailing" secondItem="WmU-Da-ADC" secondAttribute="trailing" id="Oxk-Bd-dwK"/>
+                <constraint firstItem="uGM-6R-vnP" firstAttribute="height" secondItem="OUa-tz-GMc" secondAttribute="height" id="VW4-78-gYe"/>
                 <constraint firstItem="t6n-4K-EuN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="XFb-e7-U7i"/>
+                <constraint firstItem="uGM-6R-vnP" firstAttribute="trailing" secondItem="OUa-tz-GMc" secondAttribute="trailing" id="ZA2-19-LGQ"/>
                 <constraint firstAttribute="bottom" secondItem="t6n-4K-EuN" secondAttribute="bottom" id="ikT-v9-hdE"/>
                 <constraint firstItem="dv7-bA-7X7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="k0h-WM-kYx"/>
                 <constraint firstAttribute="trailing" secondItem="t6n-4K-EuN" secondAttribute="trailing" id="kpW-kT-Lk3"/>

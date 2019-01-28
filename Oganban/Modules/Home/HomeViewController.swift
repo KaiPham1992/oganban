@@ -511,7 +511,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return menu.count
         case tbRight:
             if menu.count > 0 {
-                return menu[index].cateChild.count
+                if index == 0 {
+                    return 0
+                } else {
+                    return menu[index].cateChild.count
+                }
             } else {
                 return 0
             }
@@ -552,12 +556,16 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch tableView {
         case tbLeft:
-            index = indexPath.row
             menu[oldParentSelected*].isSelected = false
             for (tempInt, item) in oldChildSelected.enumerated() {
                 menu[oldParentSelected*].cateChild[item].isSelected = false
-                tbRight.reloadRows(at: [IndexPath(item: item, section: indexPath.section), indexPath], with: .none)
+                tbRight.reloadRows(at: [IndexPath(item: item, section: indexPath.section)], with: .none)
             }
+            if indexPath.row == 0 {
+                oldChildSelected.removeAll()
+            }
+            index = indexPath.row
+            
             menu[index].isSelected = true
             indexReload = oldParentSelected
             tbLeft.reloadRows(at: [IndexPath(item: oldParentSelected*, section: indexPath.section), indexPath], with: .none)

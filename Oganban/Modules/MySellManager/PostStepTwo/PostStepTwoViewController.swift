@@ -12,6 +12,8 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 
+
+
 class PostStepTwoViewController: BaseViewController {
     
     var presenter: PostStepTwoPresenterProtocol?
@@ -22,6 +24,7 @@ class PostStepTwoViewController: BaseViewController {
     @IBOutlet weak var vMoney: CheckBoxTextField!
     @IBOutlet weak var vCoin: CheckBoxTextField!
     @IBOutlet weak var lbNotice: UILabel!
+    @IBOutlet weak var lbPayType: UILabel!
     
     var param = PostRecordParam()
     var errorMessage: String = ""
@@ -31,6 +34,7 @@ class PostStepTwoViewController: BaseViewController {
     
     var record: RecordEntity?
     var isCopyUpdate: Bool = false
+    var isService: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +43,7 @@ class PostStepTwoViewController: BaseViewController {
     
     override func setUpViews() {
         super.setUpViews()
+        lbPayType.text = isService ? "Phương thức thanh toán" : "Phương thức thanh toán*"
         vAddress1.setTextField(title: "Địa chỉ 1", placeHolder: "Bạn có thể nhập địa chỉ nhà")
         vAddress1.btnCheckBox.lbTitle.textColor = AppColor.gray_65_65_65
         vAddress2.btnCheckBox.lbTitle.textColor = AppColor.gray_65_65_65
@@ -74,6 +79,7 @@ class PostStepTwoViewController: BaseViewController {
         vCoin.textField.isEnabled = false
         
         vMoney.textField.addTarget(self, action: #selector(textFieldDidChange), for: UIControl.Event.editingChanged)
+        vCoin.textField.addTarget(self, action: #selector(textFieldDidChange), for: UIControl.Event.editingChanged)
         
         vMoney.setUint(unit: "đ")
         vCoin.setUint(unit: "ơ")
@@ -82,14 +88,24 @@ class PostStepTwoViewController: BaseViewController {
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
+        switch textField {
+        case vMoney.textField:
+            if let amountString = textField.text?.currencyInputFormatting(digit: 0) {
+                vMoney.textField.text = amountString
+            }
+        case vCoin.textField:
+            if let amountString = textField.text?.currencyInputFormatting(digit: 2) {
+               vCoin.textField.text = amountString
+            }
+        default:
+            break
+        }
         
-        //        if let amountString = textField.text?.currencyInputFormatting() {
-        //            textField.text = amountString
-        //        }
     }
     
     func setupUpdate() {
         if isCopyUpdate {
+            isCopyUpdate = false
             CopyUpdate()
         }
     }
@@ -115,7 +131,7 @@ class PostStepTwoViewController: BaseViewController {
     //    }
     
     @objc func editingChanged(textField: UITextField) {
-        let money = textField.text&.toDouble()
+        let money = textField.text&.formatToDouble(digit: 0)
         let coin = money / AppConstant.moneyToCoint
         vCoin.textField.text = coin.roundedTwoDemical()
     }
@@ -149,7 +165,10 @@ class PostStepTwoViewController: BaseViewController {
                 long2 = self.locationAddress2?.longitude.description& ?? ""
             }
             
-            param.updateInfoStepTwo(address1: address1, lat1: lat1, long1: long1, address2: address2, lat2: lat2, long2: long2, isLatlong: vCheckGPS.isChecked, price: vMoney.textField.text&, coin: vCoin.textField.text&, isGpsCurrent: 1)
+            let price = "\(vMoney.textField.text&.formatToDouble(digit: 0))"
+            let coin = "\(vCoin.textField.text&.formatToDouble(digit: 2))"
+            
+            param.updateInfoStepTwo(address1: address1, lat1: lat1, long1: long1, address2: address2, lat2: lat2, long2: long2, isLatlong: vCheckGPS.isChecked, price: price, coin: coin, isGpsCurrent: 1)
             
             presenter?.postRecord(param: param)
         }
@@ -161,7 +180,7 @@ class PostStepTwoViewController: BaseViewController {
             return false
         }
         
-        if  !vCoin.isCheck && !vMoney.isCheck {
+        if  !vCoin.isCheck && !vMoney.isCheck && !isService {
             lbNotice.text = "Vui lòng chọn phương thức thanh toán"
             return false
         }

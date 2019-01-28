@@ -30,6 +30,7 @@ class PostStepOneViewController: BaseViewController {
     
     var postParam = PostRecordParam()
     var categoryId: String?
+    var isService: Bool = false
     var dateSeleted: Date? {
         didSet {
             vChooseDate.textField.text = dateSeleted?.toString(dateFormat: AppDateFormat.ddMMYYYY_VN)&
@@ -157,7 +158,6 @@ class PostStepOneViewController: BaseViewController {
             }
             self.view.layoutIfNeeded()
         }
-        
     }
     
     @IBAction func btnContinueTapped() {
@@ -245,7 +245,7 @@ class PostStepOneViewController: BaseViewController {
             self.push(controller: vc)
             return
         }
-        let vc = PostStepTwoRouter.createModule(param: self.postParam)
+        let vc = PostStepTwoRouter.createModule(param: self.postParam, isService: isService)
         self.push(controller: vc)
     }
     
@@ -350,6 +350,9 @@ extension PostStepOneViewController: UITableViewDelegate, UITableViewDataSource 
             oldChildSelected = indexPath.row
             lbCategory.text =  menu[oldParentSelected*].cateChild[indexPath.row].name
             categoryId = menu[oldParentSelected*].cateChild[indexPath.row].id&
+            if let service = menu[oldParentSelected*].cateChild[indexPath.row].isService {
+                isService = service
+            }
             //--get id category there
             hideDropdown()
             

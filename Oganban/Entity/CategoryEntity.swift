@@ -14,6 +14,8 @@ struct CategoryEntity: Mappable {
     var id: String?
     var name: String?
     var key: String?
+    var isServiceString: String?
+    var isService: Bool?
     var isSelected = false
     
     init?(map: Map) {
@@ -23,6 +25,11 @@ struct CategoryEntity: Mappable {
         self.id <- map["_id"]
         self.name <- map["name"]
         self.key <- map["key"]
+        self.isServiceString <- map["is_service"]
+        
+        if let service = isServiceString {
+            isService = service == "1" ? true : false
+        }
     }
 }
 
@@ -32,6 +39,8 @@ struct CategoryMergeEntity: Mappable {
     var name: String?
     var key: String?
     var isSelected = false
+    var isServiceString: String?
+    var isService: Bool?
     var cateChild: [CategoryEntity] = []
     
     init?(map: Map) {
@@ -42,6 +51,11 @@ struct CategoryMergeEntity: Mappable {
         self.name <- map["name"]
         self.key <- map["key"]
         self.cateChild <- map["cate_child"]
+        self.isServiceString <- map["is_service"]
+        
+        if let service = isServiceString {
+            isService = service == "1" ? true : false
+        }
     }
 }
 

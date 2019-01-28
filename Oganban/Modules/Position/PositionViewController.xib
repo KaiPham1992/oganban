@@ -49,7 +49,7 @@
                             <color key="textColor" red="0.43137254899999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rectangle_7_copy" translatesAutoresizingMaskIntoConstraints="NO" id="6jt-SP-yHJ">
+                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_arrow_down" translatesAutoresizingMaskIntoConstraints="NO" id="6jt-SP-yHJ">
                             <rect key="frame" x="130" y="10" width="20" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="r00-7A-4io"/>
@@ -150,6 +150,6 @@
         </view>
     </objects>
     <resources>
-        <image name="rectangle_7_copy" width="11" height="11"/>
+        <image name="ic_arrow_down" width="10" height="5.5"/>
     </resources>
 </document>

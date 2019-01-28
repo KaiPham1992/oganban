@@ -17,6 +17,7 @@ class MyBuyImageCell: BaseTableCell {
     @IBOutlet weak var imageSlide: AppImageSlide!
     @IBOutlet weak var btnCancel: UIButton!
     @IBOutlet weak var radioMoney: AppRadioButton!
+    @IBOutlet weak var radioCoin: AppRadioButton!
     @IBOutlet weak var vMoneyCoin: UIStackView!
     @IBOutlet weak var heightMoneyCoin: NSLayoutConstraint!
     
@@ -48,12 +49,17 @@ class MyBuyImageCell: BaseTableCell {
         
         if _order.paymentType == "cash" {
             radioMoney.setOneImage(image: AppImage.imgMoney)
-            if let price = _order.totalPrice {
+            guard let price = _order.totalPrice, let quantity = _order.quantity else { return}
                 radioMoney.setMoney(money: price)
-            }
+            
+            radioCoin.setOneImage(image: AppImage.imgMoneyTotal)
+            radioCoin.setTotalMoney(money: price * Double(quantity))
         } else {
             radioMoney.setOneImage(image: AppImage.imgCoin)
-            radioMoney.setOCoin(coin: _order.totalCoin)
+            guard let coin = _order.totalCoin, let quantity = _order.quantity else { return}
+            radioMoney.setOCoin(coin: coin)
+            radioCoin.setOneImage(image: AppImage.imgCoin)
+            radioCoin.setTotalOCoin(coin: coin * Double(quantity))
         }
     }
     
@@ -68,8 +74,13 @@ class MyBuyImageCell: BaseTableCell {
         
     }
     
-    func hideMoneyCoin() {
-        heightMoneyCoin.constant = 0 // 0 25 50
+    func hideMoneyCoin(isSeller: Bool) {
+        if isSeller {
+           heightMoneyCoin.constant = 25
+        } else {
+            heightMoneyCoin.constant = 50
+        }
+         // 0 25 50
     }
     
     @IBAction func btnCancelTapped() {

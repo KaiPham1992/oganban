@@ -37,6 +37,8 @@ protocol UserAPIServiceProtocol {
     func postRating(point: Int, accountID: String, isBuyer: Bool, orderID: String, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
     func removeFavourite(isFavorite: Int, accountId: Int, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
      func getRecordByFavoriteUser(accountId: Int, offset: Int, success: @escaping SuccessHandler<RecordEntity>.array, failure: @escaping RequestFailure)
+    
+    func getProfileUser(success: @escaping SuccessHandler<UserEntity>.object, failure: @escaping RequestFailure)
 }
 
 
@@ -141,6 +143,11 @@ class UserAPIService: UserAPIServiceProtocol {
         let endPoint = UserEndPoint.postRating(point: point, accountID: accountID, isBuyer: isBuyer, orderID: orderID)
         network.requestData(endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
         }
+    
+    func getProfileUser(success: @escaping SuccessHandler<UserEntity>.object, failure: @escaping RequestFailure) {
+        let endPoint = UserEndPoint.getProfileUser()
+        network.requestData(endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
+    }
 }
 
 

@@ -114,10 +114,32 @@ extension AppRadioButton {
         self.lbTitle.attributedText = attr
     }
     
+    func setTotalMoney(money: Double) {
+        let attr = NSMutableAttributedString()
+        let attr1 = "Tổng tiền: ".toAttributedString(color: AppColor.red_110_0_0, font: AppFont.fontRegular13, isUnderLine: false)
+        let attr2 = "\(money.toUInt64().toCurrency) ".toAttributedString(color: AppColor.red_110_0_0, font: AppFont.fontBold13, isUnderLine: false)
+        attr.append(attr1)
+        attr.append(attr2)
+        self.lbTitle.attributedText = attr
+    }
+    
     func setOCoin(coin: Double?) {
         guard let _coin = coin else { return }
         let attr = NSMutableAttributedString()
         let attr1 = "Đổi Ơcoin: ".toAttributedString(color: AppColor.green, font: AppFont.fontRegular13, isUnderLine: false)
+        let attr2 = "\(_coin.toCurrency&)".toAttributedString(color: AppColor.green, font: AppFont.fontBold13, isUnderLine: false)
+        let attr3 = " ơ".toAttributedString(color: AppColor.green, font: AppFont.fontBold13, isUnderLine: true)
+        
+        attr.append(attr1)
+        attr.append(attr2)
+        attr.append(attr3)
+        self.lbTitle.attributedText = attr
+    }
+    
+    func setTotalOCoin(coin: Double?) {
+        guard let _coin = coin else { return }
+        let attr = NSMutableAttributedString()
+        let attr1 = "Tổng Ơcoin: ".toAttributedString(color: AppColor.green, font: AppFont.fontRegular13, isUnderLine: false)
         let attr2 = "\(_coin.toCurrency&)".toAttributedString(color: AppColor.green, font: AppFont.fontBold13, isUnderLine: false)
         let attr3 = " ơ".toAttributedString(color: AppColor.green, font: AppFont.fontBold13, isUnderLine: true)
         

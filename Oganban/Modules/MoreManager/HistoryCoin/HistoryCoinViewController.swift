@@ -114,11 +114,11 @@ extension HistoryCoinViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let coin = self.historyList[indexPath.item]
-        if coin.type == "order_buyer" {
-            let vc = OrderBuyDetailRouter.createModule(recordId: coin.id&)
+         if coin.type == "order_buyer" {
+            let vc = MyBuyDetailRouter.createModule(orderId: coin.id&, isSaler: false)
             self.push(controller: vc)
-        } else if coin.type == "order_seller" {
-            let vc = OrderDetailRouter.createModule(recordId: coin.id&)
+         } else if coin.type == "order_seller" {
+            let vc = MyBuyDetailRouter.createModule(orderId: coin.id&, isSaler: true)
             self.push(controller: vc)
         }
     }

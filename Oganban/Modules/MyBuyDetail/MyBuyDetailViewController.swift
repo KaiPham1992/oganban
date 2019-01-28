@@ -28,9 +28,27 @@ class MyBuyDetailViewController: BaseViewController {
             // BUYER
             if !isSaler {
                 vControlSaler.isHidden = true
-                vDoneNotArrived.isHidden = _order.getStatus() != .waitDelivery
+                if _order.paymentType == "cash" && _order.getStatus() == .waitDelivery {
+                    vBuyerReceiveMoney.isHidden = false
+                    vDoneNotArrived.isHidden = true
+                }
+                
+                if _order.paymentType == "coin" && _order.getStatus() == .orderNotYetArrived  {
+                    vDoneNotArrived.isHidden = false
+                    vBuyerReceiveMoney.isHidden = true
+                }
+                
+                if _order.paymentType == "coin" && _order.getStatus() == .waitDelivery {
+                    vDoneNotArrived.isHidden = false
+                    vBuyerReceiveMoney.isHidden = true
+                }
+                
+                if _order.getStatus() == .new || _order.getStatus() == .done || _order.getStatus() == .cancel{
+                    vBuyerReceiveMoney.isHidden = true
+                    vDoneNotArrived.isHidden = true
+                }
 
-                if _order.getStatus() == .done || _order.getStatus() == .cancel || _order.getStatus() == .orderNotYetArrived {
+                if _order.getStatus() == .done || _order.getStatus() == .cancel {
                     vContainerRating.isHidden = false
                 } else {
                     vContainerRating.isHidden = true
@@ -43,13 +61,13 @@ class MyBuyDetailViewController: BaseViewController {
                     btnBuyerSend.isHidden = true
 
                 }
-
+                
                 // SALER
             } else {
                 vControlSaler.isHidden = false
+                
                 // accep
                 vAcceptCancel.isHidden = _order.getStatus() != .new
-
                 // rating
                 if _order.getStatus() == .done || _order.getStatus() == .cancel || _order.getStatus() == .orderNotYetArrived {
                     vContainerRatingSaler.isHidden = false
@@ -58,13 +76,14 @@ class MyBuyDetailViewController: BaseViewController {
                 }
 
                 // receive money
-                if _order.paymentType == "cash" && _order.getStatus() == .waitDelivery {
-                    vReceivedMoney.isHidden = false
-                } else {
+                if _order.paymentType == "coin" && _order.getStatus() == .waitDelivery {
                     vReceivedMoney.isHidden = true
+                } else {
+                    vReceivedMoney.isHidden = false
                 }
 
-
+                vReceivedMoney.isHidden = _order.getStatus() == .new || _order.getStatus() == .done || _order.getStatus() == .cancel
+                
                 if let buyerRating = _order.ratingBuyerOrder, let buyerRatingInt =  Int(buyerRating) {
                     vRatingSaler.number = buyerRatingInt
                     vRatingSaler.setStar(number: buyerRatingInt)
@@ -87,7 +106,7 @@ class MyBuyDetailViewController: BaseViewController {
     @IBOutlet weak var vRating: AppRatingView!
     @IBOutlet weak var vContainerRating: UIView!
     @IBOutlet weak var btnBuyerSend: UIButton!
-    
+    @IBOutlet weak var vBuyerReceiveMoney: UIView!
     // saller
     @IBOutlet weak var vControlSaler: UIView!
     @IBOutlet weak var vAcceptCancel: UIView!
@@ -123,6 +142,10 @@ class MyBuyDetailViewController: BaseViewController {
 }
 
 extension MyBuyDetailViewController: MyBuyDetailViewProtocol {
+    func didChangeStatusOrder() {
+        self.pop()
+    }
+    
     func didGetOrder(order: OrderDetailEntity?) {
         self.order = order
     }
