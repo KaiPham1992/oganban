@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SwiftyJSON
+
 
 class AppRouter {
     static let shared = AppRouter()
@@ -40,5 +42,33 @@ class AppRouter {
         //---
         let tabBar = PostStepOneRouter.createModule()
         windowApp.rootViewController = tabBar
+    }
+    
+    func handleNotification(userInfo: [AnyHashable : Any]) {
+        guard let aps = userInfo["aps"] as? [String: Any]  else { return }
+        guard let key = aps["category"] as? String else { return }
+        guard let id = aps["obj_id"] as? String else { return }
+        let json = JSON(aps)
+        print(json)
+        switch key {
+        case "ORDER_BUYER":
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate, let windowApp = appDelegate.window else { return }
+            let vc = OrderBuyDetailRouter.createModule(recordId: id)
+            windowApp.rootViewController = vc
+        case "ORDER_SELLER":
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate, let windowApp = appDelegate.window else { return }
+            let vc = OrderDetailRouter.createModule(recordId: id)
+            windowApp.rootViewController = vc
+        case "RE_COMMENT":
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate, let windowApp = appDelegate.window else { return }
+            let vc = CommentDetailRouter.createModule(recordId: id)
+            windowApp.rootViewController = vc
+        case "COMMENT":
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate, let windowApp = appDelegate.window else { return }
+            let vc = CommentDetailRouter.createModule(recordId: id)
+           windowApp.rootViewController = vc
+        default:
+            openTabbar()
+        }
     }
 }
