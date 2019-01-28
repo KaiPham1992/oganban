@@ -18,6 +18,8 @@ class RecordSellingView: BaseViewXib {
     @IBOutlet weak var lbPrice: UILabel!
     @IBOutlet weak var lbCoin: UILabel!
     @IBOutlet weak var lbTotal: UILabel!
+    @IBOutlet weak var imgMoney: UIImageView!
+    @IBOutlet weak var imgCoin: UIImageView!
     
     var isHideOrExpired: Bool = false
     
@@ -29,10 +31,24 @@ class RecordSellingView: BaseViewXib {
             }
             lbProductName.text = _record.name
             lbTime.text = _record.createTime?.timeAgo()
-            lbPrice.text = _record.showMoney()//"\(_record.price?.description ?? "") đ"
+            if _record.price == nil {
+                imgMoney.isHidden = true
+            } else {
+                imgMoney.isHidden = false
+            }
+            
+            if _record.coin == nil {
+                imgCoin.isHidden = true
+            } else {
+                imgCoin.isHidden = false
+            }
+            lbPrice.text = _record.showMoney()
             lbCoin.text = _record.showCoin() //"\(_record.coin?.description ?? "") ơ"
             lbCoin.underlineLastCharacter()
             lbPrice.underlineLastCharacter()
+            
+            
+            
             if _record.status == "expired" {
                 lbTotal.text = "Tin hết hạn"
                 lbTotal.backgroundColor = AppColor.yellow_228_251_30
