@@ -152,6 +152,8 @@ class PostStepTwoViewController: BaseViewController {
             var address2 = ""
             var lat2 = ""
             var long2 = ""
+            var price = ""
+            var coin = ""
             
             if vAddress1.isCheck {
                 address1 = vAddress1.textField.text&
@@ -165,8 +167,13 @@ class PostStepTwoViewController: BaseViewController {
                 long2 = self.locationAddress2?.longitude.description& ?? ""
             }
             
-            let price = "\(vMoney.textField.text&.formatToDouble(digit: 0))"
-            let coin = "\(vCoin.textField.text&.formatToDouble(digit: 2))"
+            if vMoney.isCheck {
+                price = "\(vMoney.textField.text&.formatToDouble(digit: 0))"
+            }
+            
+            if vCoin.isCheck {
+                coin = "\(vCoin.textField.text&.formatToDouble(digit: 2))"
+            }
             
             param.updateInfoStepTwo(address1: address1, lat1: lat1, long1: long1, address2: address2, lat2: lat2, long2: long2, isLatlong: vCheckGPS.isChecked, price: price, coin: coin, isGpsCurrent: 1)
             
