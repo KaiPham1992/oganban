@@ -38,6 +38,7 @@ class OrderDetailViewController: BaseViewController {
     
     var record: RecordEntity? {
         didSet {
+            
             tbDetail.reloadData()
         }
     }

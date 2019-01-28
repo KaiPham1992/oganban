@@ -39,6 +39,8 @@ protocol UserAPIServiceProtocol {
      func getRecordByFavoriteUser(accountId: Int, offset: Int, success: @escaping SuccessHandler<RecordEntity>.array, failure: @escaping RequestFailure)
     
     func getProfileUser(success: @escaping SuccessHandler<UserEntity>.object, failure: @escaping RequestFailure)
+    
+    func getGPSPosition(lat: String, long: String, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
 }
 
 
@@ -147,6 +149,12 @@ class UserAPIService: UserAPIServiceProtocol {
     func getProfileUser(success: @escaping SuccessHandler<UserEntity>.object, failure: @escaping RequestFailure) {
         let endPoint = UserEndPoint.getProfileUser()
         network.requestData(endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
+    }
+    
+    func getGPSPosition(lat: String, long: String, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure) {
+        let endPoint = UserEndPoint.getGPSPosition(lat: lat, long: long)
+        
+        network.requestData(endPoint: endPoint, success: MapperData.mapNoData(success), failure: failure)
     }
 }
 

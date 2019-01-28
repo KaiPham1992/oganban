@@ -35,6 +35,7 @@ class PostStepTwoViewController: BaseViewController {
     var record: RecordEntity?
     var isCopyUpdate: Bool = false
     var isService: Bool = false
+    var isGPSCurrent: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -168,7 +169,9 @@ class PostStepTwoViewController: BaseViewController {
             let price = "\(vMoney.textField.text&.formatToDouble(digit: 0))"
             let coin = "\(vCoin.textField.text&.formatToDouble(digit: 2))"
             
-            param.updateInfoStepTwo(address1: address1, lat1: lat1, long1: long1, address2: address2, lat2: lat2, long2: long2, isLatlong: vCheckGPS.isChecked, price: price, coin: coin, isGpsCurrent: 1)
+            isGPSCurrent = vCheckGPS.isChecked ? 1 : 0
+            
+            param.updateInfoStepTwo(address1: address1, lat1: lat1, long1: long1, address2: address2, lat2: lat2, long2: long2, isLatlong: false, price: price, coin: coin, isGpsCurrent: isGPSCurrent)
             
             presenter?.postRecord(param: param)
         }

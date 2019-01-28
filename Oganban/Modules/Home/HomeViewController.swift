@@ -67,6 +67,7 @@ class HomeViewController: BaseViewController {
     
     var isFilterTextfield = false
     var isFilter = false
+    var timeCall: Timer?
     
     //------database LIMIT
     let itemsPerBatch = 40
@@ -121,6 +122,8 @@ class HomeViewController: BaseViewController {
         }
         
         lbPosition.text = UserDefaultHelper.shared.address
+        callAPIPosition()
+        timeCall = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(callAPI), userInfo: nil, repeats: true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -211,6 +214,12 @@ class HomeViewController: BaseViewController {
         paramFilter = RecordParam(long: long, lat: lat, radius: radius)
     }
     
+    func callAPIPosition() {
+        Provider.shared.userAPIService.getGPSPosition(lat: UserDefaultHelper.shared.lat, long: UserDefaultHelper.shared.long, success: { (_) in
+        }) { (_) in
+        }
+    }
+    
     @objc private func refreshData(_ sender: Any) {
         // Fetch Weather Data
 //        refreshFilter()
@@ -221,6 +230,10 @@ class HomeViewController: BaseViewController {
         isFilter = true
         reachedEndOfItems = false
         presenter?.filterRecord(param: paramFilter)
+    }
+    
+    @objc func callAPI() {
+        callAPIPosition()
     }
     
     private func refreshFilter() {
@@ -404,6 +417,8 @@ extension HomeViewController: HomeViewProtocol {
             
         }
     }
+    
+    
 }
 
 //--MARK: - Show list record collection view
