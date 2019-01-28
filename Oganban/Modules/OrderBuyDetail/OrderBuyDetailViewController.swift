@@ -110,30 +110,37 @@ class OrderBuyDetailViewController: BaseViewController {
     
     @IBAction func btnOrderBuyTapped() {
         if UserDefaultHelper.shared.isLoggedIn {
-            PopUpHelper.shared.showUpdateQuantityBuy { (quantity) in
-                guard let qtyStr = quantity, let qty = Int(qtyStr) else { return }
-                guard let _recordID = self.recordId, let totalCoin = UserDefaultHelper.shared.coin, let totalQty = self.record?.quantity else { return }
-                
-                if self.price == 0.0 {
-                    PopUpHelper.shared.showMessageHaveAds(message: "Vui lòng chọn phương thức thanh toán")
-                    return
-                } else if qty == 0 {
-                    PopUpHelper.shared.showMessageHaveAds(message: "Số lượng mua phải lớn hơn 0")
-                    return
-                } else if qty > totalQty {
-                    PopUpHelper.shared.showMessageHaveAds(message: "Số lượng mua vượt quá số lượng sản phẩm")
-                    return
-                }
-                
-                if self.paymentType == "coin" {
-                    if totalCoin < self.price {
-                        PopUpHelper.shared.showMessageHaveAds(message: "Số Ơcoin tích luỹ của bạn không đủ để đổi sản phẩm. Vui lòng kiểm tra lại")
+//            guard let record = self.record, let quantity = record.quantity else { return }
+//            if quantity > 1 {
+                PopUpHelper.shared.showUpdateQuantityBuy { (quantity) in
+                    guard let qtyStr = quantity, let qty = Int(qtyStr) else { return }
+                    guard let _recordID = self.recordId, let totalCoin = UserDefaultHelper.shared.coin, let totalQty = self.record?.quantity else { return }
+                    
+                    if self.price == 0.0 {
+                        PopUpHelper.shared.showMessageHaveAds(message: "Vui lòng chọn phương thức thanh toán")
+                        return
+                    } else if qty == 0 {
+                        PopUpHelper.shared.showMessageHaveAds(message: "Số lượng mua phải lớn hơn 0")
+                        return
+                    } else if qty > totalQty {
+                        PopUpHelper.shared.showMessageHaveAds(message: "Số lượng mua vượt quá số lượng sản phẩm")
                         return
                     }
+                    
+                    if self.paymentType == "coin" {
+                        if totalCoin < self.price {
+                            PopUpHelper.shared.showMessageHaveAds(message: "Số Ơcoin tích luỹ của bạn không đủ để đổi sản phẩm. Vui lòng kiểm tra lại")
+                            return
+                        }
+                    }
+                    
+                    self.presenter?.bookingOrder(recordID: _recordID, price: self.price, quantity: qty, paymentType: self.paymentType, isService: false)
                 }
-                
-                self.presenter?.bookingOrder(recordID: _recordID, price: self.price, quantity: qty, paymentType: self.paymentType, isService: false)
-            }
+//            } else if quantity == 1 {
+//                guard let _recordID = self.recordId else { return }
+//                self.presenter?.bookingOrder(recordID: _recordID, price: self.price, quantity: 1, paymentType: self.paymentType, isService: false)
+//            }
+            
         } else {
             self.presenter?.gotoLogin()
         }

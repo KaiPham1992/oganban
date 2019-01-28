@@ -40,6 +40,9 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     
     @available(iOS 10.0, *)
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        let userInfo = response.notification.request.content.userInfo
+        AppRouter.shared.handleNotification(userInfo: userInfo)
+        
         print("didReceive")
     }
     
