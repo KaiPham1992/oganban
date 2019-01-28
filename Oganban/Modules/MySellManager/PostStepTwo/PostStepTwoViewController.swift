@@ -153,6 +153,8 @@ class PostStepTwoViewController: BaseViewController {
             var address2 = ""
             var lat2 = ""
             var long2 = ""
+            var price = ""
+            var coin = ""
             
             if vAddress1.isCheck {
                 address1 = vAddress1.textField.text&
@@ -166,8 +168,13 @@ class PostStepTwoViewController: BaseViewController {
                 long2 = self.locationAddress2?.longitude.description& ?? ""
             }
             
-            let price = "\(vMoney.textField.text&.formatToDouble(digit: 0))"
-            let coin = "\(vCoin.textField.text&.formatToDouble(digit: 2))"
+            if vMoney.isCheck {
+                price = "\(vMoney.textField.text&.formatToDouble(digit: 0))"
+            }
+            
+            if vCoin.isCheck {
+                coin = "\(vCoin.textField.text&.formatToDouble(digit: 2))"
+            }
             
             isGPSCurrent = vCheckGPS.isChecked ? 1 : 0
             
@@ -200,7 +207,8 @@ class PostStepTwoViewController: BaseViewController {
         }
         
         if vMoney.isCheck {
-            if let intQuality = Double(vMoney.textField.text&.replacingOccurrences(of: ".", with: "")) {
+            if !vMoney.textField.text&.isEmpty {
+                let intQuality = vMoney.textField.text&.formatToDouble(digit: 0)
                 if intQuality < 0 {
                     lbNotice.text = "Vui lòng nhập giá tiền"
                     return false
@@ -217,7 +225,8 @@ class PostStepTwoViewController: BaseViewController {
         }
         
         if vCoin.isCheck {
-            if let intQuality = Double(vCoin.textField.text&) {
+            if !vCoin.textField.text&.isEmpty {
+                let intQuality = vCoin.textField.text&.formatToDouble(digit: 2)
                 if intQuality < 0 {
                     lbNotice.text = "Vui lòng nhập Ơ coin"
                     return false

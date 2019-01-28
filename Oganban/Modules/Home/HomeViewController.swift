@@ -85,11 +85,6 @@ class HomeViewController: BaseViewController {
         configureTableView()
         presenter?.getCategoryMerge()
         
-        getParamDefault()
-        ProgressView.shared.show()
-        presenter?.filterRecord(param: paramFilter)
-        presenter?.getPositionRange()
-        
     }
     
     override func setUpNavigation() {
@@ -120,6 +115,12 @@ class HomeViewController: BaseViewController {
                 }
             }
         }
+        
+        getParamDefault()
+        ProgressView.shared.show()
+        self.isFilter = true
+        presenter?.filterRecord(param: paramFilter)
+        presenter?.getPositionRange()
         
         lbPosition.text = UserDefaultHelper.shared.address
         callAPIPosition()
@@ -221,9 +222,6 @@ class HomeViewController: BaseViewController {
     }
     
     @objc private func refreshData(_ sender: Any) {
-        // Fetch Weather Data
-//        refreshFilter()
-//        getParamDefault()
         self.refreshControl.endRefreshing()
         offset = 0
         paramFilter.offset = 0
