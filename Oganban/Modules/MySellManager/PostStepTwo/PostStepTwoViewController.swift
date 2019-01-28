@@ -186,7 +186,8 @@ class PostStepTwoViewController: BaseViewController {
         }
         
         if vMoney.isCheck {
-            if let intQuality = Double(vMoney.textField.text&.replacingOccurrences(of: ".", with: "")) {
+            if !vMoney.textField.text&.isEmpty {
+                let intQuality = vMoney.textField.text&.formatToDouble(digit: 0)
                 if intQuality < 0 {
                     lbNotice.text = "Vui lòng nhập giá tiền"
                     return false
@@ -203,7 +204,8 @@ class PostStepTwoViewController: BaseViewController {
         }
         
         if vCoin.isCheck {
-            if let intQuality = Double(vCoin.textField.text&) {
+            if !vCoin.textField.text&.isEmpty {
+                let intQuality = vCoin.textField.text&.formatToDouble(digit: 2)
                 if intQuality < 0 {
                     lbNotice.text = "Vui lòng nhập Ơ coin"
                     return false
