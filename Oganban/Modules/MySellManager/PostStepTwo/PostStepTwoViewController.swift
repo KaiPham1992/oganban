@@ -186,7 +186,7 @@ class PostStepTwoViewController: BaseViewController {
         }
         
         if vMoney.isCheck {
-            if let intQuality = Double(vMoney.textField.text&) {
+            if let intQuality = Double(vMoney.textField.text&.replacingOccurrences(of: ".", with: "")) {
                 if intQuality < 0 {
                     lbNotice.text = "Vui lòng nhập giá tiền"
                     return false

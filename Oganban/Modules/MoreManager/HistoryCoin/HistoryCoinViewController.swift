@@ -117,17 +117,10 @@ extension HistoryCoinViewController: UITableViewDelegate, UITableViewDataSource 
          if coin.type == "order_buyer" {
             let vc = MyBuyDetailRouter.createModule(orderId: coin.id&, isSaler: false)
             self.push(controller: vc)
-         } else {
+         } else if coin.type == "order_seller" {
             let vc = MyBuyDetailRouter.createModule(orderId: coin.id&, isSaler: true)
             self.push(controller: vc)
         }
-//        if coin.type == "order_buyer" {
-//            let vc = OrderBuyDetailRouter.createModule(recordId: coin.id&)
-//            self.push(controller: vc)
-//        } else if coin.type == "order_seller" {
-//            let vc = OrderDetailRouter.createModule(recordId: coin.id&)
-//            self.push(controller: vc)
-//        }
     }
 }
 

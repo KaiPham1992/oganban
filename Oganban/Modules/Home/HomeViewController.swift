@@ -194,7 +194,7 @@ class HomeViewController: BaseViewController {
             if  self.dataSource[index].title& == "Không giới hạn" {
                 self.paramFilter.radius = ""
             } else {
-                self.paramFilter.radius = self.dataSource[index].title&
+                self.paramFilter.radius = self.dataSource[index].value
             }
             self.distance = self.dataSource[index]
             self.isFilter = true

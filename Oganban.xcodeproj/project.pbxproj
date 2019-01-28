@@ -1895,6 +1895,7 @@
 		DE442C6421CFBDA40051C0B8 /* HeaderOrderDetail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderOrderDetail.xib; sourceTree = "<group>"; };
 		DE442C6921CFC1BD0051C0B8 /* ReplyCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyCommentCell.swift; sourceTree = "<group>"; };
 		DE442C6A21CFC1BD0051C0B8 /* ReplyCommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReplyCommentCell.xib; sourceTree = "<group>"; };
+		DE5397DE21FA170F00535B7D /* Oganban-AppStore.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Oganban-AppStore.entitlements"; sourceTree = "<group>"; };
 		DE5E083B21E1C1010053EC9D /* MyBuyDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBuyDetailPresenter.swift; sourceTree = "<group>"; };
 		DE5E083C21E1C1010053EC9D /* MyBuyDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBuyDetailRouter.swift; sourceTree = "<group>"; };
 		DE5E083D21E1C1020053EC9D /* MyBuyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBuyDetailViewController.swift; sourceTree = "<group>"; };
@@ -2822,6 +2823,7 @@
 		CB3A8F0121C64FC1008144BD = {
 			isa = PBXGroup;
 			children = (
+				DE5397DE21FA170F00535B7D /* Oganban-AppStore.entitlements */,
 				DEF7940321F3128200CE5CB3 /* Oganban-Dev.entitlements */,
 				DEF7940221F3127700CE5CB3 /* Oganban-Prod.entitlements */,
 				CB3A8F0C21C64FC1008144BD /* Oganban */,
@@ -5829,7 +5831,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Oganban/Oganban.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "Oganban-AppStore.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = Y79MW4TYLW;
@@ -5860,7 +5862,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Oganban/Oganban.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "Oganban-AppStore.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = Y79MW4TYLW;
