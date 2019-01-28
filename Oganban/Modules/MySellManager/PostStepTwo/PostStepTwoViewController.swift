@@ -180,6 +180,17 @@ class PostStepTwoViewController: BaseViewController {
             return false
         }
         
+        if vAddress1.isCheck && vAddress1.textField.text&.trim().isEmpty {
+            lbNotice.text = "Vui lòng chọn địa chỉ đăng bán 1"
+            return false
+        }
+        
+        if vAddress2.isCheck && vAddress2.textField.text&.trim().isEmpty {
+            lbNotice.text = "Vui lòng chọn địa chỉ đăng bán 2"
+            return false
+        }
+        
+        
         if  !vCoin.isCheck && !vMoney.isCheck && !isService {
             lbNotice.text = "Vui lòng chọn phương thức thanh toán"
             return false
