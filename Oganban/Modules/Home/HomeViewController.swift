@@ -68,6 +68,8 @@ class HomeViewController: BaseViewController {
     var isFilterTextfield = false
     var isFilter = false
     var timeCall: Timer?
+    var isCalculatorHeight = true
+    var isCalculatorHeightLeft = true
     
     //------database LIMIT
     let itemsPerBatch = 40
@@ -552,16 +554,28 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueTableCell(LeftMenuCell.self)
             cell.lbTitle.text = menu[indexPath.row].name
             cell.lbTitle.textColor = menu[indexPath.row].isSelected ? .yellow : .white
-            self.heightLeft.constant = heightContent < heightMax ? tableView.contentSize.height : (heightMax)
+            if isCalculatorHeightLeft {
+                self.heightLeft.constant = heightContent < heightMax ? tableView.contentSize.height : (heightMax)
+            } else {
+                isCalculatorHeightLeft = true
+            }
             cell.indexPath = indexPath
             cell.delegate = self
             return cell
             
         case tbRight:
             let cell = tableView.dequeueTableCell(MenuCell.self)
-            cell.lbTitle.text = menu[index].cateChild[indexPath.row].name
-            self.heightRight.constant = heightContent < heightMax ? tableView.contentSize.height : (heightMax)
-            cell.isSelect = menu[index].cateChild[indexPath.row].isSelected
+            if index != 0 {
+                cell.lbTitle.text = menu[index].cateChild[indexPath.row].name
+                if isCalculatorHeight {
+                    self.heightRight.constant = heightContent < heightMax ? tableView.contentSize.height : (heightMax)
+                } else {
+                    isCalculatorHeight = true
+                }
+                
+                cell.isSelect = menu[index].cateChild[indexPath.row].isSelected
+            }
+            
             return cell
             
         default:
@@ -622,6 +636,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                         }
                     }
                 }
+                isCalculatorHeight = false
                 tbRight.reloadRows(at: [indexPath], with: .none)
             }
             
@@ -707,6 +722,7 @@ extension HomeViewController: LeftMenuCellDelegate {
             if oldParentSelected != index {
                 menu[oldParentSelected*].isSelected = false
                 indexReload = oldParentSelected
+                isCalculatorHeightLeft = false
                 tbLeft.reloadRows(at: [IndexPath(row: oldParentSelected*, section: indexPath.section)], with: .none)
                 for (tempInt, item) in oldChildSelected.enumerated() {
                     menu[oldParentSelected*].cateChild[item].isSelected = false
@@ -715,6 +731,7 @@ extension HomeViewController: LeftMenuCellDelegate {
                 oldChildSelected.removeAll()
             }
             menu[index].isSelected = true
+            isCalculatorHeightLeft = false
             tbLeft.reloadRows(at: [indexPath], with: .none)
             tbRight.reloadData()
             tbRight.isHidden = false
