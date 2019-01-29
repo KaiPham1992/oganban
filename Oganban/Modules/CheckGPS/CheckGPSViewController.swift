@@ -103,6 +103,7 @@ extension CheckGPSViewController: CLLocationManagerDelegate {
                     }
                    
                     UserDefaultHelper.shared.saveLocation(lat: CLLocationDegrees(pdblLatitude), long: CLLocationDegrees(pdblLongitude), address: addressString)
+                    NotificationCenter.default.post(name: Notification.Name("SaveLocation"), object: nil)
                 }
         })
     }

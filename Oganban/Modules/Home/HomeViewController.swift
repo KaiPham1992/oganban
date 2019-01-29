@@ -86,13 +86,19 @@ class HomeViewController: BaseViewController {
         configureCollectionView()
         configureTableView()
         presenter?.getCategoryMerge()
+
+        getParamDefault()
+        ProgressView.shared.show()
+        self.isFilter = true
+        presenter?.filterRecord(param: paramFilter)
+        presenter?.getPositionRange()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(didSaveLocation), name: Notification.Name("SaveLocation"), object: nil)
     }
     
     override func setUpNavigation() {
         super.setUpNavigation()
         setRedStatusBar()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -118,15 +124,17 @@ class HomeViewController: BaseViewController {
             }
         }
         
+        lbPosition.text = UserDefaultHelper.shared.address
+        callAPIPosition()
+        timeCall = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(callAPI), userInfo: nil, repeats: true)
+    }
+    
+    @objc func didSaveLocation() {
         getParamDefault()
         ProgressView.shared.show()
         self.isFilter = true
         presenter?.filterRecord(param: paramFilter)
         presenter?.getPositionRange()
-        
-        lbPosition.text = UserDefaultHelper.shared.address
-        callAPIPosition()
-        timeCall = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(callAPI), userInfo: nil, repeats: true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
