@@ -29,6 +29,7 @@ class PostRecordParam: BaseParam {
     var price: String?
     var coin: String?
     var isGpsCurrent: Int?
+    
     override func mapping(map: Map) {
         super.mapping(map: map)
         
@@ -39,8 +40,8 @@ class PostRecordParam: BaseParam {
         self.expireDate        <- map["expired_date"]
         self.aboutRecord         <- map["about_record"]
         
-        self.lat         <- map["latitude"]
-        self.long          <- map["longitude"]
+//        self.lat         <- map["latitude"]
+//        self.long          <- map["longitude"]
         
         self.lat2         <- map["latitude_2"]
         self.long2          <- map["longitude_2"]

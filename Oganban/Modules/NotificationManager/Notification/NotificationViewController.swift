@@ -47,7 +47,7 @@ class NotificationViewController: BaseViewController {
         checkLogin()
         
         if !tbNotification.isHidden { // if login
-            presenter?.getNotification(offset: 0)
+            
             DataManager.shared.getNotificationCount { (count) in
                 if let tabItems = self.tabBarController?.tabBar.items {
                     let tabItem = tabItems[3]
@@ -70,13 +70,14 @@ class NotificationViewController: BaseViewController {
     
     func checkLogin() {
         
-        hideNoData()
-        
         if UserDefaultHelper.shared.isLoggedIn {
             tbNotification.isHidden = false
-            
+            presenter?.getNotification(offset: 0)
+            btnLogin.isHidden = true
         } else {
             tbNotification.isHidden = true
+            btnLogin.isHidden = false
+            hideNoData()
         }
     }
     

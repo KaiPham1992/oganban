@@ -41,6 +41,8 @@ enum UserEndPoint {
     case getRecordByFavoriteUser(offset: Int, limit: Int, accountId: Int)
     
     case getProfileUser()
+    
+    case getGPSPosition(lat: String, long: String)
 }
 
 extension UserEndPoint: EndPointType {
@@ -92,6 +94,8 @@ extension UserEndPoint: EndPointType {
             return "_api/order/get_history_coin"
         case .getProfileUser:
             return "_api/user/get_profile_user"
+        case .getGPSPosition:
+            return "_api/user/get_gps_position"
         }
         
     }
@@ -100,7 +104,7 @@ extension UserEndPoint: EndPointType {
         
         switch self {
             
-        case .login, .fogotPassword, .checkLogin, .logout, .loginGmail, .loginFacebook, .verifyPhone, .getPointHistory, .getListFavorite, .addFavorite, .addFavoriteStaff, .signUp, .uploadAvatar, .postRating, .getFavourite, .getHistoryBuy, .removeFavourite, .getHistoryCoin, .getRecordByFavoriteUser:
+        case .login, .fogotPassword, .checkLogin, .logout, .loginGmail, .loginFacebook, .verifyPhone, .getPointHistory, .getListFavorite, .addFavorite, .addFavoriteStaff, .signUp, .uploadAvatar, .postRating, .getFavourite, .getHistoryBuy, .removeFavourite, .getHistoryCoin, .getRecordByFavoriteUser, .getGPSPosition:
             return .post
         case .getCaptcha, .getIntroduceList, .getProfileUser:
             return .get
@@ -205,6 +209,9 @@ extension UserEndPoint: EndPointType {
                       "limit":limit]
         case .getProfileUser:
             return [:]
+        case .getGPSPosition(let lat, let long):
+            return ["current_latitude": lat,
+                    "current_longitude": long]
         }
     }
     

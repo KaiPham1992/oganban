@@ -110,11 +110,15 @@ class OrderBuyDetailViewController: BaseViewController {
     
     @IBAction func btnOrderBuyTapped() {
         if UserDefaultHelper.shared.isLoggedIn {
-//            guard let record = self.record, let quantity = record.quantity else { return }
-//            if quantity > 1 {
+            //            guard let record = self.record, let quantity = record.quantity else { return }
+            //            if quantity > 1 {
+            guard let _recordID = self.recordId else { return }
+            if record?.isService == "1" {
+                self.presenter?.bookingOrder(recordID: _recordID, price: 0, quantity: 0, paymentType: "cash", isService: true)
+            } else {
                 PopUpHelper.shared.showUpdateQuantityBuy { (quantity) in
                     guard let qtyStr = quantity, let qty = Int(qtyStr) else { return }
-                    guard let _recordID = self.recordId, let totalCoin = UserDefaultHelper.shared.coin, let totalQty = self.record?.quantity else { return }
+                    guard let totalCoin = UserDefaultHelper.shared.coin, let totalQty = self.record?.quantity else { return }
                     
                     if self.price == 0.0 {
                         PopUpHelper.shared.showMessageHaveAds(message: "Vui lòng chọn phương thức thanh toán")
@@ -136,10 +140,11 @@ class OrderBuyDetailViewController: BaseViewController {
                     
                     self.presenter?.bookingOrder(recordID: _recordID, price: self.price, quantity: qty, paymentType: self.paymentType, isService: false)
                 }
-//            } else if quantity == 1 {
-//                guard let _recordID = self.recordId else { return }
-//                self.presenter?.bookingOrder(recordID: _recordID, price: self.price, quantity: 1, paymentType: self.paymentType, isService: false)
-//            }
+            }
+            //            } else if quantity == 1 {
+            //                guard let _recordID = self.recordId else { return }
+            //                self.presenter?.bookingOrder(recordID: _recordID, price: self.price, quantity: 1, paymentType: self.paymentType, isService: false)
+            //            }
             
         } else {
             self.presenter?.gotoLogin()

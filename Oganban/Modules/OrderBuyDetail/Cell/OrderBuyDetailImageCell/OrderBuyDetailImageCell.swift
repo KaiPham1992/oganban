@@ -62,15 +62,23 @@ class OrderBuyDetailImageCell: BaseTableCell {
         
         radioMoney.setTwoImage(imgCheck: AppImage.imgCheckedCircle, imgUnCheck: AppImage.imgCheckCircle)
         radioCoin.setTwoImage(imgCheck: AppImage.imgCheckedCircle, imgUnCheck: AppImage.imgCheckCircle)
+        heightMoneyCoin.constant = 50
     }
     
     func hideMoneyCoin() {
         if record?.price == nil && record?.coin == nil {
-            heightMoneyCoin.constant = 0
-        } else if record?.price == nil || record?.coin == nil {
-            heightMoneyCoin.constant = 25
-        } else {
-            heightMoneyCoin.constant =  50
+            radioMoney.isHidden = true
+            radioCoin.isHidden = true
+        } else if record?.price == nil  {
+            radioMoney.isHidden = true
+            radioCoin.isHidden = false
+        } else if  record?.coin == nil {
+            radioMoney.isHidden = false
+            radioCoin.isHidden = true
+        }
+        else {
+            radioMoney.isHidden = false
+            radioCoin.isHidden = false
         }
         
     }

@@ -35,6 +35,7 @@ class PostStepTwoViewController: BaseViewController {
     var record: RecordEntity?
     var isCopyUpdate: Bool = false
     var isService: Bool = false
+    var isGPSCurrent: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -175,7 +176,9 @@ class PostStepTwoViewController: BaseViewController {
                 coin = "\(vCoin.textField.text&.formatToDouble(digit: 2))"
             }
             
-            param.updateInfoStepTwo(address1: address1, lat1: lat1, long1: long1, address2: address2, lat2: lat2, long2: long2, isLatlong: vCheckGPS.isChecked, price: price, coin: coin, isGpsCurrent: 1)
+            isGPSCurrent = vCheckGPS.isChecked ? 1 : 0
+            
+            param.updateInfoStepTwo(address1: address1, lat1: lat1, long1: long1, address2: address2, lat2: lat2, long2: long2, isLatlong: false, price: price, coin: coin, isGpsCurrent: isGPSCurrent)
             
             presenter?.postRecord(param: param)
         }
@@ -186,6 +189,17 @@ class PostStepTwoViewController: BaseViewController {
             lbNotice.text = "Vui lòng chọn địa chỉ đăng bán"
             return false
         }
+        
+        if vAddress1.isCheck && vAddress1.textField.text&.trim().isEmpty {
+            lbNotice.text = "Vui lòng chọn địa chỉ đăng bán 1"
+            return false
+        }
+        
+        if vAddress2.isCheck && vAddress2.textField.text&.trim().isEmpty {
+            lbNotice.text = "Vui lòng chọn địa chỉ đăng bán 2"
+            return false
+        }
+        
         
         if  !vCoin.isCheck && !vMoney.isCheck && !isService {
             lbNotice.text = "Vui lòng chọn phương thức thanh toán"

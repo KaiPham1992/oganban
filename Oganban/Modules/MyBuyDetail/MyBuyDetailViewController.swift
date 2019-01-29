@@ -99,6 +99,8 @@ class MyBuyDetailViewController: BaseViewController {
     var orderId: String = ""
     var isSaler = true
 
+    var isNotArrived: Bool = false
+    
      @IBOutlet weak var tbDetail: UITableView!
     
     // buyer
@@ -143,6 +145,9 @@ class MyBuyDetailViewController: BaseViewController {
 
 extension MyBuyDetailViewController: MyBuyDetailViewProtocol {
     func didChangeStatusOrder() {
+        if isNotArrived {
+            PopUpHelper.shared.showMessageHaveAds(message: "Đã phản hồi đơn hàng chưa tới !")
+        }
         self.pop()
     }
     
@@ -239,6 +244,7 @@ extension MyBuyDetailViewController: MyBuyImageCellDelegate {
     
     @IBAction func btnNotArrivedTapped() {
         self.presenter?.changedStatusOrder(status: OrderStatusKey.orderNotYetArrived, id: self.orderId)
+        isNotArrived = true
     }
     
     @IBAction func btnRatingTapped() {

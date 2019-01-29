@@ -13,6 +13,7 @@ class MoreViewController: BaseViewController {
     var presenter: MorePresenterProtocol?
     
     @IBOutlet weak var tvMore: UITableView!
+    
     var rowList: [MoreEntityType] = [MoreEntityType]()
     
     var user: UserEntity? {
@@ -47,7 +48,10 @@ class MoreViewController: BaseViewController {
         }
         
         presenter?.getProfileUser()
+        callAPIPosition()
+
     }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -97,6 +101,12 @@ class MoreViewController: BaseViewController {
         tvMore.registerXibFile(MoreCell.self)
         tvMore.tableFooterView = UIView()
         tvMore.separatorStyle = .none
+    }
+    
+    func callAPIPosition() {
+        Provider.shared.userAPIService.getGPSPosition(lat: UserDefaultHelper.shared.lat, long: UserDefaultHelper.shared.long, success: { (_) in
+        }) { (_) in
+        }
     }
     
     @objc func btnReloadPage() {

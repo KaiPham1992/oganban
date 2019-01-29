@@ -37,6 +37,7 @@ protocol OrderDetailInteractorOutputProtocol: class {
     func didSendComment(comment: CommentEntity?)
     func didSubSendComment(comment: SubCommentEntity?)
     func didGetComment(commentResponseEntity: CommentResponseEntity?)
+    
 }
 
 protocol OrderDetailInteractorInputProtocol: class {

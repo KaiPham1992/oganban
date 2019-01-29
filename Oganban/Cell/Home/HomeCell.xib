@@ -237,8 +237,10 @@
             <size key="customSize" width="245" height="277"/>
             <connections>
                 <outlet property="imgAvatar" destination="s4e-sl-g31" id="kmw-0b-PG9"/>
+                <outlet property="imgMoney" destination="lLJ-jI-EYO" id="5D0-hK-KhK"/>
                 <outlet property="imgNew" destination="v5I-Cy-TKB" id="6zF-dB-ORT"/>
                 <outlet property="imgRecord" destination="SSo-j7-UlG" id="5h5-tB-6dx"/>
+                <outlet property="imgcoin" destination="c6A-js-Dv6" id="Eol-9c-oQN"/>
                 <outlet property="lbCoin" destination="MPP-1E-z2y" id="7yB-WP-krm"/>
                 <outlet property="lbDistanceAndTime" destination="M6c-9L-a6W" id="7he-Sw-rLC"/>
                 <outlet property="lbLevel" destination="0od-ir-elf" id="Ynx-YF-WE2"/>
@@ -252,7 +254,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="avatar" width="22.5" height="22.5"/>
+        <image name="avatar" width="30" height="30"/>
         <image name="ic_coin" width="14.5" height="20"/>
         <image name="ic_money" width="17" height="20"/>
         <image name="new_label" width="49" height="48"/>
