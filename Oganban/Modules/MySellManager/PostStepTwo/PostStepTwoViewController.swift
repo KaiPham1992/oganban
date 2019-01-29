@@ -62,7 +62,7 @@ class PostStepTwoViewController: BaseViewController {
         
         vCoin.setTextField(title: "Trao đổi Ơcoin", placeHolder: "Nhập số Ơcoin sẽ bán")
         vCoin.btnCheckBox.lbTitle.textColor = AppColor.gray_65_65_65
-        vCoin.textField.keyboardType = UIKeyboardType.numberPad
+        vCoin.textField.keyboardType = UIKeyboardType.decimalPad
 //        vCoin.lbType.text = "ơ"
 //        vCoin.lbType.underlineLastCharacter()
         
@@ -88,6 +88,9 @@ class PostStepTwoViewController: BaseViewController {
         
     }
     
+    var index = 0
+    var characterCount = 0
+    
     @objc func textFieldDidChange(_ textField: UITextField) {
         switch textField {
         case vMoney.textField:
@@ -95,9 +98,28 @@ class PostStepTwoViewController: BaseViewController {
                 vMoney.textField.text = amountString
             }
         case vCoin.textField:
-            if let amountString = textField.text?.currencyInputFormatting(digit: 2) {
-               vCoin.textField.text = amountString
+            if !textField.text&.contains(".") {
+                index = 0
+                if let amountString = textField.text?.currencyInputFormatting(digit: 0) {
+                    vCoin.textField.text = amountString
+                }
+            } else {
+                if index < 3 {
+                    if textField.text&.count > characterCount {
+                        index += 1
+                    } else {
+                        index -= 1
+                    }
+                } else {
+                    if textField.text&.count > characterCount {
+                        textField.text = String(textField.text&.dropLast())
+                        index = 3
+                    } else {
+                        index -= 1
+                    }
+                }
             }
+            characterCount = textField.text&.count
         default:
             break
         }
