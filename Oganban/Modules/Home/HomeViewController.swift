@@ -199,6 +199,7 @@ class HomeViewController: BaseViewController {
             }
             self.distance = self.dataSource[index]
             self.isFilter = true
+            ProgressView.shared.show()
             self.presenter?.filterRecord(param: self.paramFilter)
         }
     }
@@ -218,6 +219,7 @@ class HomeViewController: BaseViewController {
         paramFilter.offset = 0
         isFilter = true
         reachedEndOfItems = false
+        ProgressView.shared.show()
         presenter?.filterRecord(param: paramFilter)
     }
     
@@ -287,6 +289,7 @@ class HomeViewController: BaseViewController {
         paramFilter.keyword = tfSearch.text&
         isFilterTextfield = true
         isFilter = true
+        ProgressView.shared.show()
         presenter?.filterRecord(param: paramFilter)
     }
     
@@ -317,6 +320,8 @@ class HomeViewController: BaseViewController {
         
         paramFilter.categoryId = listCate
         isFilter = true
+        ProgressView.shared.show()
+        paramFilter.isParent = nil
         presenter?.filterRecord(param: paramFilter)
     }
 }
@@ -577,6 +582,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 paramFilter.isParent = "1"
             }
             isFilter = true
+            ProgressView.shared.show()
             presenter?.filterRecord(param: paramFilter)
             hideDropdown()
         case tbRight:
@@ -585,7 +591,15 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 menu[index].cateChild[indexPath.row].isSelected = !menu[index].cateChild[indexPath.row].isSelected
                 
                 if menu[index].cateChild[indexPath.row].isSelected {
-                    oldChildSelected.append(indexPath.row)
+                    var check = false
+                    for child in oldChildSelected {
+                        if child == indexPath.row {
+                            check = true
+                        }
+                    }
+                    if !check {
+                        oldChildSelected.append(indexPath.row)
+                    }
                 } else {
                     for (tempInt, item) in oldChildSelected.enumerated() {
                         if item == indexPath.row {
@@ -600,21 +614,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             break
         }
     }
-    
-    
-    //    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-    //        if indexPath.row != indexReload {
-    //            cell.transform = CGAffineTransform(rotationAngle: (-.pi))
-    //
-    //            UIView.animate(
-    //                withDuration: 0.3,
-    //                delay: 0,
-    //                options: [.curveEaseInOut],
-    //                animations: {
-    //                    cell.transform = CGAffineTransform(translationX: 0, y: 0)
-    //            })
-    //        }
-    //    }
 }
 
 //MARK: - TEXTFIELD DELEGATE
@@ -633,6 +632,7 @@ extension HomeViewController: UITextFieldDelegate {
         isFilter = true
         btnCancel.isHidden = true
         btnFavorite.isHidden = false
+        ProgressView.shared.show()
         presenter?.filterRecord(param: paramFilter)
         return true
     }
@@ -646,6 +646,7 @@ extension HomeViewController: UITextFieldDelegate {
             isFilter = true
             btnCancel.isHidden = true
             btnFavorite.isHidden = false
+            ProgressView.shared.show()
             presenter?.filterRecord(param: paramFilter)
         }
     }
@@ -670,6 +671,7 @@ extension HomeViewController: PositionViewControllerDelegate {
         self.distance = distance
         self.paramFilter.radius = distance.value&
         isFilter = true
+        ProgressView.shared.show()
         presenter?.filterRecord(param: paramFilter)
     }
     
