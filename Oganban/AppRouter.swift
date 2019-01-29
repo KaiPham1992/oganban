@@ -46,7 +46,7 @@ class AppRouter {
     
     func handleNotification(userInfo: [AnyHashable : Any]) {
         guard let aps = userInfo["aps"] as? [String: Any]  else { return }
-        guard let key = aps["category"] as? String else { return }
+        guard let key = aps["screen"] as? String else { return }
         guard let id = aps["obj_id"] as? String else { return }
         let json = JSON(aps)
         print(json)
