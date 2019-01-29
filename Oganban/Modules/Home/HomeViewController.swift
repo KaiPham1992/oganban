@@ -594,8 +594,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             menu[oldParentSelected*].isSelected = false
             for (tempInt, item) in oldChildSelected.enumerated() {
                 menu[oldParentSelected*].cateChild[item].isSelected = false
-                tbRight.reloadRows(at: [IndexPath(item: item, section: indexPath.section)], with: .none)
+                
+//                tbRight.reloadRows(at: [IndexPath(item: item, section: indexPath.section)], with: .none)
             }
+//            tbRight.reloadData()
             if indexPath.row == 0 {
                 oldChildSelected.removeAll()
             }
@@ -603,7 +605,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             
             menu[index].isSelected = true
             indexReload = oldParentSelected
-            tbLeft.reloadRows(at: [IndexPath(item: oldParentSelected*, section: indexPath.section), indexPath], with: .none)
+            tbLeft.reloadData()
+//            tbLeft.reloadRows(at: [IndexPath(item: oldParentSelected*, section: indexPath.section), indexPath], with: .none)
             oldParentSelected = index
             lbCategory.text = menu[index].name
             if indexPath.row == 0 {
