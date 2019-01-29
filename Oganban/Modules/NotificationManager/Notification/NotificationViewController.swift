@@ -152,10 +152,10 @@ extension NotificationViewController: UITableViewDelegate, UITableViewDataSource
         
         switch noti.screen& {
         case "ORDER_BUYER":
-            let vc = OrderBuyDetailRouter.createModule(recordId: noti.objectId&)
+            let vc = MyBuyDetailRouter.createModule(orderId: noti.objectId&, isSaler: false)
             self.push(controller: vc)
         case "ORDER_SELLER":
-            let vc = OrderDetailRouter.createModule(recordId: noti.objectId&)
+            let vc = MyBuyDetailRouter.createModule(orderId: noti.objectId&, isSaler: true)
             self.push(controller: vc)
         case "RE_COMMENT":
             let vc = CommentDetailRouter.createModule(recordId: noti.objectId&)

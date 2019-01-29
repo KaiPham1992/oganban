@@ -37,6 +37,14 @@ class AppRouter {
         windowApp.rootViewController = tabBar
     }
     
+    func openTabbar(index: Int) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate, let windowApp = appDelegate.window else { return }
+        //---
+        let tabBar = TabbarViewController()
+        tabBar.selectedIndex = index
+        windowApp.rootViewController = tabBar
+    }
+    
     func openTest() {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate, let windowApp = appDelegate.window else { return }
         //---
@@ -46,29 +54,30 @@ class AppRouter {
     
     func handleNotification(userInfo: [AnyHashable : Any]) {
         guard let aps = userInfo["aps"] as? [String: Any]  else { return }
-        guard let key = aps["screen"] as? String else { return }
-        guard let id = aps["obj_id"] as? String else { return }
+        guard let topVC = UIApplication.topViewController() else { return }
+//        guard let key = aps["screen"] as? String else { return }
+//        guard let id = aps["obj_id"] as? String else { return }
+        let id = "142"
+        let key = "ORDER_BUYER"
         let json = JSON(aps)
         print(json)
+        
+        
         switch key {
         case "ORDER_BUYER":
-            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate, let windowApp = appDelegate.window else { return }
-            let vc = OrderBuyDetailRouter.createModule(recordId: id)
-            windowApp.rootViewController = vc
+            let vc = MyBuyDetailRouter.createModule(orderId: id, isSaler: false)
+            topVC.push(controller: vc)
         case "ORDER_SELLER":
-            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate, let windowApp = appDelegate.window else { return }
-            let vc = OrderDetailRouter.createModule(recordId: id)
-            windowApp.rootViewController = vc
+            let vc = MyBuyDetailRouter.createModule(orderId: id, isSaler: true)
+            topVC.push(controller: vc)
         case "RE_COMMENT":
-            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate, let windowApp = appDelegate.window else { return }
             let vc = CommentDetailRouter.createModule(recordId: id)
-            windowApp.rootViewController = vc
+            topVC.push(controller: vc)
         case "COMMENT":
-            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate, let windowApp = appDelegate.window else { return }
             let vc = CommentDetailRouter.createModule(recordId: id)
-           windowApp.rootViewController = vc
+            topVC.push(controller: vc)
         default:
-            openTabbar()
+           break
         }
     }
 }
