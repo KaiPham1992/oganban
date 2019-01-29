@@ -215,7 +215,10 @@ class HomeViewController: BaseViewController {
         let radius = UserDefaultHelper.shared.radius?.value
         let long = UserDefaultHelper.shared.long
         let lat = UserDefaultHelper.shared.lat
-        paramFilter = RecordParam(long: long, lat: lat, radius: radius)
+        paramFilter.long = long
+        paramFilter.lat = lat
+        paramFilter.radius = radius
+//        paramFilter = RecordParam(long: long, lat: lat, radius: radius)
     }
     
     func callAPIPosition() {
