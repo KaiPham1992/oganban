@@ -43,7 +43,7 @@ class NotificationViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.listNotification = []
-        
+        showTabbar()
         checkLogin()
         
         if !tbNotification.isHidden { // if login
