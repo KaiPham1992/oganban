@@ -68,6 +68,8 @@ class HomeViewController: BaseViewController {
     var isFilterTextfield = false
     var isFilter = false
     var timeCall: Timer?
+    var isCalculatorHeight = true
+    var isCalculatorHeightLeft = true
     
     //------database LIMIT
     let itemsPerBatch = 40
@@ -202,6 +204,7 @@ class HomeViewController: BaseViewController {
             }
             self.distance = self.dataSource[index]
             self.isFilter = true
+            ProgressView.shared.show()
             self.presenter?.filterRecord(param: self.paramFilter)
         }
     }
@@ -212,7 +215,10 @@ class HomeViewController: BaseViewController {
         let radius = UserDefaultHelper.shared.radius?.value
         let long = UserDefaultHelper.shared.long
         let lat = UserDefaultHelper.shared.lat
-        paramFilter = RecordParam(long: long, lat: lat, radius: radius)
+        paramFilter.long = long
+        paramFilter.lat = lat
+        paramFilter.radius = radius
+//        paramFilter = RecordParam(long: long, lat: lat, radius: radius)
     }
     
     func callAPIPosition() {
@@ -227,6 +233,7 @@ class HomeViewController: BaseViewController {
         paramFilter.offset = 0
         isFilter = true
         reachedEndOfItems = false
+        ProgressView.shared.show()
         presenter?.filterRecord(param: paramFilter)
     }
     
@@ -300,6 +307,7 @@ class HomeViewController: BaseViewController {
         paramFilter.keyword = tfSearch.text&
         isFilterTextfield = true
         isFilter = true
+        ProgressView.shared.show()
         presenter?.filterRecord(param: paramFilter)
     }
     
@@ -330,6 +338,8 @@ class HomeViewController: BaseViewController {
         
         paramFilter.categoryId = listCate
         isFilter = true
+        ProgressView.shared.show()
+        paramFilter.isParent = nil
         presenter?.filterRecord(param: paramFilter)
     }
 }
@@ -547,16 +557,28 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueTableCell(LeftMenuCell.self)
             cell.lbTitle.text = menu[indexPath.row].name
             cell.lbTitle.textColor = menu[indexPath.row].isSelected ? .yellow : .white
-            self.heightLeft.constant = heightContent < heightMax ? tableView.contentSize.height : (heightMax)
+            if isCalculatorHeightLeft {
+                self.heightLeft.constant = heightContent < heightMax ? tableView.contentSize.height : (heightMax)
+            } else {
+                isCalculatorHeightLeft = true
+            }
             cell.indexPath = indexPath
             cell.delegate = self
             return cell
             
         case tbRight:
             let cell = tableView.dequeueTableCell(MenuCell.self)
-            cell.lbTitle.text = menu[index].cateChild[indexPath.row].name
-            self.heightRight.constant = heightContent < heightMax ? tableView.contentSize.height : (heightMax)
-            cell.isSelect = menu[index].cateChild[indexPath.row].isSelected
+            if index != 0 {
+                cell.lbTitle.text = menu[index].cateChild[indexPath.row].name
+                if isCalculatorHeight {
+                    self.heightRight.constant = heightContent < heightMax ? tableView.contentSize.height : (heightMax)
+                } else {
+                    isCalculatorHeight = true
+                }
+                
+                cell.isSelect = menu[index].cateChild[indexPath.row].isSelected
+            }
+            
             return cell
             
         default:
@@ -592,6 +614,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 paramFilter.isParent = "1"
             }
             isFilter = true
+            ProgressView.shared.show()
             presenter?.filterRecord(param: paramFilter)
             hideDropdown()
         case tbRight:
@@ -600,7 +623,15 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 menu[index].cateChild[indexPath.row].isSelected = !menu[index].cateChild[indexPath.row].isSelected
                 
                 if menu[index].cateChild[indexPath.row].isSelected {
-                    oldChildSelected.append(indexPath.row)
+                    var check = false
+                    for child in oldChildSelected {
+                        if child == indexPath.row {
+                            check = true
+                        }
+                    }
+                    if !check {
+                        oldChildSelected.append(indexPath.row)
+                    }
                 } else {
                     for (tempInt, item) in oldChildSelected.enumerated() {
                         if item == indexPath.row {
@@ -608,6 +639,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                         }
                     }
                 }
+                isCalculatorHeight = false
                 tbRight.reloadRows(at: [indexPath], with: .none)
             }
             
@@ -615,21 +647,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             break
         }
     }
-    
-    
-    //    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-    //        if indexPath.row != indexReload {
-    //            cell.transform = CGAffineTransform(rotationAngle: (-.pi))
-    //
-    //            UIView.animate(
-    //                withDuration: 0.3,
-    //                delay: 0,
-    //                options: [.curveEaseInOut],
-    //                animations: {
-    //                    cell.transform = CGAffineTransform(translationX: 0, y: 0)
-    //            })
-    //        }
-    //    }
 }
 
 //MARK: - TEXTFIELD DELEGATE
@@ -648,6 +665,7 @@ extension HomeViewController: UITextFieldDelegate {
         isFilter = true
         btnCancel.isHidden = true
         btnFavorite.isHidden = false
+        ProgressView.shared.show()
         presenter?.filterRecord(param: paramFilter)
         return true
     }
@@ -661,6 +679,7 @@ extension HomeViewController: UITextFieldDelegate {
             isFilter = true
             btnCancel.isHidden = true
             btnFavorite.isHidden = false
+            ProgressView.shared.show()
             presenter?.filterRecord(param: paramFilter)
         }
     }
@@ -685,6 +704,7 @@ extension HomeViewController: PositionViewControllerDelegate {
         self.distance = distance
         self.paramFilter.radius = distance.value&
         isFilter = true
+        ProgressView.shared.show()
         presenter?.filterRecord(param: paramFilter)
     }
     
@@ -705,6 +725,7 @@ extension HomeViewController: LeftMenuCellDelegate {
             if oldParentSelected != index {
                 menu[oldParentSelected*].isSelected = false
                 indexReload = oldParentSelected
+                isCalculatorHeightLeft = false
                 tbLeft.reloadRows(at: [IndexPath(row: oldParentSelected*, section: indexPath.section)], with: .none)
                 for (tempInt, item) in oldChildSelected.enumerated() {
                     menu[oldParentSelected*].cateChild[item].isSelected = false
@@ -713,6 +734,7 @@ extension HomeViewController: LeftMenuCellDelegate {
                 oldChildSelected.removeAll()
             }
             menu[index].isSelected = true
+            isCalculatorHeightLeft = false
             tbLeft.reloadRows(at: [indexPath], with: .none)
             tbRight.reloadData()
             tbRight.isHidden = false

@@ -77,11 +77,21 @@ class HomeCell: UICollectionViewCell {
         if record.coin == nil && record.price == nil {
             imgMoney.isHidden = true
             imgcoin.isHidden = true
-        } else if record.coin == nil {
+        } else {
+            imgMoney.isHidden = false
+            imgcoin.isHidden = false
+        }
+        
+        if record.coin == nil {
             imgcoin.isHidden = true
-        } else if  record.price == nil {
+        } else {
+            imgcoin.isHidden = false
+        }
+        
+        if record.price == nil {
             imgMoney.isHidden = true
-            
+        } else {
+            imgMoney.isHidden = false
         }
     }
 

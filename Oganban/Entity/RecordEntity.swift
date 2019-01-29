@@ -47,6 +47,7 @@ class RecordEntity: BaseEntity {
     var isFavorite: Int?
     var categoryName: String?
     var catrgotyID: String?
+    var isService: String?
     
     required init?(map: Map) {
         super.init()
@@ -96,6 +97,7 @@ class RecordEntity: BaseEntity {
         self.status <- map["status"]
         self.isTransaction <- map["is_transaction"]
         self.isFavorite <- map["is_favorite"]
+        self.isService <- map["is_service"]
     }
     
     var ratingFormat: String? {

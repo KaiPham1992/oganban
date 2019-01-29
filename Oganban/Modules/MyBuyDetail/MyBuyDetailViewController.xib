@@ -37,9 +37,9 @@
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uGM-6R-vnP">
                     <rect key="frame" x="0.0" y="627" width="375" height="40"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="By2-k0-n3h">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="By2-k0-n3h" userLabel="ĐÃ NHẬN HÀNG">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
-                            <state key="normal" title="ĐÃ NHẬN TIỀN">
+                            <state key="normal" title="ĐÃ NHẬN HÀNG">
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
