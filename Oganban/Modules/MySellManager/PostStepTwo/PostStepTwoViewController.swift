@@ -195,7 +195,10 @@ class PostStepTwoViewController: BaseViewController {
             }
             
             if vCoin.isCheck {
-                coin = "\(vCoin.textField.text&.formatToDouble(digit: 2))"
+                var tempString = vCoin.textField.text&
+                tempString = tempString.replacingOccurrences(of: ".", with: "").replacingOccurrences(of: ",", with: ".")
+                let intQuality = tempString.toDouble().roundedTwoDemical()
+                coin = "\(intQuality)"
             }
             
             isGPSCurrent = vCheckGPS.isChecked ? 1 : 0
@@ -248,7 +251,10 @@ class PostStepTwoViewController: BaseViewController {
         
         if vCoin.isCheck {
             if !vCoin.textField.text&.isEmpty {
-                let intQuality = vCoin.textField.text&.formatToDouble(digit: 2)
+                var tempString = vCoin.textField.text&
+                tempString = tempString.replacingOccurrences(of: ".", with: "").replacingOccurrences(of: ",", with: ".")
+                let intQuality = tempString.toDouble()
+                
                 if intQuality < 0 {
                     lbNotice.text = "Vui lòng nhập Ơ coin"
                     return false
