@@ -59,11 +59,15 @@ extension String {
         
         var amountWithPrefix = self
         
+//        Double(vMoney.textField.text&.replacingOccurrences(of: ".", with: ""))
+        
         // remove from String: "$", ".", ","
-        let regex = try! NSRegularExpression(pattern: "[^0-9]", options: .caseInsensitive)
+        let regex = try! NSRegularExpression(pattern: "[^0-9.]", options: .caseInsensitive)
         amountWithPrefix = regex.stringByReplacingMatches(in: amountWithPrefix, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.count), withTemplate: "")
         
-        let double = (amountWithPrefix as NSString).doubleValue
+        let num = amountWithPrefix.toDouble()
+        
+        let double = Double(round(100*num)/100)// (amountWithPrefix as NSString).doubleValue
         
         return double
     }

@@ -156,7 +156,8 @@ class PostStepTwoViewController: BaseViewController {
     @objc func editingChanged(textField: UITextField) {
         let money = textField.text&.formatToDouble(digit: 0)
         let coin = money / AppConstant.moneyToCoint
-        vCoin.textField.text = coin.roundedTwoDemical()
+        let num = coin.roundedTwoDemical()
+        vCoin.textField.text = num.currencyInputFormatting(digit: 2)
     }
     
     override func viewWillAppear(_ animated: Bool) {
