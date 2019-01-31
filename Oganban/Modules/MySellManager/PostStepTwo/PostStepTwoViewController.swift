@@ -81,15 +81,18 @@ class PostStepTwoViewController: BaseViewController {
         
         vMoney.textField.addTarget(self, action: #selector(textFieldDidChange), for: UIControl.Event.editingChanged)
         vCoin.textField.addTarget(self, action: #selector(textFieldDidChange), for: UIControl.Event.editingChanged)
-        
+        vCoin.textField.delegate = self
         vMoney.setUint(unit: "đ")
         vCoin.setUint(unit: "ơ")
         //        showDataSaved()
         
     }
     
-    var index = 0
-    var characterCount = 0
+//    var index = 0
+//    var characterCount = 0
+    
+    var tempCoinText = ""
+    var isEnterComma = false
     
     @objc func textFieldDidChange(_ textField: UITextField) {
         switch textField {
@@ -98,28 +101,41 @@ class PostStepTwoViewController: BaseViewController {
                 vMoney.textField.text = amountString
             }
         case vCoin.textField:
-            if !textField.text&.contains(".") {
-                index = 0
-                if let amountString = textField.text?.currencyInputFormatting(digit: 0) {
-                    vCoin.textField.text = amountString
-                }
+            tempCoinText = vCoin.textField.text&.replacingOccurrences(of: ",", with: "")
+            // Double
+            if tempCoinText.contains(".") {
+                let _coin = tempCoinText.toDouble()
+                print("Format : \(_coin.toCurrencyMyBuy)")
+                
+                vCoin.textField.text = _coin.toCurrencyMyBuy
             } else {
-                if index < 3 {
-                    if textField.text&.count > characterCount {
-                        index += 1
-                    } else {
-                        index -= 1
-                    }
-                } else {
-                    if textField.text&.count > characterCount {
-                        textField.text = String(textField.text&.dropLast())
-                        index = 3
-                    } else {
-                        index -= 1
-                    }
-                }
+                let _coin = tempCoinText.toDouble()
+                vCoin.textField.text = _coin.toCurrencyMyBuyNotDecimal
             }
-            characterCount = textField.text&.count
+            
+            
+//            if !textField.text&.contains(".") {
+//                index = 0
+//                if let amountString = textField.text?.currencyInputFormatting(digit: 0) {
+//                    vCoin.textField.text = amountString
+//                }
+//            } else {
+//                if index < 3 {
+//                    if textField.text&.count > characterCount {
+//                        index += 1
+//                    } else {
+//                        index -= 1
+//                    }
+//                } else {
+//                    if textField.text&.count > characterCount {
+//                        textField.text = String(textField.text&.dropLast())
+//                        index = 3
+//                    } else {
+//                        index -= 1
+//                    }
+//                }
+//            }
+//            characterCount = textField.text&.count
         default:
             break
         }
@@ -311,5 +327,39 @@ extension PostStepTwoViewController: CheckBoxTextFieldDelegate {
     
     func checkBoxTextField(checkBoxTextField: CheckBoxTextField, isChecked: Bool) {
         checkBoxTextField.textField.isEnabled = isChecked
+    }
+}
+
+extension PostStepTwoViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+       
+        if textField == vCoin.textField {
+            // when user click delete character
+            if string == "" {
+                return true
+            }
+            // user enter , the first
+            if textField.text&.isEmpty && (string == "," || string == ".") {
+                return false
+            }
+            
+            // can not enter two number after "."
+            let temp = vCoin.textField.text&
+            let split = temp.split(separator: ".")
+            if split.count > 1 && split[1].count >= 2 {
+                return false
+            }
+            
+            //-- check enter , or .
+            if (string == "," || string == ".") {
+                if !textField.text&.contains(".") {
+                     textField.text = "\(textField.text&)."
+                }
+               
+                return false
+            }
+        }
+        
+        return true
     }
 }

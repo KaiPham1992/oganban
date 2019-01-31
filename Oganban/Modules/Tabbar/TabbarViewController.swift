@@ -46,7 +46,7 @@ class TabbarViewController: UITabBarController {
     func setUpTabbar() {
         navigationItem.setHidesBackButton(true, animated: true)
 
-        let vcHome = HomeRouter.createModule()
+        let vcHome = PostStepTwoRouter.createModule(param: PostRecordParam(categoryId: "1", name: "", imgSrc: [], quantity: "1", expireDate: "", aboutRecord: "1"), isService: true) //HomeRouter.createModule()
         let vcMyBuy = MyBuyRouter.createModule()
         let vcMySell = MySellContainerRouter.createModule()
         let vcNotification = NotificationRouter.createModule()
