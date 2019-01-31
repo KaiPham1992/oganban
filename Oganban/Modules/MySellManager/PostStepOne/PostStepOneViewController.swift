@@ -122,6 +122,8 @@ class PostStepOneViewController: BaseViewController {
         tbLeft.dataSource = self
         tbRight.rowHeight = UITableView.automaticDimension
         tbLeft.rowHeight = UITableView.automaticDimension
+        tbLeft.backgroundColor = AppColor.main
+        tbRight.backgroundColor = AppColor.main
 //        hideDropdown()
         tbLeft.layer.cornerRadius = 10
         tbRight.layer.cornerRadius = 10
