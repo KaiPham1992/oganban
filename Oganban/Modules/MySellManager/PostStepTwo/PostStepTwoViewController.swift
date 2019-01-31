@@ -197,7 +197,7 @@ class PostStepTwoViewController: BaseViewController {
             
             if vCoin.isCheck {
                 var tempString = vCoin.textField.text&
-                tempString = tempString.replacingOccurrences(of: ".", with: "").replacingOccurrences(of: ",", with: ".")
+                tempString = tempString.replacingOccurrences(of: ",", with: "")
                 let intQuality = tempString.toDouble().roundedTwoDemical()
                 coin = "\(intQuality)"
             }
@@ -253,7 +253,7 @@ class PostStepTwoViewController: BaseViewController {
         if vCoin.isCheck {
             if !vCoin.textField.text&.isEmpty {
                 var tempString = vCoin.textField.text&
-                tempString = tempString.replacingOccurrences(of: ".", with: "").replacingOccurrences(of: ",", with: ".")
+                tempString = tempString.replacingOccurrences(of: ",", with: "")
                 let intQuality = tempString.toDouble()
                 
                 if intQuality < 0 {

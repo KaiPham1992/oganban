@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
 //        checkGPS()
         
-        checkLogin()
+//        checkLogin()
         AppRouter.shared.openTabbar()
         //        let vcLogin = OrderDetailRouter.createModule()
         //        let nc = UINavigationController(rootViewController: vcLogin)
