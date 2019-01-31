@@ -98,20 +98,22 @@ class PostStepTwoViewController: BaseViewController {
         switch textField {
         case vMoney.textField:
             if let amountString = textField.text?.currencyInputFormatting(digit: 0) {
-                vMoney.textField.text = amountString
+                vMoney.textField.text = amountString.replacingOccurrences(of: ".", with: ",")
             }
         case vCoin.textField:
             tempCoinText = vCoin.textField.text&.replacingOccurrences(of: ",", with: "")
+            setTextCoin(tempCoinText: tempCoinText)
+            
             // Double
-            if tempCoinText.contains(".") {
-                let _coin = tempCoinText.toDouble()
-                print("Format : \(_coin.toCurrencyMyBuy)")
-                
-                vCoin.textField.text = _coin.toCurrencyMyBuy
-            } else {
-                let _coin = tempCoinText.toDouble()
-                vCoin.textField.text = _coin.toCurrencyMyBuyNotDecimal
-            }
+//            if tempCoinText.contains(".") {
+//                let _coin = tempCoinText.toDouble()
+//                print("Format : \(_coin.toCurrencyMyBuy)")
+//
+//                vCoin.textField.text = _coin.toCurrencyMyBuy
+//            } else {
+//                let _coin = tempCoinText.toDouble()
+//                vCoin.textField.text = _coin.toCurrencyMyBuyNotDecimal
+//            }
             
             
 //            if !textField.text&.contains(".") {
@@ -138,6 +140,28 @@ class PostStepTwoViewController: BaseViewController {
 //            characterCount = textField.text&.count
         default:
             break
+        }
+        
+    }
+    
+    // 1111.00
+    func setTextCoin(tempCoinText: String) {
+        
+        let split = tempCoinText.split(separator: ".")
+        let _coin = tempCoinText.toDouble()
+        // no decimal
+        if split.count == 1 {
+            vCoin.textField.text = _coin.toCurrencyMyBuy.replacingOccurrences(of: ".00", with: "")
+        }
+        // have decimal .0 or other 0
+        if split.count == 2 && split[1].count == 1 {
+            let result = _coin.toCurrencyMyBuy.dropLast()
+            vCoin.textField.text = result.description
+        }
+        // have decial .00
+        if split.count == 2 && split[1].count == 2 {
+            let result = _coin.toCurrencyMyBuy
+            vCoin.textField.text = result
         }
         
     }
@@ -170,10 +194,11 @@ class PostStepTwoViewController: BaseViewController {
     //    }
     
     @objc func editingChanged(textField: UITextField) {
-        let money = textField.text&.formatToDouble(digit: 0)
+        let money = textField.text&.removeCommaDecimal().toDouble()
         let coin = money / AppConstant.moneyToCoint
         let num = coin.roundedTwoDemical()
-        vCoin.textField.text = num.currencyInputFormatting(digit: 2)
+        setTextCoin(tempCoinText: num)
+//        vCoin.textField.text = num.currencyInputFormatting(digit: 2)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -208,7 +233,7 @@ class PostStepTwoViewController: BaseViewController {
             }
             
             if vMoney.isCheck {
-                price = "\(vMoney.textField.text&.formatToDouble(digit: 0))"
+                price = "\(vMoney.textField.text&.removeCommaDecimal())"
             }
             
             if vCoin.isCheck {
