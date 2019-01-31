@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
 //        checkGPS()
         
-//        checkLogin()
+        checkLogin()
         AppRouter.shared.openTabbar()
         //        let vcLogin = OrderDetailRouter.createModule()
         //        let nc = UINavigationController(rootViewController: vcLogin)
@@ -68,15 +68,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         guard let topView = UIApplication.topViewController() else { return }
         if topView is CheckGPSViewController {
             topView.viewWillAppear(true)
-        }
-//        checkGPS()
-    }
-    
-    func checkGPS() {
-        if CLLocationManager.authorizationStatus() != .authorizedAlways && CLLocationManager.authorizationStatus() != .authorizedWhenInUse {
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
-                PopUpHelper.shared.showNoGPS()
-            }
         }
     }
     
