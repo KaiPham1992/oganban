@@ -296,6 +296,9 @@
 		CBD1C2CF21D78916006DB3FF /* MySellExpiredProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C2C921D78916006DB3FF /* MySellExpiredProtocols.swift */; };
 		CBD1C2D021D78916006DB3FF /* MySellExpiredInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C2CA21D78916006DB3FF /* MySellExpiredInteractor.swift */; };
 		CBD1C2D121D78916006DB3FF /* MySellExpiredViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD1C2CB21D78916006DB3FF /* MySellExpiredViewController.xib */; };
+		CBE03AA3220377AD0070DAF8 /* AppTextFieldDisable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE03AA2220377AD0070DAF8 /* AppTextFieldDisable.swift */; };
+		CBE03AA4220377AD0070DAF8 /* AppTextFieldDisable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE03AA2220377AD0070DAF8 /* AppTextFieldDisable.swift */; };
+		CBE03AA5220377AD0070DAF8 /* AppTextFieldDisable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE03AA2220377AD0070DAF8 /* AppTextFieldDisable.swift */; };
 		CBE2186121E219B80035F00B /* OrderBuyDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE2183E21E219B70035F00B /* OrderBuyDetailProtocols.swift */; };
 		CBE2186221E219B80035F00B /* OrderBuyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE2183F21E219B70035F00B /* OrderBuyDetailViewController.swift */; };
 		CBE2186321E219B80035F00B /* OrderBuyDetail+PostComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE2184121E219B70035F00B /* OrderBuyDetail+PostComment.swift */; };
@@ -1772,6 +1775,7 @@
 		CBD1C2C921D78916006DB3FF /* MySellExpiredProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySellExpiredProtocols.swift; sourceTree = "<group>"; };
 		CBD1C2CA21D78916006DB3FF /* MySellExpiredInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySellExpiredInteractor.swift; sourceTree = "<group>"; };
 		CBD1C2CB21D78916006DB3FF /* MySellExpiredViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MySellExpiredViewController.xib; sourceTree = "<group>"; };
+		CBE03AA2220377AD0070DAF8 /* AppTextFieldDisable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextFieldDisable.swift; sourceTree = "<group>"; };
 		CBE2183E21E219B70035F00B /* OrderBuyDetailProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderBuyDetailProtocols.swift; sourceTree = "<group>"; };
 		CBE2183F21E219B70035F00B /* OrderBuyDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderBuyDetailViewController.swift; sourceTree = "<group>"; };
 		CBE2184121E219B70035F00B /* OrderBuyDetail+PostComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OrderBuyDetail+PostComment.swift"; sourceTree = "<group>"; };
@@ -3206,6 +3210,7 @@
 				DE21828F21CD4E7F00FDD9F1 /* AppTextFiled.swift */,
 				B325C2F121CE26900048A148 /* FTextFieldChoose.swift */,
 				DE33036421DF685800409F83 /* CheckBoxTextField.swift */,
+				CBE03AA2220377AD0070DAF8 /* AppTextFieldDisable.swift */,
 			);
 			path = AppTextFiled;
 			sourceTree = "<group>";
@@ -4514,6 +4519,7 @@
 				CBD1C29621D732CB006DB3FF /* MyBuyPresenter.swift in Sources */,
 				DEBEE80421D740D7004B8D88 /* MySellContainerProtocols.swift in Sources */,
 				84329F5B21DFE1FA00047B5E /* FavouriteProductListInteractor.swift in Sources */,
+				CBE03AA3220377AD0070DAF8 /* AppTextFieldDisable.swift in Sources */,
 				DE5E084121E1C1020053EC9D /* MyBuyDetailPresenter.swift in Sources */,
 				CB0C3A2721D3BECD0052DD91 /* ForgotPasswordInteractor.swift in Sources */,
 				DE21827121CD473100FDD9F1 /* KActivityIndicatorAnimationBlank.swift in Sources */,
@@ -4896,6 +4902,7 @@
 				DE68D09B21F0122C00A3A7BE /* MyBuyPresenter.swift in Sources */,
 				DE68D09C21F0122C00A3A7BE /* MySellContainerProtocols.swift in Sources */,
 				DE68D09D21F0122C00A3A7BE /* FavouriteProductListInteractor.swift in Sources */,
+				CBE03AA4220377AD0070DAF8 /* AppTextFieldDisable.swift in Sources */,
 				DE68D09E21F0122C00A3A7BE /* MyBuyDetailPresenter.swift in Sources */,
 				DE68D09F21F0122C00A3A7BE /* ForgotPasswordInteractor.swift in Sources */,
 				DE68D0A021F0122C00A3A7BE /* KActivityIndicatorAnimationBlank.swift in Sources */,
@@ -5278,6 +5285,7 @@
 				DE68D28721F0123A00A3A7BE /* MyBuyPresenter.swift in Sources */,
 				DE68D28821F0123A00A3A7BE /* MySellContainerProtocols.swift in Sources */,
 				DE68D28921F0123A00A3A7BE /* FavouriteProductListInteractor.swift in Sources */,
+				CBE03AA5220377AD0070DAF8 /* AppTextFieldDisable.swift in Sources */,
 				DE68D28A21F0123A00A3A7BE /* MyBuyDetailPresenter.swift in Sources */,
 				DE68D28B21F0123A00A3A7BE /* ForgotPasswordInteractor.swift in Sources */,
 				DE68D28C21F0123A00A3A7BE /* KActivityIndicatorAnimationBlank.swift in Sources */,

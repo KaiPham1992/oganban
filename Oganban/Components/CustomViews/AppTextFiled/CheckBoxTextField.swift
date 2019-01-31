@@ -20,8 +20,8 @@ class CheckBoxTextField: BaseView {
         return view
     }()
     
-    let textField: UITextField = {
-        let tf = MyUITextField()
+    let textField: MyUITextFieldDisable = {
+        let tf = MyUITextFieldDisable()
         tf.font = AppFont.fontRegular15
         tf.textColor = AppColor.textTextField
         tf.backgroundColor = .clear

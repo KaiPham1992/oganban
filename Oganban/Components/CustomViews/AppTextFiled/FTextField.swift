@@ -105,3 +105,22 @@ class MyUITextField: UITextField {
     }
     
 }
+
+
+class MyUITextFieldDisable: AppTextFieldDisable {
+    // Whatever you like
+    let padding = UIEdgeInsets(top: 15, left: 0, bottom: 0, right: 0);
+    // Paddging for place holder
+    override func placeholderRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: padding)
+    }
+    // Padding for text
+    override func textRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: padding)
+    }
+    // Padding for text in editting mode
+    override func editingRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: padding)
+    }
+    
+}

@@ -117,13 +117,13 @@ public extension Double {
         formatter.locale = Locale(identifier: "en_us")
         
         guard let currency = formatter.string(from: price) else { return ""}
-        var resutl = currency.replacingOccurrences(of: "$", with: "")
+        let resutl = currency.replacingOccurrences(of: "$", with: "")
         
 //        print(price.description)
-        let split = self.description.split(separator: ".")
-        if split.count > 1 && split[1].count == 2  {
-            resutl = resutl.replacingOccurrences(of: ".00", with: "")
-        }
+//        let split = self.description.split(separator: ".")
+//        if split.count > 1 && split[1].count == 2  {
+//            resutl = resutl.replacingOccurrences(of: ".00", with: "")
+//        }
         
         // remove if 0 is lat and 2 so sau so thap phan
 //        if split.count > 1 && split[1].count > 1 {
@@ -134,15 +134,15 @@ public extension Double {
         return resutl
     }
     
-    var toCurrencyMyBuyNotDecimal: String {
-        let price = self.toUInt64() as NSNumber
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        formatter.locale = Locale(identifier: "vi_vn")
-        
-        guard let currency = formatter.string(from: price) else { return ""}
-        let result = currency.replacingOccurrences(of: ".", with: ",").replacingOccurrences(of: "₫", with: "").replacingOccurrences(of: " ", with: "").trim()
-        print("\(result)")
-        return result
-    }
+//    var toCurrencyMyBuyNotDecimal: String {
+//        let price = self.toUInt64() as NSNumber
+//        let formatter = NumberFormatter()
+//        formatter.numberStyle = .currency
+//        formatter.locale = Locale(identifier: "vi_vn")
+//        
+//        guard let currency = formatter.string(from: price) else { return ""}
+//        let result = currency.replacingOccurrences(of: ".", with: ",").replacingOccurrences(of: "₫", with: "").replacingOccurrences(of: " ", with: "").trim()
+//        print("\(result)")
+//        return result
+//    }
 }
