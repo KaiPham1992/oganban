@@ -14,7 +14,7 @@ import Firebase
 
 extension AppDelegate {
     func configureGoogle() {
-        GADMobileAds.configure(withApplicationID: "ca-app-pub-8064036299806325~8781055145")
+        GADMobileAds.configure(withApplicationID: AppConstant.appAdmobId)
         
         // get key from fire base : AIzaSyCaOVKfotVN6tQ4sUbv8ssND
         #if APPSTORE

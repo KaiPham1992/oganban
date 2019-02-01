@@ -13,6 +13,6 @@ class PopUpYesNoHaveAdmobContent: BaseViewXib {
     @IBOutlet weak var btnYes: UIButton!
     @IBOutlet weak var btnNo: UIButton!
     
-    @IBOutlet weak var admobNativeView: AdmobNativeView!
+//    @IBOutlet weak var admobNativeView: AdmobNativeView!
     
 }

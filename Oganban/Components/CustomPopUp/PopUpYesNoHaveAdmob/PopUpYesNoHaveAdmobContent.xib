@@ -9,9 +9,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopUpYesNoHaveAdmobContent" customModule="Oganban" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopUpYesNoHaveAdmobContent" customModule="Oganban_AppStore" customModuleProvider="target">
             <connections>
-                <outlet property="admobNativeView" destination="NPQ-Lz-eOF" id="HYO-PH-CBR"/>
                 <outlet property="btnNo" destination="ceF-ZU-cmV" id="rwh-ih-3yC"/>
                 <outlet property="btnYes" destination="QPi-S9-m6W" id="dbY-zS-0uM"/>
                 <outlet property="lbQuestion" destination="ien-gY-nhI" id="6DA-FG-9Ie"/>
@@ -22,7 +21,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NPQ-Lz-eOF" customClass="AdmobNativeView" customModule="Oganban" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NPQ-Lz-eOF" customClass="AdmobBannerView" customModule="Oganban_AppStore" customModuleProvider="target">
                     <rect key="frame" x="20" y="65" width="335" height="140"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
