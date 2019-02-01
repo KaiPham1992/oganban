@@ -723,7 +723,6 @@
 		DE68D15E21F0122C00A3A7BE /* ChangePasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBB3DEE21D5C74400281ABB /* ChangePasswordPresenter.swift */; };
 		DE68D15F21F0122C00A3A7BE /* ProductListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84313CE521E0B74700218C63 /* ProductListCell.swift */; };
 		DE68D16021F0122C00A3A7BE /* MyExchangeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C2B721D75BA5006DB3FF /* MyExchangeProtocols.swift */; };
-		DE68D16121F0122C00A3A7BE /* AdmobNativeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1DA5E21CDF3040036FEB7 /* AdmobNativeView.swift */; };
 		DE68D16221F0122C00A3A7BE /* APIConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BFD21C6A2EF0068CF92 /* APIConstant.swift */; };
 		DE68D16321F0122C00A3A7BE /* OrderDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE442C3B21CFA2130051C0B8 /* OrderDetailInteractor.swift */; };
 		DE68D16421F0122C00A3A7BE /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE442C4A21CFAAD70051C0B8 /* CommentCell.swift */; };
@@ -849,7 +848,6 @@
 		DE68D1DF21F0122C00A3A7BE /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB172BF821C6A2EF0068CF92 /* OpenSans-BoldItalic.ttf */; };
 		DE68D1E021F0122C00A3A7BE /* HeaderOrderDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE442C6421CFBDA40051C0B8 /* HeaderOrderDetail.xib */; };
 		DE68D1E121F0122C00A3A7BE /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84487C8221CB7890008B25B2 /* Roboto-Black.ttf */; };
-		DE68D1E221F0122C00A3A7BE /* AdmobNativeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE1DA6021CDF3E60036FEB7 /* AdmobNativeView.xib */; };
 		DE68D1E321F0122C00A3A7BE /* RecordSellingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD1C29F21D74B88006DB3FF /* RecordSellingView.xib */; };
 		DE68D1E421F0122C00A3A7BE /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB172BF321C6A2EF0068CF92 /* OpenSans-Bold.ttf */; };
 		DE68D1E521F0122C00A3A7BE /* MySellExpiredViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD1C2CB21D78916006DB3FF /* MySellExpiredViewController.xib */; };
@@ -1201,7 +1199,6 @@
 		DE68D34A21F0123A00A3A7BE /* ChangePasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBB3DEE21D5C74400281ABB /* ChangePasswordPresenter.swift */; };
 		DE68D34B21F0123A00A3A7BE /* ProductListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84313CE521E0B74700218C63 /* ProductListCell.swift */; };
 		DE68D34C21F0123A00A3A7BE /* MyExchangeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C2B721D75BA5006DB3FF /* MyExchangeProtocols.swift */; };
-		DE68D34D21F0123A00A3A7BE /* AdmobNativeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1DA5E21CDF3040036FEB7 /* AdmobNativeView.swift */; };
 		DE68D34E21F0123A00A3A7BE /* APIConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172BFD21C6A2EF0068CF92 /* APIConstant.swift */; };
 		DE68D34F21F0123A00A3A7BE /* OrderDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE442C3B21CFA2130051C0B8 /* OrderDetailInteractor.swift */; };
 		DE68D35021F0123A00A3A7BE /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE442C4A21CFAAD70051C0B8 /* CommentCell.swift */; };
@@ -1327,7 +1324,6 @@
 		DE68D3CB21F0123A00A3A7BE /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB172BF821C6A2EF0068CF92 /* OpenSans-BoldItalic.ttf */; };
 		DE68D3CC21F0123A00A3A7BE /* HeaderOrderDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE442C6421CFBDA40051C0B8 /* HeaderOrderDetail.xib */; };
 		DE68D3CD21F0123A00A3A7BE /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84487C8221CB7890008B25B2 /* Roboto-Black.ttf */; };
-		DE68D3CE21F0123A00A3A7BE /* AdmobNativeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE1DA6021CDF3E60036FEB7 /* AdmobNativeView.xib */; };
 		DE68D3CF21F0123A00A3A7BE /* RecordSellingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD1C29F21D74B88006DB3FF /* RecordSellingView.xib */; };
 		DE68D3D021F0123A00A3A7BE /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB172BF321C6A2EF0068CF92 /* OpenSans-Bold.ttf */; };
 		DE68D3D121F0123A00A3A7BE /* MySellExpiredViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD1C2CB21D78916006DB3FF /* MySellExpiredViewController.xib */; };
@@ -1452,8 +1448,6 @@
 		DEE1DA5821CDE6610036FEB7 /* PopUpSelectDateContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1DA5721CDE6610036FEB7 /* PopUpSelectDateContent.swift */; };
 		DEE1DA5A21CDE6740036FEB7 /* PopUpSelectDateContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE1DA5921CDE6740036FEB7 /* PopUpSelectDateContent.xib */; };
 		DEE1DA5C21CDF22C0036FEB7 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1DA5B21CDF22C0036FEB7 /* AppConstant.swift */; };
-		DEE1DA5F21CDF3050036FEB7 /* AdmobNativeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1DA5E21CDF3040036FEB7 /* AdmobNativeView.swift */; };
-		DEE1DA6121CDF3E60036FEB7 /* AdmobNativeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE1DA6021CDF3E60036FEB7 /* AdmobNativeView.xib */; };
 		DEE1DA6921CDF5A90036FEB7 /* PopUpSelectGender.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1DA6621CDF5A90036FEB7 /* PopUpSelectGender.swift */; };
 		DEE1DA6B21CDF5D60036FEB7 /* PopUpSelectGenderContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE1DA6A21CDF5D60036FEB7 /* PopUpSelectGenderContent.xib */; };
 		DEE1DA6D21CDF5E70036FEB7 /* PopUpSelectGenderContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1DA6C21CDF5E70036FEB7 /* PopUpSelectGenderContent.swift */; };
@@ -1969,8 +1963,6 @@
 		DEE1DA5721CDE6610036FEB7 /* PopUpSelectDateContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpSelectDateContent.swift; sourceTree = "<group>"; };
 		DEE1DA5921CDE6740036FEB7 /* PopUpSelectDateContent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpSelectDateContent.xib; sourceTree = "<group>"; };
 		DEE1DA5B21CDF22C0036FEB7 /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
-		DEE1DA5E21CDF3040036FEB7 /* AdmobNativeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobNativeView.swift; sourceTree = "<group>"; };
-		DEE1DA6021CDF3E60036FEB7 /* AdmobNativeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdmobNativeView.xib; sourceTree = "<group>"; };
 		DEE1DA6621CDF5A90036FEB7 /* PopUpSelectGender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpSelectGender.swift; sourceTree = "<group>"; };
 		DEE1DA6A21CDF5D60036FEB7 /* PopUpSelectGenderContent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpSelectGenderContent.xib; sourceTree = "<group>"; };
 		DEE1DA6C21CDF5E70036FEB7 /* PopUpSelectGenderContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpSelectGenderContent.swift; sourceTree = "<group>"; };
@@ -2208,7 +2200,6 @@
 				B3E67E9421CF3EE20012546F /* PhoneNumber */,
 				DEC5166721CE980E00A17CBF /* AppCollectionPhoto */,
 				DEC5166821CE986300A17CBF /* AdmobBannerView */,
-				DEE1DA5D21CDF2950036FEB7 /* AdmobNativeView */,
 				DE21828E21CD4E7F00FDD9F1 /* AppTextFiled */,
 			);
 			path = CustomViews;
@@ -3597,15 +3588,6 @@
 			path = PopUpSelectDate;
 			sourceTree = "<group>";
 		};
-		DEE1DA5D21CDF2950036FEB7 /* AdmobNativeView */ = {
-			isa = PBXGroup;
-			children = (
-				DEE1DA5E21CDF3040036FEB7 /* AdmobNativeView.swift */,
-				DEE1DA6021CDF3E60036FEB7 /* AdmobNativeView.xib */,
-			);
-			path = AdmobNativeView;
-			sourceTree = "<group>";
-		};
 		DEE1DA6321CDF5A90036FEB7 /* PopUpSelectGender */ = {
 			isa = PBXGroup;
 			children = (
@@ -3838,7 +3820,6 @@
 				CB172C9021C6A2EF0068CF92 /* OpenSans-BoldItalic.ttf in Resources */,
 				DE442C6521CFBDA40051C0B8 /* HeaderOrderDetail.xib in Resources */,
 				84487C8621CB7E96008B25B2 /* Roboto-Black.ttf in Resources */,
-				DEE1DA6121CDF3E60036FEB7 /* AdmobNativeView.xib in Resources */,
 				CBD1C2A021D74B88006DB3FF /* RecordSellingView.xib in Resources */,
 				CB172C8B21C6A2EF0068CF92 /* OpenSans-Bold.ttf in Resources */,
 				CBD1C2D121D78916006DB3FF /* MySellExpiredViewController.xib in Resources */,
@@ -3956,7 +3937,6 @@
 				DE68D1DF21F0122C00A3A7BE /* OpenSans-BoldItalic.ttf in Resources */,
 				DE68D1E021F0122C00A3A7BE /* HeaderOrderDetail.xib in Resources */,
 				DE68D1E121F0122C00A3A7BE /* Roboto-Black.ttf in Resources */,
-				DE68D1E221F0122C00A3A7BE /* AdmobNativeView.xib in Resources */,
 				DE68D1E321F0122C00A3A7BE /* RecordSellingView.xib in Resources */,
 				DE68D1E421F0122C00A3A7BE /* OpenSans-Bold.ttf in Resources */,
 				DE68D1E521F0122C00A3A7BE /* MySellExpiredViewController.xib in Resources */,
@@ -4074,7 +4054,6 @@
 				DE68D3CB21F0123A00A3A7BE /* OpenSans-BoldItalic.ttf in Resources */,
 				DE68D3CC21F0123A00A3A7BE /* HeaderOrderDetail.xib in Resources */,
 				DE68D3CD21F0123A00A3A7BE /* Roboto-Black.ttf in Resources */,
-				DE68D3CE21F0123A00A3A7BE /* AdmobNativeView.xib in Resources */,
 				DE68D3CF21F0123A00A3A7BE /* RecordSellingView.xib in Resources */,
 				DE68D3D021F0123A00A3A7BE /* OpenSans-Bold.ttf in Resources */,
 				DE68D3D121F0123A00A3A7BE /* MySellExpiredViewController.xib in Resources */,
@@ -4716,7 +4695,6 @@
 				CBBB3DF421D5C74400281ABB /* ChangePasswordPresenter.swift in Sources */,
 				84313CE721E0B74700218C63 /* ProductListCell.swift in Sources */,
 				CBD1C2BD21D75BA5006DB3FF /* MyExchangeProtocols.swift in Sources */,
-				DEE1DA5F21CDF3050036FEB7 /* AdmobNativeView.swift in Sources */,
 				CB172C9421C6A2EF0068CF92 /* APIConstant.swift in Sources */,
 				DE442C4121CFA2130051C0B8 /* OrderDetailInteractor.swift in Sources */,
 				DE442C4C21CFAAD70051C0B8 /* CommentCell.swift in Sources */,
@@ -5099,7 +5077,6 @@
 				DE68D15E21F0122C00A3A7BE /* ChangePasswordPresenter.swift in Sources */,
 				DE68D15F21F0122C00A3A7BE /* ProductListCell.swift in Sources */,
 				DE68D16021F0122C00A3A7BE /* MyExchangeProtocols.swift in Sources */,
-				DE68D16121F0122C00A3A7BE /* AdmobNativeView.swift in Sources */,
 				DE68D16221F0122C00A3A7BE /* APIConstant.swift in Sources */,
 				DE68D16321F0122C00A3A7BE /* OrderDetailInteractor.swift in Sources */,
 				DE68D16421F0122C00A3A7BE /* CommentCell.swift in Sources */,
@@ -5482,7 +5459,6 @@
 				DE68D34A21F0123A00A3A7BE /* ChangePasswordPresenter.swift in Sources */,
 				DE68D34B21F0123A00A3A7BE /* ProductListCell.swift in Sources */,
 				DE68D34C21F0123A00A3A7BE /* MyExchangeProtocols.swift in Sources */,
-				DE68D34D21F0123A00A3A7BE /* AdmobNativeView.swift in Sources */,
 				DE68D34E21F0123A00A3A7BE /* APIConstant.swift in Sources */,
 				DE68D34F21F0123A00A3A7BE /* OrderDetailInteractor.swift in Sources */,
 				DE68D35021F0123A00A3A7BE /* CommentCell.swift in Sources */,
