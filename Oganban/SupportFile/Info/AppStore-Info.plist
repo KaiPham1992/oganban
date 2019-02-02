@@ -42,9 +42,7 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>prefs</string>
-			</array>
+			<array/>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
@@ -71,10 +69,8 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Oganban cần sử dụng camera để đăng hình</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Oganban muốn sử dụng vị trí của bạn</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Oganban muốn sử dụng vị trí của bạn</string>
+	<string>Oganban muốn sử dụng vị trí của bạn để hiện sản phẩm gần bạn</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Oganban cần sử dụng thư viện ảnh để đăng hình</string>
 	<key>UIAppFonts</key>
