@@ -33,17 +33,22 @@ class PopUpSettingGPS: BasePopUpView {
     
     @objc func btnSettingTapped() {
 //        hidePopUp()
-        if !CLLocationManager.locationServicesEnabled() {
-            if let url = URL(string: "App-Prefs:root=Privacy&path=LOCATION") {
-                // If general location settings are disabled then open general location settings
-                UIApplication.shared.open(url)
-            }
-        } else {
-            if let url = URL(string: UIApplication.openSettingsURLString) {
-                // If general location settings are enabled then open location settings for the app
-                UIApplication.shared.open(url)
-            }
+        
+        if let url = URL(string: UIApplication.openSettingsURLString) {
+            // If general location settings are enabled then open location settings for the app
+            UIApplication.shared.open(url)
         }
+//        if !CLLocationManager.locationServicesEnabled() {
+//            if let url = URL(string: UIApplication.openSettingsURLString) {
+//                // If general location settings are enabled then open location settings for the app
+//                UIApplication.shared.open(url)
+//            }
+//        } else {
+//            if let url = URL(string: UIApplication.openSettingsURLString) {
+//                // If general location settings are enabled then open location settings for the app
+//                UIApplication.shared.open(url)
+//            }
+//        }
         
 //        if let bundleId = Bundle.main.bundleIdentifier,
 //            let url = URL(string: "\(UIApplication.openSettingsURLString)&path=LOCATION/\(bundleId)")

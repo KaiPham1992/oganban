@@ -206,7 +206,12 @@ extension DateFollowWeekPopup {
     func showPopUp(width: CGFloat = 200, height: CGFloat = 200, completionDate: @escaping CompletionDate) {
         
         if let window = UIApplication.shared.keyWindow {
-            let wid = window.safeAreaLayoutGuide.layoutFrame.width - 40
+            var wid: CGFloat = 375
+            if #available(iOS 11.0, *) {
+                wid = window.safeAreaLayoutGuide.layoutFrame.width - 40
+            } else {
+                wid = window.frame.width - 40
+            }
             vContent.frame = CGRect(x: 20, y: window.frame.height + height, width: wid, height: height)
             
             if #available(iOS 11.0, *) {
@@ -226,7 +231,7 @@ extension DateFollowWeekPopup {
                 if #available(iOS 11, *) {
                     self.vContent.frame = CGRect(x: self.vContent.frame.minX, y: window.safeAreaLayoutGuide.layoutFrame.height/2 - height/2, width: wid, height: height)
                 } else {
-                    self.vContent.frame = CGRect(x: self.vContent.frame.minX, y: window.frame.height - height - window.safeAreaLayoutGuide.layoutFrame.height/2, width: wid, height: height)
+                    self.vContent.frame = CGRect(x: self.vContent.frame.minX, y: window.frame.height - height - window.frame.height/2, width: wid, height: height)
                 }
                 }, completion: nil)
         }
