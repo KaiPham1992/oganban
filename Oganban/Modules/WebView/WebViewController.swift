@@ -32,7 +32,7 @@ class WebViewController: BaseViewController {
     
     override func setUpNavigation() {
         super.setUpNavigation()
-        
+        tabBarController?.tabBar.isHidden = true
         addButtonToNavigation(image: AppImage.imgBack, style: .left, action: #selector(self.tapBackButton))
     }
     
