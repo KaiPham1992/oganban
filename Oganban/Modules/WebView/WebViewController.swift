@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import WebKit
+//import WebKit
 
 protocol WebViewControllerDelegate: class {
     func goBack()
@@ -15,7 +15,7 @@ protocol WebViewControllerDelegate: class {
 
 class WebViewController: BaseViewController {
     
-    @IBOutlet weak var wkMain: WKWebView!
+    @IBOutlet weak var wkMain: UIWebView!
     var policyUrl = "_api/webview/security_policy"
     var termUrl = "_api/webview/terms_of_use"
     var isTermsOfUse = true
@@ -25,7 +25,7 @@ class WebViewController: BaseViewController {
     weak var delegate: WebViewControllerDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
-        wkMain.navigationDelegate = self
+//        wkMain.navigationDelegate = self
         self.loadWeb()
         
     }
@@ -53,20 +53,20 @@ class WebViewController: BaseViewController {
         if let url = URL(string: mainUrl) {
             let urlRequest = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 15)
             
-            ProgressView.shared.show()
-            wkMain.load(urlRequest)
+//            ProgressView.shared.show()
+            wkMain.loadRequest(urlRequest)
         }
     }
 }
 
-extension WebViewController: WKNavigationDelegate {
-   
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-         ProgressView.shared.hide()
-    }
-    
-    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
-        ProgressView.shared.hide()
-    }
-}
+//extension WebViewController: WKNavigationDelegate {
+//
+//    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+//         ProgressView.shared.hide()
+//    }
+//
+//    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+//        ProgressView.shared.hide()
+//    }
+//}
 
