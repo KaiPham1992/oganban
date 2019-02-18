@@ -54,6 +54,7 @@ class HomeViewController: BaseViewController {
     var indexCategory = 0
     var listCategory: [CategoryEntity] = []
     var oldParentSelected: Int?
+    var tempParent: Int?
     var oldChildSelected: [Int] = []
     
     let scaleDropdown = DropDown()
@@ -348,13 +349,28 @@ class HomeViewController: BaseViewController {
             category += "\(choose.name&), "
         }
         
-        lbCategory.text = category != "" ? category : "Tất cả danh mục"
-        
-        let listCate = listChoose.map { (item) -> String in
-            return item.id&
+        if category != "" {
+            lbCategory.text = category
+            let listCate = listChoose.map { (item) -> String in
+                return item.id&
+            }
+            paramFilter.categoryId = listCate
+        } else {
+            paramFilter.categoryId = [menu[tempParent*].id&]
+            
+            menu[oldParentSelected*].isSelected = false
+            menu[tempParent*].isSelected = true
+            isCalculatorHeightLeft = false
+            
+            for (tempInt, item) in oldChildSelected.enumerated() {
+                menu[oldParentSelected*].cateChild[item].isSelected = false
+            }
+            tbLeft.reloadData()
+            oldParentSelected = tempParent
+            tempParent = nil
         }
         
-        paramFilter.categoryId = listCate
+        
         isFilter = true
         ProgressView.shared.show()
         paramFilter.isParent = nil
@@ -745,6 +761,7 @@ extension HomeViewController: LeftMenuCellDelegate {
     func openRightMenu(indexPath: IndexPath) {
         index = indexPath.row
         if index != 0 {
+            tempParent = oldParentSelected
             if oldParentSelected != index {
                 menu[oldParentSelected*].isSelected = false
                 indexReload = oldParentSelected
