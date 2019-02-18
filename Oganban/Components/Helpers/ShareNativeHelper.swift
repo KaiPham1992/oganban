@@ -11,7 +11,7 @@ import UIKit
 class ShareNativeHelper: NSObject {
     static let shared = ShareNativeHelper()
     
-    let linkShare = "https://engma.com.vn/"
+    let linkShare = "http://onelink.to/k77kce"
     
     func showShare(controller: UIViewController, items: [String]) {
         var share = ""
