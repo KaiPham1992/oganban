@@ -117,6 +117,14 @@ class RecordEntity: BaseEntity {
         return self.price?.toUInt64().toCurrency
     }
     
+    func showMoneyHome() -> String? {
+        if let _price = self.price {
+            return "\(String(describing: _price.formattedWithSeparator)) đ"
+        }
+        
+        return nil
+    }
+    
     func showCoin() -> String? {
         if let _coin = self.coin {
             return "\(String(describing: _coin.toCurrency)) ơ"

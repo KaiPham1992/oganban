@@ -31,6 +31,7 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var tfSearch         : UITextField!
     @IBOutlet weak var vAccept          : UIView!
     @IBOutlet weak var btnCancel        : UIButton!
+    @IBOutlet weak var topViewAnchor    : NSLayoutConstraint!
     
     
     //MARK: - VARIABLE
@@ -94,6 +95,12 @@ class HomeViewController: BaseViewController {
         presenter?.getPositionRange()
         
         NotificationCenter.default.addObserver(self, selector: #selector(didSaveLocation), name: Notification.Name("SaveLocation"), object: nil)
+        if #available(iOS 11, *) {
+            // safe area constraints already set
+            topViewAnchor.constant = 0
+        } else {
+            topViewAnchor.constant = 20
+        }
     }
     
     override func setUpNavigation() {
@@ -272,6 +279,7 @@ class HomeViewController: BaseViewController {
     @IBAction func btnClearTapped() {
         tfSearch.text = ""
         btnClear.isHidden = true
+        isFilter = true
         paramFilter.keyword = nil
         presenter?.filterRecord(param: paramFilter)
     }
