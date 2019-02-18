@@ -407,7 +407,6 @@ extension HomeViewController: HomeViewProtocol {
                         self.reachedEndOfItems = true
                         print("reached end of data. Batch count: \(list.count)")
                     }
-                    self.offset += self.itemsPerBatch
                 }
             }
         }
@@ -451,13 +450,13 @@ extension HomeViewController: HomeViewProtocol {
         }
         
         // query the db on a background thread
-        DispatchQueue.global(qos: .background).async {
-            
+//        DispatchQueue.global(qos: .background).async {
+            self.offset += self.itemsPerBatch
             self.paramFilter.offset = self.offset
             self.paramFilter.limit = self.itemsPerBatch
             self.presenter?.filterRecord(param: self.paramFilter)
             
-        }
+//        }
     }
     
     
