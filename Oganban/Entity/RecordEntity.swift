@@ -48,6 +48,7 @@ class RecordEntity: BaseEntity {
     var categoryName: String?
     var catrgotyID: String?
     var isService: String?
+    var socialImgSrc: String?
     
     required init?(map: Map) {
         super.init()
@@ -98,6 +99,8 @@ class RecordEntity: BaseEntity {
         self.isTransaction <- map["is_transaction"]
         self.isFavorite <- map["is_favorite"]
         self.isService <- map["is_service"]
+        
+        self.socialImgSrc <- map["social_img_src"]
     }
     
     var ratingFormat: String? {
@@ -111,6 +114,10 @@ class RecordEntity: BaseEntity {
     var urlAvatar: URL? {
         //
         return URL(string: "\(BASE_URL)\(self.cropImage&)")
+    }
+    
+    var urlAvatarSocial: URL? {
+        return URL(string: "\(self.socialImgSrc&)")
     }
     
     func showMoney() -> String? {
