@@ -272,6 +272,8 @@ class HomeViewController: BaseViewController {
     @IBAction func btnClearTapped() {
         tfSearch.text = ""
         btnClear.isHidden = true
+        paramFilter.keyword = nil
+        presenter?.filterRecord(param: paramFilter)
     }
     
     @IBAction func btnCancelTapped() {
