@@ -19,6 +19,8 @@ class CheckGPSViewController: BaseViewController {
         setColorStatusBar(color: AppColor.red_110_0_0)
         locationManager.delegate = self
         vPopUpSettingGPSContent.btnSetting.addTarget(self, action: #selector(settingTapped), for: UIControl.Event.touchUpInside)
+        
+        vPopUpSettingGPSContent.btnClose.addTarget(self, action: #selector(btnCloseSettingTapped), for: UIControl.Event.touchUpInside)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,6 +37,12 @@ class CheckGPSViewController: BaseViewController {
             // If general location settings are enabled then open location settings for the app
             UIApplication.shared.open(url)
         }
+    }
+    
+    @objc func btnCloseSettingTapped() {
+        UserDefaultHelper.shared.saveLocation(lat: CLLocationDegrees(10.7879313), long: CLLocationDegrees(106.6149738), address: "Số 235 Đường Lê Thúc Hoạch, Phường Phú Thọ Hoà, Quận Tân Phú, Thành phố Hồ Chí Minh")
+        NotificationCenter.default.post(name: Notification.Name("SaveLocation"), object: nil)
+        self.dismiss()
     }
     
 }

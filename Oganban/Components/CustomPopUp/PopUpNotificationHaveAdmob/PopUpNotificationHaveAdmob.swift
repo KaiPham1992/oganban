@@ -8,11 +8,11 @@
 
 import Foundation
 
-class PopUpNotificationHaveAdmob: BasePopUpView, AdmobNativeViewDelegate {
+class PopUpNotificationHaveAdmob: BasePopUpView {
     lazy var vHaveAdmob: PopUpNotificationHaveAdmobContent = {
         let v = PopUpNotificationHaveAdmobContent()
         v.btnClose.addTarget(self, action: #selector(btnCloseTapped), for: .touchUpInside)
-        v.admobNativeView.delegate = self
+//        v.admobNativeView.delegate = self
         return v
     }()
     
@@ -45,9 +45,9 @@ class PopUpNotificationHaveAdmob: BasePopUpView, AdmobNativeViewDelegate {
         super.showPopUp(width: width, height: 256, type: .zoomOut)
     }
 
-    func admobNativeView(_ admobNativeView: AdmobNativeView) {
-        hidePopUp()
-    }
+//    func admobNativeView(_ admobNativeView: AdmobNativeView) {
+//        hidePopUp()
+//    }
 
     func showPopUp(message: String, closeCompletion: @escaping CompletionClosure) {
         self.completionClose = closeCompletion

@@ -11,7 +11,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopUpNotificationHaveAdmobContent" customModule="Oganban_AppStore" customModuleProvider="target">
             <connections>
-                <outlet property="admobNativeView" destination="Iwr-CM-eWB" id="Br7-mH-SLE"/>
                 <outlet property="btnClose" destination="cOr-Jr-t7F" id="MoP-Jn-yCw"/>
                 <outlet property="lbMessage" destination="iVT-E5-KHb" id="A6a-EF-Ukd"/>
             </connections>
@@ -29,7 +28,7 @@
                     </constraints>
                     <state key="normal" image="ic_close"/>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iwr-CM-eWB" customClass="AdmobNativeView" customModule="Oganban_AppStore" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iwr-CM-eWB" customClass="AdmobBannerView" customModule="Oganban_AppStore" customModuleProvider="target">
                     <rect key="frame" x="20" y="45" width="335" height="140"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>

@@ -722,9 +722,11 @@ extension HomeViewController: PositionViewControllerDelegate {
     }
     
     func checkGPS() {
-        if CLLocationManager.authorizationStatus() != .authorizedAlways && CLLocationManager.authorizationStatus() != .authorizedWhenInUse {
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
-                self.present(controller: CheckGPSViewController.initFromNib())
+        if UserDefaultHelper.shared.lat.isEmpty {
+            if CLLocationManager.authorizationStatus() != .authorizedAlways && CLLocationManager.authorizationStatus() != .authorizedWhenInUse {
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
+                    self.present(controller: CheckGPSViewController.initFromNib())
+                }
             }
         }
     }

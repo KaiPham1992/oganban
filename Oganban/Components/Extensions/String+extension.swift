@@ -72,6 +72,12 @@ extension String {
         return double
     }
     
+    func removeCommaDecimal() -> String {
+        let result = self.replacingOccurrences(of: ".", with: "").replacingOccurrences(of: ",", with: "")
+        
+        return result
+    }
+    
 }
 
 extension String {

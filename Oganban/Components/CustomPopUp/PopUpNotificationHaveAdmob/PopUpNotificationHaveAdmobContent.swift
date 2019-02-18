@@ -13,7 +13,7 @@ class PopUpNotificationHaveAdmobContent: BaseViewXib {
     @IBOutlet weak var btnClose: UIButton!
     @IBOutlet weak var lbMessage: UILabel!
     
-    @IBOutlet weak var admobNativeView: AdmobNativeView!
+//    @IBOutlet weak var admobNativeView: AdmobNativeView!
     
     override func setUpViews() {
         super.setUpViews()
