@@ -40,7 +40,12 @@ class TabbarViewController: UITabBarController {
         newFrame.origin.y = view.frame.size.height - newTabBarHeight
         tabBar.barTintColor = UIColor.white
         tabBar.frame = newFrame
-       
+        
+        let itemList =  self.tabBar.subviews
+        for itemView in itemList {
+            let itemImageView = itemView.subviews.first as! UIImageView
+            itemImageView.contentMode = .center
+        }
     }
     
     func setUpTabbar() {
