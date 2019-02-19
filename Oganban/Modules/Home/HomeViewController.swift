@@ -355,25 +355,24 @@ class HomeViewController: BaseViewController {
                 return item.id&
             }
             paramFilter.categoryId = listCate
+            paramFilter.isParent = nil
         } else {
-            paramFilter.categoryId = [menu[tempParent*].id&]
-            
-            menu[oldParentSelected*].isSelected = false
-            menu[tempParent*].isSelected = true
+            paramFilter.categoryId = [menu[oldParentSelected*].id&]
+            paramFilter.isParent = "1"
+            lbCategory.text = menu[oldParentSelected*].name
+            menu[oldParentSelected*].isSelected = true
             isCalculatorHeightLeft = false
             
             for (tempInt, item) in oldChildSelected.enumerated() {
                 menu[oldParentSelected*].cateChild[item].isSelected = false
             }
             tbLeft.reloadData()
-            oldParentSelected = tempParent
             tempParent = nil
         }
         
         
         isFilter = true
         ProgressView.shared.show()
-        paramFilter.isParent = nil
         presenter?.filterRecord(param: paramFilter)
     }
 }
