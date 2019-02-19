@@ -34,7 +34,11 @@ class OrderInfoUserCell: BaseTableCell {
             lbPhone.text =  _record.phone&
             lbName.text = _record.fullName
             vLevel.setLevel(level: _record.level&, isPro: _record.isPro)
-            imgAvatar.sd_setImage(with: _record.urlAvatar, placeholderImage: AppImage.imgPlaceHolderImage)
+            if _record.socialImgSrc != nil {
+                imgAvatar.sd_setImage(with: _record.urlAvatarSocial, placeholderImage: AppImage.imgPlaceHolderImage)
+            } else {
+                imgAvatar.sd_setImage(with: _record.urlAvatar, placeholderImage: AppImage.imgPlaceHolderImage)
+            }
         }
     }
 

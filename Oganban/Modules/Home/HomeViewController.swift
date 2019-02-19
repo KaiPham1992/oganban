@@ -31,6 +31,7 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var tfSearch         : UITextField!
     @IBOutlet weak var vAccept          : UIView!
     @IBOutlet weak var btnCancel        : UIButton!
+    @IBOutlet weak var topViewAnchor    : NSLayoutConstraint!
     
     
     //MARK: - VARIABLE
@@ -53,6 +54,7 @@ class HomeViewController: BaseViewController {
     var indexCategory = 0
     var listCategory: [CategoryEntity] = []
     var oldParentSelected: Int?
+    var tempParent: Int?
     var oldChildSelected: [Int] = []
     
     let scaleDropdown = DropDown()
@@ -94,6 +96,12 @@ class HomeViewController: BaseViewController {
         presenter?.getPositionRange()
         
         NotificationCenter.default.addObserver(self, selector: #selector(didSaveLocation), name: Notification.Name("SaveLocation"), object: nil)
+        if #available(iOS 11, *) {
+            // safe area constraints already set
+            topViewAnchor.constant = 0
+        } else {
+            topViewAnchor.constant = 20
+        }
     }
     
     override func setUpNavigation() {
@@ -272,6 +280,9 @@ class HomeViewController: BaseViewController {
     @IBAction func btnClearTapped() {
         tfSearch.text = ""
         btnClear.isHidden = true
+        isFilter = true
+        paramFilter.keyword = nil
+        presenter?.filterRecord(param: paramFilter)
     }
     
     @IBAction func btnCancelTapped() {
@@ -338,13 +349,28 @@ class HomeViewController: BaseViewController {
             category += "\(choose.name&), "
         }
         
-        lbCategory.text = category != "" ? category : "Tất cả danh mục"
-        
-        let listCate = listChoose.map { (item) -> String in
-            return item.id&
+        if category != "" {
+            lbCategory.text = category
+            let listCate = listChoose.map { (item) -> String in
+                return item.id&
+            }
+            paramFilter.categoryId = listCate
+        } else {
+            paramFilter.categoryId = [menu[tempParent*].id&]
+            
+            menu[oldParentSelected*].isSelected = false
+            menu[tempParent*].isSelected = true
+            isCalculatorHeightLeft = false
+            
+            for (tempInt, item) in oldChildSelected.enumerated() {
+                menu[oldParentSelected*].cateChild[item].isSelected = false
+            }
+            tbLeft.reloadData()
+            oldParentSelected = tempParent
+            tempParent = nil
         }
         
-        paramFilter.categoryId = listCate
+        
         isFilter = true
         ProgressView.shared.show()
         paramFilter.isParent = nil
@@ -381,7 +407,6 @@ extension HomeViewController: HomeViewProtocol {
                         self.reachedEndOfItems = true
                         print("reached end of data. Batch count: \(list.count)")
                     }
-                    self.offset += self.itemsPerBatch
                 }
             }
         }
@@ -425,13 +450,13 @@ extension HomeViewController: HomeViewProtocol {
         }
         
         // query the db on a background thread
-        DispatchQueue.global(qos: .background).async {
-            
+//        DispatchQueue.global(qos: .background).async {
+            self.offset += self.itemsPerBatch
             self.paramFilter.offset = self.offset
             self.paramFilter.limit = self.itemsPerBatch
             self.presenter?.filterRecord(param: self.paramFilter)
             
-        }
+//        }
     }
     
     
@@ -735,6 +760,7 @@ extension HomeViewController: LeftMenuCellDelegate {
     func openRightMenu(indexPath: IndexPath) {
         index = indexPath.row
         if index != 0 {
+            tempParent = oldParentSelected
             if oldParentSelected != index {
                 menu[oldParentSelected*].isSelected = false
                 indexReload = oldParentSelected

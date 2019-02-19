@@ -200,24 +200,28 @@ class PostStepOneViewController: BaseViewController {
             return
         }
         
-        if vQuantity.textField.text == "0" || vQuantity.textField.text == nil {
-            lbNotice.text = "Vui lòng nhập số lượng"
-            return
-        }
-        
-        if let intQuality = Int(vQuantity.textField.text&) {
-            if intQuality < 0 {
+        if isService {
+            
+        } else {
+            if vQuantity.textField.text == "0" || vQuantity.textField.text == nil {
                 lbNotice.text = "Vui lòng nhập số lượng"
                 return
             }
             
-            if intQuality > 99000 {
-                lbNotice.text = "Số lượng đăng bán không vượt quá 99000 sản phẩm"
+            if let intQuality = Int(vQuantity.textField.text&) {
+                if intQuality < 0 {
+                    lbNotice.text = "Vui lòng nhập số lượng"
+                    return
+                }
+                
+                if intQuality > 99000 {
+                    lbNotice.text = "Số lượng đăng bán không vượt quá 99000 sản phẩm"
+                    return
+                }
+            } else {
+                lbNotice.text = "Vui lòng nhập số lượng"
                 return
             }
-        } else {
-            lbNotice.text = "Vui lòng nhập số lượng"
-            return
         }
         
         if expireDate == nil  {

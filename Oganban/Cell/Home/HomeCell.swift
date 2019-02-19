@@ -46,7 +46,8 @@ class HomeCell: UICollectionViewCell {
             }
         }
         
-        lbPrice.text = record.showMoney()
+//        lbPrice.text = record.showMoney()
+        lbPrice.text = record.showMoneyHome()
         lbPrice.underlineLastCharacter()
         lbCoin.text = record.showCoin()
         lbCoin.underlineLastCharacter()

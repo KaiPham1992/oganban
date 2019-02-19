@@ -39,12 +39,20 @@ class CommentCell: BaseCommentCell {
             
             
             lbTime.text = _comment.createTime?.toString(dateFormat: AppDateFormat.ddMMYYYY_VN)
-            
+//             imgAvatar.image = AppImage.imgDefaultUser
             if let url = _comment.user?.urlAvatar {
                 imgAvatar.sd_setImage(with: url, placeholderImage: AppImage.imgDefaultUser)
                 imgAvatar.setBorderWithCornerRadius(borderWidth: 1, borderColor: .clear, cornerRadius: 15)
-            } else {
+            }
+            else {
                 imgAvatar.image = AppImage.imgDefaultUser
+            }
+            
+            if comment?.user?.id == UserDefaultHelper.shared.loginUserInfo?.id {
+                if let url = UserDefaultHelper.shared.loginUserInfo?.urlAvatar {
+                    imgAvatar.sd_setImage(with: url, placeholderImage: AppImage.imgDefaultUser)
+                    imgAvatar.setBorderWithCornerRadius(borderWidth: 0, borderColor: .clear, cornerRadius: 15)
+                }
             }
             
             btnDelete.isHidden = comment?.user?.id != UserDefaultHelper.shared.loginUserInfo?.id

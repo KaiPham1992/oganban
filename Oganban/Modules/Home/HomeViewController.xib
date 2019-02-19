@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -29,6 +30,7 @@
                 <outlet property="tbLeft" destination="bbl-Wi-fSH" id="Vaz-8W-eTq"/>
                 <outlet property="tbRight" destination="j06-9j-smc" id="t57-de-NeI"/>
                 <outlet property="tfSearch" destination="CjW-FX-T8r" id="8oT-Tz-7K5"/>
+                <outlet property="topViewAnchor" destination="TFI-pd-OL4" id="GRt-BZ-xUd"/>
                 <outlet property="vAccept" destination="xyt-pj-ypa" id="oLW-pH-dQR"/>
                 <outlet property="vCategory" destination="mSp-cb-O6q" id="zzq-nO-ReI"/>
                 <outlet property="vScale" destination="hAx-5I-iJz" id="bUv-yl-t6Z"/>
@@ -460,7 +462,7 @@
         <image name="ic_arrowdown" width="10" height="5.5"/>
         <image name="ic_arrowdown-1" width="10" height="5.5"/>
         <image name="ic_close" width="20" height="20"/>
-        <image name="ic_heart" width="25" height="23.5"/>
+        <image name="ic_heart" width="27" height="25"/>
         <image name="ic_location" width="10.5" height="14"/>
         <image name="ic_menu" width="12" height="11"/>
         <image name="ic_search" width="12" height="12"/>
