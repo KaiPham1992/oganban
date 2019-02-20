@@ -35,4 +35,8 @@ extension PostStepOnePresenter: PostStepOneInteractorOutputProtocol {
     func didGetCategoryMerge(list: [CategoryMergeEntity]) {
         view?.didGetCategoryMerge(list: list)
     }
+    
+    func didGetExpireDate() {
+        view?.didGetExpireDate()
+    }
 }
