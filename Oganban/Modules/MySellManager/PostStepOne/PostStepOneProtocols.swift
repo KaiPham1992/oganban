@@ -27,6 +27,7 @@ protocol PostStepOneInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
     func didGetCategoryMerge(list: [CategoryMergeEntity])
+    func didGetExpireDate()
 }
 
 protocol PostStepOneInteractorInputProtocol: class {
@@ -44,4 +45,5 @@ protocol PostStepOneViewProtocol: class {
     func didGetCategoryMerge(list: [CategoryMergeEntity])
 
     /* Presenter -> ViewController */
+    func didGetExpireDate()
 }

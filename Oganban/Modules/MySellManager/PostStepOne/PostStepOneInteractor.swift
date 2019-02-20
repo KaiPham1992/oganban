@@ -28,6 +28,7 @@ class PostStepOneInteractor: PostStepOneInteractorInputProtocol {
             guard let date = expireEntity?.expiredDate else { return }
             DataManager.shared.maxDate = date
             ProgressView.shared.hide()
+            self.presenter?.didGetExpireDate()
         }) { error in
             ProgressView.shared.hide()
             print("PostStepOneInteractor: \(String(describing: error?.message&))")
