@@ -55,8 +55,9 @@ class PostStepOneViewController: BaseViewController {
 //    var paramFilter = RecordParam()
     var oldParentSelected: Int?
     var oldChildSelected: Int?
-    var heightTableLeft: CGFloat = 300
-    var heightTableRight: CGFloat = 200
+
+    var isCalculatorHeight = true
+    var isCalculatorHeightLeft = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -130,8 +131,8 @@ class PostStepOneViewController: BaseViewController {
         tbRight.contentInset.bottom = 40
         //---
         self.btnHideDropdown.isHidden = true
-        self.heightLeft.constant = 0
-        self.heightRight.constant = 0
+        tbLeft.isHidden = true
+        tbRight.isHidden = true
     }
     
     
@@ -140,24 +141,16 @@ class PostStepOneViewController: BaseViewController {
     }
     
     func hideDropdown() {
-        UIView.animate(withDuration: 0.3) {
-            self.btnHideDropdown.isHidden = true
-            self.heightLeft.constant = 0
-            self.heightRight.constant = 0
-            self.view.layoutIfNeeded()
-        }
-        
+        self.btnHideDropdown.isHidden = true
+        tbLeft.isHidden = true
+        tbRight.isHidden = true
     }
     
     @IBAction func btnCategoryTapped() {
         self.btnHideDropdown.isHidden = false
-        UIView.animate(withDuration: 0.3) {
-            
-            self.heightLeft.constant = self.heightTableLeft
-            if self.oldChildSelected != nil {
-                self.heightRight.constant = self.heightTableRight
-            }
-            self.view.layoutIfNeeded()
+        tbLeft.isHidden = false
+        if self.oldChildSelected != nil {
+            self.tbRight.isHidden = false
         }
     }
     
@@ -313,8 +306,12 @@ extension PostStepOneViewController: UITableViewDelegate, UITableViewDataSource 
             let cell = tableView.dequeueTableCell(LeftMenuCell.self)
             cell.lbTitle.text = menu[indexPath.row].name
             cell.lbTitle.textColor = menu[indexPath.row].isSelected ? .yellow : .white
-            self.heightLeft.constant = heightContent < heightMax ? tableView.contentSize.height : (heightMax)
-            self.heightTableLeft = heightContent < heightMax ? tableView.contentSize.height : (heightMax)
+            if isCalculatorHeightLeft {
+                self.heightLeft.constant = heightContent < heightMax ? tableView.contentSize.height : (heightMax)
+            } else {
+//                isCalculatorHeightLeft = true
+            }
+            
             cell.indexPath = indexPath
             cell.delegate = self
             return cell
@@ -322,8 +319,12 @@ extension PostStepOneViewController: UITableViewDelegate, UITableViewDataSource 
         case tbRight:
             let cell = tableView.dequeueTableCell(MenuCell.self)
             cell.lbTitle.text = menu[index].cateChild[indexPath.row].name
-            self.heightRight.constant = heightContent < heightMax ? tableView.contentSize.height : (heightMax)
-            self.heightTableRight = heightContent < heightMax ? tableView.contentSize.height : (heightMax)
+            if isCalculatorHeight {
+                self.heightRight.constant = heightContent < heightMax ? tableView.contentSize.height : (heightMax)
+            } else {
+                isCalculatorHeight = true
+            }
+            
             cell.isSelect = menu[index].cateChild[indexPath.row].isSelected
             cell.imgCheck.isHidden = true
             return cell
@@ -396,14 +397,11 @@ extension PostStepOneViewController: LeftMenuCellDelegate {
             
         }
         menu[index].isSelected = true
+        isCalculatorHeightLeft = false
         tbLeft.reloadRows(at: [IndexPath(item: oldParentSelected*, section: indexPath.section), indexPath], with: .none)
         oldParentSelected = index
         tbRight.reloadData()
         tbRight.isHidden = false
-        UIView.animate(withDuration: 0.3) {
-            self.heightRight.constant = self.heightTableRight
-            self.view.layoutIfNeeded()
-        }
     }
 }
 

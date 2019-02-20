@@ -111,7 +111,7 @@ class SettingViewController: BaseViewController {
 extension SettingViewController: SettingViewProtocol {
     func didGetPositionRange(list: [PositionRangeEntity]) {
         self.dataSource = list
-        if let last = PositionRangeEntity(JSON: ["_id": "8", "_value": "Không giới hạn"]) {
+        if let last = PositionRangeEntity(JSON: ["_id": "8", "_value": ""]) {
             self.dataSource.append(last)
         }
         radiusDropdown.dataSource = dataSource.map({$0.title&})

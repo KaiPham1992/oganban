@@ -192,11 +192,12 @@ extension BaseViewController {
         lb.numberOfLines    = 2
         lb.textColor        = textColor
         lb.sizeToFit()
+        lb.contentMode = .scaleAspectFit
         
         let tap = UITapGestureRecognizer(target: self, action: action)
         lb.addGestureRecognizer(tap)
         let vTest = UIView()
-        vTest.frame = CGRect(x: 0, y: 0, width: 375, height: 44)
+        vTest.frame = CGRect(x: 0, y: 0, width: 200, height: 44)
         vTest.addSubview(lb)
         lb.centerSuperview()
         self.navigationItem.titleView = vTest

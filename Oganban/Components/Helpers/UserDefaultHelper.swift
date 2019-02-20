@@ -126,8 +126,7 @@ class UserDefaultHelper {
                     return _radius
                 }
             }
-            return PositionRangeEntity(JSON: ["_id": "4",
-                                              "_value":"1000"])
+            return PositionRangeEntity(JSON: ["_id": "8", "_value": ""])
         }
         set(radius) {
             let encoder = JSONEncoder()
