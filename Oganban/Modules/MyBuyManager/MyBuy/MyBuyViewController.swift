@@ -79,6 +79,8 @@ class MyBuyViewController: BaseViewController {
                     let tabItem = tabItems[3]
                     if count == 0 {
                         tabItem.badgeValue = nil
+                    } else if count >= 100 {
+                        tabItem.badgeValue = "+99"
                     } else {
                         tabItem.badgeValue = "\(count)"
                     }

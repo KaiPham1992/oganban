@@ -26,8 +26,7 @@ class MySellingViewController: BaseViewController {
     @IBOutlet weak var btnLogin: UIButton!
     @IBOutlet weak var tbMySelling: UITableView!
     @IBOutlet weak var vPostRecord: UIView!
-    
-    
+    @IBOutlet weak var bottomConstant: NSLayoutConstraint!
     
 	var presenter: MySellingPresenterProtocol?
 
@@ -65,6 +64,13 @@ class MySellingViewController: BaseViewController {
         isRefresh = true
         checkLogin()
         getData()
+        
+        if #available(iOS 11, *) {
+            // safe area constraints already set
+            bottomConstant.constant = 35
+        } else {
+            bottomConstant.constant = 65
+        }
     }
     
     func setupView() {

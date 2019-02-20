@@ -5,31 +5,42 @@
     
     
       
+
       <testcase classname="fastlane.lanes" name="0: default_platform" time="0.003602">
+
         
       </testcase>
     
-      
+
       <testcase classname="fastlane.lanes" name="1: default_platform" time="0.003764">
+
         
       </testcase>
     
       
+
       <testcase classname="fastlane.lanes" name="2: Switch to ios preprocess lane" time="0.003658">
+
         
       </testcase>
     
       
+
       <testcase classname="fastlane.lanes" name="3: xcversion" time="1.329541">
+
         
       </testcase>
     
       
+
       <testcase classname="fastlane.lanes" name="4: /usr/libexec/PlistBuddy -c 'Set CFBundleVersion 201902190142' ../Oganban/SupportFile/Info/Dev-Info.plist" time="0.022212">
+
+
         
       </testcase>
     
       
+
       <testcase classname="fastlane.lanes" name="5: gym" time="1048.275574">
         
       </testcase>

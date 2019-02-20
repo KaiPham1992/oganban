@@ -24,9 +24,11 @@ class DataManager {
         Provider.shared.notificationAPIService.getNotification(offset: 0, limit: 1000, success: { notifications in
             ProgressView.shared.hide()
             guard let count = notifications?.totalUnread else { return}
+            UIApplication.shared.applicationIconBadgeNumber = count
             done(count)
         }) {  error in
             ProgressView.shared.hide()
+            UIApplication.shared.applicationIconBadgeNumber = 0
             done(0)
         }
     }
