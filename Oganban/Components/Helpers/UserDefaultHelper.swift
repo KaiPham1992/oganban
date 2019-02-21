@@ -20,6 +20,8 @@ enum UserDefaultHelperKey: String {
     case radius = "radius"
     case coin = "coin"
     case loginSocial = "loginSocial"
+    case address1 = "Address1"
+    case address2 = "Address2"
 }
 
 class UserDefaultHelper {
