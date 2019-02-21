@@ -22,6 +22,7 @@ enum RecordEndPoint {
     case deleteComment(commentId: String)
     case updateRecord(recordID: String, expiredDate: String)
     case getChildCommentList(comentID: String, offset: Int, limit: Int)
+    case getCommentParent(commentID: String)
 }
 
 extension RecordEndPoint: EndPointType {
@@ -52,12 +53,14 @@ extension RecordEndPoint: EndPointType {
             return "_api/comment/get_comment_child"
         case .updateRecord:
             return "_api/record/update_record"
+        case .getCommentParent:
+            return "_api/comment/get_detail_comment_parent"
         }
     }
     
     var httpMethod: HTTPMethod {
         switch self {
-        case .getRecordSellerPost, .postRecord, .getExpirePostRecord, .getCommentResponse, .sendComment, .updateRecord, .getChildCommentList:
+        case .getRecordSellerPost, .postRecord, .getExpirePostRecord, .getCommentResponse, .sendComment, .updateRecord, .getChildCommentList, .getCommentParent:
             return .post
         case .getRecordDetail, .getFavouriteRecord:
             return .get
@@ -103,7 +106,11 @@ extension RecordEndPoint: EndPointType {
                          "offset": offset,
                          "limit": limit] as [String: Any]
             return param
+        case .getCommentParent(let commentID):
+            let param = ["comment_id": commentID]
+            return param
         }
+        
     }
     
     var headers: HTTPHeaders? {

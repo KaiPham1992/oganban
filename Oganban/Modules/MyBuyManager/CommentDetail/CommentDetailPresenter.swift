@@ -35,6 +35,13 @@ class CommentDetailPresenter: CommentDetailPresenterProtocol {
         interactor?.getCommentList(recordId: recordId, offset: offset)
     }
 
+    func getCommentParent(commentID: String) {
+        interactor?.getCommentParent(commentID: commentID)
+    }
+    
+    func getCommentChild(commentID: String, offset: Int, limit: Int) {
+        interactor?.getCommentChild(commentID: commentID, offset: offset, limit: limit)
+    }
 }
 
 extension CommentDetailPresenter: CommentDetailInteractorOutputProtocol {
@@ -48,5 +55,13 @@ extension CommentDetailPresenter: CommentDetailInteractorOutputProtocol {
     
     func didSubSendComment(comment: SubCommentEntity?) {
         view?.didSendSubComment(comment: comment)
+    }
+    
+    func didGetCommentParent(comment: CommentEntity?) {
+        view?.didGetCommentParent(comment: comment)
+    }
+    
+    func didGetCommentChild(subComment: CommentChildEntity?) {
+        view?.didGetCommentChild(subComment: subComment)
     }
 }

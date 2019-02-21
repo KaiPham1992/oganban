@@ -45,4 +45,31 @@ class CommentDetailInteractor: CommentDetailInteractorInputProtocol {
         }
         
     }
+    
+    func getCommentParent(commentID: String) {
+        ProgressView.shared.show()
+        Provider.shared.recordAPIService.getCommentParent(commentID: commentID, success: { (comment) in
+            ProgressView.shared.hide()
+            self.presenter?.didGetCommentParent(comment: comment)
+        }) { (_) in
+            ProgressView.shared.hide()
+        }
+    }
+    
+    func getCommentChild(commentID: String, offset: Int, limit: Int) {
+        ProgressView.shared.show()
+        Provider.shared.recordAPIService.getChildCommentList(commentID: commentID, offset: offset, limit: limit, success: { (subcomment) in
+            ProgressView.shared.hide()
+            guard let temp = subcomment?.subCommnent else { return }
+            let item = temp.sorted(by: { sub1, sub2 -> Bool in
+                guard let time1 = sub1.createTime, let time2 = sub2.createTime else { return false}
+                
+                return time1.isSmaller(date: time2)
+            })
+            subcomment?.subCommnent = item
+            self.presenter?.didGetCommentChild(subComment: subcomment)
+        }) { (_) in
+            ProgressView.shared.hide()
+        }
+    }
 }

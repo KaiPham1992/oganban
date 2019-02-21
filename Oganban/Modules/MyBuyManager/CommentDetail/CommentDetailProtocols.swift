@@ -22,6 +22,8 @@ protocol CommentDetailPresenterProtocol: class {
     func sendComment(param: SendCommentParam)
     func sendSubComment(param: SendCommentParam)
     func getCommentList(recordId: String, offset: Int)
+    func getCommentParent(commentID: String)
+    func getCommentChild(commentID: String, offset: Int, limit: Int)
 }
 
 //MARK: Interactor -
@@ -31,7 +33,8 @@ protocol CommentDetailInteractorOutputProtocol: class {
     func didSendComment(comment: CommentEntity?)
     func didSubSendComment(comment: SubCommentEntity?)
     func didGetComment(commentResponseEntity: CommentResponseEntity?)
-    
+    func didGetCommentParent(comment: CommentEntity?)
+    func didGetCommentChild(subComment: CommentChildEntity?)
 }
 
 protocol CommentDetailInteractorInputProtocol: class {
@@ -41,6 +44,8 @@ protocol CommentDetailInteractorInputProtocol: class {
     /* Presenter -> Interactor */
     func sendComment(param: SendCommentParam)
     func getCommentList(recordId: String, offset: Int)
+    func getCommentParent(commentID: String)
+    func getCommentChild(commentID: String, offset: Int, limit: Int)
 }
 
 //MARK: View -
@@ -52,4 +57,7 @@ protocol CommentDetailViewProtocol: class {
     func didSendComment(comment: CommentEntity?)
     func didSendSubComment(comment: SubCommentEntity?)
     func didGetComment(commentResponseEntity: CommentResponseEntity?)
+    
+    func didGetCommentParent(comment: CommentEntity?)
+    func didGetCommentChild(subComment: CommentChildEntity?)
 }

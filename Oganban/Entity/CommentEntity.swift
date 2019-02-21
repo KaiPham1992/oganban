@@ -35,6 +35,16 @@ class CommentEntity: BaseEntity {
     
 }
 
+class CommentChildEntity: BaseEntity {
+    var totalComment: Int?
+    var subCommnent: [SubCommentEntity] = []
+    
+    override func mapping(map: Map) {
+        self.totalComment <- map["total_re_cmt"]
+        self.subCommnent <- map["comment"]
+    }
+    
+}
 
 class SubCommentEntity: BaseEntity {
     var id: String?

@@ -81,10 +81,10 @@ class AppRouter {
                 let vc = MyBuyDetailRouter.createModule(orderId: id, isSaler: true)
                 topVC.push(controller: vc)
             case "RE_COMMENT":
-                let vc = CommentDetailRouter.createModule(recordId: id)
+                let vc = CommentDetailRouter.createModule(recordId: nil, commentId: id)
                 topVC.push(controller: vc)
             case "COMMENT":
-                let vc = CommentDetailRouter.createModule(recordId: id)
+                let vc = CommentDetailRouter.createModule(recordId: nil, commentId: id)
                 topVC.push(controller: vc)
             default:
                 break

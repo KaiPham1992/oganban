@@ -155,8 +155,13 @@ extension OrderDetailViewController: UITableViewDelegate, UITableViewDataSource 
 extension OrderDetailViewController:  OrderMoreCellDelegate {
     
     func orderMoreCell(_ orderMoreCell: OrderMoreCell, section: Int) {
-        let vc = CommentDetailRouter.createModule(recordId: self.recordId&)
-        self.push(controller: vc)
+        if section < self.listComment.count {
+            let commentId = self.listComment[section].id&
+            let vc = CommentDetailRouter.createModule(recordId: commentId, commentId: commentId)
+            self.push(controller: vc)
+        }
+        
+        
     }
     
     func getIndexSectionComment(sectionTable: Int) -> Int {
