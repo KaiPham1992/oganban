@@ -21,7 +21,7 @@ struct TitleString {
     static let placeHolderGender     = "Chọn giới tính"
     static let houseAddress             = "Địa chỉ đăng tin 1 (Không bắt buộc)"
     static let placeHolderHouseAddress  = "VD: Nhà, cửa hàng, cơ quan..."
-    static let companyAddress                = "Địa chỉ đang tin 2 (Nếu có)"
+    static let companyAddress                = "Địa chỉ đăng tin 2 (Nếu có)"
     static let placeHolderCompanyAddress     = "VD: Nhà, cửa hàng, cơ quan,..."
     static let introduce             = "Mã người giới thiệu"
     static let placeHolderIntroduce = "Nhập mã người giới thiệu nếu có"

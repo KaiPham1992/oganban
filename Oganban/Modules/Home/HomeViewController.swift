@@ -68,7 +68,7 @@ class HomeViewController: BaseViewController {
     }
     
     var isFilterTextfield = false
-    var isFilter = false
+    var isFilter = true
     var timeCall: Timer?
     var isCalculatorHeight = true
     var isCalculatorHeightLeft = true
@@ -79,6 +79,7 @@ class HomeViewController: BaseViewController {
     var offset = 0
     // a flag for when all database items have already been loaded
     var reachedEndOfItems = false
+    var isCanLoadMore: Bool = false
     
     //MARK:- FUNCTION
     override func viewDidLoad() {
@@ -91,7 +92,6 @@ class HomeViewController: BaseViewController {
 
         getParamDefault()
         ProgressView.shared.show()
-        self.isFilter = true
         presenter?.filterRecord(param: paramFilter)
         presenter?.getPositionRange()
         
@@ -142,7 +142,6 @@ class HomeViewController: BaseViewController {
     @objc func didSaveLocation() {
         getParamDefault()
         ProgressView.shared.show()
-        self.isFilter = true
         presenter?.filterRecord(param: paramFilter)
         presenter?.getPositionRange()
     }
@@ -221,14 +220,13 @@ class HomeViewController: BaseViewController {
                 self.paramFilter.radius = self.dataSource[index].value
             }
             self.distance = self.dataSource[index]
-            self.isFilter = true
+            self.resetOffset()
             ProgressView.shared.show()
             self.presenter?.filterRecord(param: self.paramFilter)
         }
     }
     
     func getParamDefault() {
-        offset = 0
         reachedEndOfItems = false
         let radius = UserDefaultHelper.shared.radius?.value
         let long = UserDefaultHelper.shared.long
@@ -236,7 +234,7 @@ class HomeViewController: BaseViewController {
         paramFilter.long = long
         paramFilter.lat = lat
         paramFilter.radius = radius
-//        paramFilter = RecordParam(long: long, lat: lat, radius: radius)
+        resetOffset()
     }
     
     func callAPIPosition() {
@@ -245,11 +243,14 @@ class HomeViewController: BaseViewController {
         }
     }
     
-    @objc private func refreshData(_ sender: Any) {
-        self.refreshControl.endRefreshing()
+    func resetOffset() {
         offset = 0
         paramFilter.offset = 0
-        isFilter = true
+    }
+    
+    @objc private func refreshData(_ sender: Any) {
+        self.refreshControl.endRefreshing()
+        resetOffset()
         reachedEndOfItems = false
         ProgressView.shared.show()
         presenter?.filterRecord(param: paramFilter)
@@ -282,8 +283,8 @@ class HomeViewController: BaseViewController {
     @IBAction func btnClearTapped() {
         tfSearch.text = ""
         btnClear.isHidden = true
-        isFilter = true
         paramFilter.keyword = nil
+        resetOffset()
         presenter?.filterRecord(param: paramFilter)
     }
     
@@ -327,8 +328,8 @@ class HomeViewController: BaseViewController {
         view.endEditing(true)
         paramFilter.keyword = tfSearch.text&
         isFilterTextfield = true
-        isFilter = true
         ProgressView.shared.show()
+        resetOffset()
         presenter?.filterRecord(param: paramFilter)
     }
     
@@ -371,9 +372,7 @@ class HomeViewController: BaseViewController {
             tbLeft.reloadData()
             tempParent = nil
         }
-        
-        
-        isFilter = true
+        resetOffset()
         ProgressView.shared.show()
         presenter?.filterRecord(param: paramFilter)
     }
@@ -387,27 +386,24 @@ extension HomeViewController: HomeViewProtocol {
             self.dataSource.append(last)
         }
         scaleDropdown.dataSource = dataSource.map({$0.title&})
-        //        distance = dataSource[3]
     }
     
     func didFilterRecord(list: [RecordEntity]) {
         // update UITableView with new batch of items on main thread after query finishes
+        isCanLoadMore = list.count == 40
         ProgressView.shared.hide()
         if isFilterTextfield && list.count == 0 {
             isFilterTextfield = false
             PopUpHelper.shared.showMessageHaveAds(message: "Không tìm thấy kết quả")
         } else {
-            DispatchQueue.main.async {
-                if self.isFilter {
-                    self.isFilter = false
-//                    self.listRecord.append(RecordEntity(JSON: [:]))
-                    self.listRecord = list
-                } else {
-                    self.listRecord.append(contentsOf: list)
-                    if list.count < self.itemsPerBatch {
-                        self.reachedEndOfItems = true
-                        print("reached end of data. Batch count: \(list.count)")
-                    }
+            if self.isFilter {
+                self.listRecord = list
+            } else {
+                self.isFilter = true
+                self.listRecord.append(contentsOf: list)
+                if list.count < self.itemsPerBatch {
+                    self.reachedEndOfItems = true
+                    print("reached end of data. Batch count: \(list.count)")
                 }
             }
         }
@@ -446,21 +442,16 @@ extension HomeViewController: HomeViewProtocol {
     func loadMore() {
         
         // don't bother doing another db query if already have everything
+        isCanLoadMore = false
         guard !self.reachedEndOfItems else {
             return
         }
-        
-        // query the db on a background thread
-//        DispatchQueue.global(qos: .background).async {
-            self.offset += self.itemsPerBatch
-            self.paramFilter.offset = self.offset
-            self.paramFilter.limit = self.itemsPerBatch
-            self.presenter?.filterRecord(param: self.paramFilter)
-            
-//        }
+        isFilter = false
+        self.offset += self.itemsPerBatch
+        self.paramFilter.offset = self.offset
+        self.paramFilter.limit = self.itemsPerBatch
+        self.presenter?.filterRecord(param: self.paramFilter)
     }
-    
-    
 }
 
 //--MARK: - Show list record collection view
@@ -504,11 +495,6 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        if ((indexPath.row) + (10 * indexPath.section)) == (self.listRecord.count - 10) {
-            self.loadMore()
-        }
-        
         if listRecord.count == 1 {
             if indexPath.row == 0 {
                 let cell = collectionView.dequeueCollectionCell(AdmobCell.self, indexPath: indexPath)
@@ -534,6 +520,12 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
             }
         }
         
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if ((indexPath.row) + (10 * indexPath.section)) == (self.listRecord.count - 10) && isCanLoadMore {
+            self.loadMore()
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -650,7 +642,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 paramFilter.categoryId = [menu[index].id&]
                 paramFilter.isParent = "1"
             }
-            isFilter = true
             ProgressView.shared.show()
             presenter?.filterRecord(param: paramFilter)
             hideDropdown()
@@ -699,9 +690,9 @@ extension HomeViewController: UITextFieldDelegate {
         view.endEditing(true)
         paramFilter.keyword = textField.text&
         isFilterTextfield = true
-        isFilter = true
         btnCancel.isHidden = true
         btnFavorite.isHidden = false
+        resetOffset()
         ProgressView.shared.show()
         presenter?.filterRecord(param: paramFilter)
         return true
@@ -713,9 +704,9 @@ extension HomeViewController: UITextFieldDelegate {
         if !text.isEmpty {
             paramFilter.keyword = textField.text&
             isFilterTextfield = true
-            isFilter = true
             btnCancel.isHidden = true
             btnFavorite.isHidden = false
+            resetOffset()
             ProgressView.shared.show()
             presenter?.filterRecord(param: paramFilter)
         }
@@ -740,7 +731,7 @@ extension HomeViewController: PositionViewControllerDelegate {
         lbPosition.text = address
         self.distance = distance
         self.paramFilter.radius = distance.value&
-        isFilter = true
+        resetOffset()
         ProgressView.shared.show()
         presenter?.filterRecord(param: paramFilter)
     }
