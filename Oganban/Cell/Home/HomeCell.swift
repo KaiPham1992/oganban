@@ -82,6 +82,10 @@ class HomeCell: UICollectionViewCell {
             imgAvatar.sd_setImage(with: url, placeholderImage: AppImage.imgPlaceHolderImage)
         }
         
+        if let url = URL(string: record.socialImgSrc&) {
+            imgAvatar.sd_setImage(with: url, placeholderImage: AppImage.imgPlaceHolderImage)
+        }
+        
         if record.coin == nil && record.price == nil {
             imgMoney.isHidden = true
             imgcoin.isHidden = true
