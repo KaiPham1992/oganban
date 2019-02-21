@@ -35,14 +35,21 @@ class HomeCell: UICollectionViewCell {
 //        if let date = _notification.createTime {
 //            lbDate.text = date.toString(dateFormat: AppDateFormat.ddMMYYYY_VNHHmm)
 //        }
-        if let date = record.createTime, let distance = record.distanceConvert {
-            lbDistanceAndTime.text = "\(distance) | \(date.timeAgo())"
+        if let date = record.createTime {
+            if let distance = record.distanceConvert {
+                lbDistanceAndTime.text = "\(distance) | \(date.timeAgo())"
+            } else {
+                lbDistanceAndTime.text = "0m | \(date.timeAgo())"
+            }
+            
         } else {
             if let date = record.createTime {
                 lbDistanceAndTime.text = "\(date.timeAgo())"
             }
             if let distance = record.distanceConvert {
                 lbDistanceAndTime.text = "\(distance)"
+            } else {
+                lbDistanceAndTime.text = "0m"
             }
         }
         
