@@ -8,7 +8,7 @@
 
 import UIKit
 import SwiftyJSON
-
+import ObjectMapper
 
 class AppRouter {
     static let shared = AppRouter()
@@ -48,7 +48,7 @@ class AppRouter {
     func openTest() {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate, let windowApp = appDelegate.window else { return }
         //---
-        let tabBar = PostStepOneRouter.createModule()
+        let tabBar = PostStepTwoRouter.createModule(param: PostRecordParam(JSON: [:])!, isService: true)
         windowApp.rootViewController = tabBar
     }
     

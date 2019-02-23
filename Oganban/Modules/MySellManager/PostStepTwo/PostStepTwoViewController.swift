@@ -103,41 +103,11 @@ class PostStepTwoViewController: BaseViewController {
         case vCoin.textField:
             tempCoinText = vCoin.textField.text&.replacingOccurrences(of: ",", with: "")
             setTextCoin(tempCoinText: tempCoinText)
-            
-            // Double
-//            if tempCoinText.contains(".") {
-//                let _coin = tempCoinText.toDouble()
-//                print("Format : \(_coin.toCurrencyMyBuy)")
-//
-//                vCoin.textField.text = _coin.toCurrencyMyBuy
-//            } else {
-//                let _coin = tempCoinText.toDouble()
-//                vCoin.textField.text = _coin.toCurrencyMyBuyNotDecimal
-//            }
-            
-            
-//            if !textField.text&.contains(".") {
-//                index = 0
-//                if let amountString = textField.text?.currencyInputFormatting(digit: 0) {
-//                    vCoin.textField.text = amountString
-//                }
-//            } else {
-//                if index < 3 {
-//                    if textField.text&.count > characterCount {
-//                        index += 1
-//                    } else {
-//                        index -= 1
-//                    }
-//                } else {
-//                    if textField.text&.count > characterCount {
-//                        textField.text = String(textField.text&.dropLast())
-//                        index = 3
-//                    } else {
-//                        index -= 1
-//                    }
-//                }
-//            }
-//            characterCount = textField.text&.count
+            let money = tempCoinText.toDouble() * 20000
+            print(money.description)
+            vMoney.textField.text = money.toUInt64().toCurrency.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "₫", with: "")
+            print(vMoney.textField.text)
+        
         default:
             break
         }

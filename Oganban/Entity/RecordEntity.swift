@@ -70,7 +70,7 @@ class RecordEntity: BaseEntity {
         self.imgSrcAccount <- map["img_src_account"]
         self.createTime <- (map["create_time_mi"], AppTimestampTransform())
         self.distance <- map["distance"]
-        self.imgSrc <- map["img_src"]
+        self.imgSrc <- map["img_src_thumb_record"]
         self.arrayImage <- map["img_src_list"]
         self.imgHome <- map["img_src_thumb_record"]
         self.address1 <- map["address_1"]
