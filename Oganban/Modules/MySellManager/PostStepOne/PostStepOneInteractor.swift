@@ -15,9 +15,12 @@ class PostStepOneInteractor: PostStepOneInteractorInputProtocol {
     weak var presenter: PostStepOneInteractorOutputProtocol?
     
     func getCategoryMerge() {
+         ProgressView.shared.show()
         Provider.shared.categoryAPIService.getCategoryMerge(success: { (result) in
+            ProgressView.shared.hide()
             self.presenter?.didGetCategoryMerge(list: result)
         }) { (error) in
+            ProgressView.shared.hide()
             print("PostStepOneInteractor: \(String(describing: error?.message&))")
         }
     }

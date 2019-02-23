@@ -272,10 +272,10 @@ extension UpdateProfileViewController {
             return false
         }
         
-        if username.isValidEmail() == false  {
-            hideError(isHidden: false, message: MessageString.checkedUsername)
-            return false
-        }
+//        if username.isValidEmail() == false  {
+//            hideError(isHidden: false, message: MessageString.checkedUsername)
+//            return false
+//        }
         
         guard let displayName = self.tfDisplayName.tfContent.text else {
             hideError(isHidden: false, message: MessageString.emptyDisplayName)
