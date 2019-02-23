@@ -72,7 +72,7 @@ class RecordEntity: BaseEntity {
         self.distance <- map["distance"]
         self.imgSrc <- map["img_src"]
         self.arrayImage <- map["img_src_list"]
-        self.imgHome <- map["img_src"]
+        self.imgHome <- map["img_src_thumb_record"]
         self.address1 <- map["address_1"]
         self.address <- map["address"]
         self.address2 <- map["address_2"]

@@ -19,6 +19,8 @@ def main_pods
     pod 'ImageSlideshow/SDWebImage'
     pod 'Google-Mobile-Ads-SDK'
     pod 'ImagePicker',:git => 'https://github.com/appsailor/ImagePicker.git', :branch => 'feature/Swift-4.2'
+    pod 'Fabric'
+    pod 'Crashlytics'
 end
 
 target 'Oganban-Dev' do
