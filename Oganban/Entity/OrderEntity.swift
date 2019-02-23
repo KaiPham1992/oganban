@@ -70,7 +70,7 @@ struct OrderEntity: Mappable {
         self.accountID <- map["account_id"]
         self.fullName <- map["fullname"]
         self.imgSrcAccount <- map["img_src_account"]
-        self.cropImgSrcAccount <- map["crop_img_src_account"]
+        self.cropImgSrcAccount <- map["img_src_thumb_record"]
         self.isPro <- map["is_pro"]
         self.recordID <- map["record_id"]
         self.name <- map["name"]
