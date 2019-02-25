@@ -39,7 +39,19 @@ class CommentDetailInteractor: CommentDetailInteractorInputProtocol {
         ProgressView.shared.show()
         Provider.shared.recordAPIService.getCommentResponse(recordId: recordId, offset: offset, success: { _commentReponse in
             ProgressView.shared.hide()
-            self.presenter?.didGetComment(commentResponseEntity: _commentReponse)
+            let result = _commentReponse
+            guard let listComment = _commentReponse?.listComment else { return }
+            let listCommentSort  = listComment.sorted(by: { cm1, cm2 -> Bool in
+                 guard let time1 = cm1.createTime, let time2 = cm2.createTime else { return false}
+                return time1.isSmaller(date: time2)
+                
+            })
+            // listCommentSort
+            
+            
+            result?.listComment = listCommentSort
+            
+            self.presenter?.didGetComment(commentResponseEntity: result)
         }) { _ in
             ProgressView.shared.hide()
         }

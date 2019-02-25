@@ -113,6 +113,10 @@ extension CommentDetailViewController: CommentDetailViewProtocol {
         guard let _listComment = commentResponseEntity?.listComment else { return }
         
         self.listComment = _listComment
+        
+        if _listComment.count > 0 {
+            self.recordId = _listComment[0].recordId
+        }
     }
     
     func didSendComment(comment: CommentEntity?) {
@@ -135,17 +139,26 @@ extension CommentDetailViewController: PostCommentViewDelegate {
     }
     
     func postCommentView(_ postCommentView: PostCommentView, sendComment comment: String) {
+        // view bottom
         if postCommentView == vPostCommentView {
-//            let param = SendCommentParam(recordId: recordId&, comment: comment&, isReComment: "0")
-//            presenter?.sendComment(param: param) //fixme
-            
-            let indexSection = 0
-            sectionSentSubComment = indexSection
-            if indexSection < self.listComment.count {
-                let commentId = self.listComment[indexSection].id&
-                let param = SendCommentParam(recordId: self.recordId&, comment: comment, commentId: commentId, isReComment: "1")
-                presenter?.sendSubComment(param: param)
+            if isComment {
+                let param = SendCommentParam(recordId: recordId&, comment: comment&, isReComment: "0")
+                presenter?.sendComment(param: param) //fixme
+            } else {
+                let indexSection = 0
+                sectionSentSubComment = indexSection
+                if indexSection < self.listComment.count {
+                    let commentId = self.listComment[indexSection].id&
+                    let param = SendCommentParam(recordId: self.recordId&, comment: comment, commentId: commentId, isReComment: "1")
+                    presenter?.sendSubComment(param: param)
+                }
             }
+            // view sub comment
+        }  else {
+            let commentId = self.listComment[postCommentView.tag].id&
+            sectionSentSubComment = postCommentView.tag
+            let param = SendCommentParam(recordId: self.recordId&, comment: comment, commentId: commentId, isReComment: "1")
+            presenter?.sendSubComment(param: param)
         }
         
     }
