@@ -14,7 +14,7 @@ class CommentDetailRouter: CommentDetailWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule(recordId: String?, commentId: String?) -> UIViewController {
+    static func createModule(recordId: String?, commentId: String?) -> CommentDetailViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = CommentDetailViewController(nibName: nil, bundle: nil)
         let interactor = CommentDetailInteractor()

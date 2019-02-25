@@ -19,6 +19,8 @@ class CommentDetailViewController: BaseViewController {
     @IBOutlet weak var heightConstant: NSLayoutConstraint!
     @IBOutlet weak var tbDetail: UITableView!
     
+    var isComment: Bool = false
+    
     var tapGesture: UITapGestureRecognizer!
     var listComment = [CommentEntity]() {
         didSet {
@@ -46,8 +48,12 @@ class CommentDetailViewController: BaseViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(didDeleteSubcomment), name: AppConstant.deleteSubComment, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(didDeleteComment), name: AppConstant.deleteComment, object: nil)
-//        self.presenter?.getCommentList(recordId: self.recordId&, offset: 0)
-        self.presenter?.getCommentParent(commentID: commentId&)
+        
+        if isComment {
+            self.presenter?.getCommentList(recordId: self.commentId&, offset: 0)
+        } else {
+            self.presenter?.getCommentParent(commentID: commentId&)
+        }
         
         tabBarController?.tabBar.isHidden = true
     }
@@ -131,7 +137,7 @@ extension CommentDetailViewController: PostCommentViewDelegate {
     func postCommentView(_ postCommentView: PostCommentView, sendComment comment: String) {
         if postCommentView == vPostCommentView {
 //            let param = SendCommentParam(recordId: recordId&, comment: comment&, isReComment: "0")
-//            presenter?.sendComment(param: param)
+//            presenter?.sendComment(param: param) //fixme
             
             let indexSection = 0
             sectionSentSubComment = indexSection
@@ -209,31 +215,59 @@ extension CommentDetailViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.row {
-        case 0:
-            let cell = tbDetail.dequeue(CommentCell.self, for: indexPath)
-            cell.comment = listComment[indexPath.section]
-            return cell
-//        case self.listComment[indexPath.section].subComment.count + 1:
-//            let cell = tbDetail.dequeue(ReplyCommentCell.self, for: indexPath)
-//            cell.vPostCommentView.tag = indexPath.section
-//            cell.vPostCommentView.delegate = self
-//            return cell
-        default:
-            let cell = tbDetail.dequeue(SubCommentCell.self, for: indexPath)
-            cell.subComment = self.listComment[indexPath.section].subComment[indexPath.item - 1]
-            return cell
+        
+        if isComment {
+            switch indexPath.row {
+            case 0:
+                let cell = tbDetail.dequeue(CommentCell.self, for: indexPath)
+                cell.comment = listComment[indexPath.section]
+                return cell
+            case self.listComment[indexPath.section].subComment.count + 1:
+                let cell = tbDetail.dequeue(ReplyCommentCell.self, for: indexPath)
+                cell.vPostCommentView.tag = indexPath.section
+                cell.vPostCommentView.delegate = self
+                return cell
+            default:
+                let cell = tbDetail.dequeue(SubCommentCell.self, for: indexPath)
+                cell.subComment = self.listComment[indexPath.section].subComment[indexPath.item - 1]
+                return cell
+            }
+        } else {
+            switch indexPath.row {
+            case 0:
+                let cell = tbDetail.dequeue(CommentCell.self, for: indexPath)
+                cell.comment = listComment[indexPath.section]
+                return cell
+            default:
+                let cell = tbDetail.dequeue(SubCommentCell.self, for: indexPath)
+                cell.subComment = self.listComment[indexPath.section].subComment[indexPath.item - 1]
+                return cell
+            }
         }
+        
+        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        if isComment {
+            return self.listComment.count
+        } else {
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if self.listComment.count > 0 {
-            return self.listComment[section].subComment.count + 1
+        if isComment {
+            if self.listComment.count > 0 {
+                return self.listComment[section].subComment.count + 2
+            }
+        } else {
+            if self.listComment.count > 0 {
+                return self.listComment[section].subComment.count + 1
+            }
         }
+        
+        
         return 0
         
     }
