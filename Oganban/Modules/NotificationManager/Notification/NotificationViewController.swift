@@ -164,6 +164,7 @@ extension NotificationViewController: UITableViewDelegate, UITableViewDataSource
             self.push(controller: vc)
         case "COMMENT":
             let vc = CommentDetailRouter.createModule(recordId: nil,  commentId: noti.objectId&)
+            vc.isComment = true
             self.push(controller: vc)
         default:
             let vc = NotificationDetailRouter.createModule(notification: noti)
