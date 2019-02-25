@@ -56,6 +56,7 @@ class PostStepTwoViewController: BaseViewController {
         vMoney.setTextField(title: "Tiền mặt", placeHolder: "Nhập số tiền sẽ bán")
         vMoney.btnCheckBox.lbTitle.textColor = AppColor.gray_65_65_65
         vMoney.textField.keyboardType = UIKeyboardType.numberPad
+        vMoney.textField.textColor = .gray
         vMoney.textField.addTarget(self, action: #selector(editingChanged), for: UIControl.Event.editingChanged)
 //        vMoney.lbType.text = "đ"
 //        vMoney.lbType.underlineLastCharacter()
@@ -63,6 +64,7 @@ class PostStepTwoViewController: BaseViewController {
         vCoin.setTextField(title: "Trao đổi Ơcoin", placeHolder: "Nhập số Ơcoin sẽ bán")
         vCoin.btnCheckBox.lbTitle.textColor = AppColor.gray_65_65_65
         vCoin.textField.keyboardType = UIKeyboardType.decimalPad
+        vCoin.textField.textColor = .gray
 //        vCoin.lbType.text = "ơ"
 //        vCoin.lbType.underlineLastCharacter()
         
@@ -103,10 +105,12 @@ class PostStepTwoViewController: BaseViewController {
         case vCoin.textField:
             tempCoinText = vCoin.textField.text&.replacingOccurrences(of: ",", with: "")
             setTextCoin(tempCoinText: tempCoinText)
-            let money = tempCoinText.toDouble() * 20000
-            print(money.description)
-            vMoney.textField.text = money.toUInt64().toCurrency.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "₫", with: "")
-            print(vMoney.textField.text)
+            if vCoin.isCheck && vMoney.isCheck == false {
+                let money = tempCoinText.toDouble() * 20000
+                print(money.description)
+                vMoney.textField.text = money.toUInt64().toCurrency.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "₫", with: "")
+                print(vMoney.textField.text)
+            }
         
         default:
             break
@@ -133,7 +137,6 @@ class PostStepTwoViewController: BaseViewController {
             let result = _coin.toCurrencyMyBuy
             vCoin.textField.text = result
         }
-        
     }
     
     func setupUpdate() {
@@ -164,10 +167,12 @@ class PostStepTwoViewController: BaseViewController {
     //    }
     
     @objc func editingChanged(textField: UITextField) {
-        let money = textField.text&.removeCommaDecimal().toDouble()
-        let coin = money / AppConstant.moneyToCoint
-        let num = coin.roundedTwoDemical()
-        setTextCoin(tempCoinText: num)
+        if vMoney.isCheck && vCoin.isCheck == false {
+            let money = textField.text&.removeCommaDecimal().toDouble()
+            let coin = money / AppConstant.moneyToCoint
+            let num = coin.roundedTwoDemical()
+            setTextCoin(tempCoinText: num)
+        }
 //        vCoin.textField.text = num.currencyInputFormatting(digit: 2)
     }
     
@@ -327,6 +332,8 @@ extension PostStepTwoViewController: CheckBoxTextFieldDelegate {
             checkBoxTextField.textField.text = UserDefaultHelper.shared.loginUserInfo?.houseAddress
         case vAddress2:
             checkBoxTextField.textField.text = UserDefaultHelper.shared.loginUserInfo?.companyAddress
+        case vMoney, vCoin:
+            checkBoxTextField.textField.textColor = isChecked ? .black : .gray
         default:
             break
         }

@@ -2,20 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>Fabric</key>
-    <dict>
-        <key>APIKey</key>
-        <string>aed16a54a9d939707e0755e6e727909e8c4950ee</string>
-        <key>Kits</key>
-        <array>
-            <dict>
-                <key>KitInfo</key>
-                <dict/>
-                <key>KitName</key>
-                <string>Crashlytics</string>
-            </dict>
-        </array>
-    </dict>
 	<key>AccountKitClientToken</key>
 	<string>195782fa5d85685a90d770734824afb3</string>
 	<key>CFBundleDevelopmentRegion</key>
@@ -60,7 +46,21 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>201902211900</string>
+	<string>201902252100</string>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>aed16a54a9d939707e0755e6e727909e8c4950ee</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict/>
+				<key>KitName</key>
+				<string>Crashlytics</string>
+			</dict>
+		</array>
+	</dict>
 	<key>FacebookAppID</key>
 	<string>225241758398999</string>
 	<key>FacebookDisplayName</key>
