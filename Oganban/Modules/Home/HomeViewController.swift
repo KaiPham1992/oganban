@@ -11,6 +11,7 @@
 import UIKit
 import DropDown
 import GoogleMaps
+import Crashlytics
 
 class HomeViewController: BaseViewController {
     //MARK:- IBOUTLET VARIABLE
@@ -102,7 +103,16 @@ class HomeViewController: BaseViewController {
         } else {
             topViewAnchor.constant = 20
         }
+//        let button = UIButton(type: .roundedRect)
+//        button.frame = CGRect(x: 20, y: 50, width: 100, height: 30)
+//        button.setTitle("Crash", for: [])
+//        button.addTarget(self, action: #selector(self.crashButtonTapped(_:)), for: .touchUpInside)
+//        view.addSubview(button)
     }
+    
+//    @IBAction func crashButtonTapped(_ sender: AnyObject) {
+//        Crashlytics.sharedInstance().crash()
+//    }
     
     override func setUpNavigation() {
         super.setUpNavigation()

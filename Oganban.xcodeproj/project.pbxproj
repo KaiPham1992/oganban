@@ -3664,6 +3664,7 @@
 				CB3A8F0821C64FC1008144BD /* Resources */,
 				B6EC9D722D0D1330FF69EF3E /* [CP] Embed Pods Frameworks */,
 				31A1370CAB4F2FEC20F2C9BA /* [CP] Copy Pods Resources */,
+				B33AE18C222103CE006D521B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -3684,6 +3685,7 @@
 				DE68D1BB21F0122C00A3A7BE /* Resources */,
 				DE68D22621F0122C00A3A7BE /* [CP] Embed Pods Frameworks */,
 				DE68D22721F0122C00A3A7BE /* [CP] Copy Pods Resources */,
+				B33AE18D222107C2006D521B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -3704,6 +3706,7 @@
 				DE68D3A721F0123A00A3A7BE /* Resources */,
 				DE68D41221F0123A00A3A7BE /* [CP] Embed Pods Frameworks */,
 				DE68D41321F0123A00A3A7BE /* [CP] Copy Pods Resources */,
+				B33AE18E222107CA006D521B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -4153,6 +4156,60 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Oganban-Dev/Pods-Oganban-Dev-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B33AE18C222103CE006D521B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/Fabric/run\" aed16a54a9d939707e0755e6e727909e8c4950ee 54fb1cc9d30afad5f97d8579c7d15bced41c9049c6132c0121d041020b74b5d1\n";
+		};
+		B33AE18D222107C2006D521B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/Fabric/run\" aed16a54a9d939707e0755e6e727909e8c4950ee 54fb1cc9d30afad5f97d8579c7d15bced41c9049c6132c0121d041020b74b5d1\n";
+		};
+		B33AE18E222107CA006D521B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/Fabric/run\" aed16a54a9d939707e0755e6e727909e8c4950ee 54fb1cc9d30afad5f97d8579c7d15bced41c9049c6132c0121d041020b74b5d1\n";
+		};
 		B6EC9D722D0D1330FF69EF3E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -4160,23 +4217,23 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Oganban-Dev/Pods-Oganban-Dev-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
-				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/ImagePicker/ImagePicker.framework",
-				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
-				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire-iOS10.0/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts-iOS10.0/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift-iOS10.0/CryptoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/DropDown-iOS10.0/DropDown.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit-iOS10.0/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit-iOS10.0/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher-iOS10.0/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac-iOS10.0/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities-iOS10.0/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift-iOS10.0/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/ImagePicker-iOS10.0/ImagePicker.framework",
+				"${BUILT_PRODUCTS_DIR}/ImageSlideshow-iOS10.0/ImageSlideshow.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper-iOS10.0/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf-iOS10.0/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage-iOS10.0/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON-iOS10.0/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb-iOS10.0/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -4246,23 +4303,23 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Oganban-Prod/Pods-Oganban-Prod-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
-				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/ImagePicker/ImagePicker.framework",
-				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
-				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire-iOS10.0/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts-iOS10.0/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift-iOS10.0/CryptoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/DropDown-iOS10.0/DropDown.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit-iOS10.0/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit-iOS10.0/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher-iOS10.0/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac-iOS10.0/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities-iOS10.0/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift-iOS10.0/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/ImagePicker-iOS10.0/ImagePicker.framework",
+				"${BUILT_PRODUCTS_DIR}/ImageSlideshow-iOS10.0/ImageSlideshow.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper-iOS10.0/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf-iOS10.0/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage-iOS10.0/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON-iOS10.0/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb-iOS10.0/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -4336,23 +4393,23 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Oganban-AppStore/Pods-Oganban-AppStore-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
-				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/ImagePicker/ImagePicker.framework",
-				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
-				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire-iOS11.0/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts-iOS11.0/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift-iOS11.0/CryptoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/DropDown-iOS11.0/DropDown.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit-iOS11.0/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit-iOS11.0/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher-iOS11.0/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac-iOS11.0/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities-iOS11.0/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift-iOS11.0/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/ImagePicker-iOS11.0/ImagePicker.framework",
+				"${BUILT_PRODUCTS_DIR}/ImageSlideshow-iOS11.0/ImageSlideshow.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper-iOS11.0/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf-iOS11.0/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage-iOS11.0/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON-iOS11.0/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb-iOS11.0/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (

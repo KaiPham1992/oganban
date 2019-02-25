@@ -24,7 +24,7 @@ class AddressCell: BaseTableCell {
             }
             
             if let _ = _record.lat {
-                str = str == "" ? "Theo định vị GPS thực tế" : "\(str)\n- Theo định vị GPS thực tế"
+                str = str == "" ? "- Theo định vị GPS thực tế" : "\(str)\n- Theo định vị GPS thực tế"
             }
 
             lbAddress.text = str

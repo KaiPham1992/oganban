@@ -13,6 +13,8 @@ import FBSDKLoginKit
 import FBSDKCoreKit
 import GoogleSignIn
 import GooglePlaces
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -30,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.frame = UIScreen.main.bounds
         UIApplication.shared.statusBarStyle = .lightContent
         
-        
+        Fabric.with([Crashlytics.self])
 //        checkGPS()
         
         checkLogin()
