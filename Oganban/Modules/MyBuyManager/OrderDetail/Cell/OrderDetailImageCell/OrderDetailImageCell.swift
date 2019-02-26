@@ -40,7 +40,7 @@ class OrderDetailImageCell: BaseTableCell {
             imageSlide.listItem = _record.arrayImage
             lbNameRecord.text = _record.name
             if _record.expiredDate == nil {
-                lbExpireDate.text = Date().toString(dateFormat: AppDateFormat.ddMMYYYY_VN)
+                lbExpireDate.text = "Hết hạn: \(Date().toString(dateFormat: AppDateFormat.ddMMYYYY_VN))"
             } else {
                 lbExpireDate.text = "Hết hạn: \(_record.expiredDate?.toString(dateFormat: AppDateFormat.ddMMYYYY_VN) ?? "")"
             }
