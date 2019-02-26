@@ -150,6 +150,7 @@ class HomeViewController: BaseViewController {
     }
     
     @objc func didSaveLocation() {
+        lbPosition.text = UserDefaultHelper.shared.address
         getParamDefault()
         ProgressView.shared.show()
         presenter?.filterRecord(param: paramFilter)
