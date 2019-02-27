@@ -10,9 +10,9 @@ import UIKit
 
 struct AppConstant {
     #if APPSTORE
-    static let appAdmobId = "ca-app-pub-8064036299806325~8781055145"
+    static let appAdmobId = "ca-app-pub-9353872959466378~7688554039"
     static let admobNativeAds = "ca-app-pub-8064036299806325/9836354585"//"ca-app-pub-8064036299806325/9836354585"
-    static let admobBanner = "ca-app-pub-8064036299806325/9836354585"
+    static let admobBanner = "ca-app-pub-9353872959466378/9696658328"
     #else
     static let appAdmobId = "ca-app-pub-8064036299806325~8781055145"
     static let admobNativeAds = "ca-app-pub-3940256099942544/3986624511"

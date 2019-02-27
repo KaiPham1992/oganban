@@ -36,7 +36,7 @@ class RecordSellingView: BaseViewXib {
             } else {
                 imgMoney.isHidden = false
             }
-            
+
             if _record.coin == nil {
                 imgCoin.isHidden = true
             } else {
@@ -46,9 +46,9 @@ class RecordSellingView: BaseViewXib {
             lbCoin.text = _record.showCoin() //"\(_record.coin?.description ?? "") ơ"
             lbCoin.underlineLastCharacter()
             lbPrice.underlineLastCharacter()
-            
-            
-            
+
+
+
             if _record.status == "expired" {
                 lbTotal.text = "Tin hết hạn"
                 lbTotal.backgroundColor = AppColor.yellow_228_251_30
@@ -61,7 +61,7 @@ class RecordSellingView: BaseViewXib {
                 let qty = _record.quantity
                 lbTotal.text = "SL còn lại: \(qty?.description ?? "")"
             }
-            
+
         }
     }
     
