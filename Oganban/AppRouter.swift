@@ -85,6 +85,7 @@ class AppRouter {
                 topVC.push(controller: vc)
             case "COMMENT":
                 let vc = CommentDetailRouter.createModule(recordId: nil, commentId: id)
+                vc.isComment = true
                 topVC.push(controller: vc)
             default:
                 break
