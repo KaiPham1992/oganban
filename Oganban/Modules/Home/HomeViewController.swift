@@ -608,7 +608,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             if index != 0 {
                 cell.lbTitle.text = menu[index].cateChild[indexPath.row].name
                 if isCalculatorHeight {
-                    self.heightRight.constant = heightContent < heightMax ? tableView.contentSize.height : (heightMax)
+                    self.heightRight.constant = heightContent < heightMax ? tableView.contentSize.height + 35 : (heightMax)
                 } else {
                     isCalculatorHeight = true
                 }
