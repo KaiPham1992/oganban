@@ -309,17 +309,23 @@ extension PostStepTwoViewController: CheckBoxTextFieldDelegate {
     func checkBoxTextField(didEndEditting checkBoxTextField: CheckBoxTextField) {
         if checkBoxTextField == vAddress2 || checkBoxTextField == vAddress1 {
             if checkBoxTextField.isCheck {
-                PositionMapsHelper.shared.showSearchPlace(controller: self) { place in
-                    guard let _place = place as? GMSPlace else { return }
-                    checkBoxTextField.textField.text = _place.formattedAddress&
-                    
-                    // lat long
-                    if checkBoxTextField == self.vAddress2  {
-                        self.locationAddress2 = _place.coordinate
-                    } else {
-                        self.locationAddress1 = _place.coordinate
-                    }
-                }
+                let vc = PositionViewController.initFromNib()
+                vc.checkBox = checkBoxTextField
+                vc.delegate = self
+                let nav = UINavigationController(rootViewController: vc)
+//                viewController?.present(controller: nav)
+                self.present(controller: nav)
+//                PositionMapsHelper.shared.showSearchPlace(controller: self) { place in
+//                    guard let _place = place as? GMSPlace else { return }
+//                    checkBoxTextField.textField.text = _place.formattedAddress&
+//
+//                    // lat long
+//                    if checkBoxTextField == self.vAddress2  {
+//                        self.locationAddress2 = _place.coordinate
+//                    } else {
+//                        self.locationAddress1 = _place.coordinate
+//                    }
+//                }
                 
             }
         }
@@ -371,5 +377,22 @@ extension PostStepTwoViewController: UITextFieldDelegate {
         }
         
         return true
+    }
+}
+
+extension PostStepTwoViewController: PositionViewControllerDelegate {
+    func positionSelected(location: CLLocationCoordinate2D, address: String, distance: PositionRangeEntity) {
+        
+    }
+    
+    func positionSelectedCheckBox(location: CLLocationCoordinate2D, address: String, checkBox: CheckBoxTextField) {
+        // lat long
+        if checkBox == self.vAddress2  {
+            self.vAddress2.textField.text = address
+            self.locationAddress2 = location
+        } else {
+            self.vAddress1.textField.text = address
+            self.locationAddress1 = location
+        }
     }
 }

@@ -734,6 +734,10 @@ extension HomeViewController: UITextFieldDelegate {
 
 //MARK: - DELEGATE POSITION
 extension HomeViewController: PositionViewControllerDelegate {
+    func positionSelectedCheckBox(location: CLLocationCoordinate2D, address: String, checkBox: CheckBoxTextField) {
+        
+    }
+    
     func positionSelected(location: CLLocationCoordinate2D, address: String, distance: PositionRangeEntity) {
         let long = String(location.longitude)
         let lat = String(location.latitude)
