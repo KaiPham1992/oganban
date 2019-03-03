@@ -14,12 +14,9 @@ import GooglePlaces
 import DropDown
 
 protocol PositionViewControllerDelegate: class {
-    func positionSelected(location: CLLocationCoordinate2D, address: String, distance: PositionRangeEntity)
+    func positionSelected(location: CLLocationCoordinate2D, address: String, distance: PositionRangeEntity?)
     func positionSelectedCheckBox(location: CLLocationCoordinate2D, address: String, checkBox: CheckBoxTextField)
 }
-//extension PositionViewControllerDelegate {
-//
-//}
 
 class PositionViewController: BaseViewController {
     
@@ -113,6 +110,7 @@ class PositionViewController: BaseViewController {
             self.dismiss()
         } else {
             presenter?.dismiss()
+            self.navigationController?.dismiss()
         }
     }
     
@@ -122,7 +120,13 @@ class PositionViewController: BaseViewController {
             delegate?.positionSelectedCheckBox(location: centerMapCoordinate, address: tfAddress.text&, checkBox: checkBox)
             self.dismiss()
         } else {
-            guard let distance = distance else { return }
+            guard let distance = distance else {
+                // Sign Up and post to sale
+                 delegate?.positionSelected(location: centerMapCoordinate, address: tfAddress.text&, distance: nil)
+                self.navigationController?.dismiss()
+                return
+                
+            }
             delegate?.positionSelected(location: centerMapCoordinate, address: tfAddress.text&, distance: distance)
             UserDefaultHelper.shared.saveLocation(lat: centerMapCoordinate.latitude, long: centerMapCoordinate.longitude, address: tfAddress.text&)
             presenter?.dismiss()
@@ -176,7 +180,6 @@ extension PositionViewController: GMSMapViewDelegate {
         let lat = CGFloat(position.target.latitude)
         getAddressFromLocation(pdblLatitude: lat, withLongitude: long)
 
-        
         guard let distance = self.distance else { return }
         presenter?.getCountRecord(long: long, lat: lat, radius: Int(distance.value&))
     }
@@ -214,7 +217,8 @@ extension PositionViewController: GMSMapViewDelegate {
                 {
                     print("reverse geodcode fail: \(error!.localizedDescription)")
                 }
-                let pm = placemarks! as [CLPlacemark]
+                
+                guard let pm = placemarks  else { return }
                 
                 if pm.count > 0 {
                     let pm = placemarks![0]
@@ -244,14 +248,18 @@ extension PositionViewController: GMSMapViewDelegate {
 
 extension PositionViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
-//        PositionMapsHelper.shared.showSearch(controller: self) { address in
-//            textField.text = address
-//        }
-        
         PositionMapsHelper.shared.showSearchPlace(controller: self) {  place in
             guard let _place = place as? GMSPlace else { return }
             textField.text = _place.formattedAddress&
             self.centerMapCoordinate = _place.coordinate
+            self.placeMarkerOnCenter(centerMapCoordinate: self.centerMapCoordinate)
+            
+            let camera = GMSCameraPosition.camera(withLatitude: _place.coordinate.latitude, longitude: _place.coordinate.longitude, zoom: 17.0)
+            
+            self.mapView?.animate(to: camera)
+            
+            guard let distance = self.distance else { return }
+            self.presenter?.getCountRecord(long: CGFloat(_place.coordinate.longitude), lat: CGFloat(_place.coordinate.latitude), radius: Int(distance.value&))
         }
     }
 }

@@ -50,6 +50,7 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
     
     var locationAddress1: CLLocationCoordinate2D?
     var locationAddress2: CLLocationCoordinate2D?
+    var textFiledSelected: UITextField?
     
     weak var delegate: SignUpViewControllerDelegate?
     
@@ -111,20 +112,28 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        PositionMapsHelper.shared.showSearchPlace(controller: self) { place in
-            guard let _place = place as? GMSPlace else { return }
-            textField.text = _place.formattedAddress&
-            
-            // lat long
-            switch textField {
-            case self.vHouseAddress.textField:
-                self.locationAddress1 = _place.coordinate
-            case self.vCompanyAddress.textField:
-                self.locationAddress2 = _place.coordinate
-            default:
-                break
-            }
-        }
+        textFiledSelected = textField
+        showMap()
+//        PositionMapsHelper.shared.showSearchPlace(controller: self) { place in
+//            guard let _place = place as? GMSPlace else { return }
+//            textField.text = _place.formattedAddress&
+//
+////            // lat long
+//            switch textField {
+//            case self.vHouseAddress.textField:
+//                self.locationAddress1 = _place.coordinate
+//            case self.vCompanyAddress.textField:
+//                self.locationAddress2 = _place.coordinate
+//            default:
+//                break
+//            }
+//        }
+        
+//        let vc = PositionViewController.initFromNib()
+//        vc.checkBox = checkBoxTextField
+//        vc.delegate = self
+//        let nav = UINavigationController(rootViewController: vc)
+//        self.present(controller: nav)
     }
     
     @IBAction func btnTermOfPolicyTapped() {
@@ -312,6 +321,32 @@ extension SignUpViewController: SignUpViewProtocol {
             break
         }
     }
+}
+
+extension SignUpViewController: PositionViewControllerDelegate {
+    func positionSelected(location: CLLocationCoordinate2D, address: String, distance: PositionRangeEntity?) {
+        guard let textFiledSelected = textFiledSelected else { return }
+        textFiledSelected.text = address
+        switch textFiledSelected {
+        case self.vHouseAddress.textField:
+            self.locationAddress1 = location
+        case self.vCompanyAddress.textField:
+            self.locationAddress2 = location
+        default:
+            break
+        }
+
+    }
     
+    func positionSelectedCheckBox(location: CLLocationCoordinate2D, address: String, checkBox: CheckBoxTextField) {
+        print("positionSelectedCheckBox: \(address)")
+    }
+    
+    func showMap() {
+        let vc = PositionViewController.initFromNib()
+        vc.delegate = self
+        let nav = UINavigationController(rootViewController: vc)
+        self.present(controller: nav)
+    }
     
 }
