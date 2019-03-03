@@ -31,7 +31,9 @@ class OrderInfoUserCell: BaseTableCell {
             guard let _record = record else { return }
             lbStar.text = _record.avgRating?.roundedDemical()
             lbReview.text = _record.totalRating& + " đánh giá"
-            lbPhone.text =  _record.phone&
+            var phoneStr = _record.phone&
+            phoneStr.remove(at: phoneStr.startIndex)
+            lbPhone.text =  "+84\(phoneStr)"
             lbName.text = _record.fullName
             vLevel.setLevel(level: _record.level&, isPro: _record.isPro)
             if _record.socialImgSrc != nil {

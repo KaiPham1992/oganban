@@ -150,6 +150,7 @@ class HomeViewController: BaseViewController {
     }
     
     @objc func didSaveLocation() {
+        lbPosition.text = UserDefaultHelper.shared.address
         getParamDefault()
         ProgressView.shared.show()
         presenter?.filterRecord(param: paramFilter)
@@ -607,7 +608,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             if index != 0 {
                 cell.lbTitle.text = menu[index].cateChild[indexPath.row].name
                 if isCalculatorHeight {
-                    self.heightRight.constant = heightContent < heightMax ? tableView.contentSize.height : (heightMax)
+                    self.heightRight.constant = heightContent < heightMax ? tableView.contentSize.height + 35 : (heightMax)
                 } else {
                     isCalculatorHeight = true
                 }
@@ -733,6 +734,10 @@ extension HomeViewController: UITextFieldDelegate {
 
 //MARK: - DELEGATE POSITION
 extension HomeViewController: PositionViewControllerDelegate {
+    func positionSelectedCheckBox(location: CLLocationCoordinate2D, address: String, checkBox: CheckBoxTextField) {
+        
+    }
+    
     func positionSelected(location: CLLocationCoordinate2D, address: String, distance: PositionRangeEntity) {
         let long = String(location.longitude)
         let lat = String(location.latitude)

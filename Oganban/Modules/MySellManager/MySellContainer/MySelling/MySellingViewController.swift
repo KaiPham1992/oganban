@@ -39,7 +39,6 @@ class MySellingViewController: BaseViewController {
     var listRecord: BaseRecordEntity? {
         didSet {
             if let count = self.listRecord?.dataRecord, count.isEmpty  {
-                tbMySelling.isHidden = true
                 showNoData()
             } else {
                 hideNoData()

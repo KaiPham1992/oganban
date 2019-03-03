@@ -15,7 +15,11 @@ import DropDown
 
 protocol PositionViewControllerDelegate: class {
     func positionSelected(location: CLLocationCoordinate2D, address: String, distance: PositionRangeEntity)
+    func positionSelectedCheckBox(location: CLLocationCoordinate2D, address: String, checkBox: CheckBoxTextField)
 }
+//extension PositionViewControllerDelegate {
+//
+//}
 
 class PositionViewController: BaseViewController {
     
@@ -32,6 +36,7 @@ class PositionViewController: BaseViewController {
     var marker:GMSMarker!
     var address = ""
     var dataSource: [PositionRangeEntity] = []
+    var checkBox: CheckBoxTextField?
     var distance: PositionRangeEntity? {
         didSet {
             //            lbScale.text = distance?.title
@@ -104,14 +109,26 @@ class PositionViewController: BaseViewController {
     }
     
     @objc func btnRejectTapped() {
-        presenter?.dismiss()
+        if let _ = checkBox {
+            self.dismiss()
+        } else {
+            presenter?.dismiss()
+        }
     }
     
     @objc func btnDoneTapped() {
-        guard let distance = distance else { return }
-        delegate?.positionSelected(location: centerMapCoordinate, address: tfAddress.text&, distance: distance)
-        UserDefaultHelper.shared.saveLocation(lat: centerMapCoordinate.latitude, long: centerMapCoordinate.longitude, address: tfAddress.text&)
-        presenter?.dismiss()
+        
+        if let checkBox = checkBox {
+            delegate?.positionSelectedCheckBox(location: centerMapCoordinate, address: tfAddress.text&, checkBox: checkBox)
+            self.dismiss()
+        } else {
+            guard let distance = distance else { return }
+            delegate?.positionSelected(location: centerMapCoordinate, address: tfAddress.text&, distance: distance)
+            UserDefaultHelper.shared.saveLocation(lat: centerMapCoordinate.latitude, long: centerMapCoordinate.longitude, address: tfAddress.text&)
+            presenter?.dismiss()
+        }
+        
+        
     }
     
     @IBAction func showDropdownTapped() {

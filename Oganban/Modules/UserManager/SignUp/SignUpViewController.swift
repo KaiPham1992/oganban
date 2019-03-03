@@ -197,10 +197,10 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
             return false
         }
         
-        if vLoginDisplay.textField.text&.hasSpecialCharacters() {
-            lbStatus.text = "Vui lòng nhập lại tên"
-            return false
-        }
+//        if vLoginDisplay.textField.text&.hasSpecialCharacters() {
+//            lbStatus.text = "Vui lòng nhập lại tên"
+//            return false
+//        }
         
         if vLoginDisplay.textField.text&.count > 18 {
             lbStatus.text = "Người dùng không thể nhập hơn 18 ký tự"
