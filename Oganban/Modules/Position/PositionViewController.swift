@@ -34,6 +34,8 @@ class PositionViewController: BaseViewController {
     var address = ""
     var dataSource: [PositionRangeEntity] = []
     var checkBox: CheckBoxTextField?
+    var isTextfieldDelegate = false
+    
     var distance: PositionRangeEntity? {
         didSet {
             //            lbScale.text = distance?.title
@@ -178,7 +180,11 @@ extension PositionViewController: GMSMapViewDelegate {
         print(position.target)
         let long = CGFloat(position.target.longitude)
         let lat = CGFloat(position.target.latitude)
-        getAddressFromLocation(pdblLatitude: lat, withLongitude: long)
+        if isTextfieldDelegate {
+            isTextfieldDelegate = false
+        } else {
+            getAddressFromLocation(pdblLatitude: lat, withLongitude: long)
+        }
 
         guard let distance = self.distance else { return }
         presenter?.getCountRecord(long: long, lat: lat, radius: Int(distance.value&))
@@ -249,6 +255,7 @@ extension PositionViewController: GMSMapViewDelegate {
 extension PositionViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         PositionMapsHelper.shared.showSearchPlace(controller: self) {  place in
+            self.isTextfieldDelegate = true
             guard let _place = place as? GMSPlace else { return }
             textField.text = _place.formattedAddress&
             self.centerMapCoordinate = _place.coordinate
