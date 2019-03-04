@@ -26,6 +26,8 @@ class PositionViewController: BaseViewController {
     @IBOutlet weak var tfAddress        : UITextField!
     @IBOutlet weak var vDropdown        : UIView!
     @IBOutlet weak var lbScale          : UILabel!
+    @IBOutlet weak var vScale           : UIView!
+    @IBOutlet weak var heightViewScale  : NSLayoutConstraint!
     
     var presenter: PositionPresenterProtocol?
     var locationManager = CLLocationManager()
@@ -51,6 +53,13 @@ class PositionViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //        self.distance = UserDefaultHelper.shared.radius
+        if let _ = checkBox {
+            vScale.isHidden = true
+            heightViewScale.constant = 0
+        } else {
+            vScale.isHidden = false
+            heightViewScale.constant = 40
+        }
     }
     
     override func setUpViews() {
