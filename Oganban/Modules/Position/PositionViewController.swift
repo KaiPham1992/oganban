@@ -263,8 +263,8 @@ extension PositionViewController: GMSMapViewDelegate {
 
 extension PositionViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.isTextfieldDelegate = true
         PositionMapsHelper.shared.showSearchPlace(controller: self) {  place in
-            self.isTextfieldDelegate = true
             guard let _place = place as? GMSPlace else { return }
             textField.text = _place.formattedAddress&
             self.centerMapCoordinate = _place.coordinate

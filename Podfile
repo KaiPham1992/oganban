@@ -7,7 +7,7 @@ def main_pods
     pod 'IQKeyboardManagerSwift', '6.2.0'
     pod 'Firebase/Core'
     pod 'GoogleMaps', '2.7.0'
-    pod 'GooglePlaces', '2.7.0'
+    pod 'GooglePlaces'
     pod 'FBSDKLoginKit', '4.38.1'
     pod 'FBSDKCoreKit' , '4.38.1'
     #pod 'FBSDKCoreKit', :git => 'https://github.com/facebook/facebook-objc-sdk.git', :branch => 'master'
