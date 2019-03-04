@@ -381,7 +381,7 @@ extension PostStepTwoViewController: UITextFieldDelegate {
 }
 
 extension PostStepTwoViewController: PositionViewControllerDelegate {
-    func positionSelected(location: CLLocationCoordinate2D, address: String, distance: PositionRangeEntity) {
+    func positionSelected(location: CLLocationCoordinate2D, address: String, distance: PositionRangeEntity?) {
         
     }
     

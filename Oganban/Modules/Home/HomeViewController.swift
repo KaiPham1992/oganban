@@ -738,14 +738,17 @@ extension HomeViewController: PositionViewControllerDelegate {
         
     }
     
-    func positionSelected(location: CLLocationCoordinate2D, address: String, distance: PositionRangeEntity) {
+    func positionSelected(location: CLLocationCoordinate2D, address: String, distance: PositionRangeEntity?) {
         let long = String(location.longitude)
         let lat = String(location.latitude)
         paramFilter.long = long
         paramFilter.lat = lat
         lbPosition.text = address
         self.distance = distance
-        self.paramFilter.radius = distance.value&
+        if let distance = distance {
+            self.paramFilter.radius = distance.value&
+        }
+        
         resetOffset()
         ProgressView.shared.show()
         presenter?.filterRecord(param: paramFilter)

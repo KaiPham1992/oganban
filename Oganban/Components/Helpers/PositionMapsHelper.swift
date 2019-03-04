@@ -38,7 +38,9 @@ extension PositionMapsHelper: GMSAutocompleteViewControllerDelegate {
         let acController = GMSAutocompleteViewController()
         acController.navigationController?.navigationBar.barTintColor = AppColor.red_110_0_0
         acController.delegate = self
-        
+        let filter = GMSAutocompleteFilter()
+        filter.country = "VN"
+        acController.autocompleteFilter = filter
         controller?.present(acController, animated: true, completion: nil)
     }
     
