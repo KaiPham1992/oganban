@@ -26,6 +26,8 @@ class PositionViewController: BaseViewController {
     @IBOutlet weak var tfAddress        : UITextField!
     @IBOutlet weak var vDropdown        : UIView!
     @IBOutlet weak var lbScale          : UILabel!
+    @IBOutlet weak var vScale           : UIView!
+    @IBOutlet weak var heightViewScale  : NSLayoutConstraint!
     
     var presenter: PositionPresenterProtocol?
     var locationManager = CLLocationManager()
@@ -34,6 +36,8 @@ class PositionViewController: BaseViewController {
     var address = ""
     var dataSource: [PositionRangeEntity] = []
     var checkBox: CheckBoxTextField?
+    var isTextfieldDelegate = false
+    
     var distance: PositionRangeEntity? {
         didSet {
             //            lbScale.text = distance?.title
@@ -49,6 +53,13 @@ class PositionViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //        self.distance = UserDefaultHelper.shared.radius
+        if let _ = checkBox {
+            vScale.isHidden = true
+            heightViewScale.constant = 0
+        } else {
+            vScale.isHidden = false
+            heightViewScale.constant = 40
+        }
     }
     
     override func setUpViews() {
@@ -178,7 +189,11 @@ extension PositionViewController: GMSMapViewDelegate {
         print(position.target)
         let long = CGFloat(position.target.longitude)
         let lat = CGFloat(position.target.latitude)
-        getAddressFromLocation(pdblLatitude: lat, withLongitude: long)
+        if isTextfieldDelegate {
+            isTextfieldDelegate = false
+        } else {
+            getAddressFromLocation(pdblLatitude: lat, withLongitude: long)
+        }
 
         guard let distance = self.distance else { return }
         presenter?.getCountRecord(long: long, lat: lat, radius: Int(distance.value&))
@@ -248,6 +263,7 @@ extension PositionViewController: GMSMapViewDelegate {
 
 extension PositionViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.isTextfieldDelegate = true
         PositionMapsHelper.shared.showSearchPlace(controller: self) {  place in
             guard let _place = place as? GMSPlace else { return }
             textField.text = _place.formattedAddress&
