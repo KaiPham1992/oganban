@@ -123,7 +123,7 @@ DEPENDENCIES:
   - Firebase/Messaging
   - Google-Mobile-Ads-SDK
   - GoogleMaps (= 2.7.0)
-  - GooglePlaces (= 2.7.0)
+  - GooglePlaces
   - GoogleSignIn
   - ImagePicker (from `https://github.com/appsailor/ImagePicker.git`, branch `feature/Swift-4.2`)
   - ImageSlideshow
@@ -212,6 +212,6 @@ SPEC CHECKSUMS:
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 7bd12fc57b0c77c627c965f19f2ea7648768cbba
+PODFILE CHECKSUM: 76f886327824875c1a569ba6976a55b5aa334c02
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.1

@@ -4140,7 +4140,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Oganban-Dev/Pods-Oganban-Dev-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Oganban-Dev/Pods-Oganban-Dev-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
@@ -4153,7 +4153,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Oganban-Dev/Pods-Oganban-Dev-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Oganban-Dev/Pods-Oganban-Dev-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B33AE18C222103CE006D521B /* ShellScript */ = {
@@ -4216,7 +4216,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Oganban-Dev/Pods-Oganban-Dev-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Oganban-Dev/Pods-Oganban-Dev-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
@@ -4257,7 +4257,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Oganban-Dev/Pods-Oganban-Dev-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Oganban-Dev/Pods-Oganban-Dev-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CB70D6125B59F98858A450E9 /* [CP] Check Pods Manifest.lock */ = {
@@ -4302,7 +4302,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Oganban-Prod/Pods-Oganban-Prod-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Oganban-Prod/Pods-Oganban-Prod-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
@@ -4343,7 +4343,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Oganban-Prod/Pods-Oganban-Prod-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Oganban-Prod/Pods-Oganban-Prod-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DE68D22721F0122C00A3A7BE /* [CP] Copy Pods Resources */ = {
@@ -4352,7 +4352,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Oganban-Prod/Pods-Oganban-Prod-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Oganban-Prod/Pods-Oganban-Prod-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
@@ -4365,7 +4365,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Oganban-Prod/Pods-Oganban-Prod-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Oganban-Prod/Pods-Oganban-Prod-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DE68D22E21F0123A00A3A7BE /* [CP] Check Pods Manifest.lock */ = {
@@ -4392,7 +4392,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Oganban-AppStore/Pods-Oganban-AppStore-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Oganban-AppStore/Pods-Oganban-AppStore-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
@@ -4433,7 +4433,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Oganban-AppStore/Pods-Oganban-AppStore-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Oganban-AppStore/Pods-Oganban-AppStore-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DE68D41321F0123A00A3A7BE /* [CP] Copy Pods Resources */ = {
@@ -4442,7 +4442,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Oganban-AppStore/Pods-Oganban-AppStore-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Oganban-AppStore/Pods-Oganban-AppStore-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
@@ -4455,7 +4455,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Oganban-AppStore/Pods-Oganban-AppStore-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Oganban-AppStore/Pods-Oganban-AppStore-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
