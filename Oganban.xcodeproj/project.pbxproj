@@ -256,6 +256,8 @@
 		CB3A8F0E21C64FC1008144BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3A8F0D21C64FC1008144BD /* AppDelegate.swift */; };
 		CB3A8F1521C64FC1008144BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB3A8F1421C64FC1008144BD /* Assets.xcassets */; };
 		CB3A8F1821C64FC1008144BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB3A8F1621C64FC1008144BD /* LaunchScreen.storyboard */; };
+		CB540135223954E30052353F /* OrderBuyInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB540133223954E30052353F /* OrderBuyInfoCell.swift */; };
+		CB540136223954E30052353F /* OrderBuyInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB540134223954E30052353F /* OrderBuyInfoCell.xib */; };
 		CBBB3DF421D5C74400281ABB /* ChangePasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBB3DEE21D5C74400281ABB /* ChangePasswordPresenter.swift */; };
 		CBBB3DF521D5C74400281ABB /* ChangePasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBB3DEF21D5C74400281ABB /* ChangePasswordRouter.swift */; };
 		CBBB3DF621D5C74400281ABB /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBB3DF021D5C74400281ABB /* ChangePasswordViewController.swift */; };
@@ -1729,6 +1731,8 @@
 		CB3A8F1421C64FC1008144BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB3A8F1721C64FC1008144BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB3A8F1921C64FC1008144BD /* Dev-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Dev-Info.plist"; sourceTree = "<group>"; };
+		CB540133223954E30052353F /* OrderBuyInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderBuyInfoCell.swift; sourceTree = "<group>"; };
+		CB540134223954E30052353F /* OrderBuyInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderBuyInfoCell.xib; sourceTree = "<group>"; };
 		CBBB3DEE21D5C74400281ABB /* ChangePasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordPresenter.swift; sourceTree = "<group>"; };
 		CBBB3DEF21D5C74400281ABB /* ChangePasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordRouter.swift; sourceTree = "<group>"; };
 		CBBB3DF021D5C74400281ABB /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
@@ -2760,6 +2764,7 @@
 		CB379C0721E38849005D7536 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				CB540132223954520052353F /* OrderBuyInfoCell */,
 				0143F9C121E45FE000D032B8 /* HeaderOrderBuyDetail */,
 				CB379C0821E388B0005D7536 /* OrderBuyDetailImageCell */,
 			);
@@ -2855,6 +2860,15 @@
 				CB3A8F1621C64FC1008144BD /* LaunchScreen.storyboard */,
 			);
 			path = Oganban;
+			sourceTree = "<group>";
+		};
+		CB540132223954520052353F /* OrderBuyInfoCell */ = {
+			isa = PBXGroup;
+			children = (
+				CB540133223954E30052353F /* OrderBuyInfoCell.swift */,
+				CB540134223954E30052353F /* OrderBuyInfoCell.xib */,
+			);
+			path = OrderBuyInfoCell;
 			sourceTree = "<group>";
 		};
 		CBBB3DED21D5C72200281ABB /* ChangePassword */ = {
@@ -3853,6 +3867,7 @@
 				CB379C0C21E388B0005D7536 /* OrderBuyDetailImageCell.xib in Resources */,
 				DE68D41F21F0146700A3A7BE /* AppStore-Info.plist in Resources */,
 				DE0DBAE721D3B6DA0097E38F /* NotificationCell.xib in Resources */,
+				CB540136223954E30052353F /* OrderBuyInfoCell.xib in Resources */,
 				84329F5C21DFE1FA00047B5E /* FavouriteProductListViewController.xib in Resources */,
 				CBE2186621E219B80035F00B /* OrderBuyDetailViewController.xib in Resources */,
 				CB3A8F1521C64FC1008144BD /* Assets.xcassets in Resources */,
@@ -4618,6 +4633,7 @@
 				84329F2121DFB5E100047B5E /* HistoryCoinInteractor.swift in Sources */,
 				DE21827F21CD473100FDD9F1 /* KActivityIndicatorAnimationBallPulseRise.swift in Sources */,
 				84329F5821DFE1FA00047B5E /* FavouriteProductListRouter.swift in Sources */,
+				CB540135223954E30052353F /* OrderBuyInfoCell.swift in Sources */,
 				B355EF5121C8EB3F00379F57 /* HomeViewController.swift in Sources */,
 				CB172C2721C6A2EF0068CF92 /* UserUtils.swift in Sources */,
 				DEA3A08D21D674A200643296 /* PreviewPhotoViewController.swift in Sources */,

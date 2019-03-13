@@ -18,7 +18,7 @@ extension OrderBuyDetailViewController: UITableViewDelegate, UITableViewDataSour
         tbDetail.registerXibFile(SubCommentCell.self)
         tbDetail.registerXibFile(ReplyCommentCell.self)
         tbDetail.registerXibFile(OrderBuyDetailImageCell.self)
-        tbDetail.registerXibFile(OrderInfoUserCell.self)
+        tbDetail.registerXibFile(OrderBuyInfoCell.self)
         tbDetail.registerXibFile(OrderIntroCell.self)
         tbDetail.registerXibFile(OrderMoreCell.self)
         tbDetail.separatorStyle = .none
@@ -44,10 +44,10 @@ extension OrderBuyDetailViewController: UITableViewDelegate, UITableViewDataSour
             cell.record = self.record
             return cell
         case OrderDetailInfoType.infoSaler.rawValue:
-            let cell = tbDetail.dequeue(OrderInfoUserCell.self, for: indexPath)
+            let cell = tbDetail.dequeue(OrderBuyInfoCell.self, for: indexPath)
             cell.record = self.record
-            cell.btnPhone.isHidden = false
-            cell.lcsWidthImgPhone.constant = 13
+//            cell.btnPhone.isHidden = false
+//            cell.lcsWidthImgPhone.constant = 13
             cell.delegate = self
             return cell
         case OrderDetailInfoType.address.rawValue:
