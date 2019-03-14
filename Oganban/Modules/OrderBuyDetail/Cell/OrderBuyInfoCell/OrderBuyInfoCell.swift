@@ -11,6 +11,8 @@ import SDWebImage
 
 protocol OrderBuyInfoCellDelegate: class {
     func btnPhoneTapped()
+    func btnZaloTapped()
+    func btnFacebookTapped()
 }
 
 class OrderBuyInfoCell: BaseTableCell {
@@ -20,9 +22,12 @@ class OrderBuyInfoCell: BaseTableCell {
 //    @IBOutlet weak var lbPhone: UILabel!
     @IBOutlet weak var vLevel: LevelMemberView!
     @IBOutlet weak var imgAvatar: UIImageView!
-    @IBOutlet weak var imgPhone: UIImageView!
+//    @IBOutlet weak var imgPhone: UIImageView!
 //    @IBOutlet weak var btnPhone: UIButton!
 //    @IBOutlet weak var lcsWidthImgPhone: NSLayoutConstraint!
+    @IBOutlet weak var btnPhone: UIButton!
+    @IBOutlet weak var btnZalo: UIButton!
+    @IBOutlet weak var btnFacebook: UIButton!
     
     weak var delegate: OrderBuyInfoCellDelegate?
     
@@ -46,6 +51,14 @@ class OrderBuyInfoCell: BaseTableCell {
 
     @IBAction func btnPhoneTapped() {
         delegate?.btnPhoneTapped()
+    }
+    
+    @IBAction func btnZaloTapped() {
+        delegate?.btnZaloTapped()
+    }
+    
+    @IBAction func btnFacebookTapped() {
+        delegate?.btnFacebookTapped()
     }
     
     override func awakeFromNib() {

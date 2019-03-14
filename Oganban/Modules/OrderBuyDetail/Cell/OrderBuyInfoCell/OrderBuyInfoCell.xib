@@ -77,6 +77,9 @@
                             <constraint firstAttribute="height" constant="35" id="r11-ij-FTA"/>
                         </constraints>
                         <state key="normal" image="ic_zalo"/>
+                        <connections>
+                            <action selector="btnZaloTapped" destination="KGk-i7-Jjw" eventType="touchUpInside" id="fhD-5M-8gV"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gd-9B-416">
                         <rect key="frame" x="200" y="47" width="35" height="35"/>
@@ -85,6 +88,9 @@
                             <constraint firstAttribute="height" constant="35" id="f3j-RR-V9d"/>
                         </constraints>
                         <state key="normal" image="ic_fb"/>
+                        <connections>
+                            <action selector="btnFacebookTapped" destination="KGk-i7-Jjw" eventType="touchUpInside" id="i7V-Od-YKI"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -111,6 +117,9 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="btnFacebook" destination="8gd-9B-416" id="NE1-Wx-BuW"/>
+                <outlet property="btnPhone" destination="o2G-YT-YOn" id="S0u-fy-ZPi"/>
+                <outlet property="btnZalo" destination="TmK-5Y-cXD" id="xmr-SK-7sE"/>
                 <outlet property="imgAvatar" destination="FAD-gA-w9E" id="E2r-cW-ws7"/>
                 <outlet property="lbName" destination="PdA-ro-Y1R" id="mH7-Id-7Qg"/>
                 <outlet property="lbReview" destination="UYT-5D-seh" id="vLb-jL-FRF"/>

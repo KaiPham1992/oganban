@@ -57,6 +57,11 @@ struct OrderEntity: Mappable {
     
     var arrayImgSrc = [String]()
     
+    var linkZaloBuyer: String?
+    var linkFacebookBuyer: String?
+    var linkZaloSeller: String?
+    var linkFacebookSeller: String?
+    
     init?(map: Map) {
     }
     
@@ -84,6 +89,11 @@ struct OrderEntity: Mappable {
         self.coin <- map["coin"]
         
         self.arrayImgSrc <- map["img_src"]
+        
+        self.linkZaloBuyer <- map["link_zalo_buyer"]
+        self.linkZaloBuyer <- map["link_facebook_buyer"]
+        self.linkZaloSeller <- map["link_zalo_seller"]
+        self.linkFacebookSeller <- map["link_facebook_seller"]
     }
     
     func getStatus() -> OrderStatusType {

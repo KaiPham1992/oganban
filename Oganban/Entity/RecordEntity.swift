@@ -50,6 +50,13 @@ class RecordEntity: BaseEntity {
     var isService: String?
     var socialImgSrc: String?
     
+    var isPhone: Bool?
+    var isZalo: Bool?
+    var isFacebook: Bool?
+    
+    var linkZalo: String?
+    var linkFacebook: String?
+    
     required init?(map: Map) {
         super.init()
     }
@@ -101,6 +108,13 @@ class RecordEntity: BaseEntity {
         self.isService <- map["is_service"]
         
         self.socialImgSrc <- map["social_img_src"]
+        
+        self.isPhone <- map["is_active_phone"]
+        self.isZalo <- map["is_active_zalo"]
+        self.isFacebook <- map["is_active_facebook"]
+        
+        self.linkZalo <- map["link_zalo"]
+        self.linkFacebook <- map["link_facebook"]
     }
     
     var ratingFormat: String? {
