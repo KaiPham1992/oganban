@@ -196,27 +196,30 @@ extension OrderBuyDetailViewController: OrderBuyInfoCellDelegate {
     
     func btnZaloTapped() {
         let application = UIApplication.shared
-        let zaloAppPath = "https://zalo.me/\(0972956099)"
-        let appURL = URL(string: zaloAppPath)!
-        let webURL = URL(string: "https://google.com")
+        guard let zaloID = record?.linkZalo else { return }
+        let zaloAppPath = "https://zalo.me/\(zaloID)"
+        
+        guard let appURL = URL(string: zaloAppPath),
+        let webURL = URL(string: "https://google.com")  else { return }
         
         if application.canOpenURL(appURL) {
             application.open(appURL, options: [:], completionHandler: nil)
         } else {
-            application.open(webURL!, options: [:], completionHandler: nil)
+            application.open(webURL, options: [:], completionHandler: nil)
         }
     }
     
     func btnFacebookTapped() {
         let application = UIApplication.shared
-        let zaloAppPath = "https://m.me/vantudinh.024"
-        let appURL = URL(string: zaloAppPath)!
-        let webURL = URL(string: "https://google.com")
+        guard let facebookID = record?.linkFacebook else { return }
+        let zaloAppPath = "https://m.me/\(facebookID)"
+        guard let appURL = URL(string: zaloAppPath),
+            let webURL = URL(string: "https://google.com") else { return }
         
         if application.canOpenURL(appURL) {
             application.open(appURL, options: [:], completionHandler: nil)
         } else {
-            application.open(webURL!, options: [:], completionHandler: nil)
+            application.open(webURL, options: [:], completionHandler: nil)
         }
     }
 }

@@ -19,16 +19,13 @@ class OrderBuyInfoCell: BaseTableCell {
     @IBOutlet weak var lbReview: UILabel!
     @IBOutlet weak var lbStar: UILabel!
     @IBOutlet weak var lbName: UILabel!
-//    @IBOutlet weak var lbPhone: UILabel!
     @IBOutlet weak var vLevel: LevelMemberView!
     @IBOutlet weak var imgAvatar: UIImageView!
-//    @IBOutlet weak var imgPhone: UIImageView!
-//    @IBOutlet weak var btnPhone: UIButton!
-//    @IBOutlet weak var lcsWidthImgPhone: NSLayoutConstraint!
     @IBOutlet weak var btnPhone: UIButton!
     @IBOutlet weak var btnZalo: UIButton!
     @IBOutlet weak var btnFacebook: UIButton!
-    
+    @IBOutlet weak var lcsWidthBtnPhone: NSLayoutConstraint!
+    @IBOutlet weak var lcsWidthBtnZalo: NSLayoutConstraint!
     weak var delegate: OrderBuyInfoCellDelegate?
     
     var record: RecordEntity? {
@@ -38,13 +35,30 @@ class OrderBuyInfoCell: BaseTableCell {
             lbReview.text = _record.totalRating& + " đánh giá"
             var phoneStr = _record.phone&
             phoneStr.remove(at: phoneStr.startIndex)
-//            lbPhone.text =  "+84\(phoneStr)"
             lbName.text = _record.fullName
             vLevel.setLevel(level: _record.level&, isPro: _record.isPro)
             if _record.socialImgSrc != nil {
                 imgAvatar.sd_setImage(with: _record.urlAvatarSocial, placeholderImage: AppImage.imgPlaceHolderImage)
             } else {
                 imgAvatar.sd_setImage(with: _record.urlAvatar, placeholderImage: AppImage.imgPlaceHolderImage)
+            }
+            
+            if let isPhoneActive = _record.isPhone {
+                lcsWidthBtnPhone.constant = isPhoneActive ? 35 : 0
+            } else {
+                lcsWidthBtnPhone.constant = 0
+            }
+            
+            if let isPhoneZalo = _record.isZalo {
+                lcsWidthBtnZalo.constant = isPhoneZalo ? 35 : 0
+            } else {
+                lcsWidthBtnZalo.constant = 0
+            }
+            
+            if let isFacebookActive = _record.isFacebook {
+                btnFacebook.isHidden = isFacebookActive ? false : true
+            } else {
+                btnFacebook.isHidden = true
             }
         }
     }

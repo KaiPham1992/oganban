@@ -219,8 +219,10 @@ class PostStepTwoViewController: BaseViewController {
             }
             
             isGPSCurrent = vCheckGPS.isChecked ? 1 : 0
-            
-            param.updateInfoStepTwo(address1: address1, lat1: lat1, long1: long1, address2: address2, lat2: lat2, long2: long2, isLatlong: false, price: price, coin: coin, isGpsCurrent: isGPSCurrent)
+             let isActivePhone = UserDefaultHelper.shared.loginUserInfo?.isActivePhone
+                let isActiveZalo = UserDefaultHelper.shared.loginUserInfo?.isActiveZalo
+                let isActiveFacebook = UserDefaultHelper.shared.loginUserInfo?.isActiveFacebook
+            param.updateInfoStepTwo(address1: address1, lat1: lat1, long1: long1, address2: address2, lat2: lat2, long2: long2, isLatlong: false, price: price, coin: coin, isGpsCurrent: isGPSCurrent, isActivePhone: isActivePhone ?? 0, isActiveZalo: isActiveZalo ?? 0, isActiveFacebook: isActiveFacebook ?? 0)
             
             presenter?.postRecord(param: param)
         }

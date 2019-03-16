@@ -39,6 +39,13 @@ extension UpdateProfileViewController {
             self.checkHideShowSaveButton()
         }
         
+        tfZalo.textFieldDidBeginEditing = {
+            self.checkHideShowSaveButton()
+        }
+        
+        tfFacebook.textFieldDidBeginEditing = {
+            self.checkHideShowSaveButton()
+        }
     }
 }
 
@@ -60,7 +67,9 @@ extension UpdateProfileViewController {
                         let displayName = self.tfDisplayName.tfContent.text,
                         let phone =  self.tvPhone.tfPhone.text,
                         let dialCode = self.countryPhoneCode.dialCode,
-                        let birthDay =  self.birthDay?.toString(dateFormat: AppDateFormat.yyyyMMdd) else {
+                        let birthDay =  self.birthDay?.toString(dateFormat: AppDateFormat.yyyyMMdd),
+                        let linkZalo = self.tfZalo.tfContent.text,
+                        let linkFacebook = self.tfFacebook.tfContent.text else {
                             return
                     }
                     
@@ -75,16 +84,18 @@ extension UpdateProfileViewController {
                         gender = "other"
                     }
                     
+                    
+                    
                     let lat1 = self.locationAddress1?.latitude.description
                     let long1 = self.locationAddress1?.longitude.description
                     let lat2 = self.locationAddress2?.latitude.description
                     let long2 = self.locationAddress2?.longitude.description
                     
-                    let param = UpdateProfileParam(phoneNumber: phone, phoneCode: dialCode, birthday: birthDay, fullName: displayName, gender: gender, houseAddress: self.tfAddress1.tfContent.text, companyAddress: self.tfAddress2.tfContent.text, lat1: lat1, long1: long1, lat2: lat2, long2: long2)
+                    let param = UpdateProfileParam(phoneNumber: phone, phoneCode: dialCode, birthday: birthDay, fullName: displayName, gender: gender, houseAddress: self.tfAddress1.tfContent.text, companyAddress: self.tfAddress2.tfContent.text, lat1: lat1, long1: long1, lat2: lat2, long2: long2, isActivePhone: self.vCheckPhone.setCheckedShowPhone(isChecked: self.vCheckPhone.isChecked), isActiveZalo: self.vCheckZalo.setCheckedShowPhone(isChecked: self.vCheckZalo.isChecked), isActiveFacebook: self.vCheckFacebook.setCheckedShowPhone(isChecked: self.vCheckFacebook.isChecked), linkZalo: linkZalo, linkFacebook: linkFacebook)
                     
                     //self.user = UserEntity(displayName: displayName, phoneNumber: phone, phoneCode: dialCode, birthday: birthDay, gender: gender, houseAddress: self.tfAddress1.tfContent.text, companyAddress: self.tfAddress2.tfContent.text, lat1: lat1, long1: long1 ,lat2: lat2, long2: long2)
                     
-                    if let oldUserInfo = UserDefaultHelper.shared.loginUserInfo {
+                    if let oldUserInfo = self.user {
                         if phone != oldUserInfo.phone || dialCode.range(of:oldUserInfo.phoneCode ?? "nil") == nil {
                             self.fbAccountKit.verifyPhone()
                         } else {
@@ -98,6 +109,8 @@ extension UpdateProfileViewController {
             }
         }
     }
+    
+    
     
     @objc func selectBirthday(_ sender: UITapGestureRecognizer) {
         hideError()
@@ -128,12 +141,16 @@ extension UpdateProfileViewController {
 }
 
 extension UpdateProfileViewController: UpdateProfileViewProtocol{
+    func didGetProfileUser(user: UserEntity?) {
+        self.user = user
+        setDefaultData()
+    }
+    
     func didSuccessUpdateProfile(user: UserEntity?) {
-        if let _ = user {
+             self.user = user
             PopUpHelper.shared.showMessageHaveAds(message: "Lưu thay đổi thành công") {
                 self.pop()
             }
-        }
     }
     
     func didErrorUpdateProfile(error: APIError?) {
@@ -141,5 +158,11 @@ extension UpdateProfileViewController: UpdateProfileViewProtocol{
            //hideError(isHidden: false, message:  MessageString.invalidLoginEmailPassword)
             print ("Update profile: Something wrong")
         }
+    }
+}
+
+extension UpdateProfileViewController: CheckedViewDelegate {
+    func btnCheckedTapped() {
+        checkHideShowSaveButton()
     }
 }

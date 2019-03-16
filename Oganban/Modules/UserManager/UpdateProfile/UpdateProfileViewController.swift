@@ -59,7 +59,8 @@ class UpdateProfileViewController: BaseViewController {
         textFieldDidBeginEditing()
         hideError()
         addGesture()
-        setDefaultData()
+//        setDefaultData()
+        presenter?.getProfileUser()
        
     }
     
@@ -70,9 +71,11 @@ class UpdateProfileViewController: BaseViewController {
         if fbAccountKit.isLogged {
             DispatchQueue.main.async(execute: {
                 self.fbAccountKit.getCountryCodeAndPhoneNumber(completion: { phone in
-                    guard let _user = self.user, let phone = _user.phone, let phoneCode = _user.phoneCode, let birthDay = _user.birthday, let fullName = _user.fullName else { return }
-                
-                    let param = UpdateProfileParam(phoneNumber: phone, phoneCode: phoneCode, birthday: birthDay, fullName: fullName, gender: _user.gender, houseAddress: _user.houseAddress, companyAddress: _user.companyAddress, lat1: _user.latAddress1, long1: _user.longAddress1, lat2: _user.latAddress2, long2: _user.longAddress2)
+                    guard let _user = self.user, let _ = phone, let phoneCode = _user.phoneCode, let birthDay = _user.birthday, let fullName = _user.fullName,
+                        let linkZalo = self.tfZalo.tfContent.text,
+                        let linkFacebook = self.tfFacebook.tfContent.text else { return }
+                    guard let _phone = phone as? PhoneEntity else { return }
+                    let param = UpdateProfileParam(phoneNumber: _phone.phoneNumber&, phoneCode: _phone.phoneCode&, birthday: birthDay, fullName: fullName, gender: _user.gender, houseAddress: _user.houseAddress, companyAddress: _user.companyAddress, lat1: _user.latAddress1, long1: _user.longAddress1, lat2: _user.latAddress2, long2: _user.longAddress2, isActivePhone: self.vCheckPhone.setCheckedShowPhone(isChecked: self.vCheckPhone.isChecked), isActiveZalo: self.vCheckZalo.setCheckedShowPhone(isChecked: self.vCheckZalo.isChecked), isActiveFacebook: self.vCheckFacebook.setCheckedShowPhone(isChecked: self.vCheckFacebook.isChecked), linkZalo: linkZalo, linkFacebook: linkFacebook)
                     self.presenter?.updateProfile(userInfo: param)
                 })
             })
@@ -94,7 +97,7 @@ class UpdateProfileViewController: BaseViewController {
     }
     
     func setDefaultData(){
-        if let user = UserDefaultHelper.shared.loginUserInfo {
+        if let user = self.user {
             if let countRating = user.countRating, countRating != "" {
                 lbRateCount.text = countRating + " đánh giá"
             } else {
@@ -159,7 +162,19 @@ class UpdateProfileViewController: BaseViewController {
                 tfGender.tfContent.text = convertGenderTitle(gender: gender)
                 self.gender = convertStringToGender(title: gender)
             }
-           
+            
+            if let linkZalo = user.linkZalo {
+                self.tfZalo.tfContent.text = linkZalo
+            }
+            
+            if let linkFacebook = user.linkFacebook {
+                self.tfFacebook.tfContent.text = linkFacebook
+            }
+            
+            vCheckPhone.setShowChecked(checked: user.isActivePhoneChecked())
+            vCheckZalo.setShowChecked(checked: user.isActiveZaloChecked())
+            vCheckFacebook.setShowChecked(checked: user.isActiveFacebookChecked())
+            self.user = user
         }
     }
     
@@ -258,6 +273,26 @@ class UpdateProfileViewController: BaseViewController {
             }
             
             if user.companyAddress != tfAddress2.tfContent.text {
+                isEnabled = true
+            }
+            
+            if self.tfZalo.tfContent.text != user.linkZalo {
+                isEnabled = true
+            }
+            
+            if self.tfFacebook.tfContent.text != user.linkFacebook {
+                isEnabled = true
+            }
+            
+            if self.vCheckPhone.isChecked != user.isActivePhoneChecked() {
+                isEnabled = true
+            }
+            
+            if self.vCheckZalo.isChecked != user.isActiveZaloChecked() {
+                isEnabled = true
+            }
+            
+            if self.vCheckFacebook.isChecked != user.isActiveFacebookChecked() {
                 isEnabled = true
             }
         }

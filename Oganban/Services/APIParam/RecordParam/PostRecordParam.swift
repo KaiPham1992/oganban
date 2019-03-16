@@ -29,6 +29,9 @@ class PostRecordParam: BaseParam {
     var price: String?
     var coin: String?
     var isGpsCurrent: Int?
+    var isActivePhone: Int?
+    var isActiveZalo: Int?
+    var isActiveFacebook: Int?
     
     override func mapping(map: Map) {
         super.mapping(map: map)
@@ -54,6 +57,9 @@ class PostRecordParam: BaseParam {
         self.price         <- map["price"]
         self.coin          <- map["coin"]
         self.isGpsCurrent <- map["is_gps_current"]
+        self.isActivePhone <- map["is_active_phone"]
+        self.isActiveZalo <- map["is_active_zalo"]
+        self.isActiveFacebook <- map["is_active_facebook"]
     }
     
     convenience init(categoryId  : String, name: String, imgSrc: [String], quantity: String, expireDate: String, aboutRecord: String) {
@@ -66,7 +72,7 @@ class PostRecordParam: BaseParam {
         self.aboutRecord = aboutRecord
     }
     
-    func updateInfoStepTwo(address1: String, lat1: String, long1: String, address2: String, lat2: String, long2: String, isLatlong: Bool, price: String, coin: String, isGpsCurrent: Int) {
+    func updateInfoStepTwo(address1: String, lat1: String, long1: String, address2: String, lat2: String, long2: String, isLatlong: Bool, price: String, coin: String, isGpsCurrent: Int, isActivePhone: Int, isActiveZalo: Int, isActiveFacebook: Int) {
         self.address1 = address1
         self.lat1 = lat1
         self.lat2 = lat2
@@ -82,5 +88,8 @@ class PostRecordParam: BaseParam {
             self.long = UserDefaultHelper.shared.long
         }
         self.isGpsCurrent = isGpsCurrent
+        self.isActivePhone = isActivePhone
+        self.isActiveZalo = isActiveZalo
+        self.isActiveFacebook = isActiveFacebook
     }
 }

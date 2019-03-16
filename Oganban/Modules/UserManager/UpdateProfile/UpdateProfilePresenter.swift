@@ -30,6 +30,9 @@ class UpdateProfilePresenter: UpdateProfilePresenterProtocol {
         interactor?.updateAvatar(image: image)
     }
 
+    func getProfileUser() {
+        interactor?.getProfileUser()
+    }
 }
 extension UpdateProfilePresenter: UpdateProfileInteractorOutputProtocol{
     func didSuccessUpdateProfile(user: UserEntity?) {
@@ -38,5 +41,9 @@ extension UpdateProfilePresenter: UpdateProfileInteractorOutputProtocol{
     
     func didErrorUpdateProfile(error: APIError?) {
          view?.didErrorUpdateProfile(error: error)
+    }
+    
+    func didGetProfileUser(user: UserEntity?) {
+        view?.didGetProfileUser(user: user)
     }
 }

@@ -20,6 +20,8 @@ protocol UpdateProfilePresenterProtocol: class {
     var interactor: UpdateProfileInteractorInputProtocol? { get set }
     func updateProfile(userInfo: UpdateProfileParam)
     func updateAvatar(image: UIImage)
+    
+    func getProfileUser()
 }
 
 //MARK: Interactor -
@@ -28,6 +30,7 @@ protocol UpdateProfileInteractorOutputProtocol: class {
     /* Interactor -> Presenter */
     func didSuccessUpdateProfile(user: UserEntity?)
     func didErrorUpdateProfile(error: APIError?)
+    func didGetProfileUser(user: UserEntity?)
 }
 
 protocol UpdateProfileInteractorInputProtocol: class {
@@ -38,6 +41,7 @@ protocol UpdateProfileInteractorInputProtocol: class {
     
     func updateProfile(userInfo: UpdateProfileParam)
     func updateAvatar(image: UIImage)
+    func getProfileUser()
 }
 
 //MARK: View -
@@ -48,4 +52,5 @@ protocol UpdateProfileViewProtocol: class {
     /* Presenter -> ViewController */
     func didSuccessUpdateProfile(user: UserEntity?)
     func didErrorUpdateProfile(error: APIError?)
+    func didGetProfileUser(user: UserEntity?)
 }

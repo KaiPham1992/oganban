@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CheckedView" customModule="Oganban_AppStore" customModuleProvider="target">
             <connections>
+                <outlet property="btnChecked" destination="Ige-1x-7mX" id="OMK-CF-smX"/>
                 <outlet property="imgChecked" destination="7oi-rq-iYj" id="OIU-xg-utl"/>
             </connections>
         </placeholder>

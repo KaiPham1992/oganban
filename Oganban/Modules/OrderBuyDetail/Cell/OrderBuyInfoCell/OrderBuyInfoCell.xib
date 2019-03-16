@@ -124,6 +124,8 @@
                 <outlet property="lbName" destination="PdA-ro-Y1R" id="mH7-Id-7Qg"/>
                 <outlet property="lbReview" destination="UYT-5D-seh" id="vLb-jL-FRF"/>
                 <outlet property="lbStar" destination="4Gy-wq-TDx" id="qfh-w0-zeC"/>
+                <outlet property="lcsWidthBtnPhone" destination="ZVz-V4-7i0" id="N0e-X7-Sbx"/>
+                <outlet property="lcsWidthBtnZalo" destination="BtE-p0-TBB" id="pGd-cV-g4m"/>
                 <outlet property="vLevel" destination="OBY-VX-nar" id="3la-iH-NAH"/>
             </connections>
             <point key="canvasLocation" x="148.80000000000001" y="101.64917541229386"/>

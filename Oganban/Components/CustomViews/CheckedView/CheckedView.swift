@@ -8,15 +8,35 @@
 
 import UIKit
 
+protocol CheckedViewDelegate: class {
+    func btnCheckedTapped()
+}
+
 class CheckedView: BaseViewXib {
     
     @IBOutlet weak var imgChecked: UIImageView!
-    
+    @IBOutlet weak var btnChecked: UIButton!
     var isChecked = false
+    
+    weak var delegate: CheckedViewDelegate?
     
     override func setUpViews() {
         
-        imgChecked.image = UIImage(named: "ic_check_off")
+        if isChecked {
+            imgChecked.image = UIImage(named: "ic_check_on")
+        } else {
+            imgChecked.image = UIImage(named: "ic_check_off")
+        }
+    }
+    
+    func setShowChecked(checked: Bool) {
+        if checked == true {
+            isChecked = true
+            imgChecked.image = UIImage(named: "ic_check_on")
+        } else {
+            imgChecked.image = UIImage(named: "ic_check_off")
+            isChecked = false
+        }
     }
     
     @IBAction func btnCheckedTapped() {
@@ -25,6 +45,16 @@ class CheckedView: BaseViewXib {
             imgChecked.image = UIImage(named: "ic_check_on")
         } else {
             imgChecked.image = UIImage(named: "ic_check_off")
+        }
+        
+        delegate?.btnCheckedTapped()
+    }
+    
+    func setCheckedShowPhone(isChecked: Bool) -> Int {
+        if isChecked {
+            return 1
+        } else {
+            return 0
         }
     }
 }

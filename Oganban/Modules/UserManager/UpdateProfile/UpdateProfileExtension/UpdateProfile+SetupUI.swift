@@ -49,6 +49,9 @@ extension UpdateProfileViewController: UITextFieldDelegate {
         tfAddress1.tfContent.delegate = self
         tfAddress2.tfContent.delegate = self
         
+        vCheckZalo.delegate = self
+        vCheckPhone.delegate = self
+        vCheckFacebook.delegate = self
         tfZalo.setupLayoutTextfield(placeholderText: "Nhập tài khoản Zalo nếu có", titleText: "Tài khoản Zalo", placeholderColor: AppColor.black414141)
          tfFacebook.setupLayoutTextfield(placeholderText: "Nhập tài khoản Messenger nếu có", titleText: "Tài khoản Facebook Messenger", placeholderColor: AppColor.black414141)
     }
@@ -74,6 +77,7 @@ extension UpdateProfileViewController: UITextFieldDelegate {
                 self.tfAddress2.tfContent.text = _place.formattedAddress&
                 self.locationAddress2 = _place.coordinate
                 self.checkHideShowSaveButton()
+                
             default:
                 break
             }

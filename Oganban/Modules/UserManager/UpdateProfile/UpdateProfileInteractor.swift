@@ -18,7 +18,7 @@ class UpdateProfileInteractor: UpdateProfileInteractorInputProtocol {
         ProgressView.shared.show()
         Provider.shared.userAPIService.updateProfile(param: userInfo, success: { (user) in
             ProgressView.shared.hide()
-            if let user = user{
+            if let user = user {
                 self.presenter?.didSuccessUpdateProfile(user: user)
                 UserUtils.saveUser(user: user)
             }
@@ -43,5 +43,15 @@ class UpdateProfileInteractor: UpdateProfileInteractorInputProtocol {
             ProgressView.shared.hide()
             self.presenter?.didErrorUpdateProfile(error: error)
         })
+    }
+    
+    func getProfileUser() {
+        ProgressView.shared.show()
+        Provider.shared.userAPIService.getProfileUser(success: { (user) in
+            ProgressView.shared.hide()
+            self.presenter?.didGetProfileUser(user: user)
+        }) { (_) in
+            ProgressView.shared.hide()
+        }
     }
 }

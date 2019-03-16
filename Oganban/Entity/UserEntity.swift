@@ -46,6 +46,13 @@ struct UserEntity: Mappable, Codable  {
     var longAddress2      : String?
     var latAddress2      : String?
     
+    var isActivePhone   : Int?
+    var isActiveZalo    : Int?
+    var isActiveFacebook: Int?
+    
+    var linkZalo    : String?
+    var linkFacebook: String?
+    
     init?(map: Map) {
     }
 
@@ -83,6 +90,12 @@ struct UserEntity: Mappable, Codable  {
         self.longAddress2   <- map["longitude_2"]
         self.latAddress1    <- map["latitude_1"]
         self.longAddress1   <- map["longitude_1"]
+        self.isActivePhone  <- map["is_active_phone"]
+        self.isActiveZalo   <- map["is_active_zalo"]
+        self.isActiveFacebook <- map["is_active_facebook"]
+        self.linkZalo       <- map["link_zalo"]
+        self.linkFacebook   <- map["link_facebook"]
+        
     }
     
     init (displayName: String, phoneNumber: String,phoneCode: String, birthday: String, gender: String? = nil, houseAddress: String? = nil, companyAddress: String? = nil, lat1: String? = nil, long1: String? = nil,lat2: String? = nil, long2: String? = nil) {
@@ -108,5 +121,29 @@ struct UserEntity: Mappable, Codable  {
         }
         
         return nil
+    }
+    
+    func isActivePhoneChecked() -> Bool {
+        if isActivePhone == 1 {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func isActiveZaloChecked() -> Bool {
+        if isActiveZalo == 1 {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func isActiveFacebookChecked() -> Bool {
+        if isActiveFacebook == 1 {
+            return true
+        } else {
+            return false
+        }
     }
 }
