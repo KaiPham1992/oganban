@@ -264,6 +264,12 @@
 		CBBB3DF721D5C74400281ABB /* ChangePasswordProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBB3DF121D5C74400281ABB /* ChangePasswordProtocols.swift */; };
 		CBBB3DF821D5C74400281ABB /* ChangePasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBB3DF221D5C74400281ABB /* ChangePasswordInteractor.swift */; };
 		CBBB3DF921D5C74400281ABB /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBBB3DF321D5C74400281ABB /* ChangePasswordViewController.xib */; };
+		CBC245E6223CA7F500550376 /* CheckedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC245E5223CA7F500550376 /* CheckedView.swift */; };
+		CBC245E7223CA7F500550376 /* CheckedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC245E5223CA7F500550376 /* CheckedView.swift */; };
+		CBC245E8223CA7F500550376 /* CheckedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC245E5223CA7F500550376 /* CheckedView.swift */; };
+		CBC245EA223CA81C00550376 /* CheckedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBC245E9223CA81C00550376 /* CheckedView.xib */; };
+		CBC245EB223CA81C00550376 /* CheckedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBC245E9223CA81C00550376 /* CheckedView.xib */; };
+		CBC245EC223CA81C00550376 /* CheckedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBC245E9223CA81C00550376 /* CheckedView.xib */; };
 		CBD1C28821D73088006DB3FF /* MyBuyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD1C28621D73087006DB3FF /* MyBuyCell.xib */; };
 		CBD1C28921D73088006DB3FF /* MyBuyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C28721D73087006DB3FF /* MyBuyCell.swift */; };
 		CBD1C28D21D73096006DB3FF /* ProductMyBuyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD1C28B21D73096006DB3FF /* ProductMyBuyView.xib */; };
@@ -1739,6 +1745,8 @@
 		CBBB3DF121D5C74400281ABB /* ChangePasswordProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordProtocols.swift; sourceTree = "<group>"; };
 		CBBB3DF221D5C74400281ABB /* ChangePasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordInteractor.swift; sourceTree = "<group>"; };
 		CBBB3DF321D5C74400281ABB /* ChangePasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangePasswordViewController.xib; sourceTree = "<group>"; };
+		CBC245E5223CA7F500550376 /* CheckedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckedView.swift; sourceTree = "<group>"; };
+		CBC245E9223CA81C00550376 /* CheckedView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckedView.xib; sourceTree = "<group>"; };
 		CBD1C28621D73087006DB3FF /* MyBuyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyBuyCell.xib; sourceTree = "<group>"; };
 		CBD1C28721D73087006DB3FF /* MyBuyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBuyCell.swift; sourceTree = "<group>"; };
 		CBD1C28B21D73096006DB3FF /* ProductMyBuyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductMyBuyView.xib; sourceTree = "<group>"; };
@@ -2192,6 +2200,7 @@
 		84A92BE921CA50F000148191 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				CBC245E4223CA79600550376 /* CheckedView */,
 				DE5E085421E206BF0053EC9D /* AppRatingView */,
 				DE33035121DF1CD600409F83 /* AppTextView */,
 				DEBEE81421D76C3F004B8D88 /* LevelMemberView */,
@@ -2882,6 +2891,15 @@
 				CBBB3DF321D5C74400281ABB /* ChangePasswordViewController.xib */,
 			);
 			path = ChangePassword;
+			sourceTree = "<group>";
+		};
+		CBC245E4223CA79600550376 /* CheckedView */ = {
+			isa = PBXGroup;
+			children = (
+				CBC245E5223CA7F500550376 /* CheckedView.swift */,
+				CBC245E9223CA81C00550376 /* CheckedView.xib */,
+			);
+			path = CheckedView;
 			sourceTree = "<group>";
 		};
 		CBD1C28421D73087006DB3FF /* MyBuy */ = {
@@ -3880,6 +3898,7 @@
 				B36A236021E1AEBA00AA20DF /* SettingViewController.xib in Resources */,
 				DE8B57D521EB1B9900C72D6A /* OrderMoreCell.xib in Resources */,
 				B35D156A21F2E71600C6D2D7 /* RangeCell.xib in Resources */,
+				CBC245EA223CA81C00550376 /* CheckedView.xib in Resources */,
 				0143F9C521E4606500D032B8 /* HeaderOrderBuyDetail.xib in Resources */,
 				DEF793F721F301DD00CE5CB3 /* GoogleService-Prod-Info.plist in Resources */,
 				DE33036321DF5EDB00409F83 /* PostStepTwoViewController.xib in Resources */,
@@ -4025,6 +4044,7 @@
 				DE68D22321F0122C00A3A7BE /* OrderIntroCell.xib in Resources */,
 				DEF793FC21F3047000CE5CB3 /* GoogleService-Dev-Info.plist in Resources */,
 				DE68D22421F0122C00A3A7BE /* MySellContainerViewController.xib in Resources */,
+				CBC245EB223CA81C00550376 /* CheckedView.xib in Resources */,
 				DE68D22521F0122C00A3A7BE /* FavouriteCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4142,6 +4162,7 @@
 				DE68D40F21F0123A00A3A7BE /* OrderIntroCell.xib in Resources */,
 				DEF793FD21F3047000CE5CB3 /* GoogleService-Dev-Info.plist in Resources */,
 				DE68D41021F0123A00A3A7BE /* MySellContainerViewController.xib in Resources */,
+				CBC245EC223CA81C00550376 /* CheckedView.xib in Resources */,
 				DE68D41121F0123A00A3A7BE /* FavouriteCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4659,6 +4680,7 @@
 				CBD1C2A821D74DA6006DB3FF /* MySellingPresenter.swift in Sources */,
 				B3E67EAC21CF756E0012546F /* PhoneNumber.swift in Sources */,
 				DE21822C21CD44B700FDD9F1 /* FaceBookEntity.swift in Sources */,
+				CBC245E6223CA7F500550376 /* CheckedView.swift in Sources */,
 				DE21827B21CD473100FDD9F1 /* KActivityIndicatorAnimationBallZigZag.swift in Sources */,
 				DE5E084421E1C1020053EC9D /* MyBuyDetailProtocols.swift in Sources */,
 				CB0C3A2521D3BECD0052DD91 /* ForgotPasswordViewController.swift in Sources */,
@@ -4932,6 +4954,7 @@
 				DE68D08621F0122C00A3A7BE /* KActivityIndicatorAnimationBallRotateChase.swift in Sources */,
 				DE68D08721F0122C00A3A7BE /* SupplementaryInfoViewController.swift in Sources */,
 				DE68D08821F0122C00A3A7BE /* Enum.swift in Sources */,
+				CBC245E7223CA7F500550376 /* CheckedView.swift in Sources */,
 				DE68D08921F0122C00A3A7BE /* AppCollectionPhotoCell.swift in Sources */,
 				DE68D08A21F0122C00A3A7BE /* OrderBuyDetailInteractor.swift in Sources */,
 				DE68D08B21F0122C00A3A7BE /* SignUpProtocols.swift in Sources */,
@@ -5314,6 +5337,7 @@
 				DE68D27221F0123A00A3A7BE /* KActivityIndicatorAnimationBallRotateChase.swift in Sources */,
 				DE68D27321F0123A00A3A7BE /* SupplementaryInfoViewController.swift in Sources */,
 				DE68D27421F0123A00A3A7BE /* Enum.swift in Sources */,
+				CBC245E8223CA7F500550376 /* CheckedView.swift in Sources */,
 				DE68D27521F0123A00A3A7BE /* AppCollectionPhotoCell.swift in Sources */,
 				DE68D27621F0123A00A3A7BE /* OrderBuyDetailInteractor.swift in Sources */,
 				DE68D27721F0123A00A3A7BE /* SignUpProtocols.swift in Sources */,

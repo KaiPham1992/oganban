@@ -33,6 +33,13 @@ class UpdateProfileViewController: BaseViewController {
     @IBOutlet weak var tfDisplayName: OganbanCustomTextfield!
     @IBOutlet weak var tfUsername: OganbanCustomTextfield!
     
+    @IBOutlet weak var tfZalo: OganbanCustomTextfield!
+    @IBOutlet weak var tfFacebook: OganbanCustomTextfield!
+    
+    @IBOutlet weak var vCheckPhone: CheckedView!
+    @IBOutlet weak var vCheckZalo: CheckedView!
+    @IBOutlet weak var vCheckFacebook: CheckedView!
+    
     var locationAddress1: CLLocationCoordinate2D?
     var locationAddress2: CLLocationCoordinate2D?
     

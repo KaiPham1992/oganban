@@ -48,6 +48,9 @@ extension UpdateProfileViewController: UITextFieldDelegate {
         
         tfAddress1.tfContent.delegate = self
         tfAddress2.tfContent.delegate = self
+        
+        tfZalo.setupLayoutTextfield(placeholderText: "Nhập tài khoản Zalo nếu có", titleText: "Tài khoản Zalo", placeholderColor: AppColor.black414141)
+         tfFacebook.setupLayoutTextfield(placeholderText: "Nhập tài khoản Messenger nếu có", titleText: "Tài khoản Facebook Messenger", placeholderColor: AppColor.black414141)
     }
     
     func addGesture() {
