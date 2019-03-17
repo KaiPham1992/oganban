@@ -110,8 +110,6 @@ class OrderBuyDetailViewController: BaseViewController {
     
     @IBAction func btnOrderBuyTapped() {
         if UserDefaultHelper.shared.isLoggedIn {
-            //            guard let record = self.record, let quantity = record.quantity else { return }
-            //            if quantity > 1 {
             guard let _recordID = self.recordId else { return }
             if record?.isService == "1" {
                 self.presenter?.bookingOrder(recordID: _recordID, price: 0, quantity: 0, paymentType: "cash", isService: true)
@@ -141,10 +139,6 @@ class OrderBuyDetailViewController: BaseViewController {
                     self.presenter?.bookingOrder(recordID: _recordID, price: self.price, quantity: qty, paymentType: self.paymentType, isService: false)
                 }
             }
-            //            } else if quantity == 1 {
-            //                guard let _recordID = self.recordId else { return }
-            //                self.presenter?.bookingOrder(recordID: _recordID, price: self.price, quantity: 1, paymentType: self.paymentType, isService: false)
-            //            }
             
         } else {
             self.presenter?.gotoLogin()

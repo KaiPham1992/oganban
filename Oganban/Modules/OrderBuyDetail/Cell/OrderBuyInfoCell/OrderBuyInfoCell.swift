@@ -49,14 +49,16 @@ class OrderBuyInfoCell: BaseTableCell {
                 lcsWidthBtnPhone.constant = 0
             }
             
-            if let isPhoneZalo = _record.isZalo {
-                lcsWidthBtnZalo.constant = isPhoneZalo ? 35 : 0
+            if let _ = _record.linkZalo {
+                lcsWidthBtnZalo.constant = 35
+                
             } else {
-                lcsWidthBtnZalo.constant = 0
+                lcsWidthBtnZalo.constant = -35
             }
             
-            if let isFacebookActive = _record.isFacebook {
-                btnFacebook.isHidden = isFacebookActive ? false : true
+            if let _ = _record.linkFacebook {
+                
+                btnFacebook.isHidden =  false
             } else {
                 btnFacebook.isHidden = true
             }

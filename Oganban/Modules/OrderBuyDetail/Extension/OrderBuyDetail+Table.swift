@@ -46,8 +46,6 @@ extension OrderBuyDetailViewController: UITableViewDelegate, UITableViewDataSour
         case OrderDetailInfoType.infoSaler.rawValue:
             let cell = tbDetail.dequeue(OrderBuyInfoCell.self, for: indexPath)
             cell.record = self.record
-//            cell.btnPhone.isHidden = false
-//            cell.lcsWidthImgPhone.constant = 13
             cell.delegate = self
             return cell
         case OrderDetailInfoType.address.rawValue:
