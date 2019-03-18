@@ -39,11 +39,19 @@ extension UpdateProfileViewController {
             self.checkHideShowSaveButton()
         }
         
+        tfZalo.textFieldDidChange = {
+            self.checkHideShowSaveButton()
+        }
+        
         tfZalo.textFieldDidBeginEditing = {
             self.checkHideShowSaveButton()
         }
         
         tfFacebook.textFieldDidBeginEditing = {
+            self.checkHideShowSaveButton()
+        }
+        
+        tfFacebook.textFieldDidChange = {
             self.checkHideShowSaveButton()
         }
     }
@@ -96,8 +104,12 @@ extension UpdateProfileViewController {
                     //self.user = UserEntity(displayName: displayName, phoneNumber: phone, phoneCode: dialCode, birthday: birthDay, gender: gender, houseAddress: self.tfAddress1.tfContent.text, companyAddress: self.tfAddress2.tfContent.text, lat1: lat1, long1: long1 ,lat2: lat2, long2: long2)
                     
                     if let oldUserInfo = self.user {
-                        if phone != oldUserInfo.phone || dialCode.range(of:oldUserInfo.phoneCode ?? "nil") == nil {
-                            self.fbAccountKit.verifyPhone()
+                        if self.vCheckPhone.isChecked {
+                            if phone != oldUserInfo.phone || dialCode.range(of:oldUserInfo.phoneCode ?? "nil") == nil {
+                                self.fbAccountKit.verifyPhone()
+                            } else {
+                                self.presenter?.updateProfile(userInfo: param)
+                            }
                         } else {
                             self.presenter?.updateProfile(userInfo: param)
                         }

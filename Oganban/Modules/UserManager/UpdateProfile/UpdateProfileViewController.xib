@@ -152,44 +152,44 @@
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 </textView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vt0-kd-TfZ" customClass="CheckedView" customModule="Oganban_AppStore" customModuleProvider="target">
-                                    <rect key="frame" x="15" y="579.5" width="375" height="30"/>
+                                    <rect key="frame" x="15" y="580" width="375" height="30"/>
                                     <color key="backgroundColor" red="0.81960784310000001" green="0.098039215690000001" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="mBw-hP-BLJ"/>
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chọn hình thức khách hàng liên lạc:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zvn-5C-BXR">
-                                    <rect key="frame" x="15" y="492" width="241" height="17.5"/>
-                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                    <rect key="frame" x="15" y="492" width="240" height="18"/>
+                                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="15"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8u3-D6-J0l" customClass="PhoneNumber" customModule="Oganban_AppStore" customModuleProvider="target">
-                                    <rect key="frame" x="15" y="519.5" width="375" height="50"/>
+                                    <rect key="frame" x="15" y="520" width="375" height="50"/>
                                     <color key="backgroundColor" red="0.57647058819999997" green="0.23921568630000001" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gax-Zz-DNY" customClass="OganbanCustomTextfield" customModule="Oganban_AppStore" customModuleProvider="target">
-                                    <rect key="frame" x="15" y="624.5" width="375" height="50"/>
+                                    <rect key="frame" x="15" y="625" width="375" height="50"/>
                                     <color key="backgroundColor" red="0.0" green="0.56470588235294117" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zig-cm-FuU" customClass="CheckedView" customModule="Oganban_AppStore" customModuleProvider="target">
-                                    <rect key="frame" x="15" y="684.5" width="375" height="30"/>
+                                    <rect key="frame" x="15" y="685" width="375" height="30"/>
                                     <color key="backgroundColor" red="0.81960784310000001" green="0.098039215690000001" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pKX-rj-IW7" customClass="OganbanCustomTextfield" customModule="Oganban_AppStore" customModuleProvider="target">
-                                    <rect key="frame" x="15" y="729.5" width="375" height="50"/>
+                                    <rect key="frame" x="15" y="730" width="375" height="50"/>
                                     <color key="backgroundColor" red="0.0" green="0.56470588239999997" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TO5-I5-sDg" customClass="CheckedView" customModule="Oganban_AppStore" customModuleProvider="target">
-                                    <rect key="frame" x="15" y="789.5" width="375" height="30"/>
+                                    <rect key="frame" x="15" y="790" width="375" height="30"/>
                                     <color key="backgroundColor" red="0.81960784310000001" green="0.098039215690000001" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BjH-Bd-0zE" customClass="OganbanCustomTextfield" customModule="Oganban_AppStore" customModuleProvider="target">
-                                    <rect key="frame" x="15" y="932" width="375" height="50"/>
+                                    <rect key="frame" x="15" y="932.5" width="375" height="50"/>
                                     <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vui lòng kiểm tra lại email hoặc mật khẩu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PFo-Od-SwZ">
-                                    <rect key="frame" x="91.5" y="990" width="222" height="14"/>
+                                    <rect key="frame" x="91.5" y="990.5" width="222" height="14"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="14" id="MQZ-JV-4lr"/>
                                     </constraints>
@@ -198,7 +198,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qaW-Pg-lnD" customClass="OganbanCustomButton" customModule="Oganban_AppStore" customModuleProvider="target">
-                                    <rect key="frame" x="128" y="1012" width="149" height="40"/>
+                                    <rect key="frame" x="128" y="1012.5" width="149" height="40"/>
                                     <color key="backgroundColor" red="0.57647058819999997" green="0.23921568630000001" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="149" id="ZOl-kF-tac"/>
@@ -206,16 +206,16 @@
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chọn địa chỉ khách hàng liên lạc:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPK-bQ-1OK">
-                                    <rect key="frame" x="15" y="834.5" width="221" height="17.5"/>
+                                    <rect key="frame" x="15" y="835" width="221.5" height="17.5"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="17.5" id="MsV-ka-UJ8"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="15"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dFh-wI-5nZ" customClass="OganbanCustomTextfield" customModule="Oganban_AppStore" customModuleProvider="target">
-                                    <rect key="frame" x="15" y="867" width="375" height="50"/>
+                                    <rect key="frame" x="15" y="867.5" width="375" height="50"/>
                                     <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </view>
                             </subviews>

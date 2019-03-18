@@ -352,18 +352,33 @@ extension UpdateProfileViewController {
             return false
         }
         
-        guard let phone =  self.tvPhone.tfPhone.text else {
-            hideError(isHidden: false, message: MessageString.emptyPhone)
+        if tfZalo.tfContent.text == "" && tfFacebook.tfContent.text == "" && tvPhone.tfPhone.text == "" {
+            hideError(isHidden: false, message: MessageString.AllNotHave)
             return false
         }
         
-        if phone == "" {
+        
+        if tvPhone.tfPhone.text == "" && vCheckPhone.isChecked == true {
             hideError(isHidden: false, message: MessageString.emptyPhone)
             return false
         }
-        
-        if self.tvPhone.fullPhone.isValidPhone2() == false {
+        if self.tvPhone.fullPhone.isValidPhone2() == false && vCheckPhone.isChecked == true {
             hideError(isHidden: false, message: MessageString.invalidPhone)
+            return false
+        }
+        
+        if tfZalo.tfContent.text == "" && vCheckZalo.isChecked == true {
+            hideError(isHidden: false, message: MessageString.zaloNotHave)
+            return false
+        }
+        
+        if tfFacebook.tfContent.text == "" && vCheckFacebook.isChecked == true {
+            hideError(isHidden: false, message: MessageString.messengerNotHave)
+            return false
+        }
+        
+        if tfAddress1.tfContent.text == "" &&  tfAddress2.tfContent.text == "" {
+            hideError(isHidden: false, message: MessageString.updateAddress)
             return false
         }
         

@@ -94,7 +94,7 @@ struct MessageString {
     static let emptyBirthday = "Vui lòng chọn ngày tháng năm sinh"
     static let checkedAge = "Người sử dụng phải trên 15 tuổi"
     static let emptyPhone = "Vui lòng nhập số điện thoại"
-    static let invalidPhone = "Số điện thoại không đúng"
+    static let invalidPhone = "Thông tin sai format"//"Số điện thoại không đúng"
     static let notTickPolicy = "Vui lòng chọn \"Đồng ý điều khoản sử dụng\""
     static let messageEmptyEmail = "Vui lòng nhập email"
     static let messageInvalidEmailFormat = "Email không đúng format"
@@ -103,6 +103,10 @@ struct MessageString {
     static let limitCount = "Mật khẩu ít nhất phải 6 ký tự"
     static let invalidConfirmPassword = "Nhập lại mật khẩu không đúng"
     static let invalidCurentPassword = "Mật khẩu không chính xác"
+    static let zaloNotHave = "Vui lòng nhập tài khoản Zalo"
+    static let messengerNotHave = "Vui lòng nhập tài khoản Messenger"
+    static let AllNotHave = "Vui lòng nhập cập nhật thông tin liên hệ. Cảm ơn!"
+    static let updateAddress = "Vui lòng cập nhật địa chỉ liên lạc"
 }
 
 struct NavigationTitle {
