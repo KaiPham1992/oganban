@@ -40,6 +40,8 @@ class UpdateProfileViewController: BaseViewController {
     @IBOutlet weak var vCheckZalo: CheckedView!
     @IBOutlet weak var vCheckFacebook: CheckedView!
     
+    var textFiledSelected: UITextField?
+    
     var locationAddress1: CLLocationCoordinate2D?
     var locationAddress2: CLLocationCoordinate2D?
     
@@ -352,8 +354,13 @@ extension UpdateProfileViewController {
             return false
         }
         
+        if vCheckPhone.isChecked == false && vCheckZalo.isChecked == false  && vCheckFacebook.isChecked == false {
+            hideError(isHidden: false, message: MessageString.sellectOne)
+            return false
+        }
+        
         if tfZalo.tfContent.text == "" && tfFacebook.tfContent.text == "" && tvPhone.tfPhone.text == "" {
-            hideError(isHidden: false, message: MessageString.AllNotHave)
+            hideError(isHidden: false, message: MessageString.allNotHave)
             return false
         }
         
@@ -362,10 +369,16 @@ extension UpdateProfileViewController {
             hideError(isHidden: false, message: MessageString.emptyPhone)
             return false
         }
-        if self.tvPhone.fullPhone.isValidPhone2() == false && vCheckPhone.isChecked == true {
+        if let intText = Int(self.tvPhone.tfPhone.text!) {
+            if self.tvPhone.tfPhone.text?.count != 9 && vCheckPhone.isChecked == true {
+                hideError(isHidden: false, message: MessageString.invalidPhone)
+                return false
+            }
+        } else {
             hideError(isHidden: false, message: MessageString.invalidPhone)
             return false
         }
+        
         
         if tfZalo.tfContent.text == "" && vCheckZalo.isChecked == true {
             hideError(isHidden: false, message: MessageString.zaloNotHave)
@@ -399,4 +412,33 @@ extension UpdateProfileViewController: PhoneNumberDelegate {
         self.countryPhoneCode = info
         self.checkHideShowSaveButton()
     }
+}
+
+extension UpdateProfileViewController: PositionViewControllerDelegate {
+    func positionSelected(location: CLLocationCoordinate2D, address: String, distance: PositionRangeEntity?) {
+        guard let textFiledSelected = textFiledSelected else { return }
+        textFiledSelected.text = address
+        checkHideShowSaveButton()
+        switch textFiledSelected {
+        case self.tfAddress1.tfContent:
+            self.locationAddress1 = location
+        case self.tfAddress2.tfContent:
+            self.locationAddress2 = location
+        default:
+            break
+        }
+        
+    }
+    
+    func positionSelectedCheckBox(location: CLLocationCoordinate2D, address: String, checkBox: CheckBoxTextField) {
+        print("positionSelectedCheckBox: \(address)")
+    }
+    
+    func showMap() {
+        let vc = PositionViewController.initFromNib()
+        vc.delegate = self
+        let nav = UINavigationController(rootViewController: vc)
+        self.present(controller: nav)
+    }
+    
 }

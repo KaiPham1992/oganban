@@ -105,7 +105,8 @@ struct MessageString {
     static let invalidCurentPassword = "Mật khẩu không chính xác"
     static let zaloNotHave = "Vui lòng nhập tài khoản Zalo"
     static let messengerNotHave = "Vui lòng nhập tài khoản Messenger"
-    static let AllNotHave = "Vui lòng nhập cập nhật thông tin liên hệ. Cảm ơn!"
+    static let sellectOne = "Vui lòng chọn 1 thông tin liên hệ"
+    static let allNotHave = "Vui lòng nhập cập nhật thông tin liên hệ. Cảm ơn!"
     static let updateAddress = "Vui lòng cập nhật địa chỉ liên lạc"
 }
 
