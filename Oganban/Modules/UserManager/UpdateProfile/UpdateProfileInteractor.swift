@@ -54,4 +54,12 @@ class UpdateProfileInteractor: UpdateProfileInteractorInputProtocol {
             ProgressView.shared.hide()
         }
     }
+    
+    func loginFacebook(param: FacebookEntity) {
+        Provider.shared.userAPIService.loginFacebook(fbEntity: param, phone: "", success: { (user) in
+            self.presenter?.didLoginFacebook(user: user)
+        }) { (_) in
+            
+        }
+    }
 }

@@ -150,9 +150,24 @@ extension UpdateProfileViewController {
             }
         }
     }
+    
+    @objc func selectZalo(_ sender: UITapGestureRecognizer) {
+        
+    }
+    
+    @objc func selectFacebook(_ sender: UITapGestureRecognizer) {
+        self.FBlogin()
+    }
 }
 
 extension UpdateProfileViewController: UpdateProfileViewProtocol{
+    
+    func didLoginFacebook(user: UserEntity?) {
+        guard let email = user?.email else { return }
+        self.tfFacebook.tfContent.text = email
+        checkHideShowSaveButton()
+    }
+    
     func didGetProfileUser(user: UserEntity?) {
         self.user = user
         setDefaultData()

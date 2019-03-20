@@ -11,6 +11,8 @@
 import UIKit
 import GoogleMaps
 import GooglePlaces
+import FBSDKLoginKit
+import FBSDKCoreKit
 
 class UpdateProfileViewController: BaseViewController {
 
@@ -441,4 +443,33 @@ extension UpdateProfileViewController: PositionViewControllerDelegate {
         self.present(controller: nav)
     }
     
+}
+
+extension UpdateProfileViewController {
+    
+    func FBlogin() {
+        let fbLoginManager = FBSDKLoginManager()
+        fbLoginManager.logOut()
+        
+        fbLoginManager.logIn(withReadPermissions: ["public_profile", "email"], from: self) { (result, error) in
+            if let error = error {
+                print("Failed to login: \(error.localizedDescription)")
+                return
+            }
+            
+            guard let accessToken = FBSDKAccessToken.current() else {
+                print("Failed to get access token")
+                return
+            }
+            
+            let req = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"id, email, name, picture.width(480).height(480),birthday"], tokenString: accessToken.tokenString, version: nil, httpMethod: "GET")
+            req?.start(completionHandler: { (connection, result, error) in
+                if let _result = result as? [String: Any] {
+                    let fbModel = FacebookEntity(json: _result)
+                    self.tfFacebook.tfContent.text = fbModel.id
+                    self.checkHideShowSaveButton()
+                }
+            })
+        }
+    }
 }

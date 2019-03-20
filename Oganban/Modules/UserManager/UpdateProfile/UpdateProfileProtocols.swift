@@ -22,6 +22,7 @@ protocol UpdateProfilePresenterProtocol: class {
     func updateAvatar(image: UIImage)
     
     func getProfileUser()
+    func loginFacebook(param: FacebookEntity)
 }
 
 //MARK: Interactor -
@@ -31,6 +32,7 @@ protocol UpdateProfileInteractorOutputProtocol: class {
     func didSuccessUpdateProfile(user: UserEntity?)
     func didErrorUpdateProfile(error: APIError?)
     func didGetProfileUser(user: UserEntity?)
+    func didLoginFacebook(user: UserEntity?)
 }
 
 protocol UpdateProfileInteractorInputProtocol: class {
@@ -42,6 +44,7 @@ protocol UpdateProfileInteractorInputProtocol: class {
     func updateProfile(userInfo: UpdateProfileParam)
     func updateAvatar(image: UIImage)
     func getProfileUser()
+    func loginFacebook(param: FacebookEntity)
 }
 
 //MARK: View -
@@ -53,4 +56,5 @@ protocol UpdateProfileViewProtocol: class {
     func didSuccessUpdateProfile(user: UserEntity?)
     func didErrorUpdateProfile(error: APIError?)
     func didGetProfileUser(user: UserEntity?)
+    func didLoginFacebook(user: UserEntity?)
 }

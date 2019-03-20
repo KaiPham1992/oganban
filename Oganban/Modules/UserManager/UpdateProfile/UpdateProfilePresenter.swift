@@ -33,6 +33,10 @@ class UpdateProfilePresenter: UpdateProfilePresenterProtocol {
     func getProfileUser() {
         interactor?.getProfileUser()
     }
+    
+    func loginFacebook(param: FacebookEntity) {
+        interactor?.loginFacebook(param: param)
+    }
 }
 extension UpdateProfilePresenter: UpdateProfileInteractorOutputProtocol{
     func didSuccessUpdateProfile(user: UserEntity?) {
@@ -45,5 +49,9 @@ extension UpdateProfilePresenter: UpdateProfileInteractorOutputProtocol{
     
     func didGetProfileUser(user: UserEntity?) {
         view?.didGetProfileUser(user: user)
+    }
+    
+    func didLoginFacebook(user: UserEntity?) {
+        view?.didLoginFacebook(user: user)
     }
 }
