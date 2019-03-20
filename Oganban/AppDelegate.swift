@@ -46,7 +46,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //
         
         //--- ZALO Linking
-        ZaloSDK.sharedInstance()?.initialize(withAppId: "1449449501")
+        ZaloSDK.sharedInstance()?.initialize(withAppId: "4607039711843423081")
+        
         return true
     }
     
