@@ -23,8 +23,8 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
     @IBOutlet weak var vLoginDisplay    : FTextField!
     @IBOutlet weak var vBirthday        : FTextFieldChoose!
     @IBOutlet weak var vGender          : FTextFieldChoose!
-    @IBOutlet weak var vHouseAddress    : FTextField!
-    @IBOutlet weak var vCompanyAddress  : FTextField!
+//    @IBOutlet weak var vHouseAddress    : FTextField!
+//    @IBOutlet weak var vCompanyAddress  : FTextField!
     @IBOutlet weak var vIntroduce       : FTextField!
     @IBOutlet weak var vPassword        : FTextField!
     @IBOutlet weak var vPasswordReType  : FTextField!
@@ -91,8 +91,8 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
         vLoginDisplay.setTextField(title: TitleString.displayName, placeHolder: TitleString.placeHolderDisplayName)
         vBirthday.setTextField(title: TitleString.birthday, placeHolder: TitleString.placeHolderBirthday)
         vGender.setTextField(title: TitleString.gender, placeHolder: TitleString.placeHolderGender)
-        vHouseAddress.setTextField(title: TitleString.houseAddress, placeHolder: TitleString.placeHolderHouseAddress)
-        vCompanyAddress.setTextField(title: TitleString.companyAddress, placeHolder: TitleString.placeHolderCompanyAddress)
+//        vHouseAddress.setTextField(title: TitleString.houseAddress, placeHolder: TitleString.placeHolderHouseAddress)
+//        vCompanyAddress.setTextField(title: TitleString.companyAddress, placeHolder: TitleString.placeHolderCompanyAddress)
         vIntroduce.setTextField(title: TitleString.introduce, placeHolder: TitleString.placeHolderIntroduce)
         vPassword.setTextField(title: TitleString.password, placeHolder: TitleString.placeHolderPassword)
         vPasswordReType.setTextField(title: TitleString.confirm, placeHolder: TitleString.placeHolderConfirm)
@@ -107,8 +107,8 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
         vLoginName.textField.keyboardType = .emailAddress
         vLoginEmail.textField.keyboardType = .emailAddress
         
-        vHouseAddress.textField.delegate = self
-        vCompanyAddress.textField.delegate = self
+//        vHouseAddress.textField.delegate = self
+//        vCompanyAddress.textField.delegate = self
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -158,13 +158,13 @@ class SignUpViewController: BaseViewController, UITextFieldDelegate {
                 let fullName = vLoginDisplay.textField.text
                 let codeIntroduce = vIntroduce.textField.text
                 let gender = vGender.textField.text
-                let address1 = vHouseAddress.textField.text
-                let address2 = vCompanyAddress.textField.text
+//                let address1 = vHouseAddress.textField.text
+//                let address2 = vCompanyAddress.textField.text
                 let lat1 = self.locationAddress1?.latitude.description
                 let long1 = self.locationAddress1?.longitude.description
                 let lat2 = self.locationAddress2?.latitude.description
                 let long2 = self.locationAddress2?.longitude.description
-                let param = SignUpParam(email: email, password: password, birthday: birthday&, captcha: captcha, fullName: fullName, gender: gender, address1: address1, address2: address2, codeIntroduce: codeIntroduce, lat1: lat1, long1: long1, lat2: lat2, long2: long2)
+                let param = SignUpParam(email: email, password: password, birthday: birthday&, captcha: captcha, fullName: fullName, gender: gender, codeIntroduce: codeIntroduce, lat1: lat1, long1: long1, lat2: lat2, long2: long2)
                 presenter?.signUp(param: param)
             }
         } else {
@@ -325,16 +325,16 @@ extension SignUpViewController: SignUpViewProtocol {
 
 extension SignUpViewController: PositionViewControllerDelegate {
     func positionSelected(location: CLLocationCoordinate2D, address: String, distance: PositionRangeEntity?) {
-        guard let textFiledSelected = textFiledSelected else { return }
-        textFiledSelected.text = address
-        switch textFiledSelected {
-        case self.vHouseAddress.textField:
-            self.locationAddress1 = location
-        case self.vCompanyAddress.textField:
-            self.locationAddress2 = location
-        default:
-            break
-        }
+//        guard let textFiledSelected = textFiledSelected else { return }
+//        textFiledSelected.text = address
+//        switch textFiledSelected {
+//        case self.vHouseAddress.textField:
+//            self.locationAddress1 = location
+//        case self.vCompanyAddress.textField:
+//            self.locationAddress2 = location
+//        default:
+//            break
+//        }
 
     }
     

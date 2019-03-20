@@ -28,13 +28,13 @@ class UpdateProfileSocial: BaseParam {
         self.codeIntroduction <- map["code_introduction"]
     }
     
-    init(fullName: String, birthDay: String, gender: String?, address1: String?, address2: String?, codeIntroduction: String?) {
+    init(fullName: String, birthDay: String, gender: String?, codeIntroduction: String?) {
         super.init()
         self.fullName = fullName
         self.birthDay = birthDay
         self.gender = gender
-        self.address1 = address1
-        self.address2 = address2
+//        self.address1 = address1
+//        self.address2 = address2
         self.codeIntroduction = codeIntroduction
     }
     

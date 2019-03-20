@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,8 +23,6 @@
                 <outlet property="btnCheck" destination="rpo-xd-emh" id="jhh-tl-l7G"/>
                 <outlet property="btnSend" destination="VJf-f1-aV7" id="34I-eC-zyt"/>
                 <outlet property="lbError" destination="x85-1S-1rb" id="dRa-2x-5sm"/>
-                <outlet property="tfAddress1" destination="uRy-Dj-Eai" id="lPE-db-te8"/>
-                <outlet property="tfAddress2" destination="0gT-og-ZgC" id="mFI-Zp-mZJ"/>
                 <outlet property="tfBirthday" destination="fgu-TV-g7B" id="IQm-00-HXp"/>
                 <outlet property="tfCode" destination="c4C-dD-Cf5" id="Sx2-iK-nra"/>
                 <outlet property="tfName" destination="7Ue-0Q-gZ4" id="few-Di-dpV"/>
@@ -56,28 +55,20 @@
                                             <color key="textColor" red="0.25490196078431371" green="0.25490196078431371" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fgu-TV-g7B" customClass="OganbanCustomTextfield" customModule="Oganban" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fgu-TV-g7B" customClass="OganbanCustomTextfield" customModule="Oganban_AppStore" customModuleProvider="target">
                                             <rect key="frame" x="15" y="159.5" width="318" height="50"/>
                                             <color key="backgroundColor" red="0.57647058819999997" green="0.23921568630000001" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lwv-UX-5Hr" customClass="OganbanCustomTextfield" customModule="Oganban" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lwv-UX-5Hr" customClass="OganbanCustomTextfield" customModule="Oganban_AppStore" customModuleProvider="target">
                                             <rect key="frame" x="15" y="224.5" width="318" height="50"/>
                                             <color key="backgroundColor" red="0.57647058819999997" green="0.23921568630000001" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uRy-Dj-Eai" customClass="OganbanCustomTextfield" customModule="Oganban" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c4C-dD-Cf5" customClass="OganbanCustomTextfield" customModule="Oganban_AppStore" customModuleProvider="target">
                                             <rect key="frame" x="15" y="289.5" width="318" height="50"/>
                                             <color key="backgroundColor" red="0.57647058819999997" green="0.23921568630000001" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0gT-og-ZgC" customClass="OganbanCustomTextfield" customModule="Oganban" customModuleProvider="target">
-                                            <rect key="frame" x="15" y="354.5" width="318" height="50"/>
-                                            <color key="backgroundColor" red="0.57647058819999997" green="0.23921568630000001" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c4C-dD-Cf5" customClass="OganbanCustomTextfield" customModule="Oganban" customModuleProvider="target">
-                                            <rect key="frame" x="15" y="419.5" width="318" height="50"/>
-                                            <color key="backgroundColor" red="0.57647058819999997" green="0.23921568630000001" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </view>
                                         <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rpo-xd-emh">
-                                            <rect key="frame" x="15" y="499.5" width="25" height="25"/>
+                                            <rect key="frame" x="15" y="369.5" width="25" height="25"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="rpo-xd-emh" secondAttribute="height" multiplier="1:1" id="HdS-p7-9sr"/>
                                                 <constraint firstAttribute="width" constant="25" id="Yyu-0s-5jb"/>
@@ -88,7 +79,7 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vui lòng kiểm tra lại email hoặc mật khẩu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x85-1S-1rb">
-                                            <rect key="frame" x="63" y="539.5" width="222" height="16"/>
+                                            <rect key="frame" x="63" y="409.5" width="222" height="16"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="16" id="7b4-jM-knS"/>
                                             </constraints>
@@ -96,14 +87,14 @@
                                             <color key="textColor" red="0.83529411760000005" green="0.1215686275" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VJf-f1-aV7" customClass="OganbanCustomButton" customModule="Oganban" customModuleProvider="target">
-                                            <rect key="frame" x="97.5" y="559.5" width="153" height="40"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VJf-f1-aV7" customClass="OganbanCustomButton" customModule="Oganban_AppStore" customModuleProvider="target">
+                                            <rect key="frame" x="97.5" y="429.5" width="153" height="40"/>
                                             <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="NQ7-4O-ieU"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ue-0Q-gZ4" customClass="OganbanCustomTextfield" customModule="Oganban" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ue-0Q-gZ4" customClass="OganbanCustomTextfield" customModule="Oganban_AppStore" customModuleProvider="target">
                                             <rect key="frame" x="15" y="94.5" width="318" height="50"/>
                                             <color key="backgroundColor" red="0.57647058819999997" green="0.23921568630000001" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
@@ -111,7 +102,7 @@
                                             </constraints>
                                         </view>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Đồng ý điều khoản sử dụng" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQM-T8-wJx">
-                                            <rect key="frame" x="55" y="500.5" width="278" height="27"/>
+                                            <rect key="frame" x="55" y="370.5" width="278" height="27"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="27" id="Qzi-nm-z4X"/>
@@ -135,41 +126,34 @@
                                     <constraints>
                                         <constraint firstItem="rpo-xd-emh" firstAttribute="leading" secondItem="c4C-dD-Cf5" secondAttribute="leading" id="1ir-60-vor"/>
                                         <constraint firstAttribute="trailing" secondItem="7Ue-0Q-gZ4" secondAttribute="trailing" constant="15" id="30D-Ok-r3L"/>
-                                        <constraint firstItem="uRy-Dj-Eai" firstAttribute="height" secondItem="lwv-UX-5Hr" secondAttribute="height" id="3Fa-8t-LFW"/>
                                         <constraint firstItem="bQM-T8-wJx" firstAttribute="trailing" secondItem="c4C-dD-Cf5" secondAttribute="trailing" id="7tq-bg-8pg"/>
                                         <constraint firstAttribute="trailing" secondItem="VJf-f1-aV7" secondAttribute="trailing" constant="97.5" id="8gA-Xs-RKX"/>
-                                        <constraint firstItem="c4C-dD-Cf5" firstAttribute="trailing" secondItem="0gT-og-ZgC" secondAttribute="trailing" id="93U-ar-UXd"/>
                                         <constraint firstItem="lwv-UX-5Hr" firstAttribute="trailing" secondItem="fgu-TV-g7B" secondAttribute="trailing" id="Cjn-mY-aau"/>
                                         <constraint firstItem="38i-bn-2Xy" firstAttribute="centerX" secondItem="DvS-eZ-6fi" secondAttribute="centerX" id="E08-Jz-jgp"/>
                                         <constraint firstItem="x85-1S-1rb" firstAttribute="centerX" secondItem="DvS-eZ-6fi" secondAttribute="centerX" id="Fhf-7s-BGG"/>
                                         <constraint firstItem="7Ue-0Q-gZ4" firstAttribute="top" secondItem="38i-bn-2Xy" secondAttribute="bottom" constant="32" id="G5y-9F-RvJ"/>
-                                        <constraint firstItem="0gT-og-ZgC" firstAttribute="height" secondItem="uRy-Dj-Eai" secondAttribute="height" id="GI4-ir-ycj"/>
-                                        <constraint firstItem="uRy-Dj-Eai" firstAttribute="leading" secondItem="lwv-UX-5Hr" secondAttribute="leading" id="HuJ-UO-yNI"/>
+                                        <constraint firstItem="c4C-dD-Cf5" firstAttribute="leading" secondItem="lwv-UX-5Hr" secondAttribute="leading" id="GQd-Mz-8Xo"/>
                                         <constraint firstItem="fgu-TV-g7B" firstAttribute="height" secondItem="7Ue-0Q-gZ4" secondAttribute="height" id="KQ8-hi-89G"/>
                                         <constraint firstItem="fgu-TV-g7B" firstAttribute="top" secondItem="7Ue-0Q-gZ4" secondAttribute="bottom" constant="15" id="Ka2-Se-HQE"/>
                                         <constraint firstItem="rpo-xd-emh" firstAttribute="top" secondItem="c4C-dD-Cf5" secondAttribute="bottom" constant="30" id="NAL-Mn-f0k"/>
                                         <constraint firstItem="x85-1S-1rb" firstAttribute="top" secondItem="bQM-T8-wJx" secondAttribute="bottom" constant="12" id="QGK-HC-rCD"/>
+                                        <constraint firstItem="c4C-dD-Cf5" firstAttribute="width" secondItem="lwv-UX-5Hr" secondAttribute="width" id="QbU-aG-nr5"/>
+                                        <constraint firstItem="c4C-dD-Cf5" firstAttribute="trailing" secondItem="lwv-UX-5Hr" secondAttribute="trailing" id="SEm-MI-1rd"/>
                                         <constraint firstAttribute="trailing" secondItem="3l5-Hw-HVs" secondAttribute="trailing" constant="10" id="STn-YK-eTq"/>
-                                        <constraint firstItem="c4C-dD-Cf5" firstAttribute="leading" secondItem="0gT-og-ZgC" secondAttribute="leading" id="U8L-SM-hWI"/>
-                                        <constraint firstItem="c4C-dD-Cf5" firstAttribute="height" secondItem="0gT-og-ZgC" secondAttribute="height" id="VBY-Bt-QGq"/>
                                         <constraint firstItem="38i-bn-2Xy" firstAttribute="top" secondItem="DvS-eZ-6fi" secondAttribute="top" constant="44.5" id="Xbj-cB-ZAa"/>
                                         <constraint firstItem="7Ue-0Q-gZ4" firstAttribute="leading" secondItem="DvS-eZ-6fi" secondAttribute="leading" constant="15" id="XlB-gf-qcf"/>
-                                        <constraint firstItem="0gT-og-ZgC" firstAttribute="leading" secondItem="uRy-Dj-Eai" secondAttribute="leading" id="ZuC-me-8Fi"/>
                                         <constraint firstItem="lwv-UX-5Hr" firstAttribute="top" secondItem="fgu-TV-g7B" secondAttribute="bottom" constant="15" id="akQ-3c-fi1"/>
                                         <constraint firstItem="fgu-TV-g7B" firstAttribute="trailing" secondItem="7Ue-0Q-gZ4" secondAttribute="trailing" id="bTr-Pf-yIg"/>
                                         <constraint firstItem="lwv-UX-5Hr" firstAttribute="leading" secondItem="fgu-TV-g7B" secondAttribute="leading" id="ddI-aR-dWU"/>
                                         <constraint firstAttribute="height" constant="632" id="dsT-eJ-RuC"/>
                                         <constraint firstItem="fgu-TV-g7B" firstAttribute="leading" secondItem="7Ue-0Q-gZ4" secondAttribute="leading" id="h5o-qR-eeb"/>
                                         <constraint firstItem="bQM-T8-wJx" firstAttribute="leading" secondItem="rpo-xd-emh" secondAttribute="trailing" constant="15" id="hbc-RD-FAq"/>
+                                        <constraint firstItem="c4C-dD-Cf5" firstAttribute="top" secondItem="lwv-UX-5Hr" secondAttribute="bottom" constant="15" id="hey-i0-q5P"/>
                                         <constraint firstItem="bQM-T8-wJx" firstAttribute="centerY" secondItem="rpo-xd-emh" secondAttribute="centerY" constant="2" id="hvI-Dj-Cnx"/>
                                         <constraint firstItem="3l5-Hw-HVs" firstAttribute="top" secondItem="DvS-eZ-6fi" secondAttribute="top" constant="10" id="jpZ-ai-Px0"/>
-                                        <constraint firstItem="0gT-og-ZgC" firstAttribute="top" secondItem="uRy-Dj-Eai" secondAttribute="bottom" constant="15" id="mtI-28-Fny"/>
-                                        <constraint firstItem="0gT-og-ZgC" firstAttribute="trailing" secondItem="uRy-Dj-Eai" secondAttribute="trailing" id="oTw-W7-pUX"/>
+                                        <constraint firstItem="c4C-dD-Cf5" firstAttribute="height" secondItem="lwv-UX-5Hr" secondAttribute="height" id="nzk-aL-c88"/>
                                         <constraint firstItem="lwv-UX-5Hr" firstAttribute="height" secondItem="fgu-TV-g7B" secondAttribute="height" id="oyn-4y-fp2"/>
-                                        <constraint firstItem="uRy-Dj-Eai" firstAttribute="trailing" secondItem="lwv-UX-5Hr" secondAttribute="trailing" id="rwC-iB-r2X"/>
                                         <constraint firstItem="VJf-f1-aV7" firstAttribute="top" secondItem="x85-1S-1rb" secondAttribute="bottom" constant="4" id="sXQ-i4-CSR"/>
-                                        <constraint firstItem="c4C-dD-Cf5" firstAttribute="top" secondItem="0gT-og-ZgC" secondAttribute="bottom" constant="15" id="vH9-KQ-103"/>
-                                        <constraint firstItem="uRy-Dj-Eai" firstAttribute="top" secondItem="lwv-UX-5Hr" secondAttribute="bottom" constant="15" id="y8y-X9-30j"/>
                                         <constraint firstItem="VJf-f1-aV7" firstAttribute="leading" secondItem="DvS-eZ-6fi" secondAttribute="leading" constant="97.5" id="yL3-wk-bow"/>
                                     </constraints>
                                 </view>

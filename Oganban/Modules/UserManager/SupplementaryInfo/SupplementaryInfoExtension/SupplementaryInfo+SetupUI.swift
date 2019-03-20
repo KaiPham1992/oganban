@@ -44,8 +44,8 @@ extension SupplementaryInfoViewController {
         tfSex.tfContent.isEnabled = false
         
         
-        tfAddress1.setupLayoutTextfield(placeholderText: TitleString.placeHolderHouseAddress, titleText: TitleString.houseAddress, placeholderColor: AppColor.black414141)
-        tfAddress2.setupLayoutTextfield(placeholderText: TitleString.placeHolderCompanyAddress, titleText: TitleString.companyAddress, placeholderColor: AppColor.black414141)
+//        tfAddress1.setupLayoutTextfield(placeholderText: TitleString.placeHolderHouseAddress, titleText: TitleString.houseAddress, placeholderColor: AppColor.black414141)
+//        tfAddress2.setupLayoutTextfield(placeholderText: TitleString.placeHolderCompanyAddress, titleText: TitleString.companyAddress, placeholderColor: AppColor.black414141)
         
         btnSend.setupLayoutButton(backgroundColor: AppColor.green005800, titleColor: AppColor.white, text: ButtonName.sendSupplementaryInfo)
     }

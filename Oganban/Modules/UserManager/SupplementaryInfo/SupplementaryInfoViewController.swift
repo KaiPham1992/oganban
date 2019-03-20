@@ -20,8 +20,8 @@ class SupplementaryInfoViewController: BaseViewController, UITextFieldDelegate {
     @IBOutlet weak var tvPolicy: UITextView!
     @IBOutlet weak var btnCheck: UIButton!
     @IBOutlet weak var tfCode: OganbanCustomTextfield!
-    @IBOutlet weak var tfAddress2: OganbanCustomTextfield!
-    @IBOutlet weak var tfAddress1: OganbanCustomTextfield!
+//    @IBOutlet weak var tfAddress2: OganbanCustomTextfield!
+//    @IBOutlet weak var tfAddress1: OganbanCustomTextfield!
     @IBOutlet weak var tfSex: OganbanCustomTextfield!
     @IBOutlet weak var tfBirthday: OganbanCustomTextfield!
     @IBOutlet weak var tfName: OganbanCustomTextfield!
@@ -54,8 +54,8 @@ class SupplementaryInfoViewController: BaseViewController, UITextFieldDelegate {
         tapSendButton()
         textFieldDidBeginEditing()
         
-        tfAddress1.tfContent.delegate = self
-        tfAddress2.tfContent.delegate = self
+//        tfAddress1.tfContent.delegate = self
+//        tfAddress2.tfContent.delegate = self
         hideKeyboard()
     }
     
