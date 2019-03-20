@@ -183,7 +183,7 @@ extension OrderBuyDetailViewController: OrderBuyDetailViewProtocol {
 
 extension OrderBuyDetailViewController: OrderBuyInfoCellDelegate {
     func btnPhoneTapped() {
-        if let phone = record?.phone, let url = URL(string: "tel://\(phone)") {
+        if let phone = record?.phone, let phoneCode = record?.phoneCode , let url = URL(string: "tel://\(phoneCode)\(phone)") {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }

@@ -35,6 +35,7 @@ class RecordEntity: BaseEntity {
     var address: String?
     var address2: String?
     var phone: String?
+    var phoneCode: String?
     var accountCoin: Double?
     
     var quantity: Int?
@@ -85,6 +86,7 @@ class RecordEntity: BaseEntity {
         self.address2 <- map["address_2"]
         self.level <- map["level"]
         self.phone <- map["phone"]
+        self.phoneCode <- map["phone_code"]
         self.cropImage <- map["crop_img_src_account"]
         self.accountCoin <- map["account_coin"]
         self.categoryName <- map["category_name"]
