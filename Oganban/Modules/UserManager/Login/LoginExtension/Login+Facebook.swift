@@ -44,6 +44,9 @@ extension LoginViewController {
             req?.start(completionHandler: { (connection, result, error) in
                 if let _result = result as? [String: Any] {
                     let fbModel = FacebookEntity(json: _result)
+                    // textFiled.text = fbmodel.userid
+                    
+                    
                     self.loginType = .facebook
                     let newLoginSocialParam = LoginSocialParam(user: fbModel)
                     self.presenter?.loginSocial(param: newLoginSocialParam)

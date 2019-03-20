@@ -16,8 +16,8 @@ import FBSDKCoreKit
 import ZaloSDK
 
 class UpdateProfileViewController: BaseViewController {
-
-	var presenter: UpdateProfilePresenterProtocol?
+    
+    var presenter: UpdateProfilePresenterProtocol?
     
     @IBOutlet weak var tvCodeIntro: UITextView!
     @IBOutlet weak var lbRateCount: UILabel!
@@ -64,9 +64,9 @@ class UpdateProfileViewController: BaseViewController {
         textFieldDidBeginEditing()
         hideError()
         addGesture()
-//        setDefaultData()
+        //        setDefaultData()
         presenter?.getProfileUser()
-       
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -88,7 +88,7 @@ class UpdateProfileViewController: BaseViewController {
     }
     
     @IBAction func btnAvatarTapped() {
-//        let popUp = SelectPhotoCanCropPopUp()
+        //        let popUp = SelectPhotoCanCropPopUp()
         SelectPhotoCanCropPopUp.shared.showCropPicker(controller: self) { image in
             guard let _iamge = image else { return }
             self.imgAvatar.image = _iamge
@@ -114,10 +114,10 @@ class UpdateProfileViewController: BaseViewController {
             } else {
                 lbRating.text =  String(format: "%.1f", 0)
             }
-        
+            
             imgAvatar.sd_setImage(with: user.urlAvatar , placeholderImage: AppImage.imgDefaultUser)
             
-
+            
             
             if let email = user.email {
                 tfUsername.tfContent.text = email
@@ -141,18 +141,18 @@ class UpdateProfileViewController: BaseViewController {
             if let fullName = user.fullName {
                 tfDisplayName.tfContent.text = fullName
             }
-           
+            
             if let houseAddress = user.houseAddress {
-                 tfAddress1.tfContent.text = houseAddress
+                tfAddress1.tfContent.text = houseAddress
             }
             if let companyAddress = user.companyAddress {
                 tfAddress2.tfContent.text = companyAddress
             }
-         
+            
             if let phone = user.phone {
                 tvPhone.tfPhone.text = phone
             }
-           
+            
             if let dialCode = user.phoneCode, let countryCode = getCountryCodeFromDialCode(dialCode: dialCode) {
                 self.countryPhoneCode =  countryCode
                 tvPhone.lbCountryCode.text = dialCode
@@ -198,7 +198,7 @@ class UpdateProfileViewController: BaseViewController {
     func convertStringToGender(title: String) -> Gender {
         if title == "male" {
             return Gender(title: "Nam", keyParam: "male")
-           
+            
         } else if title == "female" {
             return Gender(title: "Nữ", keyParam: "female")
             
@@ -240,21 +240,21 @@ class UpdateProfileViewController: BaseViewController {
     func isEnabledSaveButton(isEnabled: Bool = true) {
         self.btnSave.isEnabledButton = isEnabled
         if isEnabled {
-        self.btnSave.setupLayoutButton(backgroundColor: AppColor.green005800, titleColor: AppColor.white, text: ButtonName.saveProfile)
+            self.btnSave.setupLayoutButton(backgroundColor: AppColor.green005800, titleColor: AppColor.white, text: ButtonName.saveProfile)
         } else {
             self.btnSave.setupLayoutButton(backgroundColor: AppColor.greyC8C8C8, titleColor: AppColor.white, text: ButtonName.saveProfile)
         }
     }
     
     func checkHideShowSaveButton(){
-       
+        
         var isEnabled = false
         if let user = UserDefaultHelper.shared.loginUserInfo {
             if  self.tfDisplayName.tfContent.text != user.fullName
             {
                 isEnabled = true
             }
-           
+            
             if let oldDate = getBirthday(birthDay: user.birthday), let newDate = tfBirthday.tfContent.text, newDate != oldDate.toString(dateFormat: AppDateFormat.ddMMYYYY_VN) {
                 isEnabled = true
             }
@@ -270,7 +270,7 @@ class UpdateProfileViewController: BaseViewController {
             
             if self.tvPhone.tfPhone.text != user.phone
             {
-               isEnabled = true
+                isEnabled = true
             }
             
             if user.houseAddress != tfAddress1.tfContent.text {
@@ -319,10 +319,10 @@ extension UpdateProfileViewController {
             return false
         }
         
-//        if username.isValidEmail() == false  {
-//            hideError(isHidden: false, message: MessageString.checkedUsername)
-//            return false
-//        }
+        //        if username.isValidEmail() == false  {
+        //            hideError(isHidden: false, message: MessageString.checkedUsername)
+        //            return false
+        //        }
         
         guard let displayName = self.tfDisplayName.tfContent.text else {
             hideError(isHidden: false, message: MessageString.emptyDisplayName)
@@ -447,39 +447,55 @@ extension UpdateProfileViewController: PositionViewControllerDelegate {
 }
 
 extension UpdateProfileViewController {
-
-//    func FBlogin() {
-//        let fbLoginManager = FBSDKLoginManager()
-//        fbLoginManager.logOut()
-//
-//        fbLoginManager.logIn(withReadPermissions: ["public_profile", "email"], from: self) { (result, error) in
-//            if let error = error {
-//                print("Failed to login: \(error.localizedDescription)")
-//                return
-//            }
-//
-//            guard let accessToken = FBSDKAccessToken.current() else {
-//                print("Failed to get access token")
-//                return
-//            }
-//            accessToken.tokenString
-//            let req = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"id, email, name, picture.width(480).height(480),birthday"], tokenString: accessToken.tokenString, version: nil, httpMethod: "GET")
-//            req?.start(completionHandler: { (connection, result, error) in
-//                if let _result = result as? [String: Any] {
-//                    let fbModel = FacebookEntity(json: _result)
-//                    self.tfFacebook.tfContent.text = fbModel.id
-//                    self.checkHideShowSaveButton()
-//                }
-//            })
-//        }
-//    }
+    
+    //    func FBlogin() {
+    //        let fbLoginManager = FBSDKLoginManager()
+    //        fbLoginManager.logOut()
+    //
+    //        fbLoginManager.logIn(withReadPermissions: ["public_profile", "email"], from: self) { (result, error) in
+    //            if let error = error {
+    //                print("Failed to login: \(error.localizedDescription)")
+    //                return
+    //            }
+    //
+    //            guard let accessToken = FBSDKAccessToken.current() else {
+    //                print("Failed to get access token")
+    //                return
+    //            }
+    //            accessToken.tokenString
+    //            let req = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"id, email, name, picture.width(480).height(480),birthday"], tokenString: accessToken.tokenString, version: nil, httpMethod: "GET")
+    //            req?.start(completionHandler: { (connection, result, error) in
+    //                if let _result = result as? [String: Any] {
+    //                    let fbModel = FacebookEntity(json: _result)
+    //                    self.tfFacebook.tfContent.text = fbModel.id
+    //                    self.checkHideShowSaveButton()
+    //                }
+    //            })
+    //        }
+    //    }
     func loginZalo() {
-        ZaloSDK.sharedInstance()?.authenticateZalo(with: ZAZaloSDKAuthenTypeViaZaloAppOnly, parentController: self, handler: { (response) in
-            if let _ = response?.isSucess {
-                self.tfZalo.tfContent.text = response?.userId
-            } else {
-                PopUpHelper.shared.showMessageHaveAds(message: "lỗi đăng nhập")
-            }
+        //        ZaloSDK.sharedInstance()?.setFacebookAppId("225241758398999")
+        //        ZaloSDK.sharedInstance()?.authenticateZalo(with: ZAZAloSDKAuthenTypeViaZaloAppAndWebView, parentController: self, handler: { (response) in
+        //            if let _ = response?.isSucess {
+        //                self.tfZalo.tfContent.text = response?.userId
+        //            } else {
+        //                PopUpHelper.shared.showMessageHaveAds(message: "lỗi đăng nhập")
+        //            }
+        //        })
+        
+        ZaloSDK.sharedInstance()!.authenticateZalo(with: ZAZaloSDKAuthenTypeViaWebViewOnly, parentController: self
+            , handler: { response in
+                if let _ = response?.isSucess {
+                    self.tfZalo.tfContent.text = response?.userId
+                } else {
+                    PopUpHelper.shared.showMessageHaveAds(message: "lỗi đăng nhập")
+                }
         })
+        
+        
+        
+        print(ZaloSDK.sharedInstance()!.appId())
+        
+        
     }
 }
