@@ -44,6 +44,16 @@
 				<string>prefs</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>zalo</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>zalo</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>201903042345</string>

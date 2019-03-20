@@ -21,6 +21,7 @@ def main_pods
     pod 'ImagePicker',:git => 'https://github.com/appsailor/ImagePicker.git', :branch => 'feature/Swift-4.2'
     pod 'Fabric'
     pod 'Crashlytics'
+    pod 'ZaloSDK'
 end
 
 target 'Oganban-Dev' do

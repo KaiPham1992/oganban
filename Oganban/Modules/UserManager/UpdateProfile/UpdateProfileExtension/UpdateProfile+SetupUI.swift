@@ -48,7 +48,7 @@ extension UpdateProfileViewController: UITextFieldDelegate {
         
         tfAddress1.tfContent.delegate = self
         tfAddress2.tfContent.delegate = self
-        tfFacebook.tfContent.isEnabled = false
+        tfZalo.tfContent.isEnabled = false
         
         vCheckZalo.delegate = self
         vCheckPhone.delegate = self
@@ -67,8 +67,8 @@ extension UpdateProfileViewController: UITextFieldDelegate {
         let tapZaloGesture = UITapGestureRecognizer(target: self, action: #selector(self.selectZalo(_:)))
         self.tfZalo.addGestureRecognizer(tapZaloGesture)
         
-        let tapFacebookGesture = UITapGestureRecognizer(target: self, action: #selector(self.selectFacebook(_:)))
-        self.tfFacebook.addGestureRecognizer(tapFacebookGesture)
+//        let tapFacebookGesture = UITapGestureRecognizer(target: self, action: #selector(self.selectFacebook(_:)))
+//        self.tfFacebook.addGestureRecognizer(tapFacebookGesture)
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {

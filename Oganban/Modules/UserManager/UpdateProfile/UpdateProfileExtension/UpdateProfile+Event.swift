@@ -152,12 +152,12 @@ extension UpdateProfileViewController {
     }
     
     @objc func selectZalo(_ sender: UITapGestureRecognizer) {
-        
+        self.loginZalo()
     }
     
-    @objc func selectFacebook(_ sender: UITapGestureRecognizer) {
-        self.FBlogin()
-    }
+//    @objc func selectFacebook(_ sender: UITapGestureRecognizer) {
+////        self.FBlogin()
+//    }
 }
 
 extension UpdateProfileViewController: UpdateProfileViewProtocol{

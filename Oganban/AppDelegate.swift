@@ -15,6 +15,7 @@ import GoogleSignIn
 import GooglePlaces
 import Fabric
 import Crashlytics
+import ZaloSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -42,6 +43,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //        let nc = UINavigationController(rootViewController: vcLogin)
         //        window?.rootViewController = nc
 //        UserDefaultHelper.shared.saveLocation(lat: CLLocationDegrees(10.737938), long: CLLocationDegrees(106.677911), address: "180 Đường Cao Lỗ, Phường 4, Quận 8, Hồ Chí Minh, Vietnam")
+        //
+        
+        //--- ZALO Linking
+        ZaloSDK.sharedInstance()?.initialize(withAppId: "1449449501")
         return true
     }
     
@@ -54,12 +59,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:], sourceApplication: String) -> Bool {
         let fb = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
         let gg = GIDSignIn.sharedInstance().handle(url as URL?,
                                                    sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
                                                    annotation: options[UIApplication.OpenURLOptionsKey.annotation])
-        return fb || gg
+        let zalo = ZDKApplicationDelegate.sharedInstance().application(app, open: url, sourceApplication: sourceApplication, annotation: options[UIApplication.OpenURLOptionsKey.annotation])
+        
+        return fb || gg || zalo
         
         
     }
