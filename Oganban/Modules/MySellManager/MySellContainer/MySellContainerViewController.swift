@@ -61,6 +61,11 @@ class MySellContainerViewController: BaseViewController, MySellContainerViewProt
 }
 
 extension MySellContainerViewController: MySellingViewControllerDelegate, MyExchangeViewControllerDelegate {
+    
+    func gotoUpdatedProfile() {
+        presenter?.gotoUpdatedProfile()
+    }
+    
     func gotoLogin() {
         presenter?.gotoLogin()
     }

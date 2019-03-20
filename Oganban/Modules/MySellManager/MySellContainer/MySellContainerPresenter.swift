@@ -33,4 +33,8 @@ class MySellContainerPresenter: MySellContainerPresenterProtocol, MySellContaine
     func gotoPostRecord() {
         router.gotoPostRecord()
     }
+    
+    func gotoUpdatedProfile() {
+        router.gotoUpdatedProfile()
+    }
 }

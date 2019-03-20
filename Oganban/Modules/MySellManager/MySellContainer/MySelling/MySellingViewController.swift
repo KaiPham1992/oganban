@@ -15,6 +15,7 @@ protocol MySellingViewControllerDelegate: class {
     func gotoLogin()
     func gotoMySellExpired()
     func gotoPostRecord()
+    func gotoUpdatedProfile()
 }
 
 class MySellingViewController: BaseViewController {
@@ -116,7 +117,15 @@ class MySellingViewController: BaseViewController {
     @IBAction func btnPostRecordTapped() {
         guard let allowNews = listRecord?.allowNews else { return }
         if allowNews > 0 {
-            delegate?.gotoPostRecord()
+            guard let user = UserDefaultHelper.shared.loginUserInfo else { return }
+            if  user.isActivePhone != 1 && user.isActiveZalo != 1 && user.isActiveFacebook != 1 {
+                PopUpHelper.shared.showMessageHaveAds(message: "Vui lòng cập nhật thông tin liên hệ. Cám ơn!") {
+                    self.delegate?.gotoUpdatedProfile()
+                }
+            } else {
+                delegate?.gotoPostRecord()
+            }
+            
         } else {
             PopUpHelper.shared.showPopUpCanPost()
         }

@@ -35,6 +35,7 @@ class PopUpHelper {
     
     func showYesNoQuestionHaveAds(question: String, completionYes: @escaping CompletionClosure, completionNo: @escaping CompletionClosure) {
         let popUp = PopUpYesNoHaveAdmob()
+        
         popUp.showPopUp(question: question, completionYes: completionYes, completionNo: completionNo)
     }
     

@@ -43,4 +43,9 @@ class MySellContainerRouter: MySellContainerWireframeProtocol {
         let vc = PostStepOneRouter.createModule()
         viewController?.push(controller: vc)
     }
+    
+    func gotoUpdatedProfile() {
+        let vc = UpdateProfileRouter.createModule()
+        viewController?.push(controller: vc)
+    }
 }
