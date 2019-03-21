@@ -54,4 +54,9 @@ class PopUpHelper {
         popupView.maxDate = maxDate
         popupView.showPopUp(completionDate: completionDate)
     }
+    
+    func showPopupOneButtonAds(message: String, completionYes: @escaping CompletionClosure, completionClose: @escaping CompletionClosure) {
+        let popUp = PopupOneButtonAdmob()
+        popUp.showPopUp(question: message, completionYes: completionYes, completionClose: completionClose)
+    }
 }

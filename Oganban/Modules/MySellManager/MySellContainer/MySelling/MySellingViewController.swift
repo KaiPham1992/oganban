@@ -19,7 +19,7 @@ protocol MySellingViewControllerDelegate: class {
 }
 
 class MySellingViewController: BaseViewController {
-
+    
     @IBOutlet weak var vContain: UIView!
     @IBOutlet weak var lbTotalPosted: UILabel!
     @IBOutlet weak var lbTotalSubPost: UILabel!
@@ -29,8 +29,8 @@ class MySellingViewController: BaseViewController {
     @IBOutlet weak var vPostRecord: UIView!
     @IBOutlet weak var bottomConstant: NSLayoutConstraint!
     
-	var presenter: MySellingPresenterProtocol?
-
+    var presenter: MySellingPresenterProtocol?
+    
     var parrentNavigation: UINavigationController?
     weak var delegate: MySellingViewControllerDelegate?
     var refeshControl: UIRefreshControl?
@@ -53,12 +53,12 @@ class MySellingViewController: BaseViewController {
     }
     
     
-	override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         isRefresh = true
@@ -119,9 +119,15 @@ class MySellingViewController: BaseViewController {
         if allowNews > 0 {
             guard let user = UserDefaultHelper.shared.loginUserInfo else { return }
             if  user.isActivePhone != 1 && user.isActiveZalo != 1 && user.isActiveFacebook != 1 {
-                PopUpHelper.shared.showMessageHaveAds(message: "Vui lòng cập nhật thông tin liên hệ. Cám ơn!") {
+//                PopUpHelper.shared.showPopupOneButtonAds(message: "Vui lòng cập nhật thông tin liên hệ. Cám ơn!", completionYes: CompletionClosure) {
+//                    self.delegate?.gotoUpdatedProfile()
+//                }
+                PopUpHelper.shared.showPopupOneButtonAds(message: "Vui lòng cập nhật thông tin liên hệ. Cám ơn!", completionYes: {
                     self.delegate?.gotoUpdatedProfile()
+                }) {
+                    
                 }
+                
             } else {
                 delegate?.gotoPostRecord()
             }
@@ -147,7 +153,7 @@ class MySellingViewController: BaseViewController {
 extension MySellingViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let count = listRecord?.dataRecord.count else { return 0}
-
+        
         return count
     }
     
@@ -170,10 +176,10 @@ extension MySellingViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard let count = self.listRecord?.dataRecord.count else { return }
         
-            if indexPath.item == count - 5 && isCanLoadMore {
-                print("load more")
-                presenter?.getRecordSellerPost(status: "show", offset: count, limit: limitLoad)
-            }
+        if indexPath.item == count - 5 && isCanLoadMore {
+            print("load more")
+            presenter?.getRecordSellerPost(status: "show", offset: count, limit: limitLoad)
+        }
     }
 }
 
@@ -181,7 +187,7 @@ extension MySellingViewController: MySellingViewProtocol {
     
     func didGetRecordSellerPost(listRecord: BaseRecordEntity?) {
         // nil or count = 0
-//        isCanLoadMore = false
+        //        isCanLoadMore = false
         isCanLoadMore = listRecord?.dataRecord.count == limitLoad
         if self.listRecord == nil || self.listRecord?.dataRecord.count == 0 || isRefresh {
             isRefresh = false
@@ -190,7 +196,7 @@ extension MySellingViewController: MySellingViewProtocol {
             guard let data = listRecord?.dataRecord else { return }
             self.listRecord?.dataRecord.append(contentsOf: data)
         }
-       
+        
     }
     
     func didGetRecordSellerPost(error: APIError?) {

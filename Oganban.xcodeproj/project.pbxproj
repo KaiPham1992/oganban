@@ -242,6 +242,9 @@
 		CB172C9E21C6A2EF0068CF92 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB172C0821C6A2EF0068CF92 /* BaseView.swift */; };
 		CB31FB7721DF413D001DFC7F /* BaseRecordEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB31FB7621DF413D001DFC7F /* BaseRecordEntity.swift */; };
 		CB31FB7921DF4736001DFC7F /* BaseOrderEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB31FB7821DF4736001DFC7F /* BaseOrderEntity.swift */; };
+		CB35F9AB2243B255003BAB99 /* PopupOneButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB35F9A92243B254003BAB99 /* PopupOneButton.xib */; };
+		CB35F9AC2243B255003BAB99 /* PopupOneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35F9AA2243B255003BAB99 /* PopupOneButton.swift */; };
+		CB35F9AE2243B2D0003BAB99 /* PopupOneButtonAdmob.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35F9AD2243B2D0003BAB99 /* PopupOneButtonAdmob.swift */; };
 		CB379C0B21E388B0005D7536 /* OrderBuyDetailImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB379C0921E388B0005D7536 /* OrderBuyDetailImageCell.swift */; };
 		CB379C0C21E388B0005D7536 /* OrderBuyDetailImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB379C0A21E388B0005D7536 /* OrderBuyDetailImageCell.xib */; };
 		CB379C1721E39546005D7536 /* MySellExpiredDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB379C0E21E39545005D7536 /* MySellExpiredDetailInteractor.swift */; };
@@ -1721,6 +1724,9 @@
 		CB172C0821C6A2EF0068CF92 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		CB31FB7621DF413D001DFC7F /* BaseRecordEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRecordEntity.swift; sourceTree = "<group>"; };
 		CB31FB7821DF4736001DFC7F /* BaseOrderEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseOrderEntity.swift; sourceTree = "<group>"; };
+		CB35F9A92243B254003BAB99 /* PopupOneButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopupOneButton.xib; sourceTree = "<group>"; };
+		CB35F9AA2243B255003BAB99 /* PopupOneButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupOneButton.swift; sourceTree = "<group>"; };
+		CB35F9AD2243B2D0003BAB99 /* PopupOneButtonAdmob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupOneButtonAdmob.swift; sourceTree = "<group>"; };
 		CB379C0921E388B0005D7536 /* OrderBuyDetailImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderBuyDetailImageCell.swift; sourceTree = "<group>"; };
 		CB379C0A21E388B0005D7536 /* OrderBuyDetailImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderBuyDetailImageCell.xib; sourceTree = "<group>"; };
 		CB379C0E21E39545005D7536 /* MySellExpiredDetailInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySellExpiredDetailInteractor.swift; sourceTree = "<group>"; };
@@ -2620,6 +2626,7 @@
 		CB172B4421C6A2EE0068CF92 /* CustomPopUp */ = {
 			isa = PBXGroup;
 			children = (
+				CB35F9A82243B1E2003BAB99 /* PopupOneButton */,
 				8432074921CF529D00A4F11E /* PopupDateFollowWeek */,
 				DEC5166021CE8DA300A17CBF /* PopUpSettingGPS */,
 				DEE1DA7821CE2DD30036FEB7 /* PopUpUpdateQuantityBuy */,
@@ -2768,6 +2775,16 @@
 				CB172C0821C6A2EF0068CF92 /* BaseView.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		CB35F9A82243B1E2003BAB99 /* PopupOneButton */ = {
+			isa = PBXGroup;
+			children = (
+				CB35F9AA2243B255003BAB99 /* PopupOneButton.swift */,
+				CB35F9A92243B254003BAB99 /* PopupOneButton.xib */,
+				CB35F9AD2243B2D0003BAB99 /* PopupOneButtonAdmob.swift */,
+			);
+			path = PopupOneButton;
 			sourceTree = "<group>";
 		};
 		CB379C0721E38849005D7536 /* Cell */ = {
@@ -3852,6 +3869,7 @@
 				8432075121CF529D00A4F11E /* DateFollowWeekCell.xib in Resources */,
 				DE0DBAEA21D3B6DA0097E38F /* NotificationViewController.xib in Resources */,
 				DE442C4621CFA33D0051C0B8 /* PostCommentView.xib in Resources */,
+				CB35F9AB2243B255003BAB99 /* PopupOneButton.xib in Resources */,
 				CB172C9021C6A2EF0068CF92 /* OpenSans-BoldItalic.ttf in Resources */,
 				DE442C6521CFBDA40051C0B8 /* HeaderOrderDetail.xib in Resources */,
 				84487C8621CB7E96008B25B2 /* Roboto-Black.ttf in Resources */,
@@ -4582,6 +4600,7 @@
 				CB172B3B21C6A26F0068CF92 /* Network.swift in Sources */,
 				DE0DBAEF21D3B8BF0097E38F /* Date+Transform.swift in Sources */,
 				DE442C5921CFB7870051C0B8 /* BaseCommentCell.swift in Sources */,
+				CB35F9AE2243B2D0003BAB99 /* PopupOneButtonAdmob.swift in Sources */,
 				DEE1DA5621CDE6550036FEB7 /* PopUpSelectDate.swift in Sources */,
 				CB0FD72221DDBC670093B06B /* OrderAPIService.swift in Sources */,
 				DEE7306D21CFDA1700F20D68 /* OrderDetail+PostComment.swift in Sources */,
@@ -4696,6 +4715,7 @@
 				DEE7306F21CFDAA300F20D68 /* OrderDetail+Table.swift in Sources */,
 				DE21828121CD473100FDD9F1 /* KActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */,
 				CBD1C29921D732CB006DB3FF /* MyBuyProtocols.swift in Sources */,
+				CB35F9AC2243B255003BAB99 /* PopupOneButton.swift in Sources */,
 				DE33036021DF5EDB00409F83 /* PostStepTwoViewController.swift in Sources */,
 				84396D3E21D1389B00818FAB /* UpdateProfile+Event.swift in Sources */,
 				DEA3A09521D67B1300643296 /* BannerEntity.swift in Sources */,
