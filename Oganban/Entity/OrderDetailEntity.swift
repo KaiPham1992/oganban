@@ -37,6 +37,9 @@ class OrderDetailEntity: BaseEntity {
     var ratingSellerOrder: String?
     var linkZaloSeller: String?
     var linkFacebookSeller: String?
+    var isPhoneSeller: Int?
+    var isZaloSeller: Int?
+    var isFacebookSeller: Int?
     // buyer
     var accountIDBuyer: String?
     var fullNameBuyer: String?
@@ -50,6 +53,11 @@ class OrderDetailEntity: BaseEntity {
     var imgCropBuyer: String?
     var levelBuyer: String?
     var ratingBuyerOrder: String?
+    
+    var isPhoneBuyer: Int?
+    var isZaloBuyer: Int?
+    var isFacebookBuyber: Int?
+    
     var linkZaloBuyer: String?
     var linkFacebookBuyer: String?
     
@@ -84,6 +92,9 @@ class OrderDetailEntity: BaseEntity {
         self.ratingSellerOrder <- map["rating_seller_order"]
         self.linkZaloSeller <- map["link_zalo_seller"]
         self.linkFacebookSeller <- map["link_facebook_seller"]
+        self.isPhoneSeller <- map["is_active_phone_seller"]
+        self.isZaloSeller <- map["is_active_zalo_seller"]
+        self.isFacebookSeller <- map["is_active_facebook_seller"]
         // buyer
         self.accountIDBuyer <- map["account_id_buyer"]
         self.fullNameBuyer <- map["fullname_buyer"]
@@ -99,6 +110,9 @@ class OrderDetailEntity: BaseEntity {
         self.ratingBuyerOrder <- map["rating_buyer_order"]
         self.linkZaloBuyer <- map["link_zalo_buyer"]
         self.linkFacebookBuyer <- map["link_facebook_buyer"]
+        self.isPhoneBuyer <- map["is_active_phone_buyer"]
+        self.isZaloBuyer <- map["is_active_zalo_buyer"]
+        self.isFacebookBuyber <- map["is_active_facebook_buyer"]
         
         
         

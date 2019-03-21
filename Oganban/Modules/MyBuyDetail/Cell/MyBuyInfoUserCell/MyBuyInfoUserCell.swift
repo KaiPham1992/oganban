@@ -45,20 +45,20 @@ class MyBuyInfoUserCell: BaseTableCell {
 //            lcsWithImgPhone.constant = 0
 //            btnPhone.isEnabled = false
             
-            if _record.phoneBuyer != nil {
+            if _record.isPhoneBuyer != nil  {
                 lcsWidthBtnPhone.constant = 35
             } else {
                 lcsWidthBtnPhone.constant = 0
             }
             
-            if let _ = _record.linkZaloBuyer {
+            if let _ = _record.isZaloBuyer {
                 lcsWidthBtnZalo.constant = 35
                 
             } else {
                 lcsWidthBtnZalo.constant = 0
             }
             
-            if let _ = _record.linkFacebookBuyer {
+            if let _ = _record.isZaloBuyer {
                 
                 btnFacebook.isHidden =  false
             } else {
@@ -73,20 +73,20 @@ class MyBuyInfoUserCell: BaseTableCell {
             imgAvatar.sd_setImage(with: _record.urlAvatarBuyer, placeholderImage: AppImage.imgDefaultUser)
 //            lcsWithImgPhone.constant = 20
 //            btnPhone.isEnabled = true
-            if _record.phoneSaler == nil {
+            if _record.isPhoneSeller == nil {
                  lcsWidthBtnPhone.constant = 35
             } else {
                 lcsWidthBtnPhone.constant = 0
             }
             
-            if let _ = _record.linkZaloSeller {
+            if let _ = _record.isZaloSeller {
                 lcsWidthBtnZalo.constant = 35
                 
             } else {
                 lcsWidthBtnZalo.constant = -35
             }
             
-            if let _ = _record.linkFacebookSeller {
+            if let _ = _record.isFacebookSeller {
                 
                 btnFacebook.isHidden =  false
             } else {
