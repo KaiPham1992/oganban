@@ -51,9 +51,9 @@ class RecordEntity: BaseEntity {
     var isService: String?
     var socialImgSrc: String?
     
-    var isPhone: Bool?
-    var isZalo: Bool?
-    var isFacebook: Bool?
+    var isPhone: Int?
+    var isZalo: Int?
+    var isFacebook: Int?
     
     var linkZalo: String?
     var linkFacebook: String?

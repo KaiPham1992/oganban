@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -31,25 +32,6 @@
                         <color key="textColor" red="0.76862745098039209" green="0.0078431372549019607" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_phone" translatesAutoresizingMaskIntoConstraints="NO" id="rpW-uF-Mcm">
-                        <rect key="frame" x="84" y="49" width="20" height="20"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="20" id="6d4-Aw-1gM"/>
-                            <constraint firstAttribute="height" constant="20" id="WGv-Tp-4Bq"/>
-                        </constraints>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+84986131381" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLR-UB-mme">
-                        <rect key="frame" x="109" y="50" width="104.5" height="18"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" red="0.25490196078431371" green="0.25490196078431371" blue="0.25490196078431371" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rR3-sx-ytl">
-                        <rect key="frame" x="84" y="49" width="129.5" height="20"/>
-                        <connections>
-                            <action selector="btnPhoneTapped" destination="KGk-i7-Jjw" eventType="touchUpInside" id="SIT-MD-yXS"/>
-                        </connections>
-                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Gy-wq-TDx">
                         <rect key="frame" x="284" y="24" width="20" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -77,41 +59,64 @@
                             <constraint firstAttribute="height" constant="20" id="thd-e2-Ge0"/>
                         </constraints>
                     </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FaK-W4-M7k">
+                        <rect key="frame" x="142" y="47" width="35" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="35" id="qBl-7u-gGr"/>
+                            <constraint firstAttribute="height" constant="35" id="qEr-gR-beN"/>
+                        </constraints>
+                        <state key="normal" image="ic_zalo"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QuV-ci-MqX">
+                        <rect key="frame" x="200" y="47" width="35" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="eyo-qL-uNq"/>
+                            <constraint firstAttribute="width" constant="35" id="qlW-Nj-oiN"/>
+                        </constraints>
+                        <state key="normal" image="ic_fb"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tGm-M0-JyI">
+                        <rect key="frame" x="84" y="47" width="35" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="35" id="HG8-3i-BCA"/>
+                            <constraint firstAttribute="height" constant="35" id="Naf-fz-JOa"/>
+                        </constraints>
+                        <state key="normal" image="ic_phone_bg"/>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="PdA-ro-Y1R" firstAttribute="leading" secondItem="FAD-gA-w9E" secondAttribute="trailing" constant="8" id="1Pd-nT-DKR"/>
+                    <constraint firstItem="FaK-W4-M7k" firstAttribute="top" secondItem="tGm-M0-JyI" secondAttribute="top" id="7Xc-ON-ops"/>
                     <constraint firstItem="UYT-5D-seh" firstAttribute="centerY" secondItem="OBY-VX-nar" secondAttribute="centerY" id="7en-s7-QPS"/>
+                    <constraint firstItem="tGm-M0-JyI" firstAttribute="top" secondItem="PdA-ro-Y1R" secondAttribute="bottom" constant="5" id="8Pv-Tm-at3"/>
                     <constraint firstItem="OBY-VX-nar" firstAttribute="leading" secondItem="FAD-gA-w9E" secondAttribute="leading" id="9WP-fK-6w2"/>
                     <constraint firstItem="JUa-LR-K90" firstAttribute="top" secondItem="4Gy-wq-TDx" secondAttribute="bottom" constant="8" id="9vy-dq-yhc"/>
+                    <constraint firstItem="QuV-ci-MqX" firstAttribute="leading" secondItem="FaK-W4-M7k" secondAttribute="trailing" constant="23" id="9zd-iu-xGN"/>
                     <constraint firstAttribute="trailing" secondItem="JUa-LR-K90" secondAttribute="trailing" constant="14" id="AMg-EA-s9A"/>
                     <constraint firstItem="OBY-VX-nar" firstAttribute="top" secondItem="FAD-gA-w9E" secondAttribute="bottom" constant="8" id="Cq9-gl-Ttj"/>
-                    <constraint firstItem="aLR-UB-mme" firstAttribute="leading" secondItem="rpW-uF-Mcm" secondAttribute="trailing" constant="5" id="LGd-r6-oyt"/>
+                    <constraint firstItem="FaK-W4-M7k" firstAttribute="leading" secondItem="tGm-M0-JyI" secondAttribute="trailing" constant="23" id="IKB-dT-5uU"/>
                     <constraint firstItem="PdA-ro-Y1R" firstAttribute="top" secondItem="FAD-gA-w9E" secondAttribute="top" constant="8" id="QUs-iI-9BJ"/>
                     <constraint firstItem="UYT-5D-seh" firstAttribute="trailing" secondItem="JUa-LR-K90" secondAttribute="trailing" id="TLr-aY-AAx"/>
                     <constraint firstAttribute="bottom" secondItem="UYT-5D-seh" secondAttribute="bottom" constant="20" id="U4j-bs-F3u"/>
-                    <constraint firstItem="rR3-sx-ytl" firstAttribute="top" secondItem="rpW-uF-Mcm" secondAttribute="top" id="XzE-Ru-Y5w"/>
                     <constraint firstItem="FAD-gA-w9E" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Ycl-lb-WwJ"/>
-                    <constraint firstItem="rR3-sx-ytl" firstAttribute="bottom" secondItem="rpW-uF-Mcm" secondAttribute="bottom" id="ZLX-ny-FAL"/>
-                    <constraint firstItem="rR3-sx-ytl" firstAttribute="trailing" secondItem="aLR-UB-mme" secondAttribute="trailing" id="ary-Bt-1J1"/>
-                    <constraint firstItem="rpW-uF-Mcm" firstAttribute="centerY" secondItem="aLR-UB-mme" secondAttribute="centerY" id="enV-dQ-L7e"/>
+                    <constraint firstItem="tGm-M0-JyI" firstAttribute="leading" secondItem="PdA-ro-Y1R" secondAttribute="leading" id="gDu-FD-Cw8"/>
                     <constraint firstItem="FAD-gA-w9E" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="gcK-vz-59L"/>
-                    <constraint firstItem="rR3-sx-ytl" firstAttribute="leading" secondItem="rpW-uF-Mcm" secondAttribute="leading" id="vkD-Yg-Wlh"/>
-                    <constraint firstItem="aLR-UB-mme" firstAttribute="top" secondItem="PdA-ro-Y1R" secondAttribute="bottom" constant="8" id="w1r-GW-rmk"/>
-                    <constraint firstItem="rpW-uF-Mcm" firstAttribute="leading" secondItem="PdA-ro-Y1R" secondAttribute="leading" id="whd-9o-bMQ"/>
+                    <constraint firstItem="QuV-ci-MqX" firstAttribute="top" secondItem="FaK-W4-M7k" secondAttribute="top" id="sEm-KB-o4G"/>
                     <constraint firstAttribute="trailing" secondItem="4Gy-wq-TDx" secondAttribute="trailing" constant="16" id="xSE-ym-er3"/>
                     <constraint firstItem="4Gy-wq-TDx" firstAttribute="centerY" secondItem="PdA-ro-Y1R" secondAttribute="centerY" id="z4k-zI-XHf"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="btnPhone" destination="rR3-sx-ytl" id="Qiv-Ss-mPZ"/>
+                <outlet property="btnFacebook" destination="QuV-ci-MqX" id="LtN-si-NsH"/>
+                <outlet property="btnPhone" destination="tGm-M0-JyI" id="33n-j2-Skw"/>
+                <outlet property="btnZalo" destination="FaK-W4-M7k" id="31I-AE-Ik6"/>
                 <outlet property="imgAvatar" destination="FAD-gA-w9E" id="E2r-cW-ws7"/>
-                <outlet property="imgPhone" destination="rpW-uF-Mcm" id="25Z-hS-6GN"/>
                 <outlet property="lbName" destination="PdA-ro-Y1R" id="mH7-Id-7Qg"/>
-                <outlet property="lbPhone" destination="aLR-UB-mme" id="Luf-Op-zej"/>
                 <outlet property="lbReview" destination="UYT-5D-seh" id="vLb-jL-FRF"/>
                 <outlet property="lbStar" destination="4Gy-wq-TDx" id="qfh-w0-zeC"/>
-                <outlet property="lcsWithImgPhone" destination="6d4-Aw-1gM" id="6Hq-y9-SEh"/>
+                <outlet property="lcsWidthBtnPhone" destination="HG8-3i-BCA" id="EcM-AM-Mxe"/>
+                <outlet property="lcsWidthBtnZalo" destination="qBl-7u-gGr" id="cg8-cH-umw"/>
                 <outlet property="vLevel" destination="OBY-VX-nar" id="3la-iH-NAH"/>
             </connections>
             <point key="canvasLocation" x="137.59999999999999" y="101.64917541229386"/>
@@ -119,7 +124,9 @@
     </objects>
     <resources>
         <image name="ic_avatar" width="22.5" height="22.5"/>
-        <image name="ic_phone" width="13" height="13"/>
-        <image name="ic_star" width="12" height="12"/>
+        <image name="ic_fb" width="33.5" height="33.5"/>
+        <image name="ic_phone_bg" width="34.5" height="34.5"/>
+        <image name="ic_star" width="25" height="25"/>
+        <image name="ic_zalo" width="33.5" height="33.5"/>
     </resources>
 </document>

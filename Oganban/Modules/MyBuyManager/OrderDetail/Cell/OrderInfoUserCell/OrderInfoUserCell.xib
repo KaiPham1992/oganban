@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="128" id="KGk-i7-Jjw" customClass="OrderInfoUserCell" customModule="Oganban" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="128" id="KGk-i7-Jjw" customClass="OrderInfoUserCell" customModule="Oganban_AppStore" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="128"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -31,28 +32,6 @@
                         <color key="textColor" red="0.76862745098039209" green="0.0078431372549019607" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_phone" translatesAutoresizingMaskIntoConstraints="NO" id="jpT-eF-S7g">
-                        <rect key="frame" x="84" y="52.5" width="13" height="13"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="13" id="BtW-Lg-sUC"/>
-                            <constraint firstAttribute="width" constant="13" id="VlM-95-DdL"/>
-                        </constraints>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+84986131381" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLR-UB-mme">
-                        <rect key="frame" x="102" y="50" width="104.5" height="18"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" red="0.25490196078431371" green="0.25490196078431371" blue="0.25490196078431371" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NfE-OP-1Pg">
-                        <rect key="frame" x="84" y="50" width="122.5" height="30"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="30" id="LEz-cX-1vv"/>
-                        </constraints>
-                        <connections>
-                            <action selector="btnPhoneTapped" destination="KGk-i7-Jjw" eventType="touchUpInside" id="80h-mn-Soa"/>
-                        </connections>
-                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Gy-wq-TDx">
                         <rect key="frame" x="284" y="24" width="20" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -72,7 +51,7 @@
                         <color key="textColor" red="0.72549019607843135" green="0.72549019607843135" blue="0.72549019607843135" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OBY-VX-nar" customClass="LevelMemberView" customModule="Oganban" customModuleProvider="target">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OBY-VX-nar" customClass="LevelMemberView" customModule="Oganban_AppStore" customModuleProvider="target">
                         <rect key="frame" x="16" y="84" width="185" height="20"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -80,40 +59,64 @@
                             <constraint firstAttribute="height" constant="20" id="thd-e2-Ge0"/>
                         </constraints>
                     </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qCg-yH-2C4">
+                        <rect key="frame" x="84" y="47" width="35" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="35" id="RXK-Jm-7CM"/>
+                            <constraint firstAttribute="height" constant="35" id="oSV-VE-9TB"/>
+                        </constraints>
+                        <state key="normal" image="ic_phone_bg"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fw1-py-36A">
+                        <rect key="frame" x="142" y="47" width="35" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="35" id="Jcf-fr-oXS"/>
+                            <constraint firstAttribute="height" constant="35" id="mf6-Ng-eFr"/>
+                        </constraints>
+                        <state key="normal" image="ic_zalo"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aA8-Pg-ef9">
+                        <rect key="frame" x="200" y="47" width="35" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="5Fk-Hc-VF1"/>
+                            <constraint firstAttribute="width" constant="35" id="k5R-4C-nb9"/>
+                        </constraints>
+                        <state key="normal" image="ic_fb"/>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="JUa-LR-K90" firstAttribute="centerX" secondItem="4Gy-wq-TDx" secondAttribute="centerX" id="18V-HJ-NDw"/>
                     <constraint firstItem="PdA-ro-Y1R" firstAttribute="leading" secondItem="FAD-gA-w9E" secondAttribute="trailing" constant="8" id="1Pd-nT-DKR"/>
+                    <constraint firstItem="fw1-py-36A" firstAttribute="leading" secondItem="qCg-yH-2C4" secondAttribute="trailing" constant="23" id="40N-m4-pOT"/>
+                    <constraint firstItem="fw1-py-36A" firstAttribute="top" secondItem="qCg-yH-2C4" secondAttribute="top" id="6PG-ws-Vzw"/>
+                    <constraint firstItem="qCg-yH-2C4" firstAttribute="top" secondItem="PdA-ro-Y1R" secondAttribute="bottom" constant="5" id="6kC-oz-wiG"/>
                     <constraint firstItem="UYT-5D-seh" firstAttribute="centerY" secondItem="OBY-VX-nar" secondAttribute="centerY" id="7en-s7-QPS"/>
                     <constraint firstItem="OBY-VX-nar" firstAttribute="leading" secondItem="FAD-gA-w9E" secondAttribute="leading" id="9WP-fK-6w2"/>
+                    <constraint firstItem="qCg-yH-2C4" firstAttribute="leading" secondItem="PdA-ro-Y1R" secondAttribute="leading" id="9p3-8s-vmj"/>
                     <constraint firstItem="JUa-LR-K90" firstAttribute="top" secondItem="4Gy-wq-TDx" secondAttribute="bottom" constant="8" id="9vy-dq-yhc"/>
                     <constraint firstItem="OBY-VX-nar" firstAttribute="top" secondItem="FAD-gA-w9E" secondAttribute="bottom" constant="8" id="Cq9-gl-Ttj"/>
-                    <constraint firstItem="jpT-eF-S7g" firstAttribute="leading" secondItem="PdA-ro-Y1R" secondAttribute="leading" id="DX3-aU-WEM"/>
-                    <constraint firstItem="jpT-eF-S7g" firstAttribute="centerY" secondItem="aLR-UB-mme" secondAttribute="centerY" id="FLZ-re-3I6"/>
-                    <constraint firstItem="NfE-OP-1Pg" firstAttribute="trailing" secondItem="aLR-UB-mme" secondAttribute="trailing" id="NbS-yJ-OhM"/>
+                    <constraint firstItem="aA8-Pg-ef9" firstAttribute="top" secondItem="fw1-py-36A" secondAttribute="top" id="PxS-hz-5Qs"/>
                     <constraint firstItem="PdA-ro-Y1R" firstAttribute="top" secondItem="FAD-gA-w9E" secondAttribute="top" constant="8" id="QUs-iI-9BJ"/>
                     <constraint firstItem="UYT-5D-seh" firstAttribute="trailing" secondItem="JUa-LR-K90" secondAttribute="trailing" id="TLr-aY-AAx"/>
+                    <constraint firstItem="aA8-Pg-ef9" firstAttribute="leading" secondItem="fw1-py-36A" secondAttribute="trailing" constant="23" id="Tnt-Lz-xbW"/>
                     <constraint firstAttribute="bottom" secondItem="UYT-5D-seh" secondAttribute="bottom" constant="20" id="U4j-bs-F3u"/>
                     <constraint firstItem="FAD-gA-w9E" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Ycl-lb-WwJ"/>
-                    <constraint firstItem="aLR-UB-mme" firstAttribute="leading" secondItem="jpT-eF-S7g" secondAttribute="trailing" constant="5" id="fZf-G1-drG"/>
                     <constraint firstItem="FAD-gA-w9E" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="gcK-vz-59L"/>
-                    <constraint firstItem="NfE-OP-1Pg" firstAttribute="top" secondItem="aLR-UB-mme" secondAttribute="top" id="hwF-7n-Q8I"/>
-                    <constraint firstItem="aLR-UB-mme" firstAttribute="top" secondItem="PdA-ro-Y1R" secondAttribute="bottom" constant="8" id="w1r-GW-rmk"/>
                     <constraint firstAttribute="trailing" secondItem="4Gy-wq-TDx" secondAttribute="trailing" constant="16" id="xSE-ym-er3"/>
                     <constraint firstItem="4Gy-wq-TDx" firstAttribute="centerY" secondItem="PdA-ro-Y1R" secondAttribute="centerY" id="z4k-zI-XHf"/>
-                    <constraint firstItem="NfE-OP-1Pg" firstAttribute="leading" secondItem="jpT-eF-S7g" secondAttribute="leading" id="zjB-Ta-99e"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="btnPhone" destination="NfE-OP-1Pg" id="ufh-AC-yMW"/>
+                <outlet property="btnFacebook" destination="aA8-Pg-ef9" id="X7i-nI-ZcI"/>
+                <outlet property="btnPhone" destination="qCg-yH-2C4" id="54T-P5-qVN"/>
+                <outlet property="btnZalo" destination="fw1-py-36A" id="Axd-wU-VTH"/>
                 <outlet property="imgAvatar" destination="FAD-gA-w9E" id="E2r-cW-ws7"/>
-                <outlet property="imgPhone" destination="jpT-eF-S7g" id="qIn-KX-D6h"/>
                 <outlet property="lbName" destination="PdA-ro-Y1R" id="mH7-Id-7Qg"/>
-                <outlet property="lbPhone" destination="aLR-UB-mme" id="Luf-Op-zej"/>
                 <outlet property="lbReview" destination="UYT-5D-seh" id="vLb-jL-FRF"/>
                 <outlet property="lbStar" destination="4Gy-wq-TDx" id="qfh-w0-zeC"/>
-                <outlet property="lcsWidthImgPhone" destination="VlM-95-DdL" id="GY0-ga-RcK"/>
+                <outlet property="lcsWidthBtnPhone" destination="RXK-Jm-7CM" id="YHj-HI-dbc"/>
+                <outlet property="lcsWidthBtnZalo" destination="Jcf-fr-oXS" id="V2G-Cb-eh1"/>
                 <outlet property="vLevel" destination="OBY-VX-nar" id="3la-iH-NAH"/>
             </connections>
             <point key="canvasLocation" x="137.59999999999999" y="101.64917541229386"/>
@@ -121,7 +124,9 @@
     </objects>
     <resources>
         <image name="ic_avatar" width="22.5" height="22.5"/>
-        <image name="ic_phone" width="13" height="13"/>
-        <image name="ic_star" width="12" height="12"/>
+        <image name="ic_fb" width="33.5" height="33.5"/>
+        <image name="ic_phone_bg" width="34.5" height="34.5"/>
+        <image name="ic_star" width="25" height="25"/>
+        <image name="ic_zalo" width="33.5" height="33.5"/>
     </resources>
 </document>

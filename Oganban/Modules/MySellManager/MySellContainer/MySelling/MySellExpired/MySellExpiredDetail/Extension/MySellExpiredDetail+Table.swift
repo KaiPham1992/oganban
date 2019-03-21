@@ -46,7 +46,7 @@ extension MySellExpiredDetailViewController: UITableViewDelegate, UITableViewDat
             let cell = tbDetail.dequeue(OrderInfoUserCell.self, for: indexPath)
             cell.record = self.record
             cell.btnPhone.isHidden = false
-            cell.lcsWidthImgPhone.constant = 13
+//            cell.lcsWidthImgPhone.constant = 13
             return cell
         case OrderDetailInfoType.address.rawValue:
             let cell = tbDetail.dequeue(AddressCell.self, for: indexPath)

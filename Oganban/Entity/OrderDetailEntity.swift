@@ -35,6 +35,8 @@ class OrderDetailEntity: BaseEntity {
     var imgCropSaler: String?
     var levelSaler: String?
     var ratingSellerOrder: String?
+    var linkZaloSeller: String?
+    var linkFacebookSeller: String?
     // buyer
     var accountIDBuyer: String?
     var fullNameBuyer: String?
@@ -48,6 +50,9 @@ class OrderDetailEntity: BaseEntity {
     var imgCropBuyer: String?
     var levelBuyer: String?
     var ratingBuyerOrder: String?
+    var linkZaloBuyer: String?
+    var linkFacebookBuyer: String?
+    
     
     override func mapping(map: Map) {
         super.mapping(map: map)
@@ -77,6 +82,8 @@ class OrderDetailEntity: BaseEntity {
         self.imgCropSaler <- map["crop_img_src_seller"]
         self.levelSaler <- map["level_seller"]
         self.ratingSellerOrder <- map["rating_seller_order"]
+        self.linkZaloSeller <- map["link_zalo_seller"]
+        self.linkFacebookSeller <- map["link_facebook_seller"]
         // buyer
         self.accountIDBuyer <- map["account_id_buyer"]
         self.fullNameBuyer <- map["fullname_buyer"]
@@ -90,6 +97,10 @@ class OrderDetailEntity: BaseEntity {
         self.imgCropBuyer <- map["crop_img_src_buyer"]
         self.levelBuyer <- map["level_buyer"]
         self.ratingBuyerOrder <- map["rating_buyer_order"]
+        self.linkZaloBuyer <- map["link_zalo_buyer"]
+        self.linkFacebookBuyer <- map["link_facebook_buyer"]
+        
+        
         
     }
     

@@ -43,8 +43,8 @@ class OrderBuyInfoCell: BaseTableCell {
                 imgAvatar.sd_setImage(with: _record.urlAvatar, placeholderImage: AppImage.imgPlaceHolderImage)
             }
             
-            if let isPhoneActive = _record.isPhone {
-                lcsWidthBtnPhone.constant = isPhoneActive ? 35 : 0
+            if let _ = _record.isPhone {
+                lcsWidthBtnPhone.constant  =  35
             } else {
                 lcsWidthBtnPhone.constant = 0
             }
@@ -53,7 +53,7 @@ class OrderBuyInfoCell: BaseTableCell {
                 lcsWidthBtnZalo.constant = 35
                 
             } else {
-                lcsWidthBtnZalo.constant = -35
+                lcsWidthBtnZalo.constant = 0
             }
             
             if let _ = _record.linkFacebook {
