@@ -372,15 +372,20 @@ extension UpdateProfileViewController {
             hideError(isHidden: false, message: MessageString.emptyPhone)
             return false
         }
-        if let intText = Int(self.tvPhone.tfPhone.text!) {
-            if self.tvPhone.tfPhone.text?.count != 9 && vCheckPhone.isChecked == true {
-                hideError(isHidden: false, message: MessageString.invalidPhone)
-                return false
-            }
-        } else {
+        
+        if tvPhone.tfPhone.text!.isValidPhone2() {
             hideError(isHidden: false, message: MessageString.invalidPhone)
             return false
         }
+//        if let intText = Int(self.tvPhone.tfPhone.text!) {
+//            if self.tvPhone.tfPhone.text?.count != 9 && vCheckPhone.isChecked == true {
+//                hideError(isHidden: false, message: MessageString.invalidPhone)
+//                return false
+//            }
+//        } else {
+//            hideError(isHidden: false, message: MessageString.invalidPhone)
+//            return false
+//        }
         
         
         if tfZalo.tfContent.text == "" && vCheckZalo.isChecked == true {
