@@ -456,6 +456,7 @@ extension UpdateProfileViewController {
             , handler: { response in
                 if let _ = response?.isSucess {
                     self.tfZalo.tfContent.text = response?.userId
+                    self.checkHideShowSaveButton()
                 } else {
                     PopUpHelper.shared.showMessageHaveAds(message: "lỗi đăng nhập")
                 }
