@@ -37,7 +37,7 @@
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QPi-S9-m6W">
                     <rect key="frame" x="127.5" y="607" width="120" height="40"/>
-                    <color key="backgroundColor" red="0.0" green="0.34509803921568627" blue="0.0" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.0" green="0.34509803921568627" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="120" id="1a3-G5-g8B"/>
                         <constraint firstAttribute="height" constant="40" id="QSi-sf-mAF"/>

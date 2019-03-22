@@ -25,7 +25,7 @@ class PopUpUpdateQuantityBuyContent: BaseViewXib, UITextFieldDelegate {
             btnCompleted.backgroundColor = AppColor.gray_200_200_200
             btnCompleted.setTitleColor(AppColor.gray_65_65_65, for: .normal)
         } else {
-            btnCompleted.backgroundColor = AppColor.green
+            btnCompleted.backgroundColor = AppColor.green005800
             btnCompleted.setTitleColor(AppColor.white, for: .normal)
         }
     }
