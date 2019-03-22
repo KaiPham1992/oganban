@@ -30,6 +30,7 @@ class OrderBuyInfoCell: BaseTableCell {
     
     var record: RecordEntity? {
         didSet {
+            
             guard let _record = record else { return }
             lbStar.text = _record.avgRating?.roundedDemical()
             lbReview.text = _record.totalRating& + " đánh giá"
@@ -43,20 +44,30 @@ class OrderBuyInfoCell: BaseTableCell {
                 imgAvatar.sd_setImage(with: _record.urlAvatar, placeholderImage: AppImage.imgPlaceHolderImage)
             }
             
+            if UserDefaultHelper.shared.loginUserInfo?.id == record?.accountId {
+                btnZalo.isEnabled = false
+                btnPhone.isEnabled = false
+                btnFacebook.isEnabled = false
+            } else {
+                btnZalo.isEnabled = true
+                btnPhone.isEnabled = true
+                btnFacebook.isEnabled = true
+            }
+            
             if let _ = _record.isPhone {
                 lcsWidthBtnPhone.constant  =  35
             } else {
                 lcsWidthBtnPhone.constant = 0
             }
             
-            if let _ = _record.linkZalo {
+            if let _ = _record.isZalo {
                 lcsWidthBtnZalo.constant = 35
                 
             } else {
                 lcsWidthBtnZalo.constant = 0
             }
             
-            if let _ = _record.linkFacebook {
+            if let _ = _record.isFacebook {
                 
                 btnFacebook.isHidden =  false
             } else {
