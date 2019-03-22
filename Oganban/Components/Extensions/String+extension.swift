@@ -222,7 +222,7 @@ extension String {
     }
     
     func isValidPhone2() -> Bool {
-        let phoneRegEx = "^[+]?[0-9]{10,14}$"
+        let phoneRegEx = "^[+]?[0-9]{0,0}$"
         let phoneTest = NSPredicate(format:"SELF MATCHES %@", phoneRegEx)
         return phoneTest.evaluate(with: self)
     }

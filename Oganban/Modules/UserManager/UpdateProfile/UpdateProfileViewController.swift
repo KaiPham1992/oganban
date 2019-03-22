@@ -357,6 +357,7 @@ extension UpdateProfileViewController {
             return false
         }
         
+        
         if vCheckPhone.isChecked == false && vCheckZalo.isChecked == false  && vCheckFacebook.isChecked == false {
             hideError(isHidden: false, message: MessageString.sellectOne)
             return false
@@ -367,25 +368,22 @@ extension UpdateProfileViewController {
             return false
         }
         
-        
-        if tvPhone.tfPhone.text == "" && vCheckPhone.isChecked == true {
-            hideError(isHidden: false, message: MessageString.emptyPhone)
-            return false
+        if user?.phone != tvPhone.tfPhone.text {
+            if tvPhone.tfPhone.text == "" && vCheckPhone.isChecked == true {
+                hideError(isHidden: false, message: MessageString.emptyPhone)
+                return false
+            }
+            
+            if tvPhone.tfPhone.text == "" && vCheckPhone.isChecked == false {
+                hideError(isHidden: false, message: MessageString.emptyPhone)
+                return false
+            }
+            
+            if tvPhone.tfPhone.text!.isValidPhone2() {
+                hideError(isHidden: false, message: MessageString.invalidPhone)
+                return false
+            }
         }
-        
-        if tvPhone.tfPhone.text!.isValidPhone2() {
-            hideError(isHidden: false, message: MessageString.invalidPhone)
-            return false
-        }
-//        if let intText = Int(self.tvPhone.tfPhone.text!) {
-//            if self.tvPhone.tfPhone.text?.count != 9 && vCheckPhone.isChecked == true {
-//                hideError(isHidden: false, message: MessageString.invalidPhone)
-//                return false
-//            }
-//        } else {
-//            hideError(isHidden: false, message: MessageString.invalidPhone)
-//            return false
-//        }
         
         
         if tfZalo.tfContent.text == "" && vCheckZalo.isChecked == true {
@@ -452,41 +450,7 @@ extension UpdateProfileViewController: PositionViewControllerDelegate {
 }
 
 extension UpdateProfileViewController {
-    
-    //    func FBlogin() {
-    //        let fbLoginManager = FBSDKLoginManager()
-    //        fbLoginManager.logOut()
-    //
-    //        fbLoginManager.logIn(withReadPermissions: ["public_profile", "email"], from: self) { (result, error) in
-    //            if let error = error {
-    //                print("Failed to login: \(error.localizedDescription)")
-    //                return
-    //            }
-    //
-    //            guard let accessToken = FBSDKAccessToken.current() else {
-    //                print("Failed to get access token")
-    //                return
-    //            }
-    //            accessToken.tokenString
-    //            let req = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"id, email, name, picture.width(480).height(480),birthday"], tokenString: accessToken.tokenString, version: nil, httpMethod: "GET")
-    //            req?.start(completionHandler: { (connection, result, error) in
-    //                if let _result = result as? [String: Any] {
-    //                    let fbModel = FacebookEntity(json: _result)
-    //                    self.tfFacebook.tfContent.text = fbModel.id
-    //                    self.checkHideShowSaveButton()
-    //                }
-    //            })
-    //        }
-    //    }
     func loginZalo() {
-        //        ZaloSDK.sharedInstance()?.setFacebookAppId("225241758398999")
-        //        ZaloSDK.sharedInstance()?.authenticateZalo(with: ZAZAloSDKAuthenTypeViaZaloAppAndWebView, parentController: self, handler: { (response) in
-        //            if let _ = response?.isSucess {
-        //                self.tfZalo.tfContent.text = response?.userId
-        //            } else {
-        //                PopUpHelper.shared.showMessageHaveAds(message: "lỗi đăng nhập")
-        //            }
-        //        })
         
         ZaloSDK.sharedInstance()!.authenticateZalo(with: ZAZaloSDKAuthenTypeViaWebViewOnly, parentController: self
             , handler: { response in
