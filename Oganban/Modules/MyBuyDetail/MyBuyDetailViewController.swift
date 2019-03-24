@@ -91,6 +91,7 @@ class MyBuyDetailViewController: BaseViewController {
                     vRatingSaler.vStackView.isUserInteractionEnabled = false
                 }
 
+                
             }
             
         }
@@ -289,8 +290,70 @@ extension MyBuyDetailViewController: MyBuyImageCellDelegate {
 }
 
 extension MyBuyDetailViewController: MyBuyInfoUserCellDelegate {
+    
+    func btnZaloTapped() {
+        let application = UIApplication.shared
+        var linkzalo = ""
+//        if let zaloIDSeller = order?.linkZaloSeller {
+//            linkzalo = zaloIDSeller
+//        } else {
+//             let zaloIDBuyer = order?.linkZaloBuyer
+//            linkzalo = zaloIDBuyer&
+//        }
+        
+        if !isSaler {
+            linkzalo = (order?.linkZaloSeller)&
+        } else {
+            linkzalo = (order?.linkZaloBuyer)&
+        }
+        
+        let zaloAppPath = "https://zalo.me/\(linkzalo)"
+        
+        guard let appURL = URL(string: zaloAppPath),
+            let webURL = URL(string: "https://google.com")  else { return }
+        
+        if application.canOpenURL(appURL) {
+            application.open(appURL, options: [:], completionHandler: nil)
+        } else {
+            application.open(webURL, options: [:], completionHandler: nil)
+        }
+    }
+    
+    func btnFacebookTapped() {
+        var linkFacebook = ""
+        let application = UIApplication.shared
+//        if let facebookIDSeller = order?.linkFacebookSeller {
+//            linkFacebook = facebookIDSeller
+//        } else {
+//            let facebookIDBuyer = order?.linkFacebookSeller
+//            linkFacebook = facebookIDBuyer&
+//        }
+        
+        if !isSaler {
+            linkFacebook = (order?.linkFacebookSeller)&
+        } else {
+            linkFacebook = (order?.linkFacebookSeller)&
+        }
+        
+        let facebookAppPath = "https://m.me/\(linkFacebook)"
+        guard let appURL = URL(string: facebookAppPath),
+            let webURL = URL(string: "https://google.com") else { return }
+        
+        if application.canOpenURL(appURL) {
+            application.open(appURL, options: [:], completionHandler: nil)
+        } else {
+            application.open(webURL, options: [:], completionHandler: nil)
+        }
+    }
+    
     func btnPhoneTapped() {
-        if let url = URL(string: "tel://\(order?.showFullPhoneBuyer() ?? "")") {
+        var phoneNumber = ""
+        if !isSaler {
+            phoneNumber = order?.showFullPhoneSaler() ?? ""
+        } else {
+            phoneNumber = order?.showFullPhoneBuyer() ?? ""
+        }
+        if let url = URL(string: "tel://\(phoneNumber)") {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }

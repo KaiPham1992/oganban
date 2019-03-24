@@ -91,6 +91,7 @@ class RecordEntity: BaseEntity {
         self.accountCoin <- map["account_coin"]
         self.categoryName <- map["category_name"]
         self.catrgotyID <- map["category_id"]
+        
         if let distance = self.distance, let dis = Double(distance) {
             let temp = dis * 1000
             if temp > 1000 {

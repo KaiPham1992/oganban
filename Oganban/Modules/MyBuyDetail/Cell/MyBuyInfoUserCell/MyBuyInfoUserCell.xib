@@ -66,6 +66,9 @@
                             <constraint firstAttribute="height" constant="35" id="qEr-gR-beN"/>
                         </constraints>
                         <state key="normal" image="ic_zalo"/>
+                        <connections>
+                            <action selector="btnZaloTapped" destination="KGk-i7-Jjw" eventType="touchUpInside" id="p7i-ts-Y3P"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QuV-ci-MqX">
                         <rect key="frame" x="200" y="47" width="35" height="35"/>
@@ -74,6 +77,9 @@
                             <constraint firstAttribute="width" constant="35" id="qlW-Nj-oiN"/>
                         </constraints>
                         <state key="normal" image="ic_fb"/>
+                        <connections>
+                            <action selector="btnFacebookTapped" destination="KGk-i7-Jjw" eventType="touchUpInside" id="dyu-GP-yy9"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tGm-M0-JyI">
                         <rect key="frame" x="84" y="47" width="35" height="35"/>
@@ -82,6 +88,9 @@
                             <constraint firstAttribute="height" constant="35" id="Naf-fz-JOa"/>
                         </constraints>
                         <state key="normal" image="ic_phone_bg"/>
+                        <connections>
+                            <action selector="btnPhoneTapped" destination="KGk-i7-Jjw" eventType="touchUpInside" id="WQ5-cx-VSg"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>

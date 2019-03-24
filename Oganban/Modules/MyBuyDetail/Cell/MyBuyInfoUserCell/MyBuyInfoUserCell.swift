@@ -11,6 +11,8 @@ import SDWebImage
 
 protocol MyBuyInfoUserCellDelegate: class {
     func btnPhoneTapped()
+    func btnZaloTapped()
+    func btnFacebookTapped()
 }
 
 class MyBuyInfoUserCell: BaseTableCell {
@@ -45,8 +47,35 @@ class MyBuyInfoUserCell: BaseTableCell {
 //            lcsWithImgPhone.constant = 0
 //            btnPhone.isEnabled = false
             
-            if _record.isPhoneBuyer != nil  {
+            if _record.isPhoneSeller != nil  {
                 lcsWidthBtnPhone.constant = 35
+            } else {
+                lcsWidthBtnPhone.constant = 0
+            }
+            
+            if let _ = _record.isZaloSeller {
+                lcsWidthBtnZalo.constant = 35
+                
+            } else {
+                lcsWidthBtnZalo.constant = 0
+            }
+            
+            if let _ = _record.isFacebookSeller {
+                
+                btnFacebook.isHidden =  false
+            } else {
+                btnFacebook.isHidden = true
+            }
+            
+        } else {
+            lbStar.text = _record.avgRatingBuyer?.roundedDemical()
+            lbReview.text = _record.showTotolRatingBuyer()
+//            lbPhone.text = _record.showFullPhoneBuyer()
+            lbName.text = _record.fullNameBuyer
+            vLevel.setLevel(level: _record.levelBuyer&, isPro: _record.isProBuyer)
+            imgAvatar.sd_setImage(with: _record.urlAvatarBuyer, placeholderImage: AppImage.imgDefaultUser)
+            if _record.isPhoneBuyer == nil {
+                 lcsWidthBtnPhone.constant = 35
             } else {
                 lcsWidthBtnPhone.constant = 0
             }
@@ -58,44 +87,25 @@ class MyBuyInfoUserCell: BaseTableCell {
                 lcsWidthBtnZalo.constant = 0
             }
             
-            if let _ = _record.isZaloBuyer {
+            if let _ = _record.isFacebookBuyber {
                 
                 btnFacebook.isHidden =  false
             } else {
                 btnFacebook.isHidden = true
             }
-        } else {
-            lbStar.text = _record.avgRatingBuyer?.roundedDemical()
-            lbReview.text = _record.showTotolRatingBuyer()
-//            lbPhone.text = _record.showFullPhoneBuyer()
-            lbName.text = _record.fullNameBuyer
-            vLevel.setLevel(level: _record.levelBuyer&, isPro: _record.isProBuyer)
-            imgAvatar.sd_setImage(with: _record.urlAvatarBuyer, placeholderImage: AppImage.imgDefaultUser)
-//            lcsWithImgPhone.constant = 20
-//            btnPhone.isEnabled = true
-            if _record.isPhoneSeller == nil {
-                 lcsWidthBtnPhone.constant = 35
-            } else {
-                lcsWidthBtnPhone.constant = 0
-            }
             
-            if let _ = _record.isZaloSeller {
-                lcsWidthBtnZalo.constant = 35
-                
-            } else {
-                lcsWidthBtnZalo.constant = -35
-            }
-            
-            if let _ = _record.isFacebookSeller {
-                
-                btnFacebook.isHidden =  false
-            } else {
-                btnFacebook.isHidden = true
-            }
         }
     }
     
     @IBAction func btnPhoneTapped() {
         delegate?.btnPhoneTapped()
+    }
+    
+    @IBAction func btnZaloTapped() {
+        delegate?.btnZaloTapped()
+    }
+    
+    @IBAction func btnFacebookTapped() {
+        delegate?.btnFacebookTapped()
     }
 }
