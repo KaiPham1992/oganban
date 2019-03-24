@@ -65,6 +65,10 @@ class OrderInfoUserCell: BaseTableCell {
             } else {
                 btnFacebook.isHidden = true
             }
+            
+            btnPhone.isEnabled = false
+            btnZalo.isEnabled = false
+            btnFacebook.isEnabled = false
         }
     }
 
