@@ -350,10 +350,10 @@ extension PostStepTwoViewController: CheckBoxTextFieldDelegate {
     func checkBoxTextField(checkBoxTextField: CheckBoxTextField, isChecked: Bool) {
         checkBoxTextField.textField.isEnabled = isChecked
         switch checkBoxTextField {
-        case vAddress1:
-            checkBoxTextField.textField.text = UserDefaultHelper.shared.loginUserInfo?.houseAddress
-        case vAddress2:
-            checkBoxTextField.textField.text = UserDefaultHelper.shared.loginUserInfo?.companyAddress
+//        case vAddress1:
+//            checkBoxTextField.textField.text = UserDefaultHelper.shared.loginUserInfo?.houseAddress
+//        case vAddress2:
+//            checkBoxTextField.textField.text = UserDefaultHelper.shared.loginUserInfo?.companyAddress
         case vMoney, vCoin:
             checkBoxTextField.textField.textColor = isChecked ? .black : .gray
         default:
