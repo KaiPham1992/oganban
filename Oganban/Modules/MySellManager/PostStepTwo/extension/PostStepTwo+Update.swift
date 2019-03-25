@@ -15,7 +15,7 @@ extension PostStepTwoViewController {
         
         if record?.address1 != nil && record?.address1 != "" {
             vAddress1.btnCheckBox.isChecked = true
-            vAddress1.textField.isEnabled = true 
+            vAddress1.textField.isEnabled = true
         }
         if record?.address2 != nil && record?.address2 != "" {
             vAddress2.btnCheckBox.isChecked = true

@@ -141,7 +141,7 @@ class PostStepTwoViewController: BaseViewController {
     
     func setupUpdate() {
         if isCopyUpdate {
-            isCopyUpdate = false
+//            isCopyUpdate = false
             CopyUpdate()
         }
     }
@@ -197,14 +197,28 @@ class PostStepTwoViewController: BaseViewController {
             
             if vAddress1.isCheck {
                 address1 = vAddress1.textField.text&
-                lat1 = self.locationAddress1?.latitude.description& ?? ""
-                long1 = self.locationAddress1?.longitude.description& ?? ""
+                if !isCopyUpdate {
+                    lat1 = self.locationAddress1?.latitude.description& ?? ""
+                    long1 = self.locationAddress1?.longitude.description& ?? ""
+                } else {
+                    guard let _record = record else { return }
+                    lat1 = _record.lat1&
+                    long1 = _record.long1&
+                }
+               
             }
             
             if vAddress2.isCheck {
                 address2 = vAddress2.textField.text&
-                lat2 = self.locationAddress2?.latitude.description& ?? ""
-                long2 = self.locationAddress2?.longitude.description& ?? ""
+                if !isCopyUpdate {
+                    lat2 = self.locationAddress2?.latitude.description& ?? ""
+                    long2 = self.locationAddress2?.longitude.description& ?? ""
+                } else {
+                    guard let _record = record else { return }
+                    lat2 = _record.lat2&
+                    long2 = _record.long2&
+                }
+               
             }
             
             if vMoney.isCheck {

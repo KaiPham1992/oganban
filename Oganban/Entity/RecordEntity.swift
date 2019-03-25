@@ -18,6 +18,10 @@ class RecordEntity: BaseEntity {
     var isPro: String?
     var long: String?
     var lat: String?
+    var long1: String?
+    var lat1: String?
+    var long2: String?
+    var lat2: String?
     var accountId: String?
     var fullName: String?
     var totalRating: String?
@@ -71,6 +75,10 @@ class RecordEntity: BaseEntity {
         self.isPro <- map["is_pro"]
         self.long <- map["longitude"]
         self.lat <- map["latitude"]
+        self.long1 <- map["longitude_1"]
+        self.lat1 <- map["latitude_1"]
+        self.long2 <- map["longitude_2"]
+        self.lat2 <- map["latitude_2"]
         self.accountId <- map["account_id"]
         self.fullName <- map["fullname"]
         self.totalRating <- map["total_rating"]
