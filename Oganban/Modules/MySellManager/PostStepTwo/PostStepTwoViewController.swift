@@ -37,6 +37,14 @@ class PostStepTwoViewController: BaseViewController {
     var isService: Bool = false
     var isGPSCurrent: Int = 0
     
+    var address1 = ""
+    var address2 = ""
+    
+    var lat2 = ""
+    var long2 = ""
+    var lat1 = ""
+    var long1 = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -141,8 +149,11 @@ class PostStepTwoViewController: BaseViewController {
     
     func setupUpdate() {
         if isCopyUpdate {
-//            isCopyUpdate = false
+            isCopyUpdate = false
             CopyUpdate()
+            checkLatLongCopyUpdate()
+        } else {
+            checkLatLong()
         }
     }
     
@@ -185,41 +196,9 @@ class PostStepTwoViewController: BaseViewController {
     @IBAction func btnPostTapped() {
         
         if validInput() {
-            var address1 = ""
-            var lat1 = ""
-            var long1 = ""
-            
-            var address2 = ""
-            var lat2 = ""
-            var long2 = ""
+           
             var price = ""
             var coin = ""
-            
-            if vAddress1.isCheck {
-                address1 = vAddress1.textField.text&
-                if !isCopyUpdate {
-                    lat1 = self.locationAddress1?.latitude.description& ?? ""
-                    long1 = self.locationAddress1?.longitude.description& ?? ""
-                } else {
-                    guard let _record = record else { return }
-                    lat1 = _record.lat1&
-                    long1 = _record.long1&
-                }
-               
-            }
-            
-            if vAddress2.isCheck {
-                address2 = vAddress2.textField.text&
-                if !isCopyUpdate {
-                    lat2 = self.locationAddress2?.latitude.description& ?? ""
-                    long2 = self.locationAddress2?.longitude.description& ?? ""
-                } else {
-                    guard let _record = record else { return }
-                    lat2 = _record.lat2&
-                    long2 = _record.long2&
-                }
-               
-            }
             
             if vMoney.isCheck {
                 price = "\(vMoney.textField.text&.removeCommaDecimal())"
@@ -240,6 +219,44 @@ class PostStepTwoViewController: BaseViewController {
             
             presenter?.postRecord(param: param)
         }
+    }
+    
+    func checkLatLong() {
+        
+        if vAddress1.isCheck {
+            if address1 != record?.address1& {
+                address1 = vAddress1.textField.text&
+                lat1 = self.locationAddress1?.latitude.description& ?? ""
+                long1 = self.locationAddress1?.longitude.description& ?? ""
+            } else {
+                guard let _record = record else { return }
+                lat1 = _record.lat1&
+                long1 = _record.long1&
+            }
+            
+        }
+        
+        if vAddress2.isCheck {
+            if address2 != record?.address2& {
+                address2 = vAddress2.textField.text&
+                lat2 = self.locationAddress2?.latitude.description& ?? ""
+                long2 = self.locationAddress2?.longitude.description& ?? ""
+            } else {
+                guard let _record = record else { return }
+                lat2 = _record.lat2&
+                long2 = _record.long2&
+            }
+        }
+    }
+    
+    func checkLatLongCopyUpdate() {
+        guard let _record = record else { return }
+        lat1 = _record.lat1&
+        long1 = _record.long1&
+        lat2 = _record.lat2&
+        long2 = _record.long2&
+        address1 = _record.address1&
+        address2 = _record.address2&
     }
     
     func validInput() -> Bool {
@@ -406,9 +423,11 @@ extension PostStepTwoViewController: PositionViewControllerDelegate {
         if checkBox == self.vAddress2  {
             self.vAddress2.textField.text = address
             self.locationAddress2 = location
+            self.address2 = address
         } else {
             self.vAddress1.textField.text = address
             self.locationAddress1 = location
+            self.address1 = address
         }
     }
 }
