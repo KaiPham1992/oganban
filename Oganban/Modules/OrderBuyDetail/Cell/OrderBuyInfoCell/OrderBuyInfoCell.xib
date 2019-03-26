@@ -132,10 +132,10 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="ic_avatar" width="22.5" height="22.5"/>
-        <image name="ic_fb" width="33.5" height="33.5"/>
-        <image name="ic_phone_bg" width="34.5" height="34.5"/>
+        <image name="ic_avatar" width="22" height="22"/>
+        <image name="ic_fb" width="33" height="33"/>
+        <image name="ic_phone_bg" width="34" height="34"/>
         <image name="ic_star" width="25" height="25"/>
-        <image name="ic_zalo" width="33.5" height="33.5"/>
+        <image name="ic_zalo" width="33" height="33"/>
     </resources>
 </document>

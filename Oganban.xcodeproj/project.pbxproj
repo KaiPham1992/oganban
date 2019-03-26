@@ -1458,6 +1458,10 @@
 		DEE1273C224A785900599DC6 /* PopupOneButtonAdmob.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35F9AD2243B2D0003BAB99 /* PopupOneButtonAdmob.swift */; };
 		DEE1273D224A788600599DC6 /* PopupOneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35F9AA2243B255003BAB99 /* PopupOneButton.swift */; };
 		DEE1273E224A788700599DC6 /* PopupOneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35F9AA2243B255003BAB99 /* PopupOneButton.swift */; };
+		DEE1273F224A7B6C00599DC6 /* OrderBuyInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB540134223954E30052353F /* OrderBuyInfoCell.xib */; };
+		DEE12740224A7B6D00599DC6 /* OrderBuyInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB540134223954E30052353F /* OrderBuyInfoCell.xib */; };
+		DEE12741224A7B8600599DC6 /* PopupOneButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB35F9A92243B254003BAB99 /* PopupOneButton.xib */; };
+		DEE12742224A7B8700599DC6 /* PopupOneButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB35F9A92243B254003BAB99 /* PopupOneButton.xib */; };
 		DEE1DA4F21CDE1CE0036FEB7 /* PopUpNotificationHaveAdmob.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1DA4E21CDE1CE0036FEB7 /* PopUpNotificationHaveAdmob.swift */; };
 		DEE1DA5121CDE2B60036FEB7 /* PopUpNotificationHaveAdmobContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1DA5021CDE2B60036FEB7 /* PopUpNotificationHaveAdmobContent.swift */; };
 		DEE1DA5321CDE3080036FEB7 /* PopUpNotificationHaveAdmobContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE1DA5221CDE3080036FEB7 /* PopUpNotificationHaveAdmobContent.xib */; };
@@ -3995,6 +3999,7 @@
 				DE68D1DC21F0122C00A3A7BE /* DateFollowWeekCell.xib in Resources */,
 				DE68D1DD21F0122C00A3A7BE /* NotificationViewController.xib in Resources */,
 				DE68D1DE21F0122C00A3A7BE /* PostCommentView.xib in Resources */,
+				DEE12741224A7B8600599DC6 /* PopupOneButton.xib in Resources */,
 				DE68D1DF21F0122C00A3A7BE /* OpenSans-BoldItalic.ttf in Resources */,
 				DE68D1E021F0122C00A3A7BE /* HeaderOrderDetail.xib in Resources */,
 				DE68D1E121F0122C00A3A7BE /* Roboto-Black.ttf in Resources */,
@@ -4068,6 +4073,7 @@
 				DE68D22321F0122C00A3A7BE /* OrderIntroCell.xib in Resources */,
 				DEF793FC21F3047000CE5CB3 /* GoogleService-Dev-Info.plist in Resources */,
 				DE68D22421F0122C00A3A7BE /* MySellContainerViewController.xib in Resources */,
+				DEE1273F224A7B6C00599DC6 /* OrderBuyInfoCell.xib in Resources */,
 				CBC245EB223CA81C00550376 /* CheckedView.xib in Resources */,
 				DE68D22521F0122C00A3A7BE /* FavouriteCell.xib in Resources */,
 			);
@@ -4113,6 +4119,7 @@
 				DE68D3C821F0123A00A3A7BE /* DateFollowWeekCell.xib in Resources */,
 				DE68D3C921F0123A00A3A7BE /* NotificationViewController.xib in Resources */,
 				DE68D3CA21F0123A00A3A7BE /* PostCommentView.xib in Resources */,
+				DEE12742224A7B8700599DC6 /* PopupOneButton.xib in Resources */,
 				DE68D3CB21F0123A00A3A7BE /* OpenSans-BoldItalic.ttf in Resources */,
 				DE68D3CC21F0123A00A3A7BE /* HeaderOrderDetail.xib in Resources */,
 				DE68D3CD21F0123A00A3A7BE /* Roboto-Black.ttf in Resources */,
@@ -4186,6 +4193,7 @@
 				DE68D40F21F0123A00A3A7BE /* OrderIntroCell.xib in Resources */,
 				DEF793FD21F3047000CE5CB3 /* GoogleService-Dev-Info.plist in Resources */,
 				DE68D41021F0123A00A3A7BE /* MySellContainerViewController.xib in Resources */,
+				DEE12740224A7B6D00599DC6 /* OrderBuyInfoCell.xib in Resources */,
 				CBC245EC223CA81C00550376 /* CheckedView.xib in Resources */,
 				DE68D41121F0123A00A3A7BE /* FavouriteCell.xib in Resources */,
 			);
