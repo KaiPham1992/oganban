@@ -90,11 +90,13 @@ class MyBuyViewController: BaseViewController {
     }
     
     func checkLogin() {
-        hideNoData()
+        
         if UserDefaultHelper.shared.isLoggedIn {
             vCheckLogin.isHidden = true
+            showNoData()
         } else {
             vCheckLogin.isHidden = false
+            hideNoData()
         }
     }
     

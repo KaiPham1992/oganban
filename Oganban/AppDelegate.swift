@@ -55,7 +55,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Provider.shared.userAPIService.checkLogin(success: { _ in
             
         }) { _error in
-            UserUtils.clearLogin()
+            if let _ = _error?.code {
+                UserUtils.clearLogin()
+                return
+            } else {
+                return
+            }
         }
     }
     

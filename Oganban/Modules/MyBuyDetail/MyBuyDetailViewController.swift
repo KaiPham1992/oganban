@@ -307,7 +307,7 @@ extension MyBuyDetailViewController: MyBuyInfoUserCellDelegate {
             linkzalo = (order?.linkZaloBuyer)&
         }
         
-        let zaloAppPath = "https://zalo.me/\(linkzalo)"
+        let zaloAppPath = "https://zalo.me/\(0986131381)"
         
         guard let appURL = URL(string: zaloAppPath),
             let webURL = URL(string: "https://google.com")  else { return }

@@ -52,10 +52,12 @@ extension LoginViewController: LoginViewProtocol {
     
     func didError(error: APIError?) {
         if let message = error?.message {
-            UserUtils.clearLogin()
+           
             switch message {
             case "INVALID_USERNAME_OR_PASSWORD":
+                 UserUtils.clearLogin()
                 hideError(isHidden: false, message:  MessageString.invalidLoginEmailPassword&)
+                
                 break
             case "USER_IS_NOT_VERIFY":
                 self.verifyCode = error?.codeVerify

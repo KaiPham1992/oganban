@@ -415,6 +415,12 @@ extension String {
         return nil
     }
     
+    static func safeString(_ string: String?, defaultString: String = "") -> String {
+        if let str = string {
+            return str
+        }
+        return defaultString
+    }
 }
 
 extension String {
@@ -428,7 +434,6 @@ extension String {
         
     }
 }
-
 
 
 extension String {

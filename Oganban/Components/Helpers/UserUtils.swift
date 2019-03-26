@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class UserUtils: NSObject {
     
     static func saveUser(user: UserEntity) {
@@ -18,7 +17,7 @@ class UserUtils: NSObject {
         }
     }
     
-    static func clearLogin(){
+    static func clearLogin() {
         UserDefaultHelper.shared.loginUserInfo = nil
         UserDefaultHelper.shared.userToken = ""
         
