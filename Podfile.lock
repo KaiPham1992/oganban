@@ -99,7 +99,6 @@ PODS:
     - ImageSlideshow/Core
     - SDWebImage (< 5.0, >= 3.7)
   - IQKeyboardManagerSwift (6.2.0)
-  - KeychainSwift (13.0.0)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
@@ -131,7 +130,6 @@ DEPENDENCIES:
   - ImageSlideshow
   - ImageSlideshow/SDWebImage
   - IQKeyboardManagerSwift (= 6.2.0)
-  - KeychainSwift (~> 13.0)
   - ObjectMapper (= 3.3.0)
   - SDWebImage (= 4.4.2)
   - SwiftyJSON (= 4.2.0)
@@ -162,7 +160,6 @@ SPEC REPOS:
     - GTMSessionFetcher
     - ImageSlideshow
     - IQKeyboardManagerSwift
-    - KeychainSwift
     - nanopb
     - ObjectMapper
     - Protobuf
@@ -212,7 +209,6 @@ SPEC CHECKSUMS:
   ImagePicker: 456b7fab7022f1f7d8adad42b43d20963c9b5cea
   ImageSlideshow: f8eec5e37a980f60923b585ff23b0e140fd24018
   IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
-  KeychainSwift: 23d6c16cbc33f20fafa30c3d783241b4b87d998c
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
@@ -220,6 +216,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   ZaloSDK: c2d703d5b9e3237e2f7cfd0b8e2b343434a4d0d9
 
-PODFILE CHECKSUM: bcc05abb9d0a9e630a44bd3fd81ec0079e657b24
+PODFILE CHECKSUM: dcac7c90aefe9666e78ce69a47a0fbe31a4a73ba
 
 COCOAPODS: 1.6.1

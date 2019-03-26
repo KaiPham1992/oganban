@@ -1452,6 +1452,12 @@
 		DEC5166C21CE986400A17CBF /* AdmobBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC5166A21CE986300A17CBF /* AdmobBannerView.swift */; };
 		DEC5167021CE98F200A17CBF /* AppPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC5166F21CE98F200A17CBF /* AppPhoto.swift */; };
 		DEC5167221CE995F00A17CBF /* AppCollectionPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC5167121CE995F00A17CBF /* AppCollectionPhotoCell.swift */; };
+		DEE12739224A781400599DC6 /* OrderBuyInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB540133223954E30052353F /* OrderBuyInfoCell.swift */; };
+		DEE1273A224A781400599DC6 /* OrderBuyInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB540133223954E30052353F /* OrderBuyInfoCell.swift */; };
+		DEE1273B224A785900599DC6 /* PopupOneButtonAdmob.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35F9AD2243B2D0003BAB99 /* PopupOneButtonAdmob.swift */; };
+		DEE1273C224A785900599DC6 /* PopupOneButtonAdmob.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35F9AD2243B2D0003BAB99 /* PopupOneButtonAdmob.swift */; };
+		DEE1273D224A788600599DC6 /* PopupOneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35F9AA2243B255003BAB99 /* PopupOneButton.swift */; };
+		DEE1273E224A788700599DC6 /* PopupOneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35F9AA2243B255003BAB99 /* PopupOneButton.swift */; };
 		DEE1DA4F21CDE1CE0036FEB7 /* PopUpNotificationHaveAdmob.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1DA4E21CDE1CE0036FEB7 /* PopUpNotificationHaveAdmob.swift */; };
 		DEE1DA5121CDE2B60036FEB7 /* PopUpNotificationHaveAdmobContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1DA5021CDE2B60036FEB7 /* PopUpNotificationHaveAdmobContent.swift */; };
 		DEE1DA5321CDE3080036FEB7 /* PopUpNotificationHaveAdmobContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE1DA5221CDE3080036FEB7 /* PopUpNotificationHaveAdmobContent.xib */; };
@@ -4283,7 +4289,6 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ImagePicker/ImagePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
-				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
@@ -4304,7 +4309,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImagePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
@@ -4371,7 +4375,6 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ImagePicker/ImagePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
-				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
@@ -4392,7 +4395,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImagePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
@@ -4463,7 +4465,6 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ImagePicker/ImagePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
-				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
@@ -4484,7 +4485,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImagePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
@@ -5064,6 +5064,7 @@
 				DE68D0D721F0122C00A3A7BE /* MySellContainerRouter.swift in Sources */,
 				DE68D0D821F0122C00A3A7BE /* HistoryCoinInteractor.swift in Sources */,
 				DE68D0D921F0122C00A3A7BE /* KActivityIndicatorAnimationBallPulseRise.swift in Sources */,
+				DEE1273B224A785900599DC6 /* PopupOneButtonAdmob.swift in Sources */,
 				DE68D0DA21F0122C00A3A7BE /* FavouriteProductListRouter.swift in Sources */,
 				DE68D0DB21F0122C00A3A7BE /* HomeViewController.swift in Sources */,
 				DE68D0DC21F0122C00A3A7BE /* UserUtils.swift in Sources */,
@@ -5095,6 +5096,7 @@
 				DE68D0F621F0122C00A3A7BE /* ForgotPasswordViewController.swift in Sources */,
 				DE68D0F721F0122C00A3A7BE /* UIImage+extension.swift in Sources */,
 				DE68D0F821F0122C00A3A7BE /* SupplementaryInfoProtocols.swift in Sources */,
+				DEE1273D224A788600599DC6 /* PopupOneButton.swift in Sources */,
 				DE68D0F921F0122C00A3A7BE /* AppTextView.swift in Sources */,
 				DE68D0FA21F0122C00A3A7BE /* HomeProtocols.swift in Sources */,
 				DE68D0FB21F0122C00A3A7BE /* MySellExpiredDetailImageCell.swift in Sources */,
@@ -5103,6 +5105,7 @@
 				DE68D0FE21F0122C00A3A7BE /* OrderDetailViewController.swift in Sources */,
 				DE68D0FF21F0122C00A3A7BE /* PopUpHelper.swift in Sources */,
 				DE68D10021F0122C00A3A7BE /* OrderDetail+Table.swift in Sources */,
+				DEE12739224A781400599DC6 /* OrderBuyInfoCell.swift in Sources */,
 				DE68D10121F0122C00A3A7BE /* KActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */,
 				DE68D10221F0122C00A3A7BE /* MyBuyProtocols.swift in Sources */,
 				DE68D10321F0122C00A3A7BE /* PostStepTwoViewController.swift in Sources */,
@@ -5447,6 +5450,7 @@
 				DE68D2C321F0123A00A3A7BE /* MySellContainerRouter.swift in Sources */,
 				DE68D2C421F0123A00A3A7BE /* HistoryCoinInteractor.swift in Sources */,
 				DE68D2C521F0123A00A3A7BE /* KActivityIndicatorAnimationBallPulseRise.swift in Sources */,
+				DEE1273C224A785900599DC6 /* PopupOneButtonAdmob.swift in Sources */,
 				DE68D2C621F0123A00A3A7BE /* FavouriteProductListRouter.swift in Sources */,
 				DE68D2C721F0123A00A3A7BE /* HomeViewController.swift in Sources */,
 				DE68D2C821F0123A00A3A7BE /* UserUtils.swift in Sources */,
@@ -5478,6 +5482,7 @@
 				DE68D2E221F0123A00A3A7BE /* ForgotPasswordViewController.swift in Sources */,
 				DE68D2E321F0123A00A3A7BE /* UIImage+extension.swift in Sources */,
 				DE68D2E421F0123A00A3A7BE /* SupplementaryInfoProtocols.swift in Sources */,
+				DEE1273E224A788700599DC6 /* PopupOneButton.swift in Sources */,
 				DE68D2E521F0123A00A3A7BE /* AppTextView.swift in Sources */,
 				DE68D2E621F0123A00A3A7BE /* HomeProtocols.swift in Sources */,
 				DE68D2E721F0123A00A3A7BE /* MySellExpiredDetailImageCell.swift in Sources */,
@@ -5486,6 +5491,7 @@
 				DE68D2EA21F0123A00A3A7BE /* OrderDetailViewController.swift in Sources */,
 				DE68D2EB21F0123A00A3A7BE /* PopUpHelper.swift in Sources */,
 				DE68D2EC21F0123A00A3A7BE /* OrderDetail+Table.swift in Sources */,
+				DEE1273A224A781400599DC6 /* OrderBuyInfoCell.swift in Sources */,
 				DE68D2ED21F0123A00A3A7BE /* KActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */,
 				DE68D2EE21F0123A00A3A7BE /* MyBuyProtocols.swift in Sources */,
 				DE68D2EF21F0123A00A3A7BE /* PostStepTwoViewController.swift in Sources */,

@@ -22,7 +22,6 @@ def main_pods
     pod 'Fabric'
     pod 'Crashlytics'
     pod 'ZaloSDK'
-    pod 'KeychainSwift', '~> 13.0'
 end
 
 target 'Oganban-Dev' do
