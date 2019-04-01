@@ -47,8 +47,17 @@ class PostStepTwoViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+//        showDataSaved()
+
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        hideTabbar()
+        setupUpdate()
+//        checkAddressDefault()
+    }
+    
     
     override func setUpViews() {
         super.setUpViews()
@@ -98,8 +107,39 @@ class PostStepTwoViewController: BaseViewController {
         
     }
     
-//    var index = 0
-//    var characterCount = 0
+    func checkAddressDefault() {
+         if UserDefaultHelper.shared.loginUserInfo?.houseAddress != nil {
+                vAddress1.textField.text = UserDefaultHelper.shared.loginUserInfo?.houseAddress
+                address1 = (UserDefaultHelper.shared.loginUserInfo?.houseAddress)&
+                lat1 = (UserDefaultHelper.shared.loginUserInfo?.latAddress1)&
+                long1 = (UserDefaultHelper.shared.loginUserInfo?.longAddress1)&
+                vAddress1.btnCheckBox.isChecked = true
+                vAddress1.textField.isEnabled = true
+            } else {
+                vAddress1.textField.text = ""
+                address1 = ""
+                lat1 = ""
+                long1 = ""
+                vAddress1.btnCheckBox.isChecked = false
+                vAddress1.textField.isEnabled = false
+            }
+        
+        if UserDefaultHelper.shared.loginUserInfo?.companyAddress != nil {
+                vAddress2.textField.text = UserDefaultHelper.shared.loginUserInfo?.companyAddress
+                address2 = (UserDefaultHelper.shared.loginUserInfo?.companyAddress)&
+                lat2 = (UserDefaultHelper.shared.loginUserInfo?.latAddress2)&
+                long2 = (UserDefaultHelper.shared.loginUserInfo?.longAddress2)&
+                vAddress2.btnCheckBox.isChecked = true
+                vAddress2.textField.isEnabled = true
+            } else {
+                vAddress2.textField.text = ""
+                address2 = ""
+                lat2 = ""
+                long2 = ""
+                vAddress2.btnCheckBox.isChecked = false
+                vAddress2.textField.isEnabled = false
+            }
+    }
     
     var tempCoinText = ""
     var isEnterComma = false
@@ -117,7 +157,7 @@ class PostStepTwoViewController: BaseViewController {
                 let money = tempCoinText.toDouble() * 20000
                 print(money.description)
                 vMoney.textField.text = money.toUInt64().toCurrency.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "₫", with: "")
-                print(vMoney.textField.text)
+//                print(vMoney.textField.text)
             }
         
         default:
@@ -154,6 +194,7 @@ class PostStepTwoViewController: BaseViewController {
             checkLatLongCopyUpdate()
         } else {
             checkLatLong()
+            checkAddressDefault()
         }
     }
     
@@ -165,17 +206,23 @@ class PostStepTwoViewController: BaseViewController {
         setRedStatusBar()
     }
     
-    //    func showDataSaved() {
-    //        guard let _user = UserDefaultHelper.shared.loginUserInfo else { return }
-    //        if _user.houseAddress != nil {
-    //            vAddress1.textField.text = _user.houseAddress
-    //        }
-    //
-    //        if _user.companyAddress != nil {
-    //            vAddress2.textField.text = _user.companyAddress
-    //        }
-    //
-    //    }
+        func showDataSaved() {
+            guard let _user = UserDefaultHelper.shared.loginUserInfo else { return }
+            if _user.houseAddress != nil {
+                vAddress1.textField.text = _user.houseAddress
+                address1 = _user.houseAddress&
+                lat1 = _user.latAddress1&
+                long1 = _user.longAddress1&
+            }
+    
+            if _user.companyAddress != nil {
+                vAddress2.textField.text = _user.companyAddress
+                address2 = _user.companyAddress&
+                lat2 = _user.latAddress2&
+                long2 = _user.longAddress2&
+            }
+    
+        }
     
     @objc func editingChanged(textField: UITextField) {
         if vMoney.isCheck && vCoin.isCheck == false {
@@ -187,11 +234,6 @@ class PostStepTwoViewController: BaseViewController {
 //        vCoin.textField.text = num.currencyInputFormatting(digit: 2)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        hideTabbar()
-        setupUpdate()
-    }
     
     @IBAction func btnPostTapped() {
         
@@ -209,6 +251,18 @@ class PostStepTwoViewController: BaseViewController {
                 tempString = tempString.replacingOccurrences(of: ",", with: "")
                 let intQuality = tempString.toDouble().roundedTwoDemical()
                 coin = "\(intQuality)"
+            }
+            
+            if !vAddress1.isCheck {
+                address1 = ""
+                lat1 = ""
+                long1 = ""
+            }
+            
+            if !vAddress2.isCheck {
+                address2 = ""
+                lat2 = ""
+                long2 = ""
             }
             
             isGPSCurrent = vCheckGPS.isChecked ? 1 : 0
@@ -265,10 +319,16 @@ class PostStepTwoViewController: BaseViewController {
             return false
         }
         
+        if !vAddress1.isCheck  && !vAddress2.isCheck && !vCheckGPS.isChecked {
+            lbNotice.text = "Vui lòng chọn địa chỉ đăng bán "
+            return false
+        }
+        
         if vAddress1.isCheck && vAddress1.textField.text&.trim().isEmpty {
             lbNotice.text = "Vui lòng chọn địa chỉ đăng bán 1"
             return false
         }
+        
         
         if vAddress2.isCheck && vAddress2.textField.text&.trim().isEmpty {
             lbNotice.text = "Vui lòng chọn địa chỉ đăng bán 2"
