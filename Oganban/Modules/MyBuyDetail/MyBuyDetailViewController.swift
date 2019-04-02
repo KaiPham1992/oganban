@@ -307,7 +307,7 @@ extension MyBuyDetailViewController: MyBuyInfoUserCellDelegate {
             linkzalo = (order?.linkZaloBuyer)&
         }
         
-        let zaloAppPath = "https://zalo.me/\(0986131381)"
+        let zaloAppPath = "https://zalo.me/\(linkzalo)"
         
         guard let appURL = URL(string: zaloAppPath),
             let webURL = URL(string: "https://google.com")  else { return }
@@ -333,9 +333,10 @@ extension MyBuyDetailViewController: MyBuyInfoUserCellDelegate {
             linkFacebook = (order?.linkFacebookSeller)&
         } else {
             linkFacebook = (order?.linkFacebookSeller)&
+            
         }
-        
-        let facebookAppPath = "https://m.me/\(linkFacebook)"
+        let shortLink = linkFacebook.replacingOccurrences(of: "https://www.facebook.com/", with: "")
+        let facebookAppPath = "https://m.me/\(shortLink)"
         guard let appURL = URL(string: facebookAppPath),
             let webURL = URL(string: "https://google.com") else { return }
         
