@@ -113,15 +113,11 @@ class PostStepTwoViewController: BaseViewController {
                 address1 = (UserDefaultHelper.shared.loginUserInfo?.houseAddress)&
                 lat1 = (UserDefaultHelper.shared.loginUserInfo?.latAddress1)&
                 long1 = (UserDefaultHelper.shared.loginUserInfo?.longAddress1)&
-                vAddress1.btnCheckBox.isChecked = true
-                vAddress1.textField.isEnabled = true
             } else {
                 vAddress1.textField.text = ""
                 address1 = ""
                 lat1 = ""
                 long1 = ""
-                vAddress1.btnCheckBox.isChecked = false
-                vAddress1.textField.isEnabled = false
             }
         
         if UserDefaultHelper.shared.loginUserInfo?.companyAddress != nil {
@@ -129,15 +125,11 @@ class PostStepTwoViewController: BaseViewController {
                 address2 = (UserDefaultHelper.shared.loginUserInfo?.companyAddress)&
                 lat2 = (UserDefaultHelper.shared.loginUserInfo?.latAddress2)&
                 long2 = (UserDefaultHelper.shared.loginUserInfo?.longAddress2)&
-                vAddress2.btnCheckBox.isChecked = true
-                vAddress2.textField.isEnabled = true
             } else {
                 vAddress2.textField.text = ""
                 address2 = ""
                 lat2 = ""
                 long2 = ""
-                vAddress2.btnCheckBox.isChecked = false
-                vAddress2.textField.isEnabled = false
             }
     }
     
