@@ -206,8 +206,9 @@ extension OrderBuyDetailViewController: OrderBuyInfoCellDelegate {
     func btnFacebookTapped() {
         let application = UIApplication.shared
         guard let facebookID = record?.linkFacebook else { return }
-        let zaloAppPath = "https://m.me/\(facebookID)"
-        guard let appURL = URL(string: zaloAppPath),
+        let shortLink = facebookID.replacingOccurrences(of: "https://www.facebook.com/", with: "")
+        let facebookAppPath = "https://m.me/\(shortLink)"
+        guard let appURL = URL(string: facebookAppPath),
             let webURL = URL(string: "https://google.com") else { return }
         
         if application.canOpenURL(appURL) {
