@@ -121,7 +121,7 @@ class UpdateProfileViewController: BaseViewController {
             
             if let email = user.email {
                 tfUsername.tfContent.text = email
-            }
+            } else if let userName = user.socialType
             
             if user.codeIntro != nil {
                 tvCodeIntro.text = user.codeIntro

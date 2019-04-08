@@ -13,6 +13,8 @@ enum MoreEntityType: String {
     case historyCoin = "Lịch sử Ơcoin"
     case historyBuy  = "Lịch sử mua tin"
     case policy  = "Điều khoản sử dụng"
+    case term  = "Quy chế hoạt động"
+    case contact  = "Liên hệ Oganban"
     case tutorial  = "Hướng dẫn"
     case setting  = "Cài đặt"
     case changePassword  = "Đổi mật khẩu"

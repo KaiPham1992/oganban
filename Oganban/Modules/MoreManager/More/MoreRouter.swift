@@ -59,8 +59,10 @@ class MoreRouter: MoreWireframeProtocol {
             break
         case MoreEntityType.logout:
             print("Chọn Đăng xuất")
-            
-            break
+        case .term:
+            tapTerm()
+        case .contact:
+            tapContact()
         default:
             break
         }
@@ -101,7 +103,7 @@ class MoreRouter: MoreWireframeProtocol {
         viewController?.navigationController?.pushViewController(vc, animated: true)
     }
     
-
+    
     private func tapPolicy() {
         let vc =  WebViewController.initFromNib()
         viewController?.navigationController?.pushViewController(vc, animated: true)
@@ -115,5 +117,17 @@ class MoreRouter: MoreWireframeProtocol {
     private func tapSetting() {
         let vc = SettingRouter.createModule()
         viewController?.push(controller: vc)
+    }
+    
+    private func tapTerm() {
+        let vc =  WebViewController.initFromNib()
+        vc.termUrl = "_api/webview/regulations"
+        viewController?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func tapContact() {
+        let vc =  WebViewController.initFromNib()
+        vc.termUrl = "_api/webview/info_contact"
+        viewController?.navigationController?.pushViewController(vc, animated: true)
     }
 }
