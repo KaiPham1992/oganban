@@ -121,7 +121,7 @@ class UpdateProfileViewController: BaseViewController {
             
             if let email = user.email {
                 tfUsername.tfContent.text = email
-            } else if let userName = user.socialType
+            }
             
             if user.codeIntro != nil {
                 tvCodeIntro.text = user.codeIntro
@@ -309,15 +309,15 @@ class UpdateProfileViewController: BaseViewController {
 extension UpdateProfileViewController {
     func validateInputData() -> Bool {
         
-        guard let username = self.tfUsername.tfContent.text else {
-            hideError(isHidden: false, message: MessageString.emptyUsername)
-            return false
-        }
-        
-        if username == ""  {
-            hideError(isHidden: false, message: MessageString.emptyUsername)
-            return false
-        }
+//        guard let username = self.tfUsername.tfContent.text else {
+//            hideError(isHidden: false, message: MessageString.emptyUsername)
+//            return false
+//        }
+//        
+//        if username == ""  {
+//            hideError(isHidden: false, message: MessageString.emptyUsername)
+//            return false
+//        }
         
         //        if username.isValidEmail() == false  {
         //            hideError(isHidden: false, message: MessageString.checkedUsername)

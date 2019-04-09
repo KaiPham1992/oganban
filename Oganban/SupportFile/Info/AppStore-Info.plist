@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+    <key>GADApplicationIdentifier</key>
+    <string>ca-app-pub-9353872959466378~7688554039</string>
 	<key>AccountKitClientToken</key>
 	<string>195782fa5d85685a90d770734824afb3</string>
 	<key>CFBundleDevelopmentRegion</key>
@@ -19,7 +21,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.4</string>
+	<string>1.0.5</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
