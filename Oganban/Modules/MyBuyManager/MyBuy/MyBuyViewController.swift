@@ -36,7 +36,10 @@ class MyBuyViewController: BaseViewController {
             if let count = self.dataOrder?.dataOrder.count {
                 if count == 0 {
                     tbMyBuy.isHidden = true
-                    showNoData()
+                    if !UserDefaultHelper.shared.userToken&.isEmpty {
+                        showNoData()
+                    }
+                    
                     setStatusType()
                 } else {
                     tbMyBuy.isHidden = false

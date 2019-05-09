@@ -47,12 +47,12 @@ class MyBuyInfoUserCell: BaseTableCell {
 //            lcsWithImgPhone.constant = 0
 //            btnPhone.isEnabled = false
             
-            if _record.isPhoneSeller != nil  {
+//            if _record.isPhoneSeller != nil  {
                 lcsWidthBtnPhone.constant = 35
-            } else {
-                lcsWidthBtnPhone.constant = 0
-            }
-            
+//            } else {
+//                lcsWidthBtnPhone.constant = 0
+//            }
+        
             if let _ = _record.isZaloSeller {
                 lcsWidthBtnZalo.constant = 35
                 
@@ -74,11 +74,11 @@ class MyBuyInfoUserCell: BaseTableCell {
             lbName.text = _record.fullNameBuyer
             vLevel.setLevel(level: _record.levelBuyer&, isPro: _record.isProBuyer)
             imgAvatar.sd_setImage(with: _record.urlAvatarBuyer, placeholderImage: AppImage.imgDefaultUser)
-            if _record.isPhoneBuyer == nil {
+//            if _record.isPhoneBuyer == nil {
                  lcsWidthBtnPhone.constant = 35
-            } else {
-                lcsWidthBtnPhone.constant = 0
-            }
+//            } else {
+//                lcsWidthBtnPhone.constant = 0
+//            }
             
             if let _ = _record.isZaloBuyer {
                 lcsWidthBtnZalo.constant = 35

@@ -309,15 +309,15 @@ class UpdateProfileViewController: BaseViewController {
 extension UpdateProfileViewController {
     func validateInputData() -> Bool {
         
-        guard let username = self.tfUsername.tfContent.text else {
-            hideError(isHidden: false, message: MessageString.emptyUsername)
-            return false
-        }
-        
-        if username == ""  {
-            hideError(isHidden: false, message: MessageString.emptyUsername)
-            return false
-        }
+//        guard let username = self.tfUsername.tfContent.text else {
+//            hideError(isHidden: false, message: MessageString.emptyUsername)
+//            return false
+//        }
+//        
+//        if username == ""  {
+//            hideError(isHidden: false, message: MessageString.emptyUsername)
+//            return false
+//        }
         
         //        if username.isValidEmail() == false  {
         //            hideError(isHidden: false, message: MessageString.checkedUsername)
@@ -339,12 +339,12 @@ extension UpdateProfileViewController {
             return false
         }
         
-        let notDiacriticString = displayName.folding(options: .diacriticInsensitive, locale: .current)
-        let notSpacingString = notDiacriticString.replacingOccurrences(of: " ", with: "")
-        if notSpacingString.isValidLatterAndNumber() == false {
-            hideError(isHidden: false, message: MessageString.specialCharacterDisplayName)
-            return false
-        }
+//        let notDiacriticString = displayName.folding(options: .diacriticInsensitive, locale: .current)
+//        let notSpacingString = notDiacriticString.replacingOccurrences(of: " ", with: "")
+//        if notSpacingString.isValidLatterAndNumber() == false {
+//            hideError(isHidden: false, message: MessageString.specialCharacterDisplayName)
+//            return false
+//        }
         
         guard let birthDay =  self.birthDay else {
             hideError(isHidden: false, message: MessageString.emptyBirthday)
