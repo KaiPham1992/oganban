@@ -339,12 +339,12 @@ extension UpdateProfileViewController {
             return false
         }
         
-        let notDiacriticString = displayName.folding(options: .diacriticInsensitive, locale: .current)
-        let notSpacingString = notDiacriticString.replacingOccurrences(of: " ", with: "")
-        if notSpacingString.isValidLatterAndNumber() == false {
-            hideError(isHidden: false, message: MessageString.specialCharacterDisplayName)
-            return false
-        }
+//        let notDiacriticString = displayName.folding(options: .diacriticInsensitive, locale: .current)
+//        let notSpacingString = notDiacriticString.replacingOccurrences(of: " ", with: "")
+//        if notSpacingString.isValidLatterAndNumber() == false {
+//            hideError(isHidden: false, message: MessageString.specialCharacterDisplayName)
+//            return false
+//        }
         
         guard let birthDay =  self.birthDay else {
             hideError(isHidden: false, message: MessageString.emptyBirthday)

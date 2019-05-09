@@ -68,7 +68,7 @@ struct ButtonName {
 struct MoreTitle {
     static let historyCoin            = "Lịch sử ƠCoin"
     static let historyBuy             =  "Lịch sử mua tin"
-    static let policy                 =  "Điều khoản sử dụng"
+    static let policy                 =  "Chính sách bảo mật thông tin"
     static let tutorial               = "Hướng dẫn"
     static let setting                = "Cài đặt"
     static let changePassword         = "Đổi mật khẩu"

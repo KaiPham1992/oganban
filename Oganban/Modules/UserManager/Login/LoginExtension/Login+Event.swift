@@ -57,7 +57,6 @@ extension LoginViewController: LoginViewProtocol {
             case "INVALID_USERNAME_OR_PASSWORD":
                  UserUtils.clearLogin()
                 hideError(isHidden: false, message:  MessageString.invalidLoginEmailPassword&)
-                
                 break
             case "USER_IS_NOT_VERIFY":
                 self.verifyCode = error?.codeVerify

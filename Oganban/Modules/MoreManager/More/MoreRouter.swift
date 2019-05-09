@@ -63,6 +63,8 @@ class MoreRouter: MoreWireframeProtocol {
             tapTerm()
         case .contact:
             tapContact()
+        case .rule:
+            taprule()
         default:
             break
         }
@@ -128,6 +130,12 @@ class MoreRouter: MoreWireframeProtocol {
     private func tapContact() {
         let vc =  WebViewController.initFromNib()
         vc.termUrl = "_api/webview/info_contact"
+        viewController?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func taprule() {
+        let vc =  WebViewController.initFromNib()
+        vc.termUrl = "_api/webview/dispute_rules"
         viewController?.navigationController?.pushViewController(vc, animated: true)
     }
 }
