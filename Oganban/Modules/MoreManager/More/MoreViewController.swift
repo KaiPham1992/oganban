@@ -54,7 +54,6 @@ class MoreViewController: BaseViewController {
 
     }
     
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         btnReloadPage()
@@ -98,6 +97,7 @@ class MoreViewController: BaseViewController {
         rowList.append(.policy)
         rowList.append(.term)
         rowList.append(.contact)
+        rowList.append(.rule)
         rowList.append(.tutorial)
         rowList.append(.setting)
         rowList.append(.logout)
