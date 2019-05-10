@@ -48,13 +48,13 @@ class PostStepTwoViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 //        showDataSaved()
-
+        setupUpdate()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         hideTabbar()
-        setupUpdate()
+//        setupUpdate()
 //        checkAddressDefault()
     }
     
@@ -185,8 +185,9 @@ class PostStepTwoViewController: BaseViewController {
             CopyUpdate()
             checkLatLongCopyUpdate()
         } else {
-            checkLatLong()
             checkAddressDefault()
+            checkLatLong()
+            
         }
     }
     
@@ -481,5 +482,7 @@ extension PostStepTwoViewController: PositionViewControllerDelegate {
             self.locationAddress1 = location
             self.address1 = address
         }
+        
+        checkLatLong()
     }
 }
